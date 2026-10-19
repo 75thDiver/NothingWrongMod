@@ -1,0 +1,24 @@
+# Native 1936 scenario. Country source: received mod history
+capital = 195
+set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 tech_support = 1 tech_recon = 1 tech_engineers = 1 gw_artillery = 1 basic_train = 1 }
+
+
+oob = "SOV_1936"
+
+
+
+
+# Treaties already in force before the first game tick.
+
+give_guarantee = MAN
+
+# Scenario political setup; no map transfers or world initializer.
+set_politics = { ruling_party = neutrality elections_allowed = no }
+set_popularities = { democratic = 20 fascism = 8 communism = 7 neutrality = 65 }
+set_party_name = { ideology = democratic name = NW_SOV_democratic_party long_name = NW_SOV_democratic_party_long }
+set_party_name = { ideology = fascism name = NW_SOV_fascism_party long_name = NW_SOV_fascism_party_long }
+set_party_name = { ideology = communism name = NW_SOV_communism_party long_name = NW_SOV_communism_party_long }
+set_party_name = { ideology = neutrality name = NW_SOV_neutrality_party long_name = NW_SOV_neutrality_party_long }
+add_ideas = { nw_sov_unbroken_growth nw_sov_court_government nw_sov_fragile_sovereign nw_sov_restless_borderlands }
+create_country_leader = { name = "Алексей II" ideology = despotism expire = "2000.1.1" traits = { } picture = "gfx/leaders/NW/alexei_ii.dds" }
+

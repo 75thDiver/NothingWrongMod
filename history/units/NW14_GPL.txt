@@ -1,0 +1,9 @@
+division_template = { name = "NW14 Territorial Guard" regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } } }
+units = {
+ division = { name = "1. Territorial Guard" location = 6558 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
+ division = { name = "2. Territorial Guard" location = 6558 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
+ division = { name = "3. Territorial Guard" location = 6558 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
+ division = { name = "4. Territorial Guard" location = 6558 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
+ division = { name = "5. Territorial Guard" location = 6558 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
+ division = { name = "6. Territorial Guard" location = 6558 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
+}

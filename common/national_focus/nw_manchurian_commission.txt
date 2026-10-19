@@ -1,0 +1,26 @@
+focus_tree = {
+ # Pixel coordinates; keep palette below the full regular tree.
+ continuous_focus_position = { x = 50 y = 1000 }
+
+	id = NW_MAN_commission_tree
+	country = {
+		factor = 0
+		modifier = { add = 1000 tag = MAN }
+	}
+	default = no
+	focus = {
+		id = NW_MAN_commission_mandate
+		icon = GFX_goal_generic_neutrality_focus
+		x = 5
+		y = 0
+		cost = 10
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = NW_MAN_COMMISSION_NO_POLICY
+				NOT = { has_country_flag = nw_man_condominium }
+			}
+		}
+		completion_reward = { }
+		ai_will_do = { factor = 0 }
+	}
+}

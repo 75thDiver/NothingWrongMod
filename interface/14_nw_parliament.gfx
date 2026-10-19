@@ -1,0 +1,1 @@
+spriteTypes = { spriteType = { name = "GFX_nw14_seat" texturefile = "gfx/interface/nw14/seat_frames.dds" noOfFrames = 7 } }

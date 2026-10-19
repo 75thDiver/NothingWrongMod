@@ -1,0 +1,21 @@
+ideas = { country = {
+nw14_production = { picture = generic_propaganda allowed = { always = yes } removal_cost = -1 modifier = { production_factory_efficiency_gain_factor = 0.04 } }
+nw14_trade = { picture = generic_propaganda allowed = { always = yes } removal_cost = -1 modifier = { trade_opinion_factor = 0.1 } }
+nw14_labour = { picture = generic_propaganda allowed = { always = yes } removal_cost = -1 modifier = { stability_factor = 0.04 industrial_capacity_factory = 0.02 } }
+nw14_discipline = { picture = generic_propaganda allowed = { always = yes } removal_cost = -1 modifier = { army_org_factor = 0.04 } }
+nw14_agrarian = { picture = generic_propaganda allowed = { always = yes } removal_cost = -1 modifier = { stability_factor = 0.03 consumer_goods_factor = -0.015 } }
+nw14_succession = { picture = generic_propaganda allowed = { always = yes } removal_cost = -1 modifier = { political_power_factor = 0.05 } }
+nw14_crown_admin = { picture = generic_propaganda allowed = { always = yes } removal_cost = -1 modifier = { political_power_factor = 0.08 consumer_goods_factor = 0.01 } }
+nw14_democratic_admin = { picture = generic_propaganda allowed = { always = yes } removal_cost = -1 modifier = { stability_factor = 0.06 political_power_factor = 0.04 } }
+nw14_war_supply = { picture = generic_propaganda allowed = { always = yes } removal_cost = -1 modifier = { supply_consumption_factor = -0.05 consumer_goods_factor = 0.02 } }
+nw14_expansion = { picture = generic_propaganda allowed = { always = yes } removal_cost = -1 modifier = { war_support_factor = 0.08 industrial_capacity_factory = 0.04 consumer_goods_factor = 0.02 } }
+nw14_planned = { picture = generic_propaganda allowed = { always = yes } removal_cost = -1 modifier = { production_speed_arms_factory_factor = 0.08 consumer_goods_factor = 0.015 } }
+nw14_propaganda = { picture = generic_propaganda allowed = { always = yes } removal_cost = -1 modifier = { war_support_factor = 0.08 stability_factor = -0.03 } }
+nw14_repression = { picture = generic_propaganda allowed = { always = yes } removal_cost = -1 modifier = { political_power_factor = 0.1 consumer_goods_factor = 0.02 stability_factor = -0.03 } }
+nw14_black_admin = { picture = generic_propaganda allowed = { always = yes } removal_cost = -1 modifier = { war_support_factor = 0.08 political_power_factor = 0.08 research_speed_factor = -0.025 } }
+nw14_federal_admin = { picture = generic_propaganda allowed = { always = yes } removal_cost = -1 modifier = { stability_factor = 0.05 production_speed_buildings_factor = 0.025 } }
+nw14_deadlock = { picture = generic_propaganda allowed = { always = yes } removal_cost = -1 modifier = { political_power_factor = -0.15 stability_factor = -0.05 } }
+nw14_provincial_distrust = { picture = generic_propaganda allowed = { always = yes } removal_cost = -1 modifier = { political_power_factor = -0.1 production_speed_buildings_factor = -0.05 } }
+nw14_federal_deadlock = { picture = generic_propaganda allowed = { always = yes } removal_cost = -1 modifier = { political_power_factor = -0.12 consumer_goods_factor = 0.02 } }
+nw14_hungarian_deadlock = { picture = generic_propaganda allowed = { always = yes } removal_cost = -1 modifier = { stability_factor = -0.04 political_power_factor = -0.08 } }
+} }

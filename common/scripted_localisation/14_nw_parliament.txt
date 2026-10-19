@@ -1,0 +1,7 @@
+defined_text = { name = GetNW14SPD text = { trigger = { has_country_flag = nw_spd_united } localization_key = NW14_spd_united } text = { localization_key = NW14_spd_old } }
+defined_text = { name = GetNW14Government
+ text = { trigger = { has_country_flag = nw_ger_crown } localization_key = NW14_coal_crown }
+ text = { trigger = { has_country_flag = nw_ger_demo } localization_key = NW14_coal_demo }
+ text = { trigger = { has_country_flag = nw_ger_red } localization_key = NW14_coal_red }
+ text = { localization_key = NW14_coal_initial }
+}

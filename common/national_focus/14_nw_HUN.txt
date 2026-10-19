@@ -1,0 +1,136 @@
+focus_tree = {
+ # Pixel coordinates; keep palette below the full regular tree.
+ continuous_focus_position = { x = 50 y = 1740 }
+ id = NW14_HUN_tree default = no country = { factor = 0 modifier = { add = 200000 tag = HUN } }
+ focus = { id = NW14_HUN_budapest_session icon = GFX_goal_generic_political_pressure x = 6 y = 0 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ available = { is_subject_of = AUS }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 25 }
+ }
+ focus = { id = NW14_HUN_county_reports icon = GFX_goal_generic_political_pressure x = 4 y = 1 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_HUN_budapest_session }
+ available = { is_subject_of = AUS }
+ ai_will_do = { factor = 10 } completion_reward = { add_to_variable = { var = nw_hungarian_trust value = 10 } clamp_variable = { var = nw_hungarian_trust min = 0 max = 100 } }
+ }
+ focus = { id = NW14_HUN_minority_petitions icon = GFX_goal_generic_political_pressure x = 8 y = 1 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_HUN_budapest_session }
+ available = { is_subject_of = AUS }
+ ai_will_do = { factor = 10 } completion_reward = { add_to_variable = { var = nw_hungarian_trust value = 10 } clamp_variable = { var = nw_hungarian_trust min = 0 max = 100 } }
+ }
+ focus = { id = NW14_HUN_budget_scrutiny icon = GFX_goal_generic_political_pressure x = 6 y = 2 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_HUN_county_reports }
+ prerequisite = { focus = NW14_HUN_minority_petitions }
+ available = { is_subject_of = AUS }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 35 }
+ }
+ focus = { id = NW14_HUN_hungarian_choice icon = GFX_goal_generic_political_pressure x = 6 y = 3 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_HUN_budget_scrutiny }
+ available = { is_subject_of = AUS }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 35 }
+ }
+ focus = { id = NW14_HUN_federal_partner icon = GFX_goal_generic_political_pressure x = 2 y = 5 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_HUN_hungarian_choice }
+ mutually_exclusive = { focus = NW14_HUN_historic_rights }
+ available = { is_subject_of = AUS }
+ ai_will_do = { factor = 30 } completion_reward = { set_country_flag = nw_hun_partner AUS = { add_to_variable = { var = nw_federal_trust value = 5 } clamp_variable = { var = nw_federal_trust min = 0 max = 100 } } }
+ }
+ focus = { id = NW14_HUN_tax_compromise icon = GFX_goal_generic_political_pressure x = 0 y = 6 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_HUN_federal_partner }
+ available = { is_subject_of = AUS }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = -25 AUS = { add_to_variable = { var = nw_federal_trust value = 10 } clamp_variable = { var = nw_federal_trust min = 0 max = 100 } } add_to_variable = { var = nw_hungarian_trust value = 10 } clamp_variable = { var = nw_hungarian_trust min = 0 max = 100 } }
+ }
+ focus = { id = NW14_HUN_language_settlement icon = GFX_goal_generic_political_pressure x = 4 y = 6 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_HUN_federal_partner }
+ available = { is_subject_of = AUS }
+ ai_will_do = { factor = 10 } completion_reward = { add_to_variable = { var = nw_hungarian_trust value = 10 } clamp_variable = { var = nw_hungarian_trust min = 0 max = 100 } }
+ }
+ focus = { id = NW14_HUN_joint_committees icon = GFX_goal_generic_political_pressure x = 2 y = 7 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_HUN_tax_compromise }
+ prerequisite = { focus = NW14_HUN_language_settlement }
+ available = { is_subject_of = AUS }
+ ai_will_do = { factor = 10 } completion_reward = { set_country_flag = nw_federal_consent AUS = { add_to_variable = { var = nw_federal_trust value = 10 } clamp_variable = { var = nw_federal_trust min = 0 max = 100 } } }
+ }
+ focus = { id = NW14_HUN_loyal_crown icon = GFX_goal_generic_political_pressure x = 2 y = 8 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_HUN_joint_committees }
+ available = { is_subject_of = AUS }
+ ai_will_do = { factor = 10 } completion_reward = { if = { limit = { has_idea = nw14_federal_admin } add_stability = 0.025 } else = { add_ideas = nw14_federal_admin } }
+ }
+ focus = { id = NW14_HUN_historic_rights icon = GFX_goal_generic_political_pressure x = 10 y = 5 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_HUN_hungarian_choice }
+ mutually_exclusive = { focus = NW14_HUN_federal_partner }
+ available = { is_subject_of = AUS }
+ ai_will_do = { factor = 10 } completion_reward = { set_country_flag = nw_hun_rights AUS = { add_to_variable = { var = nw_federal_trust value = -10 } clamp_variable = { var = nw_federal_trust min = 0 max = 100 } } }
+ }
+ focus = { id = NW14_HUN_withhold_transfer icon = GFX_goal_generic_political_pressure x = 8 y = 6 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_HUN_historic_rights }
+ available = { is_subject_of = AUS }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 75 AUS = { add_to_variable = { var = nw_federal_trust value = -15 } clamp_variable = { var = nw_federal_trust min = 0 max = 100 } } }
+ }
+ focus = { id = NW14_HUN_constitutional_protest icon = GFX_goal_generic_political_pressure x = 12 y = 6 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_HUN_historic_rights }
+ available = { is_subject_of = AUS }
+ ai_will_do = { factor = 10 } completion_reward = { add_to_variable = { var = nw_hungarian_trust value = 10 } clamp_variable = { var = nw_hungarian_trust min = 0 max = 100 } }
+ }
+ focus = { id = NW14_HUN_renegotiate_dualism icon = GFX_goal_generic_political_pressure x = 10 y = 7 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_HUN_withhold_transfer }
+ prerequisite = { focus = NW14_HUN_constitutional_protest }
+ available = { is_subject_of = AUS }
+ ai_will_do = { factor = 10 } completion_reward = { AUS = { country_event = { id = nw14.43 } } }
+ }
+ focus = { id = NW14_HUN_guaranteed_autonomy icon = GFX_goal_generic_political_pressure x = 10 y = 8 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_HUN_renegotiate_dualism }
+ available = { has_country_flag = nw_hun_guarantees is_subject_of = AUS }
+ ai_will_do = { factor = 10 } completion_reward = { if = { limit = { has_idea = nw14_federal_admin } add_stability = 0.025 } else = { add_ideas = nw14_federal_admin } set_country_flag = nw_federal_consent add_to_variable = { var = nw_hungarian_trust value = 10 } clamp_variable = { var = nw_hungarian_trust min = 0 max = 100 } }
+ }
+ focus = { id = NW14_HUN_land_bank icon = GFX_goal_generic_production x = 18 y = 0 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ available = { is_subject_of = AUS }
+ ai_will_do = { factor = 10 } completion_reward = { if = { limit = { has_idea = nw14_agrarian } add_stability = 0.025 } else = { add_ideas = nw14_agrarian } }
+ }
+ focus = { id = NW14_HUN_budapest_industry icon = GFX_goal_generic_construct_civ_factory x = 16 y = 1 cost = 7 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_HUN_land_bank }
+ available = { is_subject_of = AUS }
+ ai_will_do = { factor = 10 } completion_reward = { random_owned_controlled_state = { limit = { is_core_of = ROOT } add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } }
+ }
+ focus = { id = NW14_HUN_tisa_bridges icon = GFX_goal_generic_construct_infrastructure x = 20 y = 1 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_HUN_land_bank }
+ available = { any_owned_state = { is_core_of = ROOT infrastructure < 5 } is_subject_of = AUS }
+ ai_will_do = { factor = 10 } completion_reward = { random_owned_controlled_state = { limit = { is_core_of = ROOT infrastructure < 5 } add_building_construction = { type = infrastructure level = 1 instant_build = yes } } }
+ }
+ focus = { id = NW14_HUN_food_contracts icon = GFX_goal_generic_production x = 16 y = 2 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_HUN_budapest_industry }
+ available = { is_subject_of = AUS }
+ ai_will_do = { factor = 10 } completion_reward = { if = { limit = { has_idea = nw14_trade } add_political_power = 35 } else = { add_ideas = nw14_trade } }
+ }
+ focus = { id = NW14_HUN_technical_colleges icon = GFX_goal_generic_scientific_exchange x = 20 y = 2 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_HUN_tisa_bridges }
+ available = { is_subject_of = AUS }
+ ai_will_do = { factor = 10 } completion_reward = { add_tech_bonus = { name = NW14_research bonus = 0.5 uses = 1 category = electronics } }
+ }
+ focus = { id = NW14_HUN_honved_reform icon = GFX_goal_generic_army_doctrines x = 18 y = 3 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_HUN_food_contracts }
+ prerequisite = { focus = NW14_HUN_technical_colleges }
+ available = { is_subject_of = AUS }
+ ai_will_do = { factor = 10 } completion_reward = { army_experience = 20 }
+ }
+ focus = { id = NW14_HUN_artillery_works icon = GFX_goal_generic_army_doctrines x = 16 y = 4 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_HUN_honved_reform }
+ available = { is_subject_of = AUS }
+ ai_will_do = { factor = 10 } completion_reward = { add_tech_bonus = { name = NW14_research bonus = 0.5 uses = 1 category = artillery } }
+ }
+ focus = { id = NW14_HUN_border_exercises icon = GFX_goal_generic_army_doctrines x = 20 y = 4 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_HUN_honved_reform }
+ available = { is_subject_of = AUS }
+ ai_will_do = { factor = 10 } completion_reward = { if = { limit = { has_idea = nw14_discipline } army_experience = 15 } else = { add_ideas = nw14_discipline } }
+ }
+ focus = { id = NW14_HUN_aviation_workshop icon = GFX_goal_generic_build_airforce x = 18 y = 5 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_HUN_artillery_works }
+ prerequisite = { focus = NW14_HUN_border_exercises }
+ available = { is_subject_of = AUS }
+ ai_will_do = { factor = 10 } completion_reward = { add_tech_bonus = { name = NW14_research bonus = 0.5 uses = 1 category = light_air } }
+ }
+ focus = { id = NW14_HUN_danubian_kingdom icon = GFX_goal_generic_production x = 18 y = 10 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_HUN_aviation_workshop }
+ prerequisite = { focus = NW14_HUN_loyal_crown focus = NW14_HUN_guaranteed_autonomy }
+ available = { is_subject_of = AUS }
+ ai_will_do = { factor = 10 } completion_reward = { if = { limit = { has_idea = nw14_production } add_tech_bonus = { name = NW14_research bonus = 0.5 uses = 1 category = industry } } else = { add_ideas = nw14_production } }
+ }
+}

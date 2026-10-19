@@ -1,0 +1,698 @@
+# Native 1936 scenario reconciliation. No on_startup, map transfers or annexations.
+ENG = {
+ every_subject_country = {
+  limit = { NOT = { OR = { tag = CAN tag = AST tag = NZL tag = LAG } } }
+  ENG = { end_puppet = PREV }
+ }
+}
+ALB = {
+ if = { limit = { is_subject = yes } OVERLORD = { end_puppet = ALB } }
+ if = { limit = { is_in_faction = yes } leave_faction = yes }
+}
+BRM = {
+ if = { limit = { is_subject = yes } OVERLORD = { end_puppet = BRM } }
+ if = { limit = { is_in_faction = yes } leave_faction = yes }
+}
+EGY = {
+ if = { limit = { is_subject = yes } OVERLORD = { end_puppet = EGY } }
+ if = { limit = { is_in_faction = yes } leave_faction = yes }
+}
+ETH = {
+ if = { limit = { is_subject = yes } OVERLORD = { end_puppet = ETH } }
+ if = { limit = { is_in_faction = yes } leave_faction = yes }
+}
+IRQ = {
+ if = { limit = { is_subject = yes } OVERLORD = { end_puppet = IRQ } }
+ if = { limit = { is_in_faction = yes } leave_faction = yes }
+}
+JOR = {
+ if = { limit = { is_subject = yes } OVERLORD = { end_puppet = JOR } }
+ if = { limit = { is_in_faction = yes } leave_faction = yes }
+}
+KUR = {
+ if = { limit = { is_subject = yes } OVERLORD = { end_puppet = KUR } }
+ if = { limit = { is_in_faction = yes } leave_faction = yes }
+}
+MAN = {
+ if = { limit = { is_subject = yes } OVERLORD = { end_puppet = MAN } }
+ if = { limit = { is_in_faction = yes } leave_faction = yes }
+}
+OMA = {
+ if = { limit = { is_subject = yes } OVERLORD = { end_puppet = OMA } }
+ if = { limit = { is_in_faction = yes } leave_faction = yes }
+}
+RAJ = {
+ if = { limit = { is_subject = yes } OVERLORD = { end_puppet = RAJ } }
+ if = { limit = { is_in_faction = yes } leave_faction = yes }
+}
+SAF = {
+ if = { limit = { is_subject = yes } OVERLORD = { end_puppet = SAF } }
+ if = { limit = { is_in_faction = yes } leave_faction = yes }
+}
+SAU = {
+ if = { limit = { is_subject = yes } OVERLORD = { end_puppet = SAU } }
+ if = { limit = { is_in_faction = yes } leave_faction = yes }
+}
+SIA = {
+ if = { limit = { is_subject = yes } OVERLORD = { end_puppet = SIA } }
+ if = { limit = { is_in_faction = yes } leave_faction = yes }
+}
+SOM = {
+ if = { limit = { is_subject = yes } OVERLORD = { end_puppet = SOM } }
+ if = { limit = { is_in_faction = yes } leave_faction = yes }
+}
+TIB = {
+ if = { limit = { is_subject = yes } OVERLORD = { end_puppet = TIB } }
+ if = { limit = { is_in_faction = yes } leave_faction = yes }
+}
+YEM = {
+ if = { limit = { is_subject = yes } OVERLORD = { end_puppet = YEM } }
+ if = { limit = { is_in_faction = yes } leave_faction = yes }
+}
+AST = {
+ if = { limit = { is_subject = yes NOT = { is_subject_of = ENG } } OVERLORD = { end_puppet = AST } }
+}
+ENG = { set_autonomy = { target = AST autonomy_state = autonomy_formal_dominion freedom_level = 0.95 } }
+CAN = {
+ if = { limit = { is_subject = yes NOT = { is_subject_of = ENG } } OVERLORD = { end_puppet = CAN } }
+}
+ENG = { set_autonomy = { target = CAN autonomy_state = autonomy_formal_dominion freedom_level = 0.95 } }
+COG = {
+ if = { limit = { is_subject = yes NOT = { is_subject_of = BEL } } OVERLORD = { end_puppet = COG } }
+}
+BEL = { set_autonomy = { target = COG autonomy_state = autonomy_colony freedom_level = 0.65 } }
+CRO = {
+ if = { limit = { is_subject = yes NOT = { is_subject_of = AUS } } OVERLORD = { end_puppet = CRO } }
+}
+AUS = { set_autonomy = { target = CRO autonomy_state = autonomy_nw_federal_part freedom_level = 0.85 } }
+CZE = {
+ if = { limit = { is_subject = yes NOT = { is_subject_of = AUS } } OVERLORD = { end_puppet = CZE } }
+}
+AUS = { set_autonomy = { target = CZE autonomy_state = autonomy_nw_federal_part freedom_level = 0.85 } }
+FIN = {
+ if = { limit = { is_subject = yes NOT = { is_subject_of = SOV } } OVERLORD = { end_puppet = FIN } }
+}
+SOV = { set_autonomy = { target = FIN autonomy_state = autonomy_dominion freedom_level = 0.8 } }
+GAM = {
+ if = { limit = { is_subject = yes NOT = { is_subject_of = FRA } } OVERLORD = { end_puppet = GAM } }
+}
+FRA = { set_autonomy = { target = GAM autonomy_state = autonomy_puppet freedom_level = 0.5 } }
+GEA = {
+ if = { limit = { is_subject = yes NOT = { is_subject_of = GER } } OVERLORD = { end_puppet = GEA } }
+}
+GER = { set_autonomy = { target = GEA autonomy_state = autonomy_colony freedom_level = 0.65 } }
+GKT = {
+ if = { limit = { is_subject = yes NOT = { is_subject_of = GER } } OVERLORD = { end_puppet = GKT } }
+}
+GER = { set_autonomy = { target = GKT autonomy_state = autonomy_colony freedom_level = 0.65 } }
+GPC = {
+ if = { limit = { is_subject = yes NOT = { is_subject_of = GER } } OVERLORD = { end_puppet = GPC } }
+}
+GER = { set_autonomy = { target = GPC autonomy_state = autonomy_colony freedom_level = 0.65 } }
+GSW = {
+ if = { limit = { is_subject = yes NOT = { is_subject_of = GER } } OVERLORD = { end_puppet = GSW } }
+}
+GER = { set_autonomy = { target = GSW autonomy_state = autonomy_colony freedom_level = 0.65 } }
+GWA = {
+ if = { limit = { is_subject = yes NOT = { is_subject_of = GER } } OVERLORD = { end_puppet = GWA } }
+}
+GER = { set_autonomy = { target = GWA autonomy_state = autonomy_colony freedom_level = 0.65 } }
+GXC = {
+ if = { limit = { is_subject = yes NOT = { is_subject_of = CHI } } OVERLORD = { end_puppet = GXC } }
+}
+CHI = { set_autonomy = { target = GXC autonomy_state = autonomy_puppet freedom_level = 0.5 } }
+HUN = {
+ if = { limit = { is_subject = yes NOT = { is_subject_of = AUS } } OVERLORD = { end_puppet = HUN } }
+}
+AUS = { set_autonomy = { target = HUN autonomy_state = autonomy_nw_federal_part freedom_level = 0.85 } }
+INS = {
+ if = { limit = { is_subject = yes NOT = { is_subject_of = HOL } } OVERLORD = { end_puppet = INS } }
+}
+HOL = { set_autonomy = { target = INS autonomy_state = autonomy_colony freedom_level = 0.65 } }
+ION = {
+ if = { limit = { is_subject = yes NOT = { is_subject_of = GRE } } OVERLORD = { end_puppet = ION } }
+}
+GRE = { set_autonomy = { target = ION autonomy_state = autonomy_puppet freedom_level = 0.5 } }
+LAG = {
+ if = { limit = { is_subject = yes NOT = { is_subject_of = ENG } } OVERLORD = { end_puppet = LAG } }
+}
+ENG = { set_autonomy = { target = LAG autonomy_state = autonomy_puppet freedom_level = 0.5 } }
+LBV = {
+ if = { limit = { is_subject = yes NOT = { is_subject_of = AUS } } OVERLORD = { end_puppet = LBV } }
+}
+AUS = { set_autonomy = { target = LBV autonomy_state = autonomy_puppet freedom_level = 0.5 } }
+LEB = {
+ if = { limit = { is_subject = yes NOT = { is_subject_of = FRA } } OVERLORD = { end_puppet = LEB } }
+}
+FRA = { set_autonomy = { target = LEB autonomy_state = autonomy_colony freedom_level = 0.65 } }
+MON = {
+ if = { limit = { is_subject = yes NOT = { is_subject_of = SOV } } OVERLORD = { end_puppet = MON } }
+}
+SOV = { set_autonomy = { target = MON autonomy_state = autonomy_puppet freedom_level = 0.5 } }
+NZL = {
+ if = { limit = { is_subject = yes NOT = { is_subject_of = ENG } } OVERLORD = { end_puppet = NZL } }
+}
+ENG = { set_autonomy = { target = NZL autonomy_state = autonomy_formal_dominion freedom_level = 0.95 } }
+PHI = {
+ if = { limit = { is_subject = yes NOT = { is_subject_of = USA } } OVERLORD = { end_puppet = PHI } }
+}
+USA = { set_autonomy = { target = PHI autonomy_state = autonomy_puppet freedom_level = 0.5 } }
+POL = {
+ if = { limit = { is_subject = yes NOT = { is_subject_of = SOV } } OVERLORD = { end_puppet = POL } }
+}
+SOV = { set_autonomy = { target = POL autonomy_state = autonomy_dominion freedom_level = 0.8 } }
+SER = {
+ if = { limit = { is_subject = yes NOT = { is_subject_of = AUS } } OVERLORD = { end_puppet = SER } }
+}
+AUS = { set_autonomy = { target = SER autonomy_state = autonomy_puppet freedom_level = 0.5 } }
+SHX = {
+ if = { limit = { is_subject = yes NOT = { is_subject_of = CHI } } OVERLORD = { end_puppet = SHX } }
+}
+CHI = { set_autonomy = { target = SHX autonomy_state = autonomy_puppet freedom_level = 0.5 } }
+SIE = {
+ if = { limit = { is_subject = yes NOT = { is_subject_of = FRA } } OVERLORD = { end_puppet = SIE } }
+}
+FRA = { set_autonomy = { target = SIE autonomy_state = autonomy_puppet freedom_level = 0.5 } }
+SIK = {
+ if = { limit = { is_subject = yes NOT = { is_subject_of = SOV } } OVERLORD = { end_puppet = SIK } }
+}
+SOV = { set_autonomy = { target = SIK autonomy_state = autonomy_puppet freedom_level = 0.5 } }
+STR = {
+ if = { limit = { is_subject = yes NOT = { is_subject_of = GRE } } OVERLORD = { end_puppet = STR } }
+}
+GRE = { set_autonomy = { target = STR autonomy_state = autonomy_puppet freedom_level = 0.5 } }
+SYR = {
+ if = { limit = { is_subject = yes NOT = { is_subject_of = FRA } } OVERLORD = { end_puppet = SYR } }
+}
+FRA = { set_autonomy = { target = SYR autonomy_state = autonomy_puppet freedom_level = 0.3 } }
+XSM = {
+ if = { limit = { is_subject = yes NOT = { is_subject_of = CHI } } OVERLORD = { end_puppet = XSM } }
+}
+CHI = { set_autonomy = { target = XSM autonomy_state = autonomy_puppet freedom_level = 0.5 } }
+YUN = {
+ if = { limit = { is_subject = yes NOT = { is_subject_of = CHI } } OVERLORD = { end_puppet = YUN } }
+}
+CHI = { set_autonomy = { target = YUN autonomy_state = autonomy_puppet freedom_level = 0.5 } }
+AFG = {
+
+ add_ideas = { nw_afg_northern_giant }
+}
+ALB = {
+set_politics = { ruling_party = neutrality elections_allowed = no }
+set_popularities = { neutrality = 75 democratic = 15 communism = 5 fascism = 5 }
+
+ set_party_name = { ideology = neutrality name = NW_ALB_neutrality_party long_name = NW_ALB_neutrality_party_long }
+ set_party_name = { ideology = democratic name = NW_ALB_democratic_party long_name = NW_ALB_democratic_party_long }
+ set_party_name = { ideology = communism name = NW_ALB_communism_party long_name = NW_ALB_communism_party_long }
+ set_party_name = { ideology = fascism name = NW_ALB_fascism_party long_name = NW_ALB_fascism_party_long }
+ add_ideas = { nw_alb_habsburg_credit }
+}
+AST = {
+
+ add_ideas = { nw_ast_formal_dominion }
+}
+AUS = {
+set_politics = { ruling_party = neutrality elections_allowed = no }
+set_popularities = { democratic = 25 fascism = 5 communism = 10 neutrality = 60 }
+
+ set_party_name = { ideology = democratic name = NW_AUS_democratic_party long_name = NW_AUS_democratic_party_long }
+ set_party_name = { ideology = fascism name = NW_AUS_fascism_party long_name = NW_AUS_fascism_party_long }
+ set_party_name = { ideology = communism name = NW_AUS_communism_party long_name = NW_AUS_communism_party_long }
+ set_party_name = { ideology = neutrality name = NW_AUS_neutrality_party long_name = NW_AUS_neutrality_party_long }
+ add_ideas = { nw_aus_federal_bargain nw_aus_many_languages nw_aus_adriatic_system }
+}
+BEL = {
+
+ add_ideas = { nw_bel_congo_pressure }
+}
+BRM = {
+
+ add_ideas = { nw_brm_unfinished_independence }
+}
+BUL = {
+set_politics = { ruling_party = fascism elections_allowed = no }
+set_popularities = { democratic = 15 fascism = 60 communism = 5 neutrality = 20 }
+
+ set_party_name = { ideology = democratic name = NW_BUL_democratic_party long_name = NW_BUL_democratic_party_long }
+ set_party_name = { ideology = fascism name = NW_BUL_fascism_party long_name = NW_BUL_fascism_party_long }
+ set_party_name = { ideology = communism name = NW_BUL_communism_party long_name = NW_BUL_communism_party_long }
+ set_party_name = { ideology = neutrality name = NW_BUL_neutrality_party long_name = NW_BUL_neutrality_party_long }
+ add_ideas = { nw_bul_committee_state nw_bul_third_war_defeat }
+}
+CAN = {
+
+ add_ideas = { nw_can_formal_dominion }
+}
+CHI = {
+ remove_ideas = CHI_civil_war_deserters
+ remove_ideas = CHI_communist_uprisings
+ remove_ideas = CHI_nine_power_treaty
+set_politics = { ruling_party = neutrality elections_allowed = no }
+set_popularities = { democratic = 20 fascism = 10 communism = 5 neutrality = 65 }
+
+ set_party_name = { ideology = democratic name = NW_CHI_democratic_party long_name = NW_CHI_democratic_party_long }
+ set_party_name = { ideology = fascism name = NW_CHI_fascism_party long_name = NW_CHI_fascism_party_long }
+ set_party_name = { ideology = communism name = NW_CHI_communism_party long_name = NW_CHI_communism_party_long }
+ set_party_name = { ideology = neutrality name = NW_CHI_neutrality_party long_name = NW_CHI_neutrality_party_long }
+ add_ideas = { nw_chi_nanjing_compromise nw_chi_double_patron nw_chi_currency_reform }
+}
+CRO = {
+set_politics = { ruling_party = neutrality elections_allowed = no }
+set_popularities = { neutrality = 55 democratic = 30 communism = 10 fascism = 5 }
+
+ set_party_name = { ideology = neutrality name = NW_CRO_neutrality_party long_name = NW_CRO_neutrality_party_long }
+ set_party_name = { ideology = democratic name = NW_CRO_democratic_party long_name = NW_CRO_democratic_party_long }
+ set_party_name = { ideology = communism name = NW_CRO_communism_party long_name = NW_CRO_communism_party_long }
+ set_party_name = { ideology = fascism name = NW_CRO_fascism_party long_name = NW_CRO_fascism_party_long }
+}
+EGY = {
+set_politics = { ruling_party = neutrality elections_allowed = no }
+set_popularities = { democratic = 25 fascism = 5 communism = 5 neutrality = 65 }
+
+ set_party_name = { ideology = democratic name = NW_EGY_democratic_party long_name = NW_EGY_democratic_party_long }
+ set_party_name = { ideology = fascism name = NW_EGY_fascism_party long_name = NW_EGY_fascism_party_long }
+ set_party_name = { ideology = communism name = NW_EGY_communism_party long_name = NW_EGY_communism_party_long }
+ set_party_name = { ideology = neutrality name = NW_EGY_neutrality_party long_name = NW_EGY_neutrality_party_long }
+ add_ideas = { nw_egy_nile_kingdom nw_egy_southern_and_western_unrest nw_egy_empire_of_the_nile }
+}
+ENG = {
+ remove_ideas = ENG_the_war_to_end_all_wars
+set_politics = { ruling_party = democratic elections_allowed = yes }
+set_popularities = { democratic = 65 fascism = 5 communism = 10 neutrality = 20 }
+
+ set_party_name = { ideology = democratic name = NW_ENG_democratic_party long_name = NW_ENG_democratic_party_long }
+ set_party_name = { ideology = fascism name = NW_ENG_fascism_party long_name = NW_ENG_fascism_party_long }
+ set_party_name = { ideology = communism name = NW_ENG_communism_party long_name = NW_ENG_communism_party_long }
+ set_party_name = { ideology = neutrality name = NW_ENG_neutrality_party long_name = NW_ENG_neutrality_party_long }
+ add_ideas = { nw_eng_imperial_retreat nw_eng_eastern_anchor nw_eng_invergordon_memory }
+}
+ETH = {
+
+ add_ideas = { nw_eth_red_sea_window nw_eth_ogaden_truce }
+}
+FIN = {
+set_politics = { ruling_party = neutrality elections_allowed = yes }
+set_popularities = { neutrality = 55 democratic = 35 communism = 7 fascism = 3 }
+
+ set_party_name = { ideology = neutrality name = NW_FIN_neutrality_party long_name = NW_FIN_neutrality_party_long }
+ set_party_name = { ideology = democratic name = NW_FIN_democratic_party long_name = NW_FIN_democratic_party_long }
+ set_party_name = { ideology = communism name = NW_FIN_communism_party long_name = NW_FIN_communism_party_long }
+ set_party_name = { ideology = fascism name = NW_FIN_fascism_party long_name = NW_FIN_fascism_party_long }
+ add_ideas = { nw_fin_imperial_autonomy }
+}
+FRA = {
+ remove_ideas = FRA_victors_of_wwi
+ remove_ideas = FRA_protected_by_the_maginot_line
+ remove_ideas = FRA_disjointed_government
+set_politics = { ruling_party = neutrality elections_allowed = no }
+set_popularities = { neutrality = 60 democratic = 25 communism = 10 fascism = 5 }
+
+ set_party_name = { ideology = democratic name = NW_FRA_democratic_party long_name = NW_FRA_democratic_party_long }
+ set_party_name = { ideology = fascism name = NW_FRA_fascism_party long_name = NW_FRA_fascism_party_long }
+ set_party_name = { ideology = communism name = NW_FRA_communism_party long_name = NW_FRA_communism_party_long }
+ set_party_name = { ideology = neutrality name = NW_FRA_neutrality_party long_name = NW_FRA_neutrality_party_long }
+ add_ideas = { nw_fra_paying_bonds nw_fra_revenge_without_war nw_fra_leagues_and_front }
+}
+GAM = {
+
+ add_ideas = { nw_gam_new_patron }
+}
+GER = {
+set_politics = { ruling_party = neutrality elections_allowed = yes }
+set_popularities = { democratic = 35 fascism = 3 communism = 12 neutrality = 50 }
+
+ set_party_name = { ideology = democratic name = NW_GER_democratic_party long_name = NW_GER_democratic_party_long }
+ set_party_name = { ideology = fascism name = NW_GER_fascism_party long_name = NW_GER_fascism_party_long }
+ set_party_name = { ideology = communism name = NW_GER_communism_party long_name = NW_GER_communism_party_long }
+ set_party_name = { ideology = neutrality name = NW_GER_neutrality_party long_name = NW_GER_neutrality_party_long }
+ add_ideas = { nw_ger_continental_workshop nw_ger_crown_and_reichstag nw_ger_high_seas_fleet }
+}
+GRE = {
+set_politics = { ruling_party = neutrality elections_allowed = yes }
+set_popularities = { democratic = 30 fascism = 5 communism = 10 neutrality = 55 }
+
+ set_party_name = { ideology = democratic name = NW_GRE_democratic_party long_name = NW_GRE_democratic_party_long }
+ set_party_name = { ideology = fascism name = NW_GRE_fascism_party long_name = NW_GRE_fascism_party_long }
+ set_party_name = { ideology = communism name = NW_GRE_communism_party long_name = NW_GRE_communism_party_long }
+ set_party_name = { ideology = neutrality name = NW_GRE_neutrality_party long_name = NW_GRE_neutrality_party_long }
+ add_ideas = { nw_gre_overextended_victory nw_gre_island_lifelines }
+}
+GXC = {
+
+ add_ideas = { nw_gxc_provincial_bargain }
+}
+HOL = {
+
+ add_ideas = { nw_hol_eastern_trade }
+}
+HUN = {
+set_politics = { ruling_party = neutrality elections_allowed = no }
+set_popularities = { neutrality = 65 democratic = 25 communism = 5 fascism = 5 }
+
+ set_party_name = { ideology = neutrality name = NW_HUN_neutrality_party long_name = NW_HUN_neutrality_party_long }
+ set_party_name = { ideology = democratic name = NW_HUN_democratic_party long_name = NW_HUN_democratic_party_long }
+ set_party_name = { ideology = communism name = NW_HUN_communism_party long_name = NW_HUN_communism_party_long }
+ set_party_name = { ideology = fascism name = NW_HUN_fascism_party long_name = NW_HUN_fascism_party_long }
+}
+INS = {
+
+ add_ideas = { nw_ins_indian_example }
+}
+ION = {
+
+ add_ideas = { nw_ion_greek_proxy }
+}
+IRE = {
+
+ add_ideas = { nw_ire_thirty_two_counties }
+}
+IRQ = {
+set_politics = { ruling_party = neutrality elections_allowed = no }
+set_popularities = { democratic = 20 fascism = 5 communism = 5 neutrality = 70 }
+
+ set_party_name = { ideology = democratic name = NW_IRQ_democratic_party long_name = NW_IRQ_democratic_party_long }
+ set_party_name = { ideology = fascism name = NW_IRQ_fascism_party long_name = NW_IRQ_fascism_party_long }
+ set_party_name = { ideology = communism name = NW_IRQ_communism_party long_name = NW_IRQ_communism_party_long }
+ set_party_name = { ideology = neutrality name = NW_IRQ_neutrality_party long_name = NW_IRQ_neutrality_party_long }
+ add_ideas = { nw_irq_mosul_question }
+}
+JAP = {
+set_politics = { ruling_party = fascism elections_allowed = no }
+set_popularities = { democratic = 12 fascism = 50 communism = 3 neutrality = 35 }
+
+ set_party_name = { ideology = democratic name = NW_JAP_democratic_party long_name = NW_JAP_democratic_party_long }
+ set_party_name = { ideology = fascism name = NW_JAP_fascism_party long_name = NW_JAP_fascism_party_long }
+ set_party_name = { ideology = communism name = NW_JAP_communism_party long_name = NW_JAP_communism_party_long }
+ set_party_name = { ideology = neutrality name = NW_JAP_neutrality_party long_name = NW_JAP_neutrality_party_long }
+ add_ideas = { nw_jap_silk_crisis nw_jap_officers_politics nw_jap_railway_foothold }
+}
+JOR = {
+set_politics = { ruling_party = neutrality elections_allowed = no }
+set_popularities = { democratic = 20 fascism = 5 communism = 5 neutrality = 70 }
+
+ set_party_name = { ideology = democratic name = NW_JOR_democratic_party long_name = NW_JOR_democratic_party_long }
+ set_party_name = { ideology = fascism name = NW_JOR_fascism_party long_name = NW_JOR_fascism_party_long }
+ set_party_name = { ideology = communism name = NW_JOR_communism_party long_name = NW_JOR_communism_party_long }
+ set_party_name = { ideology = neutrality name = NW_JOR_neutrality_party long_name = NW_JOR_neutrality_party_long }
+ add_ideas = { nw_jor_two_banks }
+}
+KUR = {
+set_politics = { ruling_party = neutrality elections_allowed = no }
+set_popularities = { democratic = 20 fascism = 5 communism = 5 neutrality = 70 }
+
+ set_party_name = { ideology = democratic name = NW_KUR_democratic_party long_name = NW_KUR_democratic_party_long }
+ set_party_name = { ideology = fascism name = NW_KUR_fascism_party long_name = NW_KUR_fascism_party_long }
+ set_party_name = { ideology = communism name = NW_KUR_communism_party long_name = NW_KUR_communism_party_long }
+ set_party_name = { ideology = neutrality name = NW_KUR_neutrality_party long_name = NW_KUR_neutrality_party_long }
+ add_ideas = { nw_kur_persian_connection }
+}
+LAG = {
+
+ add_ideas = { nw_lag_joint_interest }
+}
+LBV = {
+set_politics = { ruling_party = neutrality elections_allowed = yes }
+set_popularities = { democratic = 35 fascism = 5 communism = 10 neutrality = 50 }
+
+ set_party_name = { ideology = democratic name = NW_LBV_democratic_party long_name = NW_LBV_democratic_party_long }
+ set_party_name = { ideology = fascism name = NW_LBV_fascism_party long_name = NW_LBV_fascism_party_long }
+ set_party_name = { ideology = communism name = NW_LBV_communism_party long_name = NW_LBV_communism_party_long }
+ set_party_name = { ideology = neutrality name = NW_LBV_neutrality_party long_name = NW_LBV_neutrality_party_long }
+ add_ideas = { nw_lbv_viennese_settlement }
+}
+LEB = {
+
+ add_ideas = { nw_leb_coastal_compromise }
+}
+MAC = {
+
+ add_ideas = { nw_mac_unrecognized_republic }
+}
+MAN = {
+set_politics = { ruling_party = neutrality elections_allowed = no }
+set_popularities = { democratic = 10 fascism = 5 communism = 5 neutrality = 80 }
+
+ set_party_name = { ideology = democratic name = NW_MAN_democratic_party long_name = NW_MAN_democratic_party_long }
+ set_party_name = { ideology = fascism name = NW_MAN_fascism_party long_name = NW_MAN_fascism_party_long }
+ set_party_name = { ideology = communism name = NW_MAN_communism_party long_name = NW_MAN_communism_party_long }
+ set_party_name = { ideology = neutrality name = NW_MAN_neutrality_party long_name = NW_MAN_neutrality_party_long }
+ add_ideas = { nw_man_two_railways nw_man_guarded_peace }
+}
+MLT = {
+
+ add_ideas = { nw_mlt_order_state }
+}
+MNT = {
+set_politics = { ruling_party = neutrality elections_allowed = no }
+set_popularities = { democratic = 20 fascism = 5 communism = 5 neutrality = 70 }
+
+ set_party_name = { ideology = democratic name = NW_MNT_democratic_party long_name = NW_MNT_democratic_party_long }
+ set_party_name = { ideology = fascism name = NW_MNT_fascism_party long_name = NW_MNT_fascism_party_long }
+ set_party_name = { ideology = communism name = NW_MNT_communism_party long_name = NW_MNT_communism_party_long }
+ set_party_name = { ideology = neutrality name = NW_MNT_neutrality_party long_name = NW_MNT_neutrality_party_long }
+ add_ideas = { nw_mnt_small_crown }
+}
+MON = {
+set_politics = { ruling_party = neutrality elections_allowed = no }
+set_popularities = { democratic = 15 fascism = 5 communism = 10 neutrality = 70 }
+
+ set_party_name = { ideology = democratic name = NW_MON_democratic_party long_name = NW_MON_democratic_party_long }
+ set_party_name = { ideology = fascism name = NW_MON_fascism_party long_name = NW_MON_fascism_party_long }
+ set_party_name = { ideology = communism name = NW_MON_communism_party long_name = NW_MON_communism_party_long }
+ set_party_name = { ideology = neutrality name = NW_MON_neutrality_party long_name = NW_MON_neutrality_party_long }
+ add_ideas = { nw_mon_russian_resident nw_mon_steppe_unification }
+}
+NZL = {
+
+ add_ideas = { nw_nzl_formal_dominion }
+}
+OMA = {
+set_politics = { ruling_party = neutrality elections_allowed = no }
+set_popularities = { neutrality = 70 democratic = 20 communism = 5 fascism = 5 }
+
+ add_ideas = { nw_oma_emirate_compact nw_oma_union_against_saud }
+}
+PAP = {
+set_politics = { ruling_party = neutrality elections_allowed = no }
+set_popularities = { democratic = 15 fascism = 5 communism = 10 neutrality = 70 }
+
+ set_party_name = { ideology = democratic name = NW_PAP_democratic_party long_name = NW_PAP_democratic_party_long }
+ set_party_name = { ideology = fascism name = NW_PAP_fascism_party long_name = NW_PAP_fascism_party_long }
+ set_party_name = { ideology = communism name = NW_PAP_communism_party long_name = NW_PAP_communism_party_long }
+ set_party_name = { ideology = neutrality name = NW_PAP_neutrality_party long_name = NW_PAP_neutrality_party_long }
+ add_ideas = { nw_pap_temporal_power }
+}
+PER = {
+set_politics = { ruling_party = neutrality elections_allowed = no }
+set_popularities = { democratic = 15 fascism = 5 communism = 5 neutrality = 75 }
+
+ set_party_name = { ideology = democratic name = NW_PER_democratic_party long_name = NW_PER_democratic_party_long }
+ set_party_name = { ideology = fascism name = NW_PER_fascism_party long_name = NW_PER_fascism_party_long }
+ set_party_name = { ideology = communism name = NW_PER_communism_party long_name = NW_PER_communism_party_long }
+ set_party_name = { ideology = neutrality name = NW_PER_neutrality_party long_name = NW_PER_neutrality_party_long }
+ add_ideas = { nw_per_spheres_and_reform }
+}
+PHI = {
+
+ add_ideas = { nw_phi_uncertain_transition }
+}
+POL = {
+set_politics = { ruling_party = neutrality elections_allowed = yes }
+set_popularities = { neutrality = 55 democratic = 35 communism = 7 fascism = 3 }
+
+ set_party_name = { ideology = neutrality name = NW_POL_neutrality_party long_name = NW_POL_neutrality_party_long }
+ set_party_name = { ideology = democratic name = NW_POL_democratic_party long_name = NW_POL_democratic_party_long }
+ set_party_name = { ideology = communism name = NW_POL_communism_party long_name = NW_POL_communism_party_long }
+ set_party_name = { ideology = fascism name = NW_POL_fascism_party long_name = NW_POL_fascism_party_long }
+ add_ideas = { nw_pol_imperial_autonomy }
+}
+POR = {
+
+ add_ideas = { nw_por_african_extension }
+}
+PUA = {
+
+ add_ideas = { nw_pua_peoples_union nw_pua_colonial_economy }
+}
+RAJ = {
+ remove_ideas = RAJ_lions_of_the_great_war
+ remove_ideas = RAJ_quit_india_movement
+set_politics = { ruling_party = democratic elections_allowed = yes }
+set_popularities = { democratic = 70 fascism = 5 communism = 10 neutrality = 15 }
+
+ set_party_name = { ideology = democratic name = NW_RAJ_democratic_party long_name = NW_RAJ_democratic_party_long }
+ set_party_name = { ideology = fascism name = NW_RAJ_fascism_party long_name = NW_RAJ_fascism_party_long }
+ set_party_name = { ideology = communism name = NW_RAJ_communism_party long_name = NW_RAJ_communism_party_long }
+ set_party_name = { ideology = neutrality name = NW_RAJ_neutrality_party long_name = NW_RAJ_neutrality_party_long }
+ add_ideas = { nw_raj_congress_federation nw_raj_undivided_market nw_raj_communal_compromise }
+}
+ROM = {
+set_politics = { ruling_party = fascism elections_allowed = no }
+set_popularities = { democratic = 15 fascism = 55 communism = 5 neutrality = 25 }
+
+ set_party_name = { ideology = democratic name = NW_ROM_democratic_party long_name = NW_ROM_democratic_party_long }
+ set_party_name = { ideology = fascism name = NW_ROM_fascism_party long_name = NW_ROM_fascism_party_long }
+ set_party_name = { ideology = communism name = NW_ROM_communism_party long_name = NW_ROM_communism_party_long }
+ set_party_name = { ideology = neutrality name = NW_ROM_neutrality_party long_name = NW_ROM_neutrality_party_long }
+ add_ideas = { nw_rom_legionary_regime nw_rom_oil_diplomacy }
+}
+SAF = {
+
+ add_ideas = { nw_saf_republic_outside_union }
+}
+SAU = {
+set_politics = { ruling_party = neutrality elections_allowed = no }
+set_popularities = { democratic = 20 fascism = 5 communism = 5 neutrality = 70 }
+
+ set_party_name = { ideology = democratic name = NW_SAU_democratic_party long_name = NW_SAU_democratic_party_long }
+ set_party_name = { ideology = fascism name = NW_SAU_fascism_party long_name = NW_SAU_fascism_party_long }
+ set_party_name = { ideology = communism name = NW_SAU_communism_party long_name = NW_SAU_communism_party_long }
+ set_party_name = { ideology = neutrality name = NW_SAU_neutrality_party long_name = NW_SAU_neutrality_party_long }
+ add_ideas = { nw_sau_conquered_hejaz }
+}
+SER = {
+set_politics = { ruling_party = democratic elections_allowed = yes }
+set_popularities = { democratic = 55 fascism = 7 communism = 8 neutrality = 30 }
+
+ set_party_name = { ideology = democratic name = NW_SER_democratic_party long_name = NW_SER_democratic_party_long }
+ set_party_name = { ideology = fascism name = NW_SER_fascism_party long_name = NW_SER_fascism_party_long }
+ set_party_name = { ideology = communism name = NW_SER_communism_party long_name = NW_SER_communism_party_long }
+ set_party_name = { ideology = neutrality name = NW_SER_neutrality_party long_name = NW_SER_neutrality_party_long }
+ add_ideas = { nw_ser_defeated_kingdom nw_ser_underground_networks }
+}
+SHX = {
+
+ add_ideas = { nw_shx_provincial_bargain }
+}
+SIE = {
+
+ add_ideas = { nw_sie_new_patron }
+}
+SIK = {
+set_politics = { ruling_party = neutrality elections_allowed = no }
+set_popularities = { democratic = 25 fascism = 5 communism = 10 neutrality = 60 }
+
+ set_party_name = { ideology = democratic name = NW_SIK_democratic_party long_name = NW_SIK_democratic_party_long }
+ set_party_name = { ideology = fascism name = NW_SIK_fascism_party long_name = NW_SIK_fascism_party_long }
+ set_party_name = { ideology = communism name = NW_SIK_communism_party long_name = NW_SIK_communism_party_long }
+ set_party_name = { ideology = neutrality name = NW_SIK_neutrality_party long_name = NW_SIK_neutrality_party_long }
+ add_ideas = { nw_sik_sponsored_independence nw_sik_oasis_politics }
+}
+SOM = {
+
+ add_ideas = { nw_som_coastal_republic }
+}
+SOV = {
+ remove_ideas = trotskyite_plot
+ remove_ideas = trotskyite_plot_purged
+ remove_ideas = officers_purged
+ remove_ideas = officers_purged_2
+ remove_ideas = officers_purged_3
+ remove_ideas = officers_purged_4
+ remove_ideas = officers_purged_5
+ remove_ideas = officers_purged_6
+ remove_ideas = officers_purged_7
+ remove_ideas = officers_purged_8
+ remove_ideas = officers_purged_9
+ remove_ideas = officers_purged_10
+set_politics = { ruling_party = neutrality elections_allowed = no }
+set_popularities = { democratic = 20 fascism = 8 communism = 7 neutrality = 65 }
+
+ set_party_name = { ideology = democratic name = NW_SOV_democratic_party long_name = NW_SOV_democratic_party_long }
+ set_party_name = { ideology = fascism name = NW_SOV_fascism_party long_name = NW_SOV_fascism_party_long }
+ set_party_name = { ideology = communism name = NW_SOV_communism_party long_name = NW_SOV_communism_party_long }
+ set_party_name = { ideology = neutrality name = NW_SOV_neutrality_party long_name = NW_SOV_neutrality_party_long }
+ add_ideas = { nw_sov_unbroken_growth nw_sov_court_government nw_sov_fragile_sovereign nw_sov_restless_borderlands }
+}
+SPM = {
+set_politics = { ruling_party = democratic elections_allowed = yes }
+set_popularities = { democratic = 60 fascism = 5 communism = 15 neutrality = 20 }
+
+ set_party_name = { ideology = democratic name = NW_SPM_democratic_party long_name = NW_SPM_democratic_party_long }
+ set_party_name = { ideology = fascism name = NW_SPM_fascism_party long_name = NW_SPM_fascism_party_long }
+ set_party_name = { ideology = communism name = NW_SPM_communism_party long_name = NW_SPM_communism_party_long }
+ set_party_name = { ideology = neutrality name = NW_SPM_neutrality_party long_name = NW_SPM_neutrality_party_long }
+ add_ideas = { nw_spm_parliamentary_refuge nw_spm_french_shelter }
+}
+SPR = {
+
+ add_ideas = { nw_spr_southern_example }
+}
+SRI = {
+set_politics = { ruling_party = communism elections_allowed = no }
+set_popularities = { democratic = 15 fascism = 5 communism = 70 neutrality = 10 }
+
+ set_party_name = { ideology = democratic name = NW_SRI_democratic_party long_name = NW_SRI_democratic_party_long }
+ set_party_name = { ideology = fascism name = NW_SRI_fascism_party long_name = NW_SRI_fascism_party_long }
+ set_party_name = { ideology = communism name = NW_SRI_communism_party long_name = NW_SRI_communism_party_long }
+ set_party_name = { ideology = neutrality name = NW_SRI_neutrality_party long_name = NW_SRI_neutrality_party_long }
+ add_ideas = { nw_sri_neapolitan_councils nw_sri_agrarian_south nw_sri_revolutionary_beacon }
+}
+STR = {
+set_politics = { ruling_party = neutrality elections_allowed = yes }
+set_popularities = { democratic = 45 fascism = 5 communism = 10 neutrality = 40 }
+
+ set_party_name = { ideology = democratic name = NW_STR_democratic_party long_name = NW_STR_democratic_party_long }
+ set_party_name = { ideology = fascism name = NW_STR_fascism_party long_name = NW_STR_fascism_party_long }
+ set_party_name = { ideology = communism name = NW_STR_communism_party long_name = NW_STR_communism_party_long }
+ set_party_name = { ideology = neutrality name = NW_STR_neutrality_party long_name = NW_STR_neutrality_party_long }
+ add_ideas = { nw_str_straits_republic nw_str_greek_proxy }
+}
+SYR = {
+
+ add_ideas = { nw_syr_french_supervision }
+}
+TIB = {
+
+ add_ideas = { nw_tib_regency nw_tib_indian_guarantee }
+}
+TUR = {
+set_politics = { ruling_party = neutrality elections_allowed = no }
+set_popularities = { democratic = 15 fascism = 20 communism = 5 neutrality = 60 }
+
+ set_party_name = { ideology = democratic name = NW_TUR_democratic_party long_name = NW_TUR_democratic_party_long }
+ set_party_name = { ideology = fascism name = NW_TUR_fascism_party long_name = NW_TUR_fascism_party_long }
+ set_party_name = { ideology = communism name = NW_TUR_communism_party long_name = NW_TUR_communism_party_long }
+ set_party_name = { ideology = neutrality name = NW_TUR_neutrality_party long_name = NW_TUR_neutrality_party_long }
+ add_ideas = { nw_tur_palace_and_army nw_tur_lost_provinces nw_tur_german_machinery }
+}
+USA = {
+set_politics = { ruling_party = democratic elections_allowed = yes }
+set_popularities = { democratic = 65 fascism = 3 communism = 7 neutrality = 25 }
+
+ set_party_name = { ideology = democratic name = NW_USA_democratic_party long_name = NW_USA_democratic_party_long }
+ set_party_name = { ideology = fascism name = NW_USA_fascism_party long_name = NW_USA_fascism_party_long }
+ set_party_name = { ideology = communism name = NW_USA_communism_party long_name = NW_USA_communism_party_long }
+ set_party_name = { ideology = neutrality name = NW_USA_neutrality_party long_name = NW_USA_neutrality_party_long }
+ add_ideas = { nw_usa_populist_storm nw_usa_oceanic_distance }
+}
+XSM = {
+
+ add_ideas = { nw_xsm_provincial_bargain }
+}
+YEM = {
+set_politics = { ruling_party = democratic elections_allowed = yes }
+set_popularities = { democratic = 65 neutrality = 20 communism = 10 fascism = 5 }
+
+ set_party_name = { ideology = democratic name = NW_YEM_democratic_party long_name = NW_YEM_democratic_party_long }
+ set_party_name = { ideology = neutrality name = NW_YEM_neutrality_party long_name = NW_YEM_neutrality_party_long }
+ set_party_name = { ideology = communism name = NW_YEM_communism_party long_name = NW_YEM_communism_party_long }
+ set_party_name = { ideology = fascism name = NW_YEM_fascism_party long_name = NW_YEM_fascism_party_long }
+ add_ideas = { nw_yem_republican_union }
+}
+YUN = {
+
+ add_ideas = { nw_yun_provincial_bargain }
+}
+FRA = {
+ set_politics = { ruling_party = neutrality elections_allowed = no }
+ set_popularities = { neutrality = 60 democratic = 25 communism = 10 fascism = 5 }
+ set_party_name = { ideology = neutrality name = NW_FRA_neutrality_party long_name = NW_FRA_neutrality_party_long }
+}
+
+POL = { set_cosmetic_tag = NW_POLISH_KINGDOM }
+
+FIN = { set_cosmetic_tag = NW_FINNISH_DUCHY }
+
+# Pre-alpha general tree for active countries; MAN keeps its commission tree.
+every_country = { limit = { NOT = { tag = MAN } } load_focus_tree = { tree = NW_generic_development keep_completed = no } }

@@ -1,0 +1,297 @@
+nw14_reichstag = {
+nw14_mediation = { icon = generic_political_actions cost = 35
+ available = { check_variable = { nw_tension > 9 } }
+ days_re_enable = 30
+ complete_effect = { add_to_variable = { var = nw_tension value = -15 } clamp_variable = { var = nw_tension min = 0 max = 100 } } ai_will_do = { factor = 8 }
+}
+nw14_coal_centre = { icon = generic_political_actions cost = 50
+ visible = { NOT = { has_country_flag = nw_coal_centre } NOT = { has_country_flag = nw_ger_red } }
+ days_re_enable = 180
+ complete_effect = { set_country_flag = nw_coal_centre nw14_recount = yes add_to_variable = { var = nw_tension value = -5 } clamp_variable = { var = nw_tension min = 0 max = 100 } } ai_will_do = { factor = 4 }
+}
+nw14_leave_centre = { icon = generic_political_actions cost = 0
+ visible = { has_country_flag = nw_coal_centre }
+ days_re_enable = 30
+ complete_effect = { clr_country_flag = nw_coal_centre nw14_recount = yes add_to_variable = { var = nw_tension value = 5 } clamp_variable = { var = nw_tension min = 0 max = 100 } } ai_will_do = { factor = 0 }
+}
+nw14_coal_fvp = { icon = generic_political_actions cost = 50
+ visible = { NOT = { has_country_flag = nw_coal_fvp } NOT = { has_country_flag = nw_ger_red } }
+ days_re_enable = 180
+ complete_effect = { set_country_flag = nw_coal_fvp nw14_recount = yes add_to_variable = { var = nw_tension value = -5 } clamp_variable = { var = nw_tension min = 0 max = 100 } } ai_will_do = { factor = 4 }
+}
+nw14_leave_fvp = { icon = generic_political_actions cost = 0
+ visible = { has_country_flag = nw_coal_fvp }
+ days_re_enable = 30
+ complete_effect = { clr_country_flag = nw_coal_fvp nw14_recount = yes add_to_variable = { var = nw_tension value = 5 } clamp_variable = { var = nw_tension min = 0 max = 100 } } ai_will_do = { factor = 0 }
+}
+nw14_by_elections = { icon = generic_political_actions cost = 50
+ visible = { has_country_flag = nw_ger_emergency }
+ available = { check_variable = { nw_vacant > 19 } }
+ days_re_enable = 90
+ complete_effect = { add_to_variable = { var = nw_vacant value = -20 } add_to_variable = { var = nw_dnvp value = 10 } add_to_variable = { var = nw_centre value = 6 } add_to_variable = { var = nw_fvp value = 4 } nw14_recount = yes add_to_variable = { var = nw_tension value = 5 } clamp_variable = { var = nw_tension min = 0 max = 100 } } ai_will_do = { factor = 2 }
+}
+nw14_election = { icon = generic_political_actions cost = 60
+ visible = { has_country_flag = nw_ger_constitution has_country_flag = nw_spd_united }
+ available = { has_war = no }
+ days_re_enable = 730
+ complete_effect = { if = { limit = { check_variable = { nw_tension > 49 } } set_variable = { nw_spd = 185 } set_variable = { nw_centre = 70 } set_variable = { nw_fvp = 62 } set_variable = { nw_dnvp = 80 } } else = { set_variable = { nw_spd = 225 } set_variable = { nw_centre = 60 } set_variable = { nw_fvp = 52 } set_variable = { nw_dnvp = 60 } } set_variable = { nw_kpd = 0 } set_variable = { nw_uspd = 0 } set_variable = { nw_vacant = 0 } nw14_recount = yes add_stability = 0.02 } ai_will_do = { factor = 1 }
+}
+}
+
+nw14_revolution = {
+nw14_organise = { icon = generic_political_actions cost = 40
+ available = { NOT = { check_variable = { nw_network > 89 } } }
+ days_re_enable = 45
+ complete_effect = { add_to_variable = { var = nw_network value = 15 } clamp_variable = { var = nw_network min = 0 max = 100 } } ai_will_do = { factor = 6 }
+}
+nw14_resume_ger = { icon = generic_political_actions cost = 0
+ visible = { has_country_flag = nw_ger_war_pending }
+ available = { has_war = no is_subject = no owns_state = 64 owns_state = 59 NOT = { exists = BAY } NOT = { exists = GPL } NOT = { has_country_flag = nw_ger_war_started } check_variable = { nw_network > 39 } }
+ days_re_enable = 30
+ complete_effect = { country_event = { id = nw14.10 } } ai_will_do = { factor = 8 }
+}
+nw14_cells_FRA = { icon = generic_political_actions cost = 50
+ visible = { has_country_flag = nw_revolution_bureau FRA = { exists = yes is_subject = no NOT = { has_government = communism } NOT = { has_war_with = GER } } }
+ available = { check_variable = { nw_network > 14 } }
+ days_re_enable = 60
+ complete_effect = { add_to_variable = { var = nw_network value = -15 } clamp_variable = { var = nw_network min = 0 max = 100 } FRA = { add_to_variable = { var = nw_foreign_preparation value = 20 } clamp_variable = { var = nw_foreign_preparation min = 0 max = 100 } add_popularity = { ideology = communism popularity = 0.05 } country_event = { id = nw14.60 } } } ai_will_do = { factor = 2 }
+}
+nw14_rising_FRA = { icon = generic_political_actions cost = 100
+ visible = { has_country_flag = nw_revolution_bureau FRA = { exists = yes is_subject = no NOT = { has_government = communism } NOT = { has_war_with = GER } } }
+ available = { FRA = { has_war = no stability < 0.45 communism > 0.3 check_variable = { nw_foreign_preparation > 79 } } check_variable = { nw_network > 39 } has_war = no }
+ fire_only_once = yes
+ complete_effect = { add_to_variable = { var = nw_network value = -40 } clamp_variable = { var = nw_network min = 0 max = 100 } FRA = { set_variable = { nw_foreign_preparation = 0 } start_civil_war = { ideology = communism size = 0.35 save_global_event_target_as = nw14_export_rebels } } if = { limit = { is_faction_leader = yes has_government = communism } add_to_faction = event_target:nw14_export_rebels } } ai_will_do = { factor = 1 }
+}
+nw14_cells_BEL = { icon = generic_political_actions cost = 50
+ visible = { has_country_flag = nw_revolution_bureau BEL = { exists = yes is_subject = no NOT = { has_government = communism } NOT = { has_war_with = GER } } }
+ available = { check_variable = { nw_network > 14 } }
+ days_re_enable = 60
+ complete_effect = { add_to_variable = { var = nw_network value = -15 } clamp_variable = { var = nw_network min = 0 max = 100 } BEL = { add_to_variable = { var = nw_foreign_preparation value = 20 } clamp_variable = { var = nw_foreign_preparation min = 0 max = 100 } add_popularity = { ideology = communism popularity = 0.05 } country_event = { id = nw14.60 } } } ai_will_do = { factor = 2 }
+}
+nw14_rising_BEL = { icon = generic_political_actions cost = 100
+ visible = { has_country_flag = nw_revolution_bureau BEL = { exists = yes is_subject = no NOT = { has_government = communism } NOT = { has_war_with = GER } } }
+ available = { BEL = { has_war = no stability < 0.45 communism > 0.3 check_variable = { nw_foreign_preparation > 79 } } check_variable = { nw_network > 39 } has_war = no }
+ fire_only_once = yes
+ complete_effect = { add_to_variable = { var = nw_network value = -40 } clamp_variable = { var = nw_network min = 0 max = 100 } BEL = { set_variable = { nw_foreign_preparation = 0 } start_civil_war = { ideology = communism size = 0.35 save_global_event_target_as = nw14_export_rebels } } if = { limit = { is_faction_leader = yes has_government = communism } add_to_faction = event_target:nw14_export_rebels } } ai_will_do = { factor = 1 }
+}
+nw14_cells_SPM = { icon = generic_political_actions cost = 50
+ visible = { has_country_flag = nw_revolution_bureau SPM = { exists = yes is_subject = no NOT = { has_government = communism } NOT = { has_war_with = GER } } }
+ available = { check_variable = { nw_network > 14 } }
+ days_re_enable = 60
+ complete_effect = { add_to_variable = { var = nw_network value = -15 } clamp_variable = { var = nw_network min = 0 max = 100 } SPM = { add_to_variable = { var = nw_foreign_preparation value = 20 } clamp_variable = { var = nw_foreign_preparation min = 0 max = 100 } add_popularity = { ideology = communism popularity = 0.05 } country_event = { id = nw14.60 } } } ai_will_do = { factor = 2 }
+}
+nw14_rising_SPM = { icon = generic_political_actions cost = 100
+ visible = { has_country_flag = nw_revolution_bureau SPM = { exists = yes is_subject = no NOT = { has_government = communism } NOT = { has_war_with = GER } } }
+ available = { SPM = { has_war = no stability < 0.45 communism > 0.3 check_variable = { nw_foreign_preparation > 79 } } check_variable = { nw_network > 39 } has_war = no }
+ fire_only_once = yes
+ complete_effect = { add_to_variable = { var = nw_network value = -40 } clamp_variable = { var = nw_network min = 0 max = 100 } SPM = { set_variable = { nw_foreign_preparation = 0 } start_civil_war = { ideology = communism size = 0.35 save_global_event_target_as = nw14_export_rebels } } if = { limit = { is_faction_leader = yes has_government = communism } add_to_faction = event_target:nw14_export_rebels } } ai_will_do = { factor = 1 }
+}
+nw14_cells_AUS = { icon = generic_political_actions cost = 50
+ visible = { has_country_flag = nw_revolution_bureau AUS = { exists = yes is_subject = no NOT = { has_government = communism } NOT = { has_war_with = GER } } }
+ available = { check_variable = { nw_network > 14 } }
+ days_re_enable = 60
+ complete_effect = { add_to_variable = { var = nw_network value = -15 } clamp_variable = { var = nw_network min = 0 max = 100 } AUS = { add_to_variable = { var = nw_foreign_preparation value = 20 } clamp_variable = { var = nw_foreign_preparation min = 0 max = 100 } add_popularity = { ideology = communism popularity = 0.05 } country_event = { id = nw14.60 } } } ai_will_do = { factor = 2 }
+}
+nw14_rising_AUS = { icon = generic_political_actions cost = 100
+ visible = { has_country_flag = nw_revolution_bureau AUS = { exists = yes is_subject = no NOT = { has_government = communism } NOT = { has_war_with = GER } } }
+ available = { AUS = { has_war = no stability < 0.45 communism > 0.3 check_variable = { nw_foreign_preparation > 79 } } check_variable = { nw_network > 39 } has_war = no }
+ fire_only_once = yes
+ complete_effect = { add_to_variable = { var = nw_network value = -40 } clamp_variable = { var = nw_network min = 0 max = 100 } AUS = { set_variable = { nw_foreign_preparation = 0 } start_civil_war = { ideology = communism size = 0.35 save_global_event_target_as = nw14_export_rebels } } if = { limit = { is_faction_leader = yes has_government = communism } add_to_faction = event_target:nw14_export_rebels } } ai_will_do = { factor = 1 }
+}
+}
+
+nw14_pan = {
+nw14_invite_BEL = { icon = generic_political_actions cost = 25
+ visible = { BEL = { exists = yes has_government = democratic is_subject = no is_in_faction = no NOT = { has_war_with = GER } } }
+ available = { is_faction_leader = yes has_government = democratic }
+ days_re_enable = 365
+ complete_effect = { BEL = { country_event = { id = nw14.30 } } } ai_will_do = { factor = 2 }
+}
+nw14_guarantee_BEL = { icon = generic_political_actions cost = 25
+ visible = { has_country_flag = nw_democratic_guarantees BEL = { exists = yes has_government = democratic is_subject = no } }
+ available = { NOT = { has_war_with = BEL } }
+ fire_only_once = yes
+ complete_effect = { diplomatic_relation = { country = BEL relation = guarantee active = yes } } ai_will_do = { factor = 1 }
+}
+nw14_invite_HOL = { icon = generic_political_actions cost = 25
+ visible = { HOL = { exists = yes has_government = democratic is_subject = no is_in_faction = no NOT = { has_war_with = GER } } }
+ available = { is_faction_leader = yes has_government = democratic }
+ days_re_enable = 365
+ complete_effect = { HOL = { country_event = { id = nw14.30 } } } ai_will_do = { factor = 2 }
+}
+nw14_guarantee_HOL = { icon = generic_political_actions cost = 25
+ visible = { has_country_flag = nw_democratic_guarantees HOL = { exists = yes has_government = democratic is_subject = no } }
+ available = { NOT = { has_war_with = HOL } }
+ fire_only_once = yes
+ complete_effect = { diplomatic_relation = { country = HOL relation = guarantee active = yes } } ai_will_do = { factor = 1 }
+}
+nw14_invite_DEN = { icon = generic_political_actions cost = 25
+ visible = { DEN = { exists = yes has_government = democratic is_subject = no is_in_faction = no NOT = { has_war_with = GER } } }
+ available = { is_faction_leader = yes has_government = democratic }
+ days_re_enable = 365
+ complete_effect = { DEN = { country_event = { id = nw14.30 } } } ai_will_do = { factor = 2 }
+}
+nw14_guarantee_DEN = { icon = generic_political_actions cost = 25
+ visible = { has_country_flag = nw_democratic_guarantees DEN = { exists = yes has_government = democratic is_subject = no } }
+ available = { NOT = { has_war_with = DEN } }
+ fire_only_once = yes
+ complete_effect = { diplomatic_relation = { country = DEN relation = guarantee active = yes } } ai_will_do = { factor = 1 }
+}
+nw14_invite_NOR = { icon = generic_political_actions cost = 25
+ visible = { NOR = { exists = yes has_government = democratic is_subject = no is_in_faction = no NOT = { has_war_with = GER } } }
+ available = { is_faction_leader = yes has_government = democratic }
+ days_re_enable = 365
+ complete_effect = { NOR = { country_event = { id = nw14.30 } } } ai_will_do = { factor = 2 }
+}
+nw14_guarantee_NOR = { icon = generic_political_actions cost = 25
+ visible = { has_country_flag = nw_democratic_guarantees NOR = { exists = yes has_government = democratic is_subject = no } }
+ available = { NOT = { has_war_with = NOR } }
+ fire_only_once = yes
+ complete_effect = { diplomatic_relation = { country = NOR relation = guarantee active = yes } } ai_will_do = { factor = 1 }
+}
+nw14_invite_SWE = { icon = generic_political_actions cost = 25
+ visible = { SWE = { exists = yes has_government = democratic is_subject = no is_in_faction = no NOT = { has_war_with = GER } } }
+ available = { is_faction_leader = yes has_government = democratic }
+ days_re_enable = 365
+ complete_effect = { SWE = { country_event = { id = nw14.30 } } } ai_will_do = { factor = 2 }
+}
+nw14_guarantee_SWE = { icon = generic_political_actions cost = 25
+ visible = { has_country_flag = nw_democratic_guarantees SWE = { exists = yes has_government = democratic is_subject = no } }
+ available = { NOT = { has_war_with = SWE } }
+ fire_only_once = yes
+ complete_effect = { diplomatic_relation = { country = SWE relation = guarantee active = yes } } ai_will_do = { factor = 1 }
+}
+nw14_invite_SWI = { icon = generic_political_actions cost = 25
+ visible = { SWI = { exists = yes has_government = democratic is_subject = no is_in_faction = no NOT = { has_war_with = GER } } }
+ available = { is_faction_leader = yes has_government = democratic }
+ days_re_enable = 365
+ complete_effect = { SWI = { country_event = { id = nw14.30 } } } ai_will_do = { factor = 2 }
+}
+nw14_guarantee_SWI = { icon = generic_political_actions cost = 25
+ visible = { has_country_flag = nw_democratic_guarantees SWI = { exists = yes has_government = democratic is_subject = no } }
+ available = { NOT = { has_war_with = SWI } }
+ fire_only_once = yes
+ complete_effect = { diplomatic_relation = { country = SWI relation = guarantee active = yes } } ai_will_do = { factor = 1 }
+}
+nw14_invite_SPM = { icon = generic_political_actions cost = 25
+ visible = { SPM = { exists = yes has_government = democratic is_subject = no is_in_faction = no NOT = { has_war_with = GER } } }
+ available = { is_faction_leader = yes has_government = democratic }
+ days_re_enable = 365
+ complete_effect = { SPM = { country_event = { id = nw14.30 } } } ai_will_do = { factor = 2 }
+}
+nw14_guarantee_SPM = { icon = generic_political_actions cost = 25
+ visible = { has_country_flag = nw_democratic_guarantees SPM = { exists = yes has_government = democratic is_subject = no } }
+ available = { NOT = { has_war_with = SPM } }
+ fire_only_once = yes
+ complete_effect = { diplomatic_relation = { country = SPM relation = guarantee active = yes } } ai_will_do = { factor = 1 }
+}
+nw14_invite_LBV = { icon = generic_political_actions cost = 25
+ visible = { LBV = { exists = yes has_government = democratic is_subject = no is_in_faction = no NOT = { has_war_with = GER } } }
+ available = { is_faction_leader = yes has_government = democratic }
+ days_re_enable = 365
+ complete_effect = { LBV = { country_event = { id = nw14.30 } } } ai_will_do = { factor = 2 }
+}
+nw14_guarantee_LBV = { icon = generic_political_actions cost = 25
+ visible = { has_country_flag = nw_democratic_guarantees LBV = { exists = yes has_government = democratic is_subject = no } }
+ available = { NOT = { has_war_with = LBV } }
+ fire_only_once = yes
+ complete_effect = { diplomatic_relation = { country = LBV relation = guarantee active = yes } } ai_will_do = { factor = 1 }
+}
+nw14_invite_POL = { icon = generic_political_actions cost = 25
+ visible = { POL = { exists = yes has_government = democratic is_subject = no is_in_faction = no NOT = { has_war_with = GER } } }
+ available = { is_faction_leader = yes has_government = democratic }
+ days_re_enable = 365
+ complete_effect = { POL = { country_event = { id = nw14.30 } } } ai_will_do = { factor = 2 }
+}
+nw14_guarantee_POL = { icon = generic_political_actions cost = 25
+ visible = { has_country_flag = nw_democratic_guarantees POL = { exists = yes has_government = democratic is_subject = no } }
+ available = { NOT = { has_war_with = POL } }
+ fire_only_once = yes
+ complete_effect = { diplomatic_relation = { country = POL relation = guarantee active = yes } } ai_will_do = { factor = 1 }
+}
+nw14_invite_FIN = { icon = generic_political_actions cost = 25
+ visible = { FIN = { exists = yes has_government = democratic is_subject = no is_in_faction = no NOT = { has_war_with = GER } } }
+ available = { is_faction_leader = yes has_government = democratic }
+ days_re_enable = 365
+ complete_effect = { FIN = { country_event = { id = nw14.30 } } } ai_will_do = { factor = 2 }
+}
+nw14_guarantee_FIN = { icon = generic_political_actions cost = 25
+ visible = { has_country_flag = nw_democratic_guarantees FIN = { exists = yes has_government = democratic is_subject = no } }
+ available = { NOT = { has_war_with = FIN } }
+ fire_only_once = yes
+ complete_effect = { diplomatic_relation = { country = FIN relation = guarantee active = yes } } ai_will_do = { factor = 1 }
+}
+}
+
+nw14_russia = {
+nw14_treatment = { icon = generic_political_actions cost = 40
+ visible = { NOT = { has_country_flag = nw_alexei_dead } NOT = { has_country_flag = nw_rus_recovered } }
+ available = { NOT = { check_variable = { nw_health > 88 } } }
+ days_re_enable = 45
+ complete_effect = { add_to_variable = { var = nw_health value = 12 } clamp_variable = { var = nw_health min = 0 max = 100 } } ai_will_do = { factor = 6 }
+}
+nw14_zemstvo_meeting = { icon = generic_political_actions cost = 35
+ available = { NOT = { check_variable = { nw_trust > 88 } } }
+ days_re_enable = 60
+ complete_effect = { add_to_variable = { var = nw_trust value = 12 } clamp_variable = { var = nw_trust min = 0 max = 100 } } ai_will_do = { factor = 4 }
+}
+nw14_officers = { icon = generic_political_actions cost = 40
+ visible = { NOT = { has_country_flag = nw_rus_war_started } }
+ available = { NOT = { check_variable = { nw_army_loyalty > 89 } } }
+ days_re_enable = 60
+ complete_effect = { add_to_variable = { var = nw_army_loyalty value = 10 } clamp_variable = { var = nw_army_loyalty min = 0 max = 100 } } ai_will_do = { factor = 3 }
+}
+nw14_opposition_meeting = { icon = generic_political_actions cost = 40
+ visible = { has_country_flag = nw_rus_republic NOT = { has_country_flag = nw_rus_war_started } }
+ available = { NOT = { check_variable = { nw_opposition > 89 } } }
+ days_re_enable = 45
+ complete_effect = { add_to_variable = { var = nw_opposition value = 15 } clamp_variable = { var = nw_opposition min = 0 max = 100 } add_to_variable = { var = nw_trust value = -5 } clamp_variable = { var = nw_trust min = 0 max = 100 } } ai_will_do = { factor = 4 }
+}
+nw14_resume_rus = { icon = generic_political_actions cost = 0
+ visible = { has_country_flag = nw_rus_war_pending }
+ available = { has_war = no is_subject = no owns_state = 195 owns_state = 219 owns_state = 202 owns_state = 218 owns_state = 570 NOT = { exists = RSB } NOT = { exists = RDN } NOT = { exists = RUK } NOT = { has_country_flag = nw_rus_war_started } check_variable = { nw_opposition > 39 } }
+ days_re_enable = 30
+ complete_effect = { country_event = { id = nw14.20 } } ai_will_do = { factor = 8 }
+}
+}
+
+nw14_federal = {
+nw14_federal_consult = { icon = generic_political_actions cost = 45
+ visible = { tag = AUS }
+ available = { NOT = { check_variable = { nw_federal_trust > 89 } } }
+ days_re_enable = 45
+ complete_effect = { add_to_variable = { var = nw_federal_trust value = 15 } clamp_variable = { var = nw_federal_trust min = 0 max = 100 } } ai_will_do = { factor = 6 }
+}
+nw14_renew_HUN = { icon = generic_political_actions cost = 60
+ visible = { tag = AUS has_country_flag = nw_federal_compact HUN = { is_subject_of = AUS NOT = { has_country_flag = nw_federal_consent } } }
+ days_re_enable = 90
+ complete_effect = { HUN = { country_event = { id = nw14.40 } } add_to_variable = { var = nw_federal_trust value = 10 } clamp_variable = { var = nw_federal_trust min = 0 max = 100 } } ai_will_do = { factor = 5 }
+}
+nw14_renew_CZE = { icon = generic_political_actions cost = 60
+ visible = { tag = AUS has_country_flag = nw_federal_compact CZE = { is_subject_of = AUS NOT = { has_country_flag = nw_federal_consent } } }
+ days_re_enable = 90
+ complete_effect = { CZE = { country_event = { id = nw14.41 } } add_to_variable = { var = nw_federal_trust value = 10 } clamp_variable = { var = nw_federal_trust min = 0 max = 100 } } ai_will_do = { factor = 5 }
+}
+nw14_renew_CRO = { icon = generic_political_actions cost = 60
+ visible = { tag = AUS has_country_flag = nw_federal_compact CRO = { is_subject_of = AUS NOT = { has_country_flag = nw_federal_consent } } }
+ days_re_enable = 90
+ complete_effect = { CRO = { country_event = { id = nw14.42 } } add_to_variable = { var = nw_federal_trust value = 10 } clamp_variable = { var = nw_federal_trust min = 0 max = 100 } } ai_will_do = { factor = 5 }
+}
+nw14_sign_compact = { icon = generic_political_actions cost = 25
+ visible = { NOT = { tag = AUS } is_subject_of = AUS AUS = { has_country_flag = nw_federal_compact } NOT = { has_country_flag = nw_federal_consent } }
+ fire_only_once = yes
+ complete_effect = { set_country_flag = nw_federal_consent AUS = { add_to_variable = { var = nw_federal_trust value = 8 } clamp_variable = { var = nw_federal_trust min = 0 max = 100 } } } ai_will_do = { factor = 2 }
+}
+nw14_hun_renew = { icon = generic_political_actions cost = 35
+ visible = { tag = HUN has_completed_focus = NW14_HUN_renegotiate_dualism NOT = { has_country_flag = nw_hun_guarantees } }
+ available = { is_subject_of = AUS }
+ days_re_enable = 90
+ complete_effect = { AUS = { country_event = { id = nw14.43 } } } ai_will_do = { factor = 4 }
+}
+nw14_county_council = { icon = generic_political_actions cost = 35
+ visible = { tag = HUN }
+ available = { NOT = { check_variable = { nw_hungarian_trust > 89 } } }
+ days_re_enable = 60
+ complete_effect = { add_to_variable = { var = nw_hungarian_trust value = 15 } clamp_variable = { var = nw_hungarian_trust min = 0 max = 100 } } ai_will_do = { factor = 3 }
+}
+}

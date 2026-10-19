@@ -1,0 +1,1 @@
+on_actions = { on_monthly = { effect = { nw14_monthly = yes } } }

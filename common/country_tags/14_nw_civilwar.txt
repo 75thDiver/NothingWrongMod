@@ -1,0 +1,4 @@
+GPL = "countries/NW14_GPL.txt"
+RSB = "countries/NW14_RSB.txt"
+RDN = "countries/NW14_RDN.txt"
+RUK = "countries/NW14_RUK.txt"

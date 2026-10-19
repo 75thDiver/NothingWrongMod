@@ -1,0 +1,82 @@
+﻿add_namespace = nw14
+
+country_event = { id = nw14.1 title = nw14.1.t desc = nw14.1.d is_triggered_only = yes
+ option = { name = nw14.1.a ai_chance = { factor = 70 } add_to_variable = { var = nw_tension value = -5 } clamp_variable = { var = nw_tension min = 0 max = 100 } add_political_power = -25 }
+ option = { name = nw14.1.b ai_chance = { factor = 30 } add_to_variable = { var = nw_tension value = 10 } clamp_variable = { var = nw_tension min = 0 max = 100 } add_to_variable = { var = nw_network value = 10 } clamp_variable = { var = nw_network min = 0 max = 100 } }
+}
+
+country_event = { id = nw14.10 title = nw14.10.t desc = nw14.10.d is_triggered_only = yes
+ option = { name = nw14.10.a ai_chance = { factor = 80 } trigger = { NOT = { has_country_flag = nw_ger_war_started } } nw14_ger_fragmentation = yes }
+ option = { name = nw14.10.b ai_chance = { factor = 20 } set_country_flag = nw_ger_war_pending }
+}
+
+country_event = { id = nw14.20 title = nw14.20.t desc = nw14.20.d is_triggered_only = yes
+ option = { name = nw14.20.a ai_chance = { factor = 80 } trigger = { NOT = { has_country_flag = nw_rus_war_started } } nw14_rus_fragmentation = yes }
+ option = { name = nw14.20.b ai_chance = { factor = 20 } set_country_flag = nw_rus_war_pending }
+}
+
+country_event = { id = nw14.30 title = nw14.30.t desc = nw14.30.d is_triggered_only = yes
+ option = { name = nw14.30.a ai_chance = { factor = 65 } trigger = { has_government = democratic is_subject = no is_in_faction = no GER = { is_faction_leader = yes has_government = democratic has_country_flag = nw_pan_europe } } GER = { add_to_faction = ROOT } }
+ option = { name = nw14.30.b ai_chance = { factor = 35 } add_political_power = 10 }
+}
+
+country_event = { id = nw14.31 title = nw14.31.t desc = nw14.31.d is_triggered_only = yes
+ option = { name = nw14.31.a ai_chance = { factor = 70 } trigger = { is_in_faction = no is_subject = no has_government = communism GER = { has_government = communism OR = { is_in_faction = no is_faction_leader = yes } } } GER = { set_rule = { can_create_factions = yes } if = { limit = { is_in_faction = no } create_faction = NW14_red_europe } add_to_faction = ROOT } }
+ option = { name = nw14.31.b ai_chance = { factor = 30 } add_political_power = 15 }
+}
+
+country_event = { id = nw14.32 title = nw14.32.t desc = nw14.32.d is_triggered_only = yes
+ option = { name = nw14.32.a ai_chance = { factor = 65 } trigger = { has_government = communism OR = { is_in_faction = no is_faction_leader = yes } SOV = { is_subject = no is_in_faction = no has_government = communism } } set_rule = { can_create_factions = yes } if = { limit = { is_in_faction = no } create_faction = NW14_red_europe } add_to_faction = SOV }
+ option = { name = nw14.32.b ai_chance = { factor = 35 } army_experience = 10 }
+}
+
+country_event = { id = nw14.40 title = nw14.40.t desc = nw14.40.d is_triggered_only = yes
+ option = { name = nw14.40.a ai_chance = { factor = 70 } trigger = { is_subject_of = AUS } set_country_flag = nw_federal_consent AUS = { add_to_variable = { var = nw_federal_trust value = 8 } clamp_variable = { var = nw_federal_trust min = 0 max = 100 } } add_stability = 0.03 }
+ option = { name = nw14.40.b ai_chance = { factor = 30 } set_country_flag = nw_federal_refused AUS = { add_to_variable = { var = nw_federal_trust value = -5 } clamp_variable = { var = nw_federal_trust min = 0 max = 100 } } }
+}
+
+country_event = { id = nw14.41 title = nw14.41.t desc = nw14.41.d is_triggered_only = yes
+ option = { name = nw14.41.a ai_chance = { factor = 70 } trigger = { is_subject_of = AUS } set_country_flag = nw_federal_consent AUS = { add_to_variable = { var = nw_federal_trust value = 8 } clamp_variable = { var = nw_federal_trust min = 0 max = 100 } } add_stability = 0.03 }
+ option = { name = nw14.41.b ai_chance = { factor = 30 } set_country_flag = nw_federal_refused AUS = { add_to_variable = { var = nw_federal_trust value = -5 } clamp_variable = { var = nw_federal_trust min = 0 max = 100 } } }
+}
+
+country_event = { id = nw14.42 title = nw14.42.t desc = nw14.42.d is_triggered_only = yes
+ option = { name = nw14.42.a ai_chance = { factor = 70 } trigger = { is_subject_of = AUS } set_country_flag = nw_federal_consent AUS = { add_to_variable = { var = nw_federal_trust value = 8 } clamp_variable = { var = nw_federal_trust min = 0 max = 100 } } add_stability = 0.03 }
+ option = { name = nw14.42.b ai_chance = { factor = 30 } set_country_flag = nw_federal_refused AUS = { add_to_variable = { var = nw_federal_trust value = -5 } clamp_variable = { var = nw_federal_trust min = 0 max = 100 } } }
+}
+
+country_event = { id = nw14.43 title = nw14.43.t desc = nw14.43.d is_triggered_only = yes
+ option = { name = nw14.43.a ai_chance = { factor = 65 } trigger = { HUN = { is_subject_of = AUS } } add_political_power = -35 HUN = { set_country_flag = nw_hun_guarantees } add_to_variable = { var = nw_federal_trust value = 10 } clamp_variable = { var = nw_federal_trust min = 0 max = 100 } }
+ option = { name = nw14.43.b ai_chance = { factor = 35 } add_to_variable = { var = nw_federal_trust value = -5 } clamp_variable = { var = nw_federal_trust min = 0 max = 100 } }
+}
+
+country_event = { id = nw14.45 title = nw14.45.t desc = nw14.45.d is_triggered_only = yes
+ option = { name = nw14.45.a ai_chance = { factor = 70 } trigger = { is_subject = no } add_ideas = nw14_trade AUS = { add_ideas = nw14_trade } add_political_power = 25 }
+ option = { name = nw14.45.b ai_chance = { factor = 30 } add_political_power = 15 }
+}
+
+country_event = { id = nw14.60 title = nw14.60.t desc = nw14.60.d is_triggered_only = yes
+ option = { name = nw14.60.a ai_chance = { factor = 65 } trigger = { has_political_power > 39 } add_political_power = -40 add_to_variable = { var = nw_foreign_preparation value = -10 } clamp_variable = { var = nw_foreign_preparation min = 0 max = 100 } add_stability = 0.02 }
+ option = { name = nw14.60.b ai_chance = { factor = 35 } add_stability = -0.02 }
+}
+
+country_event = { id = nw14.70 title = nw14.70.t desc = nw14.70.d is_triggered_only = yes
+ option = { name = nw14.70.a ai_chance = { factor = 45 } set_country_flag = nw_rus_path_recovery add_to_variable = { var = nw_health value = 15 } clamp_variable = { var = nw_health min = 0 max = 100 } add_stability = 0.03 }
+ option = { name = nw14.70.b ai_chance = { factor = 20 } set_country_flag = nw_rus_kirill_path add_to_variable = { var = nw_army_loyalty value = 10 } clamp_variable = { var = nw_army_loyalty min = 0 max = 100 } }
+ option = { name = nw14.70.c ai_chance = { factor = 25 } set_country_flag = nw_rus_republic add_to_variable = { var = nw_opposition value = 15 } clamp_variable = { var = nw_opposition min = 0 max = 100 } }
+ option = { name = nw14.70.e ai_chance = { factor = 10 } set_country_flag = nw_rus_blackhundred_path add_to_variable = { var = nw_army_loyalty value = 15 } clamp_variable = { var = nw_army_loyalty min = 0 max = 100 } add_stability = -0.02 }
+}
+
+country_event = { id = nw14.71 title = nw14.71.t desc = nw14.71.d is_triggered_only = yes
+ option = { name = nw14.71.a ai_chance = { factor = 40 } set_country_flag = nw_rus_settlement_sr add_stability = 0.03 add_to_variable = { var = nw_trust value = 5 } clamp_variable = { var = nw_trust min = 0 max = 100 } }
+ option = { name = nw14.71.b ai_chance = { factor = 35 } set_country_flag = nw_rus_settlement_menshevik add_political_power = 35 add_stability = 0.02 }
+ option = { name = nw14.71.c ai_chance = { factor = 25 } set_country_flag = nw_rus_settlement_bolshevik army_experience = 15 add_war_support = 0.03 }
+}
+country_event = { id = nw14.72 title = nw14.72.t desc = nw14.72.d is_triggered_only = yes
+ option = { name = nw14.72.a ai_chance = { factor = 45 } set_country_flag = nw_kirill_eastern add_war_support = 0.03 army_experience = 15 }
+ option = { name = nw14.72.b ai_chance = { factor = 55 } set_country_flag = nw_kirill_cautious add_stability = 0.03 add_to_variable = { var = nw_trust value = 5 } clamp_variable = { var = nw_trust min = 0 max = 100 } }
+}
+country_event = { id = nw14.73 title = nw14.73.t desc = nw14.73.d is_triggered_only = yes
+ option = { name = nw14.73.a ai_chance = { factor = 60 } set_country_flag = nw_sr_federal add_to_variable = { var = nw_trust value = 10 } clamp_variable = { var = nw_trust min = 0 max = 100 } add_stability = 0.03 }
+ option = { name = nw14.73.b ai_chance = { factor = 40 } set_country_flag = nw_sr_central add_political_power = 35 add_to_variable = { var = nw_trust value = -5 } clamp_variable = { var = nw_trust min = 0 max = 100 } }
+}

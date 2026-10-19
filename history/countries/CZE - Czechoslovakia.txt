@@ -1,0 +1,11 @@
+capital = 9
+AUS = { set_autonomy = { target = CZE autonomy_state = autonomy_nw_federal_part freedom_level = 0.85 } }
+set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 tech_support = 1 tech_recon = 1 tech_engineers = 1 gw_artillery = 1 basic_train = 1 }
+set_research_slots = 2
+set_stability = 0.5
+set_war_support = 0.2
+set_politics = { ruling_party = neutrality elections_allowed = no }
+set_popularities = { neutrality = 70 democratic = 20 communism = 5 fascism = 5 }
+create_country_leader = { name = "Франц Фердинанд I" ideology = despotism expire = "2000.1.1" traits = { } picture = "gfx/leaders/NW/franz_ferdinand.dds" }
+set_party_name = { ideology = neutrality name = NW_CZE_neutrality_party long_name = NW_CZE_neutrality_party_long }
+oob = "NW_CZE_1936"

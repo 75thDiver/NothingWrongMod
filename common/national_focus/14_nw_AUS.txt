@@ -1,0 +1,160 @@
+focus_tree = {
+ # Pixel coordinates; keep palette below the full regular tree.
+ continuous_focus_position = { x = 50 y = 1610 }
+ id = NW14_AUS_tree default = no country = { factor = 0 modifier = { add = 200000 tag = AUS } }
+ focus = { id = NW14_AUS_four_crowns icon = GFX_goal_generic_political_pressure x = 6 y = 0 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 25 }
+ }
+ focus = { id = NW14_AUS_federal_accounts icon = GFX_goal_generic_political_pressure x = 4 y = 1 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_AUS_four_crowns }
+ ai_will_do = { factor = 10 } completion_reward = { add_to_variable = { var = nw_federal_trust value = 10 } clamp_variable = { var = nw_federal_trust min = 0 max = 100 } }
+ }
+ focus = { id = NW14_AUS_crown_conference icon = GFX_goal_generic_political_pressure x = 8 y = 1 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_AUS_four_crowns }
+ ai_will_do = { factor = 10 } completion_reward = { add_to_variable = { var = nw_federal_trust value = 10 } clamp_variable = { var = nw_federal_trust min = 0 max = 100 } }
+ }
+ focus = { id = NW14_AUS_language_registry icon = GFX_goal_generic_political_pressure x = 8 y = 2 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_AUS_crown_conference }
+ ai_will_do = { factor = 10 } completion_reward = { add_to_variable = { var = nw_federal_trust value = 10 } clamp_variable = { var = nw_federal_trust min = 0 max = 100 } }
+ }
+ focus = { id = NW14_AUS_federal_choice icon = GFX_goal_generic_political_pressure x = 6 y = 3 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_AUS_federal_accounts }
+ prerequisite = { focus = NW14_AUS_language_registry }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 35 }
+ }
+ focus = { id = NW14_AUS_renewed_compact icon = GFX_goal_generic_political_pressure x = 2 y = 5 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_AUS_federal_choice }
+ mutually_exclusive = { focus = NW14_AUS_vienna_directive }
+ ai_will_do = { factor = 30 } completion_reward = { set_country_flag = nw_federal_compact add_to_variable = { var = nw_federal_trust value = 10 } clamp_variable = { var = nw_federal_trust min = 0 max = 100 } }
+ }
+ focus = { id = NW14_AUS_budapest_terms icon = GFX_goal_generic_political_pressure x = 0 y = 6 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_AUS_renewed_compact }
+ available = { HUN = { is_subject_of = AUS } }
+ ai_will_do = { factor = 10 } completion_reward = { HUN = { country_event = { id = nw14.40 } } }
+ }
+ focus = { id = NW14_AUS_prague_terms icon = GFX_goal_generic_political_pressure x = 2 y = 6 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_AUS_renewed_compact }
+ available = { CZE = { is_subject_of = AUS } }
+ ai_will_do = { factor = 10 } completion_reward = { CZE = { country_event = { id = nw14.41 } } }
+ }
+ focus = { id = NW14_AUS_slavonian_terms icon = GFX_goal_generic_political_pressure x = 4 y = 6 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_AUS_renewed_compact }
+ available = { CRO = { is_subject_of = AUS } }
+ ai_will_do = { factor = 10 } completion_reward = { CRO = { country_event = { id = nw14.42 } } }
+ }
+ focus = { id = NW14_AUS_federal_ratification icon = GFX_goal_generic_political_pressure x = 2 y = 7 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_AUS_budapest_terms }
+ prerequisite = { focus = NW14_AUS_prague_terms }
+ prerequisite = { focus = NW14_AUS_slavonian_terms }
+ available = { HUN = { is_subject_of = AUS has_country_flag = nw_federal_consent } CZE = { is_subject_of = AUS has_country_flag = nw_federal_consent } CRO = { is_subject_of = AUS has_country_flag = nw_federal_consent } }
+ ai_will_do = { factor = 10 } completion_reward = { set_country_flag = nw_federal_ratified remove_ideas = nw_aus_federal_bargain if = { limit = { has_idea = nw14_federal_admin } add_stability = 0.025 } else = { add_ideas = nw14_federal_admin } every_subject_country = { limit = { OR = { tag = HUN tag = CZE tag = CRO } } if = { limit = { has_idea = nw14_federal_admin } add_stability = 0.025 } else = { add_ideas = nw14_federal_admin } } }
+ }
+ focus = { id = NW14_AUS_vienna_directive icon = GFX_goal_generic_political_pressure x = 10 y = 5 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_AUS_federal_choice }
+ mutually_exclusive = { focus = NW14_AUS_renewed_compact }
+ ai_will_do = { factor = 10 } completion_reward = { set_country_flag = nw_federal_central add_to_variable = { var = nw_federal_trust value = -15 } clamp_variable = { var = nw_federal_trust min = 0 max = 100 } }
+ }
+ focus = { id = NW14_AUS_common_inspectorate icon = GFX_goal_generic_political_pressure x = 8 y = 6 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_AUS_vienna_directive }
+ ai_will_do = { factor = 10 } completion_reward = { add_to_variable = { var = nw_federal_trust value = -10 } clamp_variable = { var = nw_federal_trust min = 0 max = 100 } add_political_power = 65 }
+ }
+ focus = { id = NW14_AUS_uniform_tariffs icon = GFX_goal_generic_production x = 12 y = 6 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_AUS_vienna_directive }
+ ai_will_do = { factor = 10 } completion_reward = { if = { limit = { has_idea = nw14_trade } add_political_power = 35 } else = { add_ideas = nw14_trade } }
+ }
+ focus = { id = NW14_AUS_army_statute icon = GFX_goal_generic_army_doctrines x = 10 y = 7 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_AUS_common_inspectorate }
+ prerequisite = { focus = NW14_AUS_uniform_tariffs }
+ ai_will_do = { factor = 10 } completion_reward = { army_experience = 20 }
+ }
+ focus = { id = NW14_AUS_limited_centralism icon = GFX_goal_generic_political_pressure x = 10 y = 8 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_AUS_army_statute }
+ ai_will_do = { factor = 10 } completion_reward = { remove_ideas = nw_aus_federal_bargain if = { limit = { has_idea = nw14_crown_admin } add_political_power = 35 } else = { add_ideas = nw14_crown_admin } set_country_flag = nw_federal_settled }
+ }
+ focus = { id = NW14_AUS_danube_commission icon = GFX_goal_generic_production x = 18 y = 0 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ ai_will_do = { factor = 10 } completion_reward = { if = { limit = { has_idea = nw14_trade } add_political_power = 35 } else = { add_ideas = nw14_trade } }
+ }
+ focus = { id = NW14_AUS_vienna_works icon = GFX_goal_generic_construct_civ_factory x = 16 y = 1 cost = 7 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_AUS_danube_commission }
+ ai_will_do = { factor = 10 } completion_reward = { random_owned_controlled_state = { limit = { is_core_of = ROOT } add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } }
+ }
+ focus = { id = NW14_AUS_bohemian_tools icon = GFX_goal_generic_political_pressure x = 20 y = 1 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_AUS_danube_commission }
+ ai_will_do = { factor = 10 } completion_reward = { add_tech_bonus = { name = NW14_research bonus = 0.5 uses = 1 category = industry } if = { limit = { CZE = { is_subject_of = AUS } } CZE = { add_tech_bonus = { name = NW14_research bonus = 0.5 uses = 1 category = industry } } } }
+ }
+ focus = { id = NW14_AUS_adriatic_yards icon = GFX_goal_generic_construct_naval_dockyard x = 16 y = 2 cost = 7 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_AUS_vienna_works }
+ available = { any_owned_state = { is_core_of = ROOT is_coastal = yes } }
+ ai_will_do = { factor = 10 } completion_reward = { random_owned_controlled_state = { limit = { is_core_of = ROOT is_coastal = yes } add_extra_state_shared_building_slots = 1 add_building_construction = { type = dockyard level = 1 instant_build = yes } } }
+ }
+ focus = { id = NW14_AUS_albanian_credit icon = GFX_goal_generic_political_pressure x = 20 y = 2 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_AUS_bohemian_tools }
+ ai_will_do = { factor = 10 } completion_reward = { if = { limit = { exists = ALB ALB = { is_subject = no } } ALB = { country_event = { id = nw14.45 } } } }
+ }
+ focus = { id = NW14_AUS_rail_clearing icon = GFX_goal_generic_construct_infrastructure x = 18 y = 3 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_AUS_adriatic_yards }
+ prerequisite = { focus = NW14_AUS_albanian_credit }
+ available = { any_owned_state = { is_core_of = ROOT infrastructure < 5 } }
+ ai_will_do = { factor = 10 } completion_reward = { random_owned_controlled_state = { limit = { is_core_of = ROOT infrastructure < 5 } add_building_construction = { type = infrastructure level = 1 instant_build = yes } } }
+ }
+ focus = { id = NW14_AUS_social_insurance icon = GFX_goal_generic_political_pressure x = 16 y = 4 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_AUS_rail_clearing }
+ ai_will_do = { factor = 10 } completion_reward = { if = { limit = { has_idea = nw14_labour } add_stability = 0.025 } else = { add_ideas = nw14_labour } }
+ }
+ focus = { id = NW14_AUS_federal_patents icon = GFX_goal_generic_scientific_exchange x = 20 y = 4 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_AUS_rail_clearing }
+ ai_will_do = { factor = 10 } completion_reward = { add_tech_bonus = { name = NW14_research bonus = 0.5 uses = 1 category = electronics } }
+ }
+ focus = { id = NW14_AUS_public_procurement icon = GFX_goal_generic_political_pressure x = 18 y = 5 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_AUS_social_insurance }
+ prerequisite = { focus = NW14_AUS_federal_patents }
+ ai_will_do = { factor = 10 } completion_reward = { add_to_variable = { var = nw_federal_trust value = 10 } clamp_variable = { var = nw_federal_trust min = 0 max = 100 } }
+ }
+ focus = { id = NW14_AUS_danube_workshop icon = GFX_goal_generic_production x = 18 y = 6 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_AUS_public_procurement }
+ ai_will_do = { factor = 10 } completion_reward = { if = { limit = { has_idea = nw14_production } add_tech_bonus = { name = NW14_research bonus = 0.5 uses = 1 category = industry } } else = { add_ideas = nw14_production } }
+ }
+ focus = { id = NW14_AUS_federal_staff icon = GFX_goal_generic_army_doctrines x = 27 y = 0 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ ai_will_do = { factor = 10 } completion_reward = { army_experience = 20 }
+ }
+ focus = { id = NW14_AUS_mountain_schools icon = GFX_goal_generic_army_doctrines x = 25 y = 1 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_AUS_federal_staff }
+ ai_will_do = { factor = 10 } completion_reward = { add_tech_bonus = { name = NW14_research bonus = 0.5 uses = 1 category = infantry_weapons } }
+ }
+ focus = { id = NW14_AUS_common_artillery icon = GFX_goal_generic_army_doctrines x = 29 y = 1 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_AUS_federal_staff }
+ ai_will_do = { factor = 10 } completion_reward = { add_tech_bonus = { name = NW14_research bonus = 0.5 uses = 1 category = artillery } }
+ }
+ focus = { id = NW14_AUS_adriatic_patrol icon = GFX_goal_generic_navy_doctrines_tactics x = 25 y = 2 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_AUS_mountain_schools }
+ ai_will_do = { factor = 10 } completion_reward = { navy_experience = 20 }
+ }
+ focus = { id = NW14_AUS_air_liaison icon = GFX_goal_generic_build_airforce x = 29 y = 2 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_AUS_common_artillery }
+ ai_will_do = { factor = 10 } completion_reward = { add_tech_bonus = { name = NW14_research bonus = 0.5 uses = 1 category = light_air } remove_ideas = nw_aus_many_languages }
+ }
+ focus = { id = NW14_AUS_reserve_muster icon = GFX_goal_generic_army_doctrines x = 27 y = 3 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_AUS_adriatic_patrol }
+ prerequisite = { focus = NW14_AUS_air_liaison }
+ ai_will_do = { factor = 10 } completion_reward = { if = { limit = { has_idea = nw14_discipline } army_experience = 15 } else = { add_ideas = nw14_discipline } }
+ }
+ focus = { id = NW14_AUS_federal_academy icon = GFX_goal_generic_scientific_exchange x = 27 y = 4 cost = 10 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_AUS_reserve_muster }
+ available = { num_of_research_slots < 6 }
+ ai_will_do = { factor = 10 } completion_reward = { add_research_slot = 1 }
+ }
+ focus = { id = NW14_AUS_ferdinands_audience icon = GFX_goal_generic_political_pressure x = 27 y = 5 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_AUS_federal_academy }
+ ai_will_do = { factor = 10 } completion_reward = { add_to_variable = { var = nw_federal_trust value = 10 } clamp_variable = { var = nw_federal_trust min = 0 max = 100 } }
+ }
+ focus = { id = NW14_AUS_otto_preparation icon = GFX_goal_generic_political_pressure x = 27 y = 6 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_AUS_ferdinands_audience }
+ ai_will_do = { factor = 10 } completion_reward = { add_ideas = nw14_succession }
+ }
+ focus = { id = NW14_AUS_federation_endures icon = GFX_goal_generic_political_pressure x = 23 y = 9 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_AUS_otto_preparation }
+ prerequisite = { focus = NW14_AUS_danube_workshop }
+ prerequisite = { focus = NW14_AUS_federal_ratification focus = NW14_AUS_limited_centralism }
+ ai_will_do = { factor = 10 } completion_reward = { if = { limit = { has_idea = nw14_federal_admin } add_stability = 0.025 } else = { add_ideas = nw14_federal_admin } }
+ }
+}

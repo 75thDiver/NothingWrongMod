@@ -1,0 +1,5 @@
+SRI = "countries/ItalianSovietRepublic.txt"
+ION = "countries/Ionia.txt"
+STR = "countries/StraitsRepublic.txt"
+PUA = "countries/PeoplesUnionAfricanTribes.txt"
+LAG = "countries/Lagos.txt"

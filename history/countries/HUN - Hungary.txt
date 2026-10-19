@@ -1,0 +1,16 @@
+# Native 1936 scenario. Country source: received mod history
+capital = 43
+AUS = { set_autonomy = { target = HUN autonomy_state = autonomy_nw_federal_part freedom_level = 0.85 } }
+set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 tech_support = 1 tech_recon = 1 tech_engineers = 1 gw_artillery = 1 basic_train = 1 }
+set_research_slots = 2
+
+# Scenario political setup; no map transfers or world initializer.
+set_politics = { ruling_party = neutrality elections_allowed = no }
+set_popularities = { neutrality = 65 democratic = 25 communism = 5 fascism = 5 }
+set_party_name = { ideology = neutrality name = NW_HUN_neutrality_party long_name = NW_HUN_neutrality_party_long }
+set_party_name = { ideology = democratic name = NW_HUN_democratic_party long_name = NW_HUN_democratic_party_long }
+set_party_name = { ideology = communism name = NW_HUN_communism_party long_name = NW_HUN_communism_party_long }
+set_party_name = { ideology = fascism name = NW_HUN_fascism_party long_name = NW_HUN_fascism_party_long }
+oob = "NW_HUN_1936"
+
+create_country_leader = { name = "Франц Фердинанд I" ideology = despotism expire = "2000.1.1" traits = { } picture = "gfx/leaders/NW/franz_ferdinand.dds" }

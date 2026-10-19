@@ -1,0 +1,1679 @@
+focus_tree = {
+ # Pixel coordinates; keep palette below the full regular tree.
+ continuous_focus_position = { x = 50 y = 3560 }
+ id = NW14_SOV_tree default = no country = { factor = 0 modifier = { add = 200000 tag = SOV } }
+ focus = { id = NW14_SOV_winter_palace icon = GFX_goal_generic_political_pressure x = 19 y = 0 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 25 }
+ }
+ focus = { id = NW14_SOV_medical_council icon = GFX_goal_generic_political_pressure x = 13 y = 1 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_winter_palace }
+ ai_will_do = { factor = 10 } completion_reward = { add_to_variable = { var = nw_health value = 15 } clamp_variable = { var = nw_health min = 0 max = 100 } }
+ }
+ focus = { id = NW14_SOV_ministers_report icon = GFX_goal_generic_political_pressure x = 19 y = 1 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_winter_palace }
+ ai_will_do = { factor = 10 } completion_reward = { add_to_variable = { var = nw_trust value = 10 } clamp_variable = { var = nw_trust min = 0 max = 100 } }
+ }
+ focus = { id = NW14_SOV_zemstvo_register icon = GFX_goal_generic_political_pressure x = 25 y = 1 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_winter_palace }
+ ai_will_do = { factor = 10 } completion_reward = { add_to_variable = { var = nw_trust value = 10 } clamp_variable = { var = nw_trust min = 0 max = 100 } }
+ }
+ focus = { id = NW14_SOV_railway_review icon = GFX_goal_generic_construct_infrastructure x = 19 y = 3 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_ministers_report }
+ available = { any_owned_state = { is_core_of = ROOT infrastructure < 5 } }
+ ai_will_do = { factor = 10 } completion_reward = { random_owned_controlled_state = { limit = { is_core_of = ROOT infrastructure < 5 } add_building_construction = { type = infrastructure level = 1 instant_build = yes } } }
+ }
+ focus = { id = NW14_SOV_army_delegation icon = GFX_goal_generic_political_pressure x = 31 y = 1 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_winter_palace }
+ ai_will_do = { factor = 10 } completion_reward = { add_to_variable = { var = nw_army_loyalty value = 10 } clamp_variable = { var = nw_army_loyalty min = 0 max = 100 } }
+ }
+ focus = { id = NW14_SOV_duma_audience icon = GFX_goal_generic_political_pressure x = 25 y = 2 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_zemstvo_register }
+ ai_will_do = { factor = 10 } completion_reward = { add_to_variable = { var = nw_trust value = 10 } clamp_variable = { var = nw_trust min = 0 max = 100 } }
+ }
+ focus = { id = NW14_SOV_provincial_press icon = GFX_goal_generic_political_pressure x = 25 y = 3 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_duma_audience }
+ ai_will_do = { factor = 10 } completion_reward = { add_stability = 0.03 }
+ }
+ focus = { id = NW14_SOV_succession_memorandum icon = GFX_goal_generic_political_pressure x = 13 y = 3 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_medical_council }
+ prerequisite = { focus = NW14_SOV_army_delegation }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 35 }
+ }
+ focus = { id = NW14_SOV_russian_crossroads icon = GFX_goal_generic_political_pressure x = 21 y = 4 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_succession_memorandum }
+ prerequisite = { focus = NW14_SOV_provincial_press }
+ prerequisite = { focus = NW14_SOV_railway_review }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 35 }
+ }
+
+ focus = { id = NW14_SOV_royal_bulletin icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_russian_crossroads cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_russian_crossroads }
+ ai_will_do = { factor = 10 } completion_reward = { country_event = { id = nw14.70 } }
+ }
+ focus = { id = NW14_SOV_save_alexei icon = GFX_goal_generic_neutrality_focus x = 2 y = 6 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_russian_crossroads }
+ mutually_exclusive = { focus = NW14_SOV_regency_council focus = NW14_SOV_for_republic focus = NW14_SOV_black_hundreds }
+ available = { has_country_flag = nw_rus_path_recovery }
+ ai_will_do = { factor = 30 } completion_reward = { set_country_flag = nw_rus_cure }
+ }
+ focus = { id = NW14_SOV_quiet_residence icon = GFX_goal_generic_neutrality_focus x = 0 y = 7 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_save_alexei }
+ ai_will_do = { factor = 10 } completion_reward = { add_to_variable = { var = nw_health value = 15 } clamp_variable = { var = nw_health min = 0 max = 100 } }
+ }
+ focus = { id = NW14_SOV_clinical_service icon = GFX_goal_generic_neutrality_focus x = 4 y = 7 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_save_alexei }
+ ai_will_do = { factor = 10 } completion_reward = { add_to_variable = { var = nw_health value = 15 } clamp_variable = { var = nw_health min = 0 max = 100 } }
+ }
+ focus = { id = NW14_SOV_delegated_signature icon = GFX_goal_generic_neutrality_focus x = 2 y = 8 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_quiet_residence }
+ prerequisite = { focus = NW14_SOV_clinical_service }
+ ai_will_do = { factor = 10 } completion_reward = { add_to_variable = { var = nw_trust value = 10 } clamp_variable = { var = nw_trust min = 0 max = 100 } }
+ }
+ focus = { id = NW14_SOV_recovery_bulletin icon = GFX_goal_generic_neutrality_focus x = 2 y = 9 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_delegated_signature }
+ available = { check_variable = { nw_health > 69 } }
+ ai_will_do = { factor = 10 } completion_reward = { set_country_flag = nw_rus_recovered remove_ideas = nw_sov_fragile_sovereign set_variable = { nw_health = 90 } add_stability = 0.05 }
+ }
+ focus = { id = NW14_SOV_ministerial_charter icon = GFX_goal_generic_neutrality_focus x = 0 y = 10 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_recovery_bulletin }
+ ai_will_do = { factor = 10 } completion_reward = { if = { limit = { has_idea = nw14_crown_admin } add_political_power = 35 } else = { add_ideas = nw14_crown_admin } remove_ideas = nw_sov_court_government }
+ }
+ focus = { id = NW14_SOV_zemstvo_supervision icon = GFX_goal_generic_neutrality_focus x = 2 y = 10 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_recovery_bulletin }
+ ai_will_do = { factor = 10 } completion_reward = { add_to_variable = { var = nw_trust value = 10 } clamp_variable = { var = nw_trust min = 0 max = 100 } }
+ }
+ focus = { id = NW14_SOV_agrarian_mediation icon = GFX_goal_generic_neutrality_focus x = 4 y = 10 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_recovery_bulletin }
+ ai_will_do = { factor = 10 } completion_reward = { if = { limit = { has_idea = nw14_agrarian } add_stability = 0.025 } else = { add_ideas = nw14_agrarian } }
+ }
+ focus = { id = NW14_SOV_dominion_charters icon = GFX_goal_generic_neutrality_focus x = 2 y = 11 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_zemstvo_supervision }
+ prerequisite = { focus = NW14_SOV_ministerial_charter }
+ prerequisite = { focus = NW14_SOV_agrarian_mediation }
+ ai_will_do = { factor = 10 } completion_reward = { if = { limit = { POL = { is_subject_of = SOV } } POL = { add_stability = 0.04 } } if = { limit = { FIN = { is_subject_of = SOV } } FIN = { add_stability = 0.04 } } add_to_variable = { var = nw_trust value = 10 } clamp_variable = { var = nw_trust min = 0 max = 100 } }
+ }
+ focus = { id = NW14_SOV_measured_autocracy icon = GFX_goal_generic_neutrality_focus x = 2 y = 12 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_dominion_charters }
+ ai_will_do = { factor = 10 } completion_reward = { set_country_flag = nw_rus_settled if = { limit = { has_idea = nw14_crown_admin } add_political_power = 35 } else = { add_ideas = nw14_crown_admin } }
+ }
+ focus = { id = NW14_SOV_regency_council icon = GFX_goal_generic_neutrality_focus x = 9 y = 6 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_russian_crossroads }
+ mutually_exclusive = { focus = NW14_SOV_save_alexei focus = NW14_SOV_for_republic focus = NW14_SOV_black_hundreds }
+ available = { has_country_flag = nw_rus_kirill_path }
+ ai_will_do = { factor = 10 } completion_reward = { set_country_flag = nw_rus_kirill_path }
+ }
+ focus = { id = NW14_SOV_dynastic_compact icon = GFX_goal_generic_neutrality_focus x = 9 y = 7 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_regency_council }
+ ai_will_do = { factor = 10 } completion_reward = { add_to_variable = { var = nw_army_loyalty value = 10 } clamp_variable = { var = nw_army_loyalty min = 0 max = 100 } }
+ }
+ focus = { id = NW14_SOV_last_bulletin icon = GFX_goal_generic_neutrality_focus x = 9 y = 8 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_dynastic_compact }
+ available = { check_variable = { nw_army_loyalty > 49 } }
+ ai_will_do = { factor = 10 } completion_reward = { set_country_flag = nw_alexei_dead remove_ideas = nw_sov_fragile_sovereign set_country_flag = nw_rus_kirill create_country_leader = { name = "Кирилл Владимирович" ideology = despotism expire = "2000.1.1" traits = { } } add_stability = -0.04 }
+ }
+ focus = { id = NW14_SOV_imperial_colours icon = GFX_goal_generic_neutrality_focus x = 9 y = 9 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_last_bulletin }
+ available = { has_country_flag = nw_rus_kirill }
+ ai_will_do = { factor = 10 } completion_reward = { set_cosmetic_tag = NW_KIRILL }
+ }
+ focus = { id = NW14_SOV_frontier_staff icon = GFX_goal_generic_neutrality_focus x = 9 y = 10 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_imperial_colours }
+ ai_will_do = { factor = 10 } completion_reward = { army_experience = 20 }
+ }
+ focus = { id = NW14_SOV_persian_concessions icon = GFX_goal_generic_neutrality_focus x = 7 y = 11 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_frontier_staff }
+ ai_will_do = { factor = 10 } completion_reward = { set_country_flag = nw_kirill_expansion if = { limit = { exists = PER NOT = { is_in_faction_with = PER } } create_wargoal = { type = puppet_wargoal target = PER } } }
+ }
+ focus = { id = NW14_SOV_straits_claim icon = GFX_goal_generic_neutrality_focus x = 11 y = 11 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_frontier_staff }
+ ai_will_do = { factor = 10 } completion_reward = { if = { limit = { 341 = { NOT = { is_owned_by = ROOT } } } 341 = { add_claim_by = ROOT } } if = { limit = { exists = STR NOT = { is_in_faction_with = STR } } create_wargoal = { type = annex_everything target = STR } } }
+ }
+ focus = { id = NW14_SOV_eastern_audit icon = GFX_goal_generic_neutrality_focus x = 9 y = 11 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_frontier_staff }
+ ai_will_do = { factor = 10 } completion_reward = { random_owned_controlled_state = { limit = { is_core_of = ROOT infrastructure < 5 } add_building_construction = { type = infrastructure level = 1 instant_build = yes } } army_experience = 15 }
+ }
+ focus = { id = NW14_SOV_mobilisation_depots icon = GFX_goal_generic_construct_mil_factory x = 9 y = 12 cost = 7 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_eastern_audit }
+ prerequisite = { focus = NW14_SOV_persian_concessions }
+ prerequisite = { focus = NW14_SOV_straits_claim }
+ ai_will_do = { factor = 10 } completion_reward = { random_owned_controlled_state = { limit = { is_core_of = ROOT } add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } }
+ }
+ focus = { id = NW14_SOV_kirills_empire icon = GFX_goal_generic_neutrality_focus x = 9 y = 13 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_mobilisation_depots }
+ ai_will_do = { factor = 10 } completion_reward = { add_ideas = nw14_expansion }
+ }
+ focus = { id = NW14_SOV_for_republic icon = GFX_goal_generic_political_pressure x = 25 y = 6 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_russian_crossroads }
+ mutually_exclusive = { focus = NW14_SOV_save_alexei focus = NW14_SOV_regency_council focus = NW14_SOV_black_hundreds }
+ available = { has_country_flag = nw_rus_republic }
+ ai_will_do = { factor = 2 } completion_reward = { set_country_flag = nw_rus_republic }
+ }
+ focus = { id = NW14_SOV_sr_network icon = GFX_goal_generic_political_pressure x = 21 y = 7 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_for_republic }
+ ai_will_do = { factor = 10 } completion_reward = { add_to_variable = { var = nw_opposition value = 15 } clamp_variable = { var = nw_opposition min = 0 max = 100 } }
+ }
+ focus = { id = NW14_SOV_rsdlp_network icon = GFX_goal_generic_political_pressure x = 29 y = 7 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_for_republic }
+ ai_will_do = { factor = 10 } completion_reward = { add_to_variable = { var = nw_opposition value = 15 } clamp_variable = { var = nw_opposition min = 0 max = 100 } }
+ }
+ focus = { id = NW14_SOV_railway_contacts icon = GFX_goal_generic_political_pressure x = 21 y = 8 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_sr_network }
+ ai_will_do = { factor = 10 } completion_reward = { add_to_variable = { var = nw_opposition value = 15 } clamp_variable = { var = nw_opposition min = 0 max = 100 } }
+ }
+ focus = { id = NW14_SOV_soldiers_councils icon = GFX_goal_generic_political_pressure x = 29 y = 8 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_rsdlp_network }
+ ai_will_do = { factor = 10 } completion_reward = { set_country_flag = nw_rus_garrisons add_to_variable = { var = nw_opposition value = 10 } clamp_variable = { var = nw_opposition min = 0 max = 100 } }
+ }
+ focus = { id = NW14_SOV_funeral_uprising icon = GFX_goal_generic_political_pressure x = 25 y = 9 cost = 3 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_railway_contacts }
+ prerequisite = { focus = NW14_SOV_soldiers_councils }
+ available = { has_war = no is_subject = no owns_state = 195 owns_state = 219 owns_state = 202 owns_state = 218 owns_state = 570 NOT = { exists = RSB } NOT = { exists = RDN } NOT = { exists = RUK } NOT = { has_country_flag = nw_rus_war_started } check_variable = { nw_opposition > 39 } }
+ ai_will_do = { factor = 10 } completion_reward = { country_event = { id = nw14.20 } }
+ }
+ focus = { id = NW14_SOV_provisional_food icon = GFX_goal_generic_army_doctrines x = 21 y = 10 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_funeral_uprising }
+ available = { has_country_flag = nw_rus_war_started }
+ ai_will_do = { factor = 10 } completion_reward = { add_ideas = nw14_war_supply }
+ }
+ focus = { id = NW14_SOV_front_delegates icon = GFX_goal_generic_army_doctrines x = 29 y = 10 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_funeral_uprising }
+ available = { has_country_flag = nw_rus_war_started }
+ ai_will_do = { factor = 10 } completion_reward = { army_experience = 20 }
+ }
+ focus = { id = NW14_SOV_constituent_rolls icon = GFX_goal_generic_political_pressure x = 25 y = 11 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_provisional_food }
+ prerequisite = { focus = NW14_SOV_front_delegates }
+ ai_will_do = { factor = 10 } completion_reward = { add_to_variable = { var = nw_trust value = 10 } clamp_variable = { var = nw_trust min = 0 max = 100 } }
+ }
+ focus = { id = NW14_SOV_republican_congress icon = GFX_goal_generic_political_pressure x = 25 y = 12 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_constituent_rolls }
+ available = { has_war = no }
+ ai_will_do = { factor = 10 } completion_reward = { set_country_flag = nw_rus_settled country_event = { id = nw14.71 } remove_ideas = nw14_war_supply add_stability = 0.06 }
+ }
+ focus = { id = NW14_SOV_sr_majority icon = GFX_goal_support_democracy x = 16 y = 14 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_republican_congress }
+ mutually_exclusive = { focus = NW14_SOV_menshevik_centre focus = NW14_SOV_bolshevik_majority }
+ available = { has_country_flag = nw_rus_settlement_sr }
+ ai_will_do = { factor = 10 } completion_reward = { set_politics = { ruling_party = democratic elections_allowed = yes } set_cosmetic_tag = NW_RUS_REPUBLIC create_country_leader = { name = "Виктор Чернов" ideology = socialism expire = "2000.1.1" traits = { } } set_party_name = { ideology = democratic name = NW14_sr long_name = NW14_sr_long } }
+ }
+ focus = { id = NW14_SOV_land_committees icon = GFX_goal_support_democracy x = 14 y = 15 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_sr_majority }
+ ai_will_do = { factor = 10 } completion_reward = { if = { limit = { has_idea = nw14_agrarian } add_stability = 0.025 } else = { add_ideas = nw14_agrarian } }
+ }
+ focus = { id = NW14_SOV_cooperative_credit icon = GFX_goal_generic_construct_civ_factory x = 18 y = 15 cost = 7 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_sr_majority }
+ ai_will_do = { factor = 10 } completion_reward = { random_owned_controlled_state = { limit = { is_core_of = ROOT } add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } }
+ }
+ focus = { id = NW14_SOV_rural_school icon = GFX_goal_support_democracy x = 16 y = 16 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_land_committees }
+ prerequisite = { focus = NW14_SOV_cooperative_credit }
+ ai_will_do = { factor = 10 } completion_reward = { add_tech_bonus = { name = NW14_research bonus = 0.5 uses = 1 category = electronics } }
+ }
+ focus = { id = NW14_SOV_peasant_republic icon = GFX_goal_support_democracy x = 16 y = 17 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_rural_school }
+ ai_will_do = { factor = 10 } completion_reward = { if = { limit = { has_idea = nw14_democratic_admin } add_political_power = 35 } else = { add_ideas = nw14_democratic_admin } }
+ }
+ focus = { id = NW14_SOV_menshevik_centre icon = GFX_goal_support_democracy x = 25 y = 14 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_republican_congress }
+ mutually_exclusive = { focus = NW14_SOV_sr_majority focus = NW14_SOV_bolshevik_majority }
+ available = { has_country_flag = nw_rus_settlement_menshevik }
+ ai_will_do = { factor = 10 } completion_reward = { set_politics = { ruling_party = democratic elections_allowed = yes } set_cosmetic_tag = NW_RUS_REPUBLIC create_country_leader = { name = "Фёдор Дан" ideology = socialism expire = "2000.1.1" traits = { } } set_party_name = { ideology = democratic name = NW14_men long_name = NW14_men_long } }
+ }
+ focus = { id = NW14_SOV_labour_compromise icon = GFX_goal_support_democracy x = 23 y = 15 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_menshevik_centre }
+ ai_will_do = { factor = 10 } completion_reward = { if = { limit = { has_idea = nw14_labour } add_stability = 0.025 } else = { add_ideas = nw14_labour } }
+ }
+ focus = { id = NW14_SOV_municipal_federation icon = GFX_goal_generic_construct_infrastructure x = 27 y = 15 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_menshevik_centre }
+ available = { any_owned_state = { is_core_of = ROOT infrastructure < 5 } }
+ ai_will_do = { factor = 10 } completion_reward = { random_owned_controlled_state = { limit = { is_core_of = ROOT infrastructure < 5 } add_building_construction = { type = infrastructure level = 1 instant_build = yes } } }
+ }
+ focus = { id = NW14_SOV_mixed_economy icon = GFX_goal_support_democracy x = 25 y = 16 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_labour_compromise }
+ prerequisite = { focus = NW14_SOV_municipal_federation }
+ ai_will_do = { factor = 10 } completion_reward = { if = { limit = { has_idea = nw14_production } add_tech_bonus = { name = NW14_research bonus = 0.5 uses = 1 category = industry } } else = { add_ideas = nw14_production } }
+ }
+ focus = { id = NW14_SOV_constitutional_socialism icon = GFX_goal_support_democracy x = 25 y = 17 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_mixed_economy }
+ ai_will_do = { factor = 10 } completion_reward = { if = { limit = { has_idea = nw14_democratic_admin } add_political_power = 35 } else = { add_ideas = nw14_democratic_admin } }
+ }
+ focus = { id = NW14_SOV_bolshevik_majority icon = GFX_goal_support_communism x = 33 y = 14 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_republican_congress }
+ mutually_exclusive = { focus = NW14_SOV_sr_majority focus = NW14_SOV_menshevik_centre }
+ available = { has_country_flag = nw_rus_settlement_bolshevik }
+ ai_will_do = { factor = 10 } completion_reward = { set_politics = { ruling_party = communism elections_allowed = no } set_cosmetic_tag = NW_RUS_SOVIETS create_country_leader = { name = "Николай Бухарин" ideology = leninism expire = "2000.1.1" traits = { } } set_party_name = { ideology = communism name = NW14_bol long_name = NW14_bol_long } }
+ }
+ focus = { id = NW14_SOV_central_plan icon = GFX_goal_support_communism x = 31 y = 15 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_bolshevik_majority }
+ ai_will_do = { factor = 10 } completion_reward = { if = { limit = { has_idea = nw14_planned } add_tech_bonus = { name = NW14_research bonus = 0.5 uses = 1 category = industry } } else = { add_ideas = nw14_planned } }
+ }
+ focus = { id = NW14_SOV_red_command icon = GFX_goal_support_communism x = 35 y = 15 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_bolshevik_majority }
+ ai_will_do = { factor = 10 } completion_reward = { if = { limit = { has_idea = nw14_discipline } army_experience = 15 } else = { add_ideas = nw14_discipline } }
+ }
+ focus = { id = NW14_SOV_revolutionary_links icon = GFX_goal_support_communism x = 33 y = 16 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_central_plan }
+ prerequisite = { focus = NW14_SOV_red_command }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 35 if = { limit = { exists = GER GER = { has_government = communism is_subject = no } } GER = { country_event = { id = nw14.32 } } } }
+ }
+ focus = { id = NW14_SOV_soviet_federation icon = GFX_goal_support_communism x = 33 y = 17 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_revolutionary_links }
+ ai_will_do = { factor = 10 } completion_reward = { if = { limit = { has_idea = nw14_planned } add_tech_bonus = { name = NW14_research bonus = 0.5 uses = 1 category = industry } } else = { add_ideas = nw14_planned } }
+ }
+ focus = { id = NW14_SOV_black_hundreds icon = GFX_goal_support_fascism x = 42 y = 6 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_russian_crossroads }
+ mutually_exclusive = { focus = NW14_SOV_save_alexei focus = NW14_SOV_regency_council focus = NW14_SOV_for_republic }
+ available = { has_country_flag = nw_rus_blackhundred_path }
+ ai_will_do = { factor = 2 } completion_reward = { set_country_flag = nw_rus_black add_to_variable = { var = nw_trust value = -10 } clamp_variable = { var = nw_trust min = 0 max = 100 } }
+ }
+ focus = { id = NW14_SOV_union_of_people icon = GFX_goal_support_fascism x = 42 y = 7 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_black_hundreds }
+ ai_will_do = { factor = 10 } completion_reward = { add_to_variable = { var = nw_army_loyalty value = 10 } clamp_variable = { var = nw_army_loyalty min = 0 max = 100 } add_to_variable = { var = nw_trust value = -5 } clamp_variable = { var = nw_trust min = 0 max = 100 } }
+ }
+ focus = { id = NW14_SOV_loyal_press icon = GFX_goal_support_fascism x = 40 y = 8 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_union_of_people }
+ ai_will_do = { factor = 10 } completion_reward = { add_ideas = nw14_propaganda }
+ }
+ focus = { id = NW14_SOV_court_guardians icon = GFX_goal_support_fascism x = 44 y = 8 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_union_of_people }
+ ai_will_do = { factor = 10 } completion_reward = { set_politics = { ruling_party = fascism elections_allowed = no } set_cosmetic_tag = NW_RUS_BLACK create_country_leader = { name = "Кабинет Союза русского народа" ideology = fascism expire = "2000.1.1" traits = { } } set_party_name = { ideology = fascism name = NW14_black long_name = NW14_black_long } }
+ }
+ focus = { id = NW14_SOV_exceptional_statute icon = GFX_goal_support_fascism x = 42 y = 9 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_loyal_press }
+ prerequisite = { focus = NW14_SOV_court_guardians }
+ ai_will_do = { factor = 10 } completion_reward = { add_ideas = nw14_repression }
+ }
+ focus = { id = NW14_SOV_national_corporations icon = GFX_goal_support_fascism x = 40 y = 10 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_exceptional_statute }
+ ai_will_do = { factor = 10 } completion_reward = { if = { limit = { has_idea = nw14_production } add_tech_bonus = { name = NW14_research bonus = 0.5 uses = 1 category = industry } } else = { add_ideas = nw14_production } }
+ }
+ focus = { id = NW14_SOV_officer_leagues icon = GFX_goal_support_fascism x = 44 y = 10 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_exceptional_statute }
+ ai_will_do = { factor = 10 } completion_reward = { if = { limit = { has_idea = nw14_discipline } army_experience = 15 } else = { add_ideas = nw14_discipline } }
+ }
+ focus = { id = NW14_SOV_forced_centralisation icon = GFX_goal_support_fascism x = 42 y = 11 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_national_corporations }
+ prerequisite = { focus = NW14_SOV_officer_leagues }
+ ai_will_do = { factor = 10 } completion_reward = { add_to_variable = { var = nw_trust value = -15 } clamp_variable = { var = nw_trust min = 0 max = 100 } add_political_power = 75 }
+ }
+ focus = { id = NW14_SOV_arsenals_of_order icon = GFX_goal_generic_construct_mil_factory x = 42 y = 12 cost = 7 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_forced_centralisation }
+ ai_will_do = { factor = 10 } completion_reward = { random_owned_controlled_state = { limit = { is_core_of = ROOT } add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } }
+ }
+ focus = { id = NW14_SOV_guardians_regime icon = GFX_goal_support_fascism x = 42 y = 13 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_arsenals_of_order }
+ ai_will_do = { factor = 10 } completion_reward = { add_ideas = nw14_black_admin }
+ }
+ focus = { id = NW14_SOV_ural_workshops icon = GFX_goal_generic_construct_civ_factory x = 51 y = 0 cost = 7 cancel_if_invalid = no continue_if_invalid = no
+ ai_will_do = { factor = 10 } completion_reward = { random_owned_controlled_state = { limit = { is_core_of = ROOT } add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } }
+ }
+ focus = { id = NW14_SOV_siberian_nodes icon = GFX_goal_generic_construct_infrastructure x = 49 y = 1 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_ural_workshops }
+ available = { any_owned_state = { is_core_of = ROOT infrastructure < 5 } }
+ ai_will_do = { factor = 10 } completion_reward = { random_owned_controlled_state = { limit = { is_core_of = ROOT infrastructure < 5 } add_building_construction = { type = infrastructure level = 1 instant_build = yes } } }
+ }
+ focus = { id = NW14_SOV_army_standard icon = GFX_goal_generic_army_doctrines x = 53 y = 1 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_ural_workshops }
+ ai_will_do = { factor = 10 } completion_reward = { add_tech_bonus = { name = NW14_research bonus = 0.5 uses = 1 category = infantry_weapons } }
+ }
+ focus = { id = NW14_SOV_aviation_schools icon = GFX_goal_generic_build_airforce x = 53 y = 2 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_army_standard }
+ ai_will_do = { factor = 10 } completion_reward = { add_tech_bonus = { name = NW14_research bonus = 0.5 uses = 1 category = light_air } }
+ }
+ focus = { id = NW14_SOV_polytechnic_network icon = GFX_goal_generic_scientific_exchange x = 51 y = 3 cost = 10 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_siberian_nodes }
+ prerequisite = { focus = NW14_SOV_aviation_schools }
+ available = { num_of_research_slots < 6 }
+ ai_will_do = { factor = 10 } completion_reward = { add_research_slot = 1 }
+ }
+
+focus = { id = NW14_SOV_crown_long_01 icon = GFX_goal_generic_political_pressure x = -2 y = 2
+ relative_position_id = NW14_SOV_measured_autocracy cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_measured_autocracy }
+ ai_will_do = { factor = 10 } completion_reward = { add_stability = 0.01 add_to_variable = { var = nw_trust value = 4 } clamp_variable = { var = nw_trust min = 0 max = 100 } }
+ }
+
+ focus = { id = NW14_SOV_crown_long_02 icon = GFX_goal_generic_political_pressure x = 0 y = 2
+ relative_position_id = NW14_SOV_measured_autocracy cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_measured_autocracy }
+ ai_will_do = { factor = 10 } completion_reward = { army_experience = 8 add_to_variable = { var = nw_army_loyalty value = 4 } clamp_variable = { var = nw_army_loyalty min = 0 max = 100 } }
+ }
+
+ focus = { id = NW14_SOV_crown_long_03 icon = GFX_goal_generic_political_pressure x = 2 y = 2
+ relative_position_id = NW14_SOV_measured_autocracy cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_measured_autocracy }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 20 add_war_support = 0.01 }
+ }
+
+ focus = { id = NW14_SOV_crown_long_04 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_crown_long_01 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_crown_long_01 }
+ ai_will_do = { factor = 10 } completion_reward = { add_stability = 0.01 add_to_variable = { var = nw_trust value = 4 } clamp_variable = { var = nw_trust min = 0 max = 100 } }
+ }
+
+ focus = { id = NW14_SOV_crown_long_05 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_crown_long_02 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_crown_long_02 }
+ ai_will_do = { factor = 10 } completion_reward = { army_experience = 8 add_to_variable = { var = nw_army_loyalty value = 4 } clamp_variable = { var = nw_army_loyalty min = 0 max = 100 } }
+ }
+
+ focus = { id = NW14_SOV_crown_long_06 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_crown_long_03 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_crown_long_03 }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 20 add_war_support = 0.01 }
+ }
+
+ focus = { id = NW14_SOV_crown_long_07 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_crown_long_04 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_crown_long_04 }
+ ai_will_do = { factor = 10 } completion_reward = { add_stability = 0.01 add_to_variable = { var = nw_trust value = 4 } clamp_variable = { var = nw_trust min = 0 max = 100 } }
+ }
+
+ focus = { id = NW14_SOV_crown_long_08 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_crown_long_05 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_crown_long_05 }
+ ai_will_do = { factor = 10 } completion_reward = { army_experience = 8 add_to_variable = { var = nw_army_loyalty value = 4 } clamp_variable = { var = nw_army_loyalty min = 0 max = 100 } }
+ }
+
+ focus = { id = NW14_SOV_crown_long_09 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_crown_long_06 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_crown_long_06 }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 20 add_war_support = 0.01 }
+ }
+
+ focus = { id = NW14_SOV_crown_long_10 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_crown_long_07 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_crown_long_07 }
+ ai_will_do = { factor = 10 } completion_reward = { add_stability = 0.01 add_to_variable = { var = nw_trust value = 4 } clamp_variable = { var = nw_trust min = 0 max = 100 } }
+ }
+
+ focus = { id = NW14_SOV_crown_long_11 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_crown_long_08 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_crown_long_08 }
+ ai_will_do = { factor = 10 } completion_reward = { army_experience = 8 add_to_variable = { var = nw_army_loyalty value = 4 } clamp_variable = { var = nw_army_loyalty min = 0 max = 100 } }
+ }
+
+ focus = { id = NW14_SOV_crown_long_12 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_crown_long_09 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_crown_long_09 }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 20 add_war_support = 0.01 }
+ }
+
+ focus = { id = NW14_SOV_crown_long_13 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_crown_long_10 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_crown_long_10 }
+ prerequisite = { focus = NW14_SOV_crown_long_11 }
+ prerequisite = { focus = NW14_SOV_crown_long_12 }
+ ai_will_do = { factor = 10 } completion_reward = { add_stability = 0.01 add_to_variable = { var = nw_trust value = 4 } clamp_variable = { var = nw_trust min = 0 max = 100 } }
+ }
+
+ focus = { id = NW14_SOV_crown_long_14 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_crown_long_11 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_crown_long_11 }
+ ai_will_do = { factor = 10 } completion_reward = { army_experience = 8 add_to_variable = { var = nw_army_loyalty value = 4 } clamp_variable = { var = nw_army_loyalty min = 0 max = 100 } }
+ }
+
+ focus = { id = NW14_SOV_crown_long_15 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_crown_long_12 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_crown_long_12 }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 20 add_war_support = 0.01 }
+ }
+
+ focus = { id = NW14_SOV_crown_long_16 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_crown_long_13 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_crown_long_13 }
+ prerequisite = { focus = NW14_SOV_crown_long_14 }
+ prerequisite = { focus = NW14_SOV_crown_long_15 }
+ ai_will_do = { factor = 10 } completion_reward = { add_stability = 0.01 add_to_variable = { var = nw_trust value = 4 } clamp_variable = { var = nw_trust min = 0 max = 100 } }
+ }
+
+ focus = { id = NW14_SOV_crown_long_17 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_crown_long_14 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_crown_long_14 }
+ ai_will_do = { factor = 10 } completion_reward = { army_experience = 8 add_to_variable = { var = nw_army_loyalty value = 4 } clamp_variable = { var = nw_army_loyalty min = 0 max = 100 } }
+ }
+
+ focus = { id = NW14_SOV_crown_long_18 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_crown_long_15 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_crown_long_15 }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 20 add_war_support = 0.01 }
+ }
+
+ focus = { id = NW14_SOV_kirill_long_01 icon = GFX_goal_generic_political_pressure x = -3 y = 1
+ relative_position_id = NW14_SOV_kirills_empire cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_kirills_empire }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 20 add_to_variable = { var = nw_army_loyalty value = 3 } clamp_variable = { var = nw_army_loyalty min = 0 max = 100 } }
+ }
+
+ focus = { id = NW14_SOV_kirill_long_02 icon = GFX_goal_generic_political_pressure x = -1 y = 1
+ relative_position_id = NW14_SOV_kirills_empire cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_kirills_empire }
+ ai_will_do = { factor = 10 } completion_reward = { army_experience = 10 add_war_support = 0.01 }
+ }
+
+ focus = { id = NW14_SOV_kirill_long_03 icon = GFX_goal_generic_political_pressure x = 1 y = 1
+ relative_position_id = NW14_SOV_kirills_empire cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_kirills_empire }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 15 add_war_support = 0.02 }
+ }
+
+ focus = { id = NW14_SOV_kirill_long_04 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_kirill_long_01 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_kirill_long_01 }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 20 add_to_variable = { var = nw_army_loyalty value = 3 } clamp_variable = { var = nw_army_loyalty min = 0 max = 100 } }
+ }
+
+ focus = { id = NW14_SOV_kirill_long_05 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_kirill_long_02 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_kirill_long_02 }
+ ai_will_do = { factor = 10 } completion_reward = { army_experience = 10 add_war_support = 0.01 }
+ }
+
+ focus = { id = NW14_SOV_kirill_long_06 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_kirill_long_03 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_kirill_long_03 }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 15 add_war_support = 0.02 country_event = { id = nw14.72 } }
+ }
+
+ focus = { id = NW14_SOV_kirill_long_07 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_kirill_long_04 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_kirill_long_04 }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 20 add_to_variable = { var = nw_army_loyalty value = 3 } clamp_variable = { var = nw_army_loyalty min = 0 max = 100 } }
+ }
+
+ focus = { id = NW14_SOV_kirill_long_08 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_kirill_long_05 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_kirill_long_05 }
+ ai_will_do = { factor = 10 } completion_reward = { army_experience = 10 add_war_support = 0.01 }
+ }
+
+ focus = { id = NW14_SOV_kirill_long_09 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_kirill_long_06 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_kirill_long_06 }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 15 add_war_support = 0.02 }
+ }
+
+ focus = { id = NW14_SOV_kirill_long_10 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_kirill_long_07 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_kirill_long_07 }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 20 add_to_variable = { var = nw_army_loyalty value = 3 } clamp_variable = { var = nw_army_loyalty min = 0 max = 100 } }
+ }
+
+ focus = { id = NW14_SOV_kirill_long_11 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_kirill_long_08 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_kirill_long_08 }
+ ai_will_do = { factor = 10 } completion_reward = { army_experience = 10 add_war_support = 0.01 }
+ }
+
+ focus = { id = NW14_SOV_kirill_long_12 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_kirill_long_09 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_kirill_long_09 }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 15 add_war_support = 0.02 }
+ }
+
+ focus = { id = NW14_SOV_kirill_long_13 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_kirill_long_10 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_kirill_long_10 }
+ prerequisite = { focus = NW14_SOV_kirill_long_11 }
+ prerequisite = { focus = NW14_SOV_kirill_long_12 }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 20 add_to_variable = { var = nw_army_loyalty value = 3 } clamp_variable = { var = nw_army_loyalty min = 0 max = 100 } }
+ }
+
+ focus = { id = NW14_SOV_kirill_long_14 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_kirill_long_11 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_kirill_long_11 }
+ ai_will_do = { factor = 10 } completion_reward = { army_experience = 10 add_war_support = 0.01 }
+ }
+
+ focus = { id = NW14_SOV_kirill_long_15 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_kirill_long_12 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_kirill_long_12 }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 15 add_war_support = 0.02 }
+ }
+
+ focus = { id = NW14_SOV_kirill_long_16 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_kirill_long_13 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_kirill_long_13 }
+ prerequisite = { focus = NW14_SOV_kirill_long_14 }
+ prerequisite = { focus = NW14_SOV_kirill_long_15 }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 20 add_to_variable = { var = nw_army_loyalty value = 3 } clamp_variable = { var = nw_army_loyalty min = 0 max = 100 } }
+ }
+
+ focus = { id = NW14_SOV_kirill_long_17 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_kirill_long_14 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_kirill_long_14 }
+ ai_will_do = { factor = 10 } completion_reward = { army_experience = 10 add_war_support = 0.01 }
+ }
+
+ focus = { id = NW14_SOV_kirill_long_18 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_kirill_long_15 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_kirill_long_15 }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 15 add_war_support = 0.02 }
+ }
+
+ focus = { id = NW14_SOV_sr_long_01 icon = GFX_goal_generic_political_pressure x = -2 y = 1
+ relative_position_id = NW14_SOV_peasant_republic cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_peasant_republic }
+ ai_will_do = { factor = 10 } completion_reward = { add_stability = 0.02 add_to_variable = { var = nw_trust value = 5 } clamp_variable = { var = nw_trust min = 0 max = 100 } }
+ }
+
+ focus = { id = NW14_SOV_sr_long_02 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_peasant_republic cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_peasant_republic }
+ ai_will_do = { factor = 10 } completion_reward = { army_experience = 6 add_to_variable = { var = nw_trust value = 2 } clamp_variable = { var = nw_trust min = 0 max = 100 } }
+ }
+
+ focus = { id = NW14_SOV_sr_long_03 icon = GFX_goal_generic_political_pressure x = 2 y = 1
+ relative_position_id = NW14_SOV_peasant_republic cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_peasant_republic }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 25 add_stability = 0.01 }
+ }
+
+ focus = { id = NW14_SOV_sr_long_04 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_sr_long_01 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_sr_long_01 }
+ ai_will_do = { factor = 10 } completion_reward = { add_stability = 0.02 add_to_variable = { var = nw_trust value = 5 } clamp_variable = { var = nw_trust min = 0 max = 100 } }
+ }
+
+ focus = { id = NW14_SOV_sr_long_05 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_sr_long_02 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_sr_long_02 }
+ ai_will_do = { factor = 10 } completion_reward = { army_experience = 6 add_to_variable = { var = nw_trust value = 2 } clamp_variable = { var = nw_trust min = 0 max = 100 } }
+ }
+
+ focus = { id = NW14_SOV_sr_long_06 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_sr_long_03 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_sr_long_03 }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 25 add_stability = 0.01 country_event = { id = nw14.73 } }
+ }
+
+ focus = { id = NW14_SOV_sr_long_07 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_sr_long_04 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_sr_long_04 }
+ ai_will_do = { factor = 10 } completion_reward = { add_stability = 0.02 add_to_variable = { var = nw_trust value = 5 } clamp_variable = { var = nw_trust min = 0 max = 100 } }
+ }
+
+ focus = { id = NW14_SOV_sr_long_08 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_sr_long_05 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_sr_long_05 }
+ ai_will_do = { factor = 10 } completion_reward = { army_experience = 6 add_to_variable = { var = nw_trust value = 2 } clamp_variable = { var = nw_trust min = 0 max = 100 } }
+ }
+
+ focus = { id = NW14_SOV_sr_long_09 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_sr_long_06 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_sr_long_06 }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 25 add_stability = 0.01 }
+ }
+
+ focus = { id = NW14_SOV_sr_long_10 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_sr_long_07 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_sr_long_07 }
+ ai_will_do = { factor = 10 } completion_reward = { add_stability = 0.02 add_to_variable = { var = nw_trust value = 5 } clamp_variable = { var = nw_trust min = 0 max = 100 } }
+ }
+
+ focus = { id = NW14_SOV_sr_long_11 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_sr_long_08 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_sr_long_08 }
+ ai_will_do = { factor = 10 } completion_reward = { army_experience = 6 add_to_variable = { var = nw_trust value = 2 } clamp_variable = { var = nw_trust min = 0 max = 100 } }
+ }
+
+ focus = { id = NW14_SOV_sr_long_12 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_sr_long_09 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_sr_long_09 }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 25 add_stability = 0.01 }
+ }
+
+ focus = { id = NW14_SOV_sr_long_13 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_sr_long_10 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_sr_long_10 }
+ prerequisite = { focus = NW14_SOV_sr_long_11 }
+ prerequisite = { focus = NW14_SOV_sr_long_12 }
+ ai_will_do = { factor = 10 } completion_reward = { add_stability = 0.02 add_to_variable = { var = nw_trust value = 5 } clamp_variable = { var = nw_trust min = 0 max = 100 } }
+ }
+
+ focus = { id = NW14_SOV_sr_long_14 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_sr_long_11 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_sr_long_11 }
+ ai_will_do = { factor = 10 } completion_reward = { army_experience = 6 add_to_variable = { var = nw_trust value = 2 } clamp_variable = { var = nw_trust min = 0 max = 100 } }
+ }
+
+ focus = { id = NW14_SOV_sr_long_15 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_sr_long_12 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_sr_long_12 }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 25 add_stability = 0.01 }
+ }
+
+ focus = { id = NW14_SOV_sr_long_16 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_sr_long_13 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_sr_long_13 }
+ prerequisite = { focus = NW14_SOV_sr_long_14 }
+ prerequisite = { focus = NW14_SOV_sr_long_15 }
+ ai_will_do = { factor = 10 } completion_reward = { add_stability = 0.02 add_to_variable = { var = nw_trust value = 5 } clamp_variable = { var = nw_trust min = 0 max = 100 } }
+ }
+
+ focus = { id = NW14_SOV_sr_long_17 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_sr_long_14 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_sr_long_14 }
+ ai_will_do = { factor = 10 } completion_reward = { army_experience = 6 add_to_variable = { var = nw_trust value = 2 } clamp_variable = { var = nw_trust min = 0 max = 100 } }
+ }
+
+ focus = { id = NW14_SOV_sr_long_18 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_sr_long_15 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_sr_long_15 }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 25 add_stability = 0.01 }
+ }
+
+ focus = { id = NW14_SOV_menshevik_long_01 icon = GFX_goal_generic_political_pressure x = -2 y = 1
+ relative_position_id = NW14_SOV_constitutional_socialism cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_constitutional_socialism }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 25 add_stability = 0.01 }
+ }
+
+ focus = { id = NW14_SOV_menshevik_long_02 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_constitutional_socialism cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_constitutional_socialism }
+ ai_will_do = { factor = 10 } completion_reward = { army_experience = 6 add_stability = 0.01 }
+ }
+
+ focus = { id = NW14_SOV_menshevik_long_03 icon = GFX_goal_generic_political_pressure x = 2 y = 1
+ relative_position_id = NW14_SOV_constitutional_socialism cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_constitutional_socialism }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 20 add_to_variable = { var = nw_trust value = 3 } clamp_variable = { var = nw_trust min = 0 max = 100 } }
+ }
+
+ focus = { id = NW14_SOV_menshevik_long_04 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_menshevik_long_01 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_menshevik_long_01 }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 25 add_stability = 0.01 }
+ }
+
+ focus = { id = NW14_SOV_menshevik_long_05 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_menshevik_long_02 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_menshevik_long_02 }
+ ai_will_do = { factor = 10 } completion_reward = { army_experience = 6 add_stability = 0.01 }
+ }
+
+ focus = { id = NW14_SOV_menshevik_long_06 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_menshevik_long_03 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_menshevik_long_03 }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 20 add_to_variable = { var = nw_trust value = 3 } clamp_variable = { var = nw_trust min = 0 max = 100 } }
+ }
+
+ focus = { id = NW14_SOV_menshevik_long_07 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_menshevik_long_04 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_menshevik_long_04 }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 25 add_stability = 0.01 }
+ }
+
+ focus = { id = NW14_SOV_menshevik_long_08 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_menshevik_long_05 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_menshevik_long_05 }
+ ai_will_do = { factor = 10 } completion_reward = { army_experience = 6 add_stability = 0.01 }
+ }
+
+ focus = { id = NW14_SOV_menshevik_long_09 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_menshevik_long_06 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_menshevik_long_06 }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 20 add_to_variable = { var = nw_trust value = 3 } clamp_variable = { var = nw_trust min = 0 max = 100 } }
+ }
+
+ focus = { id = NW14_SOV_menshevik_long_10 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_menshevik_long_07 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_menshevik_long_07 }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 25 add_stability = 0.01 }
+ }
+
+ focus = { id = NW14_SOV_menshevik_long_11 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_menshevik_long_08 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_menshevik_long_08 }
+ ai_will_do = { factor = 10 } completion_reward = { army_experience = 6 add_stability = 0.01 }
+ }
+
+ focus = { id = NW14_SOV_menshevik_long_12 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_menshevik_long_09 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_menshevik_long_09 }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 20 add_to_variable = { var = nw_trust value = 3 } clamp_variable = { var = nw_trust min = 0 max = 100 } }
+ }
+
+ focus = { id = NW14_SOV_menshevik_long_13 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_menshevik_long_10 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_menshevik_long_10 }
+ prerequisite = { focus = NW14_SOV_menshevik_long_11 }
+ prerequisite = { focus = NW14_SOV_menshevik_long_12 }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 25 add_stability = 0.01 }
+ }
+
+ focus = { id = NW14_SOV_menshevik_long_14 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_menshevik_long_11 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_menshevik_long_11 }
+ ai_will_do = { factor = 10 } completion_reward = { army_experience = 6 add_stability = 0.01 }
+ }
+
+ focus = { id = NW14_SOV_menshevik_long_15 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_menshevik_long_12 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_menshevik_long_12 }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 20 add_to_variable = { var = nw_trust value = 3 } clamp_variable = { var = nw_trust min = 0 max = 100 } }
+ }
+
+ focus = { id = NW14_SOV_menshevik_long_16 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_menshevik_long_13 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_menshevik_long_13 }
+ prerequisite = { focus = NW14_SOV_menshevik_long_14 }
+ prerequisite = { focus = NW14_SOV_menshevik_long_15 }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 25 add_stability = 0.01 }
+ }
+
+ focus = { id = NW14_SOV_menshevik_long_17 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_menshevik_long_14 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_menshevik_long_14 }
+ ai_will_do = { factor = 10 } completion_reward = { army_experience = 6 add_stability = 0.01 }
+ }
+
+ focus = { id = NW14_SOV_menshevik_long_18 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_menshevik_long_15 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_menshevik_long_15 }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 20 add_to_variable = { var = nw_trust value = 3 } clamp_variable = { var = nw_trust min = 0 max = 100 } }
+ }
+
+ focus = { id = NW14_SOV_bolshevik_long_01 icon = GFX_goal_generic_political_pressure x = -2 y = 1
+ relative_position_id = NW14_SOV_soviet_federation cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_soviet_federation }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 15 add_war_support = 0.01 }
+ }
+
+ focus = { id = NW14_SOV_bolshevik_long_02 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_soviet_federation cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_soviet_federation }
+ ai_will_do = { factor = 10 } completion_reward = { army_experience = 10 add_war_support = 0.01 }
+ }
+
+ focus = { id = NW14_SOV_bolshevik_long_03 icon = GFX_goal_generic_political_pressure x = 2 y = 1
+ relative_position_id = NW14_SOV_soviet_federation cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_soviet_federation }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 15 add_war_support = 0.02 }
+ }
+
+ focus = { id = NW14_SOV_bolshevik_long_04 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_bolshevik_long_01 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_bolshevik_long_01 }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 15 add_war_support = 0.01 }
+ }
+
+ focus = { id = NW14_SOV_bolshevik_long_05 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_bolshevik_long_02 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_bolshevik_long_02 }
+ ai_will_do = { factor = 10 } completion_reward = { army_experience = 10 add_war_support = 0.01 }
+ }
+
+ focus = { id = NW14_SOV_bolshevik_long_06 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_bolshevik_long_03 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_bolshevik_long_03 }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 15 add_war_support = 0.02 }
+ }
+
+ focus = { id = NW14_SOV_bolshevik_long_07 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_bolshevik_long_04 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_bolshevik_long_04 }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 15 add_war_support = 0.01 }
+ }
+
+ focus = { id = NW14_SOV_bolshevik_long_08 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_bolshevik_long_05 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_bolshevik_long_05 }
+ ai_will_do = { factor = 10 } completion_reward = { army_experience = 10 add_war_support = 0.01 }
+ }
+
+ focus = { id = NW14_SOV_bolshevik_long_09 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_bolshevik_long_06 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_bolshevik_long_06 }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 15 add_war_support = 0.02 }
+ }
+
+ focus = { id = NW14_SOV_bolshevik_long_10 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_bolshevik_long_07 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_bolshevik_long_07 }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 15 add_war_support = 0.01 }
+ }
+
+ focus = { id = NW14_SOV_bolshevik_long_11 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_bolshevik_long_08 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_bolshevik_long_08 }
+ ai_will_do = { factor = 10 } completion_reward = { army_experience = 10 add_war_support = 0.01 }
+ }
+
+ focus = { id = NW14_SOV_bolshevik_long_12 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_bolshevik_long_09 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_bolshevik_long_09 }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 15 add_war_support = 0.02 }
+ }
+
+ focus = { id = NW14_SOV_bolshevik_long_13 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_bolshevik_long_10 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_bolshevik_long_10 }
+ prerequisite = { focus = NW14_SOV_bolshevik_long_11 }
+ prerequisite = { focus = NW14_SOV_bolshevik_long_12 }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 15 add_war_support = 0.01 }
+ }
+
+ focus = { id = NW14_SOV_bolshevik_long_14 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_bolshevik_long_11 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_bolshevik_long_11 }
+ ai_will_do = { factor = 10 } completion_reward = { army_experience = 10 add_war_support = 0.01 }
+ }
+
+ focus = { id = NW14_SOV_bolshevik_long_15 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_bolshevik_long_12 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_bolshevik_long_12 }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 15 add_war_support = 0.02 }
+ }
+
+ focus = { id = NW14_SOV_bolshevik_long_16 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_bolshevik_long_13 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_bolshevik_long_13 }
+ prerequisite = { focus = NW14_SOV_bolshevik_long_14 }
+ prerequisite = { focus = NW14_SOV_bolshevik_long_15 }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 15 add_war_support = 0.01 }
+ }
+
+ focus = { id = NW14_SOV_bolshevik_long_17 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_bolshevik_long_14 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_bolshevik_long_14 }
+ ai_will_do = { factor = 10 } completion_reward = { army_experience = 10 add_war_support = 0.01 }
+ }
+
+ focus = { id = NW14_SOV_bolshevik_long_18 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_bolshevik_long_15 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_bolshevik_long_15 }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 15 add_war_support = 0.02 }
+ }
+
+ focus = { id = NW14_SOV_black_long_01 icon = GFX_goal_generic_political_pressure x = -4 y = 1
+ relative_position_id = NW14_SOV_guardians_regime cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_guardians_regime }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 15 add_to_variable = { var = nw_trust value = -3 } clamp_variable = { var = nw_trust min = 0 max = 100 } }
+ }
+
+ focus = { id = NW14_SOV_black_long_02 icon = GFX_goal_generic_political_pressure x = -2 y = 1
+ relative_position_id = NW14_SOV_guardians_regime cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_guardians_regime }
+ ai_will_do = { factor = 10 } completion_reward = { army_experience = 10 add_to_variable = { var = nw_army_loyalty value = 3 } clamp_variable = { var = nw_army_loyalty min = 0 max = 100 } }
+ }
+
+ focus = { id = NW14_SOV_black_long_03 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_guardians_regime cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_guardians_regime }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 15 add_stability = -0.01 }
+ }
+
+ focus = { id = NW14_SOV_black_long_04 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_black_long_01 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_black_long_01 }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 15 add_to_variable = { var = nw_trust value = -3 } clamp_variable = { var = nw_trust min = 0 max = 100 } }
+ }
+
+ focus = { id = NW14_SOV_black_long_05 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_black_long_02 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_black_long_02 }
+ ai_will_do = { factor = 10 } completion_reward = { army_experience = 10 add_to_variable = { var = nw_army_loyalty value = 3 } clamp_variable = { var = nw_army_loyalty min = 0 max = 100 } }
+ }
+
+ focus = { id = NW14_SOV_black_long_06 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_black_long_03 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_black_long_03 }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 15 add_stability = -0.01 }
+ }
+
+ focus = { id = NW14_SOV_black_long_07 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_black_long_04 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_black_long_04 }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 15 add_to_variable = { var = nw_trust value = -3 } clamp_variable = { var = nw_trust min = 0 max = 100 } }
+ }
+
+ focus = { id = NW14_SOV_black_long_08 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_black_long_05 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_black_long_05 }
+ ai_will_do = { factor = 10 } completion_reward = { army_experience = 10 add_to_variable = { var = nw_army_loyalty value = 3 } clamp_variable = { var = nw_army_loyalty min = 0 max = 100 } }
+ }
+
+ focus = { id = NW14_SOV_black_long_09 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_black_long_06 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_black_long_06 }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 15 add_stability = -0.01 }
+ }
+
+ focus = { id = NW14_SOV_black_long_10 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_black_long_07 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_black_long_07 }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 15 add_to_variable = { var = nw_trust value = -3 } clamp_variable = { var = nw_trust min = 0 max = 100 } }
+ }
+
+ focus = { id = NW14_SOV_black_long_11 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_black_long_08 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_black_long_08 }
+ ai_will_do = { factor = 10 } completion_reward = { army_experience = 10 add_to_variable = { var = nw_army_loyalty value = 3 } clamp_variable = { var = nw_army_loyalty min = 0 max = 100 } }
+ }
+
+ focus = { id = NW14_SOV_black_long_12 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_black_long_09 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_black_long_09 }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 15 add_stability = -0.01 }
+ }
+
+ focus = { id = NW14_SOV_black_long_13 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_black_long_10 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_black_long_10 }
+ prerequisite = { focus = NW14_SOV_black_long_11 }
+ prerequisite = { focus = NW14_SOV_black_long_12 }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 15 add_to_variable = { var = nw_trust value = -3 } clamp_variable = { var = nw_trust min = 0 max = 100 } }
+ }
+
+ focus = { id = NW14_SOV_black_long_14 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_black_long_11 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_black_long_11 }
+ ai_will_do = { factor = 10 } completion_reward = { army_experience = 10 add_to_variable = { var = nw_army_loyalty value = 3 } clamp_variable = { var = nw_army_loyalty min = 0 max = 100 } }
+ }
+
+ focus = { id = NW14_SOV_black_long_15 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_black_long_12 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_black_long_12 }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 15 add_stability = -0.01 }
+ }
+
+ focus = { id = NW14_SOV_black_long_16 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_black_long_13 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_black_long_13 }
+ prerequisite = { focus = NW14_SOV_black_long_14 }
+ prerequisite = { focus = NW14_SOV_black_long_15 }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 15 add_to_variable = { var = nw_trust value = -3 } clamp_variable = { var = nw_trust min = 0 max = 100 } }
+ }
+
+ focus = { id = NW14_SOV_black_long_17 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_black_long_14 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_black_long_14 }
+ ai_will_do = { factor = 10 } completion_reward = { army_experience = 10 add_to_variable = { var = nw_army_loyalty value = 3 } clamp_variable = { var = nw_army_loyalty min = 0 max = 100 } }
+ }
+
+ focus = { id = NW14_SOV_black_long_18 icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_black_long_15 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_black_long_15 }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 15 add_stability = -0.01 }
+ }
+
+ focus = { id = NW14_SOV_crown_long_final icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_crown_long_17 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_crown_long_16 }
+ prerequisite = { focus = NW14_SOV_crown_long_17 }
+ prerequisite = { focus = NW14_SOV_crown_long_18 }
+ available = { has_country_flag = nw_rus_path_recovery }
+ ai_will_do = { factor = 10 } completion_reward = { add_stability = 0.05 add_political_power = 35 }
+ }
+
+ focus = { id = NW14_SOV_kirill_long_final icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_kirill_long_17 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_kirill_long_16 }
+ prerequisite = { focus = NW14_SOV_kirill_long_17 }
+ prerequisite = { focus = NW14_SOV_kirill_long_18 }
+ available = { OR = { has_country_flag = nw_kirill_eastern has_country_flag = nw_kirill_cautious } }
+ ai_will_do = { factor = 10 } completion_reward = { add_stability = 0.03 army_experience = 20 }
+ }
+
+ focus = { id = NW14_SOV_sr_long_final icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_sr_long_17 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_sr_long_16 }
+ prerequisite = { focus = NW14_SOV_sr_long_17 }
+ prerequisite = { focus = NW14_SOV_sr_long_18 }
+ available = { OR = { has_country_flag = nw_sr_federal has_country_flag = nw_sr_central } }
+ ai_will_do = { factor = 10 } completion_reward = { add_stability = 0.05 add_political_power = 30 }
+ }
+
+ focus = { id = NW14_SOV_menshevik_long_final icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_menshevik_long_17 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_menshevik_long_16 }
+ prerequisite = { focus = NW14_SOV_menshevik_long_17 }
+ prerequisite = { focus = NW14_SOV_menshevik_long_18 }
+ ai_will_do = { factor = 10 } completion_reward = { add_stability = 0.04 add_political_power = 35 }
+ }
+
+ focus = { id = NW14_SOV_bolshevik_long_final icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_bolshevik_long_17 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_bolshevik_long_16 }
+ prerequisite = { focus = NW14_SOV_bolshevik_long_17 }
+ prerequisite = { focus = NW14_SOV_bolshevik_long_18 }
+ ai_will_do = { factor = 10 } completion_reward = { army_experience = 20 add_war_support = 0.04 }
+ }
+
+ focus = { id = NW14_SOV_black_long_final icon = GFX_goal_generic_political_pressure x = 0 y = 1
+ relative_position_id = NW14_SOV_black_long_17 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_black_long_16 }
+ prerequisite = { focus = NW14_SOV_black_long_17 }
+ prerequisite = { focus = NW14_SOV_black_long_18 }
+ ai_will_do = { factor = 10 } completion_reward = { add_stability = 0.03 add_political_power = 25 }
+ }
+
+ 
+
+ focus = {
+  id = NW14_SOV_economic_programme
+  icon = GFX_goal_generic_construct_infrastructure
+  x = -3
+  y = 4
+  relative_position_id = NW14_SOV_ural_workshops
+  
+  cost = 5
+  cancel_if_invalid = no
+  continue_if_invalid = no
+  ai_will_do = { factor = 10 }
+  completion_reward = { add_political_power = 25 add_stability = 0.02 }
+ }
+focus = { id = NW14_SOV_national_reconstruction_01 icon = GFX_goal_generic_construct_infrastructure x = -2 y = 1
+ relative_position_id = NW14_SOV_economic_programme cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_economic_programme }
+ ai_will_do = { factor = 10 } completion_reward = { random_owned_controlled_state = { limit = { is_core_of = ROOT infrastructure < 5 } add_building_construction = { type = infrastructure level = 1 instant_build = yes } } }
+ }
+
+ focus = { id = NW14_SOV_national_reconstruction_02 icon = GFX_goal_generic_construct_infrastructure x = 0 y = 1
+ relative_position_id = NW14_SOV_economic_programme cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_economic_programme }
+ ai_will_do = { factor = 10 } completion_reward = { random_owned_controlled_state = { limit = { is_core_of = ROOT } add_extra_state_shared_building_slots = 1 add_building_construction = { type = infrastructure level = 1 instant_build = yes } } }
+ }
+
+ focus = { id = NW14_SOV_national_reconstruction_03 icon = GFX_goal_generic_construct_infrastructure x = 2 y = 1
+ relative_position_id = NW14_SOV_economic_programme cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_economic_programme }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 25 random_owned_controlled_state = { limit = { is_core_of = ROOT } add_building_construction = { type = infrastructure level = 1 instant_build = yes } } }
+ }
+
+ focus = { id = NW14_SOV_national_reconstruction_04 icon = GFX_goal_generic_construct_infrastructure x = 0 y = 1
+ relative_position_id = NW14_SOV_national_reconstruction_01 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_national_reconstruction_01 }
+ ai_will_do = { factor = 10 } completion_reward = { random_owned_controlled_state = { limit = { is_core_of = ROOT } add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } }
+ }
+
+ focus = { id = NW14_SOV_national_reconstruction_05 icon = GFX_goal_generic_construct_infrastructure x = 0 y = 1
+ relative_position_id = NW14_SOV_national_reconstruction_02 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_national_reconstruction_02 }
+ ai_will_do = { factor = 10 } completion_reward = { add_tech_bonus = { name = NW14_research bonus = 0.5 uses = 1 category = industry } }
+ }
+
+ focus = { id = NW14_SOV_national_reconstruction_06 icon = GFX_goal_generic_construct_infrastructure x = 0 y = 1
+ relative_position_id = NW14_SOV_national_reconstruction_03 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_national_reconstruction_03 }
+ ai_will_do = { factor = 10 } completion_reward = { random_owned_controlled_state = { limit = { is_core_of = ROOT } add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } }
+ }
+
+ focus = { id = NW14_SOV_national_reconstruction_07 icon = GFX_goal_generic_construct_infrastructure x = 0 y = 1
+ relative_position_id = NW14_SOV_national_reconstruction_04 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_national_reconstruction_04 }
+ ai_will_do = { factor = 10 } completion_reward = { random_owned_controlled_state = { limit = { is_core_of = ROOT infrastructure < 5 } add_building_construction = { type = infrastructure level = 1 instant_build = yes } } }
+ }
+
+ focus = { id = NW14_SOV_national_reconstruction_08 icon = GFX_goal_generic_construct_infrastructure x = 0 y = 1
+ relative_position_id = NW14_SOV_national_reconstruction_05 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_national_reconstruction_05 }
+ ai_will_do = { factor = 10 } completion_reward = { add_stability = 0.02 random_owned_controlled_state = { limit = { is_core_of = ROOT } add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } }
+ }
+
+ focus = { id = NW14_SOV_national_reconstruction_09 icon = GFX_goal_generic_construct_infrastructure x = 0 y = 1
+ relative_position_id = NW14_SOV_national_reconstruction_06 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_national_reconstruction_06 }
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 30 }
+ }
+
+ focus = { id = NW14_SOV_national_reconstruction_10 icon = GFX_goal_generic_construct_infrastructure x = 0 y = 1
+ relative_position_id = NW14_SOV_national_reconstruction_07 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_national_reconstruction_07 }
+ ai_will_do = { factor = 10 } completion_reward = { add_tech_bonus = { name = NW14_research bonus = 0.5 uses = 1 category = electronics } }
+ }
+
+ focus = { id = NW14_SOV_national_reconstruction_11 icon = GFX_goal_generic_construct_infrastructure x = 0 y = 1
+ relative_position_id = NW14_SOV_national_reconstruction_08 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_national_reconstruction_08 }
+ ai_will_do = { factor = 10 } completion_reward = { add_tech_bonus = { name = NW14_research bonus = 0.5 uses = 1 category = industry } }
+ }
+
+ focus = { id = NW14_SOV_national_reconstruction_12 icon = GFX_goal_generic_construct_infrastructure x = 0 y = 1
+ relative_position_id = NW14_SOV_national_reconstruction_09 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_national_reconstruction_09 }
+ ai_will_do = { factor = 10 } completion_reward = { army_experience = 20 add_war_support = 0.02 }
+ }
+
+ focus = { id = NW14_SOV_national_reconstruction_13 icon = GFX_goal_generic_construct_infrastructure x = 0 y = 1
+ relative_position_id = NW14_SOV_national_reconstruction_10 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_national_reconstruction_10 }
+ ai_will_do = { factor = 10 } completion_reward = { army_experience = 15 add_to_variable = { var = nw_army_loyalty value = 5 } clamp_variable = { var = nw_army_loyalty min = 0 max = 100 } }
+ }
+
+ focus = { id = NW14_SOV_national_reconstruction_14 icon = GFX_goal_generic_construct_infrastructure x = 0 y = 1
+ relative_position_id = NW14_SOV_national_reconstruction_11 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_national_reconstruction_11 }
+ ai_will_do = { factor = 10 } completion_reward = { add_tech_bonus = { name = NW14_research bonus = 0.5 uses = 1 category = infantry_weapons } }
+ }
+
+ focus = { id = NW14_SOV_national_reconstruction_15 icon = GFX_goal_generic_construct_infrastructure x = 0 y = 1
+ relative_position_id = NW14_SOV_national_reconstruction_12 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_national_reconstruction_12 }
+ ai_will_do = { factor = 10 } completion_reward = { add_tech_bonus = { name = NW14_research bonus = 0.5 uses = 1 category = light_air } }
+ }
+
+ focus = { id = NW14_SOV_national_reconstruction_16 icon = GFX_goal_generic_construct_infrastructure x = 0 y = 1
+ relative_position_id = NW14_SOV_national_reconstruction_13 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_national_reconstruction_13 }
+ ai_will_do = { factor = 10 } completion_reward = { army_experience = 15 add_war_support = 0.02 }
+ }
+
+ focus = { id = NW14_SOV_national_reconstruction_17 icon = GFX_goal_generic_construct_infrastructure x = 0 y = 1
+ relative_position_id = NW14_SOV_national_reconstruction_14 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_national_reconstruction_14 }
+ ai_will_do = { factor = 10 } completion_reward = { add_stability = 0.02 add_political_power = 20 }
+ }
+
+ focus = { id = NW14_SOV_national_reconstruction_18 icon = GFX_goal_generic_construct_infrastructure x = 0 y = 1
+ relative_position_id = NW14_SOV_national_reconstruction_15 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_national_reconstruction_15 }
+ ai_will_do = { factor = 10 } completion_reward = { add_ideas = nw14_war_supply }
+ }
+
+ focus = { id = NW14_SOV_national_reconstruction_19 icon = GFX_goal_generic_construct_infrastructure x = 0 y = 1
+ relative_position_id = NW14_SOV_national_reconstruction_16 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_national_reconstruction_16 }
+ 
+ 
+ ai_will_do = { factor = 10 } completion_reward = { add_stability = 0.02 add_political_power = 20 }
+ }
+
+ focus = { id = NW14_SOV_national_reconstruction_20 icon = GFX_goal_generic_construct_infrastructure x = 0 y = 1
+ relative_position_id = NW14_SOV_national_reconstruction_17 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_national_reconstruction_17 }
+ ai_will_do = { factor = 10 } completion_reward = { add_tech_bonus = { name = NW14_research bonus = 0.5 uses = 1 category = electronics } }
+ }
+
+ focus = { id = NW14_SOV_national_reconstruction_21 icon = GFX_goal_generic_construct_infrastructure x = 0 y = 1
+ relative_position_id = NW14_SOV_national_reconstruction_18 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_national_reconstruction_18 }
+ ai_will_do = { factor = 10 } completion_reward = { add_ideas = nw14_trade }
+ }
+
+ focus = { id = NW14_SOV_national_reconstruction_22 icon = GFX_goal_generic_construct_infrastructure x = 0 y = 1
+ relative_position_id = NW14_SOV_national_reconstruction_19 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_national_reconstruction_19 }
+ 
+ 
+ ai_will_do = { factor = 10 } completion_reward = { add_political_power = 35 add_to_variable = { var = nw_trust value = 5 } clamp_variable = { var = nw_trust min = 0 max = 100 } }
+ }
+
+ focus = { id = NW14_SOV_national_reconstruction_23 icon = GFX_goal_generic_construct_infrastructure x = 0 y = 1
+ relative_position_id = NW14_SOV_national_reconstruction_20 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_national_reconstruction_20 }
+ ai_will_do = { factor = 10 } completion_reward = { add_stability = 0.02 add_political_power = 20 }
+ }
+
+ focus = { id = NW14_SOV_national_reconstruction_24 icon = GFX_goal_generic_construct_infrastructure x = 0 y = 1
+ relative_position_id = NW14_SOV_national_reconstruction_21 cost = 5 cancel_if_invalid = no continue_if_invalid = no
+ prerequisite = { focus = NW14_SOV_national_reconstruction_21 }
+ ai_will_do = { factor = 10 } completion_reward = { add_tech_bonus = { name = NW14_research bonus = 0.5 uses = 1 category = industry } add_war_support = 0.02 }
+ }
+
+
+ focus = {
+  id = NW14_SOV_army_programme
+  icon = GFX_goal_generic_army_doctrines
+  x = 3
+  y = 4
+  relative_position_id = NW14_SOV_ural_workshops
+  
+  cost = 5
+  cancel_if_invalid = no
+  continue_if_invalid = no
+  ai_will_do = { factor = 10 }
+  completion_reward = { add_political_power = 20 army_experience = 10 }
+ }
+
+ focus = {
+  id = NW14_SOV_army_staff
+  icon = GFX_goal_generic_army_doctrines
+  x = -2
+  y = 1
+  relative_position_id = NW14_SOV_army_programme
+  prerequisite = { focus = NW14_SOV_army_programme }
+  cost = 5
+  cancel_if_invalid = no
+  continue_if_invalid = no
+  ai_will_do = { factor = 10 }
+  completion_reward = { army_experience = 20 }
+ }
+
+ focus = {
+  id = NW14_SOV_army_artillery
+  icon = GFX_goal_generic_army_artillery2
+  x = 0
+  y = 1
+  relative_position_id = NW14_SOV_army_programme
+  prerequisite = { focus = NW14_SOV_army_programme }
+  cost = 5
+  cancel_if_invalid = no
+  continue_if_invalid = no
+  ai_will_do = { factor = 10 }
+  completion_reward = { army_experience = 15 }
+ }
+
+ focus = {
+  id = NW14_SOV_army_reserve
+  icon = GFX_goal_generic_army_doctrines
+  x = 2
+  y = 1
+  relative_position_id = NW14_SOV_army_programme
+  prerequisite = { focus = NW14_SOV_army_programme }
+  cost = 5
+  cancel_if_invalid = no
+  continue_if_invalid = no
+  ai_will_do = { factor = 10 }
+  completion_reward = { add_manpower = 25000 }
+ }
+
+ focus = {
+  id = NW14_SOV_army_corps
+  icon = GFX_goal_generic_army_doctrines
+  x = 0
+  y = 1
+  relative_position_id = NW14_SOV_army_staff
+  prerequisite = { focus = NW14_SOV_army_staff }
+  cost = 5
+  cancel_if_invalid = no
+  continue_if_invalid = no
+  ai_will_do = { factor = 10 }
+  completion_reward = { army_experience = 20 }
+ }
+
+ focus = {
+  id = NW14_SOV_army_logistics
+  icon = GFX_goal_generic_construct_infrastructure
+  x = 0
+  y = 1
+  relative_position_id = NW14_SOV_army_artillery
+  prerequisite = { focus = NW14_SOV_army_artillery }
+  cost = 5
+  cancel_if_invalid = no
+  continue_if_invalid = no
+  ai_will_do = { factor = 10 }
+  completion_reward = { add_war_support = 0.02 }
+ }
+
+ focus = {
+  id = NW14_SOV_army_support
+  icon = GFX_goal_generic_small_arms
+  x = 0
+  y = 1
+  relative_position_id = NW14_SOV_army_reserve
+  prerequisite = { focus = NW14_SOV_army_reserve }
+  cost = 5
+  cancel_if_invalid = no
+  continue_if_invalid = no
+  ai_will_do = { factor = 10 }
+  completion_reward = { army_experience = 15 }
+ }
+
+ focus = {
+  id = NW14_SOV_army_manoeuvres
+  icon = GFX_goal_generic_army_doctrines
+  x = 0
+  y = 1
+  relative_position_id = NW14_SOV_army_corps
+  prerequisite = { focus = NW14_SOV_army_corps }
+  cost = 5
+  cancel_if_invalid = no
+  continue_if_invalid = no
+  ai_will_do = { factor = 10 }
+  completion_reward = { army_experience = 20 }
+ }
+
+ focus = {
+  id = NW14_SOV_army_officers
+  icon = GFX_goal_generic_political_pressure
+  x = 0
+  y = 1
+  relative_position_id = NW14_SOV_army_logistics
+  prerequisite = { focus = NW14_SOV_army_logistics }
+  cost = 5
+  cancel_if_invalid = no
+  continue_if_invalid = no
+  ai_will_do = { factor = 10 }
+  completion_reward = { add_stability = 0.02 }
+ }
+
+ focus = {
+  id = NW14_SOV_army_mobilisation
+  icon = GFX_goal_generic_conscript_army
+  x = 0
+  y = 1
+  relative_position_id = NW14_SOV_army_support
+  prerequisite = { focus = NW14_SOV_army_support }
+  cost = 5
+  cancel_if_invalid = no
+  continue_if_invalid = no
+  ai_will_do = { factor = 10 }
+  completion_reward = { add_war_support = 0.02 }
+ }
+
+ focus = {
+  id = NW14_SOV_army_command
+  icon = GFX_goal_generic_army_doctrines
+  x = 0
+  y = 1
+  relative_position_id = NW14_SOV_army_officers
+  prerequisite = { focus = NW14_SOV_army_manoeuvres focus = NW14_SOV_army_officers focus = NW14_SOV_army_mobilisation }
+  cost = 5
+  cancel_if_invalid = no
+  continue_if_invalid = no
+  ai_will_do = { factor = 10 }
+  completion_reward = { army_experience = 20 add_war_support = 0.02 }
+ }
+
+ focus = {
+  id = NW14_SOV_navy_programme
+  icon = GFX_goal_generic_navy_doctrines_tactics
+  x = 9
+  y = 4
+  relative_position_id = NW14_SOV_ural_workshops
+  
+  cost = 5
+  cancel_if_invalid = no
+  continue_if_invalid = no
+  ai_will_do = { factor = 10 }
+  completion_reward = { add_political_power = 20 navy_experience = 10 }
+ }
+
+ focus = {
+  id = NW14_SOV_navy_baltic
+  icon = GFX_goal_generic_navy_doctrines_tactics
+  x = -2
+  y = 1
+  relative_position_id = NW14_SOV_navy_programme
+  prerequisite = { focus = NW14_SOV_navy_programme }
+  cost = 5
+  cancel_if_invalid = no
+  continue_if_invalid = no
+  ai_will_do = { factor = 10 }
+  completion_reward = { navy_experience = 20 }
+ }
+
+ focus = {
+  id = NW14_SOV_navy_black_sea
+  icon = GFX_goal_generic_navy_cruiser
+  x = 0
+  y = 1
+  relative_position_id = NW14_SOV_navy_programme
+  prerequisite = { focus = NW14_SOV_navy_programme }
+  cost = 5
+  cancel_if_invalid = no
+  continue_if_invalid = no
+  ai_will_do = { factor = 10 }
+  completion_reward = { navy_experience = 15 }
+ }
+
+ focus = {
+  id = NW14_SOV_navy_pacific
+  icon = GFX_goal_generic_navy_battleship
+  x = 2
+  y = 1
+  relative_position_id = NW14_SOV_navy_programme
+  prerequisite = { focus = NW14_SOV_navy_programme }
+  cost = 5
+  cancel_if_invalid = no
+  continue_if_invalid = no
+  ai_will_do = { factor = 10 }
+  completion_reward = { navy_experience = 15 }
+ }
+
+ focus = {
+  id = NW14_SOV_navy_shipyards
+  icon = GFX_goal_generic_construct_naval_dockyard
+  x = 0
+  y = 1
+  relative_position_id = NW14_SOV_navy_baltic
+  prerequisite = { focus = NW14_SOV_navy_baltic }
+  cost = 5
+  cancel_if_invalid = no
+  continue_if_invalid = no
+  ai_will_do = { factor = 10 }
+  completion_reward = { add_political_power = 20 }
+ }
+
+ focus = {
+  id = NW14_SOV_navy_escorts
+  icon = GFX_goal_generic_navy_doctrines_tactics
+  x = 0
+  y = 1
+  relative_position_id = NW14_SOV_navy_black_sea
+  prerequisite = { focus = NW14_SOV_navy_black_sea }
+  cost = 5
+  cancel_if_invalid = no
+  continue_if_invalid = no
+  ai_will_do = { factor = 10 }
+  completion_reward = { navy_experience = 15 }
+ }
+
+ focus = {
+  id = NW14_SOV_navy_repair
+  icon = GFX_goal_generic_construct_naval_dockyard
+  x = 0
+  y = 1
+  relative_position_id = NW14_SOV_navy_pacific
+  prerequisite = { focus = NW14_SOV_navy_pacific }
+  cost = 5
+  cancel_if_invalid = no
+  continue_if_invalid = no
+  ai_will_do = { factor = 10 }
+  completion_reward = { add_stability = 0.02 }
+ }
+
+ focus = {
+  id = NW14_SOV_navy_signals
+  icon = GFX_goal_generic_navy_doctrines_tactics
+  x = 0
+  y = 1
+  relative_position_id = NW14_SOV_navy_shipyards
+  prerequisite = { focus = NW14_SOV_navy_shipyards }
+  cost = 5
+  cancel_if_invalid = no
+  continue_if_invalid = no
+  ai_will_do = { factor = 10 }
+  completion_reward = { navy_experience = 20 }
+ }
+
+ focus = {
+  id = NW14_SOV_navy_mines
+  icon = GFX_goal_generic_navy_submarine
+  x = 0
+  y = 1
+  relative_position_id = NW14_SOV_navy_escorts
+  prerequisite = { focus = NW14_SOV_navy_escorts }
+  cost = 5
+  cancel_if_invalid = no
+  continue_if_invalid = no
+  ai_will_do = { factor = 10 }
+  completion_reward = { navy_experience = 15 }
+ }
+
+ focus = {
+  id = NW14_SOV_navy_staff
+  icon = GFX_goal_generic_political_pressure
+  x = 0
+  y = 1
+  relative_position_id = NW14_SOV_navy_repair
+  prerequisite = { focus = NW14_SOV_navy_repair }
+  cost = 5
+  cancel_if_invalid = no
+  continue_if_invalid = no
+  ai_will_do = { factor = 10 }
+  completion_reward = { navy_experience = 20 }
+ }
+
+ focus = {
+  id = NW14_SOV_navy_command
+  icon = GFX_goal_generic_navy_doctrines_tactics
+  x = 0
+  y = 1
+  relative_position_id = NW14_SOV_navy_mines
+  prerequisite = { focus = NW14_SOV_navy_signals focus = NW14_SOV_navy_mines focus = NW14_SOV_navy_staff }
+  cost = 5
+  cancel_if_invalid = no
+  continue_if_invalid = no
+  ai_will_do = { factor = 10 }
+  completion_reward = { navy_experience = 20 add_war_support = 0.02 }
+ }
+
+ focus = {
+  id = NW14_SOV_air_programme
+  icon = GFX_goal_generic_build_airforce
+  x = 15
+  y = 4
+  relative_position_id = NW14_SOV_ural_workshops
+  
+  cost = 5
+  cancel_if_invalid = no
+  continue_if_invalid = no
+  ai_will_do = { factor = 10 }
+  completion_reward = { add_political_power = 20 air_experience = 10 }
+ }
+
+ focus = {
+  id = NW14_SOV_air_office
+  icon = GFX_goal_generic_build_airforce
+  x = -2
+  y = 1
+  relative_position_id = NW14_SOV_air_programme
+  prerequisite = { focus = NW14_SOV_air_programme }
+  cost = 5
+  cancel_if_invalid = no
+  continue_if_invalid = no
+  ai_will_do = { factor = 10 }
+  completion_reward = { air_experience = 20 }
+ }
+
+ focus = {
+  id = NW14_SOV_air_engines
+  icon = GFX_goal_generic_production
+  x = 0
+  y = 1
+  relative_position_id = NW14_SOV_air_programme
+  prerequisite = { focus = NW14_SOV_air_programme }
+  cost = 5
+  cancel_if_invalid = no
+  continue_if_invalid = no
+  ai_will_do = { factor = 10 }
+  completion_reward = { add_political_power = 20 }
+ }
+
+ focus = {
+  id = NW14_SOV_air_schools
+  icon = GFX_goal_generic_build_airforce
+  x = 2
+  y = 1
+  relative_position_id = NW14_SOV_air_programme
+  prerequisite = { focus = NW14_SOV_air_programme }
+  cost = 5
+  cancel_if_invalid = no
+  continue_if_invalid = no
+  ai_will_do = { factor = 10 }
+  completion_reward = { air_experience = 15 }
+ }
+
+ focus = {
+  id = NW14_SOV_air_fighters
+  icon = GFX_goal_generic_air_fighter2
+  x = 0
+  y = 1
+  relative_position_id = NW14_SOV_air_office
+  prerequisite = { focus = NW14_SOV_air_office }
+  cost = 5
+  cancel_if_invalid = no
+  continue_if_invalid = no
+  ai_will_do = { factor = 10 }
+  completion_reward = { add_tech_bonus = { name = NW14_research bonus = 0.5 uses = 1 category = light_air } }
+ }
+
+ focus = {
+  id = NW14_SOV_air_recon
+  icon = GFX_goal_generic_build_airforce
+  x = 0
+  y = 1
+  relative_position_id = NW14_SOV_air_engines
+  prerequisite = { focus = NW14_SOV_air_engines }
+  cost = 5
+  cancel_if_invalid = no
+  continue_if_invalid = no
+  ai_will_do = { factor = 10 }
+  completion_reward = { air_experience = 15 }
+ }
+
+ focus = {
+  id = NW14_SOV_air_bombers
+  icon = GFX_goal_generic_air_bomber
+  x = 0
+  y = 1
+  relative_position_id = NW14_SOV_air_schools
+  prerequisite = { focus = NW14_SOV_air_schools }
+  cost = 5
+  cancel_if_invalid = no
+  continue_if_invalid = no
+  ai_will_do = { factor = 10 }
+  completion_reward = { air_experience = 15 }
+ }
+
+ focus = {
+  id = NW14_SOV_air_radio
+  icon = GFX_goal_generic_build_airforce
+  x = 0
+  y = 1
+  relative_position_id = NW14_SOV_air_fighters
+  prerequisite = { focus = NW14_SOV_air_fighters }
+  cost = 5
+  cancel_if_invalid = no
+  continue_if_invalid = no
+  ai_will_do = { factor = 10 }
+  completion_reward = { air_experience = 20 }
+ }
+
+ focus = {
+  id = NW14_SOV_air_logistics
+  icon = GFX_goal_generic_construct_infrastructure
+  x = 0
+  y = 1
+  relative_position_id = NW14_SOV_air_recon
+  prerequisite = { focus = NW14_SOV_air_recon }
+  cost = 5
+  cancel_if_invalid = no
+  continue_if_invalid = no
+  ai_will_do = { factor = 10 }
+  completion_reward = { add_war_support = 0.02 }
+ }
+
+ focus = {
+  id = NW14_SOV_air_doctrine
+  icon = GFX_goal_generic_build_airforce
+  x = 0
+  y = 1
+  relative_position_id = NW14_SOV_air_bombers
+  prerequisite = { focus = NW14_SOV_air_bombers }
+  cost = 5
+  cancel_if_invalid = no
+  continue_if_invalid = no
+  ai_will_do = { factor = 10 }
+  completion_reward = { add_tech_bonus = { name = NW14_research bonus = 0.5 uses = 1 category = air_doctrine } }
+ }
+
+ focus = {
+  id = NW14_SOV_air_command
+  icon = GFX_goal_generic_build_airforce
+  x = 0
+  y = 1
+  relative_position_id = NW14_SOV_air_logistics
+  prerequisite = { focus = NW14_SOV_air_radio focus = NW14_SOV_air_logistics focus = NW14_SOV_air_doctrine }
+  cost = 5
+  cancel_if_invalid = no
+  continue_if_invalid = no
+  ai_will_do = { factor = 10 }
+  completion_reward = { air_experience = 20 add_war_support = 0.02 }
+ }
+}

@@ -1,0 +1,1 @@
+# Country definitions contain colours; see cosmetic.txt for NW_KIRILL.

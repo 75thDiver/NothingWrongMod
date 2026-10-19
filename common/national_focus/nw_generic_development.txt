@@ -1,0 +1,2541 @@
+focus_tree = {
+ # Pixel coordinates; keep palette below the full regular tree.
+ continuous_focus_position = { x = 50 y = 2000 }
+
+ id = NW_generic_development
+ default = yes
+ reset_on_civilwar = no
+ country = { factor = 100000 modifier = { factor = 0 OR = { tag = MAN tag = GER tag = SOV tag = AUS tag = HUN } } }
+ focus = {
+  id = NWG_political_change
+  icon = GFX_goal_generic_political_pressure
+  x = 59
+  y = 0
+  cost = 6
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_political_power = 75 }
+ }
+ focus = {
+  id = NWG_army_effort
+  icon = GFX_goal_generic_army_doctrines
+  x = 21
+  y = 1
+  cost = 6
+  ai_will_do = { factor = 1 }
+  completion_reward = { army_experience = 15 }
+ }
+ focus = {
+  id = NWG_industrial_effort
+  icon = GFX_goal_generic_scientific_exchange
+  x = 37
+  y = 1
+  cost = 6
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_tech_bonus = { name = NWG_industrial_effort bonus = 0.5 uses = 1 category = industry } }
+ }
+ focus = {
+  id = NWG_misc_political_actions
+  icon = GFX_goal_generic_political_pressure
+  x = 47
+  y = 1
+  cost = 6
+  prerequisite = { focus = NWG_political_change }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_political_power = 35 add_stability = 0.02 }
+ }
+ focus = {
+  id = NWG_collectivist_ethos
+  icon = GFX_goal_generic_political_pressure
+  x = 59
+  y = 1
+  cost = 6
+  prerequisite = { focus = NWG_political_change }
+  mutually_exclusive = { focus = NWG_individualist_ethos }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_war_support = 0.03 add_political_power = 35 }
+ }
+ focus = {
+  id = NWG_individualist_ethos
+  icon = GFX_goal_generic_political_pressure
+  x = 75
+  y = 1
+  cost = 6
+  prerequisite = { focus = NWG_political_change }
+  mutually_exclusive = { focus = NWG_collectivist_ethos }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_stability = 0.03 add_political_power = 35 }
+ }
+ focus = {
+  id = NWG_modernization_of_the_army
+  icon = GFX_goal_generic_army_doctrines
+  x = 5
+  y = 2
+  cost = 6
+  prerequisite = { focus = NWG_army_effort }
+  ai_will_do = { factor = 1 }
+  completion_reward = { army_experience = 15 }
+ }
+ focus = {
+  id = NWG_defence_of_the_nation
+  icon = GFX_goal_generic_national_unity
+  x = 9
+  y = 2
+  cost = 6
+  prerequisite = { focus = NWG_army_effort }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_ideas = nwg_spirit_defence_of_the_nation }
+ }
+ focus = {
+  id = NWG_military_research
+  icon = GFX_goal_generic_small_arms
+  x = 12
+  y = 2
+  cost = 6
+  prerequisite = { focus = NWG_army_effort }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_tech_bonus = { name = NWG_military_research bonus = 0.5 uses = 1 category = infantry_weapons } }
+ }
+ focus = {
+  id = NWG_war_propoganda
+  icon = GFX_goal_generic_political_pressure
+  x = 17
+  y = 2
+  cost = 6
+  prerequisite = { focus = NWG_army_effort }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_war_support = 0.04 add_political_power = 25 }
+ }
+ focus = {
+  id = NWG_special_forces
+  icon = GFX_goal_generic_national_unity
+  x = 20
+  y = 2
+  cost = 6
+  prerequisite = { focus = NWG_army_effort }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_ideas = nwg_spirit_special_forces }
+ }
+ focus = {
+  id = NWG_a_useful_puppet
+  icon = GFX_goal_generic_improve_relations
+  x = 22
+  y = 2
+  cost = 6
+  prerequisite = { focus = NWG_army_effort }
+  available = { is_subject = yes }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_autonomy_score = { value = 50 localization = NWG_autonomy_reason } add_political_power = 25 }
+ }
+ focus = {
+  id = NWG_aviation_effort
+  icon = GFX_goal_generic_build_airforce
+  x = 27
+  y = 2
+  cost = 6
+  prerequisite = { focus = NWG_army_effort }
+  ai_will_do = { factor = 1 }
+  completion_reward = { air_experience = 15 }
+ }
+ focus = {
+  id = NWG_naval_effort
+  icon = GFX_goal_generic_navy_doctrines_tactics
+  x = 32
+  y = 2
+  cost = 6
+  prerequisite = { focus = NWG_army_effort }
+  available = { any_owned_state = { is_coastal = yes } }
+  ai_will_do = { factor = 1 }
+  completion_reward = { navy_experience = 15 }
+ }
+ focus = {
+  id = NWG_armament_effort
+  icon = GFX_goal_generic_construct_mil_factory
+  x = 35
+  y = 2
+  cost = 6
+  prerequisite = { focus = NWG_industrial_effort }
+  prerequisite = { focus = NWG_army_effort }
+  ai_will_do = { factor = 1 }
+  completion_reward = { random_owned_controlled_state = { limit = { is_core_of = ROOT } add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } }
+ }
+ focus = {
+  id = NWG_infrastructure_effort
+  icon = GFX_goal_generic_construct_infrastructure
+  x = 39
+  y = 2
+  cost = 6
+  prerequisite = { focus = NWG_industrial_effort }
+  available = { any_owned_state = { is_core_of = ROOT infrastructure < 5 } }
+  ai_will_do = { factor = 1 }
+  completion_reward = { random_owned_controlled_state = { limit = { is_core_of = ROOT infrastructure < 5 } add_building_construction = { type = infrastructure level = 1 instant_build = yes } } }
+ }
+ focus = {
+  id = NWG_major_power
+  icon = GFX_goal_generic_political_pressure
+  x = 44
+  y = 2
+  cost = 6
+  prerequisite = { focus = NWG_misc_political_actions }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_political_power = 50 }
+ }
+ focus = {
+  id = NWG_gain_autonomy
+  icon = GFX_goal_generic_improve_relations
+  x = 47
+  y = 2
+  cost = 6
+  prerequisite = { focus = NWG_misc_political_actions }
+  available = { is_subject = yes }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_autonomy_score = { value = 50 localization = NWG_autonomy_reason } add_political_power = 25 }
+ }
+ focus = {
+  id = NWG_a_new_leader
+  icon = GFX_goal_generic_political_pressure
+  x = 50
+  y = 2
+  cost = 6
+  prerequisite = { focus = NWG_misc_political_actions }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_political_power = 50 }
+ }
+ focus = {
+  id = NWG_the_road_to_war
+  icon = GFX_goal_generic_political_pressure
+  x = 54
+  y = 2
+  cost = 6
+  prerequisite = { focus = NWG_collectivist_ethos focus = NWG_misc_political_actions }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_war_support = 0.03 army_experience = 10 }
+ }
+ focus = {
+  id = NWG_espionage_agency_developments
+  icon = GFX_goal_generic_intelligence_exchange
+  x = 66
+  y = 2
+  cost = 6
+  prerequisite = { focus = NWG_collectivist_ethos focus = NWG_individualist_ethos }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_ideas = nwg_spirit_espionage_agency_developments }
+ }
+ focus = {
+  id = NWG_democratic_focus
+  icon = GFX_goal_generic_political_pressure
+  x = 78
+  y = 2
+  cost = 6
+  prerequisite = { focus = NWG_individualist_ethos }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_stability = 0.03 add_political_power = 25 }
+ }
+ focus = {
+  id = NWG_officer_training_schools
+  icon = GFX_goal_generic_army_doctrines
+  x = 5
+  y = 3
+  cost = 6
+  prerequisite = { focus = NWG_modernization_of_the_army }
+  ai_will_do = { factor = 1 }
+  completion_reward = { army_experience = 15 }
+ }
+ focus = {
+  id = NWG_equipment_effort
+  icon = GFX_goal_generic_small_arms
+  x = 11
+  y = 3
+  cost = 6
+  prerequisite = { focus = NWG_military_research }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_tech_bonus = { name = NWG_equipment_effort bonus = 0.5 uses = 1 category = infantry_weapons } }
+ }
+ focus = {
+  id = NWG_doctrine_effort
+  icon = GFX_goal_generic_army_doctrines
+  x = 13
+  y = 3
+  cost = 6
+  prerequisite = { focus = NWG_military_research }
+  ai_will_do = { factor = 1 }
+  completion_reward = { army_experience = 20 }
+ }
+ focus = {
+  id = NWG_immediate_conscription
+  icon = GFX_goal_generic_allies_build_infantry
+  x = 15
+  y = 3
+  cost = 6
+  prerequisite = { focus = NWG_war_propoganda }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_manpower = 3000 army_experience = 5 }
+ }
+ focus = {
+  id = NWG_purchasing_equipment
+  icon = GFX_goal_generic_trade
+  x = 19
+  y = 3
+  cost = 6
+  prerequisite = { focus = NWG_war_propoganda }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_political_power = 35 add_tech_bonus = { name = NWG_purchasing_equipment bonus = 0.5 uses = 1 category = infantry_weapons } }
+ }
+ focus = {
+  id = NWG_complacent_subjects
+  icon = GFX_goal_generic_improve_relations
+  x = 24
+  y = 3
+  cost = 6
+  prerequisite = { focus = NWG_army_effort }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_stability = 0.03 add_political_power = 35 }
+ }
+ focus = {
+  id = NWG_fighter_focus
+  icon = GFX_goal_generic_air_fighter2
+  x = 26
+  y = 3
+  cost = 6
+  prerequisite = { focus = NWG_aviation_effort }
+  mutually_exclusive = { focus = NWG_bomber_focus }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_tech_bonus = { name = NWG_fighter_focus bonus = 0.5 uses = 1 category = light_air } }
+ }
+ focus = {
+  id = NWG_bomber_focus
+  icon = GFX_goal_generic_air_bomber
+  x = 28
+  y = 3
+  cost = 6
+  prerequisite = { focus = NWG_aviation_effort }
+  mutually_exclusive = { focus = NWG_fighter_focus }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_tech_bonus = { name = NWG_bomber_focus bonus = 0.5 uses = 1 category = tactical_bomber } }
+ }
+ focus = {
+  id = NWG_flexible_navy
+  icon = GFX_goal_generic_navy_doctrines_tactics
+  x = 31
+  y = 3
+  cost = 6
+  prerequisite = { focus = NWG_naval_effort }
+  mutually_exclusive = { focus = NWG_large_navy }
+  available = { any_owned_state = { is_coastal = yes } }
+  ai_will_do = { factor = 1 }
+  completion_reward = { navy_experience = 15 }
+ }
+ focus = {
+  id = NWG_large_navy
+  icon = GFX_goal_generic_navy_doctrines_tactics
+  x = 33
+  y = 3
+  cost = 6
+  prerequisite = { focus = NWG_naval_effort }
+  mutually_exclusive = { focus = NWG_flexible_navy }
+  available = { any_owned_state = { is_coastal = yes } }
+  ai_will_do = { factor = 1 }
+  completion_reward = { navy_experience = 15 }
+ }
+ focus = {
+  id = NWG_armament_effort_ii
+  icon = GFX_goal_generic_construct_mil_factory
+  x = 35
+  y = 3
+  cost = 6
+  prerequisite = { focus = NWG_armament_effort }
+  ai_will_do = { factor = 1 }
+  completion_reward = { random_owned_controlled_state = { limit = { is_core_of = ROOT } add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } }
+ }
+ focus = {
+  id = NWG_construction_effort
+  icon = GFX_goal_generic_construct_civ_factory
+  x = 38
+  y = 3
+  cost = 6
+  prerequisite = { focus = NWG_infrastructure_effort }
+  ai_will_do = { factor = 1 }
+  completion_reward = { random_owned_controlled_state = { limit = { is_core_of = ROOT } add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } }
+ }
+ focus = {
+  id = NWG_resource_excavation
+  icon = GFX_goal_generic_scientific_exchange
+  x = 41
+  y = 3
+  cost = 6
+  prerequisite = { focus = NWG_infrastructure_effort }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_tech_bonus = { name = NWG_resource_excavation bonus = 0.5 uses = 1 category = industry } }
+ }
+ focus = {
+  id = NWG_industrial_superpower
+  icon = GFX_goal_generic_production
+  x = 43
+  y = 3
+  cost = 6
+  prerequisite = { focus = NWG_major_power }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_ideas = nwg_spirit_industrial_superpower }
+ }
+ focus = {
+  id = NWG_the_most_loyal_subjects
+  icon = GFX_goal_generic_improve_relations
+  x = 45
+  y = 3
+  cost = 6
+  prerequisite = { focus = NWG_major_power }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_stability = 0.03 add_political_power = 35 }
+ }
+ focus = {
+  id = NWG_supreme_leader
+  icon = GFX_goal_generic_political_pressure
+  x = 47
+  y = 3
+  cost = 6
+  prerequisite = { focus = NWG_major_power }
+  mutually_exclusive = { focus = NWG_a_true_kakistocracy }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_political_power = 50 add_stability = 0.02 }
+ }
+ focus = {
+  id = NWG_a_true_kakistocracy
+  icon = GFX_goal_generic_political_pressure
+  x = 50
+  y = 3
+  cost = 6
+  prerequisite = { focus = NWG_a_new_leader }
+  mutually_exclusive = { focus = NWG_supreme_leader }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_timed_idea = { idea = nwg_spirit_a_true_kakistocracy days = 730 } }
+ }
+ focus = {
+  id = NWG_claim_foreign_lands_i
+  icon = GFX_goal_generic_improve_relations
+  x = 52
+  y = 3
+  cost = 6
+  prerequisite = { focus = NWG_the_road_to_war }
+  ai_will_do = { factor = 1 }
+  completion_reward = { every_state = { limit = { is_core_of = ROOT NOT = { is_owned_by = ROOT } } add_claim_by = ROOT } add_political_power = 35 }
+ }
+ focus = {
+  id = NWG_claim_foreign_lands_ii
+  icon = GFX_goal_generic_improve_relations
+  x = 54
+  y = 3
+  cost = 6
+  prerequisite = { focus = NWG_the_road_to_war }
+  ai_will_do = { factor = 1 }
+  completion_reward = { every_state = { limit = { is_core_of = ROOT NOT = { is_owned_by = ROOT } } add_claim_by = ROOT } add_political_power = 35 }
+ }
+ focus = {
+  id = NWG_claim_foreign_lands_iii
+  icon = GFX_goal_generic_improve_relations
+  x = 56
+  y = 3
+  cost = 6
+  prerequisite = { focus = NWG_the_road_to_war }
+  ai_will_do = { factor = 1 }
+  completion_reward = { every_state = { limit = { is_core_of = ROOT NOT = { is_owned_by = ROOT } } add_claim_by = ROOT } add_political_power = 35 }
+ }
+ focus = {
+  id = NWG_dismantle_the_constitution
+  icon = GFX_goal_generic_political_pressure
+  x = 59
+  y = 3
+  cost = 6
+  prerequisite = { focus = NWG_collectivist_ethos }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_political_power = 50 add_stability = -0.03 }
+ }
+ focus = {
+  id = NWG_expand_operative_capacity_i
+  icon = GFX_goal_generic_intelligence_exchange
+  x = 61
+  y = 3
+  cost = 6
+  prerequisite = { focus = NWG_espionage_agency_developments }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_tech_bonus = { name = NWG_expand_operative_capacity_i bonus = 0.35 uses = 1 category = electronics } add_political_power = 20 }
+ }
+ focus = {
+  id = NWG_expand_operative_capacity_ii
+  icon = GFX_goal_generic_intelligence_exchange
+  x = 63
+  y = 3
+  cost = 6
+  prerequisite = { focus = NWG_espionage_agency_developments }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_tech_bonus = { name = NWG_expand_operative_capacity_ii bonus = 0.35 uses = 1 category = electronics } add_political_power = 20 }
+ }
+ focus = {
+  id = NWG_expand_operative_capacity_iii
+  icon = GFX_goal_generic_intelligence_exchange
+  x = 65
+  y = 3
+  cost = 6
+  prerequisite = { focus = NWG_espionage_agency_developments }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_tech_bonus = { name = NWG_expand_operative_capacity_iii bonus = 0.35 uses = 1 category = electronics } add_political_power = 20 }
+ }
+ focus = {
+  id = NWG_fund_partisans
+  icon = GFX_goal_generic_intelligence_exchange
+  x = 67
+  y = 3
+  cost = 6
+  prerequisite = { focus = NWG_espionage_agency_developments }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_tech_bonus = { name = NWG_fund_partisans bonus = 0.35 uses = 1 category = electronics } add_political_power = 20 }
+ }
+ focus = {
+  id = NWG_expand_counter_intelligence
+  icon = GFX_goal_generic_intelligence_exchange
+  x = 69
+  y = 3
+  cost = 6
+  prerequisite = { focus = NWG_espionage_agency_developments }
+  mutually_exclusive = { focus = NWG_expand_decryption_capabilities }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_ideas = nwg_spirit_expand_counter_intelligence }
+ }
+ focus = {
+  id = NWG_expand_decryption_capabilities
+  icon = GFX_goal_generic_intelligence_exchange
+  x = 71
+  y = 3
+  cost = 6
+  prerequisite = { focus = NWG_espionage_agency_developments }
+  mutually_exclusive = { focus = NWG_expand_counter_intelligence }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_ideas = nwg_spirit_expand_decryption_capabilities }
+ }
+ focus = {
+  id = NWG_quantity
+  icon = GFX_goal_generic_national_unity
+  x = 3
+  y = 4
+  cost = 6
+  prerequisite = { focus = NWG_modernization_of_the_army }
+  mutually_exclusive = { focus = NWG_quality }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_ideas = nwg_spirit_quantity }
+ }
+ focus = {
+  id = NWG_quality
+  icon = GFX_goal_generic_national_unity
+  x = 7
+  y = 4
+  cost = 6
+  prerequisite = { focus = NWG_modernization_of_the_army }
+  mutually_exclusive = { focus = NWG_quantity }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_ideas = nwg_spirit_quality }
+ }
+ focus = {
+  id = NWG_firearm_production
+  icon = GFX_goal_generic_production
+  x = 10
+  y = 4
+  cost = 6
+  prerequisite = { focus = NWG_equipment_effort }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_timed_idea = { idea = nwg_spirit_firearm_production days = 730 } }
+ }
+ focus = {
+  id = NWG_firearm_factories
+  icon = GFX_goal_generic_construct_mil_factory
+  x = 12
+  y = 4
+  cost = 6
+  prerequisite = { focus = NWG_equipment_effort }
+  ai_will_do = { factor = 1 }
+  completion_reward = { random_owned_controlled_state = { limit = { is_core_of = ROOT } add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } }
+ }
+ focus = {
+  id = NWG_misc_equipment_purchase
+  icon = GFX_goal_generic_small_arms
+  x = 17
+  y = 4
+  cost = 6
+  prerequisite = { focus = NWG_purchasing_equipment }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 300 producer = ROOT } }
+ }
+ focus = {
+  id = NWG_purchase_motorized
+  icon = GFX_goal_generic_army_motorized
+  x = 19
+  y = 4
+  cost = 6
+  prerequisite = { focus = NWG_purchasing_equipment }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 50 producer = ROOT } }
+ }
+ focus = {
+  id = NWG_even_more_usefull
+  icon = GFX_goal_generic_improve_relations
+  x = 22
+  y = 4
+  cost = 6
+  prerequisite = { focus = NWG_a_useful_puppet }
+  available = { is_subject = yes }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_autonomy_score = { value = 50 localization = NWG_autonomy_reason } add_political_power = 25 }
+ }
+ focus = {
+  id = NWG_fighter_production
+  icon = GFX_goal_generic_national_unity
+  x = 25
+  y = 4
+  cost = 6
+  prerequisite = { focus = NWG_fighter_focus }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_timed_idea = { idea = nwg_spirit_fighter_production days = 730 } }
+ }
+ focus = {
+  id = NWG_aviation_effort_ii
+  icon = GFX_goal_generic_build_airforce
+  x = 27
+  y = 4
+  cost = 6
+  prerequisite = { focus = NWG_bomber_focus focus = NWG_fighter_focus }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_tech_bonus = { name = NWG_aviation_effort_ii bonus = 0.5 uses = 1 category = light_air } }
+ }
+ focus = {
+  id = NWG_submarine_effort
+  icon = GFX_goal_generic_navy_submarine
+  x = 31
+  y = 4
+  cost = 6
+  prerequisite = { focus = NWG_flexible_navy focus = NWG_large_navy }
+  available = { any_owned_state = { is_coastal = yes } }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_tech_bonus = { name = NWG_submarine_effort bonus = 0.5 uses = 1 category = ss_tech } }
+ }
+ focus = {
+  id = NWG_cruiser_effort
+  icon = GFX_goal_generic_navy_cruiser
+  x = 33
+  y = 4
+  cost = 6
+  prerequisite = { focus = NWG_large_navy focus = NWG_flexible_navy }
+  available = { any_owned_state = { is_coastal = yes } }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_tech_bonus = { name = NWG_cruiser_effort bonus = 0.5 uses = 1 category = cl_tech } }
+ }
+ focus = {
+  id = NWG_military_industry_focus
+  icon = GFX_goal_generic_production
+  x = 36
+  y = 4
+  cost = 6
+  prerequisite = { focus = NWG_armament_effort_ii }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_timed_idea = { idea = nwg_spirit_military_industry_focus days = 730 } }
+ }
+ focus = {
+  id = NWG_infrastructure_effort_ii
+  icon = GFX_goal_generic_construct_infrastructure
+  x = 39
+  y = 4
+  cost = 6
+  prerequisite = { focus = NWG_construction_effort }
+  available = { any_owned_state = { is_core_of = ROOT infrastructure < 5 } }
+  ai_will_do = { factor = 1 }
+  completion_reward = { random_owned_controlled_state = { limit = { is_core_of = ROOT infrastructure < 5 } add_building_construction = { type = infrastructure level = 1 instant_build = yes } } }
+ }
+ focus = {
+  id = NWG_metal_excavation
+  icon = GFX_goal_generic_oil_refinery
+  x = 42
+  y = 4
+  cost = 6
+  prerequisite = { focus = NWG_resource_excavation }
+  ai_will_do = { factor = 1 }
+  completion_reward = { if = { limit = { any_owned_state = { is_core_of = ROOT has_resources_amount = { resource = steel amount > 0 } } } random_owned_controlled_state = { limit = { is_core_of = ROOT has_resources_amount = { resource = steel amount > 0 } } add_resource = { type = steel amount = 4 } } } else = { add_tech_bonus = { name = NWG_metal_excavation bonus = 0.5 uses = 1 category = industry } } }
+ }
+ focus = {
+  id = NWG_the_greatest_minds
+  icon = GFX_goal_generic_national_unity
+  x = 44
+  y = 4
+  cost = 6
+  prerequisite = { focus = NWG_major_power }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_ideas = nwg_spirit_the_greatest_minds }
+ }
+ focus = {
+  id = NWG_grand_army
+  icon = GFX_goal_generic_national_unity
+  x = 46
+  y = 4
+  cost = 6
+  prerequisite = { focus = NWG_major_power }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_ideas = nwg_spirit_grand_army }
+ }
+ focus = {
+  id = NWG_rightwing_politics
+  icon = GFX_goal_generic_political_pressure
+  x = 51
+  y = 4
+  cost = 6
+  prerequisite = { focus = NWG_dismantle_the_constitution }
+  mutually_exclusive = { focus = NWG_leftwing_politics focus = NWG_revanchism }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_political_power = 35 }
+ }
+ focus = {
+  id = NWG_leftwing_politics
+  icon = GFX_goal_generic_political_pressure
+  x = 59
+  y = 4
+  cost = 6
+  prerequisite = { focus = NWG_dismantle_the_constitution }
+  mutually_exclusive = { focus = NWG_revanchism focus = NWG_rightwing_politics }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_political_power = 35 }
+ }
+ focus = {
+  id = NWG_revanchism
+  icon = GFX_goal_generic_political_pressure
+  x = 67
+  y = 4
+  cost = 6
+  prerequisite = { focus = NWG_dismantle_the_constitution }
+  mutually_exclusive = { focus = NWG_leftwing_politics focus = NWG_rightwing_politics }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_political_power = 35 }
+ }
+ focus = {
+  id = NWG_partisan_defence
+  icon = GFX_goal_generic_intelligence_exchange
+  x = 70
+  y = 4
+  cost = 6
+  prerequisite = { focus = NWG_expand_decryption_capabilities focus = NWG_expand_counter_intelligence }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_ideas = nwg_spirit_partisan_defence }
+ }
+ focus = {
+  id = NWG_centrism_gang
+  icon = GFX_goal_generic_political_pressure
+  x = 73
+  y = 4
+  cost = 6
+  prerequisite = { focus = NWG_individualist_ethos }
+  mutually_exclusive = { focus = NWG_conservatism focus = NWG_liberalism }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_stability = 0.03 add_political_power = 25 }
+ }
+ focus = {
+  id = NWG_liberalism
+  icon = GFX_goal_support_democracy
+  x = 76
+  y = 4
+  cost = 6
+  prerequisite = { focus = NWG_democratic_focus }
+  mutually_exclusive = { focus = NWG_centrism_gang focus = NWG_conservatism }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = democratic } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_state_welfare remove_ideas = nwg_spirit_open_market remove_ideas = nwg_spirit_open_borders } add_ideas = nwg_spirit_liberalism add_popularity = { ideology = democratic popularity = 0.08 } }
+ }
+ focus = {
+  id = NWG_conservatism
+  icon = GFX_goal_support_democracy
+  x = 79
+  y = 4
+  cost = 6
+  prerequisite = { focus = NWG_democratic_focus }
+  mutually_exclusive = { focus = NWG_centrism_gang focus = NWG_liberalism }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = democratic } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_family_values remove_ideas = nwg_spirit_embrace_tarrifs remove_ideas = nwg_spirit_private_military_companies } add_ideas = nwg_spirit_conservatism add_popularity = { ideology = democratic popularity = 0.08 } }
+ }
+ focus = {
+  id = NWG_bicycle_effort
+  icon = GFX_goal_generic_scientific_exchange
+  x = 5
+  y = 5
+  cost = 6
+  prerequisite = { focus = NWG_quality focus = NWG_quantity }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_tech_bonus = { name = NWG_bicycle_effort bonus = 0.5 uses = 1 category = support_tech } }
+ }
+ focus = {
+  id = NWG_equipment_effort_ii
+  icon = GFX_goal_generic_small_arms
+  x = 11
+  y = 5
+  cost = 6
+  prerequisite = { focus = NWG_equipment_effort }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_tech_bonus = { name = NWG_equipment_effort_ii bonus = 0.5 uses = 1 category = infantry_weapons } }
+ }
+ focus = {
+  id = NWG_doctrine_effort_ii
+  icon = GFX_goal_generic_army_doctrines
+  x = 13
+  y = 5
+  cost = 6
+  prerequisite = { focus = NWG_doctrine_effort }
+  ai_will_do = { factor = 1 }
+  completion_reward = { army_experience = 20 }
+ }
+ focus = {
+  id = NWG_military_youth
+  icon = GFX_goal_generic_allies_build_infantry
+  x = 15
+  y = 5
+  cost = 6
+  prerequisite = { focus = NWG_immediate_conscription }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_manpower = 3000 army_experience = 5 }
+ }
+ focus = {
+  id = NWG_tank_purchase
+  icon = GFX_goal_generic_build_tank
+  x = 18
+  y = 5
+  cost = 6
+  prerequisite = { focus = NWG_purchasing_equipment }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_tech_bonus = { name = NWG_tank_purchase bonus = 0.5 uses = 1 category = armor } army_experience = 10 }
+ }
+ focus = {
+  id = NWG_purchase_guns
+  icon = GFX_goal_generic_small_arms
+  x = 20
+  y = 5
+  cost = 6
+  prerequisite = { focus = NWG_purchasing_equipment }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 300 producer = ROOT } }
+ }
+ focus = {
+  id = NWG_cas_effort
+  icon = GFX_goal_generic_build_airforce
+  x = 26
+  y = 5
+  cost = 6
+  prerequisite = { focus = NWG_aviation_effort_ii }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_tech_bonus = { name = NWG_cas_effort bonus = 0.5 uses = 1 category = cas_bomber } }
+ }
+ focus = {
+  id = NWG_nav_effort
+  icon = GFX_goal_generic_build_airforce
+  x = 28
+  y = 5
+  cost = 6
+  prerequisite = { focus = NWG_aviation_effort_ii }
+  available = { any_owned_state = { is_coastal = yes } }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_tech_bonus = { name = NWG_nav_effort bonus = 0.5 uses = 1 category = naval_bomber } }
+ }
+ focus = {
+  id = NWG_destroyer_effort
+  icon = GFX_goal_generic_navy_cruiser
+  x = 31
+  y = 5
+  cost = 6
+  prerequisite = { focus = NWG_submarine_effort }
+  available = { any_owned_state = { is_coastal = yes } }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_tech_bonus = { name = NWG_destroyer_effort bonus = 0.5 uses = 1 category = dd_tech } }
+ }
+ focus = {
+  id = NWG_capital_ship_effort
+  icon = GFX_goal_generic_navy_battleship
+  x = 33
+  y = 5
+  cost = 6
+  prerequisite = { focus = NWG_cruiser_effort }
+  available = { any_owned_state = { is_coastal = yes } }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_tech_bonus = { name = NWG_capital_ship_effort bonus = 0.5 uses = 1 category = bb_tech } }
+ }
+ focus = {
+  id = NWG_armament_effort_iii
+  icon = GFX_goal_generic_construct_mil_factory
+  x = 35
+  y = 5
+  cost = 6
+  prerequisite = { focus = NWG_armament_effort_ii }
+  ai_will_do = { factor = 1 }
+  completion_reward = { random_owned_controlled_state = { limit = { is_core_of = ROOT } add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } }
+ }
+ focus = {
+  id = NWG_road_effort
+  icon = GFX_goal_generic_construct_infrastructure
+  x = 38
+  y = 5
+  cost = 6
+  prerequisite = { focus = NWG_infrastructure_effort_ii }
+  available = { any_owned_state = { is_core_of = ROOT infrastructure < 5 } }
+  ai_will_do = { factor = 1 }
+  completion_reward = { random_owned_controlled_state = { limit = { is_core_of = ROOT infrastructure < 5 } add_building_construction = { type = infrastructure level = 1 instant_build = yes } } }
+ }
+ focus = {
+  id = NWG_construction_effort_ii
+  icon = GFX_goal_generic_construct_civ_factory
+  x = 40
+  y = 5
+  cost = 6
+  prerequisite = { focus = NWG_infrastructure_effort_ii }
+  ai_will_do = { factor = 1 }
+  completion_reward = { random_owned_controlled_state = { limit = { is_core_of = ROOT } add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } }
+ }
+ focus = {
+  id = NWG_rare_metals_excavation
+  icon = GFX_goal_generic_oil_refinery
+  x = 44
+  y = 5
+  cost = 6
+  prerequisite = { focus = NWG_metal_excavation }
+  ai_will_do = { factor = 1 }
+  completion_reward = { if = { limit = { any_owned_state = { is_core_of = ROOT has_resources_amount = { resource = tungsten amount > 0 } } } random_owned_controlled_state = { limit = { is_core_of = ROOT has_resources_amount = { resource = tungsten amount > 0 } } add_resource = { type = tungsten amount = 2 } } } else = { add_tech_bonus = { name = NWG_rare_metals_excavation bonus = 0.5 uses = 1 category = industry } } }
+ }
+ focus = {
+  id = NWG_nationalism
+  icon = GFX_goal_generic_neutrality_focus
+  x = 48
+  y = 5
+  cost = 6
+  prerequisite = { focus = NWG_rightwing_politics }
+  mutually_exclusive = { focus = NWG_fascism focus = NWG_hyperconservative_populism focus = NWG_neoimperialism }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = neutrality } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_national_unity remove_ideas = nwg_spirit_nationalisation remove_ideas = nwg_spirit_save_ethnic_minorities remove_ideas = nwg_spirit_paramilitarism remove_ideas = nwg_spirit_partisanism } add_ideas = nwg_spirit_nationalism add_popularity = { ideology = neutrality popularity = 0.08 } }
+ }
+ focus = {
+  id = NWG_fascism
+  icon = GFX_goal_support_fascism
+  x = 50
+  y = 5
+  cost = 6
+  prerequisite = { focus = NWG_rightwing_politics }
+  mutually_exclusive = { focus = NWG_hyperconservative_populism focus = NWG_nationalism focus = NWG_neoimperialism }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = fascism } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_militarized_schooling remove_ideas = nwg_spirit_economy_for_the_army remove_ideas = nwg_spirit_racial_laws remove_ideas = nwg_spirit_define_war_crimes remove_ideas = nwg_spirit_at_any_cost } add_ideas = nwg_spirit_fascism add_popularity = { ideology = fascism popularity = 0.08 } }
+ }
+ focus = {
+  id = NWG_neoimperialism
+  icon = GFX_goal_generic_neutrality_focus
+  x = 52
+  y = 5
+  cost = 6
+  prerequisite = { focus = NWG_rightwing_politics }
+  mutually_exclusive = { focus = NWG_fascism focus = NWG_hyperconservative_populism focus = NWG_nationalism }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = neutrality } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_national_supremacy remove_ideas = nwg_spirit_guide_industries remove_ideas = nwg_spirit_imperial_army remove_ideas = nwg_spirit_civilise_the_lesser_nations remove_ideas = nwg_spirit_for_the_empire } add_ideas = nwg_spirit_neoimperialism add_popularity = { ideology = neutrality popularity = 0.08 } }
+ }
+ focus = {
+  id = NWG_hyperconservative_populism
+  icon = GFX_goal_generic_neutrality_focus
+  x = 54
+  y = 5
+  cost = 6
+  prerequisite = { focus = NWG_rightwing_politics }
+  mutually_exclusive = { focus = NWG_fascism focus = NWG_nationalism focus = NWG_neoimperialism }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = neutrality } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_end_elections remove_ideas = nwg_spirit_protect_our_borders_and_only_our_borders remove_ideas = nwg_spirit_freedom_without_democracy remove_ideas = nwg_spirit_man_of_the_people } add_ideas = nwg_spirit_hyperconservative_populism add_popularity = { ideology = neutrality popularity = 0.08 } }
+ }
+ focus = {
+  id = NWG_syndicalism
+  icon = GFX_goal_support_communism
+  x = 56
+  y = 5
+  cost = 6
+  prerequisite = { focus = NWG_leftwing_politics }
+  mutually_exclusive = { focus = NWG_anarchism focus = NWG_internationalism focus = NWG_socialism_in_one_country }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = communism } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_nationalize_foreign_assets remove_ideas = nwg_spirit_workers_rights remove_ideas = nwg_spirit_empower_trade_untions remove_ideas = nwg_spirit_class_struggle remove_ideas = nwg_spirit_workers_paradise } add_ideas = nwg_spirit_syndicalism add_popularity = { ideology = communism popularity = 0.08 } }
+ }
+ focus = {
+  id = NWG_anarchism
+  icon = GFX_goal_support_communism
+  x = 58
+  y = 5
+  cost = 6
+  prerequisite = { focus = NWG_leftwing_politics }
+  mutually_exclusive = { focus = NWG_internationalism focus = NWG_socialism_in_one_country focus = NWG_syndicalism }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = communism } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_whats_a_head_of_state remove_ideas = nwg_spirit_peoples_army remove_ideas = nwg_spirit_abolish_all_ownership remove_ideas = nwg_spirit_there_is_no_god_only_anarchism remove_ideas = nwg_spirit_a_government_without_government } add_ideas = nwg_spirit_anarchism add_popularity = { ideology = communism popularity = 0.08 } }
+ }
+ focus = {
+  id = NWG_socialism_in_one_country
+  icon = GFX_goal_support_communism
+  x = 60
+  y = 5
+  cost = 6
+  prerequisite = { focus = NWG_leftwing_politics }
+  mutually_exclusive = { focus = NWG_anarchism focus = NWG_internationalism focus = NWG_syndicalism }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = communism } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_planned_economy remove_ideas = nwg_spirit_enforce_loyalty remove_ideas = nwg_spirit_political_commissars remove_ideas = nwg_spirit_collectivization_of_agriculture remove_ideas = nwg_spirit_socialist_science } add_ideas = nwg_spirit_socialism_in_one_country add_popularity = { ideology = communism popularity = 0.08 } }
+ }
+ focus = {
+  id = NWG_internationalism
+  icon = GFX_goal_support_communism
+  x = 62
+  y = 5
+  cost = 6
+  prerequisite = { focus = NWG_leftwing_politics }
+  mutually_exclusive = { focus = NWG_anarchism focus = NWG_socialism_in_one_country focus = NWG_syndicalism }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = communism } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_political_correctness remove_ideas = nwg_spirit_indoctrination remove_ideas = nwg_spirit_peasant_militias remove_ideas = nwg_spirit_peace_through_war remove_ideas = nwg_spirit_permanent_revolution } add_ideas = nwg_spirit_internationalism add_popularity = { ideology = communism popularity = 0.08 } }
+ }
+ focus = {
+  id = NWG_kleptocratic_corporatism
+  icon = GFX_goal_generic_neutrality_focus
+  x = 64
+  y = 5
+  cost = 6
+  prerequisite = { focus = NWG_revanchism }
+  mutually_exclusive = { focus = NWG_military_coup focus = NWG_monarchism focus = NWG_theocracy }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = neutrality } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_exploit_citizens remove_ideas = nwg_spirit_build_up_personal_wealth remove_ideas = nwg_spirit_privatize_industries remove_ideas = nwg_spirit_private_armies remove_ideas = nwg_spirit_president_more_like_ceo } add_ideas = nwg_spirit_kleptocratic_corporatism add_popularity = { ideology = neutrality popularity = 0.08 } }
+ }
+ focus = {
+  id = NWG_theocracy
+  icon = GFX_goal_generic_neutrality_focus
+  x = 66
+  y = 5
+  cost = 6
+  prerequisite = { focus = NWG_revanchism }
+  mutually_exclusive = { focus = NWG_kleptocratic_corporatism focus = NWG_military_coup focus = NWG_monarchism }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = neutrality } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_one_faith remove_ideas = nwg_spirit_under_god remove_ideas = nwg_spirit_messenger_of_god remove_ideas = nwg_spirit_holy_warriors remove_ideas = nwg_spirit_holy_wars } add_ideas = nwg_spirit_theocracy add_popularity = { ideology = neutrality popularity = 0.08 } }
+ }
+ focus = {
+  id = NWG_military_coup
+  icon = GFX_goal_generic_neutrality_focus
+  x = 68
+  y = 5
+  cost = 6
+  prerequisite = { focus = NWG_revanchism }
+  mutually_exclusive = { focus = NWG_kleptocratic_corporatism focus = NWG_monarchism focus = NWG_theocracy }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = neutrality } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_empower_the_military remove_ideas = nwg_spirit_citizen_suppresion remove_ideas = nwg_spirit_police_state remove_ideas = nwg_spirit_devotion_to_the_state remove_ideas = nwg_spirit_expand_state_holdings } add_ideas = nwg_spirit_military_coup add_popularity = { ideology = neutrality popularity = 0.08 } }
+ }
+ focus = {
+  id = NWG_monarchism
+  icon = GFX_goal_generic_neutrality_focus
+  x = 70
+  y = 5
+  cost = 6
+  prerequisite = { focus = NWG_revanchism }
+  mutually_exclusive = { focus = NWG_kleptocratic_corporatism focus = NWG_military_coup focus = NWG_theocracy }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = neutrality } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_divine_rulership remove_ideas = nwg_spirit_for_the_king remove_ideas = nwg_spirit_concessions_to_the_aristocracy remove_ideas = nwg_spirit_modern_serfdom remove_ideas = nwg_spirit_state_sponsored_crusades } add_ideas = nwg_spirit_monarchism add_popularity = { ideology = neutrality popularity = 0.08 } }
+ }
+ focus = {
+  id = NWG_i_just_wanna_grill
+  icon = GFX_goal_support_democracy
+  x = 73
+  y = 5
+  cost = 6
+  prerequisite = { focus = NWG_centrism_gang }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = democratic } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_a_grill_in_every_home remove_ideas = nwg_spirit_an_enlightened_centrist } add_ideas = nwg_spirit_i_just_wanna_grill add_popularity = { ideology = democratic popularity = 0.08 } }
+ }
+ focus = {
+  id = NWG_state_welfare
+  icon = GFX_goal_support_democracy
+  x = 76
+  y = 5
+  cost = 6
+  prerequisite = { focus = NWG_liberalism }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = democratic } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_liberalism remove_ideas = nwg_spirit_open_market remove_ideas = nwg_spirit_open_borders } add_ideas = nwg_spirit_state_welfare set_politics = { ruling_party = democratic elections_allowed = yes } }
+ }
+ focus = {
+  id = NWG_family_values
+  icon = GFX_goal_support_democracy
+  x = 79
+  y = 5
+  cost = 6
+  prerequisite = { focus = NWG_conservatism }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = democratic } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_conservatism remove_ideas = nwg_spirit_embrace_tarrifs remove_ideas = nwg_spirit_private_military_companies } add_ideas = nwg_spirit_family_values set_politics = { ruling_party = democratic elections_allowed = yes } }
+ }
+ focus = {
+  id = NWG_motorization_effort
+  icon = GFX_goal_generic_army_motorized
+  x = 5
+  y = 6
+  cost = 6
+  prerequisite = { focus = NWG_bicycle_effort }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_tech_bonus = { name = NWG_motorization_effort bonus = 0.5 uses = 1 category = motorized_equipment } }
+ }
+ focus = {
+  id = NWG_artillery__support_equipment_production
+  icon = GFX_goal_generic_army_artillery2
+  x = 10
+  y = 6
+  cost = 6
+  prerequisite = { focus = NWG_equipment_effort_ii }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_tech_bonus = { name = NWG_artillery__support_equipment_production bonus = 0.5 uses = 1 category = artillery } }
+ }
+ focus = {
+  id = NWG_equipment_facotires
+  icon = GFX_goal_generic_construct_mil_factory
+  x = 12
+  y = 6
+  cost = 6
+  prerequisite = { focus = NWG_equipment_effort_ii }
+  ai_will_do = { factor = 1 }
+  completion_reward = { random_owned_controlled_state = { limit = { is_core_of = ROOT } add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } }
+ }
+ focus = {
+  id = NWG_foreign_conscription
+  icon = GFX_goal_generic_allies_build_infantry
+  x = 16
+  y = 6
+  cost = 6
+  prerequisite = { focus = NWG_military_youth }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_manpower = 3000 army_experience = 5 }
+ }
+ focus = {
+  id = NWG_tank_deployment
+  icon = GFX_goal_generic_build_tank
+  x = 18
+  y = 6
+  cost = 6
+  prerequisite = { focus = NWG_tank_purchase }
+  ai_will_do = { factor = 1 }
+  completion_reward = { army_experience = 15 }
+ }
+ focus = {
+  id = NWG_deploy_infantry
+  icon = GFX_goal_generic_army_doctrines
+  x = 20
+  y = 6
+  cost = 6
+  prerequisite = { focus = NWG_purchase_guns }
+  ai_will_do = { factor = 1 }
+  completion_reward = { army_experience = 15 }
+ }
+ focus = {
+  id = NWG_aviation_effort_iii
+  icon = GFX_goal_generic_build_airforce
+  x = 27
+  y = 6
+  cost = 6
+  prerequisite = { focus = NWG_cas_effort focus = NWG_nav_effort }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_tech_bonus = { name = NWG_aviation_effort_iii bonus = 0.5 uses = 1 category = jet_technology } }
+ }
+ focus = {
+  id = NWG_naval_effort_ii
+  icon = GFX_goal_generic_navy_doctrines_tactics
+  x = 32
+  y = 6
+  cost = 6
+  prerequisite = { focus = NWG_naval_effort }
+  available = { any_owned_state = { is_coastal = yes } }
+  ai_will_do = { factor = 1 }
+  completion_reward = { navy_experience = 15 }
+ }
+ focus = {
+  id = NWG_armament_effort_iv
+  icon = GFX_goal_generic_construct_mil_factory
+  x = 35
+  y = 6
+  cost = 6
+  prerequisite = { focus = NWG_armament_effort_iii }
+  ai_will_do = { factor = 1 }
+  completion_reward = { random_owned_controlled_state = { limit = { is_core_of = ROOT } add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } }
+ }
+ focus = {
+  id = NWG_civilian_factory_focus
+  icon = GFX_goal_generic_construct_civ_factory
+  x = 37
+  y = 6
+  cost = 6
+  prerequisite = { focus = NWG_road_effort }
+  ai_will_do = { factor = 1 }
+  completion_reward = { random_owned_controlled_state = { limit = { is_core_of = ROOT } add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } }
+ }
+ focus = {
+  id = NWG_construction_effort_iii
+  icon = GFX_goal_generic_construct_civ_factory
+  x = 39
+  y = 6
+  cost = 6
+  prerequisite = { focus = NWG_construction_effort_ii }
+  ai_will_do = { factor = 1 }
+  completion_reward = { random_owned_controlled_state = { limit = { is_core_of = ROOT } add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } }
+ }
+ focus = {
+  id = NWG_extra_research_slot
+  icon = GFX_goal_generic_scientific_exchange
+  x = 41
+  y = 6
+  cost = 10
+  prerequisite = { focus = NWG_construction_effort_ii }
+  available = { num_of_research_slots < 6 }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_research_slot = 1 }
+ }
+ focus = {
+  id = NWG_intensify_exctraction
+  icon = GFX_goal_generic_national_unity
+  x = 43
+  y = 6
+  cost = 6
+  prerequisite = { focus = NWG_rare_metals_excavation }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_ideas = nwg_spirit_intensify_exctraction }
+ }
+ focus = {
+  id = NWG_natural_oil
+  icon = GFX_goal_generic_oil_refinery
+  x = 45
+  y = 6
+  cost = 6
+  prerequisite = { focus = NWG_rare_metals_excavation }
+  prerequisite = { focus = NWG_intensify_exctraction }
+  ai_will_do = { factor = 1 }
+  completion_reward = { if = { limit = { any_owned_state = { is_core_of = ROOT has_resources_amount = { resource = oil amount > 0 } } } random_owned_controlled_state = { limit = { is_core_of = ROOT has_resources_amount = { resource = oil amount > 0 } } add_resource = { type = oil amount = 2 } } } else = { add_tech_bonus = { name = NWG_natural_oil bonus = 0.5 uses = 1 category = industry } } }
+ }
+ focus = {
+  id = NWG_national_unity
+  icon = GFX_goal_generic_neutrality_focus
+  x = 48
+  y = 6
+  cost = 6
+  prerequisite = { focus = NWG_nationalism }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = neutrality } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_nationalism remove_ideas = nwg_spirit_nationalisation remove_ideas = nwg_spirit_save_ethnic_minorities remove_ideas = nwg_spirit_paramilitarism remove_ideas = nwg_spirit_partisanism } add_ideas = nwg_spirit_national_unity set_politics = { ruling_party = neutrality elections_allowed = no } }
+ }
+ focus = {
+  id = NWG_militarized_schooling
+  icon = GFX_goal_support_fascism
+  x = 50
+  y = 6
+  cost = 6
+  prerequisite = { focus = NWG_fascism }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = fascism } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_fascism remove_ideas = nwg_spirit_economy_for_the_army remove_ideas = nwg_spirit_racial_laws remove_ideas = nwg_spirit_define_war_crimes remove_ideas = nwg_spirit_at_any_cost } add_ideas = nwg_spirit_militarized_schooling set_politics = { ruling_party = fascism elections_allowed = no } if = { limit = { OR = { tag = POL tag = FIN } } drop_cosmetic_tag = yes } }
+ }
+ focus = {
+  id = NWG_national_supremacy
+  icon = GFX_goal_generic_neutrality_focus
+  x = 52
+  y = 6
+  cost = 6
+  prerequisite = { focus = NWG_neoimperialism }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = neutrality } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_neoimperialism remove_ideas = nwg_spirit_guide_industries remove_ideas = nwg_spirit_imperial_army remove_ideas = nwg_spirit_civilise_the_lesser_nations remove_ideas = nwg_spirit_for_the_empire } add_ideas = nwg_spirit_national_supremacy set_politics = { ruling_party = neutrality elections_allowed = no } }
+ }
+ focus = {
+  id = NWG_end_elections
+  icon = GFX_goal_generic_neutrality_focus
+  x = 54
+  y = 6
+  cost = 6
+  prerequisite = { focus = NWG_hyperconservative_populism }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = neutrality } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_hyperconservative_populism remove_ideas = nwg_spirit_protect_our_borders_and_only_our_borders remove_ideas = nwg_spirit_freedom_without_democracy remove_ideas = nwg_spirit_man_of_the_people } add_ideas = nwg_spirit_end_elections set_politics = { ruling_party = neutrality elections_allowed = no } }
+ }
+ focus = {
+  id = NWG_nationalize_foreign_assets
+  icon = GFX_goal_support_communism
+  x = 56
+  y = 6
+  cost = 6
+  prerequisite = { focus = NWG_syndicalism }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = communism } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_syndicalism remove_ideas = nwg_spirit_workers_rights remove_ideas = nwg_spirit_empower_trade_untions remove_ideas = nwg_spirit_class_struggle remove_ideas = nwg_spirit_workers_paradise } add_ideas = nwg_spirit_nationalize_foreign_assets set_politics = { ruling_party = communism elections_allowed = no } if = { limit = { OR = { tag = POL tag = FIN } } drop_cosmetic_tag = yes } }
+ }
+ focus = {
+  id = NWG_whats_a_head_of_state
+  icon = GFX_goal_support_communism
+  x = 58
+  y = 6
+  cost = 6
+  prerequisite = { focus = NWG_anarchism }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = communism } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_anarchism remove_ideas = nwg_spirit_peoples_army remove_ideas = nwg_spirit_abolish_all_ownership remove_ideas = nwg_spirit_there_is_no_god_only_anarchism remove_ideas = nwg_spirit_a_government_without_government } add_ideas = nwg_spirit_whats_a_head_of_state set_politics = { ruling_party = communism elections_allowed = no } if = { limit = { OR = { tag = POL tag = FIN } } drop_cosmetic_tag = yes } }
+ }
+ focus = {
+  id = NWG_planned_economy
+  icon = GFX_goal_support_communism
+  x = 60
+  y = 6
+  cost = 6
+  prerequisite = { focus = NWG_socialism_in_one_country }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = communism } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_socialism_in_one_country remove_ideas = nwg_spirit_enforce_loyalty remove_ideas = nwg_spirit_political_commissars remove_ideas = nwg_spirit_collectivization_of_agriculture remove_ideas = nwg_spirit_socialist_science } add_ideas = nwg_spirit_planned_economy set_politics = { ruling_party = communism elections_allowed = no } if = { limit = { OR = { tag = POL tag = FIN } } drop_cosmetic_tag = yes } }
+ }
+ focus = {
+  id = NWG_political_correctness
+  icon = GFX_goal_support_communism
+  x = 62
+  y = 6
+  cost = 6
+  prerequisite = { focus = NWG_internationalism }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = communism } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_internationalism remove_ideas = nwg_spirit_indoctrination remove_ideas = nwg_spirit_peasant_militias remove_ideas = nwg_spirit_peace_through_war remove_ideas = nwg_spirit_permanent_revolution } add_ideas = nwg_spirit_political_correctness set_politics = { ruling_party = communism elections_allowed = no } if = { limit = { OR = { tag = POL tag = FIN } } drop_cosmetic_tag = yes } }
+ }
+ focus = {
+  id = NWG_exploit_citizens
+  icon = GFX_goal_generic_neutrality_focus
+  x = 64
+  y = 6
+  cost = 6
+  prerequisite = { focus = NWG_kleptocratic_corporatism }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = neutrality } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_kleptocratic_corporatism remove_ideas = nwg_spirit_build_up_personal_wealth remove_ideas = nwg_spirit_privatize_industries remove_ideas = nwg_spirit_private_armies remove_ideas = nwg_spirit_president_more_like_ceo } add_ideas = nwg_spirit_exploit_citizens set_politics = { ruling_party = neutrality elections_allowed = no } }
+ }
+ focus = {
+  id = NWG_one_faith
+  icon = GFX_goal_generic_neutrality_focus
+  x = 66
+  y = 6
+  cost = 6
+  prerequisite = { focus = NWG_theocracy }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = neutrality } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_theocracy remove_ideas = nwg_spirit_under_god remove_ideas = nwg_spirit_messenger_of_god remove_ideas = nwg_spirit_holy_warriors remove_ideas = nwg_spirit_holy_wars } add_ideas = nwg_spirit_one_faith set_politics = { ruling_party = neutrality elections_allowed = no } }
+ }
+ focus = {
+  id = NWG_empower_the_military
+  icon = GFX_goal_generic_neutrality_focus
+  x = 68
+  y = 6
+  cost = 6
+  prerequisite = { focus = NWG_military_coup }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = neutrality } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_military_coup remove_ideas = nwg_spirit_citizen_suppresion remove_ideas = nwg_spirit_police_state remove_ideas = nwg_spirit_devotion_to_the_state remove_ideas = nwg_spirit_expand_state_holdings } add_ideas = nwg_spirit_empower_the_military set_politics = { ruling_party = neutrality elections_allowed = no } }
+ }
+ focus = {
+  id = NWG_divine_rulership
+  icon = GFX_goal_generic_neutrality_focus
+  x = 70
+  y = 6
+  cost = 6
+  prerequisite = { focus = NWG_monarchism }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = neutrality } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_monarchism remove_ideas = nwg_spirit_for_the_king remove_ideas = nwg_spirit_concessions_to_the_aristocracy remove_ideas = nwg_spirit_modern_serfdom remove_ideas = nwg_spirit_state_sponsored_crusades } add_ideas = nwg_spirit_divine_rulership set_politics = { ruling_party = neutrality elections_allowed = no } }
+ }
+ focus = {
+  id = NWG_a_grill_in_every_home
+  icon = GFX_goal_support_democracy
+  x = 73
+  y = 6
+  cost = 6
+  prerequisite = { focus = NWG_i_just_wanna_grill }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = democratic } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_i_just_wanna_grill remove_ideas = nwg_spirit_an_enlightened_centrist } add_ideas = nwg_spirit_a_grill_in_every_home set_politics = { ruling_party = democratic elections_allowed = yes } }
+ }
+ focus = {
+  id = NWG_open_market
+  icon = GFX_goal_support_democracy
+  x = 76
+  y = 6
+  cost = 6
+  prerequisite = { focus = NWG_state_welfare }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = democratic } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_liberalism remove_ideas = nwg_spirit_state_welfare remove_ideas = nwg_spirit_open_borders } add_ideas = nwg_spirit_open_market }
+ }
+ focus = {
+  id = NWG_embrace_tarrifs
+  icon = GFX_goal_support_democracy
+  x = 79
+  y = 6
+  cost = 6
+  prerequisite = { focus = NWG_family_values }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = democratic } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_conservatism remove_ideas = nwg_spirit_family_values remove_ideas = nwg_spirit_private_military_companies } add_ideas = nwg_spirit_embrace_tarrifs }
+ }
+ focus = {
+  id = NWG_reduce_motorized_production_costs
+  icon = GFX_goal_generic_national_unity
+  x = 3
+  y = 7
+  cost = 6
+  prerequisite = { focus = NWG_motorization_effort }
+  prerequisite = { focus = NWG_quantity }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_timed_idea = { idea = nwg_spirit_reduce_motorized_production_costs days = 730 } }
+ }
+ focus = {
+  id = NWG_improve_quality_of_motorized
+  icon = GFX_goal_generic_national_unity
+  x = 7
+  y = 7
+  cost = 6
+  prerequisite = { focus = NWG_motorization_effort }
+  prerequisite = { focus = NWG_quality }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_ideas = nwg_spirit_improve_quality_of_motorized }
+ }
+ focus = {
+  id = NWG_equipment_effort_iii
+  icon = GFX_goal_generic_small_arms
+  x = 11
+  y = 7
+  cost = 6
+  prerequisite = { focus = NWG_equipment_effort_ii }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_tech_bonus = { name = NWG_equipment_effort_iii bonus = 0.5 uses = 1 category = infantry_weapons } }
+ }
+ focus = {
+  id = NWG_doctrine_effort_iii
+  icon = GFX_goal_generic_army_doctrines
+  x = 13
+  y = 7
+  cost = 6
+  prerequisite = { focus = NWG_doctrine_effort_ii }
+  ai_will_do = { factor = 1 }
+  completion_reward = { army_experience = 20 }
+ }
+ focus = {
+  id = NWG_militarism
+  icon = GFX_goal_generic_allies_build_infantry
+  x = 15
+  y = 7
+  cost = 6
+  prerequisite = { focus = NWG_military_youth }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_war_support = 0.04 army_experience = 10 }
+ }
+ focus = {
+  id = NWG_rocket_effort
+  icon = GFX_goal_generic_scientific_exchange
+  x = 26
+  y = 7
+  cost = 6
+  prerequisite = { focus = NWG_aviation_effort_iii }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_tech_bonus = { name = NWG_rocket_effort bonus = 0.5 uses = 1 category = rocketry } }
+ }
+ focus = {
+  id = NWG_nuclear_effort
+  icon = GFX_goal_generic_scientific_exchange
+  x = 28
+  y = 7
+  cost = 6
+  prerequisite = { focus = NWG_aviation_effort_iii }
+  available = { date > 1940.1.1 }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_tech_bonus = { name = NWG_nuclear_effort bonus = 0.5 uses = 1 category = nuclear } }
+ }
+ focus = {
+  id = NWG_naval_invasions
+  icon = GFX_goal_generic_special_forces
+  x = 31
+  y = 7
+  cost = 6
+  prerequisite = { focus = NWG_naval_effort_ii }
+  available = { any_owned_state = { is_coastal = yes } }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_tech_bonus = { name = NWG_naval_invasions bonus = 0.5 uses = 1 category = tp_tech } }
+ }
+ focus = {
+  id = NWG_the_marines
+  icon = GFX_goal_generic_special_forces
+  x = 33
+  y = 7
+  cost = 6
+  prerequisite = { focus = NWG_naval_effort_ii }
+  available = { any_owned_state = { is_coastal = yes } }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_tech_bonus = { name = NWG_the_marines bonus = 0.5 uses = 1 category = marine_tech } }
+ }
+ focus = {
+  id = NWG_armament_effort_v
+  icon = GFX_goal_generic_construct_mil_factory
+  x = 35
+  y = 7
+  cost = 6
+  prerequisite = { focus = NWG_armament_effort_iv }
+  ai_will_do = { factor = 1 }
+  completion_reward = { random_owned_controlled_state = { limit = { is_core_of = ROOT } add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } }
+ }
+ focus = {
+  id = NWG_extra_research_slot_ii
+  icon = GFX_goal_generic_scientific_exchange
+  x = 40
+  y = 7
+  cost = 10
+  prerequisite = { focus = NWG_extra_research_slot }
+  available = { num_of_research_slots < 6 }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_research_slot = 1 }
+ }
+ focus = {
+  id = NWG_research_funding
+  icon = GFX_goal_generic_scientific_exchange
+  x = 42
+  y = 7
+  cost = 6
+  prerequisite = { focus = NWG_extra_research_slot }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_tech_bonus = { name = NWG_research_funding bonus = 0.5 uses = 1 category = electronics } }
+ }
+ focus = {
+  id = NWG_more_metals
+  icon = GFX_goal_generic_oil_refinery
+  x = 44
+  y = 7
+  cost = 6
+  prerequisite = { focus = NWG_intensify_exctraction }
+  ai_will_do = { factor = 1 }
+  completion_reward = { if = { limit = { any_owned_state = { is_core_of = ROOT has_resources_amount = { resource = aluminium amount > 0 } } } random_owned_controlled_state = { limit = { is_core_of = ROOT has_resources_amount = { resource = aluminium amount > 0 } } add_resource = { type = aluminium amount = 3 } } } else = { add_tech_bonus = { name = NWG_more_metals bonus = 0.5 uses = 1 category = industry } } }
+ }
+ focus = {
+  id = NWG_synthetic_oil__rubber
+  icon = GFX_goal_generic_oil_refinery
+  x = 46
+  y = 7
+  cost = 6
+  prerequisite = { focus = NWG_natural_oil }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_tech_bonus = { name = NWG_synthetic_oil__rubber bonus = 0.5 uses = 1 category = synth_resources } }
+ }
+ focus = {
+  id = NWG_nationalisation
+  icon = GFX_goal_generic_neutrality_focus
+  x = 48
+  y = 7
+  cost = 6
+  prerequisite = { focus = NWG_national_unity }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = neutrality } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_nationalism remove_ideas = nwg_spirit_national_unity remove_ideas = nwg_spirit_save_ethnic_minorities remove_ideas = nwg_spirit_paramilitarism remove_ideas = nwg_spirit_partisanism } add_ideas = nwg_spirit_nationalisation }
+ }
+ focus = {
+  id = NWG_economy_for_the_army
+  icon = GFX_goal_support_fascism
+  x = 50
+  y = 7
+  cost = 6
+  prerequisite = { focus = NWG_militarized_schooling }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = fascism } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_fascism remove_ideas = nwg_spirit_militarized_schooling remove_ideas = nwg_spirit_racial_laws remove_ideas = nwg_spirit_define_war_crimes remove_ideas = nwg_spirit_at_any_cost } add_ideas = nwg_spirit_economy_for_the_army }
+ }
+ focus = {
+  id = NWG_guide_industries
+  icon = GFX_goal_generic_neutrality_focus
+  x = 52
+  y = 7
+  cost = 6
+  prerequisite = { focus = NWG_national_supremacy }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = neutrality } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_neoimperialism remove_ideas = nwg_spirit_national_supremacy remove_ideas = nwg_spirit_imperial_army remove_ideas = nwg_spirit_civilise_the_lesser_nations remove_ideas = nwg_spirit_for_the_empire } add_ideas = nwg_spirit_guide_industries }
+ }
+ focus = {
+  id = NWG_protect_our_borders_and_only_our_borders
+  icon = GFX_goal_generic_neutrality_focus
+  x = 54
+  y = 7
+  cost = 6
+  prerequisite = { focus = NWG_end_elections }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = neutrality } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_hyperconservative_populism remove_ideas = nwg_spirit_end_elections remove_ideas = nwg_spirit_freedom_without_democracy remove_ideas = nwg_spirit_man_of_the_people } add_ideas = nwg_spirit_protect_our_borders_and_only_our_borders }
+ }
+ focus = {
+  id = NWG_workers_rights
+  icon = GFX_goal_support_communism
+  x = 56
+  y = 7
+  cost = 6
+  prerequisite = { focus = NWG_nationalize_foreign_assets }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = communism } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_syndicalism remove_ideas = nwg_spirit_nationalize_foreign_assets remove_ideas = nwg_spirit_empower_trade_untions remove_ideas = nwg_spirit_class_struggle remove_ideas = nwg_spirit_workers_paradise } add_ideas = nwg_spirit_workers_rights }
+ }
+ focus = {
+  id = NWG_peoples_army
+  icon = GFX_goal_support_communism
+  x = 58
+  y = 7
+  cost = 6
+  prerequisite = { focus = NWG_whats_a_head_of_state }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = communism } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_anarchism remove_ideas = nwg_spirit_whats_a_head_of_state remove_ideas = nwg_spirit_abolish_all_ownership remove_ideas = nwg_spirit_there_is_no_god_only_anarchism remove_ideas = nwg_spirit_a_government_without_government } add_ideas = nwg_spirit_peoples_army }
+ }
+ focus = {
+  id = NWG_enforce_loyalty
+  icon = GFX_goal_support_communism
+  x = 60
+  y = 7
+  cost = 6
+  prerequisite = { focus = NWG_planned_economy }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = communism } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_socialism_in_one_country remove_ideas = nwg_spirit_planned_economy remove_ideas = nwg_spirit_political_commissars remove_ideas = nwg_spirit_collectivization_of_agriculture remove_ideas = nwg_spirit_socialist_science } add_ideas = nwg_spirit_enforce_loyalty }
+ }
+ focus = {
+  id = NWG_indoctrination
+  icon = GFX_goal_support_communism
+  x = 62
+  y = 7
+  cost = 6
+  prerequisite = { focus = NWG_political_correctness }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = communism } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_internationalism remove_ideas = nwg_spirit_political_correctness remove_ideas = nwg_spirit_peasant_militias remove_ideas = nwg_spirit_peace_through_war remove_ideas = nwg_spirit_permanent_revolution } add_ideas = nwg_spirit_indoctrination }
+ }
+ focus = {
+  id = NWG_build_up_personal_wealth
+  icon = GFX_goal_generic_neutrality_focus
+  x = 64
+  y = 7
+  cost = 6
+  prerequisite = { focus = NWG_exploit_citizens }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = neutrality } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_kleptocratic_corporatism remove_ideas = nwg_spirit_exploit_citizens remove_ideas = nwg_spirit_privatize_industries remove_ideas = nwg_spirit_private_armies remove_ideas = nwg_spirit_president_more_like_ceo } add_ideas = nwg_spirit_build_up_personal_wealth }
+ }
+ focus = {
+  id = NWG_under_god
+  icon = GFX_goal_generic_neutrality_focus
+  x = 66
+  y = 7
+  cost = 6
+  prerequisite = { focus = NWG_one_faith }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = neutrality } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_theocracy remove_ideas = nwg_spirit_one_faith remove_ideas = nwg_spirit_messenger_of_god remove_ideas = nwg_spirit_holy_warriors remove_ideas = nwg_spirit_holy_wars } add_ideas = nwg_spirit_under_god }
+ }
+ focus = {
+  id = NWG_citizen_suppresion
+  icon = GFX_goal_generic_neutrality_focus
+  x = 68
+  y = 7
+  cost = 6
+  prerequisite = { focus = NWG_empower_the_military }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = neutrality } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_military_coup remove_ideas = nwg_spirit_empower_the_military remove_ideas = nwg_spirit_police_state remove_ideas = nwg_spirit_devotion_to_the_state remove_ideas = nwg_spirit_expand_state_holdings } add_ideas = nwg_spirit_citizen_suppresion }
+ }
+ focus = {
+  id = NWG_for_the_king
+  icon = GFX_goal_generic_neutrality_focus
+  x = 70
+  y = 7
+  cost = 6
+  prerequisite = { focus = NWG_divine_rulership }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = neutrality } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_monarchism remove_ideas = nwg_spirit_divine_rulership remove_ideas = nwg_spirit_concessions_to_the_aristocracy remove_ideas = nwg_spirit_modern_serfdom remove_ideas = nwg_spirit_state_sponsored_crusades } add_ideas = nwg_spirit_for_the_king }
+ }
+ focus = {
+  id = NWG_an_enlightened_centrist
+  icon = GFX_goal_support_democracy
+  x = 73
+  y = 7
+  cost = 6
+  prerequisite = { focus = NWG_a_grill_in_every_home }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = democratic } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_i_just_wanna_grill remove_ideas = nwg_spirit_a_grill_in_every_home } add_ideas = nwg_spirit_an_enlightened_centrist }
+ }
+ focus = {
+  id = NWG_open_borders
+  icon = GFX_goal_support_democracy
+  x = 76
+  y = 7
+  cost = 6
+  prerequisite = { focus = NWG_open_market }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = democratic } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_liberalism remove_ideas = nwg_spirit_state_welfare remove_ideas = nwg_spirit_open_market } add_ideas = nwg_spirit_open_borders }
+ }
+ focus = {
+  id = NWG_private_military_companies
+  icon = GFX_goal_support_democracy
+  x = 79
+  y = 7
+  cost = 6
+  prerequisite = { focus = NWG_embrace_tarrifs }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = democratic } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_conservatism remove_ideas = nwg_spirit_family_values remove_ideas = nwg_spirit_embrace_tarrifs } add_ideas = nwg_spirit_private_military_companies }
+ }
+ focus = {
+  id = NWG_mechanization_effort
+  icon = GFX_goal_generic_army_motorized
+  x = 5
+  y = 8
+  cost = 6
+  prerequisite = { focus = NWG_motorization_effort }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_tech_bonus = { name = NWG_mechanization_effort bonus = 0.5 uses = 1 category = motorized_equipment } }
+ }
+ focus = {
+  id = NWG_aa_and_antitank_production
+  icon = GFX_goal_generic_army_artillery2
+  x = 10
+  y = 8
+  cost = 6
+  prerequisite = { focus = NWG_equipment_effort_iii }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_tech_bonus = { name = NWG_aa_and_antitank_production bonus = 0.5 uses = 1 category = artillery } }
+ }
+ focus = {
+  id = NWG_equipment_facotires_2
+  icon = GFX_goal_generic_construct_mil_factory
+  x = 12
+  y = 8
+  cost = 6
+  prerequisite = { focus = NWG_equipment_effort_iii }
+  ai_will_do = { factor = 1 }
+  completion_reward = { random_owned_controlled_state = { limit = { is_core_of = ROOT } add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } }
+ }
+ focus = {
+  id = NWG_secret_weapons
+  icon = GFX_goal_generic_scientific_exchange
+  x = 27
+  y = 8
+  cost = 6
+  prerequisite = { focus = NWG_nuclear_effort focus = NWG_rocket_effort }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_tech_bonus = { name = NWG_secret_weapons bonus = 0.5 uses = 1 category = electronics } }
+ }
+ focus = {
+  id = NWG_ship_production_en_masse
+  icon = GFX_goal_generic_construct_naval_dockyard
+  x = 32
+  y = 8
+  cost = 6
+  prerequisite = { focus = NWG_naval_effort_ii }
+  available = { any_owned_state = { is_coastal = yes } any_owned_state = { is_core_of = ROOT is_coastal = yes } }
+  ai_will_do = { factor = 1 }
+  completion_reward = { random_owned_controlled_state = { limit = { is_core_of = ROOT is_coastal = yes } add_extra_state_shared_building_slots = 1 add_building_construction = { type = dockyard level = 1 instant_build = yes } } }
+ }
+ focus = {
+  id = NWG_military_industrial_complex
+  icon = GFX_goal_generic_construct_mil_factory
+  x = 36
+  y = 8
+  cost = 6
+  prerequisite = { focus = NWG_armament_effort_v }
+  prerequisite = { focus = NWG_military_industry_focus }
+  ai_will_do = { factor = 1 }
+  completion_reward = { random_owned_controlled_state = { limit = { is_core_of = ROOT } add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } }
+ }
+ focus = {
+  id = NWG_successful_economy
+  icon = GFX_goal_generic_production
+  x = 38
+  y = 8
+  cost = 6
+  prerequisite = { focus = NWG_construction_effort_iii }
+  prerequisite = { focus = NWG_civilian_factory_focus }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_ideas = nwg_spirit_successful_economy }
+ }
+ focus = {
+  id = NWG_technology_sharing
+  icon = GFX_goal_generic_scientific_exchange
+  x = 40
+  y = 8
+  cost = 6
+  prerequisite = { focus = NWG_extra_research_slot_ii }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_tech_bonus = { name = NWG_technology_sharing bonus = 0.5 uses = 1 category = electronics } }
+ }
+ focus = {
+  id = NWG_autarky
+  icon = GFX_goal_generic_national_unity
+  x = 44
+  y = 8
+  cost = 6
+  prerequisite = { focus = NWG_more_metals }
+  prerequisite = { focus = NWG_synthetic_oil__rubber }
+  mutually_exclusive = { focus = NWG_export_goods }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_ideas = nwg_spirit_autarky }
+ }
+ focus = {
+  id = NWG_export_goods
+  icon = GFX_goal_generic_national_unity
+  x = 46
+  y = 8
+  cost = 6
+  prerequisite = { focus = NWG_more_metals }
+  prerequisite = { focus = NWG_synthetic_oil__rubber }
+  mutually_exclusive = { focus = NWG_autarky }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_ideas = nwg_spirit_export_goods }
+ }
+ focus = {
+  id = NWG_save_ethnic_minorities
+  icon = GFX_goal_generic_neutrality_focus
+  x = 48
+  y = 8
+  cost = 6
+  prerequisite = { focus = NWG_nationalisation }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = neutrality } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_nationalism remove_ideas = nwg_spirit_national_unity remove_ideas = nwg_spirit_nationalisation remove_ideas = nwg_spirit_paramilitarism remove_ideas = nwg_spirit_partisanism } add_ideas = nwg_spirit_save_ethnic_minorities }
+ }
+ focus = {
+  id = NWG_racial_laws
+  icon = GFX_goal_support_fascism
+  x = 50
+  y = 8
+  cost = 6
+  prerequisite = { focus = NWG_economy_for_the_army }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = fascism } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_fascism remove_ideas = nwg_spirit_militarized_schooling remove_ideas = nwg_spirit_economy_for_the_army remove_ideas = nwg_spirit_define_war_crimes remove_ideas = nwg_spirit_at_any_cost } add_ideas = nwg_spirit_racial_laws }
+ }
+ focus = {
+  id = NWG_imperial_army
+  icon = GFX_goal_generic_neutrality_focus
+  x = 52
+  y = 8
+  cost = 6
+  prerequisite = { focus = NWG_guide_industries }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = neutrality } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_neoimperialism remove_ideas = nwg_spirit_national_supremacy remove_ideas = nwg_spirit_guide_industries remove_ideas = nwg_spirit_civilise_the_lesser_nations remove_ideas = nwg_spirit_for_the_empire } add_ideas = nwg_spirit_imperial_army }
+ }
+ focus = {
+  id = NWG_freedom_without_democracy
+  icon = GFX_goal_generic_neutrality_focus
+  x = 54
+  y = 8
+  cost = 6
+  prerequisite = { focus = NWG_protect_our_borders_and_only_our_borders }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = neutrality } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_hyperconservative_populism remove_ideas = nwg_spirit_end_elections remove_ideas = nwg_spirit_protect_our_borders_and_only_our_borders remove_ideas = nwg_spirit_man_of_the_people } add_ideas = nwg_spirit_freedom_without_democracy }
+ }
+ focus = {
+  id = NWG_empower_trade_untions
+  icon = GFX_goal_support_communism
+  x = 56
+  y = 8
+  cost = 6
+  prerequisite = { focus = NWG_workers_rights }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = communism } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_syndicalism remove_ideas = nwg_spirit_nationalize_foreign_assets remove_ideas = nwg_spirit_workers_rights remove_ideas = nwg_spirit_class_struggle remove_ideas = nwg_spirit_workers_paradise } add_ideas = nwg_spirit_empower_trade_untions }
+ }
+ focus = {
+  id = NWG_abolish_all_ownership
+  icon = GFX_goal_support_communism
+  x = 58
+  y = 8
+  cost = 6
+  prerequisite = { focus = NWG_peoples_army }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = communism } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_anarchism remove_ideas = nwg_spirit_whats_a_head_of_state remove_ideas = nwg_spirit_peoples_army remove_ideas = nwg_spirit_there_is_no_god_only_anarchism remove_ideas = nwg_spirit_a_government_without_government } add_ideas = nwg_spirit_abolish_all_ownership }
+ }
+ focus = {
+  id = NWG_political_commissars
+  icon = GFX_goal_support_communism
+  x = 60
+  y = 8
+  cost = 6
+  prerequisite = { focus = NWG_enforce_loyalty }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = communism } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_socialism_in_one_country remove_ideas = nwg_spirit_planned_economy remove_ideas = nwg_spirit_enforce_loyalty remove_ideas = nwg_spirit_collectivization_of_agriculture remove_ideas = nwg_spirit_socialist_science } add_ideas = nwg_spirit_political_commissars }
+ }
+ focus = {
+  id = NWG_peasant_militias
+  icon = GFX_goal_support_communism
+  x = 62
+  y = 8
+  cost = 6
+  prerequisite = { focus = NWG_indoctrination }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = communism } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_internationalism remove_ideas = nwg_spirit_political_correctness remove_ideas = nwg_spirit_indoctrination remove_ideas = nwg_spirit_peace_through_war remove_ideas = nwg_spirit_permanent_revolution } add_ideas = nwg_spirit_peasant_militias }
+ }
+ focus = {
+  id = NWG_privatize_industries
+  icon = GFX_goal_generic_neutrality_focus
+  x = 64
+  y = 8
+  cost = 6
+  prerequisite = { focus = NWG_build_up_personal_wealth }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = neutrality } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_kleptocratic_corporatism remove_ideas = nwg_spirit_exploit_citizens remove_ideas = nwg_spirit_build_up_personal_wealth remove_ideas = nwg_spirit_private_armies remove_ideas = nwg_spirit_president_more_like_ceo } add_ideas = nwg_spirit_privatize_industries }
+ }
+ focus = {
+  id = NWG_messenger_of_god
+  icon = GFX_goal_generic_neutrality_focus
+  x = 66
+  y = 8
+  cost = 6
+  prerequisite = { focus = NWG_under_god }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = neutrality } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_theocracy remove_ideas = nwg_spirit_one_faith remove_ideas = nwg_spirit_under_god remove_ideas = nwg_spirit_holy_warriors remove_ideas = nwg_spirit_holy_wars } add_ideas = nwg_spirit_messenger_of_god }
+ }
+ focus = {
+  id = NWG_police_state
+  icon = GFX_goal_generic_neutrality_focus
+  x = 68
+  y = 8
+  cost = 6
+  prerequisite = { focus = NWG_citizen_suppresion }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = neutrality } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_military_coup remove_ideas = nwg_spirit_empower_the_military remove_ideas = nwg_spirit_citizen_suppresion remove_ideas = nwg_spirit_devotion_to_the_state remove_ideas = nwg_spirit_expand_state_holdings } add_ideas = nwg_spirit_police_state }
+ }
+ focus = {
+  id = NWG_concessions_to_the_aristocracy
+  icon = GFX_goal_generic_neutrality_focus
+  x = 70
+  y = 8
+  cost = 6
+  prerequisite = { focus = NWG_for_the_king }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = neutrality } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_monarchism remove_ideas = nwg_spirit_divine_rulership remove_ideas = nwg_spirit_for_the_king remove_ideas = nwg_spirit_modern_serfdom remove_ideas = nwg_spirit_state_sponsored_crusades } add_ideas = nwg_spirit_concessions_to_the_aristocracy }
+ }
+ focus = {
+  id = NWG_neutrality_focus
+  icon = GFX_goal_generic_political_pressure
+  x = 72
+  y = 8
+  cost = 6
+  prerequisite = { focus = NWG_open_borders focus = NWG_private_military_companies focus = NWG_an_enlightened_centrist }
+  mutually_exclusive = { focus = NWG_interventionism_focus }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_ideas = nwg_spirit_neutrality_focus }
+ }
+ focus = {
+  id = NWG_interventionism_focus
+  icon = GFX_goal_generic_political_pressure
+  x = 80
+  y = 8
+  cost = 6
+  prerequisite = { focus = NWG_open_borders focus = NWG_private_military_companies }
+  mutually_exclusive = { focus = NWG_neutrality_focus }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_war_support = 0.03 add_political_power = 35 }
+ }
+ focus = {
+  id = NWG_reduce_mechanized_production_costs
+  icon = GFX_goal_generic_national_unity
+  x = 3
+  y = 9
+  cost = 6
+  prerequisite = { focus = NWG_mechanization_effort }
+  prerequisite = { focus = NWG_reduce_motorized_production_costs }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_timed_idea = { idea = nwg_spirit_reduce_mechanized_production_costs days = 730 } }
+ }
+ focus = {
+  id = NWG_improve_quality_of_mechanized
+  icon = GFX_goal_generic_national_unity
+  x = 7
+  y = 9
+  cost = 6
+  prerequisite = { focus = NWG_mechanization_effort }
+  prerequisite = { focus = NWG_improve_quality_of_motorized }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_ideas = nwg_spirit_improve_quality_of_mechanized }
+ }
+ focus = {
+  id = NWG_nuclear_arms_production
+  icon = GFX_goal_generic_scientific_exchange
+  x = 27
+  y = 9
+  cost = 6
+  prerequisite = { focus = NWG_secret_weapons }
+  available = { date > 1940.1.1 }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_tech_bonus = { name = NWG_nuclear_arms_production bonus = 0.5 uses = 1 category = nuclear } }
+ }
+ focus = {
+  id = NWG_paramilitarism
+  icon = GFX_goal_generic_neutrality_focus
+  x = 48
+  y = 9
+  cost = 6
+  prerequisite = { focus = NWG_save_ethnic_minorities }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = neutrality } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_nationalism remove_ideas = nwg_spirit_national_unity remove_ideas = nwg_spirit_nationalisation remove_ideas = nwg_spirit_save_ethnic_minorities remove_ideas = nwg_spirit_partisanism } add_ideas = nwg_spirit_paramilitarism }
+ }
+ focus = {
+  id = NWG_define_war_crimes
+  icon = GFX_goal_support_fascism
+  x = 50
+  y = 9
+  cost = 6
+  prerequisite = { focus = NWG_racial_laws }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = fascism } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_fascism remove_ideas = nwg_spirit_militarized_schooling remove_ideas = nwg_spirit_economy_for_the_army remove_ideas = nwg_spirit_racial_laws remove_ideas = nwg_spirit_at_any_cost } add_ideas = nwg_spirit_define_war_crimes }
+ }
+ focus = {
+  id = NWG_civilise_the_lesser_nations
+  icon = GFX_goal_generic_neutrality_focus
+  x = 52
+  y = 9
+  cost = 6
+  prerequisite = { focus = NWG_imperial_army }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = neutrality } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_neoimperialism remove_ideas = nwg_spirit_national_supremacy remove_ideas = nwg_spirit_guide_industries remove_ideas = nwg_spirit_imperial_army remove_ideas = nwg_spirit_for_the_empire } add_ideas = nwg_spirit_civilise_the_lesser_nations }
+ }
+ focus = {
+  id = NWG_man_of_the_people
+  icon = GFX_goal_generic_neutrality_focus
+  x = 54
+  y = 9
+  cost = 6
+  prerequisite = { focus = NWG_freedom_without_democracy }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = neutrality } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_hyperconservative_populism remove_ideas = nwg_spirit_end_elections remove_ideas = nwg_spirit_protect_our_borders_and_only_our_borders remove_ideas = nwg_spirit_freedom_without_democracy } add_ideas = nwg_spirit_man_of_the_people }
+ }
+ focus = {
+  id = NWG_class_struggle
+  icon = GFX_goal_support_communism
+  x = 56
+  y = 9
+  cost = 6
+  prerequisite = { focus = NWG_empower_trade_untions }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = communism } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_syndicalism remove_ideas = nwg_spirit_nationalize_foreign_assets remove_ideas = nwg_spirit_workers_rights remove_ideas = nwg_spirit_empower_trade_untions remove_ideas = nwg_spirit_workers_paradise } add_ideas = nwg_spirit_class_struggle }
+ }
+ focus = {
+  id = NWG_there_is_no_god_only_anarchism
+  icon = GFX_goal_support_communism
+  x = 58
+  y = 9
+  cost = 6
+  prerequisite = { focus = NWG_abolish_all_ownership }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = communism } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_anarchism remove_ideas = nwg_spirit_whats_a_head_of_state remove_ideas = nwg_spirit_peoples_army remove_ideas = nwg_spirit_abolish_all_ownership remove_ideas = nwg_spirit_a_government_without_government } add_ideas = nwg_spirit_there_is_no_god_only_anarchism }
+ }
+ focus = {
+  id = NWG_collectivization_of_agriculture
+  icon = GFX_goal_support_communism
+  x = 60
+  y = 9
+  cost = 6
+  prerequisite = { focus = NWG_political_commissars }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = communism } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_socialism_in_one_country remove_ideas = nwg_spirit_planned_economy remove_ideas = nwg_spirit_enforce_loyalty remove_ideas = nwg_spirit_political_commissars remove_ideas = nwg_spirit_socialist_science } add_ideas = nwg_spirit_collectivization_of_agriculture }
+ }
+ focus = {
+  id = NWG_peace_through_war
+  icon = GFX_goal_support_communism
+  x = 62
+  y = 9
+  cost = 6
+  prerequisite = { focus = NWG_peasant_militias }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = communism } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_internationalism remove_ideas = nwg_spirit_political_correctness remove_ideas = nwg_spirit_indoctrination remove_ideas = nwg_spirit_peasant_militias remove_ideas = nwg_spirit_permanent_revolution } add_ideas = nwg_spirit_peace_through_war }
+ }
+ focus = {
+  id = NWG_private_armies
+  icon = GFX_goal_generic_neutrality_focus
+  x = 64
+  y = 9
+  cost = 6
+  prerequisite = { focus = NWG_privatize_industries }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = neutrality } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_kleptocratic_corporatism remove_ideas = nwg_spirit_exploit_citizens remove_ideas = nwg_spirit_build_up_personal_wealth remove_ideas = nwg_spirit_privatize_industries remove_ideas = nwg_spirit_president_more_like_ceo } add_ideas = nwg_spirit_private_armies }
+ }
+ focus = {
+  id = NWG_holy_warriors
+  icon = GFX_goal_generic_neutrality_focus
+  x = 66
+  y = 9
+  cost = 6
+  prerequisite = { focus = NWG_messenger_of_god }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = neutrality } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_theocracy remove_ideas = nwg_spirit_one_faith remove_ideas = nwg_spirit_under_god remove_ideas = nwg_spirit_messenger_of_god remove_ideas = nwg_spirit_holy_wars } add_ideas = nwg_spirit_holy_warriors }
+ }
+ focus = {
+  id = NWG_devotion_to_the_state
+  icon = GFX_goal_generic_neutrality_focus
+  x = 68
+  y = 9
+  cost = 6
+  prerequisite = { focus = NWG_police_state }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = neutrality } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_military_coup remove_ideas = nwg_spirit_empower_the_military remove_ideas = nwg_spirit_citizen_suppresion remove_ideas = nwg_spirit_police_state remove_ideas = nwg_spirit_expand_state_holdings } add_ideas = nwg_spirit_devotion_to_the_state }
+ }
+ focus = {
+  id = NWG_modern_serfdom
+  icon = GFX_goal_generic_neutrality_focus
+  x = 70
+  y = 9
+  cost = 6
+  prerequisite = { focus = NWG_concessions_to_the_aristocracy }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = neutrality } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_monarchism remove_ideas = nwg_spirit_divine_rulership remove_ideas = nwg_spirit_for_the_king remove_ideas = nwg_spirit_concessions_to_the_aristocracy remove_ideas = nwg_spirit_state_sponsored_crusades } add_ideas = nwg_spirit_modern_serfdom }
+ }
+ focus = {
+  id = NWG_deterrence
+  icon = GFX_goal_generic_political_pressure
+  x = 72
+  y = 9
+  cost = 6
+  prerequisite = { focus = NWG_neutrality_focus }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_ideas = nwg_spirit_deterrence }
+ }
+ focus = {
+  id = NWG_volunteer_corps
+  icon = GFX_goal_generic_political_pressure
+  x = 80
+  y = 9
+  cost = 6
+  prerequisite = { focus = NWG_interventionism_focus }
+  ai_will_do = { factor = 1 }
+  completion_reward = { army_experience = 20 }
+ }
+ focus = {
+  id = NWG_armor_effort
+  icon = GFX_goal_generic_build_tank
+  x = 5
+  y = 10
+  cost = 6
+  prerequisite = { focus = NWG_mechanization_effort }
+  ai_will_do = { factor = 1 }
+  completion_reward = { army_experience = 15 }
+ }
+ focus = {
+  id = NWG_partisanism
+  icon = GFX_goal_generic_neutrality_focus
+  x = 48
+  y = 10
+  cost = 6
+  prerequisite = { focus = NWG_paramilitarism }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = neutrality } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_nationalism remove_ideas = nwg_spirit_national_unity remove_ideas = nwg_spirit_nationalisation remove_ideas = nwg_spirit_save_ethnic_minorities remove_ideas = nwg_spirit_paramilitarism } add_ideas = nwg_spirit_partisanism }
+ }
+ focus = {
+  id = NWG_at_any_cost
+  icon = GFX_goal_support_fascism
+  x = 50
+  y = 10
+  cost = 6
+  prerequisite = { focus = NWG_define_war_crimes }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = fascism } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_fascism remove_ideas = nwg_spirit_militarized_schooling remove_ideas = nwg_spirit_economy_for_the_army remove_ideas = nwg_spirit_racial_laws remove_ideas = nwg_spirit_define_war_crimes } add_ideas = nwg_spirit_at_any_cost }
+ }
+ focus = {
+  id = NWG_for_the_empire
+  icon = GFX_goal_generic_neutrality_focus
+  x = 52
+  y = 10
+  cost = 6
+  prerequisite = { focus = NWG_civilise_the_lesser_nations }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = neutrality } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_neoimperialism remove_ideas = nwg_spirit_national_supremacy remove_ideas = nwg_spirit_guide_industries remove_ideas = nwg_spirit_imperial_army remove_ideas = nwg_spirit_civilise_the_lesser_nations } add_ideas = nwg_spirit_for_the_empire }
+ }
+ focus = {
+  id = NWG_territorial_claims
+  icon = GFX_goal_generic_improve_relations
+  x = 54
+  y = 10
+  cost = 6
+  prerequisite = { focus = NWG_man_of_the_people }
+  ai_will_do = { factor = 1 }
+  completion_reward = { every_state = { limit = { is_core_of = ROOT NOT = { is_owned_by = ROOT } } add_claim_by = ROOT } add_political_power = 35 }
+ }
+ focus = {
+  id = NWG_workers_paradise
+  icon = GFX_goal_support_communism
+  x = 56
+  y = 10
+  cost = 6
+  prerequisite = { focus = NWG_class_struggle }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = communism } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_syndicalism remove_ideas = nwg_spirit_nationalize_foreign_assets remove_ideas = nwg_spirit_workers_rights remove_ideas = nwg_spirit_empower_trade_untions remove_ideas = nwg_spirit_class_struggle } add_ideas = nwg_spirit_workers_paradise }
+ }
+ focus = {
+  id = NWG_a_government_without_government
+  icon = GFX_goal_support_communism
+  x = 58
+  y = 10
+  cost = 6
+  prerequisite = { focus = NWG_there_is_no_god_only_anarchism }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = communism } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_anarchism remove_ideas = nwg_spirit_whats_a_head_of_state remove_ideas = nwg_spirit_peoples_army remove_ideas = nwg_spirit_abolish_all_ownership remove_ideas = nwg_spirit_there_is_no_god_only_anarchism } add_ideas = nwg_spirit_a_government_without_government }
+ }
+ focus = {
+  id = NWG_socialist_science
+  icon = GFX_goal_support_communism
+  x = 60
+  y = 10
+  cost = 6
+  prerequisite = { focus = NWG_collectivization_of_agriculture }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = communism } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_socialism_in_one_country remove_ideas = nwg_spirit_planned_economy remove_ideas = nwg_spirit_enforce_loyalty remove_ideas = nwg_spirit_political_commissars remove_ideas = nwg_spirit_collectivization_of_agriculture } add_ideas = nwg_spirit_socialist_science }
+ }
+ focus = {
+  id = NWG_permanent_revolution
+  icon = GFX_goal_support_communism
+  x = 62
+  y = 10
+  cost = 6
+  prerequisite = { focus = NWG_peace_through_war }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = communism } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_internationalism remove_ideas = nwg_spirit_political_correctness remove_ideas = nwg_spirit_indoctrination remove_ideas = nwg_spirit_peasant_militias remove_ideas = nwg_spirit_peace_through_war } add_ideas = nwg_spirit_permanent_revolution }
+ }
+ focus = {
+  id = NWG_president_more_like_ceo
+  icon = GFX_goal_generic_neutrality_focus
+  x = 64
+  y = 10
+  cost = 6
+  prerequisite = { focus = NWG_private_armies }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = neutrality } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_kleptocratic_corporatism remove_ideas = nwg_spirit_exploit_citizens remove_ideas = nwg_spirit_build_up_personal_wealth remove_ideas = nwg_spirit_privatize_industries remove_ideas = nwg_spirit_private_armies } add_ideas = nwg_spirit_president_more_like_ceo }
+ }
+ focus = {
+  id = NWG_holy_wars
+  icon = GFX_goal_generic_neutrality_focus
+  x = 66
+  y = 10
+  cost = 6
+  prerequisite = { focus = NWG_holy_warriors }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = neutrality } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_theocracy remove_ideas = nwg_spirit_one_faith remove_ideas = nwg_spirit_under_god remove_ideas = nwg_spirit_messenger_of_god remove_ideas = nwg_spirit_holy_warriors } add_ideas = nwg_spirit_holy_wars }
+ }
+ focus = {
+  id = NWG_expand_state_holdings
+  icon = GFX_goal_generic_neutrality_focus
+  x = 68
+  y = 10
+  cost = 6
+  prerequisite = { focus = NWG_devotion_to_the_state }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = neutrality } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_military_coup remove_ideas = nwg_spirit_empower_the_military remove_ideas = nwg_spirit_citizen_suppresion remove_ideas = nwg_spirit_police_state remove_ideas = nwg_spirit_devotion_to_the_state } add_ideas = nwg_spirit_expand_state_holdings }
+ }
+ focus = {
+  id = NWG_state_sponsored_crusades
+  icon = GFX_goal_generic_neutrality_focus
+  x = 70
+  y = 10
+  cost = 6
+  prerequisite = { focus = NWG_modern_serfdom }
+  ai_will_do = { factor = 0.25 modifier = { factor = 12 has_government = neutrality } }
+  completion_reward = { hidden_effect = { remove_ideas = nwg_spirit_monarchism remove_ideas = nwg_spirit_divine_rulership remove_ideas = nwg_spirit_for_the_king remove_ideas = nwg_spirit_concessions_to_the_aristocracy remove_ideas = nwg_spirit_modern_serfdom } add_ideas = nwg_spirit_state_sponsored_crusades }
+ }
+ focus = {
+  id = NWG_civilian_industry
+  icon = GFX_goal_generic_construct_civ_factory
+  x = 74
+  y = 10
+  cost = 6
+  prerequisite = { focus = NWG_volunteer_corps focus = NWG_deterrence }
+  ai_will_do = { factor = 1 }
+  completion_reward = { random_owned_controlled_state = { limit = { is_core_of = ROOT } add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } }
+ }
+ focus = {
+  id = NWG_world_police_force
+  icon = GFX_goal_generic_political_pressure
+  x = 78
+  y = 10
+  cost = 6
+  prerequisite = { focus = NWG_volunteer_corps }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_political_power = 50 army_experience = 15 }
+ }
+ focus = {
+  id = NWG_quantity_of_armor
+  icon = GFX_goal_generic_national_unity
+  x = 3
+  y = 11
+  cost = 6
+  prerequisite = { focus = NWG_armor_effort }
+  prerequisite = { focus = NWG_reduce_mechanized_production_costs }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_ideas = nwg_spirit_quantity_of_armor }
+ }
+ focus = {
+  id = NWG_quality_armor
+  icon = GFX_goal_generic_national_unity
+  x = 7
+  y = 11
+  cost = 6
+  prerequisite = { focus = NWG_armor_effort }
+  prerequisite = { focus = NWG_improve_quality_of_mechanized }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_ideas = nwg_spirit_quality_armor }
+ }
+ focus = {
+  id = NWG_why_we_fight
+  icon = GFX_goal_generic_political_pressure
+  x = 74
+  y = 11
+  cost = 6
+  prerequisite = { focus = NWG_civilian_industry }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_stability = 0.03 add_war_support = 0.03 }
+ }
+ focus = {
+  id = NWG_spread_freedom
+  icon = GFX_goal_generic_political_pressure
+  x = 78
+  y = 11
+  cost = 6
+  prerequisite = { focus = NWG_world_police_force }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_political_power = 50 add_stability = 0.02 }
+ }
+ focus = {
+  id = NWG_ideological_fanaticism
+  icon = GFX_goal_generic_national_unity
+  x = 59
+  y = 12
+  cost = 6
+  prerequisite = { focus = NWG_partisanism focus = NWG_at_any_cost focus = NWG_for_the_empire focus = NWG_territorial_claims focus = NWG_workers_paradise focus = NWG_a_government_without_government focus = NWG_socialist_science focus = NWG_permanent_revolution focus = NWG_president_more_like_ceo focus = NWG_holy_wars focus = NWG_expand_state_holdings focus = NWG_state_sponsored_crusades focus = NWG_why_we_fight focus = NWG_spread_freedom }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_ideas = nwg_spirit_ideological_fanaticism }
+ }
+ focus = {
+  id = NWG_bomber_produtction
+  icon = GFX_goal_generic_national_unity
+  x = 29
+  y = 4
+  cost = 6
+  prerequisite = { focus = NWG_bomber_focus }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_timed_idea = { idea = nwg_spirit_bomber_produtction days = 730 } }
+ }
+ focus = {
+  id = NWG_increase_research_funding
+  icon = GFX_goal_generic_scientific_exchange
+  x = 42
+  y = 8
+  cost = 6
+  prerequisite = { focus = NWG_extra_research_slot_ii }
+  prerequisite = { focus = NWG_research_funding }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_tech_bonus = { name = NWG_increase_research_funding bonus = 0.5 uses = 1 category = industry } }
+ }
+ focus = {
+  id = NWG_lore_autonomy
+  icon = GFX_goal_generic_political_pressure
+  x = 88
+  y = 0
+  cost = 6
+  available = { is_subject = yes }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_political_power = 40 }
+ }
+ focus = {
+  id = NWG_lore_dominion
+  icon = GFX_goal_generic_improve_relations
+  x = 84
+  y = 2
+  cost = 6
+  prerequisite = { focus = NWG_lore_autonomy }
+  available = { is_subject_of = SOV OR = { tag = POL tag = FIN } }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_autonomy_score = { value = 50 localization = NWG_autonomy_reason } }
+ }
+ focus = {
+  id = NWG_lore_diet
+  icon = GFX_goal_generic_national_unity
+  x = 84
+  y = 4
+  cost = 6
+  prerequisite = { focus = NWG_lore_dominion }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_stability = 0.03 add_political_power = 30 }
+ }
+ focus = {
+  id = NWG_lore_imperial_market
+  icon = GFX_goal_generic_construct_civ_factory
+  x = 84
+  y = 6
+  cost = 6
+  prerequisite = { focus = NWG_lore_diet }
+  ai_will_do = { factor = 1 }
+  completion_reward = { random_owned_controlled_state = { limit = { is_core_of = ROOT } add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } }
+ }
+ focus = {
+  id = NWG_lore_local_officers
+  icon = GFX_goal_generic_allies_build_infantry
+  x = 84
+  y = 8
+  cost = 6
+  prerequisite = { focus = NWG_lore_imperial_market }
+  ai_will_do = { factor = 1 }
+  completion_reward = { army_experience = 20 }
+ }
+ focus = {
+  id = NWG_lore_dominion_agreement
+  icon = GFX_goal_generic_improve_relations
+  x = 84
+  y = 10
+  cost = 6
+  prerequisite = { focus = NWG_lore_local_officers }
+  available = { is_subject_of = SOV }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_autonomy_score = { value = 75 localization = NWG_autonomy_reason } add_stability = 0.02 }
+ }
+ focus = {
+  id = NWG_lore_federal_crown
+  icon = GFX_goal_generic_neutrality_focus
+  x = 88
+  y = 2
+  cost = 6
+  prerequisite = { focus = NWG_lore_autonomy }
+  available = { is_subject_of = AUS OR = { tag = HUN tag = CRO tag = CZE } }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_political_power = 40 add_stability = 0.02 }
+ }
+ focus = {
+  id = NWG_lore_crown_diet
+  icon = GFX_goal_generic_national_unity
+  x = 88
+  y = 4
+  cost = 6
+  prerequisite = { focus = NWG_lore_federal_crown }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_stability = 0.03 }
+ }
+ focus = {
+  id = NWG_lore_federal_rails
+  icon = GFX_goal_generic_construct_infrastructure
+  x = 88
+  y = 6
+  cost = 6
+  prerequisite = { focus = NWG_lore_crown_diet }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_tech_bonus = { name = NWG_lore_federal_rails bonus = 0.5 uses = 1 category = construction_tech } }
+ }
+ focus = {
+  id = NWG_lore_language_service
+  icon = GFX_goal_generic_national_unity
+  x = 88
+  y = 8
+  cost = 6
+  prerequisite = { focus = NWG_lore_federal_rails }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_stability = 0.04 }
+ }
+ focus = {
+  id = NWG_lore_crowns_settlement
+  icon = GFX_goal_generic_improve_relations
+  x = 88
+  y = 10
+  cost = 6
+  prerequisite = { focus = NWG_lore_language_service }
+  available = { is_subject_of = AUS }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_political_power = 45 add_stability = 0.02 }
+ }
+ focus = {
+  id = NWG_lore_colonial_admin
+  icon = GFX_goal_generic_political_pressure
+  x = 92
+  y = 2
+  cost = 6
+  prerequisite = { focus = NWG_lore_autonomy }
+  available = { OR = { tag = GWA tag = GSW tag = GEA tag = GPC tag = GKT tag = COG tag = LAG } }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_political_power = 40 }
+ }
+ focus = {
+  id = NWG_lore_local_schools
+  icon = GFX_goal_generic_scientific_exchange
+  x = 92
+  y = 4
+  cost = 6
+  prerequisite = { focus = NWG_lore_colonial_admin }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_tech_bonus = { name = NWG_lore_local_schools bonus = 0.5 uses = 1 category = electronics } }
+ }
+ focus = {
+  id = NWG_lore_colonial_transport
+  icon = GFX_goal_generic_construct_infrastructure
+  x = 92
+  y = 6
+  cost = 6
+  prerequisite = { focus = NWG_lore_local_schools }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_tech_bonus = { name = NWG_lore_colonial_transport bonus = 0.5 uses = 1 category = construction_tech } }
+ }
+ focus = {
+  id = NWG_lore_work_regulation
+  icon = GFX_goal_generic_national_unity
+  x = 92
+  y = 8
+  cost = 6
+  prerequisite = { focus = NWG_lore_colonial_transport }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_stability = 0.03 }
+ }
+ focus = {
+  id = NWG_lore_colonial_budget
+  icon = GFX_goal_generic_improve_relations
+  x = 92
+  y = 10
+  cost = 6
+  prerequisite = { focus = NWG_lore_work_regulation }
+  available = { is_subject = yes }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_autonomy_score = { value = 50 localization = NWG_autonomy_reason } add_political_power = 25 }
+ }
+ focus = {
+  id = NWG_lore_diplomacy
+  icon = GFX_goal_generic_improve_relations
+  x = 100
+  y = 0
+  cost = 6
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_political_power = 40 }
+ }
+ focus = {
+  id = NWG_lore_trade_missions
+  icon = GFX_goal_generic_trade
+  x = 98
+  y = 2
+  cost = 6
+  prerequisite = { focus = NWG_lore_diplomacy }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_political_power = 30 }
+ }
+ focus = {
+  id = NWG_lore_customs
+  icon = GFX_goal_generic_trade
+  x = 98
+  y = 4
+  cost = 6
+  prerequisite = { focus = NWG_lore_trade_missions }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_tech_bonus = { name = NWG_lore_customs bonus = 0.5 uses = 1 category = industry } }
+ }
+ focus = {
+  id = NWG_lore_nonbloc
+  icon = GFX_goal_generic_neutrality_focus
+  x = 98
+  y = 6
+  cost = 6
+  prerequisite = { focus = NWG_lore_customs }
+  available = { is_subject = no }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_stability = 0.03 add_political_power = 35 }
+ }
+ focus = {
+  id = NWG_lore_treaties
+  icon = GFX_goal_generic_improve_relations
+  x = 102
+  y = 2
+  cost = 6
+  prerequisite = { focus = NWG_lore_diplomacy }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_political_power = 35 }
+ }
+ focus = {
+  id = NWG_lore_conference
+  icon = GFX_goal_generic_improve_relations
+  x = 102
+  y = 4
+  cost = 6
+  prerequisite = { focus = NWG_lore_treaties }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_stability = 0.02 add_political_power = 30 }
+ }
+ focus = {
+  id = NWG_lore_technical_exchange
+  icon = GFX_goal_generic_scientific_exchange
+  x = 102
+  y = 6
+  cost = 6
+  prerequisite = { focus = NWG_lore_conference }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_tech_bonus = { name = NWG_lore_technical_exchange bonus = 0.5 uses = 1 category = electronics } }
+ }
+ focus = {
+  id = NWG_lore_civil_service
+  icon = GFX_goal_generic_improve_relations
+  x = 102
+  y = 8
+  cost = 6
+  prerequisite = { focus = NWG_lore_technical_exchange }
+  ai_will_do = { factor = 1 }
+  completion_reward = { add_political_power = 50 }
+ }
+}
