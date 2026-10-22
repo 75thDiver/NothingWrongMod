@@ -1,0 +1,424 @@
+ideas = {
+	country = {
+		nw25_fra_compromise = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				political_power_factor = 0.03
+			}
+		}
+		nw25_fra_directives = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_factor = 0.10
+				stability_factor = -0.03
+			}
+		}
+		nw25_fra_resilience = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				production_speed_industrial_complex_factor = 0.05
+			}
+		}
+		nw25_fra_eastern_market = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				production_speed_industrial_complex_factor = 0.09
+				consumer_goods_factor = -0.01
+			}
+		}
+		nw25_fra_credit_shock = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				production_speed_industrial_complex_factor = -0.10
+				political_power_factor = -0.05
+			}
+		}
+		nw25_investment_cost = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = 0.02
+			}
+		}
+		nw25_domestic_investment = {
+			picture = generic_production_bonus
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				production_speed_industrial_complex_factor = 0.08
+			}
+		}
+		nw25_fra_credit_partner = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				production_speed_industrial_complex_factor = 0.08
+				political_power_factor = -0.03
+			}
+		}
+		nw25_fra_partner = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				production_speed_infrastructure_factor = 0.05
+			}
+		}
+		nw25_fra_network = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				supply_consumption_factor = -0.03
+			}
+		}
+		nw25_fra_network_full = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				supply_consumption_factor = -0.05
+				production_speed_infrastructure_factor = 0.03
+			}
+		}
+		nw25_trade_orders = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				production_speed_industrial_complex_factor = 0.04
+			}
+		}
+		nw25_tariff_cost = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				production_speed_industrial_complex_factor = -0.03
+			}
+		}
+		nw25_alsace_transition = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_factor = -0.03
+			}
+		}
+		nw25_sri_federation = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				mobilization_speed = -0.05
+			}
+		}
+		nw25_sri_central = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.05
+				political_power_factor = -0.04
+			}
+		}
+		nw25_sri_cooperatives = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				production_speed_industrial_complex_factor = 0.03
+				recruitable_population_factor = 0.03
+			}
+		}
+		nw25_sri_industry = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.04
+			}
+		}
+		nw25_sri_retooling = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = -0.03
+			}
+		}
+		nw25_sri_council_dispute = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_factor = -0.10
+			}
+		}
+		nw25_sri_grain_shortage = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = -0.05
+				supply_consumption_factor = 0.05
+			}
+		}
+		nw25_sri_militia = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				army_defence_factor = 0.05
+				army_attack_factor = -0.03
+			}
+		}
+		nw25_sri_regular = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				army_org_factor = 0.04
+				supply_consumption_factor = -0.03
+			}
+		}
+		nw25_sri_requisitions = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				supply_consumption_factor = -0.05
+				industrial_capacity_factory = 0.03
+			}
+		}
+		nw25_sri_partner = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				production_speed_industrial_complex_factor = 0.04
+			}
+		}
+		nw25_sri_reconstruction = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				production_speed_industrial_complex_factor = 0.07
+				production_speed_infrastructure_factor = 0.08
+			}
+		}
+		nw25_eng_balanced = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_factor = 0.04
+			}
+		}
+		nw25_eng_recovery = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.03
+				production_speed_industrial_complex_factor = 0.05
+			}
+		}
+		nw25_eng_austerity = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.03
+			}
+		}
+		nw25_eng_pressure = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				production_speed_infrastructure_factor = -0.05
+				political_power_factor = -0.05
+			}
+		}
+		nw25_eng_fleet_crisis = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				naval_morale_factor = -0.05
+				navy_org_factor = -0.03
+			}
+		}
+		nw25_eng_fleet_compact = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				naval_morale_factor = 0.03
+			}
+		}
+		nw25_eng_atlantic = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				naval_coordination = 0.05
+			}
+		}
+		nw25_eng_eastern = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				supply_consumption_factor = -0.04
+			}
+		}
+		nw25_eng_atlantic_modern = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				naval_coordination = 0.07
+				industrial_capacity_dockyard = 0.03
+			}
+		}
+		nw25_eng_eastern_modern = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				supply_consumption_factor = -0.05
+				industrial_capacity_dockyard = 0.03
+			}
+		}
+		nw25_eng_partner = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_dockyard = 0.03
+			}
+		}
+		nw25_eng_commonwealth = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_dockyard = 0.02
+			}
+		}
+		nw25_eng_commonwealth_full = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_dockyard = 0.04
+				supply_consumption_factor = -0.02
+			}
+		}
+		nw25_eng_commerce = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				production_speed_industrial_complex_factor = 0.04
+			}
+		}
+	}
+}

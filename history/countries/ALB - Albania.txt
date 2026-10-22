@@ -1,0 +1,15 @@
+# Native 1936 scenario. Country source: received mod history
+capital = 44
+set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 tech_support = 1 tech_recon = 1 tech_engineers = 1 gw_artillery = 1 basic_train = 1 }
+
+oob = "ALB_1936"
+
+# Scenario political setup; no map transfers or world initializer.
+set_politics = { ruling_party = neutrality elections_allowed = no }
+set_popularities = { neutrality = 75 democratic = 15 communism = 5 fascism = 5 }
+set_party_name = { ideology = neutrality name = NW_ALB_neutrality_party long_name = NW_ALB_neutrality_party_long }
+set_party_name = { ideology = democratic name = NW_ALB_democratic_party long_name = NW_ALB_democratic_party_long }
+set_party_name = { ideology = communism name = NW_ALB_communism_party long_name = NW_ALB_communism_party_long }
+set_party_name = { ideology = fascism name = NW_ALB_fascism_party long_name = NW_ALB_fascism_party_long }
+add_ideas = { nw_alb_habsburg_credit }
+

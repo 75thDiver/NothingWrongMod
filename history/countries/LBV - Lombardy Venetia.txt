@@ -1,0 +1,16 @@
+# Native 1936 scenario. Country source: received mod history
+capital = 160
+AUS = { set_autonomy = { target = LBV autonomy_state = autonomy_puppet freedom_level = 0.5 } }
+set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 tech_support = 1 tech_recon = 1 tech_engineers = 1 gw_artillery = 1 basic_train = 1 }
+
+# Scenario political setup; no map transfers or world initializer.
+set_politics = { ruling_party = neutrality elections_allowed = yes }
+set_popularities = { democratic = 35 fascism = 5 communism = 10 neutrality = 50 }
+set_party_name = { ideology = democratic name = NW_LBV_democratic_party long_name = NW_LBV_democratic_party_long }
+set_party_name = { ideology = fascism name = NW_LBV_fascism_party long_name = NW_LBV_fascism_party_long }
+set_party_name = { ideology = communism name = NW_LBV_communism_party long_name = NW_LBV_communism_party_long }
+set_party_name = { ideology = neutrality name = NW_LBV_neutrality_party long_name = NW_LBV_neutrality_party_long }
+set_cosmetic_tag = NW_VENETIA
+add_ideas = { nw_lbv_viennese_settlement }
+oob = "NW_LBV_1936"
+

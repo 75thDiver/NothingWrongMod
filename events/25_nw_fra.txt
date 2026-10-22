@@ -1,0 +1,1745 @@
+add_namespace = nw25fra
+
+country_event = {
+	id = nw25fra.31
+	title = nw25fra.31.t
+	desc = nw25fra.31.d
+	is_triggered_only = yes
+	trigger = {
+		has_country_flag = nw25_fra_spm_pending
+		nw25_fra_spm_valid = yes
+	}
+
+	option = {
+		name = nw25fra.31.a
+		trigger = {
+			has_country_flag = nw25_fra_spm_pending
+			nw25_fra_spm_valid = yes
+		}
+		ai_chance = {
+			factor = 55
+		}
+		if = {
+			limit = {
+				has_country_flag = nw25_fra_spm_pending
+				nw25_fra_spm_valid = yes
+			}
+			clr_country_flag = nw25_fra_spm_pending
+			set_country_flag = {
+				flag = nw25_fra_spm_signed
+				days = 365
+			}
+			add_timed_idea = {
+				idea = nw25_fra_partner
+				days = 365
+			}
+			FRA = {
+				add_to_variable = {
+					var = nw25_fra_credit_influence
+					value = 5
+				}
+				clamp_variable = {
+					var = nw25_fra_credit_influence
+					min = 0
+					max = 100
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = nw25_cooperation
+				}
+				nw25_fra_refresh = yes
+				country_event = {
+					id = nw25fra.90
+					days = 1
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nw25fra.31.b
+		trigger = {
+			has_country_flag = nw25_fra_spm_pending
+			nw25_fra_spm_valid = yes
+		}
+		ai_chance = {
+			factor = 30
+		}
+		if = {
+			limit = {
+				has_country_flag = nw25_fra_spm_pending
+				nw25_fra_spm_valid = yes
+			}
+			clr_country_flag = nw25_fra_spm_pending
+			set_country_flag = {
+				flag = nw25_fra_spm_signed
+				days = 180
+			}
+			add_timed_idea = {
+				idea = nw25_fra_partner
+				days = 180
+			}
+			FRA = {
+				add_to_variable = {
+					var = nw25_fra_credit_influence
+					value = 2
+				}
+				clamp_variable = {
+					var = nw25_fra_credit_influence
+					min = 0
+					max = 100
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = nw25_cooperation
+				}
+				nw25_fra_refresh = yes
+				country_event = {
+					id = nw25fra.90
+					days = 1
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nw25fra.31.c
+		trigger = {
+			has_country_flag = nw25_fra_spm_pending
+			nw25_fra_spm_valid = yes
+		}
+		ai_chance = {
+			factor = 15
+		}
+		if = {
+			limit = {
+				has_country_flag = nw25_fra_spm_pending
+				nw25_fra_spm_valid = yes
+			}
+			clr_country_flag = nw25_fra_spm_pending
+			FRA = {
+				country_event = {
+					id = nw25fra.91
+					days = 1
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nw25fra.31.stale
+		trigger = {
+			NOT = {
+				has_country_flag = nw25_fra_spm_pending
+				nw25_fra_spm_valid = yes
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = {
+	id = nw25fra.32
+	title = nw25fra.32.t
+	desc = nw25fra.32.d
+	is_triggered_only = yes
+	trigger = {
+		has_country_flag = nw25_fra_syr_pending
+		nw25_fra_syr_valid = yes
+	}
+
+	option = {
+		name = nw25fra.32.a
+		trigger = {
+			has_country_flag = nw25_fra_syr_pending
+			nw25_fra_syr_valid = yes
+		}
+		ai_chance = {
+			factor = 55
+		}
+		if = {
+			limit = {
+				has_country_flag = nw25_fra_syr_pending
+				nw25_fra_syr_valid = yes
+			}
+			clr_country_flag = nw25_fra_syr_pending
+			set_country_flag = {
+				flag = nw25_fra_syr_signed
+				days = 365
+			}
+			add_timed_idea = {
+				idea = nw25_fra_partner
+				days = 365
+			}
+			FRA = {
+				add_to_variable = {
+					var = nw25_fra_credit_influence
+					value = 5
+				}
+				clamp_variable = {
+					var = nw25_fra_credit_influence
+					min = 0
+					max = 100
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = nw25_cooperation
+				}
+				nw25_fra_refresh = yes
+				country_event = {
+					id = nw25fra.90
+					days = 1
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nw25fra.32.b
+		trigger = {
+			has_country_flag = nw25_fra_syr_pending
+			nw25_fra_syr_valid = yes
+		}
+		ai_chance = {
+			factor = 30
+		}
+		if = {
+			limit = {
+				has_country_flag = nw25_fra_syr_pending
+				nw25_fra_syr_valid = yes
+			}
+			clr_country_flag = nw25_fra_syr_pending
+			set_country_flag = {
+				flag = nw25_fra_syr_signed
+				days = 180
+			}
+			add_timed_idea = {
+				idea = nw25_fra_partner
+				days = 180
+			}
+			FRA = {
+				add_to_variable = {
+					var = nw25_fra_credit_influence
+					value = 2
+				}
+				clamp_variable = {
+					var = nw25_fra_credit_influence
+					min = 0
+					max = 100
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = nw25_cooperation
+				}
+				nw25_fra_refresh = yes
+				country_event = {
+					id = nw25fra.90
+					days = 1
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nw25fra.32.c
+		trigger = {
+			has_country_flag = nw25_fra_syr_pending
+			nw25_fra_syr_valid = yes
+		}
+		ai_chance = {
+			factor = 15
+		}
+		if = {
+			limit = {
+				has_country_flag = nw25_fra_syr_pending
+				nw25_fra_syr_valid = yes
+			}
+			clr_country_flag = nw25_fra_syr_pending
+			FRA = {
+				country_event = {
+					id = nw25fra.91
+					days = 1
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nw25fra.32.stale
+		trigger = {
+			NOT = {
+				has_country_flag = nw25_fra_syr_pending
+				nw25_fra_syr_valid = yes
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = {
+	id = nw25fra.33
+	title = nw25fra.33.t
+	desc = nw25fra.33.d
+	is_triggered_only = yes
+	trigger = {
+		has_country_flag = nw25_fra_leb_pending
+		nw25_fra_leb_valid = yes
+	}
+
+	option = {
+		name = nw25fra.33.a
+		trigger = {
+			has_country_flag = nw25_fra_leb_pending
+			nw25_fra_leb_valid = yes
+		}
+		ai_chance = {
+			factor = 55
+		}
+		if = {
+			limit = {
+				has_country_flag = nw25_fra_leb_pending
+				nw25_fra_leb_valid = yes
+			}
+			clr_country_flag = nw25_fra_leb_pending
+			set_country_flag = {
+				flag = nw25_fra_leb_signed
+				days = 365
+			}
+			add_timed_idea = {
+				idea = nw25_fra_partner
+				days = 365
+			}
+			FRA = {
+				add_to_variable = {
+					var = nw25_fra_credit_influence
+					value = 5
+				}
+				clamp_variable = {
+					var = nw25_fra_credit_influence
+					min = 0
+					max = 100
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = nw25_cooperation
+				}
+				nw25_fra_refresh = yes
+				country_event = {
+					id = nw25fra.90
+					days = 1
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nw25fra.33.b
+		trigger = {
+			has_country_flag = nw25_fra_leb_pending
+			nw25_fra_leb_valid = yes
+		}
+		ai_chance = {
+			factor = 30
+		}
+		if = {
+			limit = {
+				has_country_flag = nw25_fra_leb_pending
+				nw25_fra_leb_valid = yes
+			}
+			clr_country_flag = nw25_fra_leb_pending
+			set_country_flag = {
+				flag = nw25_fra_leb_signed
+				days = 180
+			}
+			add_timed_idea = {
+				idea = nw25_fra_partner
+				days = 180
+			}
+			FRA = {
+				add_to_variable = {
+					var = nw25_fra_credit_influence
+					value = 2
+				}
+				clamp_variable = {
+					var = nw25_fra_credit_influence
+					min = 0
+					max = 100
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = nw25_cooperation
+				}
+				nw25_fra_refresh = yes
+				country_event = {
+					id = nw25fra.90
+					days = 1
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nw25fra.33.c
+		trigger = {
+			has_country_flag = nw25_fra_leb_pending
+			nw25_fra_leb_valid = yes
+		}
+		ai_chance = {
+			factor = 15
+		}
+		if = {
+			limit = {
+				has_country_flag = nw25_fra_leb_pending
+				nw25_fra_leb_valid = yes
+			}
+			clr_country_flag = nw25_fra_leb_pending
+			FRA = {
+				country_event = {
+					id = nw25fra.91
+					days = 1
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nw25fra.33.stale
+		trigger = {
+			NOT = {
+				has_country_flag = nw25_fra_leb_pending
+				nw25_fra_leb_valid = yes
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = {
+	id = nw25fra.34
+	title = nw25fra.34.t
+	desc = nw25fra.34.d
+	is_triggered_only = yes
+	trigger = {
+		has_country_flag = nw25_fra_sie_pending
+		nw25_fra_sie_valid = yes
+	}
+
+	option = {
+		name = nw25fra.34.a
+		trigger = {
+			has_country_flag = nw25_fra_sie_pending
+			nw25_fra_sie_valid = yes
+		}
+		ai_chance = {
+			factor = 55
+		}
+		if = {
+			limit = {
+				has_country_flag = nw25_fra_sie_pending
+				nw25_fra_sie_valid = yes
+			}
+			clr_country_flag = nw25_fra_sie_pending
+			set_country_flag = {
+				flag = nw25_fra_sie_signed
+				days = 365
+			}
+			add_timed_idea = {
+				idea = nw25_fra_partner
+				days = 365
+			}
+			FRA = {
+				add_to_variable = {
+					var = nw25_fra_credit_influence
+					value = 5
+				}
+				clamp_variable = {
+					var = nw25_fra_credit_influence
+					min = 0
+					max = 100
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = nw25_cooperation
+				}
+				nw25_fra_refresh = yes
+				country_event = {
+					id = nw25fra.90
+					days = 1
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nw25fra.34.b
+		trigger = {
+			has_country_flag = nw25_fra_sie_pending
+			nw25_fra_sie_valid = yes
+		}
+		ai_chance = {
+			factor = 30
+		}
+		if = {
+			limit = {
+				has_country_flag = nw25_fra_sie_pending
+				nw25_fra_sie_valid = yes
+			}
+			clr_country_flag = nw25_fra_sie_pending
+			set_country_flag = {
+				flag = nw25_fra_sie_signed
+				days = 180
+			}
+			add_timed_idea = {
+				idea = nw25_fra_partner
+				days = 180
+			}
+			FRA = {
+				add_to_variable = {
+					var = nw25_fra_credit_influence
+					value = 2
+				}
+				clamp_variable = {
+					var = nw25_fra_credit_influence
+					min = 0
+					max = 100
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = nw25_cooperation
+				}
+				nw25_fra_refresh = yes
+				country_event = {
+					id = nw25fra.90
+					days = 1
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nw25fra.34.c
+		trigger = {
+			has_country_flag = nw25_fra_sie_pending
+			nw25_fra_sie_valid = yes
+		}
+		ai_chance = {
+			factor = 15
+		}
+		if = {
+			limit = {
+				has_country_flag = nw25_fra_sie_pending
+				nw25_fra_sie_valid = yes
+			}
+			clr_country_flag = nw25_fra_sie_pending
+			FRA = {
+				country_event = {
+					id = nw25fra.91
+					days = 1
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nw25fra.34.stale
+		trigger = {
+			NOT = {
+				has_country_flag = nw25_fra_sie_pending
+				nw25_fra_sie_valid = yes
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = {
+	id = nw25fra.35
+	title = nw25fra.35.t
+	desc = nw25fra.35.d
+	is_triggered_only = yes
+	trigger = {
+		has_country_flag = nw25_fra_gam_pending
+		nw25_fra_gam_valid = yes
+	}
+
+	option = {
+		name = nw25fra.35.a
+		trigger = {
+			has_country_flag = nw25_fra_gam_pending
+			nw25_fra_gam_valid = yes
+		}
+		ai_chance = {
+			factor = 55
+		}
+		if = {
+			limit = {
+				has_country_flag = nw25_fra_gam_pending
+				nw25_fra_gam_valid = yes
+			}
+			clr_country_flag = nw25_fra_gam_pending
+			set_country_flag = {
+				flag = nw25_fra_gam_signed
+				days = 365
+			}
+			add_timed_idea = {
+				idea = nw25_fra_partner
+				days = 365
+			}
+			FRA = {
+				add_to_variable = {
+					var = nw25_fra_credit_influence
+					value = 5
+				}
+				clamp_variable = {
+					var = nw25_fra_credit_influence
+					min = 0
+					max = 100
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = nw25_cooperation
+				}
+				nw25_fra_refresh = yes
+				country_event = {
+					id = nw25fra.90
+					days = 1
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nw25fra.35.b
+		trigger = {
+			has_country_flag = nw25_fra_gam_pending
+			nw25_fra_gam_valid = yes
+		}
+		ai_chance = {
+			factor = 30
+		}
+		if = {
+			limit = {
+				has_country_flag = nw25_fra_gam_pending
+				nw25_fra_gam_valid = yes
+			}
+			clr_country_flag = nw25_fra_gam_pending
+			set_country_flag = {
+				flag = nw25_fra_gam_signed
+				days = 180
+			}
+			add_timed_idea = {
+				idea = nw25_fra_partner
+				days = 180
+			}
+			FRA = {
+				add_to_variable = {
+					var = nw25_fra_credit_influence
+					value = 2
+				}
+				clamp_variable = {
+					var = nw25_fra_credit_influence
+					min = 0
+					max = 100
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = nw25_cooperation
+				}
+				nw25_fra_refresh = yes
+				country_event = {
+					id = nw25fra.90
+					days = 1
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nw25fra.35.c
+		trigger = {
+			has_country_flag = nw25_fra_gam_pending
+			nw25_fra_gam_valid = yes
+		}
+		ai_chance = {
+			factor = 15
+		}
+		if = {
+			limit = {
+				has_country_flag = nw25_fra_gam_pending
+				nw25_fra_gam_valid = yes
+			}
+			clr_country_flag = nw25_fra_gam_pending
+			FRA = {
+				country_event = {
+					id = nw25fra.91
+					days = 1
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nw25fra.35.stale
+		trigger = {
+			NOT = {
+				has_country_flag = nw25_fra_gam_pending
+				nw25_fra_gam_valid = yes
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = {
+	id = nw25fra.90
+	title = nw25fra.90.t
+	desc = nw25fra.90.d
+	is_triggered_only = yes
+
+	option = {
+		name = nw25fra.90.a
+		ai_chance = {
+			factor = 30
+		}
+	}
+}
+
+country_event = {
+	id = nw25fra.91
+	title = nw25fra.91.t
+	desc = nw25fra.91.d
+	is_triggered_only = yes
+
+	option = {
+		name = nw25fra.91.a
+		ai_chance = {
+			factor = 30
+		}
+	}
+}
+
+country_event = {
+	id = nw25fra.12
+	title = nw25fra.12.t
+	desc = nw25fra.12.d
+	is_triggered_only = yes
+	trigger = {
+		has_country_flag = nw25_fra_ger_pending
+		nw25_fra_ger_valid = yes
+	}
+
+	option = {
+		name = nw25fra.12.a
+		trigger = {
+			has_country_flag = nw25_fra_ger_pending
+			nw25_fra_ger_valid = yes
+		}
+		ai_chance = {
+			factor = 55
+		}
+		if = {
+			limit = {
+				has_country_flag = nw25_fra_ger_pending
+				nw25_fra_ger_valid = yes
+			}
+			clr_country_flag = nw25_fra_ger_pending
+			set_country_flag = {
+				flag = nw25_fra_ger_signed
+				days = 365
+			}
+			add_timed_idea = {
+				idea = nw25_fra_partner
+				days = 365
+			}
+			FRA = {
+				add_to_variable = {
+					var = nw25_fra_credit_influence
+					value = 5
+				}
+				clamp_variable = {
+					var = nw25_fra_credit_influence
+					min = 0
+					max = 100
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = nw25_cooperation
+				}
+				nw25_fra_refresh = yes
+				country_event = {
+					id = nw25fra.90
+					days = 1
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nw25fra.12.b
+		trigger = {
+			has_country_flag = nw25_fra_ger_pending
+			nw25_fra_ger_valid = yes
+		}
+		ai_chance = {
+			factor = 30
+		}
+		if = {
+			limit = {
+				has_country_flag = nw25_fra_ger_pending
+				nw25_fra_ger_valid = yes
+			}
+			clr_country_flag = nw25_fra_ger_pending
+			set_country_flag = {
+				flag = nw25_fra_ger_signed
+				days = 180
+			}
+			add_timed_idea = {
+				idea = nw25_fra_partner
+				days = 180
+			}
+			FRA = {
+				add_to_variable = {
+					var = nw25_fra_credit_influence
+					value = 2
+				}
+				clamp_variable = {
+					var = nw25_fra_credit_influence
+					min = 0
+					max = 100
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = nw25_cooperation
+				}
+				nw25_fra_refresh = yes
+				country_event = {
+					id = nw25fra.90
+					days = 1
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nw25fra.12.c
+		trigger = {
+			has_country_flag = nw25_fra_ger_pending
+			nw25_fra_ger_valid = yes
+		}
+		ai_chance = {
+			factor = 15
+		}
+		if = {
+			limit = {
+				has_country_flag = nw25_fra_ger_pending
+				nw25_fra_ger_valid = yes
+			}
+			clr_country_flag = nw25_fra_ger_pending
+			FRA = {
+				country_event = {
+					id = nw25fra.91
+					days = 1
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nw25fra.12.stale
+		trigger = {
+			NOT = {
+				has_country_flag = nw25_fra_ger_pending
+				nw25_fra_ger_valid = yes
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = {
+	id = nw25fra.10
+	title = nw25fra.10.t
+	desc = nw25fra.10.d
+	is_triggered_only = yes
+	trigger = {
+		tag = SOV
+		has_country_flag = nw25_fra_sov_pending
+		nw25_fra_sov_valid = yes
+	}
+
+	option = {
+		name = nw25fra.10.a
+		trigger = {
+			tag = SOV
+			has_country_flag = nw25_fra_sov_pending
+			nw25_fra_sov_valid = yes
+		}
+		ai_chance = {
+			factor = 50
+		}
+		if = {
+			limit = {
+				tag = SOV
+				has_country_flag = nw25_fra_sov_pending
+				nw25_fra_sov_valid = yes
+			}
+			clr_country_flag = nw25_fra_sov_pending
+			set_country_flag = {
+				flag = nw25_fra_sov_signed
+				days = 365
+			}
+			add_timed_idea = {
+				idea = nw25_fra_credit_partner
+				days = 365
+			}
+			FRA = {
+				add_to_variable = {
+					var = nw25_fra_credit_influence
+					value = 10
+				}
+				clamp_variable = {
+					var = nw25_fra_credit_influence
+					min = 0
+					max = 100
+				}
+				add_to_variable = {
+					var = nw25_fra_russian_exposure
+					value = 10
+				}
+				clamp_variable = {
+					var = nw25_fra_russian_exposure
+					min = 0
+					max = 100
+				}
+				nw25_fra_refresh = yes
+				country_event = {
+					id = nw25fra.90
+					days = 1
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nw25fra.10.b
+		trigger = {
+			tag = SOV
+			has_country_flag = nw25_fra_sov_pending
+			nw25_fra_sov_valid = yes
+		}
+		ai_chance = {
+			factor = 35
+		}
+		if = {
+			limit = {
+				tag = SOV
+				has_country_flag = nw25_fra_sov_pending
+				nw25_fra_sov_valid = yes
+			}
+			clr_country_flag = nw25_fra_sov_pending
+			set_country_flag = {
+				flag = nw25_fra_sov_counter
+				days = 90
+			}
+			FRA = {
+				country_event = {
+					id = nw25fra.11
+					days = 1
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nw25fra.10.c
+		trigger = {
+			tag = SOV
+			has_country_flag = nw25_fra_sov_pending
+			nw25_fra_sov_valid = yes
+		}
+		ai_chance = {
+			factor = 15
+		}
+		if = {
+			limit = {
+				tag = SOV
+				has_country_flag = nw25_fra_sov_pending
+				nw25_fra_sov_valid = yes
+			}
+			clr_country_flag = nw25_fra_sov_pending
+			FRA = {
+				country_event = {
+					id = nw25fra.91
+					days = 1
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nw25fra.10.stale
+		trigger = {
+			NOT = {
+				tag = SOV
+				has_country_flag = nw25_fra_sov_pending
+				nw25_fra_sov_valid = yes
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = {
+	id = nw25fra.11
+	title = nw25fra.11.t
+	desc = nw25fra.11.d
+	is_triggered_only = yes
+	trigger = {
+		tag = FRA
+		nw25_fra_sov_valid = yes
+		SOV = {
+			has_country_flag = nw25_fra_sov_counter
+		}
+	}
+
+	option = {
+		name = nw25fra.11.a
+		trigger = {
+			tag = FRA
+			nw25_fra_sov_valid = yes
+			SOV = {
+				has_country_flag = nw25_fra_sov_counter
+			}
+		}
+		ai_chance = {
+			factor = 70
+		}
+		if = {
+			limit = {
+				tag = FRA
+				nw25_fra_sov_valid = yes
+				SOV = {
+					has_country_flag = nw25_fra_sov_counter
+				}
+			}
+			SOV = {
+				clr_country_flag = nw25_fra_sov_counter
+				set_country_flag = {
+					flag = nw25_fra_sov_signed
+					days = 180
+				}
+				add_timed_idea = {
+					idea = nw25_fra_credit_partner
+					days = 180
+				}
+			}
+			add_to_variable = {
+				var = nw25_fra_credit_influence
+				value = 5
+			}
+			clamp_variable = {
+				var = nw25_fra_credit_influence
+				min = 0
+				max = 100
+			}
+			add_to_variable = {
+				var = nw25_fra_russian_exposure
+				value = 5
+			}
+			clamp_variable = {
+				var = nw25_fra_russian_exposure
+				min = 0
+				max = 100
+			}
+			nw25_fra_refresh = yes
+		}
+	}
+
+	option = {
+		name = nw25fra.11.b
+		trigger = {
+			tag = FRA
+			nw25_fra_sov_valid = yes
+			SOV = {
+				has_country_flag = nw25_fra_sov_counter
+			}
+		}
+		ai_chance = {
+			factor = 30
+		}
+		if = {
+			limit = {
+				tag = FRA
+				nw25_fra_sov_valid = yes
+				SOV = {
+					has_country_flag = nw25_fra_sov_counter
+				}
+			}
+			SOV = {
+				clr_country_flag = nw25_fra_sov_counter
+			}
+		}
+	}
+
+	option = {
+		name = nw25fra.11.stale
+		trigger = {
+			NOT = {
+				tag = FRA
+				nw25_fra_sov_valid = yes
+				SOV = {
+					has_country_flag = nw25_fra_sov_counter
+				}
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = {
+	id = nw25fra.1
+	title = nw25fra.1.t
+	desc = nw25fra.1.d
+	is_triggered_only = yes
+	trigger = {
+		tag = FRA
+		NOT = {
+			has_country_flag = nw25_fra_event_1_done
+		}
+	}
+
+	option = {
+		name = nw25fra.1.a
+		trigger = {
+			tag = FRA
+			NOT = {
+				has_country_flag = nw25_fra_event_1_done
+			}
+		}
+		ai_chance = {
+			factor = 55
+		}
+		if = {
+			limit = {
+				tag = FRA
+				NOT = {
+					has_country_flag = nw25_fra_event_1_done
+				}
+			}
+			set_country_flag = nw25_fra_event_1_done
+			set_country_flag = nw25_fra_notables
+		}
+	}
+
+	option = {
+		name = nw25fra.1.b
+		trigger = {
+			tag = FRA
+			NOT = {
+				has_country_flag = nw25_fra_event_1_done
+			}
+		}
+		ai_chance = {
+			factor = 45
+		}
+		if = {
+			limit = {
+				tag = FRA
+				NOT = {
+					has_country_flag = nw25_fra_event_1_done
+				}
+			}
+			set_country_flag = nw25_fra_event_1_done
+			set_country_flag = nw25_fra_directive_choice
+		}
+	}
+
+	option = {
+		name = nw25fra.1.stale
+		trigger = {
+			NOT = {
+				tag = FRA
+				NOT = {
+					has_country_flag = nw25_fra_event_1_done
+				}
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = {
+	id = nw25fra.15
+	title = nw25fra.15.t
+	desc = nw25fra.15.d
+	is_triggered_only = yes
+	trigger = {
+		tag = GER
+		FRA = {
+			exists = yes
+		}
+		NOT = {
+			has_country_flag = nw25_fra_event_15_done
+		}
+	}
+
+	option = {
+		name = nw25fra.15.a
+		trigger = {
+			tag = GER
+			FRA = {
+				exists = yes
+			}
+			NOT = {
+				has_country_flag = nw25_fra_event_15_done
+			}
+		}
+		ai_chance = {
+			factor = 45
+		}
+		if = {
+			limit = {
+				tag = GER
+				FRA = {
+					exists = yes
+				}
+				NOT = {
+					has_country_flag = nw25_fra_event_15_done
+				}
+			}
+			set_country_flag = nw25_fra_event_15_done
+			add_timed_idea = {
+				idea = nw25_tariff_cost
+				days = 180
+			}
+			add_opinion_modifier = {
+				target = FRA
+				modifier = nw25_frictions
+			}
+		}
+	}
+
+	option = {
+		name = nw25fra.15.b
+		trigger = {
+			tag = GER
+			FRA = {
+				exists = yes
+			}
+			NOT = {
+				has_country_flag = nw25_fra_event_15_done
+			}
+		}
+		ai_chance = {
+			factor = 55
+		}
+		if = {
+			limit = {
+				tag = GER
+				FRA = {
+					exists = yes
+				}
+				NOT = {
+					has_country_flag = nw25_fra_event_15_done
+				}
+			}
+			set_country_flag = nw25_fra_event_15_done
+			add_political_power = -25
+			FRA = {
+				add_to_variable = {
+					var = nw25_fra_credit_influence
+					value = 3
+				}
+				clamp_variable = {
+					var = nw25_fra_credit_influence
+					min = 0
+					max = 100
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nw25fra.15.stale
+		trigger = {
+			NOT = {
+				tag = GER
+				FRA = {
+					exists = yes
+				}
+				NOT = {
+					has_country_flag = nw25_fra_event_15_done
+				}
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = {
+	id = nw25fra.20
+	title = nw25fra.20.t
+	desc = nw25fra.20.d
+	is_triggered_only = yes
+	trigger = {
+		tag = FRA
+		NOT = {
+			has_country_flag = nw25_fra_event_20_done
+		}
+	}
+
+	option = {
+		name = nw25fra.20.a
+		trigger = {
+			tag = FRA
+			NOT = {
+				has_country_flag = nw25_fra_event_20_done
+			}
+		}
+		ai_chance = {
+			factor = 25
+		}
+		if = {
+			limit = {
+				tag = FRA
+				NOT = {
+					has_country_flag = nw25_fra_event_20_done
+				}
+			}
+			set_country_flag = nw25_fra_event_20_done
+			add_political_power = -30
+			add_war_support = 0.03
+		}
+	}
+
+	option = {
+		name = nw25fra.20.b
+		trigger = {
+			tag = FRA
+			NOT = {
+				has_country_flag = nw25_fra_event_20_done
+			}
+		}
+		ai_chance = {
+			factor = 50
+		}
+		if = {
+			limit = {
+				tag = FRA
+				NOT = {
+					has_country_flag = nw25_fra_event_20_done
+				}
+			}
+			set_country_flag = nw25_fra_event_20_done
+			add_political_power = -35
+			add_timed_idea = {
+				idea = nw25_trade_orders
+				days = 180
+			}
+		}
+	}
+
+	option = {
+		name = nw25fra.20.c
+		trigger = {
+			tag = FRA
+			NOT = {
+				has_country_flag = nw25_fra_event_20_done
+			}
+		}
+		ai_chance = {
+			factor = 25
+		}
+		if = {
+			limit = {
+				tag = FRA
+				NOT = {
+					has_country_flag = nw25_fra_event_20_done
+				}
+			}
+			set_country_flag = nw25_fra_event_20_done
+			add_stability = 0.01
+		}
+	}
+
+	option = {
+		name = nw25fra.20.stale
+		trigger = {
+			NOT = {
+				tag = FRA
+				NOT = {
+					has_country_flag = nw25_fra_event_20_done
+				}
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = {
+	id = nw25fra.21
+	title = nw25fra.21.t
+	desc = nw25fra.21.d
+	is_triggered_only = yes
+	trigger = {
+		tag = FRA
+		owns_state = 28
+		controls_state = 28
+		NOT = {
+			has_country_flag = nw25_fra_event_21_done
+		}
+	}
+
+	option = {
+		name = nw25fra.21.a
+		trigger = {
+			tag = FRA
+			owns_state = 28
+			controls_state = 28
+			NOT = {
+				has_country_flag = nw25_fra_event_21_done
+			}
+		}
+		ai_chance = {
+			factor = 40
+		}
+		if = {
+			limit = {
+				tag = FRA
+				owns_state = 28
+				controls_state = 28
+				NOT = {
+					has_country_flag = nw25_fra_event_21_done
+				}
+			}
+			set_country_flag = nw25_fra_event_21_done
+			add_political_power = -40
+			add_stability = 0.02
+			add_timed_idea = {
+				idea = nw25_alsace_transition
+				days = 90
+			}
+		}
+	}
+
+	option = {
+		name = nw25fra.21.b
+		trigger = {
+			tag = FRA
+			owns_state = 28
+			controls_state = 28
+			NOT = {
+				has_country_flag = nw25_fra_event_21_done
+			}
+		}
+		ai_chance = {
+			factor = 60
+		}
+		if = {
+			limit = {
+				tag = FRA
+				owns_state = 28
+				controls_state = 28
+				NOT = {
+					has_country_flag = nw25_fra_event_21_done
+				}
+			}
+			set_country_flag = nw25_fra_event_21_done
+			add_political_power = -15
+			add_stability = 0.01
+			add_timed_idea = {
+				idea = nw25_alsace_transition
+				days = 180
+			}
+		}
+	}
+
+	option = {
+		name = nw25fra.21.stale
+		trigger = {
+			NOT = {
+				tag = FRA
+				owns_state = 28
+				controls_state = 28
+				NOT = {
+					has_country_flag = nw25_fra_event_21_done
+				}
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = {
+	id = nw25fra.22
+	title = nw25fra.22.t
+	desc = nw25fra.22.d
+	is_triggered_only = yes
+	trigger = {
+		tag = FRA
+		has_country_flag = nw25_fra_credit_crisis
+		NOT = {
+			has_country_flag = nw25_fra_event_22_done
+		}
+	}
+
+	option = {
+		name = nw25fra.22.a
+		trigger = {
+			tag = FRA
+			has_country_flag = nw25_fra_credit_crisis
+			NOT = {
+				has_country_flag = nw25_fra_event_22_done
+			}
+		}
+		ai_chance = {
+			factor = 55
+		}
+		if = {
+			limit = {
+				tag = FRA
+				has_country_flag = nw25_fra_credit_crisis
+				NOT = {
+					has_country_flag = nw25_fra_event_22_done
+				}
+			}
+			set_country_flag = nw25_fra_event_22_done
+			add_political_power = -30
+			add_to_variable = {
+				var = nw25_fra_credit_influence
+				value = 5
+			}
+			clamp_variable = {
+				var = nw25_fra_credit_influence
+				min = 0
+				max = 100
+			}
+		}
+	}
+
+	option = {
+		name = nw25fra.22.b
+		trigger = {
+			tag = FRA
+			has_country_flag = nw25_fra_credit_crisis
+			NOT = {
+				has_country_flag = nw25_fra_event_22_done
+			}
+		}
+		ai_chance = {
+			factor = 45
+		}
+		if = {
+			limit = {
+				tag = FRA
+				has_country_flag = nw25_fra_credit_crisis
+				NOT = {
+					has_country_flag = nw25_fra_event_22_done
+				}
+			}
+			set_country_flag = nw25_fra_event_22_done
+			add_political_power = -40
+			add_to_variable = {
+				var = nw25_fra_russian_exposure
+				value = -15
+			}
+			clamp_variable = {
+				var = nw25_fra_russian_exposure
+				min = 0
+				max = 100
+			}
+		}
+	}
+
+	option = {
+		name = nw25fra.22.stale
+		trigger = {
+			NOT = {
+				tag = FRA
+				has_country_flag = nw25_fra_credit_crisis
+				NOT = {
+					has_country_flag = nw25_fra_event_22_done
+				}
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = {
+	id = nw25fra.30
+	title = nw25fra.30.t
+	desc = nw25fra.30.d
+	is_triggered_only = yes
+	trigger = {
+		tag = FRA
+		SPM = {
+			exists = yes
+		}
+		has_guaranteed = SPM
+		NOT = {
+			has_country_flag = nw25_fra_italy_response_cooldown
+		}
+	}
+
+	option = {
+		name = nw25fra.30.a
+		trigger = {
+			tag = FRA
+			SPM = {
+				exists = yes
+			}
+			has_guaranteed = SPM
+			NOT = {
+				has_country_flag = nw25_fra_italy_response_cooldown
+			}
+		}
+		ai_chance = {
+			factor = 50
+		}
+		if = {
+			limit = {
+				tag = FRA
+				SPM = {
+					exists = yes
+				}
+				has_guaranteed = SPM
+				NOT = {
+					has_country_flag = nw25_fra_italy_response_cooldown
+				}
+			}
+			set_country_flag = {
+				flag = nw25_fra_italy_response_cooldown
+				days = 90
+			}
+			add_political_power = -35
+			SPM = {
+				add_timed_idea = {
+					idea = nw25_fra_partner
+					days = 180
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nw25fra.30.b
+		trigger = {
+			tag = FRA
+			SPM = {
+				exists = yes
+			}
+			has_guaranteed = SPM
+			NOT = {
+				has_country_flag = nw25_fra_italy_response_cooldown
+			}
+		}
+		ai_chance = {
+			factor = 35
+		}
+		if = {
+			limit = {
+				tag = FRA
+				SPM = {
+					exists = yes
+				}
+				has_guaranteed = SPM
+				NOT = {
+					has_country_flag = nw25_fra_italy_response_cooldown
+				}
+			}
+			set_country_flag = {
+				flag = nw25_fra_italy_response_cooldown
+				days = 90
+			}
+			add_political_power = -20
+			add_to_variable = {
+				var = nw25_fra_credit_influence
+				value = 3
+			}
+			clamp_variable = {
+				var = nw25_fra_credit_influence
+				min = 0
+				max = 100
+			}
+		}
+	}
+
+	option = {
+		name = nw25fra.30.c
+		trigger = {
+			tag = FRA
+			SPM = {
+				exists = yes
+			}
+			has_guaranteed = SPM
+			NOT = {
+				has_country_flag = nw25_fra_italy_response_cooldown
+			}
+		}
+		ai_chance = {
+			factor = 15
+		}
+		if = {
+			limit = {
+				tag = FRA
+				SPM = {
+					exists = yes
+				}
+				has_guaranteed = SPM
+				NOT = {
+					has_country_flag = nw25_fra_italy_response_cooldown
+				}
+			}
+			set_country_flag = {
+				flag = nw25_fra_italy_response_cooldown
+				days = 90
+			}
+		}
+	}
+
+	option = {
+		name = nw25fra.30.stale
+		trigger = {
+			NOT = {
+				tag = FRA
+				SPM = {
+					exists = yes
+				}
+				has_guaranteed = SPM
+				NOT = {
+					has_country_flag = nw25_fra_italy_response_cooldown
+				}
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}

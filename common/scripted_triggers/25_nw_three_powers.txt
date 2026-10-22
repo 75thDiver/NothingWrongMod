@@ -1,0 +1,414 @@
+nw25_fra_spm_valid = {
+	FRA = {
+		exists = yes
+	}
+	exists = yes
+	NOT = {
+		has_war_with = FRA
+	}
+	FRA = {
+		has_guaranteed = SPM
+	}
+}
+
+nw25_fra_spm_active = {
+	nw25_fra_spm_valid = yes
+	has_country_flag = nw25_fra_spm_signed
+}
+
+nw25_fra_syr_valid = {
+	FRA = {
+		exists = yes
+	}
+	exists = yes
+	NOT = {
+		has_war_with = FRA
+	}
+	is_subject_of = FRA
+}
+
+nw25_fra_syr_active = {
+	nw25_fra_syr_valid = yes
+	has_country_flag = nw25_fra_syr_signed
+}
+
+nw25_fra_leb_valid = {
+	FRA = {
+		exists = yes
+	}
+	exists = yes
+	NOT = {
+		has_war_with = FRA
+	}
+	is_subject_of = FRA
+}
+
+nw25_fra_leb_active = {
+	nw25_fra_leb_valid = yes
+	has_country_flag = nw25_fra_leb_signed
+}
+
+nw25_fra_sie_valid = {
+	FRA = {
+		exists = yes
+	}
+	exists = yes
+	NOT = {
+		has_war_with = FRA
+	}
+	is_subject_of = FRA
+}
+
+nw25_fra_sie_active = {
+	nw25_fra_sie_valid = yes
+	has_country_flag = nw25_fra_sie_signed
+}
+
+nw25_fra_gam_valid = {
+	FRA = {
+		exists = yes
+	}
+	exists = yes
+	NOT = {
+		has_war_with = FRA
+	}
+	is_subject_of = FRA
+}
+
+nw25_fra_gam_active = {
+	nw25_fra_gam_valid = yes
+	has_country_flag = nw25_fra_gam_signed
+}
+
+nw25_eng_can_valid = {
+	ENG = {
+		exists = yes
+	}
+	exists = yes
+	NOT = {
+		has_war_with = ENG
+	}
+	is_subject_of = ENG
+}
+
+nw25_eng_can_active = {
+	nw25_eng_can_valid = yes
+	has_country_flag = nw25_eng_can_signed
+}
+
+nw25_eng_ast_valid = {
+	ENG = {
+		exists = yes
+	}
+	exists = yes
+	NOT = {
+		has_war_with = ENG
+	}
+	is_subject_of = ENG
+}
+
+nw25_eng_ast_active = {
+	nw25_eng_ast_valid = yes
+	has_country_flag = nw25_eng_ast_signed
+}
+
+nw25_eng_nzl_valid = {
+	ENG = {
+		exists = yes
+	}
+	exists = yes
+	NOT = {
+		has_war_with = ENG
+	}
+	is_subject_of = ENG
+}
+
+nw25_eng_nzl_active = {
+	nw25_eng_nzl_valid = yes
+	has_country_flag = nw25_eng_nzl_signed
+}
+
+nw25_eng_raj_valid = {
+	ENG = {
+		exists = yes
+	}
+	exists = yes
+	NOT = {
+		has_war_with = ENG
+	}
+	is_subject = no
+}
+
+nw25_eng_raj_active = {
+	nw25_eng_raj_valid = yes
+	has_country_flag = nw25_eng_raj_signed
+}
+
+nw25_eng_lag_valid = {
+	ENG = {
+		exists = yes
+	}
+	exists = yes
+	NOT = {
+		has_war_with = ENG
+	}
+	is_subject_of = ENG
+}
+
+nw25_eng_lag_active = {
+	nw25_eng_lag_valid = yes
+	has_country_flag = nw25_eng_lag_signed
+}
+
+nw25_eng_ger_valid = {
+	ENG = {
+		exists = yes
+	}
+	exists = yes
+	NOT = {
+		has_war_with = ENG
+	}
+	OR = {
+		AND = {
+			GWA = {
+				is_subject_of = GER
+			}
+			ENG = {
+				has_military_access_to = GWA
+			}
+		}
+		AND = {
+			GEA = {
+				is_subject_of = GER
+			}
+			ENG = {
+				has_military_access_to = GEA
+			}
+		}
+		AND = {
+			GPC = {
+				is_subject_of = GER
+			}
+			ENG = {
+				has_military_access_to = GPC
+			}
+		}
+		AND = {
+			GKT = {
+				is_subject_of = GER
+			}
+			ENG = {
+				has_military_access_to = GKT
+			}
+		}
+		AND = {
+			GSW = {
+				is_subject_of = GER
+			}
+			ENG = {
+				has_military_access_to = GSW
+			}
+		}
+	}
+}
+
+nw25_eng_ger_active = {
+	nw25_eng_ger_valid = yes
+	has_country_flag = nw25_eng_ger_signed
+}
+
+nw25_fra_ger_valid = {
+	FRA = {
+		exists = yes
+	}
+	exists = yes
+	NOT = {
+		has_war_with = FRA
+	}
+	is_subject = no
+}
+
+nw25_fra_ger_active = {
+	nw25_fra_ger_valid = yes
+	has_country_flag = nw25_fra_ger_signed
+}
+
+nw25_sri_spm_valid = {
+	SRI = {
+		exists = yes
+	}
+	exists = yes
+	NOT = {
+		has_war_with = SRI
+	}
+	is_subject = no
+}
+
+nw25_sri_spm_active = {
+	nw25_sri_spm_valid = yes
+	has_country_flag = nw25_sri_spm_signed
+}
+
+nw25_sri_pap_valid = {
+	SRI = {
+		exists = yes
+	}
+	exists = yes
+	NOT = {
+		has_war_with = SRI
+	}
+	is_subject = no
+}
+
+nw25_sri_pap_active = {
+	nw25_sri_pap_valid = yes
+	has_country_flag = nw25_sri_pap_signed
+}
+
+nw25_fra_sov_valid = {
+	FRA = {
+		exists = yes
+	}
+	SOV = {
+		exists = yes
+		NOT = {
+			has_war_with = FRA
+		}
+	}
+}
+
+nw25_sri_lbv_valid = {
+	SRI = {
+		exists = yes
+	}
+	exists = yes
+	NOT = {
+		has_war_with = SRI
+	}
+	OR = {
+		is_subject = no
+		is_subject_of = AUS
+	}
+}
+
+nw25_sri_lbv_active = {
+	nw25_sri_lbv_valid = yes
+	has_country_flag = nw25_sri_lbv_signed
+	OR = {
+		is_subject = no
+		AUS = {
+			has_country_flag = nw25_sri_lbv_authorized
+		}
+	}
+}
+
+nw25_sri_ready = {
+	is_subject = no
+	has_war = no
+	has_completed_focus = NW25_SRI_defence_commission
+	has_completed_focus = NW25_SRI_revolutionary_mobilization
+	check_variable = {
+		nw25_sri_council_cohesion > 39
+	}
+	check_variable = {
+		nw25_sri_rural_support > 29
+	}
+}
+
+nw25_sri_unified = {
+	has_war = no
+	owns_state = 2
+	controls_state = 2
+	owns_state = 39
+	controls_state = 39
+	owns_state = 114
+	controls_state = 114
+	owns_state = 115
+	controls_state = 115
+	owns_state = 117
+	controls_state = 117
+	owns_state = 156
+	controls_state = 156
+	owns_state = 157
+	controls_state = 157
+	owns_state = 158
+	controls_state = 158
+	owns_state = 159
+	controls_state = 159
+	owns_state = 160
+	controls_state = 160
+	owns_state = 161
+	controls_state = 161
+	owns_state = 162
+	controls_state = 162
+	owns_state = 849
+	controls_state = 849
+	owns_state = 850
+	controls_state = 850
+}
+
+nw25_sri_operation_lbv_valid = {
+	nw25_sri_ready = yes
+	LBV = {
+		exists = yes
+		any_owned_state = {
+			is_core_of = SRI
+		}
+		NOT = {
+			is_subject_of = SRI
+		}
+		NOT = {
+			is_in_faction_with = SRI
+		}
+	}
+	NOT = {
+		has_war_with = LBV
+	}
+	NOT = {
+		has_wargoal_against = LBV
+	}
+}
+
+nw25_sri_operation_spm_valid = {
+	nw25_sri_ready = yes
+	SPM = {
+		exists = yes
+		any_owned_state = {
+			is_core_of = SRI
+		}
+		NOT = {
+			is_subject_of = SRI
+		}
+		NOT = {
+			is_in_faction_with = SRI
+		}
+	}
+	NOT = {
+		has_war_with = SPM
+	}
+	NOT = {
+		has_wargoal_against = SPM
+	}
+}
+
+nw25_sri_operation_pap_valid = {
+	nw25_sri_ready = yes
+	PAP = {
+		exists = yes
+		any_owned_state = {
+			is_core_of = SRI
+		}
+		NOT = {
+			is_subject_of = SRI
+		}
+		NOT = {
+			is_in_faction_with = SRI
+		}
+	}
+	NOT = {
+		has_war_with = PAP
+	}
+	NOT = {
+		has_wargoal_against = PAP
+	}
+}

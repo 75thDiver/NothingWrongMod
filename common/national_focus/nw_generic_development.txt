@@ -1,0 +1,3159 @@
+# Nothing Wrong 0.26: eight programme roots; descendant coordinates are relative.
+focus_tree = {
+	id = NW_generic_development
+	default = yes
+	reset_on_civilwar = no
+	continuous_focus_position = { x = 50 y = 1870 }
+	country = {
+		factor = 100000
+		modifier = {
+			factor = 0
+			OR = {
+				tag = MAN
+				tag = GER
+				tag = SOV
+				tag = AUS
+				tag = HUN
+				tag = FRA
+				tag = ENG
+				tag = SRI
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_political_change
+		icon = GFX_goal_generic_political_pressure
+		x = 6
+		y = 0
+		cost = 6
+
+		completion_reward = {
+			add_political_power = 40
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NWG_misc_political_actions
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = NWG_political_change
+		cost = 6
+
+		prerequisite = {
+			focus = NWG_political_change
+		}
+
+		completion_reward = {
+			add_political_power = 25
+			custom_effect_tooltip = nw26_unlock_admin_tt
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NWG_collectivist_ethos
+		icon = GFX_goal_generic_national_unity
+		x = -3
+		y = 1
+		relative_position_id = NWG_misc_political_actions
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_misc_political_actions
+		}
+		mutually_exclusive = {
+			focus = NWG_individualist_ethos
+		}
+
+		completion_reward = {
+			add_war_support = 0.03
+			add_political_power = 20
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NWG_individualist_ethos
+		icon = GFX_goal_generic_national_unity
+		x = 3
+		y = 1
+		relative_position_id = NWG_misc_political_actions
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_misc_political_actions
+		}
+		mutually_exclusive = {
+			focus = NWG_collectivist_ethos
+		}
+
+		completion_reward = {
+			add_stability = 0.03
+			add_political_power = 20
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NWG_a_new_leader
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = NWG_collectivist_ethos
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_collectivist_ethos
+		}
+
+		completion_reward = {
+			set_country_flag = {
+				flag = nw26_admin_pending
+				days = 30
+			}
+			country_event = {
+				id = nw26.1
+				days = 1
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NWG_democratic_focus
+		icon = GFX_goal_generic_national_unity
+		x = 0
+		y = 1
+		relative_position_id = NWG_individualist_ethos
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_individualist_ethos
+		}
+
+		completion_reward = {
+			add_stability = 0.04
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NWG_gain_autonomy
+		icon = GFX_goal_generic_improve_relations
+		x = 0
+		y = 2
+		relative_position_id = NWG_misc_political_actions
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_misc_political_actions
+		}
+		available = {
+			is_subject = yes
+			NOT = {
+				has_war_with = OVERLORD
+			}
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = nw26_consultations_tt
+			nw26_subject_offer = yes
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NWG_state_welfare
+		icon = GFX_goal_generic_national_unity
+		x = -2
+		y = 1
+		relative_position_id = NWG_democratic_focus
+		cost = 10
+
+		prerequisite = {
+			focus = NWG_democratic_focus
+		}
+		mutually_exclusive = {
+			focus = NWG_conservatism
+		}
+
+		completion_reward = {
+			add_political_power = -25
+			add_stability = 0.05
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NWG_conservatism
+		icon = GFX_goal_generic_neutrality_focus
+		x = 2
+		y = 1
+		relative_position_id = NWG_democratic_focus
+		cost = 10
+
+		prerequisite = {
+			focus = NWG_democratic_focus
+		}
+		mutually_exclusive = {
+			focus = NWG_state_welfare
+		}
+
+		completion_reward = {
+			add_political_power = 60
+			add_stability = 0.02
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NWG_centrism_gang
+		icon = GFX_goal_generic_national_unity
+		x = 2
+		y = 1
+		relative_position_id = NWG_state_welfare
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_state_welfare
+			focus = NWG_conservatism
+		}
+
+		completion_reward = {
+			add_stability = 0.03
+			add_political_power = 30
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NWG_industrial_effort
+		icon = GFX_goal_generic_scientific_exchange
+		x = 19
+		y = 0
+		cost = 6
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NWG_industrial_effort
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				num_of_civilian_factories < 5
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_infrastructure_effort
+		icon = GFX_goal_generic_construct_infrastructure
+		x = -2
+		y = 1
+		relative_position_id = NWG_industrial_effort
+		cost = 6
+
+		prerequisite = {
+			focus = NWG_industrial_effort
+		}
+
+		completion_reward = {
+			if = {
+				limit = {
+					any_owned_state = {
+						is_core_of = ROOT
+						is_controlled_by = ROOT
+						infrastructure < 5
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_core_of = ROOT
+						is_controlled_by = ROOT
+						infrastructure < 5
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			else = {
+				add_timed_idea = {
+					idea = nw26_gen_logistics
+					days = 120
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				num_of_civilian_factories < 5
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_armament_effort
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 5
+		y = 1
+		relative_position_id = NWG_industrial_effort
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_industrial_effort
+		}
+
+		completion_reward = {
+			if = {
+				limit = {
+					any_owned_state = {
+						is_core_of = ROOT
+						is_controlled_by = ROOT
+						free_building_slots = {
+							building = arms_factory
+							size > 0
+							include_locked = no
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_core_of = ROOT
+						is_controlled_by = ROOT
+						free_building_slots = {
+							building = arms_factory
+							size > 0
+							include_locked = no
+						}
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			else = {
+				add_timed_idea = {
+					idea = nw26_gen_industrial_adjustment
+					days = 120
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				num_of_civilian_factories < 5
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_construction_effort
+		icon = GFX_goal_generic_production
+		x = -1
+		y = 1
+		relative_position_id = NWG_infrastructure_effort
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_infrastructure_effort
+		}
+
+		completion_reward = {
+			if = {
+				limit = {
+					any_owned_state = {
+						is_core_of = ROOT
+						is_controlled_by = ROOT
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = no
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_core_of = ROOT
+						is_controlled_by = ROOT
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = no
+						}
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			else = {
+				add_timed_idea = {
+					idea = nw26_gen_industrial_adjustment
+					days = 120
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				num_of_civilian_factories < 5
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_resource_excavation
+		icon = GFX_goal_generic_scientific_exchange
+		x = 2
+		y = 1
+		relative_position_id = NWG_infrastructure_effort
+		cost = 6
+
+		prerequisite = {
+			focus = NWG_infrastructure_effort
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NWG_resource_excavation
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				num_of_civilian_factories < 5
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_armament_effort_ii
+		icon = GFX_goal_generic_construct_mil_factory
+		x = -1
+		y = 1
+		relative_position_id = NWG_armament_effort
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_armament_effort
+		}
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = nw20_contracts
+				days = 180
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				num_of_civilian_factories < 5
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_military_industry_focus
+		icon = GFX_goal_generic_production
+		x = 2
+		y = 1
+		relative_position_id = NWG_armament_effort
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_armament_effort
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NWG_military_industry_focus
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				num_of_civilian_factories < 5
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_construction_effort_ii
+		icon = GFX_goal_generic_production
+		x = 0
+		y = 1
+		relative_position_id = NWG_construction_effort
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_construction_effort
+		}
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = nw20_workshops
+				days = 365
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				num_of_civilian_factories < 5
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_extra_research_slot
+		icon = GFX_goal_generic_scientific_exchange
+		x = 0
+		y = 1
+		relative_position_id = NWG_resource_excavation
+		cost = 10
+
+		prerequisite = {
+			focus = NWG_resource_excavation
+		}
+
+		completion_reward = {
+			if = {
+				limit = {
+					amount_research_slots < 4
+				}
+				add_research_slot = 1
+			}
+			else = {
+				add_tech_bonus = {
+					name = NWG_extra_research_slot
+					bonus = 0.5
+					uses = 2
+					category = industry
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				num_of_civilian_factories < 5
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_armament_effort_iii
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 1
+		y = 1
+		relative_position_id = NWG_armament_effort_ii
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_armament_effort_ii
+		}
+		prerequisite = {
+			focus = NWG_military_industry_focus
+		}
+
+		completion_reward = {
+			army_experience = 20
+			add_political_power = 30
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				num_of_civilian_factories < 5
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_construction_effort_iii
+		icon = GFX_goal_generic_production
+		x = 0
+		y = 1
+		relative_position_id = NWG_construction_effort_ii
+		cost = 10
+
+		prerequisite = {
+			focus = NWG_construction_effort_ii
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NWG_construction_effort_iii
+				bonus = 0.5
+				uses = 1
+				category = construction_tech
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				num_of_civilian_factories < 5
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_extra_research_slot_ii
+		icon = GFX_goal_generic_scientific_exchange
+		x = 0
+		y = 1
+		relative_position_id = NWG_extra_research_slot
+		cost = 10
+
+		prerequisite = {
+			focus = NWG_extra_research_slot
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NWG_extra_research_slot_ii
+				bonus = 0.5
+				uses = 2
+				category = electronics
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				num_of_civilian_factories < 5
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_armament_effort_iv
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 0
+		y = 1
+		relative_position_id = NWG_armament_effort_iii
+		cost = 10
+
+		prerequisite = {
+			focus = NWG_armament_effort_iii
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NWG_armament_effort_iv
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+			army_experience = 15
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				num_of_civilian_factories < 5
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_successful_economy
+		icon = GFX_goal_generic_production
+		x = 2
+		y = 1
+		relative_position_id = NWG_construction_effort_iii
+		cost = 10
+
+		prerequisite = {
+			focus = NWG_construction_effort_iii
+		}
+		prerequisite = {
+			focus = NWG_extra_research_slot_ii
+		}
+
+		completion_reward = {
+			add_stability = 0.03
+			add_political_power = 40
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				num_of_civilian_factories < 5
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_military_industrial_complex
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 0
+		y = 1
+		relative_position_id = NWG_armament_effort_iv
+		cost = 10
+
+		prerequisite = {
+			focus = NWG_armament_effort_iv
+		}
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = nw20_tools
+				days = 365
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				num_of_civilian_factories < 5
+			}
+		}
+	}
+
+	focus = {
+		id = NW20_GEN_economy_01
+		icon = GFX_goal_generic_production
+		x = 0
+		y = 1
+		relative_position_id = NWG_successful_economy
+		cost = 6
+
+		prerequisite = {
+			focus = NWG_successful_economy
+		}
+
+		completion_reward = {
+			add_political_power = 25
+			custom_effect_tooltip = nw26_unlock_investment_tt
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				num_of_civilian_factories < 5
+			}
+		}
+	}
+
+	focus = {
+		id = NW20_GEN_economy_02
+		icon = GFX_goal_generic_construct_infrastructure
+		x = -2
+		y = 1
+		relative_position_id = NW20_GEN_economy_01
+		cost = 8
+
+		prerequisite = {
+			focus = NW20_GEN_economy_01
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NW20_GEN_economy_02
+				bonus = 0.5
+				uses = 1
+				category = construction_tech
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				num_of_civilian_factories < 5
+			}
+		}
+	}
+
+	focus = {
+		id = NW20_GEN_economy_03
+		icon = GFX_goal_generic_scientific_exchange
+		x = 2
+		y = 1
+		relative_position_id = NW20_GEN_economy_01
+		cost = 8
+
+		prerequisite = {
+			focus = NW20_GEN_economy_01
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NW20_GEN_economy_03
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				num_of_civilian_factories < 5
+			}
+		}
+	}
+
+	focus = {
+		id = NW20_GEN_economy_04
+		icon = GFX_goal_generic_production
+		x = 0
+		y = 1
+		relative_position_id = NW20_GEN_economy_02
+		cost = 8
+
+		prerequisite = {
+			focus = NW20_GEN_economy_02
+		}
+
+		completion_reward = {
+			if = {
+				limit = {
+					any_owned_state = {
+						is_core_of = ROOT
+						is_controlled_by = ROOT
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = no
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_core_of = ROOT
+						is_controlled_by = ROOT
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = no
+						}
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			else = {
+				add_timed_idea = {
+					idea = nw26_gen_industrial_adjustment
+					days = 120
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				num_of_civilian_factories < 5
+			}
+		}
+	}
+
+	focus = {
+		id = NW20_GEN_economy_05
+		icon = GFX_goal_generic_scientific_exchange
+		x = 0
+		y = 1
+		relative_position_id = NW20_GEN_economy_03
+		cost = 8
+
+		prerequisite = {
+			focus = NW20_GEN_economy_03
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NW20_GEN_economy_05
+				bonus = 0.5
+				uses = 1
+				category = electronics
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				num_of_civilian_factories < 5
+			}
+		}
+	}
+
+	focus = {
+		id = NW20_GEN_economy_06
+		icon = GFX_goal_generic_production
+		x = 2
+		y = 1
+		relative_position_id = NW20_GEN_economy_04
+		cost = 10
+
+		prerequisite = {
+			focus = NW20_GEN_economy_04
+		}
+		prerequisite = {
+			focus = NW20_GEN_economy_05
+		}
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = nw20_tools
+				days = 180
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				num_of_civilian_factories < 5
+			}
+		}
+	}
+
+	focus = {
+		id = NW20_GEN_economy_07
+		icon = GFX_goal_generic_production
+		x = 0
+		y = 1
+		relative_position_id = NW20_GEN_economy_06
+		cost = 8
+
+		prerequisite = {
+			focus = NW20_GEN_economy_06
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NW20_GEN_economy_07
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				num_of_civilian_factories < 5
+			}
+		}
+	}
+
+	focus = {
+		id = NW20_GEN_economy_08
+		icon = GFX_goal_generic_production
+		x = 0
+		y = 1
+		relative_position_id = NW20_GEN_economy_07
+		cost = 10
+
+		prerequisite = {
+			focus = NW20_GEN_economy_07
+		}
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = nw20_workshops
+				days = 365
+			}
+			add_stability = 0.02
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				num_of_civilian_factories < 5
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_army_effort
+		icon = GFX_goal_generic_army_doctrines
+		x = 34
+		y = 0
+		cost = 6
+
+		completion_reward = {
+			army_experience = 15
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_modernization_of_the_army
+		icon = GFX_goal_generic_army_doctrines
+		x = 0
+		y = 1
+		relative_position_id = NWG_army_effort
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_army_effort
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NWG_modernization_of_the_army
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_quantity
+		icon = GFX_goal_generic_army_doctrines
+		x = -4
+		y = 1
+		relative_position_id = NWG_modernization_of_the_army
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_modernization_of_the_army
+		}
+		mutually_exclusive = {
+			focus = NWG_quality
+		}
+
+		completion_reward = {
+			add_ideas = nw26_gen_mass_army
+			add_war_support = 0.02
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_quality
+		icon = GFX_goal_generic_army_doctrines
+		x = 4
+		y = 1
+		relative_position_id = NWG_modernization_of_the_army
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_modernization_of_the_army
+		}
+		mutually_exclusive = {
+			focus = NWG_quantity
+		}
+
+		completion_reward = {
+			add_ideas = nw26_gen_professional_army
+			army_experience = 10
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_military_research
+		icon = GFX_goal_generic_small_arms
+		x = 0
+		y = 1
+		relative_position_id = NWG_modernization_of_the_army
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_modernization_of_the_army
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NWG_military_research
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_military_youth
+		icon = GFX_goal_generic_national_unity
+		x = 0
+		y = 1
+		relative_position_id = NWG_quantity
+		cost = 6
+
+		prerequisite = {
+			focus = NWG_quantity
+		}
+
+		completion_reward = {
+			add_war_support = 0.02
+			add_timed_idea = {
+				idea = nw20_training
+				days = 180
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_officer_training_schools
+		icon = GFX_goal_generic_army_doctrines
+		x = 0
+		y = 1
+		relative_position_id = NWG_quality
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_quality
+		}
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = nw20_training
+				days = 365
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_equipment_effort
+		icon = GFX_goal_generic_small_arms
+		x = 0
+		y = 1
+		relative_position_id = NWG_military_research
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_military_research
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NWG_equipment_effort
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_militarism
+		icon = GFX_goal_generic_national_unity
+		x = 0
+		y = 1
+		relative_position_id = NWG_military_youth
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_military_youth
+		}
+
+		completion_reward = {
+			add_war_support = 0.04
+			army_experience = 10
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_doctrine_effort
+		icon = GFX_goal_generic_army_doctrines
+		x = 0
+		y = 1
+		relative_position_id = NWG_officer_training_schools
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_officer_training_schools
+		}
+
+		completion_reward = {
+			army_experience = 25
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_firearm_production
+		icon = GFX_goal_generic_small_arms
+		x = 0
+		y = 1
+		relative_position_id = NWG_equipment_effort
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_equipment_effort
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NWG_firearm_production
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_deploy_infantry
+		icon = GFX_goal_generic_army_doctrines
+		x = 0
+		y = 1
+		relative_position_id = NWG_militarism
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_militarism
+		}
+
+		completion_reward = {
+			army_experience = 15
+			add_timed_idea = {
+				idea = nw26_gen_logistics
+				days = 180
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_doctrine_effort_ii
+		icon = GFX_goal_generic_army_doctrines
+		x = 0
+		y = 1
+		relative_position_id = NWG_doctrine_effort
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_doctrine_effort
+		}
+
+		completion_reward = {
+			army_experience = 25
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_equipment_effort_ii
+		icon = GFX_goal_generic_small_arms
+		x = 0
+		y = 1
+		relative_position_id = NWG_firearm_production
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_firearm_production
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NWG_equipment_effort_ii
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_equipment_effort_iii
+		icon = GFX_goal_generic_small_arms
+		x = 0
+		y = 1
+		relative_position_id = NWG_equipment_effort_ii
+		cost = 10
+
+		prerequisite = {
+			focus = NWG_equipment_effort_ii
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NWG_equipment_effort_iii
+				bonus = 0.5
+				uses = 2
+				category = infantry_weapons
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+	}
+
+	focus = {
+		id = NW20_GEN_land_01
+		icon = GFX_goal_generic_army_doctrines
+		x = 0
+		y = 1
+		relative_position_id = NWG_doctrine_effort_ii
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_doctrine_effort_ii
+			focus = NWG_deploy_infantry
+		}
+
+		completion_reward = {
+			army_experience = 20
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+	}
+
+	focus = {
+		id = NW20_GEN_land_02
+		icon = GFX_goal_generic_army_doctrines
+		x = -2
+		y = 1
+		relative_position_id = NW20_GEN_land_01
+		cost = 8
+
+		prerequisite = {
+			focus = NW20_GEN_land_01
+		}
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = nw20_training
+				days = 180
+			}
+			army_experience = 10
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+	}
+
+	focus = {
+		id = NW20_GEN_land_03
+		icon = GFX_goal_generic_small_arms
+		x = 2
+		y = 1
+		relative_position_id = NW20_GEN_land_01
+		cost = 8
+
+		prerequisite = {
+			focus = NW20_GEN_land_01
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NW20_GEN_land_03
+				bonus = 0.5
+				uses = 1
+				category = artillery
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+	}
+
+	focus = {
+		id = NW20_GEN_land_06
+		icon = GFX_goal_generic_army_doctrines
+		x = 2
+		y = 1
+		relative_position_id = NW20_GEN_land_02
+		cost = 10
+
+		prerequisite = {
+			focus = NW20_GEN_land_02
+		}
+		prerequisite = {
+			focus = NW20_GEN_land_03
+		}
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = nw20_supply
+				days = 365
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+	}
+
+	focus = {
+		id = NW20_GEN_land_08
+		icon = GFX_goal_generic_army_doctrines
+		x = 0
+		y = 1
+		relative_position_id = NW20_GEN_land_06
+		cost = 10
+
+		prerequisite = {
+			focus = NW20_GEN_land_06
+		}
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = nw20_training
+				days = 365
+			}
+			army_experience = 15
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_aviation_effort
+		icon = GFX_goal_generic_build_airforce
+		x = 47
+		y = 0
+		cost = 6
+
+		completion_reward = {
+			air_experience = 20
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NWG_fighter_focus
+		icon = GFX_goal_generic_build_airforce
+		x = -2
+		y = 1
+		relative_position_id = NWG_aviation_effort
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_aviation_effort
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NWG_fighter_focus
+				bonus = 0.5
+				uses = 1
+				category = light_air
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NWG_bomber_focus
+		icon = GFX_goal_generic_build_airforce
+		x = 2
+		y = 1
+		relative_position_id = NWG_aviation_effort
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_aviation_effort
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NWG_bomber_focus
+				bonus = 0.5
+				uses = 1
+				category = medium_air
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NWG_fighter_production
+		icon = GFX_goal_generic_build_airforce
+		x = 0
+		y = 1
+		relative_position_id = NWG_fighter_focus
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_fighter_focus
+		}
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = nw20_flight
+				days = 180
+			}
+			air_experience = 10
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NWG_bomber_produtction
+		icon = GFX_goal_generic_build_airforce
+		x = 0
+		y = 1
+		relative_position_id = NWG_bomber_focus
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_bomber_focus
+		}
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = nw20_flight
+				days = 180
+			}
+			air_experience = 10
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NWG_aviation_effort_ii
+		icon = GFX_goal_generic_build_airforce
+		x = 2
+		y = 1
+		relative_position_id = NWG_fighter_production
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_fighter_production
+			focus = NWG_bomber_produtction
+		}
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = nw20_flight
+				days = 365
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NWG_cas_effort
+		icon = GFX_goal_generic_build_airforce
+		x = -2
+		y = 1
+		relative_position_id = NWG_aviation_effort_ii
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_aviation_effort_ii
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NWG_cas_effort
+				bonus = 0.5
+				uses = 1
+				category = cas_bomber
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NWG_nav_effort
+		icon = GFX_goal_generic_build_airforce
+		x = 2
+		y = 1
+		relative_position_id = NWG_aviation_effort_ii
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_aviation_effort_ii
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NWG_nav_effort
+				bonus = 0.5
+				uses = 1
+				category = naval_bomber
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NWG_aviation_effort_iii
+		icon = GFX_goal_generic_scientific_exchange
+		x = 2
+		y = 1
+		relative_position_id = NWG_cas_effort
+		cost = 10
+
+		prerequisite = {
+			focus = NWG_cas_effort
+			focus = NWG_nav_effort
+		}
+
+		completion_reward = {
+			air_experience = 20
+			custom_effect_tooltip = nw26_unlock_training_tt
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NWG_rocket_effort
+		icon = GFX_goal_generic_scientific_exchange
+		x = -2
+		y = 1
+		relative_position_id = NWG_aviation_effort_iii
+		cost = 10
+
+		prerequisite = {
+			focus = NWG_aviation_effort_iii
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NWG_rocket_effort
+				bonus = 0.5
+				uses = 1
+				category = rocketry
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NWG_nuclear_effort
+		icon = GFX_goal_generic_scientific_exchange
+		x = 2
+		y = 1
+		relative_position_id = NWG_aviation_effort_iii
+		cost = 10
+
+		prerequisite = {
+			focus = NWG_aviation_effort_iii
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NWG_nuclear_effort
+				bonus = 0.5
+				uses = 1
+				category = nuclear
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NWG_secret_weapons
+		icon = GFX_goal_generic_scientific_exchange
+		x = 2
+		y = 1
+		relative_position_id = NWG_rocket_effort
+		cost = 10
+
+		prerequisite = {
+			focus = NWG_rocket_effort
+			focus = NWG_nuclear_effort
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NWG_secret_weapons
+				bonus = 0.5
+				uses = 1
+				category = electronics
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NWG_naval_effort
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = 58
+		y = 0
+		cost = 6
+
+		available = {
+			nw26_generic_coast = yes
+			any_owned_state = {
+				is_coastal = yes
+			}
+		}
+
+		completion_reward = {
+			navy_experience = 20
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					nw26_generic_coast = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_flexible_navy
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = -2
+		y = 1
+		relative_position_id = NWG_naval_effort
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_naval_effort
+		}
+		mutually_exclusive = {
+			focus = NWG_large_navy
+		}
+		available = {
+			nw26_generic_coast = yes
+		}
+
+		completion_reward = {
+			add_ideas = nw26_gen_flexible_navy
+			navy_experience = 10
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					nw26_generic_coast = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_large_navy
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = 2
+		y = 1
+		relative_position_id = NWG_naval_effort
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_naval_effort
+		}
+		mutually_exclusive = {
+			focus = NWG_flexible_navy
+		}
+		available = {
+			nw26_generic_coast = yes
+			num_of_naval_factories > 1
+		}
+
+		completion_reward = {
+			add_ideas = nw26_gen_large_navy
+			navy_experience = 10
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					nw26_generic_coast = yes
+				}
+			}
+			modifier = {
+				factor = 0.2
+				num_of_naval_factories < 4
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_submarine_effort
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = 0
+		y = 1
+		relative_position_id = NWG_flexible_navy
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_flexible_navy
+		}
+		available = {
+			nw26_generic_coast = yes
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NWG_submarine_effort
+				bonus = 0.5
+				uses = 1
+				category = ss_tech
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					nw26_generic_coast = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_cruiser_effort
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = 0
+		y = 1
+		relative_position_id = NWG_large_navy
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_large_navy
+		}
+		available = {
+			nw26_generic_coast = yes
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NWG_cruiser_effort
+				bonus = 0.5
+				uses = 1
+				category = ca_tech
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					nw26_generic_coast = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_destroyer_effort
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = 0
+		y = 1
+		relative_position_id = NWG_submarine_effort
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_submarine_effort
+		}
+		available = {
+			nw26_generic_coast = yes
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NWG_destroyer_effort
+				bonus = 0.5
+				uses = 1
+				category = dd_tech
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					nw26_generic_coast = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_capital_ship_effort
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = 0
+		y = 1
+		relative_position_id = NWG_cruiser_effort
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_cruiser_effort
+		}
+		available = {
+			nw26_generic_coast = yes
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NWG_capital_ship_effort
+				bonus = 0.5
+				uses = 1
+				category = bb_tech
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					nw26_generic_coast = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_naval_effort_ii
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = 2
+		y = 1
+		relative_position_id = NWG_destroyer_effort
+		cost = 10
+
+		prerequisite = {
+			focus = NWG_destroyer_effort
+			focus = NWG_capital_ship_effort
+		}
+		available = {
+			nw26_generic_coast = yes
+		}
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = nw20_shipbuilding
+				days = 365
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					nw26_generic_coast = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_the_marines
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = -2
+		y = 1
+		relative_position_id = NWG_naval_effort_ii
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_naval_effort_ii
+		}
+		available = {
+			nw26_generic_coast = yes
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NWG_the_marines
+				bonus = 0.5
+				uses = 1
+				category = marine_tech
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					nw26_generic_coast = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_naval_invasions
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = 2
+		y = 1
+		relative_position_id = NWG_naval_effort_ii
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_naval_effort_ii
+		}
+		available = {
+			nw26_generic_coast = yes
+		}
+
+		completion_reward = {
+			navy_experience = 25
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					nw26_generic_coast = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_espionage_agency_developments
+		icon = GFX_goal_generic_political_pressure
+		x = 69
+		y = 0
+		cost = 6
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_dlc = "La Resistance"
+				}
+				create_intelligence_agency = yes
+			}
+			else = {
+				add_tech_bonus = {
+					name = NWG_espionage_agency_developments
+					bonus = 0.25
+					uses = 1
+					category = electronics
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NWG_expand_operative_capacity_i
+		icon = GFX_goal_generic_political_pressure
+		x = -2
+		y = 1
+		relative_position_id = NWG_espionage_agency_developments
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_espionage_agency_developments
+		}
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_dlc = "La Resistance"
+					has_intelligence_agency = yes
+				}
+				add_timed_idea = {
+					idea = nw26_gen_agency_training
+					days = 180
+				}
+			}
+			else = {
+				add_tech_bonus = {
+					name = NWG_expand_operative_capacity_i
+					bonus = 0.25
+					uses = 1
+					category = electronics
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NWG_expand_counter_intelligence
+		icon = GFX_goal_generic_national_unity
+		x = 2
+		y = 1
+		relative_position_id = NWG_espionage_agency_developments
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_espionage_agency_developments
+		}
+
+		completion_reward = {
+			add_ideas = nw26_gen_encryption
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NWG_expand_operative_capacity_ii
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = NWG_expand_operative_capacity_i
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_expand_operative_capacity_i
+		}
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_dlc = "La Resistance"
+					has_intelligence_agency = yes
+				}
+				add_timed_idea = {
+					idea = nw26_gen_agency_training
+					days = 180
+				}
+			}
+			else = {
+				add_tech_bonus = {
+					name = NWG_expand_operative_capacity_ii
+					bonus = 0.25
+					uses = 1
+					category = electronics
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NWG_expand_decryption_capabilities
+		icon = GFX_goal_generic_scientific_exchange
+		x = 0
+		y = 1
+		relative_position_id = NWG_expand_counter_intelligence
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_expand_counter_intelligence
+		}
+
+		completion_reward = {
+			add_ideas = nw26_gen_decryption
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NWG_expand_operative_capacity_iii
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = NWG_expand_operative_capacity_ii
+		cost = 10
+
+		prerequisite = {
+			focus = NWG_expand_operative_capacity_ii
+		}
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_dlc = "La Resistance"
+					has_intelligence_agency = yes
+				}
+				add_ideas = nw26_gen_operatives
+			}
+			else = {
+				add_tech_bonus = {
+					name = NWG_expand_operative_capacity_iii
+					bonus = 0.5
+					uses = 1
+					category = electronics
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NWG_partisan_defence
+		icon = GFX_goal_generic_national_unity
+		x = 0
+		y = 1
+		relative_position_id = NWG_expand_decryption_capabilities
+		cost = 10
+
+		prerequisite = {
+			focus = NWG_expand_decryption_capabilities
+		}
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = nw26_gen_logistics
+				days = 365
+			}
+			add_stability = 0.02
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = NWG_lore_autonomy
+		icon = GFX_goal_generic_improve_relations
+		x = 81
+		y = 0
+		cost = 6
+
+		available = {
+			is_subject = yes
+		}
+
+		completion_reward = {
+			add_political_power = 25
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 1.5
+				is_subject = yes
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_lore_dominion
+		icon = GFX_goal_generic_improve_relations
+		x = -6
+		y = 1
+		relative_position_id = NWG_lore_autonomy
+		cost = 6
+
+		prerequisite = {
+			focus = NWG_lore_autonomy
+		}
+		available = {
+			nw26_generic_dominion = yes
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = nw26_consultations_tt
+			nw26_subject_offer = yes
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 1.5
+				is_subject = yes
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_lore_diet
+		icon = GFX_goal_generic_national_unity
+		x = 0
+		y = 1
+		relative_position_id = NWG_lore_dominion
+		cost = 6
+
+		prerequisite = {
+			focus = NWG_lore_dominion
+		}
+		available = {
+			nw26_generic_dominion = yes
+		}
+
+		completion_reward = {
+			add_political_power = 30
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 1.5
+				is_subject = yes
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_lore_imperial_market
+		icon = GFX_goal_generic_trade
+		x = 0
+		y = 1
+		relative_position_id = NWG_lore_diet
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_lore_diet
+		}
+		available = {
+			nw26_generic_dominion = yes
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NWG_lore_imperial_market
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 1.5
+				is_subject = yes
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_lore_local_officers
+		icon = GFX_goal_generic_army_doctrines
+		x = 0
+		y = 1
+		relative_position_id = NWG_lore_imperial_market
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_lore_imperial_market
+		}
+		available = {
+			nw26_generic_dominion = yes
+		}
+
+		completion_reward = {
+			army_experience = 20
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 1.5
+				is_subject = yes
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_lore_dominion_agreement
+		icon = GFX_goal_generic_improve_relations
+		x = 0
+		y = 1
+		relative_position_id = NWG_lore_local_officers
+		cost = 10
+
+		prerequisite = {
+			focus = NWG_lore_local_officers
+		}
+		available = {
+			nw26_generic_dominion = yes
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = nw26_consultations_tt
+			nw26_subject_offer = yes
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 1.5
+				is_subject = yes
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_lore_federal_crown
+		icon = GFX_goal_generic_neutrality_focus
+		x = 0
+		y = 1
+		relative_position_id = NWG_lore_autonomy
+		cost = 6
+
+		prerequisite = {
+			focus = NWG_lore_autonomy
+		}
+		available = {
+			nw26_generic_crown = yes
+		}
+
+		completion_reward = {
+			add_political_power = 35
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 1.5
+				is_subject = yes
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_lore_crown_diet
+		icon = GFX_goal_generic_national_unity
+		x = 0
+		y = 1
+		relative_position_id = NWG_lore_federal_crown
+		cost = 6
+
+		prerequisite = {
+			focus = NWG_lore_federal_crown
+		}
+		available = {
+			nw26_generic_crown = yes
+		}
+
+		completion_reward = {
+			add_stability = 0.03
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 1.5
+				is_subject = yes
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_lore_federal_rails
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		relative_position_id = NWG_lore_crown_diet
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_lore_crown_diet
+		}
+		available = {
+			nw26_generic_crown = yes
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NWG_lore_federal_rails
+				bonus = 0.5
+				uses = 1
+				category = construction_tech
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 1.5
+				is_subject = yes
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_lore_language_service
+		icon = GFX_goal_generic_national_unity
+		x = 0
+		y = 1
+		relative_position_id = NWG_lore_federal_rails
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_lore_federal_rails
+		}
+		available = {
+			nw26_generic_crown = yes
+		}
+
+		completion_reward = {
+			add_stability = 0.04
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 1.5
+				is_subject = yes
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_lore_crowns_settlement
+		icon = GFX_goal_generic_improve_relations
+		x = 0
+		y = 1
+		relative_position_id = NWG_lore_language_service
+		cost = 10
+
+		prerequisite = {
+			focus = NWG_lore_language_service
+		}
+		available = {
+			nw26_generic_crown = yes
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = nw26_consultations_tt
+			nw26_subject_offer = yes
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 1.5
+				is_subject = yes
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_lore_colonial_admin
+		icon = GFX_goal_generic_political_pressure
+		x = 6
+		y = 1
+		relative_position_id = NWG_lore_autonomy
+		cost = 6
+
+		prerequisite = {
+			focus = NWG_lore_autonomy
+		}
+		available = {
+			nw26_generic_colony = yes
+		}
+
+		completion_reward = {
+			add_political_power = 30
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 1.5
+				is_subject = yes
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_lore_local_schools
+		icon = GFX_goal_generic_scientific_exchange
+		x = 0
+		y = 1
+		relative_position_id = NWG_lore_colonial_admin
+		cost = 6
+
+		prerequisite = {
+			focus = NWG_lore_colonial_admin
+		}
+		available = {
+			nw26_generic_colony = yes
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NWG_lore_local_schools
+				bonus = 0.5
+				uses = 1
+				category = electronics
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 1.5
+				is_subject = yes
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_lore_colonial_transport
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		relative_position_id = NWG_lore_local_schools
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_lore_local_schools
+		}
+		available = {
+			nw26_generic_colony = yes
+		}
+
+		completion_reward = {
+			if = {
+				limit = {
+					any_owned_state = {
+						is_core_of = ROOT
+						is_controlled_by = ROOT
+						infrastructure < 5
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_core_of = ROOT
+						is_controlled_by = ROOT
+						infrastructure < 5
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			else = {
+				add_timed_idea = {
+					idea = nw26_gen_logistics
+					days = 120
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 1.5
+				is_subject = yes
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_lore_work_regulation
+		icon = GFX_goal_generic_national_unity
+		x = 0
+		y = 1
+		relative_position_id = NWG_lore_colonial_transport
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_lore_colonial_transport
+		}
+		available = {
+			nw26_generic_colony = yes
+		}
+
+		completion_reward = {
+			add_stability = 0.03
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 1.5
+				is_subject = yes
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_lore_colonial_budget
+		icon = GFX_goal_generic_improve_relations
+		x = 0
+		y = 1
+		relative_position_id = NWG_lore_work_regulation
+		cost = 10
+
+		prerequisite = {
+			focus = NWG_lore_work_regulation
+		}
+		available = {
+			nw26_generic_colony = yes
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = nw26_consultations_tt
+			nw26_subject_offer = yes
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 1.5
+				is_subject = yes
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_lore_diplomacy
+		icon = GFX_goal_generic_improve_relations
+		x = 96
+		y = 0
+		cost = 6
+
+		completion_reward = {
+			add_political_power = 35
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 1.5
+				is_subject = yes
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_lore_trade_missions
+		icon = GFX_goal_generic_trade
+		x = -3
+		y = 1
+		relative_position_id = NWG_lore_diplomacy
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_lore_diplomacy
+		}
+
+		completion_reward = {
+			add_political_power = 15
+			custom_effect_tooltip = nw26_unlock_trade_tt
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 1.5
+				is_subject = yes
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_lore_treaties
+		icon = GFX_goal_generic_improve_relations
+		x = 3
+		y = 1
+		relative_position_id = NWG_lore_diplomacy
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_lore_diplomacy
+		}
+
+		completion_reward = {
+			add_political_power = 15
+			custom_effect_tooltip = nw26_unlock_conference_tt
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 1.5
+				is_subject = yes
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_lore_customs
+		icon = GFX_goal_generic_trade
+		x = 0
+		y = 1
+		relative_position_id = NWG_lore_trade_missions
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_lore_trade_missions
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NWG_lore_customs
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 1.5
+				is_subject = yes
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_lore_conference
+		icon = GFX_goal_generic_improve_relations
+		x = 0
+		y = 1
+		relative_position_id = NWG_lore_treaties
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_lore_treaties
+		}
+
+		completion_reward = {
+			add_political_power = 15
+			custom_effect_tooltip = nw26_unlock_conference_tt
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 1.5
+				is_subject = yes
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_lore_nonbloc
+		icon = GFX_goal_generic_neutrality_focus
+		x = 0
+		y = 1
+		relative_position_id = NWG_lore_customs
+		cost = 10
+
+		prerequisite = {
+			focus = NWG_lore_customs
+		}
+		available = {
+			is_subject = no
+		}
+
+		completion_reward = {
+			add_stability = 0.04
+			add_political_power = 30
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 1.5
+				is_subject = yes
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_lore_technical_exchange
+		icon = GFX_goal_generic_scientific_exchange
+		x = 0
+		y = 1
+		relative_position_id = NWG_lore_conference
+		cost = 8
+
+		prerequisite = {
+			focus = NWG_lore_conference
+		}
+
+		completion_reward = {
+			add_political_power = 15
+			custom_effect_tooltip = nw26_unlock_tech_tt
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 1.5
+				is_subject = yes
+			}
+		}
+	}
+
+	focus = {
+		id = NWG_lore_civil_service
+		icon = GFX_goal_generic_improve_relations
+		x = 0
+		y = 1
+		relative_position_id = NWG_lore_technical_exchange
+		cost = 10
+
+		prerequisite = {
+			focus = NWG_lore_technical_exchange
+		}
+
+		completion_reward = {
+			add_political_power = 50
+			add_stability = 0.02
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 1.5
+				is_subject = yes
+			}
+		}
+	}
+}

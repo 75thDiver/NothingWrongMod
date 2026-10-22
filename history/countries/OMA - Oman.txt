@@ -1,0 +1,12 @@
+# Native 1936 scenario. Country source: received mod history
+capital = 294
+set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 tech_support = 1 tech_recon = 1 tech_engineers = 1 gw_artillery = 1 basic_train = 1 }
+set_research_slots = 2
+
+# Scenario political setup; no map transfers or world initializer.
+set_politics = { ruling_party = neutrality elections_allowed = no }
+set_popularities = { neutrality = 70 democratic = 20 communism = 5 fascism = 5 }
+add_ideas = { nw_oma_emirate_compact nw_oma_union_against_saud }
+oob = "NW_OMA_1936"
+
+create_country_leader = { name = "Совет эмиров" ideology = despotism expire = "2000.1.1" traits = { } picture = "gfx/leaders/NW/commission_placeholder.dds" }

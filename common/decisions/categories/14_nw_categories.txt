@@ -1,0 +1,5 @@
+nw14_reichstag = { allowed = { always = yes } visible = { tag = GER has_country_flag = nw_parliament_active } visible_when_empty = yes priority = 100 scripted_gui = nw14_reichstag_gui }
+nw14_revolution = { allowed = { always = yes } visible = { tag = GER has_country_flag = nw_ger_red } visible_when_empty = yes priority = 100 }
+nw14_pan = { allowed = { always = yes } visible = { tag = GER has_country_flag = nw_pan_europe } visible_when_empty = yes priority = 100 }
+nw14_russia = { allowed = { always = yes } visible = { tag = SOV } visible_when_empty = yes priority = 100 }
+nw14_federal = { allowed = { always = yes } visible = { OR = { tag = AUS tag = HUN tag = CZE tag = CRO } } visible_when_empty = yes priority = 100 }

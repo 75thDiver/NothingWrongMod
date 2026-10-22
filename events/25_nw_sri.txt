@@ -1,0 +1,1704 @@
+add_namespace = nw25sri
+
+country_event = {
+	id = nw25sri.90
+	title = nw25sri.90.t
+	desc = nw25sri.90.d
+	is_triggered_only = yes
+
+	option = {
+		name = nw25sri.90.a
+		ai_chance = {
+			factor = 30
+		}
+	}
+}
+
+country_event = {
+	id = nw25sri.91
+	title = nw25sri.91.t
+	desc = nw25sri.91.d
+	is_triggered_only = yes
+
+	option = {
+		name = nw25sri.91.a
+		ai_chance = {
+			factor = 30
+		}
+	}
+}
+
+country_event = {
+	id = nw25sri.50
+	title = nw25sri.50.t
+	desc = nw25sri.50.d
+	is_triggered_only = yes
+	trigger = {
+		has_country_flag = nw25_sri_spm_pending
+		nw25_sri_spm_valid = yes
+	}
+
+	option = {
+		name = nw25sri.50.a
+		trigger = {
+			has_country_flag = nw25_sri_spm_pending
+			nw25_sri_spm_valid = yes
+		}
+		ai_chance = {
+			factor = 55
+		}
+		if = {
+			limit = {
+				has_country_flag = nw25_sri_spm_pending
+				nw25_sri_spm_valid = yes
+			}
+			clr_country_flag = nw25_sri_spm_pending
+			set_country_flag = {
+				flag = nw25_sri_spm_signed
+				days = 365
+			}
+			add_timed_idea = {
+				idea = nw25_sri_partner
+				days = 365
+			}
+			SRI = {
+				add_to_variable = {
+					var = nw25_sri_council_cohesion
+					value = 5
+				}
+				clamp_variable = {
+					var = nw25_sri_council_cohesion
+					min = 0
+					max = 100
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = nw25_cooperation
+				}
+				nw25_sri_refresh = yes
+				country_event = {
+					id = nw25sri.90
+					days = 1
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nw25sri.50.b
+		trigger = {
+			has_country_flag = nw25_sri_spm_pending
+			nw25_sri_spm_valid = yes
+		}
+		ai_chance = {
+			factor = 30
+		}
+		if = {
+			limit = {
+				has_country_flag = nw25_sri_spm_pending
+				nw25_sri_spm_valid = yes
+			}
+			clr_country_flag = nw25_sri_spm_pending
+			set_country_flag = {
+				flag = nw25_sri_spm_signed
+				days = 180
+			}
+			add_timed_idea = {
+				idea = nw25_sri_partner
+				days = 180
+			}
+			SRI = {
+				add_to_variable = {
+					var = nw25_sri_council_cohesion
+					value = 2
+				}
+				clamp_variable = {
+					var = nw25_sri_council_cohesion
+					min = 0
+					max = 100
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = nw25_cooperation
+				}
+				nw25_sri_refresh = yes
+				country_event = {
+					id = nw25sri.90
+					days = 1
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nw25sri.50.c
+		trigger = {
+			has_country_flag = nw25_sri_spm_pending
+			nw25_sri_spm_valid = yes
+		}
+		ai_chance = {
+			factor = 15
+		}
+		if = {
+			limit = {
+				has_country_flag = nw25_sri_spm_pending
+				nw25_sri_spm_valid = yes
+			}
+			clr_country_flag = nw25_sri_spm_pending
+			SRI = {
+				country_event = {
+					id = nw25sri.91
+					days = 1
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nw25sri.50.stale
+		trigger = {
+			NOT = {
+				has_country_flag = nw25_sri_spm_pending
+				nw25_sri_spm_valid = yes
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = {
+	id = nw25sri.51
+	title = nw25sri.51.t
+	desc = nw25sri.51.d
+	is_triggered_only = yes
+	trigger = {
+		has_country_flag = nw25_sri_pap_pending
+		nw25_sri_pap_valid = yes
+	}
+
+	option = {
+		name = nw25sri.51.a
+		trigger = {
+			has_country_flag = nw25_sri_pap_pending
+			nw25_sri_pap_valid = yes
+		}
+		ai_chance = {
+			factor = 55
+		}
+		if = {
+			limit = {
+				has_country_flag = nw25_sri_pap_pending
+				nw25_sri_pap_valid = yes
+			}
+			clr_country_flag = nw25_sri_pap_pending
+			set_country_flag = {
+				flag = nw25_sri_pap_signed
+				days = 365
+			}
+			add_timed_idea = {
+				idea = nw25_sri_partner
+				days = 365
+			}
+			SRI = {
+				add_to_variable = {
+					var = nw25_sri_council_cohesion
+					value = 5
+				}
+				clamp_variable = {
+					var = nw25_sri_council_cohesion
+					min = 0
+					max = 100
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = nw25_cooperation
+				}
+				nw25_sri_refresh = yes
+				country_event = {
+					id = nw25sri.90
+					days = 1
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nw25sri.51.b
+		trigger = {
+			has_country_flag = nw25_sri_pap_pending
+			nw25_sri_pap_valid = yes
+		}
+		ai_chance = {
+			factor = 30
+		}
+		if = {
+			limit = {
+				has_country_flag = nw25_sri_pap_pending
+				nw25_sri_pap_valid = yes
+			}
+			clr_country_flag = nw25_sri_pap_pending
+			set_country_flag = {
+				flag = nw25_sri_pap_signed
+				days = 180
+			}
+			add_timed_idea = {
+				idea = nw25_sri_partner
+				days = 180
+			}
+			SRI = {
+				add_to_variable = {
+					var = nw25_sri_council_cohesion
+					value = 2
+				}
+				clamp_variable = {
+					var = nw25_sri_council_cohesion
+					min = 0
+					max = 100
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = nw25_cooperation
+				}
+				nw25_sri_refresh = yes
+				country_event = {
+					id = nw25sri.90
+					days = 1
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nw25sri.51.c
+		trigger = {
+			has_country_flag = nw25_sri_pap_pending
+			nw25_sri_pap_valid = yes
+		}
+		ai_chance = {
+			factor = 15
+		}
+		if = {
+			limit = {
+				has_country_flag = nw25_sri_pap_pending
+				nw25_sri_pap_valid = yes
+			}
+			clr_country_flag = nw25_sri_pap_pending
+			SRI = {
+				country_event = {
+					id = nw25sri.91
+					days = 1
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nw25sri.51.stale
+		trigger = {
+			NOT = {
+				has_country_flag = nw25_sri_pap_pending
+				nw25_sri_pap_valid = yes
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = {
+	id = nw25sri.10
+	title = nw25sri.10.t
+	desc = nw25sri.10.d
+	is_triggered_only = yes
+	trigger = {
+		tag = SRI
+		NOT = {
+			has_country_flag = nw25_sri_event_10_done
+		}
+	}
+
+	option = {
+		name = nw25sri.10.a
+		trigger = {
+			tag = SRI
+			NOT = {
+				has_country_flag = nw25_sri_event_10_done
+			}
+		}
+		ai_chance = {
+			factor = 50
+		}
+		if = {
+			limit = {
+				tag = SRI
+				NOT = {
+					has_country_flag = nw25_sri_event_10_done
+				}
+			}
+			set_country_flag = nw25_sri_event_10_done
+			add_to_variable = {
+				var = nw25_sri_council_cohesion
+				value = 5
+			}
+			clamp_variable = {
+				var = nw25_sri_council_cohesion
+				min = 0
+				max = 100
+			}
+		}
+	}
+
+	option = {
+		name = nw25sri.10.b
+		trigger = {
+			tag = SRI
+			NOT = {
+				has_country_flag = nw25_sri_event_10_done
+			}
+		}
+		ai_chance = {
+			factor = 50
+		}
+		if = {
+			limit = {
+				tag = SRI
+				NOT = {
+					has_country_flag = nw25_sri_event_10_done
+				}
+			}
+			set_country_flag = nw25_sri_event_10_done
+			add_to_variable = {
+				var = nw25_sri_rural_support
+				value = 5
+			}
+			clamp_variable = {
+				var = nw25_sri_rural_support
+				min = 0
+				max = 100
+			}
+		}
+	}
+
+	option = {
+		name = nw25sri.10.stale
+		trigger = {
+			NOT = {
+				tag = SRI
+				NOT = {
+					has_country_flag = nw25_sri_event_10_done
+				}
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = {
+	id = nw25sri.11
+	title = nw25sri.11.t
+	desc = nw25sri.11.d
+	is_triggered_only = yes
+	trigger = {
+		tag = SRI
+		NOT = {
+			has_country_flag = nw25_sri_federal_choice
+		}
+		NOT = {
+			has_country_flag = nw25_sri_central_choice
+		}
+	}
+
+	option = {
+		name = nw25sri.11.a
+		trigger = {
+			tag = SRI
+			NOT = {
+				has_country_flag = nw25_sri_federal_choice
+			}
+			NOT = {
+				has_country_flag = nw25_sri_central_choice
+			}
+		}
+		ai_chance = {
+			factor = 45
+		}
+		if = {
+			limit = {
+				tag = SRI
+				NOT = {
+					has_country_flag = nw25_sri_federal_choice
+				}
+				NOT = {
+					has_country_flag = nw25_sri_central_choice
+				}
+			}
+			set_country_flag = nw25_sri_federal_choice
+		}
+	}
+
+	option = {
+		name = nw25sri.11.b
+		trigger = {
+			tag = SRI
+			NOT = {
+				has_country_flag = nw25_sri_federal_choice
+			}
+			NOT = {
+				has_country_flag = nw25_sri_central_choice
+			}
+		}
+		ai_chance = {
+			factor = 45
+		}
+		if = {
+			limit = {
+				tag = SRI
+				NOT = {
+					has_country_flag = nw25_sri_federal_choice
+				}
+				NOT = {
+					has_country_flag = nw25_sri_central_choice
+				}
+			}
+			set_country_flag = nw25_sri_central_choice
+		}
+	}
+
+	option = {
+		name = nw25sri.11.c
+		trigger = {
+			tag = SRI
+			NOT = {
+				has_country_flag = nw25_sri_federal_choice
+			}
+			NOT = {
+				has_country_flag = nw25_sri_central_choice
+			}
+		}
+		ai_chance = {
+			factor = 10
+		}
+		if = {
+			limit = {
+				tag = SRI
+				NOT = {
+					has_country_flag = nw25_sri_federal_choice
+				}
+				NOT = {
+					has_country_flag = nw25_sri_central_choice
+				}
+			}
+			add_political_power = -15
+		}
+	}
+
+	option = {
+		name = nw25sri.11.stale
+		trigger = {
+			NOT = {
+				tag = SRI
+				NOT = {
+					has_country_flag = nw25_sri_federal_choice
+				}
+				NOT = {
+					has_country_flag = nw25_sri_central_choice
+				}
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = {
+	id = nw25sri.20
+	title = nw25sri.20.t
+	desc = nw25sri.20.d
+	is_triggered_only = yes
+	trigger = {
+		tag = SRI
+	}
+
+	option = {
+		name = nw25sri.20.a
+		trigger = {
+			tag = SRI
+		}
+		ai_chance = {
+			factor = 60
+		}
+		if = {
+			limit = {
+				tag = SRI
+			}
+			add_political_power = -35
+			add_to_variable = {
+				var = nw25_sri_rural_support
+				value = 12
+			}
+			clamp_variable = {
+				var = nw25_sri_rural_support
+				min = 0
+				max = 100
+			}
+		}
+	}
+
+	option = {
+		name = nw25sri.20.b
+		trigger = {
+			tag = SRI
+		}
+		ai_chance = {
+			factor = 30
+		}
+		if = {
+			limit = {
+				tag = SRI
+			}
+			add_political_power = -25
+			add_to_variable = {
+				var = nw25_sri_council_cohesion
+				value = 5
+			}
+			clamp_variable = {
+				var = nw25_sri_council_cohesion
+				min = 0
+				max = 100
+			}
+			add_to_variable = {
+				var = nw25_sri_rural_support
+				value = 5
+			}
+			clamp_variable = {
+				var = nw25_sri_rural_support
+				min = 0
+				max = 100
+			}
+		}
+	}
+
+	option = {
+		name = nw25sri.20.c
+		trigger = {
+			tag = SRI
+		}
+		ai_chance = {
+			factor = 10
+		}
+		if = {
+			limit = {
+				tag = SRI
+			}
+			add_to_variable = {
+				var = nw25_sri_rural_support
+				value = -5
+			}
+			clamp_variable = {
+				var = nw25_sri_rural_support
+				min = 0
+				max = 100
+			}
+			add_timed_idea = {
+				idea = nw25_sri_requisitions
+				days = 60
+			}
+		}
+	}
+
+	option = {
+		name = nw25sri.20.stale
+		trigger = {
+			NOT = {
+				tag = SRI
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = {
+	id = nw25sri.21
+	title = nw25sri.21.t
+	desc = nw25sri.21.d
+	is_triggered_only = yes
+	trigger = {
+		tag = SRI
+		NOT = {
+			has_country_flag = nw25_sri_event_21_done
+		}
+	}
+
+	option = {
+		name = nw25sri.21.a
+		trigger = {
+			tag = SRI
+			NOT = {
+				has_country_flag = nw25_sri_event_21_done
+			}
+		}
+		ai_chance = {
+			factor = 40
+		}
+		if = {
+			limit = {
+				tag = SRI
+				NOT = {
+					has_country_flag = nw25_sri_event_21_done
+				}
+			}
+			set_country_flag = nw25_sri_event_21_done
+			add_political_power = -30
+			add_to_variable = {
+				var = nw25_sri_rural_support
+				value = 10
+			}
+			clamp_variable = {
+				var = nw25_sri_rural_support
+				min = 0
+				max = 100
+			}
+		}
+	}
+
+	option = {
+		name = nw25sri.21.b
+		trigger = {
+			tag = SRI
+			NOT = {
+				has_country_flag = nw25_sri_event_21_done
+			}
+		}
+		ai_chance = {
+			factor = 25
+		}
+		if = {
+			limit = {
+				tag = SRI
+				NOT = {
+					has_country_flag = nw25_sri_event_21_done
+				}
+			}
+			set_country_flag = nw25_sri_event_21_done
+			add_to_variable = {
+				var = nw25_sri_rural_support
+				value = -8
+			}
+			clamp_variable = {
+				var = nw25_sri_rural_support
+				min = 0
+				max = 100
+			}
+			add_timed_idea = {
+				idea = nw25_sri_requisitions
+				days = 180
+			}
+		}
+	}
+
+	option = {
+		name = nw25sri.21.c
+		trigger = {
+			tag = SRI
+			NOT = {
+				has_country_flag = nw25_sri_event_21_done
+			}
+		}
+		ai_chance = {
+			factor = 35
+		}
+		if = {
+			limit = {
+				tag = SRI
+				NOT = {
+					has_country_flag = nw25_sri_event_21_done
+				}
+			}
+			set_country_flag = nw25_sri_event_21_done
+			add_political_power = -20
+			add_to_variable = {
+				var = nw25_sri_council_cohesion
+				value = 5
+			}
+			clamp_variable = {
+				var = nw25_sri_council_cohesion
+				min = 0
+				max = 100
+			}
+			add_to_variable = {
+				var = nw25_sri_rural_support
+				value = 5
+			}
+			clamp_variable = {
+				var = nw25_sri_rural_support
+				min = 0
+				max = 100
+			}
+		}
+	}
+
+	option = {
+		name = nw25sri.21.stale
+		trigger = {
+			NOT = {
+				tag = SRI
+				NOT = {
+					has_country_flag = nw25_sri_event_21_done
+				}
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = {
+	id = nw25sri.30
+	title = nw25sri.30.t
+	desc = nw25sri.30.d
+	is_triggered_only = yes
+	trigger = {
+		tag = GER
+		has_country_flag = nw_parliament_active
+		SRI = {
+			exists = yes
+		}
+		NOT = {
+			has_country_flag = nw25_sri_event_30_done
+		}
+	}
+
+	option = {
+		name = nw25sri.30.a
+		trigger = {
+			tag = GER
+			has_country_flag = nw_parliament_active
+			SRI = {
+				exists = yes
+			}
+			NOT = {
+				has_country_flag = nw25_sri_event_30_done
+			}
+		}
+		ai_chance = {
+			factor = 40
+		}
+		if = {
+			limit = {
+				tag = GER
+				has_country_flag = nw_parliament_active
+				SRI = {
+					exists = yes
+				}
+				NOT = {
+					has_country_flag = nw25_sri_event_30_done
+				}
+			}
+			set_country_flag = nw25_sri_event_30_done
+			add_to_variable = {
+				var = nw_tension
+				value = 8
+			}
+			clamp_variable = {
+				var = nw_tension
+				min = 0
+				max = 100
+			}
+			set_country_flag = nw25_ger_italian_contacts
+			SRI = {
+				add_to_variable = {
+					var = nw25_sri_council_cohesion
+					value = 5
+				}
+				clamp_variable = {
+					var = nw25_sri_council_cohesion
+					min = 0
+					max = 100
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nw25sri.30.b
+		trigger = {
+			tag = GER
+			has_country_flag = nw_parliament_active
+			SRI = {
+				exists = yes
+			}
+			NOT = {
+				has_country_flag = nw25_sri_event_30_done
+			}
+		}
+		ai_chance = {
+			factor = 40
+		}
+		if = {
+			limit = {
+				tag = GER
+				has_country_flag = nw_parliament_active
+				SRI = {
+					exists = yes
+				}
+				NOT = {
+					has_country_flag = nw25_sri_event_30_done
+				}
+			}
+			set_country_flag = nw25_sri_event_30_done
+			add_to_variable = {
+				var = nw_tension
+				value = 3
+			}
+			clamp_variable = {
+				var = nw_tension
+				min = 0
+				max = 100
+			}
+		}
+	}
+
+	option = {
+		name = nw25sri.30.c
+		trigger = {
+			tag = GER
+			has_country_flag = nw_parliament_active
+			SRI = {
+				exists = yes
+			}
+			NOT = {
+				has_country_flag = nw25_sri_event_30_done
+			}
+		}
+		ai_chance = {
+			factor = 20
+		}
+		if = {
+			limit = {
+				tag = GER
+				has_country_flag = nw_parliament_active
+				SRI = {
+					exists = yes
+				}
+				NOT = {
+					has_country_flag = nw25_sri_event_30_done
+				}
+			}
+			set_country_flag = nw25_sri_event_30_done
+			add_to_variable = {
+				var = nw_tension
+				value = -3
+			}
+			clamp_variable = {
+				var = nw_tension
+				min = 0
+				max = 100
+			}
+		}
+	}
+
+	option = {
+		name = nw25sri.30.stale
+		trigger = {
+			NOT = {
+				tag = GER
+				has_country_flag = nw_parliament_active
+				SRI = {
+					exists = yes
+				}
+				NOT = {
+					has_country_flag = nw25_sri_event_30_done
+				}
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = {
+	id = nw25sri.31
+	title = nw25sri.31.t
+	desc = nw25sri.31.d
+	is_triggered_only = yes
+	trigger = {
+		tag = SRI
+		NOT = {
+			has_country_flag = nw25_sri_event_31_done
+		}
+	}
+
+	option = {
+		name = nw25sri.31.a
+		trigger = {
+			tag = SRI
+			NOT = {
+				has_country_flag = nw25_sri_event_31_done
+			}
+		}
+		ai_chance = {
+			factor = 60
+		}
+		if = {
+			limit = {
+				tag = SRI
+				NOT = {
+					has_country_flag = nw25_sri_event_31_done
+				}
+			}
+			set_country_flag = nw25_sri_event_31_done
+			set_country_flag = nw25_sri_open_diplomacy
+			add_timed_idea = {
+				idea = nw25_trade_orders
+				days = 180
+			}
+		}
+	}
+
+	option = {
+		name = nw25sri.31.b
+		trigger = {
+			tag = SRI
+			NOT = {
+				has_country_flag = nw25_sri_event_31_done
+			}
+		}
+		ai_chance = {
+			factor = 40
+		}
+		if = {
+			limit = {
+				tag = SRI
+				NOT = {
+					has_country_flag = nw25_sri_event_31_done
+				}
+			}
+			set_country_flag = nw25_sri_event_31_done
+			set_country_flag = nw25_sri_internationalist
+			add_political_power = -35
+			add_war_support = 0.03
+		}
+	}
+
+	option = {
+		name = nw25sri.31.stale
+		trigger = {
+			NOT = {
+				tag = SRI
+				NOT = {
+					has_country_flag = nw25_sri_event_31_done
+				}
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = {
+	id = nw25sri.52
+	title = nw25sri.52.t
+	desc = nw25sri.52.d
+	is_triggered_only = yes
+	trigger = {
+		tag = SRI
+		NOT = {
+			has_country_flag = nw25_sri_event_52_done
+		}
+	}
+
+	option = {
+		name = nw25sri.52.a
+		trigger = {
+			tag = SRI
+			NOT = {
+				has_country_flag = nw25_sri_event_52_done
+			}
+		}
+		ai_chance = {
+			factor = 55
+		}
+		if = {
+			limit = {
+				tag = SRI
+				NOT = {
+					has_country_flag = nw25_sri_event_52_done
+				}
+			}
+			set_country_flag = nw25_sri_event_52_done
+			nw25_sri_pap_offer = yes
+		}
+	}
+
+	option = {
+		name = nw25sri.52.b
+		trigger = {
+			tag = SRI
+			NOT = {
+				has_country_flag = nw25_sri_event_52_done
+			}
+		}
+		ai_chance = {
+			factor = 30
+		}
+		if = {
+			limit = {
+				tag = SRI
+				NOT = {
+					has_country_flag = nw25_sri_event_52_done
+				}
+			}
+			set_country_flag = nw25_sri_event_52_done
+			set_country_flag = nw25_sri_roman_hardline
+			add_to_variable = {
+				var = nw25_sri_council_cohesion
+				value = 5
+			}
+			clamp_variable = {
+				var = nw25_sri_council_cohesion
+				min = 0
+				max = 100
+			}
+			if = {
+				limit = {
+					PAP = {
+						exists = yes
+					}
+				}
+				add_opinion_modifier = {
+					target = PAP
+					modifier = nw25_frictions
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nw25sri.52.c
+		trigger = {
+			tag = SRI
+			NOT = {
+				has_country_flag = nw25_sri_event_52_done
+			}
+		}
+		ai_chance = {
+			factor = 15
+		}
+		if = {
+			limit = {
+				tag = SRI
+				NOT = {
+					has_country_flag = nw25_sri_event_52_done
+				}
+			}
+			set_country_flag = nw25_sri_event_52_done
+			add_political_power = 10
+		}
+	}
+
+	option = {
+		name = nw25sri.52.stale
+		trigger = {
+			NOT = {
+				tag = SRI
+				NOT = {
+					has_country_flag = nw25_sri_event_52_done
+				}
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = {
+	id = nw25sri.40
+	title = nw25sri.40.t
+	desc = nw25sri.40.d
+	is_triggered_only = yes
+	trigger = {
+		tag = LBV
+		nw25_sri_lbv_valid = yes
+		has_country_flag = nw25_sri_lbv_pending
+		NOT = {
+			has_country_flag = nw25_sri_lbv_provisional
+		}
+	}
+
+	option = {
+		name = nw25sri.40.a
+		trigger = {
+			tag = LBV
+			nw25_sri_lbv_valid = yes
+			has_country_flag = nw25_sri_lbv_pending
+			NOT = {
+				has_country_flag = nw25_sri_lbv_provisional
+			}
+		}
+		ai_chance = {
+			factor = 65
+		}
+		if = {
+			limit = {
+				tag = LBV
+				nw25_sri_lbv_valid = yes
+				has_country_flag = nw25_sri_lbv_pending
+				NOT = {
+					has_country_flag = nw25_sri_lbv_provisional
+				}
+			}
+			if = {
+				limit = {
+					is_subject_of = AUS
+				}
+				set_country_flag = nw25_sri_lbv_provisional
+				AUS = {
+					country_event = {
+						id = nw25sri.41
+						days = 1
+					}
+				}
+			}
+			else = {
+				nw25_sri_lbv_sign = yes
+			}
+		}
+	}
+
+	option = {
+		name = nw25sri.40.b
+		trigger = {
+			tag = LBV
+			nw25_sri_lbv_valid = yes
+			has_country_flag = nw25_sri_lbv_pending
+			NOT = {
+				has_country_flag = nw25_sri_lbv_provisional
+			}
+		}
+		ai_chance = {
+			factor = 35
+		}
+		if = {
+			limit = {
+				tag = LBV
+				nw25_sri_lbv_valid = yes
+				has_country_flag = nw25_sri_lbv_pending
+				NOT = {
+					has_country_flag = nw25_sri_lbv_provisional
+				}
+			}
+			clr_country_flag = nw25_sri_lbv_pending
+			SRI = {
+				country_event = {
+					id = nw25sri.91
+					days = 1
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nw25sri.40.stale
+		trigger = {
+			NOT = {
+				tag = LBV
+				nw25_sri_lbv_valid = yes
+				has_country_flag = nw25_sri_lbv_pending
+				NOT = {
+					has_country_flag = nw25_sri_lbv_provisional
+				}
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = {
+	id = nw25sri.41
+	title = nw25sri.41.t
+	desc = nw25sri.41.d
+	is_triggered_only = yes
+	trigger = {
+		tag = AUS
+		LBV = {
+			is_subject_of = AUS
+			nw25_sri_lbv_valid = yes
+			has_country_flag = nw25_sri_lbv_pending
+			has_country_flag = nw25_sri_lbv_provisional
+		}
+	}
+
+	option = {
+		name = nw25sri.41.a
+		trigger = {
+			tag = AUS
+			LBV = {
+				is_subject_of = AUS
+				nw25_sri_lbv_valid = yes
+				has_country_flag = nw25_sri_lbv_pending
+				has_country_flag = nw25_sri_lbv_provisional
+			}
+		}
+		ai_chance = {
+			factor = 65
+		}
+		if = {
+			limit = {
+				tag = AUS
+				LBV = {
+					is_subject_of = AUS
+					nw25_sri_lbv_valid = yes
+					has_country_flag = nw25_sri_lbv_pending
+					has_country_flag = nw25_sri_lbv_provisional
+				}
+			}
+			set_country_flag = {
+				flag = nw25_sri_lbv_authorized
+				days = 365
+			}
+			LBV = {
+				clr_country_flag = nw25_sri_lbv_provisional
+				nw25_sri_lbv_sign = yes
+			}
+		}
+	}
+
+	option = {
+		name = nw25sri.41.b
+		trigger = {
+			tag = AUS
+			LBV = {
+				is_subject_of = AUS
+				nw25_sri_lbv_valid = yes
+				has_country_flag = nw25_sri_lbv_pending
+				has_country_flag = nw25_sri_lbv_provisional
+			}
+		}
+		ai_chance = {
+			factor = 35
+		}
+		if = {
+			limit = {
+				tag = AUS
+				LBV = {
+					is_subject_of = AUS
+					nw25_sri_lbv_valid = yes
+					has_country_flag = nw25_sri_lbv_pending
+					has_country_flag = nw25_sri_lbv_provisional
+				}
+			}
+			LBV = {
+				clr_country_flag = nw25_sri_lbv_pending
+				clr_country_flag = nw25_sri_lbv_provisional
+			}
+			SRI = {
+				country_event = {
+					id = nw25sri.91
+					days = 1
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nw25sri.41.stale
+		trigger = {
+			NOT = {
+				tag = AUS
+				LBV = {
+					is_subject_of = AUS
+					nw25_sri_lbv_valid = yes
+					has_country_flag = nw25_sri_lbv_pending
+					has_country_flag = nw25_sri_lbv_provisional
+				}
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = {
+	id = nw25sri.42
+	title = nw25sri.42.t
+	desc = nw25sri.42.d
+	is_triggered_only = yes
+	trigger = {
+		tag = AUS
+		LBV = {
+			is_subject_of = AUS
+		}
+		NOT = {
+			has_country_flag = nw25_aus_italy_cooldown
+		}
+	}
+
+	option = {
+		name = nw25sri.42.a
+		trigger = {
+			tag = AUS
+			LBV = {
+				is_subject_of = AUS
+			}
+			NOT = {
+				has_country_flag = nw25_aus_italy_cooldown
+			}
+		}
+		ai_chance = {
+			factor = 60
+		}
+		if = {
+			limit = {
+				tag = AUS
+				LBV = {
+					is_subject_of = AUS
+				}
+				NOT = {
+					has_country_flag = nw25_aus_italy_cooldown
+				}
+			}
+			set_country_flag = {
+				flag = nw25_aus_italy_cooldown
+				days = 180
+			}
+			add_political_power = -30
+			LBV = {
+				add_timed_idea = {
+					idea = nw25_trade_orders
+					days = 180
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nw25sri.42.b
+		trigger = {
+			tag = AUS
+			LBV = {
+				is_subject_of = AUS
+			}
+			NOT = {
+				has_country_flag = nw25_aus_italy_cooldown
+			}
+		}
+		ai_chance = {
+			factor = 40
+		}
+		if = {
+			limit = {
+				tag = AUS
+				LBV = {
+					is_subject_of = AUS
+				}
+				NOT = {
+					has_country_flag = nw25_aus_italy_cooldown
+				}
+			}
+			set_country_flag = {
+				flag = nw25_aus_italy_cooldown
+				days = 180
+			}
+		}
+	}
+
+	option = {
+		name = nw25sri.42.stale
+		trigger = {
+			NOT = {
+				tag = AUS
+				LBV = {
+					is_subject_of = AUS
+				}
+				NOT = {
+					has_country_flag = nw25_aus_italy_cooldown
+				}
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = {
+	id = nw25sri.60
+	title = nw25sri.60.t
+	desc = nw25sri.60.d
+	is_triggered_only = yes
+	trigger = {
+		tag = SRI
+		has_country_flag = nw25_sri_operation_lbv_pending
+		nw25_sri_operation_lbv_valid = yes
+	}
+
+	option = {
+		name = nw25sri.60.a
+		trigger = {
+			tag = SRI
+			has_country_flag = nw25_sri_operation_lbv_pending
+			nw25_sri_operation_lbv_valid = yes
+		}
+		ai_chance = {
+			factor = 35
+		}
+		if = {
+			limit = {
+				tag = SRI
+				has_country_flag = nw25_sri_operation_lbv_pending
+				nw25_sri_operation_lbv_valid = yes
+			}
+			clr_country_flag = nw25_sri_operation_lbv_pending
+			set_country_flag = {
+				flag = nw25_sri_operation_lbv_approved
+				days = 60
+			}
+			add_to_variable = {
+				var = nw25_sri_council_cohesion
+				value = -5
+			}
+			clamp_variable = {
+				var = nw25_sri_council_cohesion
+				min = 0
+				max = 100
+			}
+			add_to_variable = {
+				var = nw25_sri_rural_support
+				value = -5
+			}
+			clamp_variable = {
+				var = nw25_sri_rural_support
+				min = 0
+				max = 100
+			}
+			add_stability = -0.02
+		}
+	}
+
+	option = {
+		name = nw25sri.60.b
+		trigger = {
+			tag = SRI
+			has_country_flag = nw25_sri_operation_lbv_pending
+			nw25_sri_operation_lbv_valid = yes
+		}
+		ai_chance = {
+			factor = 65
+		}
+		if = {
+			limit = {
+				tag = SRI
+				has_country_flag = nw25_sri_operation_lbv_pending
+				nw25_sri_operation_lbv_valid = yes
+			}
+			clr_country_flag = nw25_sri_operation_lbv_pending
+		}
+	}
+
+	option = {
+		name = nw25sri.60.stale
+		trigger = {
+			NOT = {
+				tag = SRI
+				has_country_flag = nw25_sri_operation_lbv_pending
+				nw25_sri_operation_lbv_valid = yes
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = {
+	id = nw25sri.61
+	title = nw25sri.61.t
+	desc = nw25sri.61.d
+	is_triggered_only = yes
+	trigger = {
+		tag = SRI
+		has_country_flag = nw25_sri_operation_spm_pending
+		nw25_sri_operation_spm_valid = yes
+	}
+
+	option = {
+		name = nw25sri.61.a
+		trigger = {
+			tag = SRI
+			has_country_flag = nw25_sri_operation_spm_pending
+			nw25_sri_operation_spm_valid = yes
+		}
+		ai_chance = {
+			factor = 35
+		}
+		if = {
+			limit = {
+				tag = SRI
+				has_country_flag = nw25_sri_operation_spm_pending
+				nw25_sri_operation_spm_valid = yes
+			}
+			clr_country_flag = nw25_sri_operation_spm_pending
+			set_country_flag = {
+				flag = nw25_sri_operation_spm_approved
+				days = 60
+			}
+			add_to_variable = {
+				var = nw25_sri_council_cohesion
+				value = -5
+			}
+			clamp_variable = {
+				var = nw25_sri_council_cohesion
+				min = 0
+				max = 100
+			}
+			add_to_variable = {
+				var = nw25_sri_rural_support
+				value = -5
+			}
+			clamp_variable = {
+				var = nw25_sri_rural_support
+				min = 0
+				max = 100
+			}
+			add_stability = -0.02
+		}
+	}
+
+	option = {
+		name = nw25sri.61.b
+		trigger = {
+			tag = SRI
+			has_country_flag = nw25_sri_operation_spm_pending
+			nw25_sri_operation_spm_valid = yes
+		}
+		ai_chance = {
+			factor = 65
+		}
+		if = {
+			limit = {
+				tag = SRI
+				has_country_flag = nw25_sri_operation_spm_pending
+				nw25_sri_operation_spm_valid = yes
+			}
+			clr_country_flag = nw25_sri_operation_spm_pending
+		}
+	}
+
+	option = {
+		name = nw25sri.61.stale
+		trigger = {
+			NOT = {
+				tag = SRI
+				has_country_flag = nw25_sri_operation_spm_pending
+				nw25_sri_operation_spm_valid = yes
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = {
+	id = nw25sri.62
+	title = nw25sri.62.t
+	desc = nw25sri.62.d
+	is_triggered_only = yes
+	trigger = {
+		tag = SRI
+		has_country_flag = nw25_sri_operation_pap_pending
+		nw25_sri_operation_pap_valid = yes
+	}
+
+	option = {
+		name = nw25sri.62.a
+		trigger = {
+			tag = SRI
+			has_country_flag = nw25_sri_operation_pap_pending
+			nw25_sri_operation_pap_valid = yes
+		}
+		ai_chance = {
+			factor = 35
+		}
+		if = {
+			limit = {
+				tag = SRI
+				has_country_flag = nw25_sri_operation_pap_pending
+				nw25_sri_operation_pap_valid = yes
+			}
+			clr_country_flag = nw25_sri_operation_pap_pending
+			set_country_flag = {
+				flag = nw25_sri_operation_pap_approved
+				days = 60
+			}
+			add_to_variable = {
+				var = nw25_sri_council_cohesion
+				value = -5
+			}
+			clamp_variable = {
+				var = nw25_sri_council_cohesion
+				min = 0
+				max = 100
+			}
+			add_to_variable = {
+				var = nw25_sri_rural_support
+				value = -5
+			}
+			clamp_variable = {
+				var = nw25_sri_rural_support
+				min = 0
+				max = 100
+			}
+			add_stability = -0.02
+		}
+	}
+
+	option = {
+		name = nw25sri.62.b
+		trigger = {
+			tag = SRI
+			has_country_flag = nw25_sri_operation_pap_pending
+			nw25_sri_operation_pap_valid = yes
+		}
+		ai_chance = {
+			factor = 65
+		}
+		if = {
+			limit = {
+				tag = SRI
+				has_country_flag = nw25_sri_operation_pap_pending
+				nw25_sri_operation_pap_valid = yes
+			}
+			clr_country_flag = nw25_sri_operation_pap_pending
+		}
+	}
+
+	option = {
+		name = nw25sri.62.stale
+		trigger = {
+			NOT = {
+				tag = SRI
+				has_country_flag = nw25_sri_operation_pap_pending
+				nw25_sri_operation_pap_valid = yes
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}

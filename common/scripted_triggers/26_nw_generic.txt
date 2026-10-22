@@ -1,0 +1,55 @@
+nw26_generic_user = {
+	has_completed_focus = NWG_political_change
+}
+
+nw26_generic_coast = {
+	any_owned_state = {
+		is_controlled_by = ROOT
+		is_coastal = yes
+	}
+}
+
+nw26_generic_dominion = {
+	is_subject_of = SOV
+	OR = {
+		tag = POL
+		tag = FIN
+	}
+	has_autonomy_state = autonomy_formal_dominion
+}
+
+nw26_generic_crown = {
+	is_subject_of = AUS
+	has_autonomy_state = autonomy_nw_federal_part
+}
+
+nw26_generic_colony = {
+	is_subject_of = GER
+	OR = {
+		tag = GEA
+		tag = GSW
+		tag = GPC
+		tag = GWA
+		tag = GKT
+	}
+}
+
+nw26_generic_flexible_autonomy = {
+	is_subject = yes
+	NOT = {
+		has_autonomy_state = autonomy_nw_federal_part
+	}
+	NOT = {
+		has_autonomy_state = autonomy_formal_dominion
+	}
+}
+
+nw26_generic_partner = {
+	exists = yes
+	NOT = {
+		tag = ROOT
+	}
+	NOT = {
+		has_war_with = ROOT
+	}
+}

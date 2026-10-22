@@ -1,0 +1,120 @@
+# All effects in this file are called in SOV country scope.
+
+nw24_reorganize_cabinet = {
+	hidden_effect = {
+		remove_ideas = nw14_crown_admin
+		remove_ideas = nw24_cabinet_basic
+	}
+	custom_effect_tooltip = nw24_reorganize_cabinet_tt
+	if = {
+		limit = {
+			has_country_flag = nw24_cabinet_delegated
+		}
+		add_ideas = nw24_cabinet_office
+	}
+	else = {
+		add_ideas = nw24_personal_office
+	}
+}
+
+nw24_offer_charters = {
+	if = {
+		limit = {
+			POL = {
+				is_subject_of = SOV
+			}
+		}
+		add_political_power = -20
+		POL = {
+			set_country_flag = nw24_charter_pending
+			country_event = {
+				id = nw24.3
+				days = 1
+			}
+		}
+	}
+	if = {
+		limit = {
+			FIN = {
+				is_subject_of = SOV
+			}
+		}
+		add_political_power = -20
+		FIN = {
+			set_country_flag = nw24_charter_pending
+			country_event = {
+				id = nw24.3
+				days = 1
+			}
+		}
+	}
+}
+
+nw24_refresh_compact = {
+	hidden_effect = {
+		if = {
+			limit = {
+				has_country_flag = nw24_alexei_settled
+				OR = {
+					POL = {
+						is_subject_of = SOV
+						has_country_flag = nw24_charter_signed
+					}
+					FIN = {
+						is_subject_of = SOV
+						has_country_flag = nw24_charter_signed
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_idea = nw24_dominion_compact
+					}
+				}
+				add_ideas = nw24_dominion_compact
+			}
+		}
+		else = {
+			remove_ideas = nw24_dominion_compact
+		}
+	}
+}
+
+nw24_finalize_crown = {
+	hidden_effect = {
+		remove_ideas = nw14_crown_admin
+		remove_ideas = nw24_cabinet_basic
+		remove_ideas = nw24_personal_office
+		remove_ideas = nw24_cabinet_office
+		remove_ideas = nw24_personal_rule
+		remove_ideas = nw24_cabinet_rule
+		remove_ideas = nw24_limited_rule
+	}
+	custom_effect_tooltip = nw24_finalize_crown_tt
+	clr_country_flag = nw24_outcome_personal
+	clr_country_flag = nw24_outcome_cabinet
+	clr_country_flag = nw24_outcome_limited
+	if = {
+		limit = {
+			has_country_flag = nw24_cabinet_delegated
+		}
+		add_ideas = nw24_cabinet_rule
+		set_country_flag = nw24_outcome_cabinet
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				nw_health > 69
+			}
+		}
+		add_ideas = nw24_personal_rule
+		set_country_flag = nw24_outcome_personal
+	}
+	else = {
+		add_ideas = nw24_limited_rule
+		set_country_flag = nw24_outcome_limited
+	}
+	set_country_flag = nw24_alexei_settled
+	nw24_refresh_compact = yes
+}

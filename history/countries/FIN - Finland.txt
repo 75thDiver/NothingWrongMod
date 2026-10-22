@@ -1,0 +1,29 @@
+# Native 1936 scenario. Country source: received mod history
+capital = 111
+SOV = { set_autonomy = { target = FIN autonomy_state = autonomy_dominion freedom_level = 0.8 } }
+# NW imperial dominion; 1936 start. No 1939 ownership restoration.
+
+set_stability = 0.65
+set_war_support = 0.2
+set_technology = {
+ infantry_weapons = 1
+ tech_support = 1
+ tech_recon = 1
+ tech_engineers = 1
+ gw_artillery = 1
+ early_fighter = 1
+ basic_train = 1
+}
+
+# Scenario political setup; no map transfers or world initializer.
+set_politics = { ruling_party = neutrality elections_allowed = yes }
+set_popularities = { neutrality = 55 democratic = 35 communism = 7 fascism = 3 }
+set_party_name = { ideology = neutrality name = NW_FIN_neutrality_party long_name = NW_FIN_neutrality_party_long }
+set_party_name = { ideology = democratic name = NW_FIN_democratic_party long_name = NW_FIN_democratic_party_long }
+set_party_name = { ideology = communism name = NW_FIN_communism_party long_name = NW_FIN_communism_party_long }
+set_party_name = { ideology = fascism name = NW_FIN_fascism_party long_name = NW_FIN_fascism_party_long }
+add_ideas = { nw_fin_imperial_autonomy }
+
+
+oob = "NW_FIN_1936"
+

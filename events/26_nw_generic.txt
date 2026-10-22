@@ -1,0 +1,631 @@
+add_namespace = nw26
+
+country_event = {
+	id = nw26.1
+	title = nw26.1.t
+	desc = nw26.1.d
+	is_triggered_only = yes
+	trigger = {
+		has_country_flag = nw26_admin_pending
+		NOT = {
+			has_country_flag = nw26_admin_settled
+		}
+	}
+
+	option = {
+		name = nw26.1.a
+		trigger = {
+			has_country_flag = nw26_admin_pending
+			NOT = {
+				has_country_flag = nw26_admin_settled
+			}
+		}
+		ai_chance = {
+			factor = 50
+		}
+		if = {
+			limit = {
+				has_country_flag = nw26_admin_pending
+				NOT = {
+					has_country_flag = nw26_admin_settled
+				}
+			}
+			clr_country_flag = nw26_admin_pending
+			set_country_flag = nw26_admin_settled
+			add_ideas = nw26_gen_administration
+		}
+	}
+
+	option = {
+		name = nw26.1.b
+		trigger = {
+			has_country_flag = nw26_admin_pending
+			NOT = {
+				has_country_flag = nw26_admin_settled
+			}
+		}
+		ai_chance = {
+			factor = 40
+		}
+		if = {
+			limit = {
+				has_country_flag = nw26_admin_pending
+				NOT = {
+					has_country_flag = nw26_admin_settled
+				}
+			}
+			clr_country_flag = nw26_admin_pending
+			set_country_flag = nw26_admin_settled
+			add_ideas = nw26_gen_local_administration
+		}
+	}
+
+	option = {
+		name = nw26.1.c
+		trigger = {
+			has_country_flag = nw26_admin_pending
+			NOT = {
+				has_country_flag = nw26_admin_settled
+			}
+		}
+		ai_chance = {
+			factor = 10
+		}
+		if = {
+			limit = {
+				has_country_flag = nw26_admin_pending
+				NOT = {
+					has_country_flag = nw26_admin_settled
+				}
+			}
+			clr_country_flag = nw26_admin_pending
+		}
+	}
+
+	option = {
+		name = nw26.1.stale
+		trigger = {
+			NOT = {
+				has_country_flag = nw26_admin_pending
+				NOT = {
+					has_country_flag = nw26_admin_settled
+				}
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = {
+	id = nw26.10
+	title = nw26.10.t
+	desc = nw26.10.d
+	is_triggered_only = yes
+	trigger = {
+		FROM = {
+			exists = yes
+			is_subject_of = ROOT
+			has_country_flag = nw26_subject_pending
+			NOT = {
+				has_war_with = ROOT
+			}
+		}
+	}
+
+	option = {
+		name = nw26.10.a
+		trigger = {
+			FROM = {
+				exists = yes
+				is_subject_of = ROOT
+				has_country_flag = nw26_subject_pending
+				NOT = {
+					has_war_with = ROOT
+				}
+			}
+			has_political_power > 24
+		}
+		ai_chance = {
+			factor = 65
+		}
+		if = {
+			limit = {
+				FROM = {
+					exists = yes
+					is_subject_of = ROOT
+					has_country_flag = nw26_subject_pending
+					NOT = {
+						has_war_with = ROOT
+					}
+				}
+				has_political_power > 24
+			}
+			add_political_power = -25
+			FROM = {
+				clr_country_flag = nw26_subject_pending
+				add_timed_idea = {
+					idea = nw26_gen_subject_programme
+					days = 180
+				}
+				country_event = {
+					id = nw26.90
+					days = 1
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nw26.10.b
+		trigger = {
+			FROM = {
+				exists = yes
+				is_subject_of = ROOT
+				has_country_flag = nw26_subject_pending
+				NOT = {
+					has_war_with = ROOT
+				}
+			}
+		}
+		ai_chance = {
+			factor = 35
+		}
+		if = {
+			limit = {
+				FROM = {
+					exists = yes
+					is_subject_of = ROOT
+					has_country_flag = nw26_subject_pending
+					NOT = {
+						has_war_with = ROOT
+					}
+				}
+			}
+			FROM = {
+				clr_country_flag = nw26_subject_pending
+				country_event = {
+					id = nw26.91
+					days = 1
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nw26.10.stale
+		trigger = {
+			NOT = {
+				FROM = {
+					exists = yes
+					is_subject_of = ROOT
+					has_country_flag = nw26_subject_pending
+					NOT = {
+						has_war_with = ROOT
+					}
+				}
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = {
+	id = nw26.20
+	title = nw26.20.t
+	desc = nw26.20.d
+	is_triggered_only = yes
+	trigger = {
+		FROM = {
+			exists = yes
+			has_country_flag = nw26_trade_pending
+			NOT = {
+				has_war_with = ROOT
+			}
+		}
+	}
+
+	option = {
+		name = nw26.20.a
+		trigger = {
+			FROM = {
+				exists = yes
+				has_country_flag = nw26_trade_pending
+				NOT = {
+					has_war_with = ROOT
+				}
+			}
+			has_political_power > 19
+		}
+		ai_chance = {
+			factor = 60
+		}
+		if = {
+			limit = {
+				FROM = {
+					exists = yes
+					has_country_flag = nw26_trade_pending
+					NOT = {
+						has_war_with = ROOT
+					}
+				}
+				has_political_power > 19
+			}
+			add_political_power = -20
+			add_timed_idea = {
+				idea = nw26_gen_trade_programme
+				days = 180
+			}
+			FROM = {
+				clr_country_flag = nw26_trade_pending
+				add_timed_idea = {
+					idea = nw26_gen_trade_programme
+					days = 180
+				}
+				country_event = {
+					id = nw26.90
+					days = 1
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nw26.20.b
+		trigger = {
+			FROM = {
+				exists = yes
+				has_country_flag = nw26_trade_pending
+				NOT = {
+					has_war_with = ROOT
+				}
+			}
+		}
+		ai_chance = {
+			factor = 40
+		}
+		if = {
+			limit = {
+				FROM = {
+					exists = yes
+					has_country_flag = nw26_trade_pending
+					NOT = {
+						has_war_with = ROOT
+					}
+				}
+			}
+			FROM = {
+				clr_country_flag = nw26_trade_pending
+				country_event = {
+					id = nw26.91
+					days = 1
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nw26.20.stale
+		trigger = {
+			NOT = {
+				FROM = {
+					exists = yes
+					has_country_flag = nw26_trade_pending
+					NOT = {
+						has_war_with = ROOT
+					}
+				}
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = {
+	id = nw26.21
+	title = nw26.21.t
+	desc = nw26.21.d
+	is_triggered_only = yes
+	trigger = {
+		FROM = {
+			exists = yes
+			has_country_flag = nw26_conference_pending
+			NOT = {
+				has_war_with = ROOT
+			}
+		}
+	}
+
+	option = {
+		name = nw26.21.a
+		trigger = {
+			FROM = {
+				exists = yes
+				has_country_flag = nw26_conference_pending
+				NOT = {
+					has_war_with = ROOT
+				}
+			}
+			has_political_power > 19
+		}
+		ai_chance = {
+			factor = 60
+		}
+		if = {
+			limit = {
+				FROM = {
+					exists = yes
+					has_country_flag = nw26_conference_pending
+					NOT = {
+						has_war_with = ROOT
+					}
+				}
+				has_political_power > 19
+			}
+			add_political_power = -20
+			add_timed_idea = {
+				idea = nw26_gen_logistics
+				days = 180
+			}
+			FROM = {
+				clr_country_flag = nw26_conference_pending
+				add_timed_idea = {
+					idea = nw26_gen_logistics
+					days = 180
+				}
+				country_event = {
+					id = nw26.90
+					days = 1
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nw26.21.b
+		trigger = {
+			FROM = {
+				exists = yes
+				has_country_flag = nw26_conference_pending
+				NOT = {
+					has_war_with = ROOT
+				}
+			}
+		}
+		ai_chance = {
+			factor = 40
+		}
+		if = {
+			limit = {
+				FROM = {
+					exists = yes
+					has_country_flag = nw26_conference_pending
+					NOT = {
+						has_war_with = ROOT
+					}
+				}
+			}
+			FROM = {
+				clr_country_flag = nw26_conference_pending
+				country_event = {
+					id = nw26.91
+					days = 1
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nw26.21.stale
+		trigger = {
+			NOT = {
+				FROM = {
+					exists = yes
+					has_country_flag = nw26_conference_pending
+					NOT = {
+						has_war_with = ROOT
+					}
+				}
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = {
+	id = nw26.22
+	title = nw26.22.t
+	desc = nw26.22.d
+	is_triggered_only = yes
+	trigger = {
+		FROM = {
+			exists = yes
+			has_country_flag = nw26_tech_pending
+			NOT = {
+				has_war_with = ROOT
+			}
+		}
+	}
+
+	option = {
+		name = nw26.22.a
+		trigger = {
+			FROM = {
+				exists = yes
+				has_country_flag = nw26_tech_pending
+				NOT = {
+					has_war_with = ROOT
+				}
+			}
+			has_political_power > 19
+		}
+		ai_chance = {
+			factor = 60
+		}
+		if = {
+			limit = {
+				FROM = {
+					exists = yes
+					has_country_flag = nw26_tech_pending
+					NOT = {
+						has_war_with = ROOT
+					}
+				}
+				has_political_power > 19
+			}
+			add_political_power = -20
+			add_tech_bonus = {
+				name = nw26_technical_exchange
+				bonus = 0.25
+				uses = 1
+				category = electronics
+			}
+			FROM = {
+				clr_country_flag = nw26_tech_pending
+				add_tech_bonus = {
+					name = nw26_technical_exchange
+					bonus = 0.25
+					uses = 1
+					category = electronics
+				}
+				country_event = {
+					id = nw26.90
+					days = 1
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nw26.22.b
+		trigger = {
+			FROM = {
+				exists = yes
+				has_country_flag = nw26_tech_pending
+				NOT = {
+					has_war_with = ROOT
+				}
+			}
+		}
+		ai_chance = {
+			factor = 40
+		}
+		if = {
+			limit = {
+				FROM = {
+					exists = yes
+					has_country_flag = nw26_tech_pending
+					NOT = {
+						has_war_with = ROOT
+					}
+				}
+			}
+			FROM = {
+				clr_country_flag = nw26_tech_pending
+				country_event = {
+					id = nw26.91
+					days = 1
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nw26.22.stale
+		trigger = {
+			NOT = {
+				FROM = {
+					exists = yes
+					has_country_flag = nw26_tech_pending
+					NOT = {
+						has_war_with = ROOT
+					}
+				}
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = {
+	id = nw26.90
+	title = nw26.90.t
+	desc = nw26.90.d
+	is_triggered_only = yes
+	trigger = {
+		exists = yes
+	}
+
+	option = {
+		name = nw26.90.a
+		trigger = {
+			exists = yes
+		}
+		ai_chance = {
+			factor = 100
+		}
+		if = {
+			limit = {
+				exists = yes
+			}
+		}
+	}
+
+	option = {
+		name = nw26.90.stale
+		trigger = {
+			NOT = {
+				exists = yes
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = {
+	id = nw26.91
+	title = nw26.91.t
+	desc = nw26.91.d
+	is_triggered_only = yes
+	trigger = {
+		exists = yes
+	}
+
+	option = {
+		name = nw26.91.a
+		trigger = {
+			exists = yes
+		}
+		ai_chance = {
+			factor = 100
+		}
+		if = {
+			limit = {
+				exists = yes
+			}
+		}
+	}
+
+	option = {
+		name = nw26.91.stale
+		trigger = {
+			NOT = {
+				exists = yes
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}

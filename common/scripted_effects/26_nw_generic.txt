@@ -1,0 +1,101 @@
+nw26_subject_offer = {
+	if = {
+		limit = {
+			is_subject = yes
+			NOT = {
+				has_war_with = OVERLORD
+			}
+			NOT = {
+				has_country_flag = nw26_subject_pending
+			}
+		}
+		set_country_flag = {
+			flag = nw26_subject_pending
+			days = 30
+		}
+		overlord = {
+			country_event = {
+				id = nw26.10
+				days = 1
+			}
+		}
+	}
+}
+
+nw26_trade_offer = {
+	if = {
+		limit = {
+			NOT = {
+				has_country_flag = nw26_trade_pending
+			}
+			any_neighbor_country = {
+				nw26_generic_partner = yes
+			}
+		}
+		set_country_flag = {
+			flag = nw26_trade_pending
+			days = 30
+		}
+		random_neighbor_country = {
+			limit = {
+				nw26_generic_partner = yes
+			}
+			country_event = {
+				id = nw26.20
+				days = 1
+			}
+		}
+	}
+}
+
+nw26_conference_offer = {
+	if = {
+		limit = {
+			NOT = {
+				has_country_flag = nw26_conference_pending
+			}
+			any_neighbor_country = {
+				nw26_generic_partner = yes
+			}
+		}
+		set_country_flag = {
+			flag = nw26_conference_pending
+			days = 30
+		}
+		random_neighbor_country = {
+			limit = {
+				nw26_generic_partner = yes
+			}
+			country_event = {
+				id = nw26.21
+				days = 1
+			}
+		}
+	}
+}
+
+nw26_tech_offer = {
+	if = {
+		limit = {
+			NOT = {
+				has_country_flag = nw26_tech_pending
+			}
+			any_neighbor_country = {
+				nw26_generic_partner = yes
+			}
+		}
+		set_country_flag = {
+			flag = nw26_tech_pending
+			days = 30
+		}
+		random_neighbor_country = {
+			limit = {
+				nw26_generic_partner = yes
+			}
+			country_event = {
+				id = nw26.22
+				days = 1
+			}
+		}
+	}
+}

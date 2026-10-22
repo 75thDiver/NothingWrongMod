@@ -1,0 +1,926 @@
+ideas = {
+ country = {
+nw_sov_unbroken_growth = {
+ picture = generic_production_bonus
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  production_speed_industrial_complex_factor = 0.1
+  industrial_capacity_factory = 0.05
+ }
+}
+nw_sov_court_government = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  political_power_factor = -0.12
+  stability_factor = -0.05
+ }
+}
+nw_sov_fragile_sovereign = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  political_power_gain = -0.15
+  drift_defence_factor = -0.1
+ }
+}
+nw_sov_restless_borderlands = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = -0.08
+  recruitable_population_factor = -0.05
+ }
+}
+nw_ger_continental_workshop = {
+ picture = generic_production_bonus
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  industrial_capacity_factory = 0.08
+  production_speed_industrial_complex_factor = 0.05
+ }
+}
+nw_ger_crown_and_reichstag = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  political_power_factor = -0.12
+  stability_factor = -0.05
+ }
+}
+nw_ger_high_seas_fleet = {
+ picture = generic_production_bonus
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  production_speed_dockyard_factor = 0.1
+  industrial_capacity_dockyard = 0.05
+  consumer_goods_factor = 0.02
+ }
+}
+nw_aus_federal_bargain = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  political_power_factor = -0.1
+  stability_factor = 0.05
+ }
+}
+nw_aus_many_languages = {
+ picture = generic_army_problems
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  army_org_factor = -0.05
+  training_time_army_factor = 0.08
+ }
+}
+nw_aus_adriatic_system = {
+ picture = generic_production_bonus
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  industrial_capacity_dockyard = 0.08
+  political_power_gain = -0.05
+ }
+}
+nw_tur_palace_and_army = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  war_support_factor = 0.08
+  political_power_factor = -0.05
+ }
+}
+nw_tur_lost_provinces = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  war_support_factor = 0.1
+  stability_factor = -0.07
+ }
+}
+nw_tur_german_machinery = {
+ picture = generic_research_bonus
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  production_speed_arms_factory_factor = 0.08
+  research_speed_factor = 0.03
+  consumer_goods_factor = 0.03
+ }
+}
+nw_fra_paying_bonds = {
+ picture = generic_production_bonus
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  production_speed_industrial_complex_factor = 0.07
+  consumer_goods_factor = -0.02
+ }
+}
+nw_fra_revenge_without_war = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  war_support_factor = 0.08
+  political_power_factor = -0.05
+ }
+}
+nw_fra_leagues_and_front = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = -0.08
+  political_power_gain = -0.08
+ }
+}
+nw_eng_imperial_retreat = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = -0.08
+  political_power_factor = -0.08
+ }
+}
+nw_eng_eastern_anchor = {
+ picture = generic_production_bonus
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  industrial_capacity_dockyard = 0.07
+  supply_consumption_factor = 0.05
+ }
+}
+nw_eng_invergordon_memory = {
+ picture = generic_army_problems
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  naval_morale_factor = -0.05
+  stability_factor = -0.03
+ }
+}
+nw_jap_silk_crisis = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = -0.06
+  consumer_goods_factor = 0.03
+ }
+}
+nw_jap_officers_politics = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  political_power_factor = -0.1
+  war_support_factor = 0.08
+ }
+}
+nw_jap_railway_foothold = {
+ picture = generic_production_bonus
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  supply_consumption_factor = -0.04
+  political_power_gain = -0.05
+ }
+}
+nw_usa_populist_storm = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = -0.08
+  political_power_factor = -0.1
+ }
+}
+nw_usa_oceanic_distance = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  war_support_factor = -0.1
+  production_speed_dockyard_factor = -0.05
+ }
+}
+nw_chi_nanjing_compromise = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  political_power_factor = -0.1
+  recruitable_population_factor = -0.08
+ }
+}
+nw_chi_double_patron = {
+ picture = generic_research_bonus
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  research_speed_factor = 0.03
+  stability_factor = -0.04
+ }
+}
+nw_chi_currency_reform = {
+ picture = generic_production_not_met
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  consumer_goods_factor = 0.03
+  production_speed_buildings_factor = -0.05
+ }
+}
+nw_raj_congress_federation = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  political_power_factor = -0.08
+  stability_factor = -0.04
+ }
+}
+nw_raj_undivided_market = {
+ picture = generic_production_bonus
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  production_speed_industrial_complex_factor = 0.06
+  local_resources_factor = 0.05
+ }
+}
+nw_raj_communal_compromise = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = -0.06
+  political_power_gain = -0.05
+ }
+}
+nw_man_two_railways = {
+ picture = generic_production_bonus
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  industrial_capacity_factory = 0.04
+  political_power_factor = -0.12
+ }
+}
+nw_man_guarded_peace = {
+ picture = generic_army_problems
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  war_support_factor = -0.05
+  army_org_factor = -0.05
+ }
+}
+nw_mon_russian_resident = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  army_org_factor = 0.03
+  political_power_factor = -0.08
+ }
+}
+nw_mon_steppe_unification = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  war_support_factor = 0.05
+  production_speed_buildings_factor = -0.05
+ }
+}
+nw_sik_sponsored_independence = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  army_org_factor = 0.03
+  political_power_factor = -0.1
+ }
+}
+nw_sik_oasis_politics = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = -0.06
+  production_speed_buildings_factor = -0.05
+ }
+}
+nw_tib_regency = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  political_power_factor = -0.08
+  drift_defence_factor = 0.1
+ }
+}
+nw_tib_indian_guarantee = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = 0.03
+  political_power_gain = -0.03
+ }
+}
+nw_brm_unfinished_independence = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = -0.05
+  political_power_factor = -0.05
+ }
+}
+nw_shx_provincial_bargain = {
+ picture = generic_army_problems
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  army_org_factor = 0.04
+  political_power_factor = -0.08
+ }
+}
+nw_xsm_provincial_bargain = {
+ picture = generic_army_problems
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  army_org_factor = 0.04
+  political_power_factor = -0.08
+ }
+}
+nw_yun_provincial_bargain = {
+ picture = generic_army_problems
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  army_org_factor = 0.04
+  political_power_factor = -0.08
+ }
+}
+nw_gxc_provincial_bargain = {
+ picture = generic_army_problems
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  army_org_factor = 0.04
+  political_power_factor = -0.08
+ }
+}
+nw_sri_neapolitan_councils = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  recruitable_population_factor = 0.05
+  political_power_factor = -0.08
+ }
+}
+nw_sri_agrarian_south = {
+ picture = generic_production_not_met
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  industrial_capacity_factory = -0.06
+  production_speed_industrial_complex_factor = -0.05
+ }
+}
+nw_sri_revolutionary_beacon = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  war_support_factor = 0.05
+  drift_defence_factor = 0.1
+ }
+}
+nw_spm_parliamentary_refuge = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  political_power_factor = -0.05
+  industrial_capacity_factory = 0.04
+ }
+}
+nw_spm_french_shelter = {
+ picture = generic_production_bonus
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  production_speed_industrial_complex_factor = 0.05
+  political_power_gain = -0.05
+ }
+}
+nw_lbv_viennese_settlement = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  political_power_factor = -0.08
+  stability_factor = 0.03
+ }
+}
+nw_pap_temporal_power = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  drift_defence_factor = 0.15
+  political_power_factor = -0.05
+ }
+}
+nw_mlt_order_state = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = 0.05
+  supply_consumption_factor = 0.05
+ }
+}
+nw_gre_overextended_victory = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  war_support_factor = 0.08
+  consumer_goods_factor = 0.03
+ }
+}
+nw_gre_island_lifelines = {
+ picture = generic_production_bonus
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  industrial_capacity_dockyard = 0.05
+  supply_consumption_factor = 0.05
+ }
+}
+nw_bul_committee_state = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  war_support_factor = 0.1
+  political_power_factor = -0.1
+ }
+}
+nw_bul_third_war_defeat = {
+ picture = generic_production_not_met
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = -0.07
+  production_speed_buildings_factor = -0.05
+ }
+}
+nw_rom_legionary_regime = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  war_support_factor = 0.08
+  stability_factor = -0.05
+ }
+}
+nw_rom_oil_diplomacy = {
+ picture = generic_production_bonus
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  local_resources_factor = 0.06
+  political_power_gain = -0.03
+ }
+}
+nw_ser_defeated_kingdom = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = -0.07
+  political_power_factor = -0.08
+ }
+}
+nw_ser_underground_networks = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  war_support_factor = 0.08
+  industrial_capacity_factory = -0.03
+ }
+}
+nw_alb_habsburg_credit = {
+ picture = generic_production_bonus
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  consumer_goods_factor = 0.03
+  production_speed_infrastructure_factor = 0.05
+ }
+}
+nw_mnt_small_crown = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  drift_defence_factor = 0.1
+  political_power_gain = -0.03
+ }
+}
+nw_mac_unrecognized_republic = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  war_support_factor = 0.08
+  production_speed_buildings_factor = -0.05
+ }
+}
+nw_str_straits_republic = {
+ picture = generic_production_bonus
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  industrial_capacity_factory = 0.03
+  political_power_factor = -0.08
+ }
+}
+nw_str_greek_proxy = {
+ picture = generic_political_reform
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  autonomy_gain = -0.5
+ }
+}
+nw_egy_nile_kingdom = {
+ picture = generic_production_bonus
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  local_resources_factor = 0.05
+  production_speed_infrastructure_factor = 0.05
+ }
+}
+nw_egy_southern_and_western_unrest = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = -0.07
+  consumer_goods_factor = 0.02
+ }
+}
+nw_egy_empire_of_the_nile = {
+ picture = generic_national_unity
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = 0.05
+  political_power_factor = 0.05
+  supply_consumption_factor = -0.05
+ }
+}
+nw_irq_mosul_question = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  war_support_factor = 0.06
+  political_power_gain = -0.05
+ }
+}
+nw_syr_french_supervision = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  political_power_factor = -0.1
+  stability_factor = -0.04
+ }
+}
+nw_leb_coastal_compromise = {
+ picture = generic_production_bonus
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  industrial_capacity_factory = 0.03
+  political_power_factor = -0.05
+ }
+}
+nw_jor_two_banks = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  political_power_factor = -0.05
+  production_speed_buildings_factor = 0.03
+ }
+}
+nw_sau_conquered_hejaz = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  drift_defence_factor = 0.1
+  political_power_factor = -0.04
+ }
+}
+nw_oma_emirate_compact = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = -0.03
+  political_power_factor = -0.08
+ }
+}
+nw_oma_union_against_saud = {
+ picture = generic_national_unity
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = 0.05
+  army_defence_factor = 0.05
+ }
+}
+nw_yem_republican_union = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  political_power_factor = -0.06
+  production_speed_buildings_factor = -0.04
+ }
+}
+nw_kur_persian_connection = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  war_support_factor = 0.05
+  political_power_factor = -0.07
+ }
+}
+nw_per_spheres_and_reform = {
+ picture = generic_production_bonus
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  production_speed_infrastructure_factor = 0.07
+  political_power_factor = -0.05
+ }
+}
+nw_ire_thirty_two_counties = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  war_support_factor = 0.05
+  stability_factor = -0.06
+ }
+}
+nw_can_formal_dominion = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  political_power_factor = 0.04
+  consumer_goods_factor = 0.02
+ }
+}
+nw_ast_formal_dominion = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  political_power_factor = 0.04
+  consumer_goods_factor = 0.02
+ }
+}
+nw_nzl_formal_dominion = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  political_power_factor = 0.04
+  consumer_goods_factor = 0.02
+ }
+}
+nw_saf_republic_outside_union = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  war_support_factor = 0.04
+  stability_factor = -0.04
+ }
+}
+nw_pua_peoples_union = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  recruitable_population_factor = 0.05
+  political_power_factor = -0.08
+ }
+}
+nw_pua_colonial_economy = {
+ picture = generic_production_not_met
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  industrial_capacity_factory = -0.05
+  production_speed_buildings_factor = -0.05
+ }
+}
+nw_lag_joint_interest = {
+ picture = generic_production_bonus
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  industrial_capacity_factory = 0.04
+  political_power_factor = -0.1
+ }
+}
+nw_sie_new_patron = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  production_speed_buildings_factor = 0.03
+  political_power_factor = -0.08
+ }
+}
+nw_gam_new_patron = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  production_speed_buildings_factor = 0.03
+  political_power_factor = -0.08
+ }
+}
+nw_por_african_extension = {
+ picture = generic_production_bonus
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  local_resources_factor = 0.04
+  consumer_goods_factor = 0.02
+ }
+}
+nw_eth_red_sea_window = {
+ picture = generic_production_bonus
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  production_speed_infrastructure_factor = 0.07
+  consumer_goods_factor = 0.02
+ }
+}
+nw_eth_ogaden_truce = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  war_support_factor = 0.05
+  political_power_gain = -0.03
+ }
+}
+nw_som_coastal_republic = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  war_support_factor = 0.06
+  political_power_factor = -0.07
+ }
+}
+nw_bel_congo_pressure = {
+ picture = generic_production_bonus
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  local_resources_factor = 0.03
+  political_power_gain = -0.03
+ }
+}
+nw_hol_eastern_trade = {
+ picture = generic_production_bonus
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  industrial_capacity_factory = 0.03
+  political_power_gain = -0.03
+ }
+}
+nw_phi_uncertain_transition = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  war_support_factor = 0.03
+  consumer_goods_factor = 0.01
+ }
+}
+nw_mal_singapore_hub = {
+ picture = generic_production_bonus
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  industrial_capacity_dockyard = 0.05
+  consumer_goods_factor = 0.02
+ }
+}
+nw_ins_indian_example = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = -0.03
+  political_power_factor = -0.03
+ }
+}
+nw_afg_northern_giant = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  drift_defence_factor = 0.05
+  political_power_gain = -0.03
+ }
+}
+nw_spr_southern_example = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = -0.03
+  war_support_factor = 0.03
+ }
+}
+nw_pol_imperial_autonomy = {
+ picture = generic_political_reform
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = 0.05
+  political_power_factor = 0.05
+ }
+}
+nw_fin_imperial_autonomy = {
+ picture = generic_political_reform
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = 0.05
+  political_power_factor = 0.05
+ }
+}
+nw_ion_greek_proxy = {
+ picture = generic_political_reform
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  autonomy_gain = -0.5
+ }
+}
+nw_man_commission_statute = {
+ picture = generic_neutrality_drift_bonus
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+ political_power_gain = -3
+ production_speed_buildings_factor = -2
+ industrial_capacity_factory = -2
+ industrial_capacity_dockyard = -2
+ recruitable_population_factor = -1
+}
+}
+}
+}

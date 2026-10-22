@@ -1,0 +1,54 @@
+# «Формальный доминион» — кастомный тип автономии (владелец, 2026-10-18):
+# больше прав и возможностей, чем у доминиона; иконка доминиона.
+autonomy_state = {
+	id = autonomy_formal_dominion
+
+	min_freedom_level = 0.95
+
+	manpower_influence = 0.0
+
+	rule = {
+		desc = "RULE_DESC_IS_A_SUBJECT"
+		can_not_declare_war = no
+		can_decline_call_to_war = yes
+		can_be_spymaster = yes
+	}
+
+	modifier = {
+		autonomy_manpower_share = 0.0
+		extra_trade_to_overlord_factor = 0.0
+		overlord_trade_cost_factor = 0.0
+		peace_score_ratio_transferred_to_overlord = 0.0
+		lend_lease_tension_with_overlord = -0.5
+		can_master_build_for_us = 1
+		license_subject_master_purchase_cost = -0.5
+		autonomy_gain_global_factor = 0.0
+	}
+
+	ai_subject_wants_higher = {
+		factor = 0.0
+	}
+
+	ai_overlord_wants_lower = {
+		factor = 0.0
+	}
+
+	ai_overlord_wants_garrison = {
+		always = no
+	}
+
+	allowed = {
+		always = yes
+	}
+
+	can_take_level = {
+		always = no
+	}
+
+	can_lose_level = {
+		if = {
+			limit = { NOT = { has_war_with = OVERLORD } }
+			always = no
+		}
+	}
+}

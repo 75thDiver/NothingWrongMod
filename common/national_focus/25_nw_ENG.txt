@@ -1,0 +1,595 @@
+focus_tree = {
+	id = NW25_ENG_tree
+	country = {
+		factor = 0
+		modifier = {
+			add = 200000
+			tag = ENG
+		}
+	}
+	default = no
+	continuous_focus_position = { x = 50 y = 1090 }
+
+	focus = {
+		id = NW25_ENG_treasury_review
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 5
+		y = 0
+		cost = 5
+
+		available = {
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_political_power = 20
+			nw25_eng_refresh = yes
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW25_ENG_budget_inquiry
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = NW25_ENG_treasury_review
+		cost = 8
+
+		prerequisite = {
+			focus = NW25_ENG_treasury_review
+		}
+		available = {
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			country_event = {
+				id = nw25eng.10
+				days = 1
+			}
+			nw25_eng_refresh = yes
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW25_ENG_budget_retrenchment
+		icon = GFX_goal_generic_construct_civ_factory
+		x = -2
+		y = 1
+		relative_position_id = NW25_ENG_budget_inquiry
+		cost = 10
+
+		prerequisite = {
+			focus = NW25_ENG_budget_inquiry
+		}
+		mutually_exclusive = {
+			focus = NW25_ENG_public_works
+		}
+		available = {
+			has_country_flag = nw25_eng_cuts_choice
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			remove_ideas = nw_eng_imperial_retreat
+			add_ideas = nw25_eng_balanced
+			add_to_variable = {
+				var = nw25_eng_fiscal_pressure
+				value = -20
+			}
+			clamp_variable = {
+				var = nw25_eng_fiscal_pressure
+				min = 0
+				max = 100
+			}
+			add_to_variable = {
+				var = nw25_eng_sailor_grievances
+				value = 10
+			}
+			clamp_variable = {
+				var = nw25_eng_sailor_grievances
+				min = 0
+				max = 100
+			}
+			add_timed_idea = {
+				idea = nw25_eng_austerity
+				days = 180
+			}
+			nw25_eng_refresh = yes
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW25_ENG_public_works
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 2
+		y = 1
+		relative_position_id = NW25_ENG_budget_inquiry
+		cost = 10
+
+		prerequisite = {
+			focus = NW25_ENG_budget_inquiry
+		}
+		mutually_exclusive = {
+			focus = NW25_ENG_budget_retrenchment
+		}
+		available = {
+			has_country_flag = nw25_eng_works_choice
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			remove_ideas = nw_eng_imperial_retreat
+			add_ideas = nw25_eng_recovery
+			add_stability = 0.03
+			add_to_variable = {
+				var = nw25_eng_fiscal_pressure
+				value = 10
+			}
+			clamp_variable = {
+				var = nw25_eng_fiscal_pressure
+				min = 0
+				max = 100
+			}
+			nw25_eng_refresh = yes
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW25_ENG_dominion_conference
+		icon = GFX_goal_generic_national_unity
+		x = 15
+		y = 0
+		cost = 5
+
+		available = {
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_political_power = 20
+			nw25_eng_refresh = yes
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW25_ENG_dominion_defence
+		icon = GFX_goal_generic_navy_anti_submarine
+		x = -2
+		y = 1
+		relative_position_id = NW25_ENG_dominion_conference
+		cost = 8
+
+		prerequisite = {
+			focus = NW25_ENG_dominion_conference
+		}
+		available = {
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			nw25_eng_can_offer = yes
+			nw25_eng_ast_offer = yes
+			nw25_eng_nzl_offer = yes
+			nw25_eng_refresh = yes
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW25_ENG_indian_relations
+		icon = GFX_goal_generic_demand_territory
+		x = 2
+		y = 1
+		relative_position_id = NW25_ENG_dominion_conference
+		cost = 8
+
+		prerequisite = {
+			focus = NW25_ENG_dominion_conference
+		}
+		available = {
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			nw25_eng_raj_offer = yes
+			nw25_eng_refresh = yes
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW25_ENG_commonwealth_contracts
+		icon = GFX_goal_generic_national_unity
+		x = 0
+		y = 3
+		relative_position_id = NW25_ENG_dominion_conference
+		cost = 10
+
+		prerequisite = {
+			focus = NW25_ENG_dominion_defence
+			focus = NW25_ENG_indian_relations
+		}
+		available = {
+			check_variable = {
+				nw25_eng_agreements > 0
+			}
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			custom_effect_tooltip = nw251_eng_commonwealth_tt
+			nw25_eng_refresh = yes
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW25_ENG_fleet_estimates
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = 25
+		y = 0
+		cost = 5
+
+		available = {
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			navy_experience = 10
+			nw25_eng_refresh = yes
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW25_ENG_sailors_compact
+		icon = GFX_goal_generic_national_unity
+		x = 0
+		y = 1
+		relative_position_id = NW25_ENG_fleet_estimates
+		cost = 8
+
+		prerequisite = {
+			focus = NW25_ENG_fleet_estimates
+		}
+		available = {
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			set_country_flag = nw25_eng_compact_done
+			add_to_variable = {
+				var = nw25_eng_sailor_grievances
+				value = -25
+			}
+			clamp_variable = {
+				var = nw25_eng_sailor_grievances
+				min = 0
+				max = 100
+			}
+			add_to_variable = {
+				var = nw25_eng_fiscal_pressure
+				value = 10
+			}
+			clamp_variable = {
+				var = nw25_eng_fiscal_pressure
+				min = 0
+				max = 100
+			}
+			nw25_eng_refresh = yes
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW25_ENG_atlantic_priority
+		icon = GFX_goal_generic_navy_battleship
+		x = -2
+		y = 1
+		relative_position_id = NW25_ENG_sailors_compact
+		cost = 10
+
+		prerequisite = {
+			focus = NW25_ENG_sailors_compact
+		}
+		mutually_exclusive = {
+			focus = NW25_ENG_eastern_priority
+		}
+		available = {
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_ideas = nw25_eng_atlantic
+			add_to_variable = {
+				var = nw25_eng_fiscal_pressure
+				value = 5
+			}
+			clamp_variable = {
+				var = nw25_eng_fiscal_pressure
+				min = 0
+				max = 100
+			}
+			nw25_eng_refresh = yes
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW25_ENG_eastern_priority
+		icon = GFX_goal_generic_navy_cruiser
+		x = 2
+		y = 1
+		relative_position_id = NW25_ENG_sailors_compact
+		cost = 10
+
+		prerequisite = {
+			focus = NW25_ENG_sailors_compact
+		}
+		mutually_exclusive = {
+			focus = NW25_ENG_atlantic_priority
+		}
+		available = {
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			remove_ideas = nw_eng_eastern_anchor
+			add_ideas = nw25_eng_eastern
+			add_to_variable = {
+				var = nw25_eng_fiscal_pressure
+				value = 5
+			}
+			clamp_variable = {
+				var = nw25_eng_fiscal_pressure
+				min = 0
+				max = 100
+			}
+			nw25_eng_refresh = yes
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW25_ENG_fleet_modernisation
+		icon = GFX_goal_generic_navy_carrier
+		x = 0
+		y = 3
+		relative_position_id = NW25_ENG_sailors_compact
+		cost = 10
+
+		prerequisite = {
+			focus = NW25_ENG_atlantic_priority
+			focus = NW25_ENG_eastern_priority
+		}
+		available = {
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = NW25_ENG_atlantic_priority
+				}
+				remove_ideas = nw25_eng_atlantic
+				add_ideas = nw25_eng_atlantic_modern
+			}
+			else = {
+				remove_ideas = nw25_eng_eastern
+				add_ideas = nw25_eng_eastern_modern
+			}
+			nw25_eng_refresh = yes
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW25_ENG_sea_lanes
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 35
+		y = 0
+		cost = 5
+
+		available = {
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_political_power = 20
+			nw25_eng_refresh = yes
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW25_ENG_lagos_agreement
+		icon = GFX_goal_generic_demand_territory
+		x = -2
+		y = 1
+		relative_position_id = NW25_ENG_sea_lanes
+		cost = 8
+
+		prerequisite = {
+			focus = NW25_ENG_sea_lanes
+		}
+		available = {
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			nw25_eng_lag_offer = yes
+			nw25_eng_refresh = yes
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW25_ENG_german_colonial_access
+		icon = GFX_goal_generic_demand_territory
+		x = 2
+		y = 1
+		relative_position_id = NW25_ENG_sea_lanes
+		cost = 8
+
+		prerequisite = {
+			focus = NW25_ENG_sea_lanes
+		}
+		available = {
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			nw25_eng_ger_offer = yes
+			nw25_eng_refresh = yes
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW25_ENG_malayan_stores
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 0
+		y = 3
+		relative_position_id = NW25_ENG_sea_lanes
+		cost = 10
+
+		prerequisite = {
+			focus = NW25_ENG_lagos_agreement
+			focus = NW25_ENG_german_colonial_access
+		}
+		available = {
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			if = {
+				limit = {
+					336 = {
+						is_owned_and_controlled_by = ENG
+						infrastructure < 5
+					}
+				}
+				336 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			else = {
+				navy_experience = 15
+			}
+			nw25_eng_refresh = yes
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW25_ENG_commercial_network
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 0
+		y = 5
+		relative_position_id = NW25_ENG_sea_lanes
+		cost = 10
+
+		prerequisite = {
+			focus = NW25_ENG_malayan_stores
+		}
+		available = {
+			OR = {
+				check_variable = {
+					nw25_eng_ports > 0
+				}
+				check_variable = {
+					nw25_eng_agreements > 0
+				}
+			}
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			custom_effect_tooltip = nw251_eng_commerce_tt
+			nw25_eng_refresh = yes
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+}

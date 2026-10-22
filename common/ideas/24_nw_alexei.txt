@@ -1,0 +1,163 @@
+ideas = {
+	country = {
+		nw24_cabinet_basic = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_factor = 0.04
+				stability_factor = 0.02
+				consumer_goods_factor = 0.01
+			}
+		}
+		nw24_personal_office = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_factor = 0.08
+				consumer_goods_factor = 0.01
+			}
+		}
+		nw24_cabinet_office = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_factor = 0.04
+				stability_factor = 0.04
+				consumer_goods_factor = 0.01
+			}
+		}
+		nw24_personal_rule = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_factor = 0.10
+				stability_factor = 0.03
+				consumer_goods_factor = 0.01
+			}
+		}
+		nw24_cabinet_rule = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_factor = 0.06
+				stability_factor = 0.05
+				production_speed_buildings_factor = 0.025
+				consumer_goods_factor = 0.015
+			}
+		}
+		nw24_limited_rule = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_factor = 0.04
+				stability_factor = 0.03
+				consumer_goods_factor = 0.01
+			}
+		}
+		nw24_convalescence = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_factor = -0.04
+			}
+		}
+		nw24_reform_cost = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = 0.02
+			}
+		}
+		nw24_dominion_compact = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.02
+				trade_opinion_factor = 0.10
+				consumer_goods_factor = 0.01
+			}
+		}
+		nw24_succession_statute = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_factor = 0.05
+				stability_factor = 0.02
+			}
+		}
+		nw24_succession_settled = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_factor = 0.05
+				stability_factor = 0.03
+			}
+		}
+		nw24_civil_service = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				production_speed_buildings_factor = 0.025
+				consumer_goods_factor = 0.01
+			}
+		}
+		nw24_internal_market = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				production_speed_buildings_factor = 0.04
+				consumer_goods_factor = 0.01
+			}
+		}
+		nw24_public_peace = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.03
+				political_power_factor = 0.03
+			}
+		}
+	}
+}

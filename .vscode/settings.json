@@ -1,0 +1,10 @@
+{
+  "hoi4ModUtilities.previewLocalisation": "Russian",
+  "hoi4ModUtilities.indexing": [
+    "gfx",
+    "sharedfocus",
+    "localisation",
+    "event",
+    "gui"
+  ]
+}

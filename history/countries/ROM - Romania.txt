@@ -1,0 +1,34 @@
+# Native 1936 scenario. Country source: received mod history
+capital = 46
+set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 tech_support = 1 tech_recon = 1 tech_engineers = 1 gw_artillery = 1 basic_train = 1 }
+
+# Match the original ROM_1936/ROM_1936_nsb equipment families.
+set_technology = { tech_trucks = 1 motorised_infantry = 1 }
+if = {
+	limit = { NOT = { has_dlc = "No Step Back" } }
+	set_technology = { gwtank = 1 basic_light_tank = 1 }
+}
+if = {
+	limit = { has_dlc = "No Step Back" }
+	set_technology = { gwtank_chassis = 1 }
+}
+
+# The supplied NSB OOB uses FRA's existing FT Char Cannon; no duplicate variant.
+if = {
+	limit = { NOT = { has_dlc = "No Step Back" } }
+	set_oob = "ROM_1936"
+}
+if = {
+	limit = { has_dlc = "No Step Back" }
+	set_oob = "ROM_1936_nsb"
+}
+
+# Scenario political setup; no map transfers or world initializer.
+set_politics = { ruling_party = fascism elections_allowed = no }
+set_popularities = { democratic = 15 fascism = 55 communism = 5 neutrality = 25 }
+set_party_name = { ideology = democratic name = NW_ROM_democratic_party long_name = NW_ROM_democratic_party_long }
+set_party_name = { ideology = fascism name = NW_ROM_fascism_party long_name = NW_ROM_fascism_party_long }
+set_party_name = { ideology = communism name = NW_ROM_communism_party long_name = NW_ROM_communism_party_long }
+set_party_name = { ideology = neutrality name = NW_ROM_neutrality_party long_name = NW_ROM_neutrality_party_long }
+add_ideas = { nw_rom_legionary_regime nw_rom_oil_diplomacy }
+

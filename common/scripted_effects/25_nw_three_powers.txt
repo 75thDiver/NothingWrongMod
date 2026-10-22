@@ -1,0 +1,1162 @@
+nw25_fra_spm_offer = {
+	if = {
+		limit = {
+			SPM = {
+				nw25_fra_spm_valid = yes
+				NOT = {
+					has_country_flag = nw25_fra_spm_pending
+				}
+				NOT = {
+					has_country_flag = nw25_fra_spm_signed
+				}
+			}
+		}
+		SPM = {
+			set_country_flag = {
+				flag = nw25_fra_spm_pending
+				days = 90
+			}
+			country_event = {
+				id = nw25fra.31
+				days = 1
+			}
+		}
+	}
+}
+
+nw25_fra_syr_offer = {
+	if = {
+		limit = {
+			SYR = {
+				nw25_fra_syr_valid = yes
+				NOT = {
+					has_country_flag = nw25_fra_syr_pending
+				}
+				NOT = {
+					has_country_flag = nw25_fra_syr_signed
+				}
+			}
+		}
+		SYR = {
+			set_country_flag = {
+				flag = nw25_fra_syr_pending
+				days = 90
+			}
+			country_event = {
+				id = nw25fra.32
+				days = 1
+			}
+		}
+	}
+}
+
+nw25_fra_leb_offer = {
+	if = {
+		limit = {
+			LEB = {
+				nw25_fra_leb_valid = yes
+				NOT = {
+					has_country_flag = nw25_fra_leb_pending
+				}
+				NOT = {
+					has_country_flag = nw25_fra_leb_signed
+				}
+			}
+		}
+		LEB = {
+			set_country_flag = {
+				flag = nw25_fra_leb_pending
+				days = 90
+			}
+			country_event = {
+				id = nw25fra.33
+				days = 1
+			}
+		}
+	}
+}
+
+nw25_fra_sie_offer = {
+	if = {
+		limit = {
+			SIE = {
+				nw25_fra_sie_valid = yes
+				NOT = {
+					has_country_flag = nw25_fra_sie_pending
+				}
+				NOT = {
+					has_country_flag = nw25_fra_sie_signed
+				}
+			}
+		}
+		SIE = {
+			set_country_flag = {
+				flag = nw25_fra_sie_pending
+				days = 90
+			}
+			country_event = {
+				id = nw25fra.34
+				days = 1
+			}
+		}
+	}
+}
+
+nw25_fra_gam_offer = {
+	if = {
+		limit = {
+			GAM = {
+				nw25_fra_gam_valid = yes
+				NOT = {
+					has_country_flag = nw25_fra_gam_pending
+				}
+				NOT = {
+					has_country_flag = nw25_fra_gam_signed
+				}
+			}
+		}
+		GAM = {
+			set_country_flag = {
+				flag = nw25_fra_gam_pending
+				days = 90
+			}
+			country_event = {
+				id = nw25fra.35
+				days = 1
+			}
+		}
+	}
+}
+
+nw25_eng_can_offer = {
+	if = {
+		limit = {
+			CAN = {
+				nw25_eng_can_valid = yes
+				NOT = {
+					has_country_flag = nw25_eng_can_pending
+				}
+				NOT = {
+					has_country_flag = nw25_eng_can_signed
+				}
+			}
+		}
+		CAN = {
+			set_country_flag = {
+				flag = nw25_eng_can_pending
+				days = 90
+			}
+			country_event = {
+				id = nw25eng.30
+				days = 1
+			}
+		}
+	}
+}
+
+nw25_eng_ast_offer = {
+	if = {
+		limit = {
+			AST = {
+				nw25_eng_ast_valid = yes
+				NOT = {
+					has_country_flag = nw25_eng_ast_pending
+				}
+				NOT = {
+					has_country_flag = nw25_eng_ast_signed
+				}
+			}
+		}
+		AST = {
+			set_country_flag = {
+				flag = nw25_eng_ast_pending
+				days = 90
+			}
+			country_event = {
+				id = nw25eng.31
+				days = 1
+			}
+		}
+	}
+}
+
+nw25_eng_nzl_offer = {
+	if = {
+		limit = {
+			NZL = {
+				nw25_eng_nzl_valid = yes
+				NOT = {
+					has_country_flag = nw25_eng_nzl_pending
+				}
+				NOT = {
+					has_country_flag = nw25_eng_nzl_signed
+				}
+			}
+		}
+		NZL = {
+			set_country_flag = {
+				flag = nw25_eng_nzl_pending
+				days = 90
+			}
+			country_event = {
+				id = nw25eng.32
+				days = 1
+			}
+		}
+	}
+}
+
+nw25_eng_raj_offer = {
+	if = {
+		limit = {
+			RAJ = {
+				nw25_eng_raj_valid = yes
+				NOT = {
+					has_country_flag = nw25_eng_raj_pending
+				}
+				NOT = {
+					has_country_flag = nw25_eng_raj_signed
+				}
+			}
+		}
+		RAJ = {
+			set_country_flag = {
+				flag = nw25_eng_raj_pending
+				days = 90
+			}
+			country_event = {
+				id = nw25eng.40
+				days = 1
+			}
+		}
+	}
+}
+
+nw25_eng_lag_offer = {
+	if = {
+		limit = {
+			LAG = {
+				nw25_eng_lag_valid = yes
+				NOT = {
+					has_country_flag = nw25_eng_lag_pending
+				}
+				NOT = {
+					has_country_flag = nw25_eng_lag_signed
+				}
+			}
+		}
+		LAG = {
+			set_country_flag = {
+				flag = nw25_eng_lag_pending
+				days = 90
+			}
+			country_event = {
+				id = nw25eng.51
+				days = 1
+			}
+		}
+	}
+}
+
+nw25_eng_ger_offer = {
+	if = {
+		limit = {
+			GER = {
+				nw25_eng_ger_valid = yes
+				NOT = {
+					has_country_flag = nw25_eng_ger_pending
+				}
+				NOT = {
+					has_country_flag = nw25_eng_ger_signed
+				}
+			}
+		}
+		GER = {
+			set_country_flag = {
+				flag = nw25_eng_ger_pending
+				days = 90
+			}
+			country_event = {
+				id = nw25eng.50
+				days = 1
+			}
+		}
+	}
+}
+
+nw25_fra_ger_offer = {
+	if = {
+		limit = {
+			GER = {
+				nw25_fra_ger_valid = yes
+				NOT = {
+					has_country_flag = nw25_fra_ger_pending
+				}
+				NOT = {
+					has_country_flag = nw25_fra_ger_signed
+				}
+			}
+		}
+		GER = {
+			set_country_flag = {
+				flag = nw25_fra_ger_pending
+				days = 90
+			}
+			country_event = {
+				id = nw25fra.12
+				days = 1
+			}
+		}
+	}
+}
+
+nw25_sri_spm_offer = {
+	if = {
+		limit = {
+			SPM = {
+				nw25_sri_spm_valid = yes
+				NOT = {
+					has_country_flag = nw25_sri_spm_pending
+				}
+				NOT = {
+					has_country_flag = nw25_sri_spm_signed
+				}
+			}
+		}
+		SPM = {
+			set_country_flag = {
+				flag = nw25_sri_spm_pending
+				days = 90
+			}
+			country_event = {
+				id = nw25sri.50
+				days = 1
+			}
+		}
+	}
+}
+
+nw25_sri_pap_offer = {
+	if = {
+		limit = {
+			PAP = {
+				nw25_sri_pap_valid = yes
+				NOT = {
+					has_country_flag = nw25_sri_pap_pending
+				}
+				NOT = {
+					has_country_flag = nw25_sri_pap_signed
+				}
+			}
+		}
+		PAP = {
+			set_country_flag = {
+				flag = nw25_sri_pap_pending
+				days = 90
+			}
+			country_event = {
+				id = nw25sri.51
+				days = 1
+			}
+		}
+	}
+}
+
+nw25_fra_sov_offer = {
+	if = {
+		limit = {
+			nw25_fra_sov_valid = yes
+			SOV = {
+				NOT = {
+					has_country_flag = nw25_fra_sov_pending
+				}
+				NOT = {
+					has_country_flag = nw25_fra_sov_counter
+				}
+				NOT = {
+					has_country_flag = nw25_fra_sov_signed
+				}
+			}
+		}
+		SOV = {
+			set_country_flag = {
+				flag = nw25_fra_sov_pending
+				days = 90
+			}
+			country_event = {
+				id = nw25fra.10
+				days = 1
+			}
+		}
+	}
+}
+
+nw25_sri_lbv_offer = {
+	if = {
+		limit = {
+			LBV = {
+				nw25_sri_lbv_valid = yes
+				NOT = {
+					has_country_flag = nw25_sri_lbv_pending
+				}
+				NOT = {
+					has_country_flag = nw25_sri_lbv_signed
+				}
+			}
+		}
+		LBV = {
+			clr_country_flag = nw25_sri_lbv_provisional
+			set_country_flag = {
+				flag = nw25_sri_lbv_pending
+				days = 90
+			}
+			country_event = {
+				id = nw25sri.40
+				days = 1
+			}
+		}
+	}
+}
+
+nw25_sri_lbv_sign = {
+	clr_country_flag = nw25_sri_lbv_pending
+	set_country_flag = {
+		flag = nw25_sri_lbv_signed
+		days = 365
+	}
+	add_timed_idea = {
+		idea = nw25_sri_partner
+		days = 365
+	}
+	SRI = {
+		add_to_variable = {
+			var = nw25_sri_council_cohesion
+			value = 5
+		}
+		clamp_variable = {
+			var = nw25_sri_council_cohesion
+			min = 0
+			max = 100
+		}
+		country_event = {
+			id = nw25sri.90
+			days = 1
+		}
+	}
+}
+
+nw25_fra_refresh = {
+	hidden_effect = {
+		clamp_variable = {
+			var = nw25_fra_credit_influence
+			min = 0
+			max = 100
+		}
+		clamp_variable = {
+			var = nw25_fra_russian_exposure
+			min = 0
+			max = 100
+		}
+		SPM = {
+			if = {
+				limit = {
+					has_country_flag = nw25_fra_spm_signed
+					NOT = {
+						nw25_fra_spm_valid = yes
+					}
+				}
+				clr_country_flag = nw25_fra_spm_signed
+				remove_ideas = nw25_fra_partner
+			}
+		}
+		SYR = {
+			if = {
+				limit = {
+					has_country_flag = nw25_fra_syr_signed
+					NOT = {
+						nw25_fra_syr_valid = yes
+					}
+				}
+				clr_country_flag = nw25_fra_syr_signed
+				remove_ideas = nw25_fra_partner
+			}
+		}
+		LEB = {
+			if = {
+				limit = {
+					has_country_flag = nw25_fra_leb_signed
+					NOT = {
+						nw25_fra_leb_valid = yes
+					}
+				}
+				clr_country_flag = nw25_fra_leb_signed
+				remove_ideas = nw25_fra_partner
+			}
+		}
+		SIE = {
+			if = {
+				limit = {
+					has_country_flag = nw25_fra_sie_signed
+					NOT = {
+						nw25_fra_sie_valid = yes
+					}
+				}
+				clr_country_flag = nw25_fra_sie_signed
+				remove_ideas = nw25_fra_partner
+			}
+		}
+		GAM = {
+			if = {
+				limit = {
+					has_country_flag = nw25_fra_gam_signed
+					NOT = {
+						nw25_fra_gam_valid = yes
+					}
+				}
+				clr_country_flag = nw25_fra_gam_signed
+				remove_ideas = nw25_fra_partner
+			}
+		}
+		GER = {
+			if = {
+				limit = {
+					has_country_flag = nw25_fra_ger_signed
+					NOT = {
+						nw25_fra_ger_valid = yes
+					}
+				}
+				clr_country_flag = nw25_fra_ger_signed
+				remove_ideas = nw25_fra_partner
+			}
+		}
+		set_variable = {
+			nw25_fra_agreements = 0
+		}
+		if = {
+			limit = {
+				SPM = {
+					nw25_fra_spm_active = yes
+				}
+			}
+			add_to_variable = {
+				var = nw25_fra_agreements
+				value = 1
+			}
+		}
+		if = {
+			limit = {
+				SYR = {
+					nw25_fra_syr_active = yes
+				}
+			}
+			add_to_variable = {
+				var = nw25_fra_agreements
+				value = 1
+			}
+		}
+		if = {
+			limit = {
+				LEB = {
+					nw25_fra_leb_active = yes
+				}
+			}
+			add_to_variable = {
+				var = nw25_fra_agreements
+				value = 1
+			}
+		}
+		if = {
+			limit = {
+				SIE = {
+					nw25_fra_sie_active = yes
+				}
+			}
+			add_to_variable = {
+				var = nw25_fra_agreements
+				value = 1
+			}
+		}
+		if = {
+			limit = {
+				GAM = {
+					nw25_fra_gam_active = yes
+				}
+			}
+			add_to_variable = {
+				var = nw25_fra_agreements
+				value = 1
+			}
+		}
+		if = {
+			limit = {
+				SOV = {
+					has_country_flag = nw25_fra_sov_signed
+				}
+				NOT = {
+					nw25_fra_sov_valid = yes
+				}
+			}
+			SOV = {
+				clr_country_flag = nw25_fra_sov_signed
+				remove_ideas = nw25_fra_credit_partner
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = nw25_fra_credit_crisis
+				check_variable = {
+					nw25_fra_russian_exposure > 69
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_idea = nw25_fra_credit_shock
+					}
+				}
+				add_ideas = nw25_fra_credit_shock
+			}
+		}
+		else = {
+			remove_ideas = nw25_fra_credit_shock
+		}
+		if = {
+			limit = {
+				has_completed_focus = NW25_FRA_mediterranean_stability
+				check_variable = {
+					nw25_fra_agreements > 0
+				}
+				check_variable = {
+					nw25_fra_agreements < 3
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_idea = nw25_fra_network
+					}
+				}
+				add_ideas = nw25_fra_network
+			}
+		}
+		else = {
+			remove_ideas = nw25_fra_network
+		}
+		if = {
+			limit = {
+				has_completed_focus = NW25_FRA_mediterranean_stability
+				check_variable = {
+					nw25_fra_agreements > 2
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_idea = nw25_fra_network_full
+					}
+				}
+				add_ideas = nw25_fra_network_full
+			}
+		}
+		else = {
+			remove_ideas = nw25_fra_network_full
+		}
+	}
+}
+
+nw25_sri_refresh = {
+	hidden_effect = {
+		clamp_variable = {
+			var = nw25_sri_council_cohesion
+			min = 0
+			max = 100
+		}
+		clamp_variable = {
+			var = nw25_sri_rural_support
+			min = 0
+			max = 100
+		}
+		SPM = {
+			if = {
+				limit = {
+					has_country_flag = nw25_sri_spm_signed
+					NOT = {
+						nw25_sri_spm_valid = yes
+					}
+				}
+				clr_country_flag = nw25_sri_spm_signed
+				remove_ideas = nw25_sri_partner
+			}
+		}
+		PAP = {
+			if = {
+				limit = {
+					has_country_flag = nw25_sri_pap_signed
+					NOT = {
+						nw25_sri_pap_valid = yes
+					}
+				}
+				clr_country_flag = nw25_sri_pap_signed
+				remove_ideas = nw25_sri_partner
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					nw25_sri_council_cohesion < 40
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_idea = nw25_sri_council_dispute
+					}
+				}
+				add_ideas = nw25_sri_council_dispute
+			}
+		}
+		else = {
+			remove_ideas = nw25_sri_council_dispute
+		}
+		if = {
+			limit = {
+				check_variable = {
+					nw25_sri_rural_support < 30
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_idea = nw25_sri_grain_shortage
+					}
+				}
+				add_ideas = nw25_sri_grain_shortage
+			}
+		}
+		else = {
+			remove_ideas = nw25_sri_grain_shortage
+		}
+		LBV = {
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = nw25_sri_lbv_pending
+					}
+				}
+				clr_country_flag = nw25_sri_lbv_provisional
+			}
+			if = {
+				limit = {
+					has_country_flag = nw25_sri_lbv_signed
+					NOT = {
+						nw25_sri_lbv_active = yes
+					}
+				}
+				clr_country_flag = nw25_sri_lbv_signed
+				remove_ideas = nw25_sri_partner
+			}
+		}
+	}
+}
+
+nw25_eng_refresh = {
+	hidden_effect = {
+		clamp_variable = {
+			var = nw25_eng_fiscal_pressure
+			min = 0
+			max = 100
+		}
+		clamp_variable = {
+			var = nw25_eng_sailor_grievances
+			min = 0
+			max = 100
+		}
+		CAN = {
+			if = {
+				limit = {
+					has_country_flag = nw25_eng_can_signed
+					NOT = {
+						nw25_eng_can_valid = yes
+					}
+				}
+				clr_country_flag = nw25_eng_can_signed
+				remove_ideas = nw25_eng_partner
+			}
+		}
+		AST = {
+			if = {
+				limit = {
+					has_country_flag = nw25_eng_ast_signed
+					NOT = {
+						nw25_eng_ast_valid = yes
+					}
+				}
+				clr_country_flag = nw25_eng_ast_signed
+				remove_ideas = nw25_eng_partner
+			}
+		}
+		NZL = {
+			if = {
+				limit = {
+					has_country_flag = nw25_eng_nzl_signed
+					NOT = {
+						nw25_eng_nzl_valid = yes
+					}
+				}
+				clr_country_flag = nw25_eng_nzl_signed
+				remove_ideas = nw25_eng_partner
+			}
+		}
+		RAJ = {
+			if = {
+				limit = {
+					has_country_flag = nw25_eng_raj_signed
+					NOT = {
+						nw25_eng_raj_valid = yes
+					}
+				}
+				clr_country_flag = nw25_eng_raj_signed
+				remove_ideas = nw25_eng_partner
+			}
+		}
+		LAG = {
+			if = {
+				limit = {
+					has_country_flag = nw25_eng_lag_signed
+					NOT = {
+						nw25_eng_lag_valid = yes
+					}
+				}
+				clr_country_flag = nw25_eng_lag_signed
+				remove_ideas = nw25_eng_partner
+			}
+		}
+		GER = {
+			if = {
+				limit = {
+					has_country_flag = nw25_eng_ger_signed
+					NOT = {
+						nw25_eng_ger_valid = yes
+					}
+				}
+				clr_country_flag = nw25_eng_ger_signed
+				remove_ideas = nw25_eng_partner
+			}
+		}
+		set_variable = {
+			nw25_eng_agreements = 0
+		}
+		if = {
+			limit = {
+				CAN = {
+					nw25_eng_can_active = yes
+				}
+			}
+			add_to_variable = {
+				var = nw25_eng_agreements
+				value = 1
+			}
+		}
+		if = {
+			limit = {
+				AST = {
+					nw25_eng_ast_active = yes
+				}
+			}
+			add_to_variable = {
+				var = nw25_eng_agreements
+				value = 1
+			}
+		}
+		if = {
+			limit = {
+				NZL = {
+					nw25_eng_nzl_active = yes
+				}
+			}
+			add_to_variable = {
+				var = nw25_eng_agreements
+				value = 1
+			}
+		}
+		if = {
+			limit = {
+				RAJ = {
+					nw25_eng_raj_active = yes
+				}
+			}
+			add_to_variable = {
+				var = nw25_eng_agreements
+				value = 1
+			}
+		}
+		set_variable = {
+			nw25_eng_ports = 0
+		}
+		if = {
+			limit = {
+				LAG = {
+					nw25_eng_lag_active = yes
+				}
+			}
+			add_to_variable = {
+				var = nw25_eng_ports
+				value = 1
+			}
+		}
+		if = {
+			limit = {
+				GER = {
+					nw25_eng_ger_active = yes
+				}
+			}
+			add_to_variable = {
+				var = nw25_eng_ports
+				value = 1
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					nw25_eng_fiscal_pressure > 79
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_idea = nw25_eng_pressure
+					}
+				}
+				add_ideas = nw25_eng_pressure
+			}
+		}
+		else = {
+			remove_ideas = nw25_eng_pressure
+		}
+		if = {
+			limit = {
+				check_variable = {
+					nw25_eng_sailor_grievances > 59
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_idea = nw25_eng_fleet_crisis
+					}
+				}
+				add_ideas = nw25_eng_fleet_crisis
+			}
+		}
+		else = {
+			remove_ideas = nw25_eng_fleet_crisis
+		}
+		if = {
+			limit = {
+				check_variable = {
+					nw25_eng_sailor_grievances > 24
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_idea = nw_eng_invergordon_memory
+					}
+				}
+				add_ideas = nw_eng_invergordon_memory
+			}
+		}
+		else = {
+			remove_ideas = nw_eng_invergordon_memory
+		}
+		if = {
+			limit = {
+				has_country_flag = nw25_eng_compact_done
+				check_variable = {
+					nw25_eng_sailor_grievances < 25
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_idea = nw25_eng_fleet_compact
+					}
+				}
+				add_ideas = nw25_eng_fleet_compact
+			}
+		}
+		else = {
+			remove_ideas = nw25_eng_fleet_compact
+		}
+		if = {
+			limit = {
+				has_completed_focus = NW25_ENG_commonwealth_contracts
+				check_variable = {
+					nw25_eng_agreements > 0
+				}
+				check_variable = {
+					nw25_eng_agreements < 3
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_idea = nw25_eng_commonwealth
+					}
+				}
+				add_ideas = nw25_eng_commonwealth
+			}
+		}
+		else = {
+			remove_ideas = nw25_eng_commonwealth
+		}
+		if = {
+			limit = {
+				has_completed_focus = NW25_ENG_commonwealth_contracts
+				check_variable = {
+					nw25_eng_agreements > 2
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_idea = nw25_eng_commonwealth_full
+					}
+				}
+				add_ideas = nw25_eng_commonwealth_full
+			}
+		}
+		else = {
+			remove_ideas = nw25_eng_commonwealth_full
+		}
+		if = {
+			limit = {
+				has_completed_focus = NW25_ENG_commercial_network
+				OR = {
+					check_variable = {
+						nw25_eng_ports > 0
+					}
+					check_variable = {
+						nw25_eng_agreements > 0
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_idea = nw25_eng_commerce
+					}
+				}
+				add_ideas = nw25_eng_commerce
+			}
+		}
+		else = {
+			remove_ideas = nw25_eng_commerce
+		}
+	}
+}
+
+nw25_monthly = {
+	if = {
+		limit = {
+			tag = FRA
+			has_country_flag = nw25_fra_initialized
+		}
+		nw25_fra_refresh = yes
+		if = {
+			limit = {
+				check_variable = {
+					nw25_fra_russian_exposure > 69
+				}
+				SOV = {
+					has_country_flag = nw_rus_war_started
+					has_war = yes
+				}
+				NOT = {
+					has_country_flag = nw25_fra_shock_seen
+				}
+			}
+			set_country_flag = nw25_fra_shock_seen
+			set_country_flag = nw25_fra_credit_crisis
+			add_to_variable = {
+				var = nw25_fra_credit_influence
+				value = -20
+			}
+			clamp_variable = {
+				var = nw25_fra_credit_influence
+				min = 0
+				max = 100
+			}
+			country_event = {
+				id = nw25fra.22
+				days = 1
+			}
+			nw25_fra_refresh = yes
+		}
+		if = {
+			limit = {
+				GER = {
+					has_country_flag = nw_ger_war_started
+				}
+				NOT = {
+					has_country_flag = nw25_fra_ger_notice
+				}
+			}
+			set_country_flag = nw25_fra_ger_notice
+			country_event = {
+				id = nw25fra.20
+				days = 1
+			}
+		}
+	}
+	if = {
+		limit = {
+			tag = SRI
+			has_country_flag = nw25_sri_initialized
+		}
+		nw25_sri_refresh = yes
+		if = {
+			limit = {
+				check_variable = {
+					nw25_sri_rural_support < 20
+				}
+				NOT = {
+					has_country_flag = nw25_sri_grain_cooldown
+				}
+			}
+			set_country_flag = {
+				flag = nw25_sri_grain_cooldown
+				days = 180
+			}
+			country_event = {
+				id = nw25sri.20
+				days = 1
+			}
+		}
+	}
+	if = {
+		limit = {
+			tag = ENG
+			has_country_flag = nw25_eng_initialized
+		}
+		nw25_eng_refresh = yes
+		if = {
+			limit = {
+				check_variable = {
+					nw25_eng_sailor_grievances > 79
+				}
+				NOT = {
+					has_country_flag = nw25_eng_naval_cooldown
+				}
+			}
+			set_country_flag = {
+				flag = nw25_eng_naval_cooldown
+				days = 180
+			}
+			country_event = {
+				id = nw25eng.20
+				days = 1
+			}
+		}
+	}
+}

@@ -1,0 +1,2581 @@
+focus_tree = {
+	# Pixel coordinates; keep palette below the full regular tree.
+	continuous_focus_position = { x = 50 y = 2390 }
+	id = NW14_AUS_tree
+	default = no
+	country = {
+		factor = 0
+		modifier = {
+			add = 200000
+			tag = AUS
+		}
+	}
+
+	focus = {
+		id = NW14_AUS_four_crowns
+		icon = GFX_goal_generic_political_pressure
+		x = 6
+		y = 0
+		cost = 5
+
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_political_power = 25
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_AUS_federal_accounts
+		icon = GFX_goal_generic_political_pressure
+		x = -2
+		y = 1
+		relative_position_id = NW14_AUS_four_crowns
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_AUS_four_crowns
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_to_variable = {
+				var = nw_federal_trust
+				value = 10
+			}
+			clamp_variable = {
+				var = nw_federal_trust
+				min = 0
+				max = 100
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_AUS_crown_conference
+		icon = GFX_goal_generic_political_pressure
+		x = 2
+		y = 1
+		relative_position_id = NW14_AUS_four_crowns
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_AUS_four_crowns
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_to_variable = {
+				var = nw_federal_trust
+				value = 10
+			}
+			clamp_variable = {
+				var = nw_federal_trust
+				min = 0
+				max = 100
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_AUS_language_registry
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = NW14_AUS_crown_conference
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_AUS_crown_conference
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_to_variable = {
+				var = nw_federal_trust
+				value = 10
+			}
+			clamp_variable = {
+				var = nw_federal_trust
+				min = 0
+				max = 100
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_AUS_federal_choice
+		icon = GFX_goal_generic_political_pressure
+		x = -2
+		y = 1
+		relative_position_id = NW14_AUS_language_registry
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_AUS_federal_accounts
+		}
+		prerequisite = {
+			focus = NW14_AUS_language_registry
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_political_power = 35
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_AUS_renewed_compact
+		icon = GFX_goal_generic_political_pressure
+		x = -4
+		y = 2
+		relative_position_id = NW14_AUS_federal_choice
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_AUS_federal_choice
+		}
+		mutually_exclusive = {
+			focus = NW14_AUS_vienna_directive
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			set_country_flag = nw_federal_compact
+			add_to_variable = {
+				var = nw_federal_trust
+				value = 10
+			}
+			clamp_variable = {
+				var = nw_federal_trust
+				min = 0
+				max = 100
+			}
+		}
+
+		ai_will_do = {
+			factor = 30
+		}
+	}
+
+	focus = {
+		id = NW14_AUS_budapest_terms
+		icon = GFX_goal_generic_political_pressure
+		x = -2
+		y = 1
+		relative_position_id = NW14_AUS_renewed_compact
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_AUS_renewed_compact
+		}
+		available = {
+			HUN = {
+				is_subject_of = AUS
+			}
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			HUN = {
+				country_event = {
+					id = nw14.40
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_AUS_prague_terms
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = NW14_AUS_renewed_compact
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_AUS_renewed_compact
+		}
+		available = {
+			CZE = {
+				is_subject_of = AUS
+			}
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			CZE = {
+				country_event = {
+					id = nw14.41
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_AUS_slavonian_terms
+		icon = GFX_goal_generic_political_pressure
+		x = 2
+		y = 1
+		relative_position_id = NW14_AUS_renewed_compact
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_AUS_renewed_compact
+		}
+		available = {
+			CRO = {
+				is_subject_of = AUS
+			}
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			CRO = {
+				country_event = {
+					id = nw14.42
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_AUS_federal_ratification
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = NW14_AUS_prague_terms
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_AUS_budapest_terms
+		}
+		prerequisite = {
+			focus = NW14_AUS_prague_terms
+		}
+		prerequisite = {
+			focus = NW14_AUS_slavonian_terms
+		}
+		available = {
+			HUN = {
+				is_subject_of = AUS
+				has_country_flag = nw_federal_consent
+			}
+			CZE = {
+				is_subject_of = AUS
+				has_country_flag = nw_federal_consent
+			}
+			CRO = {
+				is_subject_of = AUS
+				has_country_flag = nw_federal_consent
+			}
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			set_country_flag = nw_federal_ratified
+			remove_ideas = nw_aus_federal_bargain
+			if = {
+				limit = {
+					has_idea = nw14_federal_admin
+				}
+				add_stability = 0.025
+			}
+			else = {
+				add_ideas = nw14_federal_admin
+			}
+			every_subject_country = {
+				limit = {
+					OR = {
+						tag = HUN
+						tag = CZE
+						tag = CRO
+					}
+				}
+				if = {
+					limit = {
+						has_idea = nw14_federal_admin
+					}
+					add_stability = 0.025
+				}
+				else = {
+					add_ideas = nw14_federal_admin
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_AUS_vienna_directive
+		icon = GFX_goal_generic_political_pressure
+		x = 4
+		y = 2
+		relative_position_id = NW14_AUS_federal_choice
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_AUS_federal_choice
+		}
+		mutually_exclusive = {
+			focus = NW14_AUS_renewed_compact
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			set_country_flag = nw_federal_central
+			add_to_variable = {
+				var = nw_federal_trust
+				value = -15
+			}
+			clamp_variable = {
+				var = nw_federal_trust
+				min = 0
+				max = 100
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_AUS_common_inspectorate
+		icon = GFX_goal_generic_political_pressure
+		x = -2
+		y = 1
+		relative_position_id = NW14_AUS_vienna_directive
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_AUS_vienna_directive
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_to_variable = {
+				var = nw_federal_trust
+				value = -10
+			}
+			clamp_variable = {
+				var = nw_federal_trust
+				min = 0
+				max = 100
+			}
+			add_political_power = 65
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_AUS_uniform_tariffs
+		icon = GFX_goal_generic_production
+		x = 2
+		y = 1
+		relative_position_id = NW14_AUS_vienna_directive
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_AUS_vienna_directive
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = nw14_trade
+				}
+				add_political_power = 35
+			}
+			else = {
+				add_ideas = nw14_trade
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_AUS_army_statute
+		icon = GFX_goal_generic_army_doctrines
+		x = 2
+		y = 1
+		relative_position_id = NW14_AUS_common_inspectorate
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_AUS_common_inspectorate
+		}
+		prerequisite = {
+			focus = NW14_AUS_uniform_tariffs
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			army_experience = 20
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_AUS_limited_centralism
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = NW14_AUS_army_statute
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_AUS_army_statute
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			remove_ideas = nw_aus_federal_bargain
+			if = {
+				limit = {
+					has_idea = nw14_crown_admin
+				}
+				add_political_power = 35
+			}
+			else = {
+				add_ideas = nw14_crown_admin
+			}
+			set_country_flag = nw_federal_settled
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_AUS_danube_commission
+		icon = GFX_goal_generic_production
+		x = 18
+		y = 0
+		cost = 5
+
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = nw14_trade
+				}
+				add_political_power = 35
+			}
+			else = {
+				add_ideas = nw14_trade
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_AUS_vienna_works
+		icon = GFX_goal_generic_construct_civ_factory
+		x = -2
+		y = 1
+		relative_position_id = NW14_AUS_danube_commission
+		cost = 7
+
+		prerequisite = {
+			focus = NW14_AUS_danube_commission
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_AUS_bohemian_tools
+		icon = GFX_goal_generic_political_pressure
+		x = 2
+		y = 1
+		relative_position_id = NW14_AUS_danube_commission
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_AUS_danube_commission
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NW14_research
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+			if = {
+				limit = {
+					CZE = {
+						is_subject_of = AUS
+					}
+				}
+				CZE = {
+					add_tech_bonus = {
+						name = NW14_research
+						bonus = 0.5
+						uses = 1
+						category = industry
+					}
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_AUS_adriatic_yards
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 0
+		y = 1
+		relative_position_id = NW14_AUS_vienna_works
+		cost = 7
+
+		prerequisite = {
+			focus = NW14_AUS_vienna_works
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			if = {
+				limit = {
+					any_owned_state = {
+						is_core_of = ROOT
+						is_controlled_by = ROOT
+						is_coastal = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_core_of = ROOT
+						is_coastal = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			else = {
+				navy_experience = 15
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_AUS_albanian_credit
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = NW14_AUS_bohemian_tools
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_AUS_bohemian_tools
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			if = {
+				limit = {
+					ALB = { exists = yes }
+					ALB = {
+						is_subject = no
+					}
+				}
+				ALB = {
+					country_event = {
+						id = nw14.45
+					}
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_AUS_rail_clearing
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 2
+		y = 1
+		relative_position_id = NW14_AUS_adriatic_yards
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_AUS_adriatic_yards
+		}
+		prerequisite = {
+			focus = NW14_AUS_albanian_credit
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			if = {
+				limit = {
+					any_owned_state = {
+						is_core_of = ROOT
+						is_controlled_by = ROOT
+						infrastructure < 5
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_core_of = ROOT
+						infrastructure < 5
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			add_political_power = 15
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_AUS_social_insurance
+		icon = GFX_goal_generic_political_pressure
+		x = -2
+		y = 1
+		relative_position_id = NW14_AUS_rail_clearing
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_AUS_rail_clearing
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = nw14_labour
+				}
+				add_stability = 0.025
+			}
+			else = {
+				add_ideas = nw14_labour
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_AUS_federal_patents
+		icon = GFX_goal_generic_scientific_exchange
+		x = 2
+		y = 1
+		relative_position_id = NW14_AUS_rail_clearing
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_AUS_rail_clearing
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NW14_research
+				bonus = 0.5
+				uses = 1
+				category = electronics
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_AUS_public_procurement
+		icon = GFX_goal_generic_political_pressure
+		x = 2
+		y = 1
+		relative_position_id = NW14_AUS_social_insurance
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_AUS_social_insurance
+		}
+		prerequisite = {
+			focus = NW14_AUS_federal_patents
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_to_variable = {
+				var = nw_federal_trust
+				value = 10
+			}
+			clamp_variable = {
+				var = nw_federal_trust
+				min = 0
+				max = 100
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_AUS_danube_workshop
+		icon = GFX_goal_generic_production
+		x = 0
+		y = 1
+		relative_position_id = NW14_AUS_public_procurement
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_AUS_public_procurement
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = nw14_production
+				}
+				add_tech_bonus = {
+					name = NW14_research
+					bonus = 0.5
+					uses = 1
+					category = industry
+				}
+			}
+			else = {
+				add_ideas = nw14_production
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_AUS_federal_staff
+		icon = GFX_goal_generic_army_doctrines
+		x = 27
+		y = 0
+		cost = 5
+
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			army_experience = 20
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_AUS_mountain_schools
+		icon = GFX_goal_generic_army_doctrines
+		x = -2
+		y = 1
+		relative_position_id = NW14_AUS_federal_staff
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_AUS_federal_staff
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NW14_research
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_AUS_common_artillery
+		icon = GFX_goal_generic_army_doctrines
+		x = 2
+		y = 1
+		relative_position_id = NW14_AUS_federal_staff
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_AUS_federal_staff
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NW14_research
+				bonus = 0.5
+				uses = 1
+				category = artillery
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_AUS_adriatic_patrol
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = 0
+		y = 1
+		relative_position_id = NW14_AUS_mountain_schools
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_AUS_mountain_schools
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			navy_experience = 20
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_AUS_air_liaison
+		icon = GFX_goal_generic_build_airforce
+		x = 0
+		y = 1
+		relative_position_id = NW14_AUS_common_artillery
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_AUS_common_artillery
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NW14_research
+				bonus = 0.5
+				uses = 1
+				category = light_air
+			}
+			remove_ideas = nw_aus_many_languages
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_AUS_reserve_muster
+		icon = GFX_goal_generic_army_doctrines
+		x = 2
+		y = 1
+		relative_position_id = NW14_AUS_adriatic_patrol
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_AUS_adriatic_patrol
+		}
+		prerequisite = {
+			focus = NW14_AUS_air_liaison
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = nw14_discipline
+				}
+				army_experience = 15
+			}
+			else = {
+				add_ideas = nw14_discipline
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_AUS_federal_academy
+		icon = GFX_goal_generic_scientific_exchange
+		x = 0
+		y = 1
+		relative_position_id = NW14_AUS_reserve_muster
+		cost = 10
+
+		prerequisite = {
+			focus = NW14_AUS_reserve_muster
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			if = {
+				limit = {
+					amount_research_slots < 6
+				}
+				add_research_slot = 1
+			}
+			else = {
+				add_tech_bonus = {
+					name = NW14_research
+					bonus = 0.5
+					uses = 1
+					category = industry
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_AUS_ferdinands_audience
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = NW14_AUS_federal_academy
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_AUS_federal_academy
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_to_variable = {
+				var = nw_federal_trust
+				value = 10
+			}
+			clamp_variable = {
+				var = nw_federal_trust
+				min = 0
+				max = 100
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_AUS_otto_preparation
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = NW14_AUS_ferdinands_audience
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_AUS_ferdinands_audience
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_ideas = nw14_succession
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_AUS_federation_endures
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 4
+		relative_position_id = NW14_AUS_federal_choice
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_AUS_federal_choice
+		}
+		available = {
+			OR = {
+				has_completed_focus = NW14_AUS_federal_ratification
+				has_completed_focus = NW14_AUS_limited_centralism
+			}
+			has_completed_focus = NW14_AUS_otto_preparation
+			has_completed_focus = NW14_AUS_danube_workshop
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = nw14_federal_admin
+				}
+				add_stability = 0.025
+			}
+			else = {
+				add_ideas = nw14_federal_admin
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_AUS_economy_01
+		icon = GFX_goal_generic_production
+		x = 0
+		y = 2
+		relative_position_id = NW14_AUS_danube_workshop
+		cost = 3
+
+		prerequisite = {
+			focus = NW14_AUS_danube_workshop
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_political_power = 35
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_AUS_economy_02
+		icon = GFX_goal_generic_construct_infrastructure
+		x = -2
+		y = 1
+		relative_position_id = NW20_AUS_economy_01
+		cost = 7
+
+		prerequisite = {
+			focus = NW20_AUS_economy_01
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			if = {
+				limit = {
+					any_owned_state = {
+						is_core_of = ROOT
+						is_controlled_by = ROOT
+						infrastructure < 5
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_core_of = ROOT
+						infrastructure < 5
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			else = {
+				add_political_power = 25
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_AUS_economy_03
+		icon = GFX_goal_generic_scientific_exchange
+		x = 2
+		y = 1
+		relative_position_id = NW20_AUS_economy_01
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_AUS_economy_01
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NW20_research
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_AUS_economy_04
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 0
+		y = 1
+		relative_position_id = NW20_AUS_economy_02
+		cost = 7
+
+		prerequisite = {
+			focus = NW20_AUS_economy_02
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			if = {
+				limit = {
+					any_owned_state = {
+						is_core_of = ROOT
+						is_controlled_by = ROOT
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_core_of = ROOT
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			else = {
+				add_political_power = 25
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_AUS_economy_05
+		icon = GFX_goal_generic_production
+		x = 0
+		y = 1
+		relative_position_id = NW20_AUS_economy_03
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_AUS_economy_03
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = nw20_tools
+				days = 365
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_AUS_economy_06
+		icon = GFX_goal_generic_political_pressure
+		x = 2
+		y = 1
+		relative_position_id = NW20_AUS_economy_04
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_AUS_economy_04
+		}
+		prerequisite = {
+			focus = NW20_AUS_economy_05
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_stability = 0.03
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_AUS_economy_07
+		icon = GFX_goal_generic_construct_mil_factory
+		x = -2
+		y = 1
+		relative_position_id = NW20_AUS_economy_06
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_AUS_economy_06
+		}
+		mutually_exclusive = {
+			focus = NW20_AUS_economy_08
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = nw20_contracts
+				days = 365
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_AUS_economy_08
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 2
+		y = 1
+		relative_position_id = NW20_AUS_economy_06
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_AUS_economy_06
+		}
+		mutually_exclusive = {
+			focus = NW20_AUS_economy_07
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = nw20_workshops
+				days = 365
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_AUS_economy_09
+		icon = GFX_goal_generic_political_pressure
+		x = 2
+		y = 1
+		relative_position_id = NW20_AUS_economy_07
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_AUS_economy_07
+			focus = NW20_AUS_economy_08
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_political_power = 35
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_AUS_economy_10
+		icon = GFX_goal_generic_scientific_exchange
+		x = -2
+		y = 1
+		relative_position_id = NW20_AUS_economy_09
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_AUS_economy_09
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NW20_research
+				bonus = 0.5
+				uses = 1
+				category = electronics
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_AUS_economy_11
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 2
+		y = 1
+		relative_position_id = NW20_AUS_economy_09
+		cost = 7
+
+		prerequisite = {
+			focus = NW20_AUS_economy_09
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			if = {
+				limit = {
+					any_owned_state = {
+						is_core_of = ROOT
+						is_controlled_by = ROOT
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_core_of = ROOT
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			else = {
+				add_political_power = 25
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_AUS_economy_12
+		icon = GFX_goal_generic_production
+		x = 2
+		y = 1
+		relative_position_id = NW20_AUS_economy_10
+		cost = 7
+
+		prerequisite = {
+			focus = NW20_AUS_economy_10
+		}
+		prerequisite = {
+			focus = NW20_AUS_economy_11
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = nw20_tools
+				days = 365
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_AUS_land_01
+		icon = GFX_goal_generic_army_doctrines
+		x = 36
+		y = 0
+		cost = 3
+
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			army_experience = 15
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_AUS_land_02
+		icon = GFX_goal_generic_army_doctrines
+		x = -2
+		y = 1
+		relative_position_id = NW20_AUS_land_01
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_AUS_land_01
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = nw20_training
+				days = 365
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_AUS_land_03
+		icon = GFX_goal_generic_army_doctrines
+		x = 2
+		y = 1
+		relative_position_id = NW20_AUS_land_01
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_AUS_land_01
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NW20_research
+				bonus = 0.5
+				uses = 1
+				category = artillery
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_AUS_land_04
+		icon = GFX_goal_generic_army_doctrines
+		x = 0
+		y = 1
+		relative_position_id = NW20_AUS_land_02
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_AUS_land_02
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = support_equipment_1
+				amount = 100
+				producer = ROOT
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_AUS_land_05
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 0
+		y = 1
+		relative_position_id = NW20_AUS_land_03
+		cost = 7
+
+		prerequisite = {
+			focus = NW20_AUS_land_03
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			if = {
+				limit = {
+					any_owned_state = {
+						is_core_of = ROOT
+						is_controlled_by = ROOT
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_core_of = ROOT
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			else = {
+				add_political_power = 25
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_AUS_land_06
+		icon = GFX_goal_generic_army_doctrines
+		x = 2
+		y = 1
+		relative_position_id = NW20_AUS_land_04
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_AUS_land_04
+		}
+		prerequisite = {
+			focus = NW20_AUS_land_05
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			army_experience = 15
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_AUS_land_07
+		icon = GFX_goal_generic_army_doctrines
+		x = -2
+		y = 1
+		relative_position_id = NW20_AUS_land_06
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_AUS_land_06
+		}
+		mutually_exclusive = {
+			focus = NW20_AUS_land_08
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = motorized_equipment_1
+				amount = 100
+				producer = ROOT
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_AUS_land_08
+		icon = GFX_goal_generic_army_doctrines
+		x = 2
+		y = 1
+		relative_position_id = NW20_AUS_land_06
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_AUS_land_06
+		}
+		mutually_exclusive = {
+			focus = NW20_AUS_land_07
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = nw20_supply
+				days = 365
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_AUS_land_09
+		icon = GFX_goal_generic_army_doctrines
+		x = 2
+		y = 1
+		relative_position_id = NW20_AUS_land_07
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_AUS_land_07
+			focus = NW20_AUS_land_08
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			army_experience = 15
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_AUS_land_10
+		icon = GFX_goal_generic_army_doctrines
+		x = -2
+		y = 1
+		relative_position_id = NW20_AUS_land_09
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_AUS_land_09
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NW20_research
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_AUS_land_11
+		icon = GFX_goal_generic_army_doctrines
+		x = 2
+		y = 1
+		relative_position_id = NW20_AUS_land_09
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_AUS_land_09
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NW20_research
+				bonus = 0.5
+				uses = 1
+				category = armor
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_AUS_land_12
+		icon = GFX_goal_generic_army_doctrines
+		x = 2
+		y = 1
+		relative_position_id = NW20_AUS_land_10
+		cost = 7
+
+		prerequisite = {
+			focus = NW20_AUS_land_10
+		}
+		prerequisite = {
+			focus = NW20_AUS_land_11
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = nw20_training
+				days = 365
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_AUS_flight_01
+		icon = GFX_goal_generic_build_airforce
+		x = 56
+		y = 0
+		cost = 3
+
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			air_experience = 15
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_AUS_flight_02
+		icon = GFX_goal_generic_build_airforce
+		x = -2
+		y = 1
+		relative_position_id = NW20_AUS_flight_01
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_AUS_flight_01
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NW20_research
+				bonus = 0.5
+				uses = 1
+				category = light_air
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_AUS_flight_03
+		icon = GFX_goal_generic_build_airforce
+		x = 2
+		y = 1
+		relative_position_id = NW20_AUS_flight_01
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_AUS_flight_01
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NW20_research
+				bonus = 0.5
+				uses = 1
+				category = tactical_bomber
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_AUS_flight_04
+		icon = GFX_goal_generic_build_airforce
+		x = 0
+		y = 1
+		relative_position_id = NW20_AUS_flight_02
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_AUS_flight_02
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = nw20_flight
+				days = 365
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_AUS_flight_05
+		icon = GFX_goal_generic_scientific_exchange
+		x = 0
+		y = 1
+		relative_position_id = NW20_AUS_flight_03
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_AUS_flight_03
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NW20_research
+				bonus = 0.5
+				uses = 1
+				category = electronics
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_AUS_flight_06
+		icon = GFX_goal_generic_build_airforce
+		x = 2
+		y = 1
+		relative_position_id = NW20_AUS_flight_04
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_AUS_flight_04
+		}
+		prerequisite = {
+			focus = NW20_AUS_flight_05
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			air_experience = 15
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_AUS_flight_07
+		icon = GFX_goal_generic_construct_mil_factory
+		x = -2
+		y = 1
+		relative_position_id = NW20_AUS_flight_06
+		cost = 7
+
+		prerequisite = {
+			focus = NW20_AUS_flight_06
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			if = {
+				limit = {
+					any_owned_state = {
+						is_core_of = ROOT
+						is_controlled_by = ROOT
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_core_of = ROOT
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			else = {
+				add_political_power = 25
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_AUS_flight_08
+		icon = GFX_goal_generic_build_airforce
+		x = 2
+		y = 1
+		relative_position_id = NW20_AUS_flight_06
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_AUS_flight_06
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			air_experience = 15
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_AUS_flight_09
+		icon = GFX_goal_generic_build_airforce
+		x = 0
+		y = 1
+		relative_position_id = NW20_AUS_flight_07
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_AUS_flight_07
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = nw20_flight
+				days = 365
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_AUS_flight_10
+		icon = GFX_goal_generic_build_airforce
+		x = 2
+		y = 1
+		relative_position_id = NW20_AUS_flight_09
+		cost = 7
+
+		prerequisite = {
+			focus = NW20_AUS_flight_09
+		}
+		prerequisite = {
+			focus = NW20_AUS_flight_08
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			air_experience = 15
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_AUS_maritime_01
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = 46
+		y = 0
+		cost = 3
+
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			navy_experience = 15
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_AUS_maritime_02
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = -2
+		y = 1
+		relative_position_id = NW20_AUS_maritime_01
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_AUS_maritime_01
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			navy_experience = 15
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_AUS_maritime_03
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = 2
+		y = 1
+		relative_position_id = NW20_AUS_maritime_01
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_AUS_maritime_01
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NW20_research
+				bonus = 0.5
+				uses = 1
+				category = dd_tech
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_AUS_maritime_04
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = 0
+		y = 1
+		relative_position_id = NW20_AUS_maritime_02
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_AUS_maritime_02
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = convoy
+				amount = 15
+				producer = ROOT
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_AUS_maritime_05
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 0
+		y = 1
+		relative_position_id = NW20_AUS_maritime_03
+		cost = 7
+
+		prerequisite = {
+			focus = NW20_AUS_maritime_03
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			if = {
+				limit = {
+					any_owned_state = {
+						is_core_of = ROOT
+						is_controlled_by = ROOT
+						is_coastal = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_core_of = ROOT
+						is_coastal = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			else = {
+				add_political_power = 25
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_AUS_maritime_06
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = 2
+		y = 1
+		relative_position_id = NW20_AUS_maritime_04
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_AUS_maritime_04
+		}
+		prerequisite = {
+			focus = NW20_AUS_maritime_05
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			navy_experience = 15
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_AUS_maritime_07
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = -2
+		y = 1
+		relative_position_id = NW20_AUS_maritime_06
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_AUS_maritime_06
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = nw20_shipbuilding
+				days = 365
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_AUS_maritime_08
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = 2
+		y = 1
+		relative_position_id = NW20_AUS_maritime_07
+		cost = 7
+
+		prerequisite = {
+			focus = NW20_AUS_maritime_07
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			navy_experience = 15
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_AUS_compact_records
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 2
+		relative_position_id = NW14_AUS_federal_ratification
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_AUS_federal_ratification
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_political_power = 35
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_AUS_compact_schools
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = NW20_AUS_compact_records
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_AUS_compact_records
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NW20_research
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_AUS_compact_review
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = NW20_AUS_compact_schools
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_AUS_compact_schools
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_stability = 0.03
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_AUS_central_records
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = NW14_AUS_limited_centralism
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_AUS_limited_centralism
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_political_power = 35
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_AUS_central_training
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = NW20_AUS_central_records
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_AUS_central_records
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NW20_research
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_AUS_central_review
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = NW20_AUS_central_training
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_AUS_central_training
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_stability = 0.03
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+}

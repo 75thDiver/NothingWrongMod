@@ -1,0 +1,5 @@
+# Nothing Wrong 0.14: initial mechanics, after native scenario setup.
+GER = { nw14_ger_init = yes set_party_name = { ideology = democratic name = NW14_GER_start_democratic long_name = NW14_GER_start_democratic_long } set_party_name = { ideology = communism name = NW14_kpd_party long_name = NW14_kpd_party_long } load_focus_tree = { tree = NW14_GER_tree keep_completed = no } }
+SOV = { set_variable = { nw_health = 45 } set_variable = { nw_trust = 45 } set_variable = { nw_army_loyalty = 45 } set_variable = { nw_opposition = 0 } load_focus_tree = { tree = NW14_SOV_tree keep_completed = no } }
+AUS = { set_variable = { nw_federal_trust = 50 } load_focus_tree = { tree = NW14_AUS_tree keep_completed = no } }
+HUN = { set_variable = { nw_hungarian_trust = 45 } load_focus_tree = { tree = NW14_HUN_tree keep_completed = no } }

@@ -1,0 +1,23 @@
+nw25_fra_politics = {
+	icon = generic_political_actions
+	visible = {
+		tag = FRA
+		has_country_flag = nw25_fra_initialized
+	}
+}
+
+nw25_sri_politics = {
+	icon = generic_political_actions
+	visible = {
+		tag = SRI
+		has_country_flag = nw25_sri_initialized
+	}
+}
+
+nw25_eng_politics = {
+	icon = generic_political_actions
+	visible = {
+		tag = ENG
+		has_country_flag = nw25_eng_initialized
+	}
+}

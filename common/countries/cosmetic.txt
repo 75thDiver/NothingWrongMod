@@ -1,0 +1,30 @@
+# Scenario cosmetic identities; never place these in colors.txt.
+NW_MANCHURIA = { color = rgb { 183 164 111 } color_ui = rgb { 225 203 145 } }
+
+NW_VENETIA = { color = rgb { 115 75 84 } color_ui = rgb { 153 109 119 } }
+
+NW_SARDINIA = { color = rgb { 70 112 145 } color_ui = rgb { 102 148 181 } }
+
+NW_HABSBURG = { color = rgb { 211 197 153 } color_ui = rgb { 243 226 175 } }
+
+NW_POLISH_KINGDOM = {
+	color = rgb { 214 102 139 }
+	color_ui = rgb { 255 120 138 }
+}
+
+NW_FINNISH_DUCHY = {
+	color = rgb { 205 212 228 }
+	color_ui = rgb { 255 255 255 }
+}
+# NW14 COSMETICS
+NW_KIRILL = { color = rgb { 30 72 46 } color_ui = rgb { 62 114 77 } }
+NW_GER_CROWN = { color = rgb { 110 110 110 } color_ui = rgb { 110 110 110 } }
+NW_RUS_CROWN = { color = rgb { 82 111 70 } color_ui = rgb { 82 111 70 } }
+NW_GER_CONSTITUTION = {
+	color = HSV { 0.1 0.15 0.4 }
+	color_ui = rgb { 138 155 116 }
+}
+NW_GER_SOCIALIST = { color = rgb { 143 55 50 } color_ui = rgb { 143 55 50 } }
+NW_RUS_REPUBLIC = { color = rgb { 30 72 46 } color_ui = rgb { 62 114 77 } }
+NW_RUS_SOVIETS = { color = rgb { 135 53 48 } color_ui = rgb { 135 53 48 } }
+NW_RUS_BLACK = { color = rgb { 30 72 46 } color_ui = rgb { 62 114 77 } }

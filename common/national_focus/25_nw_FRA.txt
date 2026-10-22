@@ -1,0 +1,602 @@
+focus_tree = {
+	id = NW25_FRA_tree
+	country = {
+		factor = 0
+		modifier = {
+			add = 200000
+			tag = FRA
+		}
+	}
+	default = no
+	continuous_focus_position = { x = 50 y = 1090 }
+
+	focus = {
+		id = NW25_FRA_state_council
+		icon = GFX_goal_generic_political_pressure
+		x = 4
+		y = 0
+		cost = 5
+
+		available = {
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_political_power = 25
+			nw25_fra_refresh = yes
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW25_FRA_provincial_inquiry
+		icon = GFX_goal_generic_national_unity
+		x = 0
+		y = 1
+		relative_position_id = NW25_FRA_state_council
+		cost = 8
+
+		prerequisite = {
+			focus = NW25_FRA_state_council
+		}
+		available = {
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			country_event = {
+				id = nw25fra.1
+				days = 1
+			}
+			nw25_fra_refresh = yes
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW25_FRA_agreement_with_notables
+		icon = GFX_goal_generic_national_unity
+		x = -2
+		y = 1
+		relative_position_id = NW25_FRA_provincial_inquiry
+		cost = 8
+
+		prerequisite = {
+			focus = NW25_FRA_provincial_inquiry
+		}
+		mutually_exclusive = {
+			focus = NW25_FRA_executive_directives
+		}
+		available = {
+			has_country_flag = nw25_fra_notables
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_stability = 0.04
+			add_timed_idea = {
+				idea = nw25_investment_cost
+				days = 90
+			}
+			nw25_fra_refresh = yes
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW25_FRA_executive_directives
+		icon = GFX_goal_generic_political_pressure
+		x = 2
+		y = 1
+		relative_position_id = NW25_FRA_provincial_inquiry
+		cost = 8
+
+		prerequisite = {
+			focus = NW25_FRA_provincial_inquiry
+		}
+		mutually_exclusive = {
+			focus = NW25_FRA_agreement_with_notables
+		}
+		available = {
+			has_country_flag = nw25_fra_directive_choice
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_political_power = 50
+			add_stability = -0.03
+			nw25_fra_refresh = yes
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW25_FRA_enduring_state
+		icon = GFX_goal_generic_national_unity
+		x = 0
+		y = 3
+		relative_position_id = NW25_FRA_provincial_inquiry
+		cost = 10
+
+		prerequisite = {
+			focus = NW25_FRA_agreement_with_notables
+			focus = NW25_FRA_executive_directives
+		}
+		available = {
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			remove_ideas = nw_fra_leagues_and_front
+			if = {
+				limit = {
+					has_completed_focus = NW25_FRA_agreement_with_notables
+				}
+				add_ideas = nw25_fra_compromise
+			}
+			else = {
+				add_ideas = nw25_fra_directives
+			}
+			nw25_fra_refresh = yes
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW25_FRA_bond_registry
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 13
+		y = 0
+		cost = 5
+
+		available = {
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_political_power = 15
+			nw25_fra_refresh = yes
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW25_FRA_russian_accounts
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 0
+		y = 1
+		relative_position_id = NW25_FRA_bond_registry
+		cost = 8
+
+		prerequisite = {
+			focus = NW25_FRA_bond_registry
+		}
+		available = {
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			nw25_fra_sov_offer = yes
+			nw25_fra_refresh = yes
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW25_FRA_reinvest_in_russia
+		icon = GFX_goal_generic_construct_civ_factory
+		x = -2
+		y = 1
+		relative_position_id = NW25_FRA_russian_accounts
+		cost = 10
+
+		prerequisite = {
+			focus = NW25_FRA_russian_accounts
+		}
+		mutually_exclusive = {
+			focus = NW25_FRA_diversify_capital
+		}
+		available = {
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			remove_ideas = nw_fra_paying_bonds
+			add_ideas = nw25_fra_eastern_market
+			add_to_variable = {
+				var = nw25_fra_credit_influence
+				value = 15
+			}
+			clamp_variable = {
+				var = nw25_fra_credit_influence
+				min = 0
+				max = 100
+			}
+			add_to_variable = {
+				var = nw25_fra_russian_exposure
+				value = 20
+			}
+			clamp_variable = {
+				var = nw25_fra_russian_exposure
+				min = 0
+				max = 100
+			}
+			nw25_fra_refresh = yes
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW25_FRA_diversify_capital
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 2
+		y = 1
+		relative_position_id = NW25_FRA_russian_accounts
+		cost = 10
+
+		prerequisite = {
+			focus = NW25_FRA_russian_accounts
+		}
+		mutually_exclusive = {
+			focus = NW25_FRA_reinvest_in_russia
+		}
+		available = {
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			remove_ideas = nw_fra_paying_bonds
+			add_ideas = nw25_fra_resilience
+			add_to_variable = {
+				var = nw25_fra_russian_exposure
+				value = -25
+			}
+			clamp_variable = {
+				var = nw25_fra_russian_exposure
+				min = 0
+				max = 100
+			}
+			add_to_variable = {
+				var = nw25_fra_credit_influence
+				value = -10
+			}
+			clamp_variable = {
+				var = nw25_fra_credit_influence
+				min = 0
+				max = 100
+			}
+			nw25_fra_refresh = yes
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW25_FRA_continental_balance
+		icon = GFX_goal_generic_demand_territory
+		x = 23
+		y = 0
+		cost = 5
+
+		available = {
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_political_power = 20
+			nw25_fra_refresh = yes
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW25_FRA_german_industry
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 0
+		y = 1
+		relative_position_id = NW25_FRA_continental_balance
+		cost = 8
+
+		prerequisite = {
+			focus = NW25_FRA_continental_balance
+		}
+		available = {
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_to_variable = {
+				var = nw25_fra_credit_influence
+				value = 5
+			}
+			clamp_variable = {
+				var = nw25_fra_credit_influence
+				min = 0
+				max = 100
+			}
+			nw25_fra_refresh = yes
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW25_FRA_customs_pressure
+		icon = GFX_goal_generic_political_pressure
+		x = -2
+		y = 1
+		relative_position_id = NW25_FRA_german_industry
+		cost = 8
+
+		prerequisite = {
+			focus = NW25_FRA_german_industry
+		}
+		mutually_exclusive = {
+			focus = NW25_FRA_open_channels
+		}
+		available = {
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = nw25_tariff_cost
+				days = 180
+			}
+			if = {
+				limit = {
+					GER = {
+						exists = yes
+					}
+				}
+				GER = {
+					country_event = {
+						id = nw25fra.15
+						days = 1
+					}
+				}
+			}
+			nw25_fra_refresh = yes
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW25_FRA_open_channels
+		icon = GFX_goal_generic_national_unity
+		x = 2
+		y = 1
+		relative_position_id = NW25_FRA_german_industry
+		cost = 8
+
+		prerequisite = {
+			focus = NW25_FRA_german_industry
+		}
+		mutually_exclusive = {
+			focus = NW25_FRA_customs_pressure
+		}
+		available = {
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			nw25_fra_ger_offer = yes
+			nw25_fra_refresh = yes
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW25_FRA_alsace_administration
+		icon = GFX_goal_generic_national_unity
+		x = 0
+		y = 3
+		relative_position_id = NW25_FRA_german_industry
+		cost = 8
+
+		prerequisite = {
+			focus = NW25_FRA_german_industry
+		}
+		available = {
+			owns_state = 28
+			controls_state = 28
+			has_country_flag = nw25_fra_alsace_returned
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			country_event = {
+				id = nw25fra.21
+				days = 1
+			}
+			nw25_fra_refresh = yes
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW25_FRA_mediterranean_consultation
+		icon = GFX_goal_generic_demand_territory
+		x = 33
+		y = 0
+		cost = 5
+
+		available = {
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_political_power = 20
+			nw25_fra_refresh = yes
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW25_FRA_protect_piedmont
+		icon = GFX_goal_generic_national_unity
+		x = -2
+		y = 1
+		relative_position_id = NW25_FRA_mediterranean_consultation
+		cost = 8
+
+		prerequisite = {
+			focus = NW25_FRA_mediterranean_consultation
+		}
+		available = {
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			nw25_fra_spm_offer = yes
+			nw25_fra_refresh = yes
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW25_FRA_levant_arrangements
+		icon = GFX_goal_generic_demand_territory
+		x = 2
+		y = 1
+		relative_position_id = NW25_FRA_mediterranean_consultation
+		cost = 8
+
+		prerequisite = {
+			focus = NW25_FRA_mediterranean_consultation
+		}
+		available = {
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			nw25_fra_syr_offer = yes
+			nw25_fra_leb_offer = yes
+			nw25_fra_refresh = yes
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW25_FRA_african_protectorates
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 0
+		y = 3
+		relative_position_id = NW25_FRA_mediterranean_consultation
+		cost = 8
+
+		prerequisite = {
+			focus = NW25_FRA_protect_piedmont
+			focus = NW25_FRA_levant_arrangements
+		}
+		available = {
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			nw25_fra_sie_offer = yes
+			nw25_fra_gam_offer = yes
+			nw25_fra_refresh = yes
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW25_FRA_mediterranean_stability
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = 0
+		y = 5
+		relative_position_id = NW25_FRA_mediterranean_consultation
+		cost = 10
+
+		prerequisite = {
+			focus = NW25_FRA_african_protectorates
+		}
+		available = {
+			check_variable = {
+				nw25_fra_agreements > 0
+			}
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			custom_effect_tooltip = nw251_fra_network_tt
+			nw25_fra_refresh = yes
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+}

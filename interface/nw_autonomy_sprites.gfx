@@ -1,0 +1,14 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_autonomy_formal_dominion"
+		texturefile = "gfx/interface/autonomy_dominion.dds"
+	}
+	spriteType = {
+		name = "GFX_autonomy_formal_dominion_medium"
+		texturefile = "gfx/interface/autonomy_dominion_medium.dds"
+	}
+	spriteType = {
+		name = "GFX_autonomy_formal_dominion_small"
+		texturefile = "gfx/interface/autonomy_dominion_small.dds"
+	}
+}

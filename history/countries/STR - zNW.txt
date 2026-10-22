@@ -1,0 +1,15 @@
+# Native 1936 scenario. Country source: received mod history
+capital = 797
+GRE = { set_autonomy = { target = STR autonomy_state = autonomy_puppet freedom_level = 0.5 } }
+set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 tech_support = 1 tech_recon = 1 tech_engineers = 1 gw_artillery = 1 basic_train = 1 }
+
+# Scenario political setup; no map transfers or world initializer.
+set_politics = { ruling_party = neutrality elections_allowed = yes }
+set_popularities = { democratic = 45 fascism = 5 communism = 10 neutrality = 40 }
+set_party_name = { ideology = democratic name = NW_STR_democratic_party long_name = NW_STR_democratic_party_long }
+set_party_name = { ideology = fascism name = NW_STR_fascism_party long_name = NW_STR_fascism_party_long }
+set_party_name = { ideology = communism name = NW_STR_communism_party long_name = NW_STR_communism_party_long }
+set_party_name = { ideology = neutrality name = NW_STR_neutrality_party long_name = NW_STR_neutrality_party_long }
+add_ideas = { nw_str_straits_republic nw_str_greek_proxy }
+oob = "NW_STR_1936"
+

@@ -1,0 +1,5 @@
+spriteTypes = {
+ spriteType = { name = "GFX_autonomy_nw_federal_part" texturefile = "gfx/interface/autonomy_dominion.dds" }
+ spriteType = { name = "GFX_autonomy_nw_federal_part_medium" texturefile = "gfx/interface/autonomy_dominion_medium.dds" }
+ spriteType = { name = "GFX_autonomy_nw_federal_part_small" texturefile = "gfx/interface/autonomy_dominion_small.dds" }
+}

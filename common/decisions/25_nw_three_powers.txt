@@ -1,0 +1,1245 @@
+nw25_fra_politics = {
+	nw25_fra_provincial_projects = {
+		icon = generic_political_actions
+		cost = 35
+		visible = {
+			has_completed_focus = NW25_FRA_agreement_with_notables
+			NOT = {
+				has_completed_focus = NW25_FRA_enduring_state
+			}
+		}
+		available = {
+		}
+		days_re_enable = 180
+		complete_effect = {
+			add_timed_idea = {
+				idea = nw25_domestic_investment
+				days = 120
+			}
+			nw25_fra_refresh = yes
+		}
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	nw25_fra_extend_credit = {
+		icon = generic_political_actions
+		cost = 50
+		visible = {
+			has_completed_focus = NW25_FRA_bond_registry
+		}
+		available = {
+			nw25_fra_sov_valid = yes
+			SOV = {
+				NOT = {
+					has_country_flag = nw25_fra_sov_pending
+				}
+				NOT = {
+					has_country_flag = nw25_fra_sov_counter
+				}
+				NOT = {
+					has_country_flag = nw25_fra_sov_signed
+				}
+			}
+		}
+		days_re_enable = 180
+		complete_effect = {
+			nw25_fra_sov_offer = yes
+			nw25_fra_refresh = yes
+		}
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	nw25_fra_domestic_investments = {
+		icon = generic_political_actions
+		cost = 60
+		visible = {
+			has_completed_focus = NW25_FRA_bond_registry
+		}
+		available = {
+		}
+		days_re_enable = 180
+		complete_effect = {
+			add_to_variable = {
+				var = nw25_fra_russian_exposure
+				value = -15
+			}
+			clamp_variable = {
+				var = nw25_fra_russian_exposure
+				min = 0
+				max = 100
+			}
+			add_to_variable = {
+				var = nw25_fra_credit_influence
+				value = -5
+			}
+			clamp_variable = {
+				var = nw25_fra_credit_influence
+				min = 0
+				max = 100
+			}
+			add_timed_idea = {
+				idea = nw25_domestic_investment
+				days = 180
+			}
+			nw25_fra_refresh = yes
+		}
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	nw25_fra_trade_guarantees = {
+		icon = generic_political_actions
+		cost = 45
+		visible = {
+			has_completed_focus = NW25_FRA_bond_registry
+		}
+		available = {
+			check_variable = {
+				nw25_fra_agreements > 0
+			}
+		}
+		days_re_enable = 120
+		complete_effect = {
+			add_to_variable = {
+				var = nw25_fra_credit_influence
+				value = 5
+			}
+			clamp_variable = {
+				var = nw25_fra_credit_influence
+				min = 0
+				max = 100
+			}
+			add_timed_idea = {
+				idea = nw25_trade_orders
+				days = 120
+			}
+			nw25_fra_refresh = yes
+		}
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	nw25_fra_financial_rescue = {
+		icon = generic_political_actions
+		cost = 75
+		visible = {
+			has_country_flag = nw25_fra_credit_crisis
+		}
+		available = {
+		}
+		days_re_enable = 180
+		complete_effect = {
+			clr_country_flag = nw25_fra_credit_crisis
+			add_to_variable = {
+				var = nw25_fra_credit_influence
+				value = 15
+			}
+			clamp_variable = {
+				var = nw25_fra_credit_influence
+				min = 0
+				max = 100
+			}
+			add_timed_idea = {
+				idea = nw25_investment_cost
+				days = 180
+			}
+			nw25_fra_refresh = yes
+		}
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	nw25_fra_spm_renew = {
+		icon = generic_political_actions
+		cost = 40
+		visible = {
+			has_completed_focus = NW25_FRA_protect_piedmont
+		}
+		available = {
+			SPM = {
+				nw25_fra_spm_valid = yes
+				NOT = {
+					has_country_flag = nw25_fra_spm_signed
+				}
+				NOT = {
+					has_country_flag = nw25_fra_spm_pending
+				}
+			}
+		}
+		days_re_enable = 180
+		complete_effect = {
+			nw25_fra_spm_offer = yes
+			nw25_fra_refresh = yes
+		}
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	nw25_fra_syr_renew = {
+		icon = generic_political_actions
+		cost = 40
+		visible = {
+			has_completed_focus = NW25_FRA_levant_arrangements
+		}
+		available = {
+			SYR = {
+				nw25_fra_syr_valid = yes
+				NOT = {
+					has_country_flag = nw25_fra_syr_signed
+				}
+				NOT = {
+					has_country_flag = nw25_fra_syr_pending
+				}
+			}
+		}
+		days_re_enable = 180
+		complete_effect = {
+			nw25_fra_syr_offer = yes
+			nw25_fra_refresh = yes
+		}
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	nw25_fra_leb_renew = {
+		icon = generic_political_actions
+		cost = 40
+		visible = {
+			has_completed_focus = NW25_FRA_levant_arrangements
+		}
+		available = {
+			LEB = {
+				nw25_fra_leb_valid = yes
+				NOT = {
+					has_country_flag = nw25_fra_leb_signed
+				}
+				NOT = {
+					has_country_flag = nw25_fra_leb_pending
+				}
+			}
+		}
+		days_re_enable = 180
+		complete_effect = {
+			nw25_fra_leb_offer = yes
+			nw25_fra_refresh = yes
+		}
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	nw25_fra_sie_renew = {
+		icon = generic_political_actions
+		cost = 40
+		visible = {
+			has_completed_focus = NW25_FRA_african_protectorates
+		}
+		available = {
+			SIE = {
+				nw25_fra_sie_valid = yes
+				NOT = {
+					has_country_flag = nw25_fra_sie_signed
+				}
+				NOT = {
+					has_country_flag = nw25_fra_sie_pending
+				}
+			}
+		}
+		days_re_enable = 180
+		complete_effect = {
+			nw25_fra_sie_offer = yes
+			nw25_fra_refresh = yes
+		}
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	nw25_fra_gam_renew = {
+		icon = generic_political_actions
+		cost = 40
+		visible = {
+			has_completed_focus = NW25_FRA_african_protectorates
+		}
+		available = {
+			GAM = {
+				nw25_fra_gam_valid = yes
+				NOT = {
+					has_country_flag = nw25_fra_gam_signed
+				}
+				NOT = {
+					has_country_flag = nw25_fra_gam_pending
+				}
+			}
+		}
+		days_re_enable = 180
+		complete_effect = {
+			nw25_fra_gam_offer = yes
+			nw25_fra_refresh = yes
+		}
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	nw25_fra_ger_renew = {
+		icon = generic_political_actions
+		cost = 40
+		visible = {
+			has_completed_focus = NW25_FRA_open_channels
+		}
+		available = {
+			GER = {
+				nw25_fra_ger_valid = yes
+				NOT = {
+					has_country_flag = nw25_fra_ger_signed
+				}
+				NOT = {
+					has_country_flag = nw25_fra_ger_pending
+				}
+			}
+		}
+		days_re_enable = 180
+		complete_effect = {
+			nw25_fra_ger_offer = yes
+			nw25_fra_refresh = yes
+		}
+		ai_will_do = {
+			factor = 2
+		}
+	}
+}
+
+nw25_sri_politics = {
+	nw25_sri_operation_lbv_prepare = {
+		icon = generic_political_actions
+		cost = 35
+		visible = {
+			has_completed_focus = NW25_SRI_revolutionary_mobilization
+		}
+		available = {
+			nw25_sri_operation_lbv_valid = yes
+			check_variable = {
+				nw25_sri_council_cohesion > 44
+			}
+			check_variable = {
+				nw25_sri_rural_support > 34
+			}
+			NOT = {
+				has_country_flag = nw25_sri_operation_lbv_pending
+			}
+			NOT = {
+				has_country_flag = nw25_sri_operation_lbv_approved
+			}
+		}
+		days_re_enable = 180
+		complete_effect = {
+			set_country_flag = {
+				flag = nw25_sri_operation_lbv_pending
+				days = 90
+			}
+			country_event = {
+				id = nw25sri.60
+				days = 1
+			}
+			AUS = {
+				if = {
+					limit = {
+						exists = yes
+						LBV = {
+							is_subject_of = AUS
+						}
+					}
+					country_event = {
+						id = nw25sri.42
+						days = 1
+					}
+				}
+			}
+			nw25_sri_refresh = yes
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					strength_ratio = {
+						tag = LBV
+						ratio > 1.5
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				LBV = {
+					is_subject = yes
+				}
+			}
+			modifier = {
+				factor = 0
+				FRA = {
+					has_guaranteed = LBV
+				}
+			}
+		}
+	}
+	nw25_sri_operation_lbv_execute = {
+		icon = generic_political_actions
+		cost = 50
+		visible = {
+			has_country_flag = nw25_sri_operation_lbv_approved
+		}
+		available = {
+			nw25_sri_operation_lbv_valid = yes
+		}
+		days_re_enable = 180
+		complete_effect = {
+			clr_country_flag = nw25_sri_operation_lbv_approved
+			LBV = {
+				clr_country_flag = nw25_sri_lbv_signed
+				remove_ideas = nw25_sri_partner
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = LBV
+				expire = 180
+			}
+			nw25_sri_refresh = yes
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					strength_ratio = {
+						tag = LBV
+						ratio > 1.5
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				LBV = {
+					is_subject = yes
+				}
+			}
+			modifier = {
+				factor = 0
+				FRA = {
+					has_guaranteed = LBV
+				}
+			}
+		}
+	}
+	nw25_sri_operation_spm_prepare = {
+		icon = generic_political_actions
+		cost = 35
+		visible = {
+			has_completed_focus = NW25_SRI_revolutionary_mobilization
+		}
+		available = {
+			nw25_sri_operation_spm_valid = yes
+			check_variable = {
+				nw25_sri_council_cohesion > 44
+			}
+			check_variable = {
+				nw25_sri_rural_support > 34
+			}
+			NOT = {
+				has_country_flag = nw25_sri_operation_spm_pending
+			}
+			NOT = {
+				has_country_flag = nw25_sri_operation_spm_approved
+			}
+		}
+		days_re_enable = 180
+		complete_effect = {
+			set_country_flag = {
+				flag = nw25_sri_operation_spm_pending
+				days = 90
+			}
+			country_event = {
+				id = nw25sri.61
+				days = 1
+			}
+			FRA = {
+				if = {
+					limit = {
+						exists = yes
+						has_guaranteed = SPM
+					}
+					country_event = {
+						id = nw25fra.30
+						days = 1
+					}
+				}
+			}
+			nw25_sri_refresh = yes
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					strength_ratio = {
+						tag = SPM
+						ratio > 1.5
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				SPM = {
+					is_subject = yes
+				}
+			}
+			modifier = {
+				factor = 0
+				FRA = {
+					has_guaranteed = SPM
+				}
+			}
+		}
+	}
+	nw25_sri_operation_spm_execute = {
+		icon = generic_political_actions
+		cost = 50
+		visible = {
+			has_country_flag = nw25_sri_operation_spm_approved
+		}
+		available = {
+			nw25_sri_operation_spm_valid = yes
+		}
+		days_re_enable = 180
+		complete_effect = {
+			clr_country_flag = nw25_sri_operation_spm_approved
+			SPM = {
+				clr_country_flag = nw25_sri_spm_signed
+				remove_ideas = nw25_sri_partner
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = SPM
+				expire = 180
+			}
+			nw25_sri_refresh = yes
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					strength_ratio = {
+						tag = SPM
+						ratio > 1.5
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				SPM = {
+					is_subject = yes
+				}
+			}
+			modifier = {
+				factor = 0
+				FRA = {
+					has_guaranteed = SPM
+				}
+			}
+		}
+	}
+	nw25_sri_operation_pap_prepare = {
+		icon = generic_political_actions
+		cost = 35
+		visible = {
+			has_completed_focus = NW25_SRI_revolutionary_mobilization
+		}
+		available = {
+			nw25_sri_operation_pap_valid = yes
+			check_variable = {
+				nw25_sri_council_cohesion > 44
+			}
+			check_variable = {
+				nw25_sri_rural_support > 34
+			}
+			NOT = {
+				has_country_flag = nw25_sri_operation_pap_pending
+			}
+			NOT = {
+				has_country_flag = nw25_sri_operation_pap_approved
+			}
+		}
+		days_re_enable = 180
+		complete_effect = {
+			set_country_flag = {
+				flag = nw25_sri_operation_pap_pending
+				days = 90
+			}
+			country_event = {
+				id = nw25sri.62
+				days = 1
+			}
+			nw25_sri_refresh = yes
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					strength_ratio = {
+						tag = PAP
+						ratio > 1.5
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				PAP = {
+					is_subject = yes
+				}
+			}
+			modifier = {
+				factor = 0
+				FRA = {
+					has_guaranteed = PAP
+				}
+			}
+		}
+	}
+	nw25_sri_operation_pap_execute = {
+		icon = generic_political_actions
+		cost = 50
+		visible = {
+			has_country_flag = nw25_sri_operation_pap_approved
+		}
+		available = {
+			nw25_sri_operation_pap_valid = yes
+		}
+		days_re_enable = 180
+		complete_effect = {
+			clr_country_flag = nw25_sri_operation_pap_approved
+			PAP = {
+				clr_country_flag = nw25_sri_pap_signed
+				remove_ideas = nw25_sri_partner
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = PAP
+				expire = 180
+			}
+			nw25_sri_refresh = yes
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					strength_ratio = {
+						tag = PAP
+						ratio > 1.5
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				PAP = {
+					is_subject = yes
+				}
+			}
+			modifier = {
+				factor = 0
+				FRA = {
+					has_guaranteed = PAP
+				}
+			}
+		}
+	}
+	nw25_sri_negotiate_councils = {
+		icon = generic_political_actions
+		cost = 35
+		visible = {
+			has_completed_focus = NW25_SRI_council_congress
+		}
+		available = {
+			check_variable = {
+				nw25_sri_council_cohesion < 90
+			}
+		}
+		days_re_enable = 90
+		complete_effect = {
+			add_to_variable = {
+				var = nw25_sri_council_cohesion
+				value = 10
+			}
+			clamp_variable = {
+				var = nw25_sri_council_cohesion
+				min = 0
+				max = 100
+			}
+			add_timed_idea = {
+				idea = nw25_investment_cost
+				days = 90
+			}
+			nw25_sri_refresh = yes
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	nw25_sri_grain_contracts = {
+		icon = generic_political_actions
+		cost = 40
+		visible = {
+			has_completed_focus = NW25_SRI_land_commissions
+		}
+		available = {
+			check_variable = {
+				nw25_sri_rural_support < 88
+			}
+		}
+		days_re_enable = 90
+		complete_effect = {
+			add_to_variable = {
+				var = nw25_sri_rural_support
+				value = 12
+			}
+			clamp_variable = {
+				var = nw25_sri_rural_support
+				min = 0
+				max = 100
+			}
+			add_timed_idea = {
+				idea = nw25_investment_cost
+				days = 90
+			}
+			nw25_sri_refresh = yes
+		}
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	nw25_sri_extraordinary_requisitions = {
+		icon = generic_political_actions
+		cost = 25
+		visible = {
+			has_completed_focus = NW25_SRI_land_commissions
+		}
+		available = {
+			NOT = {
+				has_completed_focus = NW25_SRI_federation_of_councils
+			}
+			check_variable = {
+				nw25_sri_rural_support > 44
+			}
+			OR = {
+				has_war = yes
+				has_idea = nw25_sri_grain_shortage
+			}
+		}
+		days_re_enable = 120
+		complete_effect = {
+			add_to_variable = {
+				var = nw25_sri_rural_support
+				value = -15
+			}
+			clamp_variable = {
+				var = nw25_sri_rural_support
+				min = 0
+				max = 100
+			}
+			add_to_variable = {
+				var = nw25_sri_council_cohesion
+				value = -5
+			}
+			clamp_variable = {
+				var = nw25_sri_council_cohesion
+				min = 0
+				max = 100
+			}
+			add_timed_idea = {
+				idea = nw25_sri_requisitions
+				days = 90
+			}
+			nw25_sri_refresh = yes
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	nw25_sri_restore_rural_confidence = {
+		icon = generic_political_actions
+		cost = 60
+		visible = {
+			check_variable = {
+				nw25_sri_rural_support < 30
+			}
+		}
+		available = {
+		}
+		days_re_enable = 90
+		complete_effect = {
+			add_to_variable = {
+				var = nw25_sri_rural_support
+				value = 20
+			}
+			clamp_variable = {
+				var = nw25_sri_rural_support
+				min = 0
+				max = 100
+			}
+			add_timed_idea = {
+				idea = nw25_investment_cost
+				days = 120
+			}
+			nw25_sri_refresh = yes
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	nw25_sri_reopen_debate = {
+		icon = generic_political_actions
+		cost = 25
+		visible = {
+			has_completed_focus = NW25_SRI_neapolitan_debate
+			NOT = {
+				has_country_flag = nw25_sri_federal_choice
+			}
+			NOT = {
+				has_country_flag = nw25_sri_central_choice
+			}
+		}
+		available = {
+		}
+		days_re_enable = 30
+		complete_effect = {
+			country_event = {
+				id = nw25sri.11
+				days = 1
+			}
+			nw25_sri_refresh = yes
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	nw25_sri_lbv_renew = {
+		icon = generic_political_actions
+		cost = 35
+		visible = {
+			has_completed_focus = NW25_SRI_venetian_delegation
+		}
+		available = {
+			LBV = {
+				nw25_sri_lbv_valid = yes
+				NOT = {
+					has_country_flag = nw25_sri_lbv_pending
+				}
+				NOT = {
+					has_country_flag = nw25_sri_lbv_signed
+				}
+			}
+		}
+		days_re_enable = 180
+		complete_effect = {
+			nw25_sri_lbv_offer = yes
+			nw25_sri_refresh = yes
+		}
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	nw25_sri_spm_renew = {
+		icon = generic_political_actions
+		cost = 35
+		visible = {
+			has_completed_focus = NW25_SRI_piedmontese_contacts
+		}
+		available = {
+			SPM = {
+				nw25_sri_spm_valid = yes
+				NOT = {
+					has_country_flag = nw25_sri_spm_pending
+				}
+				NOT = {
+					has_country_flag = nw25_sri_spm_signed
+				}
+			}
+		}
+		days_re_enable = 180
+		complete_effect = {
+			nw25_sri_spm_offer = yes
+			nw25_sri_refresh = yes
+		}
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	nw25_sri_pap_renew = {
+		icon = generic_political_actions
+		cost = 35
+		visible = {
+			has_completed_focus = NW25_SRI_roman_question
+		}
+		available = {
+			PAP = {
+				nw25_sri_pap_valid = yes
+				NOT = {
+					has_country_flag = nw25_sri_pap_pending
+				}
+				NOT = {
+					has_country_flag = nw25_sri_pap_signed
+				}
+			}
+		}
+		days_re_enable = 180
+		complete_effect = {
+			nw25_sri_pap_offer = yes
+			nw25_sri_refresh = yes
+		}
+		ai_will_do = {
+			factor = 2
+		}
+	}
+}
+
+nw25_eng_politics = {
+	nw25_eng_reopen_budget = {
+		icon = generic_political_actions
+		cost = 25
+		visible = {
+			has_completed_focus = NW25_ENG_budget_inquiry
+			NOT = {
+				has_country_flag = nw25_eng_cuts_choice
+			}
+			NOT = {
+				has_country_flag = nw25_eng_works_choice
+			}
+		}
+		available = {
+		}
+		days_re_enable = 30
+		complete_effect = {
+			country_event = {
+				id = nw25eng.10
+				days = 1
+			}
+			nw25_eng_refresh = yes
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	nw25_eng_treasury_restrictions = {
+		icon = generic_political_actions
+		cost = 30
+		visible = {
+			has_completed_focus = NW25_ENG_treasury_review
+		}
+		available = {
+			check_variable = {
+				nw25_eng_fiscal_pressure > 29
+			}
+		}
+		days_re_enable = 120
+		complete_effect = {
+			add_to_variable = {
+				var = nw25_eng_fiscal_pressure
+				value = -10
+			}
+			clamp_variable = {
+				var = nw25_eng_fiscal_pressure
+				min = 0
+				max = 100
+			}
+			if = {
+				limit = {
+					has_completed_focus = NW25_ENG_fleet_estimates
+				}
+				add_to_variable = {
+					var = nw25_eng_sailor_grievances
+					value = 8
+				}
+				clamp_variable = {
+					var = nw25_eng_sailor_grievances
+					min = 0
+					max = 100
+				}
+			}
+			add_timed_idea = {
+				idea = nw25_eng_austerity
+				days = 120
+			}
+			nw25_eng_refresh = yes
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	nw25_eng_naval_welfare = {
+		icon = generic_political_actions
+		cost = 50
+		visible = {
+			has_completed_focus = NW25_ENG_fleet_estimates
+		}
+		available = {
+			check_variable = {
+				nw25_eng_sailor_grievances > 14
+			}
+		}
+		days_re_enable = 120
+		complete_effect = {
+			add_to_variable = {
+				var = nw25_eng_sailor_grievances
+				value = -15
+			}
+			clamp_variable = {
+				var = nw25_eng_sailor_grievances
+				min = 0
+				max = 100
+			}
+			add_to_variable = {
+				var = nw25_eng_fiscal_pressure
+				value = 7
+			}
+			clamp_variable = {
+				var = nw25_eng_fiscal_pressure
+				min = 0
+				max = 100
+			}
+			nw25_eng_refresh = yes
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	nw25_eng_trade_revenue = {
+		icon = generic_political_actions
+		cost = 45
+		visible = {
+			has_completed_focus = NW25_ENG_sea_lanes
+		}
+		available = {
+			OR = {
+				check_variable = {
+					nw25_eng_ports > 0
+				}
+				check_variable = {
+					nw25_eng_agreements > 0
+				}
+			}
+		}
+		days_re_enable = 180
+		complete_effect = {
+			add_to_variable = {
+				var = nw25_eng_fiscal_pressure
+				value = -8
+			}
+			clamp_variable = {
+				var = nw25_eng_fiscal_pressure
+				min = 0
+				max = 100
+			}
+			add_timed_idea = {
+				idea = nw25_trade_orders
+				days = 120
+			}
+			nw25_eng_refresh = yes
+		}
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	nw25_eng_emergency_naval_settlement = {
+		icon = generic_political_actions
+		cost = 75
+		visible = {
+			check_variable = {
+				nw25_eng_sailor_grievances > 79
+			}
+		}
+		available = {
+		}
+		days_re_enable = 180
+		complete_effect = {
+			add_to_variable = {
+				var = nw25_eng_sailor_grievances
+				value = -30
+			}
+			clamp_variable = {
+				var = nw25_eng_sailor_grievances
+				min = 0
+				max = 100
+			}
+			add_to_variable = {
+				var = nw25_eng_fiscal_pressure
+				value = 15
+			}
+			clamp_variable = {
+				var = nw25_eng_fiscal_pressure
+				min = 0
+				max = 100
+			}
+			nw25_eng_refresh = yes
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	nw25_eng_can_renew = {
+		icon = generic_political_actions
+		cost = 40
+		visible = {
+			has_completed_focus = NW25_ENG_dominion_defence
+		}
+		available = {
+			CAN = {
+				nw25_eng_can_valid = yes
+				NOT = {
+					has_country_flag = nw25_eng_can_signed
+				}
+				NOT = {
+					has_country_flag = nw25_eng_can_pending
+				}
+			}
+		}
+		days_re_enable = 180
+		complete_effect = {
+			nw25_eng_can_offer = yes
+			nw25_eng_refresh = yes
+		}
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	nw25_eng_ast_renew = {
+		icon = generic_political_actions
+		cost = 40
+		visible = {
+			has_completed_focus = NW25_ENG_dominion_defence
+		}
+		available = {
+			AST = {
+				nw25_eng_ast_valid = yes
+				NOT = {
+					has_country_flag = nw25_eng_ast_signed
+				}
+				NOT = {
+					has_country_flag = nw25_eng_ast_pending
+				}
+			}
+		}
+		days_re_enable = 180
+		complete_effect = {
+			nw25_eng_ast_offer = yes
+			nw25_eng_refresh = yes
+		}
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	nw25_eng_nzl_renew = {
+		icon = generic_political_actions
+		cost = 40
+		visible = {
+			has_completed_focus = NW25_ENG_dominion_defence
+		}
+		available = {
+			NZL = {
+				nw25_eng_nzl_valid = yes
+				NOT = {
+					has_country_flag = nw25_eng_nzl_signed
+				}
+				NOT = {
+					has_country_flag = nw25_eng_nzl_pending
+				}
+			}
+		}
+		days_re_enable = 180
+		complete_effect = {
+			nw25_eng_nzl_offer = yes
+			nw25_eng_refresh = yes
+		}
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	nw25_eng_raj_renew = {
+		icon = generic_political_actions
+		cost = 40
+		visible = {
+			has_completed_focus = NW25_ENG_indian_relations
+		}
+		available = {
+			RAJ = {
+				nw25_eng_raj_valid = yes
+				NOT = {
+					has_country_flag = nw25_eng_raj_signed
+				}
+				NOT = {
+					has_country_flag = nw25_eng_raj_pending
+				}
+			}
+		}
+		days_re_enable = 180
+		complete_effect = {
+			nw25_eng_raj_offer = yes
+			nw25_eng_refresh = yes
+		}
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	nw25_eng_lag_renew = {
+		icon = generic_political_actions
+		cost = 40
+		visible = {
+			has_completed_focus = NW25_ENG_lagos_agreement
+		}
+		available = {
+			LAG = {
+				nw25_eng_lag_valid = yes
+				NOT = {
+					has_country_flag = nw25_eng_lag_signed
+				}
+				NOT = {
+					has_country_flag = nw25_eng_lag_pending
+				}
+			}
+		}
+		days_re_enable = 180
+		complete_effect = {
+			nw25_eng_lag_offer = yes
+			nw25_eng_refresh = yes
+		}
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	nw25_eng_ger_renew = {
+		icon = generic_political_actions
+		cost = 40
+		visible = {
+			has_completed_focus = NW25_ENG_german_colonial_access
+		}
+		available = {
+			GER = {
+				nw25_eng_ger_valid = yes
+				NOT = {
+					has_country_flag = nw25_eng_ger_signed
+				}
+				NOT = {
+					has_country_flag = nw25_eng_ger_pending
+				}
+			}
+		}
+		days_re_enable = 180
+		complete_effect = {
+			nw25_eng_ger_offer = yes
+			nw25_eng_refresh = yes
+		}
+		ai_will_do = {
+			factor = 2
+		}
+	}
+}

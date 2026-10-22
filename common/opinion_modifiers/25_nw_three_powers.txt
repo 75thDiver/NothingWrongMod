@@ -1,0 +1,10 @@
+opinion_modifiers = {
+	nw25_cooperation = {
+		value = 15
+		decay = 1
+	}
+	nw25_frictions = {
+		value = -15
+		decay = 1
+	}
+}

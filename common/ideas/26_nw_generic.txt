@@ -1,0 +1,163 @@
+ideas = {
+	country = {
+		nw26_gen_administration = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_factor = 0.03
+				stability_factor = 0.02
+			}
+		}
+		nw26_gen_local_administration = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				supply_consumption_factor = -0.02
+				stability_factor = 0.02
+			}
+		}
+		nw26_gen_mass_army = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				training_time_army_factor = -0.05
+				mobilization_speed = 0.05
+				supply_consumption_factor = 0.03
+			}
+		}
+		nw26_gen_professional_army = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				army_org_factor = 0.04
+				experience_gain_army_factor = 0.05
+				training_time_army_factor = 0.05
+			}
+		}
+		nw26_gen_industrial_adjustment = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.04
+			}
+		}
+		nw26_gen_investment_cost = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = 0.02
+			}
+		}
+		nw26_gen_logistics = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				supply_consumption_factor = -0.03
+			}
+		}
+		nw26_gen_flexible_navy = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				supply_consumption_factor = -0.02
+				naval_coordination = 0.03
+			}
+		}
+		nw26_gen_large_navy = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				naval_coordination = 0.05
+				industrial_capacity_dockyard = 0.02
+			}
+		}
+		nw26_gen_agency_training = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				agency_upgrade_time = -0.10
+			}
+		}
+		nw26_gen_operatives = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				operative_slot = 1
+			}
+		}
+		nw26_gen_encryption = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				encryption_factor = 0.10
+			}
+		}
+		nw26_gen_decryption = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				decryption_factor = 0.10
+			}
+		}
+		nw26_gen_trade_programme = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				production_speed_industrial_complex_factor = 0.04
+			}
+		}
+		nw26_gen_subject_programme = {
+			picture = generic_propaganda
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				production_speed_infrastructure_factor = 0.05
+				political_power_factor = 0.02
+			}
+		}
+	}
+}

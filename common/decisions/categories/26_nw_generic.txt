@@ -1,0 +1,15 @@
+nw26_generic_development = {
+	icon = generic_political_actions
+	visible = {
+		OR = {
+			has_completed_focus = NWG_political_change
+			has_completed_focus = NWG_industrial_effort
+			has_completed_focus = NWG_army_effort
+			has_completed_focus = NWG_lore_diplomacy
+			has_completed_focus = NWG_lore_autonomy
+			has_completed_focus = NWG_aviation_effort
+			has_completed_focus = NWG_naval_effort
+			has_completed_focus = NWG_espionage_agency_developments
+		}
+	}
+}

@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-22",
+  "game_executed": false,
+  "active_mod_matches_transfer_zip": true,
+  "archive_mod_files": 1872,
+  "archive_hash_mismatches": 0,
+  "passed_static_checks": 3108,
+  "focus_count": 762,
+  "state_count": 1081,
+  "localisation_files": 16,
+  "localisation_keys": 4724,
+  "warning_count": 30,
+  "warning_class": "OR prerequisite, review only",
+  "limitations": [
+    "Static source check only; no HOI4 engine run was performed.",
+    "DLC equipment behavior requires a clean in-game matrix test.",
+    "The external launcher descriptor still reports version 0.26-generic."
+  ]
+}

@@ -1,0 +1,3844 @@
+focus_tree = {
+	# Pixel coordinates; keep palette below the full regular tree.
+	continuous_focus_position = { x = 50 y = 3040 }
+	id = NW14_GER_tree
+	default = no
+	country = {
+		factor = 0
+		modifier = {
+			add = 200000
+			tag = GER
+		}
+	}
+
+	focus = {
+		id = NW14_GER_red_reichstag
+		icon = GFX_goal_generic_political_pressure
+		x = 10
+		y = 0
+		cost = 5
+
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_political_power = 25
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_committee_rules
+		icon = GFX_goal_generic_political_pressure
+		x = -4
+		y = 1
+		relative_position_id = NW14_GER_red_reichstag
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_red_reichstag
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_to_variable = {
+				var = nw_tension
+				value = -10
+			}
+			clamp_variable = {
+				var = nw_tension
+				min = 0
+				max = 100
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_budget_hearing
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = NW14_GER_committee_rules
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_committee_rules
+		}
+		available = {
+			check_variable = {
+				nw_votes > 198
+			}
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_to_variable = {
+				var = nw_tension
+				value = 4
+			}
+			clamp_variable = {
+				var = nw_tension
+				min = 0
+				max = 100
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_provincial_petitions
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = NW14_GER_red_reichstag
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_red_reichstag
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_to_variable = {
+				var = nw_tension
+				value = -10
+			}
+			clamp_variable = {
+				var = nw_tension
+				min = 0
+				max = 100
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_shop_stewards
+		icon = GFX_goal_generic_political_pressure
+		x = 4
+		y = 1
+		relative_position_id = NW14_GER_red_reichstag
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_red_reichstag
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = nw14_labour
+				}
+				add_stability = 0.025
+			}
+			else = {
+				add_ideas = nw14_labour
+			}
+			add_to_variable = {
+				var = nw_tension
+				value = -8
+			}
+			clamp_variable = {
+				var = nw_tension
+				min = 0
+				max = 100
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_prussian_officers
+		icon = GFX_goal_generic_army_doctrines
+		x = 8
+		y = 1
+		relative_position_id = NW14_GER_red_reichstag
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_red_reichstag
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			army_experience = 20
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_italian_question
+		icon = GFX_goal_generic_political_pressure
+		x = 6
+		y = 1
+		relative_position_id = NW14_GER_shop_stewards
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_shop_stewards
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			country_event = {
+				id = nw14.1
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_press_arbitration
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = NW14_GER_provincial_petitions
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_provincial_petitions
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_to_variable = {
+				var = nw_tension
+				value = -10
+			}
+			clamp_variable = {
+				var = nw_tension
+				min = 0
+				max = 100
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_federal_audience
+		icon = GFX_goal_generic_political_pressure
+		x = 2
+		y = 1
+		relative_position_id = NW14_GER_press_arbitration
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_budget_hearing
+		}
+		prerequisite = {
+			focus = NW14_GER_press_arbitration
+		}
+		prerequisite = {
+			focus = NW14_GER_prussian_officers
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_stability = 0.03
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_choose_course
+		icon = GFX_goal_generic_political_pressure
+		x = -2
+		y = 1
+		relative_position_id = NW14_GER_federal_audience
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_federal_audience
+		}
+		prerequisite = {
+			focus = NW14_GER_italian_question
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_political_power = 35
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_for_kaiser
+		icon = GFX_goal_generic_neutrality_focus
+		x = -8
+		y = 2
+		relative_position_id = NW14_GER_choose_course
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_choose_course
+		}
+		mutually_exclusive = {
+			focus = NW14_GER_italian_solidarity
+			focus = NW14_GER_stabilisation
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			set_country_flag = nw_ger_crown
+			clr_country_flag = nw_coal_kpd
+			clr_country_flag = nw_coal_uspd
+			clr_country_flag = nw_coal_spd
+			clr_country_flag = nw_coal_centre
+			clr_country_flag = nw_coal_fvp
+			clr_country_flag = nw_coal_dnvp
+			set_country_flag = nw_coal_dnvp
+			nw14_recount = yes
+			add_to_variable = {
+				var = nw_tension
+				value = 10
+			}
+			clamp_variable = {
+				var = nw_tension
+				min = 0
+				max = 100
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_court_cabinet
+		icon = GFX_goal_generic_neutrality_focus
+		x = 0
+		y = 1
+		relative_position_id = NW14_GER_for_kaiser
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_for_kaiser
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_to_variable = {
+				var = nw_tension
+				value = 8
+			}
+			clamp_variable = {
+				var = nw_tension
+				min = 0
+				max = 100
+			}
+			add_political_power = 40
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_national_conservatives
+		icon = GFX_goal_generic_neutrality_focus
+		x = -2
+		y = 1
+		relative_position_id = NW14_GER_court_cabinet
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_court_cabinet
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			set_country_flag = nw_coal_dnvp
+			nw14_recount = yes
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_centre_guarantees
+		icon = GFX_goal_generic_neutrality_focus
+		x = 0
+		y = 1
+		relative_position_id = NW14_GER_court_cabinet
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_court_cabinet
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			set_country_flag = nw_coal_centre
+			nw14_recount = yes
+			add_political_power = -35
+			add_to_variable = {
+				var = nw_tension
+				value = -5
+			}
+			clamp_variable = {
+				var = nw_tension
+				min = 0
+				max = 100
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_progressive_bargain
+		icon = GFX_goal_generic_neutrality_focus
+		x = 2
+		y = 1
+		relative_position_id = NW14_GER_court_cabinet
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_court_cabinet
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			set_country_flag = nw_coal_fvp
+			nw14_recount = yes
+			add_political_power = -35
+			add_to_variable = {
+				var = nw_tension
+				value = -5
+			}
+			clamp_variable = {
+				var = nw_tension
+				min = 0
+				max = 100
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_emergency_session
+		icon = GFX_goal_generic_neutrality_focus
+		x = 0
+		y = 1
+		relative_position_id = NW14_GER_centre_guarantees
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_national_conservatives
+		}
+		prerequisite = {
+			focus = NW14_GER_centre_guarantees
+		}
+		prerequisite = {
+			focus = NW14_GER_progressive_bargain
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			set_country_flag = nw_ger_emergency
+			add_stability = -0.08
+			add_to_variable = {
+				var = nw_tension
+				value = 20
+			}
+			clamp_variable = {
+				var = nw_tension
+				min = 0
+				max = 100
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_officer_oath
+		icon = GFX_goal_generic_neutrality_focus
+		x = -2
+		y = 1
+		relative_position_id = NW14_GER_emergency_session
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_emergency_session
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = nw14_discipline
+				}
+				army_experience = 15
+			}
+			else = {
+				add_ideas = nw14_discipline
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_ban_kpd
+		icon = GFX_goal_generic_neutrality_focus
+		x = 0
+		y = 1
+		relative_position_id = NW14_GER_emergency_session
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_emergency_session
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_to_variable = {
+				var = nw_vacant
+				value = nw_kpd
+			}
+			set_variable = {
+				nw_kpd = 0
+			}
+			clr_country_flag = nw_coal_kpd
+			set_country_flag = nw_kpd_banned
+			add_to_variable = {
+				var = nw_tension
+				value = 15
+			}
+			clamp_variable = {
+				var = nw_tension
+				min = 0
+				max = 100
+			}
+			add_stability = -0.06
+			nw14_recount = yes
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_split_unions
+		icon = GFX_goal_generic_neutrality_focus
+		x = 2
+		y = 1
+		relative_position_id = NW14_GER_ban_kpd
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_ban_kpd
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_to_variable = {
+				var = nw_tension
+				value = 8
+			}
+			clamp_variable = {
+				var = nw_tension
+				min = 0
+				max = 100
+			}
+			add_political_power = 40
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_ban_spd
+		icon = GFX_goal_generic_neutrality_focus
+		x = 0
+		y = 2
+		relative_position_id = NW14_GER_ban_kpd
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_ban_kpd
+		}
+		prerequisite = {
+			focus = NW14_GER_split_unions
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_to_variable = {
+				var = nw_vacant
+				value = nw_spd
+			}
+			set_variable = {
+				nw_spd = 0
+			}
+			clr_country_flag = nw_coal_spd
+			set_country_flag = nw_spd_banned
+			add_to_variable = {
+				var = nw_tension
+				value = 20
+			}
+			clamp_variable = {
+				var = nw_tension
+				min = 0
+				max = 100
+			}
+			add_stability = -0.1
+			nw14_recount = yes
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_crown_budget
+		icon = GFX_goal_generic_neutrality_focus
+		x = 0
+		y = 1
+		relative_position_id = NW14_GER_ban_spd
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_ban_spd
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = nw14_crown_admin
+				}
+				add_political_power = 35
+			}
+			else = {
+				add_ideas = nw14_crown_admin
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_land_compact
+		icon = GFX_goal_generic_neutrality_focus
+		x = 2
+		y = 1
+		relative_position_id = NW14_GER_ban_spd
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_ban_spd
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_stability = 0.03
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_imperial_inspection
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 0
+		y = 3
+		relative_position_id = NW14_GER_officer_oath
+		cost = 7
+
+		prerequisite = {
+			focus = NW14_GER_officer_oath
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_heir_council
+		icon = GFX_goal_generic_neutrality_focus
+		x = 0
+		y = 1
+		relative_position_id = NW14_GER_crown_budget
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_crown_budget
+		}
+		prerequisite = {
+			focus = NW14_GER_land_compact
+		}
+		prerequisite = {
+			focus = NW14_GER_imperial_inspection
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_ideas = nw14_succession
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_controlled_reichstag
+		icon = GFX_goal_generic_neutrality_focus
+		x = 0
+		y = 1
+		relative_position_id = NW14_GER_heir_council
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_heir_council
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = no
+			}
+			remove_ideas = nw_ger_crown_and_reichstag
+			set_country_flag = nw_ger_settled
+			set_variable = {
+				nw_tension = 40
+			}
+			remove_ideas = nw14_deadlock
+			if = {
+				limit = {
+					has_idea = nw14_crown_admin
+				}
+				add_political_power = 35
+			}
+			else = {
+				add_ideas = nw14_crown_admin
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_italian_solidarity
+		icon = GFX_goal_support_communism
+		x = 0
+		y = 2
+		relative_position_id = NW14_GER_choose_course
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_choose_course
+		}
+		mutually_exclusive = {
+			focus = NW14_GER_for_kaiser
+			focus = NW14_GER_stabilisation
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			set_country_flag = nw_ger_red
+			add_to_variable = {
+				var = nw_tension
+				value = 12
+			}
+			clamp_variable = {
+				var = nw_tension
+				min = 0
+				max = 100
+			}
+		}
+
+		ai_will_do = {
+			factor = 2
+		}
+	}
+
+	focus = {
+		id = NW14_GER_coalition_break
+		icon = GFX_goal_support_communism
+		x = 0
+		y = 1
+		relative_position_id = NW14_GER_italian_solidarity
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_italian_solidarity
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			clr_country_flag = nw_coal_kpd
+			nw14_recount = yes
+			add_to_variable = {
+				var = nw_tension
+				value = 12
+			}
+			clamp_variable = {
+				var = nw_tension
+				min = 0
+				max = 100
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_independent_socialists
+		icon = GFX_goal_support_communism
+		x = 0
+		y = 1
+		relative_position_id = NW14_GER_coalition_break
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_coalition_break
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_to_variable = {
+				var = nw_spd
+				value = -60
+			}
+			add_to_variable = {
+				var = nw_uspd
+				value = 60
+			}
+			set_country_flag = nw_uspd_exists
+			nw14_recount = yes
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_workers_pact
+		icon = GFX_goal_support_communism
+		x = 0
+		y = 1
+		relative_position_id = NW14_GER_independent_socialists
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_independent_socialists
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			clr_country_flag = nw_coal_kpd
+			clr_country_flag = nw_coal_uspd
+			clr_country_flag = nw_coal_spd
+			clr_country_flag = nw_coal_centre
+			clr_country_flag = nw_coal_fvp
+			clr_country_flag = nw_coal_dnvp
+			set_country_flag = nw_coal_kpd
+			set_country_flag = nw_coal_uspd
+			nw14_recount = yes
+			country_event = {
+				id = nw14.11
+			}
+			add_to_variable = {
+				var = nw_tension
+				value = 10
+			}
+			clamp_variable = {
+				var = nw_tension
+				min = 0
+				max = 100
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_factory_cells
+		icon = GFX_goal_support_communism
+		x = -2
+		y = 1
+		relative_position_id = NW14_GER_workers_pact
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_workers_pact
+		}
+		available = {
+			has_country_flag = nw_ger_prep_factory
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = nw14_labour
+				}
+				add_stability = 0.025
+			}
+			else = {
+				add_ideas = nw14_labour
+			}
+			add_to_variable = {
+				var = nw_network
+				value = 15
+			}
+			clamp_variable = {
+				var = nw_network
+				min = 0
+				max = 100
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_railway_cells
+		icon = GFX_goal_support_communism
+		x = 2
+		y = 1
+		relative_position_id = NW14_GER_workers_pact
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_workers_pact
+		}
+		available = {
+			has_country_flag = nw_ger_prep_rail
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = nw14_war_supply
+				}
+				add_war_support = 0.03
+			}
+			else = {
+				add_ideas = nw14_war_supply
+			}
+			add_to_variable = {
+				var = nw_network
+				value = 15
+			}
+			clamp_variable = {
+				var = nw_network
+				min = 0
+				max = 100
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_soldier_delegates
+		icon = GFX_goal_support_communism
+		x = 0
+		y = 1
+		relative_position_id = NW14_GER_workers_pact
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_workers_pact
+		}
+		available = {
+			has_country_flag = nw_ger_prep_soldiers
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			set_variable = {
+				nw_army_support = 1
+			}
+			if = {
+				limit = {
+					has_idea = nw14_discipline
+				}
+				army_experience = 15
+			}
+			else = {
+				add_ideas = nw14_discipline
+			}
+			add_to_variable = {
+				var = nw_network
+				value = 10
+			}
+			clamp_variable = {
+				var = nw_network
+				min = 0
+				max = 100
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_general_strike
+		icon = GFX_goal_support_communism
+		x = 0
+		y = 1
+		relative_position_id = NW14_GER_soldier_delegates
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_factory_cells
+			focus = NW14_GER_soldier_delegates
+			focus = NW14_GER_railway_cells
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_stability = -0.06
+			add_to_variable = {
+				var = nw_tension
+				value = 20
+			}
+			clamp_variable = {
+				var = nw_tension
+				min = 0
+				max = 100
+			}
+			add_to_variable = {
+				var = nw_network
+				value = 10
+			}
+			clamp_variable = {
+				var = nw_network
+				min = 0
+				max = 100
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_revolution_hour
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = NW14_GER_general_strike
+		cost = 3
+
+		prerequisite = {
+			focus = NW14_GER_general_strike
+		}
+		available = {
+			has_war = no
+			is_subject = no
+			owns_state = 64
+			owns_state = 59
+			NOT = {
+				BAY = { exists = yes }
+			}
+			NOT = {
+				GPL = { exists = yes }
+			}
+			NOT = {
+				has_country_flag = nw_ger_war_started
+			}
+			check_variable = {
+				nw_network > 39
+			}
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			country_event = {
+				id = nw14.10
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_red_supply
+		icon = GFX_goal_support_communism
+		x = -2
+		y = 1
+		relative_position_id = NW14_GER_revolution_hour
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_revolution_hour
+		}
+		available = {
+			has_country_flag = nw_ger_war_started
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = nw14_war_supply
+				}
+				add_war_support = 0.05
+			}
+			else = {
+				add_ideas = nw14_war_supply
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_reunion_congress
+		icon = GFX_goal_support_communism
+		x = 2
+		y = 1
+		relative_position_id = NW14_GER_red_supply
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_red_supply
+		}
+		available = {
+			has_war = no
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			set_country_flag = nw_ger_settled
+			remove_ideas = nw14_war_supply
+			add_stability = 0.08
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_revolution_bureau
+		icon = GFX_goal_support_communism
+		x = 0
+		y = 1
+		relative_position_id = NW14_GER_reunion_congress
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_reunion_congress
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			set_country_flag = nw_revolution_bureau
+			add_to_variable = {
+				var = nw_network
+				value = 25
+			}
+			clamp_variable = {
+				var = nw_network
+				min = 0
+				max = 100
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_italian_conference
+		icon = GFX_goal_support_communism
+		x = -2
+		y = 1
+		relative_position_id = NW14_GER_revolution_bureau
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_revolution_bureau
+		}
+		available = {
+			is_subject = no
+			OR = {
+				is_in_faction = no
+				is_faction_leader = yes
+			}
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_political_power = 35
+			if = {
+				limit = {
+					SRI = { exists = yes }
+					SRI = {
+						has_government = communism
+						is_subject = no
+						is_in_faction = no
+					}
+				}
+				SRI = {
+					country_event = {
+						id = nw14.31
+					}
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_underground_schools
+		icon = GFX_goal_support_communism
+		x = 2
+		y = 1
+		relative_position_id = NW14_GER_revolution_bureau
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_revolution_bureau
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_to_variable = {
+				var = nw_network
+				value = 15
+			}
+			clamp_variable = {
+				var = nw_network
+				min = 0
+				max = 100
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_european_red_pole
+		icon = GFX_goal_support_communism
+		x = 2
+		y = 1
+		relative_position_id = NW14_GER_italian_conference
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_italian_conference
+		}
+		prerequisite = {
+			focus = NW14_GER_underground_schools
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			set_country_flag = nw_network_income
+			add_to_variable = {
+				var = nw_network
+				value = 20
+			}
+			clamp_variable = {
+				var = nw_network
+				min = 0
+				max = 100
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_stabilisation
+		icon = GFX_goal_support_democracy
+		x = 8
+		y = 2
+		relative_position_id = NW14_GER_choose_course
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_choose_course
+		}
+		mutually_exclusive = {
+			focus = NW14_GER_for_kaiser
+			focus = NW14_GER_italian_solidarity
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			set_country_flag = nw_ger_demo
+			clr_country_flag = nw_coal_kpd
+			clr_country_flag = nw_coal_uspd
+			clr_country_flag = nw_coal_spd
+			clr_country_flag = nw_coal_centre
+			clr_country_flag = nw_coal_fvp
+			clr_country_flag = nw_coal_dnvp
+			set_country_flag = nw_coal_spd
+			set_country_flag = nw_coal_kpd
+			nw14_recount = yes
+			add_to_variable = {
+				var = nw_tension
+				value = -5
+			}
+			clamp_variable = {
+				var = nw_tension
+				min = 0
+				max = 100
+			}
+		}
+
+		ai_will_do = {
+			factor = 30
+		}
+	}
+
+	focus = {
+		id = NW14_GER_common_minimum
+		icon = GFX_goal_support_democracy
+		x = 0
+		y = 1
+		relative_position_id = NW14_GER_stabilisation
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_stabilisation
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_to_variable = {
+				var = nw_tension
+				value = -10
+			}
+			clamp_variable = {
+				var = nw_tension
+				min = 0
+				max = 100
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_centre_dialogue
+		icon = GFX_goal_support_democracy
+		x = -2
+		y = 1
+		relative_position_id = NW14_GER_common_minimum
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_common_minimum
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			set_country_flag = nw_coal_centre
+			nw14_recount = yes
+			add_political_power = -35
+			add_to_variable = {
+				var = nw_tension
+				value = -5
+			}
+			clamp_variable = {
+				var = nw_tension
+				min = 0
+				max = 100
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_progressive_dialogue
+		icon = GFX_goal_support_democracy
+		x = 2
+		y = 1
+		relative_position_id = NW14_GER_common_minimum
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_common_minimum
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			set_country_flag = nw_coal_fvp
+			nw14_recount = yes
+			add_political_power = -35
+			add_to_variable = {
+				var = nw_tension
+				value = -5
+			}
+			clamp_variable = {
+				var = nw_tension
+				min = 0
+				max = 100
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_labour_courts
+		icon = GFX_goal_support_democracy
+		x = 0
+		y = 1
+		relative_position_id = NW14_GER_centre_dialogue
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_centre_dialogue
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = nw14_labour
+				}
+				add_stability = 0.025
+			}
+			else = {
+				add_ideas = nw14_labour
+			}
+			add_to_variable = {
+				var = nw_tension
+				value = -8
+			}
+			clamp_variable = {
+				var = nw_tension
+				min = 0
+				max = 100
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_party_mediation
+		icon = GFX_goal_support_democracy
+		x = 0
+		y = 2
+		relative_position_id = NW14_GER_common_minimum
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_common_minimum
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_to_variable = {
+				var = nw_tension
+				value = -10
+			}
+			clamp_variable = {
+				var = nw_tension
+				min = 0
+				max = 100
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_kpd_legalism
+		icon = GFX_goal_support_democracy
+		x = 0
+		y = 2
+		relative_position_id = NW14_GER_progressive_dialogue
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_progressive_dialogue
+		}
+		prerequisite = {
+			focus = NW14_GER_party_mediation
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			set_country_flag = nw_kpd_legalist
+			add_to_variable = {
+				var = nw_tension
+				value = -15
+			}
+			clamp_variable = {
+				var = nw_tension
+				min = 0
+				max = 100
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_unity_congress
+		icon = GFX_goal_support_democracy
+		x = 0
+		y = 2
+		relative_position_id = NW14_GER_party_mediation
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_labour_courts
+		}
+		prerequisite = {
+			focus = NW14_GER_party_mediation
+		}
+		prerequisite = {
+			focus = NW14_GER_kpd_legalism
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_to_variable = {
+				var = nw_spd
+				value = nw_kpd
+			}
+			set_variable = {
+				nw_kpd = 0
+			}
+			set_country_flag = nw_spd_united
+			clr_country_flag = nw_coal_kpd
+			nw14_recount = yes
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_responsible_ministry
+		icon = GFX_goal_support_democracy
+		x = 0
+		y = 1
+		relative_position_id = NW14_GER_unity_congress
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_unity_congress
+		}
+		available = {
+			check_variable = {
+				nw_votes > 264
+			}
+			check_variable = {
+				nw_tension > -1
+			}
+			NOT = {
+				check_variable = {
+					nw_tension > 60
+				}
+			}
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = yes
+			}
+			set_cosmetic_tag = NW_GER_CONSTITUTION
+			create_country_leader = {
+				name = "Герман Мюллер"
+				ideology = liberalism
+				expire = "2000.1.1"
+				traits = {
+				}
+			}
+			set_country_flag = nw_ger_constitution
+			set_party_name = {
+				ideology = democratic
+				name = NW14_united_spd
+				long_name = NW14_united_spd_long
+			}
+			add_stability = 0.05
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_crown_under_law
+		icon = GFX_goal_support_democracy
+		x = 0
+		y = 1
+		relative_position_id = NW14_GER_responsible_ministry
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_responsible_ministry
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			set_country_flag = nw_ger_settled
+			remove_ideas = nw_ger_crown_and_reichstag
+			set_variable = {
+				nw_tension = 20
+			}
+			remove_ideas = nw14_deadlock
+			if = {
+				limit = {
+					has_idea = nw14_democratic_admin
+				}
+				add_political_power = 35
+			}
+			else = {
+				add_ideas = nw14_democratic_admin
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_pan_europe
+		icon = GFX_goal_support_democracy
+		x = 0
+		y = 1
+		relative_position_id = NW14_GER_crown_under_law
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_crown_under_law
+		}
+		available = {
+			is_subject = no
+			OR = {
+				is_in_faction = no
+				is_faction_leader = yes
+			}
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			set_rule = {
+				can_create_factions = yes
+			}
+			if = {
+				limit = {
+					is_in_faction = no
+				}
+				create_faction = NW14_pan_europe
+			}
+			set_country_flag = nw_pan_europe
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_small_state_guarantees
+		icon = GFX_goal_support_democracy
+		x = -2
+		y = 1
+		relative_position_id = NW14_GER_pan_europe
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_pan_europe
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			set_country_flag = nw_democratic_guarantees
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_common_tariffs
+		icon = GFX_goal_support_democracy
+		x = 2
+		y = 1
+		relative_position_id = NW14_GER_pan_europe
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_pan_europe
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = nw14_trade
+				}
+				add_political_power = 35
+			}
+			else = {
+				add_ideas = nw14_trade
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_joint_defence
+		icon = GFX_goal_support_democracy
+		x = 2
+		y = 1
+		relative_position_id = NW14_GER_small_state_guarantees
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_small_state_guarantees
+		}
+		prerequisite = {
+			focus = NW14_GER_common_tariffs
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			army_experience = 20
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_peaceful_reich
+		icon = GFX_goal_support_democracy
+		x = 0
+		y = 1
+		relative_position_id = NW14_GER_joint_defence
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_joint_defence
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = nw14_democratic_admin
+				}
+				add_political_power = 35
+			}
+			else = {
+				add_ideas = nw14_democratic_admin
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_ruhr_audit
+		icon = GFX_goal_generic_production
+		x = 27
+		y = 0
+		cost = 5
+
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NW14_research
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_machine_tools
+		icon = GFX_goal_generic_construct_civ_factory
+		x = -2
+		y = 1
+		relative_position_id = NW14_GER_ruhr_audit
+		cost = 7
+
+		prerequisite = {
+			focus = NW14_GER_ruhr_audit
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_electrical_grid
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 2
+		y = 1
+		relative_position_id = NW14_GER_ruhr_audit
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_ruhr_audit
+		}
+		available = {
+			any_owned_state = {
+				is_core_of = ROOT
+				infrastructure < 5
+			}
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					infrastructure < 5
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_chemical_labs
+		icon = GFX_goal_generic_scientific_exchange
+		x = 0
+		y = 1
+		relative_position_id = NW14_GER_machine_tools
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_machine_tools
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NW14_research
+				bonus = 0.5
+				uses = 1
+				category = electronics
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_colonial_accounts
+		icon = GFX_goal_generic_production
+		x = 0
+		y = 1
+		relative_position_id = NW14_GER_electrical_grid
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_electrical_grid
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = nw14_trade
+				}
+				add_political_power = 35
+			}
+			else = {
+				add_ideas = nw14_trade
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_training_contracts
+		icon = GFX_goal_generic_production
+		x = 2
+		y = 1
+		relative_position_id = NW14_GER_chemical_labs
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_chemical_labs
+		}
+		prerequisite = {
+			focus = NW14_GER_colonial_accounts
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = nw14_production
+				}
+				add_tech_bonus = {
+					name = NW14_research
+					bonus = 0.5
+					uses = 1
+					category = industry
+				}
+			}
+			else = {
+				add_ideas = nw14_production
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_arsenal_network
+		icon = GFX_goal_generic_construct_mil_factory
+		x = -2
+		y = 1
+		relative_position_id = NW14_GER_training_contracts
+		cost = 7
+
+		prerequisite = {
+			focus = NW14_GER_training_contracts
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_rail_mobilisation
+		icon = GFX_goal_generic_army_doctrines
+		x = 2
+		y = 1
+		relative_position_id = NW14_GER_training_contracts
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_training_contracts
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			army_experience = 20
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_artillery_standards
+		icon = GFX_goal_generic_army_doctrines
+		x = 0
+		y = 1
+		relative_position_id = NW14_GER_arsenal_network
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_arsenal_network
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NW14_research
+				bonus = 0.5
+				uses = 1
+				category = artillery
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_motor_trials
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = NW14_GER_rail_mobilisation
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_rail_mobilisation
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NW14_research
+				bonus = 0.5
+				uses = 1
+				category = motorized_equipment
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_naval_estimates
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = 4
+		y = 1
+		relative_position_id = NW14_GER_colonial_accounts
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_colonial_accounts
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			navy_experience = 20
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_kiel_yards
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 0
+		y = 1
+		relative_position_id = NW14_GER_naval_estimates
+		cost = 7
+
+		prerequisite = {
+			focus = NW14_GER_naval_estimates
+		}
+		available = {
+			any_owned_state = {
+				is_core_of = ROOT
+				is_coastal = yes
+			}
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					is_coastal = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_air_observation
+		icon = GFX_goal_generic_build_airforce
+		x = 0
+		y = 1
+		relative_position_id = NW14_GER_kiel_yards
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_kiel_yards
+			focus = NW14_GER_rail_mobilisation
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NW14_research
+				bonus = 0.5
+				uses = 1
+				category = light_air
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_university_contracts
+		icon = GFX_goal_generic_scientific_exchange
+		x = 2
+		y = 1
+		relative_position_id = NW14_GER_artillery_standards
+		cost = 10
+
+		prerequisite = {
+			focus = NW14_GER_artillery_standards
+		}
+		prerequisite = {
+			focus = NW14_GER_motor_trials
+		}
+		prerequisite = {
+			focus = NW14_GER_air_observation
+		}
+		available = {
+			amount_research_slots < 6
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW14_GER_continental_workshop
+		icon = GFX_goal_generic_production
+		x = 0
+		y = 1
+		relative_position_id = NW14_GER_university_contracts
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_university_contracts
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = nw14_production
+				}
+				add_tech_bonus = {
+					name = NW14_research
+					bonus = 0.5
+					uses = 1
+					category = industry
+				}
+			}
+			else = {
+				add_ideas = nw14_production
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_GER_economy_01
+		icon = GFX_goal_generic_production
+		x = 1
+		y = 2
+		relative_position_id = NW14_GER_continental_workshop
+		cost = 3
+
+		prerequisite = {
+			focus = NW14_GER_continental_workshop
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_political_power = 35
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_GER_economy_02
+		icon = GFX_goal_generic_construct_infrastructure
+		x = -2
+		y = 1
+		relative_position_id = NW20_GER_economy_01
+		cost = 7
+
+		prerequisite = {
+			focus = NW20_GER_economy_01
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			if = {
+				limit = {
+					any_owned_state = {
+						is_core_of = ROOT
+						is_controlled_by = ROOT
+						infrastructure < 5
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_core_of = ROOT
+						infrastructure < 5
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			else = {
+				add_political_power = 25
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_GER_economy_03
+		icon = GFX_goal_generic_scientific_exchange
+		x = 2
+		y = 1
+		relative_position_id = NW20_GER_economy_01
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_GER_economy_01
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NW20_research
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_GER_economy_04
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 0
+		y = 1
+		relative_position_id = NW20_GER_economy_02
+		cost = 7
+
+		prerequisite = {
+			focus = NW20_GER_economy_02
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			if = {
+				limit = {
+					any_owned_state = {
+						is_core_of = ROOT
+						is_controlled_by = ROOT
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_core_of = ROOT
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			else = {
+				add_political_power = 25
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_GER_economy_05
+		icon = GFX_goal_generic_production
+		x = 0
+		y = 1
+		relative_position_id = NW20_GER_economy_03
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_GER_economy_03
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = nw20_tools
+				days = 365
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_GER_economy_06
+		icon = GFX_goal_generic_political_pressure
+		x = 2
+		y = 1
+		relative_position_id = NW20_GER_economy_04
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_GER_economy_04
+		}
+		prerequisite = {
+			focus = NW20_GER_economy_05
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_political_power = 35
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_GER_economy_07
+		icon = GFX_goal_generic_construct_mil_factory
+		x = -2
+		y = 1
+		relative_position_id = NW20_GER_economy_06
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_GER_economy_06
+		}
+		mutually_exclusive = {
+			focus = NW20_GER_economy_08
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			set_country_flag = nw21_ger_contracts
+			add_timed_idea = {
+				idea = nw20_contracts
+				days = 365
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_GER_economy_08
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 2
+		y = 1
+		relative_position_id = NW20_GER_economy_06
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_GER_economy_06
+		}
+		mutually_exclusive = {
+			focus = NW20_GER_economy_07
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			set_country_flag = nw21_ger_workshops
+			add_timed_idea = {
+				idea = nw20_workshops
+				days = 365
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_GER_economy_09
+		icon = GFX_goal_generic_political_pressure
+		x = 2
+		y = 1
+		relative_position_id = NW20_GER_economy_07
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_GER_economy_07
+			focus = NW20_GER_economy_08
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_stability = 0.03
+			if = {
+				limit = {
+					has_country_flag = nw21_ger_contracts
+				}
+				add_ideas = nw21_ger_contract_coordination
+			}
+			if = {
+				limit = {
+					has_country_flag = nw21_ger_workshops
+				}
+				add_ideas = nw21_ger_sme_network
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_GER_economy_10
+		icon = GFX_goal_generic_scientific_exchange
+		x = -2
+		y = 1
+		relative_position_id = NW20_GER_economy_09
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_GER_economy_09
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NW20_research
+				bonus = 0.5
+				uses = 1
+				category = electronics
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_GER_economy_11
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 2
+		y = 1
+		relative_position_id = NW20_GER_economy_09
+		cost = 7
+
+		prerequisite = {
+			focus = NW20_GER_economy_09
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			if = {
+				limit = {
+					any_owned_state = {
+						is_core_of = ROOT
+						is_controlled_by = ROOT
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_core_of = ROOT
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			else = {
+				add_political_power = 25
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_GER_economy_12
+		icon = GFX_goal_generic_production
+		x = 2
+		y = 1
+		relative_position_id = NW20_GER_economy_10
+		cost = 7
+
+		prerequisite = {
+			focus = NW20_GER_economy_10
+		}
+		prerequisite = {
+			focus = NW20_GER_economy_11
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = nw20_tools
+				days = 365
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_GER_land_01
+		icon = GFX_goal_generic_army_doctrines
+		x = 44
+		y = 0
+		cost = 3
+
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			army_experience = 15
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_GER_land_02
+		icon = GFX_goal_generic_army_doctrines
+		x = -2
+		y = 1
+		relative_position_id = NW20_GER_land_01
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_GER_land_01
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = nw20_training
+				days = 365
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_GER_land_03
+		icon = GFX_goal_generic_army_doctrines
+		x = 2
+		y = 1
+		relative_position_id = NW20_GER_land_01
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_GER_land_01
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NW20_research
+				bonus = 0.5
+				uses = 1
+				category = artillery
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_GER_land_04
+		icon = GFX_goal_generic_army_doctrines
+		x = 0
+		y = 1
+		relative_position_id = NW20_GER_land_02
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_GER_land_02
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = support_equipment_1
+				amount = 100
+				producer = ROOT
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_GER_land_05
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 0
+		y = 1
+		relative_position_id = NW20_GER_land_03
+		cost = 7
+
+		prerequisite = {
+			focus = NW20_GER_land_03
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			if = {
+				limit = {
+					any_owned_state = {
+						is_core_of = ROOT
+						is_controlled_by = ROOT
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_core_of = ROOT
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			else = {
+				add_political_power = 25
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_GER_land_06
+		icon = GFX_goal_generic_army_doctrines
+		x = 2
+		y = 1
+		relative_position_id = NW20_GER_land_04
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_GER_land_04
+		}
+		prerequisite = {
+			focus = NW20_GER_land_05
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			army_experience = 15
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_GER_land_07
+		icon = GFX_goal_generic_army_doctrines
+		x = -2
+		y = 1
+		relative_position_id = NW20_GER_land_06
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_GER_land_06
+		}
+		mutually_exclusive = {
+			focus = NW20_GER_land_08
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			set_country_flag = nw21_ger_mobile_army
+			add_equipment_to_stockpile = {
+				type = motorized_equipment_1
+				amount = 100
+				producer = ROOT
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_GER_land_08
+		icon = GFX_goal_generic_army_doctrines
+		x = 2
+		y = 1
+		relative_position_id = NW20_GER_land_06
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_GER_land_06
+		}
+		mutually_exclusive = {
+			focus = NW20_GER_land_07
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			set_country_flag = nw21_ger_supply_army
+			add_timed_idea = {
+				idea = nw20_supply
+				days = 365
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_GER_land_09
+		icon = GFX_goal_generic_army_doctrines
+		x = 2
+		y = 1
+		relative_position_id = NW20_GER_land_07
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_GER_land_07
+			focus = NW20_GER_land_08
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			army_experience = 15
+			if = {
+				limit = {
+					has_country_flag = nw21_ger_mobile_army
+				}
+				add_ideas = nw21_ger_mobile_reserves
+			}
+			if = {
+				limit = {
+					has_country_flag = nw21_ger_supply_army
+				}
+				add_ideas = nw21_ger_field_supply
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_GER_land_10
+		icon = GFX_goal_generic_army_doctrines
+		x = -2
+		y = 1
+		relative_position_id = NW20_GER_land_09
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_GER_land_09
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NW20_research
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_GER_land_11
+		icon = GFX_goal_generic_army_doctrines
+		x = 2
+		y = 1
+		relative_position_id = NW20_GER_land_09
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_GER_land_09
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NW20_research
+				bonus = 0.5
+				uses = 1
+				category = armor
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_GER_land_12
+		icon = GFX_goal_generic_army_doctrines
+		x = 2
+		y = 1
+		relative_position_id = NW20_GER_land_10
+		cost = 7
+
+		prerequisite = {
+			focus = NW20_GER_land_10
+		}
+		prerequisite = {
+			focus = NW20_GER_land_11
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = nw20_training
+				days = 365
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_GER_flight_01
+		icon = GFX_goal_generic_build_airforce
+		x = 64
+		y = 0
+		cost = 3
+
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			air_experience = 15
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_GER_flight_02
+		icon = GFX_goal_generic_build_airforce
+		x = -2
+		y = 1
+		relative_position_id = NW20_GER_flight_01
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_GER_flight_01
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NW20_research
+				bonus = 0.5
+				uses = 1
+				category = light_air
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_GER_flight_03
+		icon = GFX_goal_generic_build_airforce
+		x = 2
+		y = 1
+		relative_position_id = NW20_GER_flight_01
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_GER_flight_01
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NW20_research
+				bonus = 0.5
+				uses = 1
+				category = tactical_bomber
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_GER_flight_04
+		icon = GFX_goal_generic_build_airforce
+		x = 0
+		y = 1
+		relative_position_id = NW20_GER_flight_02
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_GER_flight_02
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = nw20_flight
+				days = 365
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_GER_flight_05
+		icon = GFX_goal_generic_scientific_exchange
+		x = 0
+		y = 1
+		relative_position_id = NW20_GER_flight_03
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_GER_flight_03
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NW20_research
+				bonus = 0.5
+				uses = 1
+				category = electronics
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_GER_flight_06
+		icon = GFX_goal_generic_build_airforce
+		x = 2
+		y = 1
+		relative_position_id = NW20_GER_flight_04
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_GER_flight_04
+		}
+		prerequisite = {
+			focus = NW20_GER_flight_05
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			air_experience = 15
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_GER_flight_07
+		icon = GFX_goal_generic_construct_mil_factory
+		x = -2
+		y = 1
+		relative_position_id = NW20_GER_flight_06
+		cost = 7
+
+		prerequisite = {
+			focus = NW20_GER_flight_06
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			if = {
+				limit = {
+					any_owned_state = {
+						is_core_of = ROOT
+						is_controlled_by = ROOT
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_core_of = ROOT
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			else = {
+				add_political_power = 25
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_GER_flight_08
+		icon = GFX_goal_generic_build_airforce
+		x = 2
+		y = 1
+		relative_position_id = NW20_GER_flight_06
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_GER_flight_06
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			air_experience = 15
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_GER_flight_09
+		icon = GFX_goal_generic_build_airforce
+		x = 0
+		y = 1
+		relative_position_id = NW20_GER_flight_07
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_GER_flight_07
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = nw20_flight
+				days = 365
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_GER_flight_10
+		icon = GFX_goal_generic_build_airforce
+		x = 2
+		y = 1
+		relative_position_id = NW20_GER_flight_09
+		cost = 7
+
+		prerequisite = {
+			focus = NW20_GER_flight_09
+		}
+		prerequisite = {
+			focus = NW20_GER_flight_08
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			air_experience = 15
+			add_ideas = nw21_ger_air_service
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_GER_maritime_01
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = 54
+		y = 0
+		cost = 3
+
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			navy_experience = 15
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_GER_maritime_02
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = -2
+		y = 1
+		relative_position_id = NW20_GER_maritime_01
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_GER_maritime_01
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			navy_experience = 15
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_GER_maritime_03
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = 2
+		y = 1
+		relative_position_id = NW20_GER_maritime_01
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_GER_maritime_01
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NW20_research
+				bonus = 0.5
+				uses = 1
+				category = dd_tech
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_GER_maritime_04
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = 0
+		y = 1
+		relative_position_id = NW20_GER_maritime_02
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_GER_maritime_02
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = convoy
+				amount = 15
+				producer = ROOT
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_GER_maritime_05
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 0
+		y = 1
+		relative_position_id = NW20_GER_maritime_03
+		cost = 7
+
+		prerequisite = {
+			focus = NW20_GER_maritime_03
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			if = {
+				limit = {
+					any_owned_state = {
+						is_core_of = ROOT
+						is_controlled_by = ROOT
+						is_coastal = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_core_of = ROOT
+						is_coastal = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			else = {
+				add_political_power = 25
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_GER_maritime_06
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = 2
+		y = 1
+		relative_position_id = NW20_GER_maritime_04
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_GER_maritime_04
+		}
+		prerequisite = {
+			focus = NW20_GER_maritime_05
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			navy_experience = 15
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_GER_maritime_07
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = -2
+		y = 1
+		relative_position_id = NW20_GER_maritime_06
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_GER_maritime_06
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = nw20_shipbuilding
+				days = 365
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_GER_maritime_08
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = 2
+		y = 1
+		relative_position_id = NW20_GER_maritime_07
+		cost = 7
+
+		prerequisite = {
+			focus = NW20_GER_maritime_07
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			navy_experience = 15
+			add_ideas = nw21_ger_fleet_standards
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_GER_crown_audit
+		icon = GFX_goal_generic_political_pressure
+		x = -2
+		y = 2
+		relative_position_id = NW14_GER_controlled_reichstag
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_controlled_reichstag
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_political_power = 35
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_GER_crown_service
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = NW20_GER_crown_audit
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_GER_crown_audit
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_stability = 0.03
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_GER_red_relief
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 2
+		relative_position_id = NW14_GER_european_red_pole
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_european_red_pole
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = nw20_workshops
+				days = 365
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_GER_red_inspection
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = NW20_GER_red_relief
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_GER_red_relief
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = nw20_supply
+				days = 365
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_GER_parliament_accounts
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 2
+		relative_position_id = NW14_GER_peaceful_reich
+		cost = 5
+
+		prerequisite = {
+			focus = NW14_GER_peaceful_reich
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_stability = 0.03
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = NW20_GER_parliament_research
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = NW20_GER_parliament_accounts
+		cost = 5
+
+		prerequisite = {
+			focus = NW20_GER_parliament_accounts
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = NW20_research
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+}

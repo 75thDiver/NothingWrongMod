@@ -1,0 +1,319 @@
+nw26_generic_development = {
+	nw26_admin_funding = {
+		icon = generic_political_actions
+		cost = 35
+		visible = {
+			has_completed_focus = NWG_misc_political_actions
+		}
+		available = {
+			NOT = {
+				has_idea = nw26_gen_logistics
+			}
+		}
+		days_re_enable = 180
+		complete_effect = {
+			add_timed_idea = {
+				idea = nw26_gen_logistics
+				days = 120
+			}
+			add_timed_idea = {
+				idea = nw26_gen_investment_cost
+				days = 120
+			}
+		}
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	nw26_admin_reopen = {
+		icon = generic_political_actions
+		cost = 25
+		visible = {
+			has_completed_focus = NWG_a_new_leader
+			NOT = {
+				has_country_flag = nw26_admin_settled
+			}
+		}
+		available = {
+			NOT = {
+				has_country_flag = nw26_admin_pending
+			}
+		}
+		days_re_enable = 30
+		complete_effect = {
+			set_country_flag = {
+				flag = nw26_admin_pending
+				days = 30
+			}
+			country_event = {
+				id = nw26.1
+				days = 1
+			}
+		}
+		ai_will_do = {
+			factor = 8
+		}
+	}
+	nw26_domestic_investment = {
+		icon = generic_political_actions
+		cost = 100
+		visible = {
+			has_completed_focus = NW20_GEN_economy_01
+		}
+		available = {
+			any_owned_state = {
+				is_core_of = ROOT
+				is_controlled_by = ROOT
+				free_building_slots = {
+					building = industrial_complex
+					size > 0
+					include_locked = no
+				}
+			}
+		}
+		days_re_enable = 365
+		complete_effect = {
+			if = {
+				limit = {
+					any_owned_state = {
+						is_core_of = ROOT
+						is_controlled_by = ROOT
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = no
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_core_of = ROOT
+						is_controlled_by = ROOT
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = no
+						}
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			else = {
+				add_timed_idea = {
+					idea = nw26_gen_industrial_adjustment
+					days = 120
+				}
+			}
+			add_timed_idea = {
+				idea = nw26_gen_investment_cost
+				days = 180
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	nw26_workshop_coordination = {
+		icon = generic_political_actions
+		cost = 50
+		visible = {
+			has_completed_focus = NWG_industrial_effort
+		}
+		available = {
+			NOT = {
+				has_idea = nw26_gen_industrial_adjustment
+			}
+		}
+		days_re_enable = 180
+		complete_effect = {
+			add_timed_idea = {
+				idea = nw26_gen_industrial_adjustment
+				days = 180
+			}
+			add_timed_idea = {
+				idea = nw26_gen_investment_cost
+				days = 180
+			}
+		}
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	nw26_staff_exercises = {
+		icon = generic_political_actions
+		cost = 45
+		visible = {
+			has_completed_focus = NWG_modernization_of_the_army
+		}
+		available = {
+			NOT = {
+				has_idea = nw26_gen_investment_cost
+			}
+		}
+		days_re_enable = 180
+		complete_effect = {
+			army_experience = 10
+			add_timed_idea = {
+				idea = nw26_gen_investment_cost
+				days = 120
+			}
+		}
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	nw26_supply_schedule = {
+		icon = generic_political_actions
+		cost = 40
+		visible = {
+			has_completed_focus = NW20_GEN_land_06
+		}
+		available = {
+			NOT = {
+				has_idea = nw26_gen_logistics
+			}
+		}
+		days_re_enable = 180
+		complete_effect = {
+			add_timed_idea = {
+				idea = nw26_gen_logistics
+				days = 180
+			}
+			add_timed_idea = {
+				idea = nw26_gen_investment_cost
+				days = 180
+			}
+		}
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	nw26_air_training = {
+		icon = generic_political_actions
+		cost = 50
+		visible = {
+			has_completed_focus = NWG_aviation_effort_iii
+		}
+		available = {
+			NOT = {
+				has_idea = nw20_flight
+			}
+		}
+		days_re_enable = 180
+		complete_effect = {
+			air_experience = 10
+			add_timed_idea = {
+				idea = nw20_flight
+				days = 180
+			}
+			add_timed_idea = {
+				idea = nw26_gen_investment_cost
+				days = 180
+			}
+		}
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	nw26_subject_consultations = {
+		icon = generic_political_actions
+		cost = 35
+		visible = {
+			has_completed_focus = NWG_lore_autonomy
+			OR = {
+				nw26_generic_dominion = yes
+				nw26_generic_crown = yes
+				nw26_generic_colony = yes
+			}
+		}
+		available = {
+			is_subject = yes
+			NOT = {
+				has_country_flag = nw26_subject_pending
+			}
+			NOT = {
+				has_idea = nw26_gen_subject_programme
+			}
+			NOT = {
+				has_war_with = OVERLORD
+			}
+		}
+		days_re_enable = 180
+		complete_effect = {
+			nw26_subject_offer = yes
+		}
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	nw26_trade_mission = {
+		icon = generic_political_actions
+		cost = 40
+		visible = {
+			has_completed_focus = NWG_lore_trade_missions
+		}
+		available = {
+			NOT = {
+				has_country_flag = nw26_trade_pending
+			}
+			any_neighbor_country = {
+				nw26_generic_partner = yes
+			}
+		}
+		days_re_enable = 365
+		complete_effect = {
+			nw26_trade_offer = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	nw26_conference_mission = {
+		icon = generic_political_actions
+		cost = 40
+		visible = {
+			has_completed_focus = NWG_lore_conference
+		}
+		available = {
+			NOT = {
+				has_country_flag = nw26_conference_pending
+			}
+			any_neighbor_country = {
+				nw26_generic_partner = yes
+			}
+		}
+		days_re_enable = 365
+		complete_effect = {
+			nw26_conference_offer = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	nw26_tech_mission = {
+		icon = generic_political_actions
+		cost = 40
+		visible = {
+			has_completed_focus = NWG_lore_technical_exchange
+		}
+		available = {
+			NOT = {
+				has_country_flag = nw26_tech_pending
+			}
+			any_neighbor_country = {
+				nw26_generic_partner = yes
+			}
+		}
+		days_re_enable = 365
+		complete_effect = {
+			nw26_tech_offer = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

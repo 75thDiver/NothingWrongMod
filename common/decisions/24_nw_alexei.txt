@@ -1,0 +1,121 @@
+nw24_alexei = {
+	nw24_state_council = {
+		icon = generic_political_actions
+		cost = 25
+		visible = {
+			has_completed_focus = NW14_SOV_crown_long_05
+		}
+		available = {
+			check_variable = {
+				nw_trust < 89
+			}
+		}
+		days_re_enable = 60
+		complete_effect = {
+			add_to_variable = {
+				var = nw_trust
+				value = 12
+			}
+			clamp_variable = {
+				var = nw_trust
+				min = 0
+				max = 100
+			}
+		}
+		ai_will_do = {
+			factor = 6
+		}
+	}
+	nw24_retry_pol = {
+		icon = generic_political_actions
+		cost = 35
+		visible = {
+			has_completed_focus = NW14_SOV_dominion_charters
+			POL = {
+				is_subject_of = SOV
+				NOT = {
+					has_country_flag = nw24_charter_signed
+				}
+			}
+		}
+		available = {
+			POL = {
+				NOT = {
+					has_country_flag = nw24_charter_pending
+				}
+			}
+		}
+		days_re_enable = 90
+		complete_effect = {
+			POL = {
+				set_country_flag = nw24_charter_pending
+				country_event = {
+					id = nw24.3
+					days = 1
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	nw24_retry_fin = {
+		icon = generic_political_actions
+		cost = 35
+		visible = {
+			has_completed_focus = NW14_SOV_dominion_charters
+			FIN = {
+				is_subject_of = SOV
+				NOT = {
+					has_country_flag = nw24_charter_signed
+				}
+			}
+		}
+		available = {
+			FIN = {
+				NOT = {
+					has_country_flag = nw24_charter_pending
+				}
+			}
+		}
+		days_re_enable = 90
+		complete_effect = {
+			FIN = {
+				set_country_flag = nw24_charter_pending
+				country_event = {
+					id = nw24.3
+					days = 1
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	nw24_restore_personal_rule = {
+		icon = generic_political_actions
+		cost = 40
+		visible = {
+			has_idea = nw24_limited_rule
+			has_country_flag = nw24_cabinet_personal
+		}
+		available = {
+			check_variable = {
+				nw_health > 69
+			}
+		}
+		fire_only_once = yes
+		complete_effect = {
+			swap_ideas = {
+				remove_idea = nw24_limited_rule
+				add_idea = nw24_personal_rule
+			}
+			remove_ideas = nw24_convalescence
+			clr_country_flag = nw24_outcome_limited
+			set_country_flag = nw24_outcome_personal
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+}

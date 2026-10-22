@@ -1,0 +1,986 @@
+ideas = {
+ country = {
+nwg_spirit_a_government_without_government = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = 0.06
+  political_power_factor = -0.018
+  industrial_capacity_factory = 0.036
+ }
+}
+nwg_spirit_a_grill_in_every_home = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = 0.028
+  war_support_factor = -0.006
+ }
+}
+nwg_spirit_a_true_kakistocracy = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  political_power_factor = 0.04
+  consumer_goods_factor = 0.01
+ }
+}
+nwg_spirit_abolish_all_ownership = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = 0.04
+  political_power_factor = -0.012
+  industrial_capacity_factory = 0.024
+ }
+}
+nwg_spirit_an_enlightened_centrist = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = 0.042
+  war_support_factor = -0.009
+ }
+}
+nwg_spirit_anarchism = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = 0.01
+  political_power_factor = -0.003
+  industrial_capacity_factory = 0.006
+ }
+}
+nwg_spirit_at_any_cost = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  war_support_factor = 0.084
+  stability_factor = -0.018
+ }
+}
+nwg_spirit_autarky = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  local_resources_factor = 0.04
+  consumer_goods_factor = 0.01
+ }
+}
+nwg_spirit_bomber_produtction = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  air_accidents_factor = -0.05
+ }
+}
+nwg_spirit_build_up_personal_wealth = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  industrial_capacity_factory = 0.03
+  political_power_factor = -0.006
+ }
+}
+nwg_spirit_citizen_suppresion = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  army_org_factor = 0.024
+  political_power_factor = 0.012
+ }
+}
+nwg_spirit_civilise_the_lesser_nations = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  army_org_factor = 0.04
+  consumer_goods_factor = 0.01
+ }
+}
+nwg_spirit_class_struggle = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  industrial_capacity_factory = 0.04
+  production_factory_efficiency_gain_factor = 0.03
+ }
+}
+nwg_spirit_collectivization_of_agriculture = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  production_speed_industrial_complex_factor = 0.06
+  consumer_goods_factor = 0.005
+ }
+}
+nwg_spirit_concessions_to_the_aristocracy = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  political_power_factor = 0.036
+  stability_factor = 0.024
+ }
+}
+nwg_spirit_conservatism = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = 0.01
+  production_factory_efficiency_gain_factor = 0.005
+ }
+}
+nwg_spirit_defence_of_the_nation = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  army_defence_factor = 0.04
+ }
+}
+nwg_spirit_define_war_crimes = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  war_support_factor = 0.07
+  stability_factor = -0.015
+ }
+}
+nwg_spirit_deterrence = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  army_defence_factor = 0.025
+ }
+}
+nwg_spirit_devotion_to_the_state = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  army_org_factor = 0.04
+  political_power_factor = 0.02
+ }
+}
+nwg_spirit_divine_rulership = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  political_power_factor = 0.018
+  stability_factor = 0.012
+ }
+}
+nwg_spirit_economy_for_the_army = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  war_support_factor = 0.042
+  stability_factor = -0.009
+ }
+}
+nwg_spirit_embrace_tarrifs = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = 0.03
+  production_factory_efficiency_gain_factor = 0.015
+ }
+}
+nwg_spirit_empower_the_military = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  army_org_factor = 0.016
+  political_power_factor = 0.008
+ }
+}
+nwg_spirit_empower_trade_untions = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  industrial_capacity_factory = 0.032
+  production_factory_efficiency_gain_factor = 0.024
+ }
+}
+nwg_spirit_end_elections = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = 0.024
+  political_power_factor = 0.008
+ }
+}
+nwg_spirit_enforce_loyalty = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  production_speed_industrial_complex_factor = 0.036
+  consumer_goods_factor = 0.003
+ }
+}
+nwg_spirit_espionage_agency_developments = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  intelligence_agency_defense = 0.05
+ }
+}
+nwg_spirit_expand_counter_intelligence = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  intelligence_agency_defense = 0.05
+ }
+}
+nwg_spirit_expand_decryption_capabilities = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  decryption_power_factor = 0.05
+ }
+}
+nwg_spirit_expand_state_holdings = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  army_org_factor = 0.048
+  political_power_factor = 0.024
+ }
+}
+nwg_spirit_exploit_citizens = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  industrial_capacity_factory = 0.02
+  political_power_factor = -0.004
+ }
+}
+nwg_spirit_export_goods = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  trade_opinion_factor = 0.1
+ }
+}
+nwg_spirit_family_values = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = 0.02
+  production_factory_efficiency_gain_factor = 0.01
+ }
+}
+nwg_spirit_fascism = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  war_support_factor = 0.014
+  stability_factor = -0.003
+ }
+}
+nwg_spirit_fighter_production = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  air_accidents_factor = -0.05
+ }
+}
+nwg_spirit_firearm_production = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  production_factory_efficiency_gain_factor = 0.05
+ }
+}
+nwg_spirit_for_the_empire = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  army_org_factor = 0.048
+  consumer_goods_factor = 0.012
+ }
+}
+nwg_spirit_for_the_king = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  political_power_factor = 0.027
+  stability_factor = 0.018
+ }
+}
+nwg_spirit_freedom_without_democracy = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = 0.048
+  political_power_factor = 0.016
+ }
+}
+nwg_spirit_grand_army = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  army_org_factor = 0.03
+  supply_consumption_factor = -0.02
+ }
+}
+nwg_spirit_guide_industries = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  army_org_factor = 0.024
+  consumer_goods_factor = 0.006
+ }
+}
+nwg_spirit_holy_warriors = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = 0.07
+  research_speed_factor = -0.01
+ }
+}
+nwg_spirit_holy_wars = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = 0.084
+  research_speed_factor = -0.012
+ }
+}
+nwg_spirit_hyperconservative_populism = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = 0.012
+  political_power_factor = 0.004
+ }
+}
+nwg_spirit_i_just_wanna_grill = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = 0.014
+  war_support_factor = -0.003
+ }
+}
+nwg_spirit_ideological_fanaticism = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  political_power_factor = 0.03
+ }
+}
+nwg_spirit_imperial_army = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  army_org_factor = 0.032
+  consumer_goods_factor = 0.008
+ }
+}
+nwg_spirit_improve_quality_of_mechanized = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  army_org_factor = 0.02
+ }
+}
+nwg_spirit_improve_quality_of_motorized = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  supply_consumption_factor = -0.02
+ }
+}
+nwg_spirit_indoctrination = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  war_support_factor = 0.024
+  political_power_factor = 0.018
+ }
+}
+nwg_spirit_industrial_superpower = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  production_factory_max_efficiency_factor = 0.03
+ }
+}
+nwg_spirit_intensify_exctraction = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  local_resources_factor = 0.05
+ }
+}
+nwg_spirit_internationalism = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  war_support_factor = 0.008
+  political_power_factor = 0.006
+ }
+}
+nwg_spirit_kleptocratic_corporatism = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  industrial_capacity_factory = 0.01
+  political_power_factor = -0.002
+ }
+}
+nwg_spirit_liberalism = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  production_speed_industrial_complex_factor = 0.01
+  research_speed_factor = 0.003
+ }
+}
+nwg_spirit_man_of_the_people = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = 0.06
+  political_power_factor = 0.02
+ }
+}
+nwg_spirit_messenger_of_god = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = 0.056
+  research_speed_factor = -0.008
+ }
+}
+nwg_spirit_militarized_schooling = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  war_support_factor = 0.028
+  stability_factor = -0.006
+ }
+}
+nwg_spirit_military_coup = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  army_org_factor = 0.008
+  political_power_factor = 0.004
+ }
+}
+nwg_spirit_military_industry_focus = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  industrial_capacity_factory = 0.04
+ }
+}
+nwg_spirit_modern_serfdom = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  political_power_factor = 0.045
+  stability_factor = 0.03
+ }
+}
+nwg_spirit_monarchism = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  political_power_factor = 0.009
+  stability_factor = 0.006
+ }
+}
+nwg_spirit_national_supremacy = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  army_org_factor = 0.016
+  consumer_goods_factor = 0.004
+ }
+}
+nwg_spirit_national_unity = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = 0.024
+  war_support_factor = 0.012
+ }
+}
+nwg_spirit_nationalisation = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = 0.036
+  war_support_factor = 0.018
+ }
+}
+nwg_spirit_nationalism = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = 0.012
+  war_support_factor = 0.006
+ }
+}
+nwg_spirit_nationalize_foreign_assets = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  industrial_capacity_factory = 0.016
+  production_factory_efficiency_gain_factor = 0.012
+ }
+}
+nwg_spirit_neoimperialism = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  army_org_factor = 0.008
+  consumer_goods_factor = 0.002
+ }
+}
+nwg_spirit_neutrality_focus = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  army_defence_factor = 0.02
+  war_support_factor = -0.02
+ }
+}
+nwg_spirit_one_faith = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = 0.028
+  research_speed_factor = -0.004
+ }
+}
+nwg_spirit_open_borders = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  production_speed_industrial_complex_factor = 0.04
+  research_speed_factor = 0.012
+ }
+}
+nwg_spirit_open_market = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  production_speed_industrial_complex_factor = 0.03
+  research_speed_factor = 0.009
+ }
+}
+nwg_spirit_paramilitarism = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = 0.06
+  war_support_factor = 0.03
+ }
+}
+nwg_spirit_partisan_defence = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  encryption_factor = 0.05
+ }
+}
+nwg_spirit_partisanism = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = 0.072
+  war_support_factor = 0.036
+ }
+}
+nwg_spirit_peace_through_war = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  war_support_factor = 0.04
+  political_power_factor = 0.03
+ }
+}
+nwg_spirit_peasant_militias = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  war_support_factor = 0.032
+  political_power_factor = 0.024
+ }
+}
+nwg_spirit_peoples_army = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = 0.03
+  political_power_factor = -0.009
+  industrial_capacity_factory = 0.018
+ }
+}
+nwg_spirit_permanent_revolution = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  war_support_factor = 0.048
+  political_power_factor = 0.036
+ }
+}
+nwg_spirit_planned_economy = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  production_speed_industrial_complex_factor = 0.024
+  consumer_goods_factor = 0.002
+ }
+}
+nwg_spirit_police_state = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  army_org_factor = 0.032
+  political_power_factor = 0.016
+ }
+}
+nwg_spirit_political_commissars = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  production_speed_industrial_complex_factor = 0.048
+  consumer_goods_factor = 0.004
+ }
+}
+nwg_spirit_political_correctness = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  war_support_factor = 0.016
+  political_power_factor = 0.012
+ }
+}
+nwg_spirit_president_more_like_ceo = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  industrial_capacity_factory = 0.06
+  political_power_factor = -0.012
+ }
+}
+nwg_spirit_private_armies = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  industrial_capacity_factory = 0.05
+  political_power_factor = -0.01
+ }
+}
+nwg_spirit_private_military_companies = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = 0.04
+  production_factory_efficiency_gain_factor = 0.02
+ }
+}
+nwg_spirit_privatize_industries = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  industrial_capacity_factory = 0.04
+  political_power_factor = -0.008
+ }
+}
+nwg_spirit_protect_our_borders_and_only_our_borders = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = 0.036
+  political_power_factor = 0.012
+ }
+}
+nwg_spirit_quality = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  army_org_factor = 0.04
+  army_morale_factor = 0.03
+ }
+}
+nwg_spirit_quality_armor = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  army_org_factor = 0.025
+ }
+}
+nwg_spirit_quantity = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  training_time_army_factor = -0.05
+  recruitable_population = 0.005
+ }
+}
+nwg_spirit_quantity_of_armor = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  training_time_army_factor = -0.03
+ }
+}
+nwg_spirit_racial_laws = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  war_support_factor = 0.056
+  stability_factor = -0.012
+ }
+}
+nwg_spirit_reduce_mechanized_production_costs = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  production_factory_efficiency_gain_factor = 0.03
+ }
+}
+nwg_spirit_reduce_motorized_production_costs = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  production_factory_efficiency_gain_factor = 0.03
+ }
+}
+nwg_spirit_save_ethnic_minorities = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = 0.048
+  war_support_factor = 0.024
+ }
+}
+nwg_spirit_socialism_in_one_country = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  production_speed_industrial_complex_factor = 0.012
+  consumer_goods_factor = 0.001
+ }
+}
+nwg_spirit_socialist_science = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  production_speed_industrial_complex_factor = 0.072
+  consumer_goods_factor = 0.006
+ }
+}
+nwg_spirit_special_forces = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  special_forces_cap = 0.02
+ }
+}
+nwg_spirit_state_sponsored_crusades = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  political_power_factor = 0.054
+  stability_factor = 0.036
+ }
+}
+nwg_spirit_state_welfare = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  production_speed_industrial_complex_factor = 0.02
+  research_speed_factor = 0.006
+ }
+}
+nwg_spirit_successful_economy = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  production_speed_buildings_factor = 0.03
+ }
+}
+nwg_spirit_syndicalism = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  industrial_capacity_factory = 0.008
+  production_factory_efficiency_gain_factor = 0.006
+ }
+}
+nwg_spirit_the_greatest_minds = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  research_speed_factor = 0.025
+ }
+}
+nwg_spirit_theocracy = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = 0.014
+  research_speed_factor = -0.002
+ }
+}
+nwg_spirit_there_is_no_god_only_anarchism = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = 0.05
+  political_power_factor = -0.015
+  industrial_capacity_factory = 0.03
+ }
+}
+nwg_spirit_under_god = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = 0.042
+  research_speed_factor = -0.006
+ }
+}
+nwg_spirit_whats_a_head_of_state = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  stability_factor = 0.02
+  political_power_factor = -0.006
+  industrial_capacity_factory = 0.012
+ }
+}
+nwg_spirit_workers_paradise = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  industrial_capacity_factory = 0.048
+  production_factory_efficiency_gain_factor = 0.036
+ }
+}
+nwg_spirit_workers_rights = {
+ picture = generic_propaganda
+ allowed = { always = yes }
+ removal_cost = -1
+ modifier = {
+  industrial_capacity_factory = 0.024
+  production_factory_efficiency_gain_factor = 0.018
+ }
+}
+ }
+}

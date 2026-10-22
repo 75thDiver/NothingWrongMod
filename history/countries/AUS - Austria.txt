@@ -1,0 +1,27 @@
+# Native 1936 scenario. Country source: received mod history
+capital = 4
+
+# Habsburg triarchy, not the post-Saint-Germain Austrian republic.
+
+oob = "AUS_1936"
+set_stability = 0.55
+set_war_support = 0.35
+set_research_slots = 4
+set_technology = {
+ infantry_weapons = 1 infantry_weapons1 = 1 tech_support = 1 tech_recon = 1
+ tech_engineers = 1 gw_artillery = 1 interwar_artillery = 1 basic_train = 1
+ motorised_infantry = 1 early_fighter = 1 basic_light_tank = 1
+}
+add_ideas = { volunteer_only civilian_economy export_focus }
+
+# Scenario political setup; no map transfers or world initializer.
+set_politics = { ruling_party = neutrality elections_allowed = no }
+set_popularities = { democratic = 25 fascism = 5 communism = 10 neutrality = 60 }
+set_party_name = { ideology = democratic name = NW_AUS_democratic_party long_name = NW_AUS_democratic_party_long }
+set_party_name = { ideology = fascism name = NW_AUS_fascism_party long_name = NW_AUS_fascism_party_long }
+set_party_name = { ideology = communism name = NW_AUS_communism_party long_name = NW_AUS_communism_party_long }
+set_party_name = { ideology = neutrality name = NW_AUS_neutrality_party long_name = NW_AUS_neutrality_party_long }
+add_ideas = { nw_aus_federal_bargain nw_aus_many_languages nw_aus_adriatic_system }
+
+
+create_country_leader = { name = "Франц Фердинанд I" ideology = despotism expire = "2000.1.1" traits = { } picture = "gfx/leaders/NW/franz_ferdinand.dds" }

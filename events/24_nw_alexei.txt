@@ -1,0 +1,173 @@
+add_namespace = nw24
+
+country_event = {
+	id = nw24.1
+	title = nw24.1.t
+	desc = nw24.1.d
+	is_triggered_only = yes
+
+	option = {
+		name = nw24.1.a
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 2
+				check_variable = {
+					nw_health > 69
+				}
+			}
+		}
+		clr_country_flag = nw24_cabinet_delegated
+		set_country_flag = nw24_cabinet_personal
+		remove_ideas = nw24_cabinet_basic
+		add_ideas = nw14_crown_admin
+	}
+
+	option = {
+		name = nw24.1.b
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 2
+				check_variable = {
+					nw_health < 70
+				}
+			}
+		}
+		clr_country_flag = nw24_cabinet_personal
+		set_country_flag = nw24_cabinet_delegated
+		remove_ideas = nw14_crown_admin
+		add_ideas = nw24_cabinet_basic
+	}
+}
+
+country_event = {
+	id = nw24.2
+	title = nw24.2.t
+	desc = {
+		trigger = {
+			has_country_flag = nw24_outcome_personal
+		}
+		text = nw24.2.d.personal
+	}
+	desc = {
+		trigger = {
+			has_country_flag = nw24_outcome_cabinet
+		}
+		text = nw24.2.d.cabinet
+	}
+	desc = {
+		trigger = {
+			has_country_flag = nw24_outcome_limited
+		}
+		text = nw24.2.d.limited
+	}
+	is_triggered_only = yes
+
+	option = {
+		name = nw24.2.a
+	}
+}
+
+# ROOT is the dominion. SOV is deliberately explicit for the fixed Russian route.
+
+country_event = {
+	id = nw24.3
+	title = nw24.3.t
+	desc = nw24.3.d
+	is_triggered_only = yes
+
+	option = {
+		name = nw24.3.a
+		trigger = {
+			is_subject_of = SOV
+		}
+		ai_chance = {
+			factor = 70
+		}
+		clr_country_flag = nw24_charter_pending
+		set_country_flag = nw24_charter_signed
+		add_stability = 0.03
+		add_political_power = 25
+		SOV = {
+			add_to_variable = {
+				var = nw_trust
+				value = 5
+			}
+			clamp_variable = {
+				var = nw_trust
+				min = 0
+				max = 100
+			}
+			nw24_refresh_compact = yes
+			country_event = {
+				id = nw24.4
+				days = 1
+			}
+		}
+	}
+
+	option = {
+		name = nw24.3.b
+		trigger = {
+			is_subject_of = SOV
+		}
+		ai_chance = {
+			factor = 30
+		}
+		clr_country_flag = nw24_charter_pending
+		SOV = {
+			add_to_variable = {
+				var = nw_trust
+				value = -5
+			}
+			clamp_variable = {
+				var = nw_trust
+				min = 0
+				max = 100
+			}
+			country_event = {
+				id = nw24.4
+				days = 1
+			}
+		}
+	}
+
+	option = {
+		name = nw24.3.c
+		trigger = {
+			NOT = {
+				is_subject_of = SOV
+			}
+		}
+		clr_country_flag = nw24_charter_pending
+	}
+}
+
+country_event = {
+	id = nw24.4
+	title = nw24.4.t
+	desc = {
+		trigger = {
+			FROM = {
+				has_country_flag = nw24_charter_signed
+			}
+		}
+		text = nw24.4.d.signed
+	}
+	desc = {
+		trigger = {
+			FROM = {
+				NOT = {
+					has_country_flag = nw24_charter_signed
+				}
+			}
+		}
+		text = nw24.4.d.deferred
+	}
+	is_triggered_only = yes
+
+	option = {
+		name = nw24.4.a
+	}
+}

@@ -1,0 +1,21 @@
+ideas = { country = {
+ nw20_tools = { picture = generic_propaganda allowed = { always = yes } removal_cost = -1 modifier = { production_factory_efficiency_gain_factor = 0.04 } }
+ nw20_contracts = { picture = generic_propaganda allowed = { always = yes } removal_cost = -1 modifier = { production_speed_arms_factory_factor = 0.08 consumer_goods_factor = 0.015 } }
+ nw20_workshops = { picture = generic_propaganda allowed = { always = yes } removal_cost = -1 modifier = { production_speed_industrial_complex_factor = 0.06 } }
+ nw20_supply = { picture = generic_propaganda allowed = { always = yes } removal_cost = -1 modifier = { supply_consumption_factor = -0.04 } }
+ nw20_training = { picture = generic_propaganda allowed = { always = yes } removal_cost = -1 modifier = { army_org_factor = 0.03 } }
+ nw20_flight = { picture = generic_propaganda allowed = { always = yes } removal_cost = -1 modifier = { air_accidents_factor = -0.05 } }
+ nw20_shipbuilding = { picture = generic_propaganda allowed = { always = yes } removal_cost = -1 modifier = { industrial_capacity_dockyard = 0.04 } }
+ # v0.21 Russia and Germany programme outcomes
+ nw21_ger_contract_coordination = { picture = generic_propaganda allowed = { always = yes } removal_cost = -1 modifier = { production_speed_arms_factory_factor = 0.04 consumer_goods_factor = 0.01 } }
+ nw21_ger_sme_network = { picture = generic_propaganda allowed = { always = yes } removal_cost = -1 modifier = { production_speed_industrial_complex_factor = 0.04 production_factory_efficiency_gain_factor = 0.03 } }
+ nw21_ger_mobile_reserves = { picture = generic_propaganda allowed = { always = yes } removal_cost = -1 modifier = { army_org_factor = 0.03 supply_consumption_factor = -0.02 } }
+ nw21_ger_field_supply = { picture = generic_propaganda allowed = { always = yes } removal_cost = -1 modifier = { supply_consumption_factor = -0.05 } }
+ nw21_ger_fleet_standards = { picture = generic_propaganda allowed = { always = yes } removal_cost = -1 modifier = { production_speed_dockyard_factor = 0.04 industrial_capacity_dockyard = 0.03 } }
+ nw21_ger_air_service = { picture = generic_propaganda allowed = { always = yes } removal_cost = -1 modifier = { air_accidents_factor = -0.05 production_factory_efficiency_gain_factor = 0.02 } }
+ nw21_sov_production_standards = { picture = generic_propaganda allowed = { always = yes } removal_cost = -1 modifier = { production_factory_efficiency_gain_factor = 0.04 consumer_goods_factor = -0.01 } }
+ nw21_sov_reserve_system = { picture = generic_propaganda allowed = { always = yes } removal_cost = -1 modifier = { army_org_factor = 0.03 supply_consumption_factor = -0.03 } }
+ nw21_sov_fleet_readiness = { picture = generic_propaganda allowed = { always = yes } removal_cost = -1 modifier = { production_speed_dockyard_factor = 0.04 industrial_capacity_dockyard = 0.03 } }
+ nw21_sov_air_service = { picture = generic_propaganda allowed = { always = yes } removal_cost = -1 modifier = { air_accidents_factor = -0.06 production_factory_efficiency_gain_factor = 0.02 } }
+
+} }

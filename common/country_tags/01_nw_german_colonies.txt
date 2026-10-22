@@ -1,0 +1,5 @@
+GWA = "countries/GWA.txt"
+GSW = "countries/GSW.txt"
+GEA = "countries/GEA.txt"
+GPC = "countries/GPC.txt"
+GKT = "countries/GKT.txt"

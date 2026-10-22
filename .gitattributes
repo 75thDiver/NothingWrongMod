@@ -1,0 +1,17 @@
+* text=auto eol=lf
+
+*.dds binary
+*.tga binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.bmp binary
+*.ico binary
+*.ttf binary
+*.otf binary
+*.wav binary
+*.ogg binary
+*.mp3 binary
+*.zip binary
+

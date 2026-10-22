@@ -1,0 +1,13 @@
+nw24_alexei = {
+	allowed = {
+		tag = SOV
+	}
+	visible = {
+		has_country_flag = nw_rus_cure
+		NOT = {
+			has_country_flag = nw_alexei_dead
+		}
+	}
+	visible_when_empty = no
+	priority = 95
+}
