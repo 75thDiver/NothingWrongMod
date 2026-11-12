@@ -2850,7 +2850,7 @@ event_target:nw14_ger_royal = { if = { limit = { GPL = { exists = yes } NOT = { 
 BAY = { if = { limit = { GPL = { exists = yes } NOT = { has_war_with = GPL } } declare_war_on = { target = GPL type = annex_everything } } }
 set_country_flag = nw_ger_war_started set_country_flag = nw_ger_revolution_committed
 }
-nw14_rus_fragmentation = {
+nw14_rus_fragmentation_legacy_disabled = {
 set_politics = { ruling_party = democratic elections_allowed = yes } set_popularities = { democratic = 65 neutrality = 25 fascism = 5 communism = 5 }
 if = { limit = { is_in_faction = yes } leave_faction = yes }
 drop_cosmetic_tag = yes remove_ideas = nw_sov_fragile_sovereign remove_ideas = nw_sov_court_government
@@ -2904,6 +2904,9 @@ RSB = { if = { limit = { RDN = { exists = yes } NOT = { has_war_with = RDN } } d
 RSB = { if = { limit = { RUK = { exists = yes } NOT = { has_war_with = RUK } } declare_war_on = { target = RUK type = annex_everything } } }
 RDN = { if = { limit = { RUK = { exists = yes } NOT = { has_war_with = RUK } } declare_war_on = { target = RUK type = annex_everything } } }
 set_country_flag = nw_rus_war_started set_country_flag = nw_alexei_dead
+}
+nw14_rus_fragmentation = {
+nw14_rus_civil_war_start = yes
 }
 nw14_monthly = {
  nw25_monthly = yes

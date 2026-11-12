@@ -1,0 +1,7 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_nw14_russia_on_fire"
+		texturefile = "gfx/interface/nw14_super_events/russia_on_fire.png"
+		legacy_lazy_load = no
+	}
+}

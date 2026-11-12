@@ -1,0 +1,652 @@
+# Called by the existing nw14.20.a option, including the resume decision path.
+nw14_rus_civil_war_start = {
+	if = {
+		limit = { NOT = { has_country_flag = nw_rus_war_started } }
+		set_country_flag = nw_rus_war_started
+		set_country_flag = nw_alexei_dead
+		clr_country_flag = nw_rus_war_pending
+
+		# Detach the regional and neutral countries before SOV's civil war starts,
+		# so they are not pulled into the republican side as existing subjects.
+		FIN = {
+			if = { limit = { is_subject = yes } OVERLORD = { end_puppet = FIN } }
+			if = { limit = { is_in_faction = yes } leave_faction = yes }
+			remove_ideas = nw_fin_imperial_autonomy
+			drop_cosmetic_tag = yes
+			set_politics = { ruling_party = democratic elections_allowed = yes }
+			set_popularities = { democratic = 100 }
+			set_party_name = { ideology = democratic name = NW_FIN_democratic_party long_name = NW_FIN_democratic_party_long }
+		}
+		POL = {
+			if = { limit = { is_subject = yes } OVERLORD = { end_puppet = POL } }
+			if = { limit = { is_in_faction = yes } leave_faction = yes }
+			remove_ideas = nw_pol_imperial_autonomy
+			drop_cosmetic_tag = yes
+			set_politics = { ruling_party = democratic elections_allowed = yes }
+			set_popularities = { democratic = 100 }
+			set_party_name = { ideology = democratic name = NW_POL_democratic_party long_name = NW_POL_democratic_party_long }
+		}
+		DON = {
+			if = { limit = { is_subject = yes } OVERLORD = { end_puppet = DON } }
+			if = { limit = { is_in_faction = yes } leave_faction = yes }
+		}
+		KUB = {
+			if = { limit = { is_subject = yes } OVERLORD = { end_puppet = KUB } }
+			if = { limit = { is_in_faction = yes } leave_faction = yes }
+		}
+		MON = {
+			if = { limit = { is_subject = yes } OVERLORD = { end_puppet = MON } }
+			if = { limit = { is_in_faction = yes } leave_faction = yes }
+			remove_ideas = nw_mon_russian_resident
+			set_politics = { ruling_party = neutrality elections_allowed = no }
+			set_popularities = { neutrality = 100 }
+			set_rule = { can_join_factions = no can_create_factions = no }
+		}
+		SIK = {
+			if = { limit = { is_subject = yes } OVERLORD = { end_puppet = SIK } }
+			if = { limit = { is_in_faction = yes } leave_faction = yes }
+			remove_ideas = nw_sik_sponsored_independence
+			set_politics = { ruling_party = neutrality elections_allowed = no }
+			set_popularities = { neutrality = 100 }
+			set_rule = { can_join_factions = no can_create_factions = no }
+		}
+
+		set_politics = { ruling_party = democratic elections_allowed = yes }
+		set_popularities = { democratic = 65 neutrality = 25 fascism = 5 communism = 5 }
+		if = { limit = { is_in_faction = yes } leave_faction = yes }
+		drop_cosmetic_tag = yes
+		remove_ideas = nw_sov_fragile_sovereign
+		remove_ideas = nw_sov_court_government
+		create_country_leader = { name = "Временное коалиционное правительство" ideology = socialism expire = "2000.1.1" traits = { } }
+		set_cosmetic_tag = NW_RUS_REPUBLIC
+		set_party_name = { ideology = democratic name = NW14_rus_provisional_party long_name = NW14_rus_provisional_party_long }
+		set_country_flag = nw14_fragment
+
+		# Clear the old SOV army before splitting so neither side inherits the old OOB.
+		delete_unit = { disband = no }
+
+		# Only author-approved Imperial Russia states are eligible for the split.
+		start_civil_war = {
+			ideology = neutrality
+			size = 0.45
+			army_ratio = 0.45
+			capital = 239
+			states = { 219 220 221 222 223 224 239 240 250 251 252 253 254 255 257 258 260 401 829 }
+			states_filter = { is_owned_by = SOV }
+			keep_all_characters = no
+			keep_political_leader = no
+			save_global_event_target_as = nw14_rus_royal
+		}
+
+		event_target:nw14_rus_royal = {
+			set_capital = { state = 239 }
+			set_cosmetic_tag = NW_RUS_CROWN
+			set_politics = { ruling_party = neutrality elections_allowed = no }
+			set_popularities = { neutrality = 100 }
+			set_party_name = { ideology = neutrality name = nw14_cw_crown_party long_name = nw14_cw_crown_party_long }
+			create_country_leader = { name = "Кирилл Владимирович" picture = GFX_NW14_CW_Kyril_Leader ideology = despotism expire = "2000.1.1" traits = { } }
+			set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 }
+			add_manpower = 35000
+			set_country_flag = nw14_fragment
+			set_rule = { can_join_factions = yes can_create_factions = yes }
+			load_focus_tree = { tree = NW_generic_development keep_completed = no }
+		}
+
+		# Transfer only fixed assignments shown as approved in the current preview.
+		if = { limit = { owns_state = 218 } DON = { transfer_state = 218 } }
+		if = { limit = { owns_state = 227 } DON = { transfer_state = 227 } }
+		if = { limit = { owns_state = 228 } DON = { transfer_state = 228 } }
+		if = { limit = { owns_state = 238 } DON = { transfer_state = 238 } }
+		if = { limit = { owns_state = 245 } DON = { transfer_state = 245 } }
+		if = { limit = { owns_state = 233 } KUB = { transfer_state = 233 } }
+		if = { limit = { owns_state = 234 } KUB = { transfer_state = 234 } }
+		if = { limit = { owns_state = 235 } KUB = { transfer_state = 235 } }
+		if = { limit = { owns_state = 137 } AFS = { transfer_state = 137 } }
+		if = { limit = { owns_state = 78 } ROM = { transfer_state = 78 } }
+		if = { limit = { owns_state = 766 } ROM = { transfer_state = 766 } }
+		if = { limit = { owns_state = 408 } FER = { transfer_state = 408 } }
+		if = { limit = { owns_state = 409 } FER = { transfer_state = 409 } }
+		if = { limit = { owns_state = 560 } FER = { transfer_state = 560 } }
+		if = { limit = { owns_state = 657 } FER = { transfer_state = 657 } }
+		if = { limit = { owns_state = 655 } JAP = { transfer_state = 655 } }
+		if = { limit = { owns_state = 826 } ABK = { transfer_state = 826 } }
+		if = { limit = { owns_state = 232 } NCR = { transfer_state = 232 } }
+		if = { limit = { owns_state = 821 } NCR = { transfer_state = 821 } }
+		if = { limit = { owns_state = 827 } NCR = { transfer_state = 827 } }
+		if = { limit = { owns_state = 828 } NCR = { transfer_state = 828 } }
+		if = { limit = { owns_state = 229 } TCF = { transfer_state = 229 } }
+		if = { limit = { owns_state = 231 } TCF = { transfer_state = 231 } }
+		if = { limit = { owns_state = 230 } ARM = { transfer_state = 230 } }
+		if = { limit = { owns_state = 800 } ARM = { transfer_state = 800 } }
+		if = { limit = { owns_state = 353 } TRP = { transfer_state = 353 } }
+		if = { limit = { owns_state = 354 } TRP = { transfer_state = 354 } }
+		if = { limit = { owns_state = 11 } BLF = { transfer_state = 11 } }
+		if = { limit = { owns_state = 12 } BLF = { transfer_state = 12 } }
+		if = { limit = { owns_state = 13 } BLF = { transfer_state = 13 } }
+		if = { limit = { owns_state = 189 } BLF = { transfer_state = 189 } }
+		if = { limit = { owns_state = 190 } BLF = { transfer_state = 190 } }
+		if = { limit = { owns_state = 191 } BLF = { transfer_state = 191 } }
+		if = { limit = { owns_state = 784 } BLF = { transfer_state = 784 } }
+		if = { limit = { owns_state = 808 } BLF = { transfer_state = 808 } }
+		if = { limit = { owns_state = 809 } BLF = { transfer_state = 809 } }
+		if = { limit = { owns_state = 810 } BLF = { transfer_state = 810 } }
+		if = { limit = { owns_state = 811 } BLF = { transfer_state = 811 } }
+		if = { limit = { owns_state = 812 } BLF = { transfer_state = 812 } }
+		if = { limit = { owns_state = 815 } BLF = { transfer_state = 815 } }
+		if = { limit = { owns_state = 814 } BLF = { transfer_state = 814 } }
+		if = { limit = { owns_state = 813 } BLW = { transfer_state = 813 } }
+
+		# Fixed regional assignments from the owner's latest overview instruction.
+		if = { limit = { owns_state = 40 } RSB = { transfer_state = 40 } }
+		if = { limit = { owns_state = 329 } RSB = { transfer_state = 329 } }
+		if = { limit = { owns_state = 516 } RSB = { transfer_state = 516 } }
+		if = { limit = { owns_state = 561 } RSB = { transfer_state = 561 } }
+		if = { limit = { owns_state = 562 } RSB = { transfer_state = 562 } }
+		if = { limit = { owns_state = 563 } RSB = { transfer_state = 563 } }
+		if = { limit = { owns_state = 564 } RSB = { transfer_state = 564 } }
+		if = { limit = { owns_state = 565 } RSB = { transfer_state = 565 } }
+		if = { limit = { owns_state = 566 } RSB = { transfer_state = 566 } }
+		if = { limit = { owns_state = 567 } RSB = { transfer_state = 567 } }
+		if = { limit = { owns_state = 568 } RSB = { transfer_state = 568 } }
+		if = { limit = { owns_state = 569 } RSB = { transfer_state = 569 } }
+		if = { limit = { owns_state = 570 } RSB = { transfer_state = 570 } }
+		if = { limit = { owns_state = 571 } RSB = { transfer_state = 571 } }
+		if = { limit = { owns_state = 574 } RSB = { transfer_state = 574 } }
+		if = { limit = { owns_state = 575 } RSB = { transfer_state = 575 } }
+		if = { limit = { owns_state = 576 } RSB = { transfer_state = 576 } }
+		if = { limit = { owns_state = 577 } RSB = { transfer_state = 577 } }
+		if = { limit = { owns_state = 578 } RSB = { transfer_state = 578 } }
+		if = { limit = { owns_state = 579 } RSB = { transfer_state = 579 } }
+		if = { limit = { owns_state = 580 } RSB = { transfer_state = 580 } }
+		if = { limit = { owns_state = 637 } RSB = { transfer_state = 637 } }
+		if = { limit = { owns_state = 644 } RSB = { transfer_state = 644 } }
+		if = { limit = { owns_state = 654 } RSB = { transfer_state = 654 } }
+		if = { limit = { owns_state = 822 } RSB = { transfer_state = 822 } }
+		if = { limit = { owns_state = 824 } RSB = { transfer_state = 824 } }
+		if = { limit = { owns_state = 874 } RSB = { transfer_state = 874 } }
+		if = { limit = { owns_state = 876 } RSB = { transfer_state = 876 } }
+		if = { limit = { owns_state = 877 } RSB = { transfer_state = 877 } }
+		if = { limit = { owns_state = 878 } RSB = { transfer_state = 878 } }
+
+		if = { limit = { owns_state = 192 } RUK = { transfer_state = 192 } }
+		if = { limit = { owns_state = 193 } RUK = { transfer_state = 193 } }
+		if = { limit = { owns_state = 196 } RUK = { transfer_state = 196 } }
+		if = { limit = { owns_state = 197 } RUK = { transfer_state = 197 } }
+		if = { limit = { owns_state = 198 } RUK = { transfer_state = 198 } }
+		if = { limit = { owns_state = 199 } RUK = { transfer_state = 199 } }
+		if = { limit = { owns_state = 200 } RUK = { transfer_state = 200 } }
+		if = { limit = { owns_state = 201 } RUK = { transfer_state = 201 } }
+		if = { limit = { owns_state = 202 } RUK = { transfer_state = 202 } }
+		if = { limit = { owns_state = 203 } RUK = { transfer_state = 203 } }
+		if = { limit = { owns_state = 225 } RUK = { transfer_state = 225 } }
+		if = { limit = { owns_state = 226 } RUK = { transfer_state = 226 } }
+		if = { limit = { owns_state = 259 } RUK = { transfer_state = 259 } }
+		if = { limit = { owns_state = 834 } RUK = { transfer_state = 834 } }
+		if = { limit = { owns_state = 93 } RUK = { transfer_state = 93 } }
+		if = { limit = { owns_state = 206 } BLR = { transfer_state = 206 } }
+		if = { limit = { owns_state = 96 } BLR = { transfer_state = 96 } }
+		if = { limit = { owns_state = 204 } BLR = { transfer_state = 204 } }
+		if = { limit = { owns_state = 194 } BLR = { transfer_state = 194 } }
+		if = { limit = { owns_state = 94 } BLR = { transfer_state = 94 } }
+		if = { limit = { owns_state = 95 } BLR = { transfer_state = 95 } }
+		if = { limit = { owns_state = 241 } BLR = { transfer_state = 241 } }
+		if = { limit = { owns_state = 207 } BLR = { transfer_state = 207 } }
+
+		if = { limit = { owns_state = 583 } KIR = { transfer_state = 583 } }
+		if = { limit = { owns_state = 588 } KIR = { transfer_state = 588 } }
+		if = { limit = { owns_state = 590 } KIR = { transfer_state = 590 } }
+		if = { limit = { owns_state = 882 } KIR = { transfer_state = 882 } }
+		if = { limit = { owns_state = 402 } ALA = { transfer_state = 402 } }
+		if = { limit = { owns_state = 404 } ALA = { transfer_state = 404 } }
+		if = { limit = { owns_state = 406 } ALA = { transfer_state = 406 } }
+		if = { limit = { owns_state = 407 } ALA = { transfer_state = 407 } }
+		if = { limit = { owns_state = 586 } ALA = { transfer_state = 586 } }
+		if = { limit = { owns_state = 587 } ALA = { transfer_state = 587 } }
+		if = { limit = { owns_state = 589 } ALA = { transfer_state = 589 } }
+		if = { limit = { owns_state = 881 } ALA = { transfer_state = 881 } }
+		if = { limit = { owns_state = 405 } TRK = { transfer_state = 405 } }
+		if = { limit = { owns_state = 584 } TRK = { transfer_state = 584 } }
+		if = { limit = { owns_state = 585 } TRK = { transfer_state = 585 } }
+		if = { limit = { owns_state = 732 } TRK = { transfer_state = 732 } }
+		if = { limit = { owns_state = 742 } TRK = { transfer_state = 742 } }
+		if = { limit = { owns_state = 823 } TRK = { transfer_state = 823 } }
+		if = { limit = { owns_state = 830 } TRK = { transfer_state = 830 } }
+		if = { limit = { owns_state = 831 } TRK = { transfer_state = 831 } }
+		if = { limit = { owns_state = 832 } TRK = { transfer_state = 832 } }
+
+		# Each of the four author-approved 50/50 state outcomes is rolled separately.
+		217 = {
+			if = {
+				limit = { is_owned_by = SOV }
+				random_list = {
+					50 = { DNR = { transfer_state = 217 } }
+					50 = { AKV = { transfer_state = 217 } }
+				}
+			}
+		}
+		236 = {
+			if = {
+				limit = { is_owned_by = SOV }
+				random_list = {
+					50 = { KAL = { transfer_state = 236 } }
+					50 = { AKV = { transfer_state = 236 } }
+				}
+			}
+		}
+		237 = {
+			if = {
+				limit = { is_owned_by = SOV }
+				random_list = {
+					50 = { KAL = { transfer_state = 237 } }
+					50 = { AKV = { transfer_state = 237 } }
+				}
+			}
+		}
+		265 = {
+			if = {
+				limit = { is_owned_by = SOV }
+				random_list = {
+					50 = { DNR = { transfer_state = 265 } }
+					50 = { DON = { transfer_state = 265 } }
+				}
+			}
+		}
+
+		# Temporary country governments are used only where no approved leader was supplied.
+		AFS = {
+			set_capital = { state = 137 }
+			set_politics = { ruling_party = neutrality elections_allowed = no }
+			set_popularities = { neutrality = 100 }
+			set_party_name = { ideology = neutrality name = nw14_cw_afs_party long_name = nw14_cw_afs_party_long }
+			create_country_leader = { name = "Антон Деникин" picture = GFX_NW14_CW_Denikin_Leader ideology = despotism expire = "2000.1.1" traits = { } }
+			create_field_marshal = { name = "Лавр Корнилов" gfx = GFX_NW14_CW_Kornilov skill = 4 attack_skill = 4 defense_skill = 3 planning_skill = 3 logistics_skill = 2 traits = { } }
+			create_corps_commander = { name = "Пётр Врангель" gfx = GFX_NW14_CW_Wrangel skill = 3 attack_skill = 3 defense_skill = 3 planning_skill = 3 logistics_skill = 2 traits = { } }
+			create_corps_commander = { name = "Сергей Марков" gfx = GFX_NW14_CW_Markov skill = 3 attack_skill = 3 defense_skill = 3 planning_skill = 2 logistics_skill = 2 traits = { } }
+			set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 }
+			add_manpower = 100000
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 5000 }
+			set_country_flag = nw14_fragment
+			set_rule = { can_join_factions = yes can_create_factions = no }
+			load_focus_tree = { tree = NW_generic_development keep_completed = no }
+		}
+		RSB = {
+			set_capital = { state = 570 }
+			set_politics = { ruling_party = neutrality elections_allowed = no }
+			set_popularities = { neutrality = 100 }
+			set_party_name = { ideology = neutrality name = nw14_cw_rsb_party long_name = nw14_cw_rsb_party_long }
+			create_country_leader = { name = "Адмирал Александр Колчак" picture = GFX_NW14_CW_Kolchak_Leader ideology = despotism expire = "2000.1.1" traits = { } }
+			create_navy_leader = { name = "Адмирал Александр Колчак" portrait_path = GFX_NW14_CW_Kolchak skill = 3 attack_skill = 3 defense_skill = 2 maneuvering_skill = 3 coordination_skill = 3 traits = { } }
+			create_field_marshal = { name = "Владимир Каппель" gfx = GFX_NW14_CW_Kappel skill = 3 attack_skill = 3 defense_skill = 3 planning_skill = 3 logistics_skill = 2 traits = { } }
+			create_corps_commander = { name = "Григорий Семёнов" gfx = GFX_NW14_CW_Semyonov skill = 2 attack_skill = 3 defense_skill = 2 planning_skill = 2 logistics_skill = 2 traits = { } }
+			set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 }
+			add_manpower = 35000
+			set_country_flag = nw14_fragment
+			if = { limit = { is_subject = yes } OVERLORD = { end_puppet = RSB } }
+			if = { limit = { is_in_faction = yes } leave_faction = yes }
+			set_rule = { can_join_factions = no can_create_factions = no }
+			load_focus_tree = { tree = NW_generic_development keep_completed = no }
+		}
+		DON = {
+			set_capital = { state = 218 }
+			set_politics = { ruling_party = neutrality elections_allowed = no }
+			set_popularities = { neutrality = 100 }
+			set_party_name = { ideology = neutrality name = nw14_cw_don_party long_name = nw14_cw_don_party_long }
+			create_country_leader = { name = "Алексей Каледин" picture = GFX_NW14_CW_Kaledin_Leader ideology = despotism expire = "2000.1.1" traits = { } }
+			set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 }
+			add_manpower = 35000
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 2200 }
+			set_country_flag = nw14_fragment
+			set_rule = { can_join_factions = yes can_create_factions = no }
+			load_focus_tree = { tree = NW_generic_development keep_completed = no }
+		}
+		KUB = {
+			set_capital = { state = 234 }
+			set_politics = { ruling_party = neutrality elections_allowed = no }
+			set_popularities = { neutrality = 100 }
+			set_party_name = { ideology = neutrality name = nw14_cw_kub_party long_name = nw14_cw_kub_party_long }
+			create_country_leader = { name = "Сергей Георгиевич Улагай" picture = GFX_NW14_CW_Ulagay_Leader ideology = despotism expire = "2000.1.1" traits = { } }
+			create_field_marshal = { name = "Виктор Покровский" gfx = GFX_NW14_CW_Pokrovsky skill = 3 attack_skill = 3 defense_skill = 2 planning_skill = 2 logistics_skill = 2 traits = { } }
+			set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 }
+			add_manpower = 35000
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 1700 }
+			set_country_flag = nw14_fragment
+			set_rule = { can_join_factions = yes can_create_factions = no }
+			load_focus_tree = { tree = NW_generic_development keep_completed = no }
+		}
+		if = {
+			limit = { DON = { is_subject = yes } }
+			DON = { OVERLORD = { end_puppet = DON } }
+		}
+		if = {
+			limit = { KUB = { is_subject = yes } }
+			KUB = { OVERLORD = { end_puppet = KUB } }
+		}
+		AFS = {
+			puppet = DON
+			puppet = KUB
+			set_autonomy = { target = DON autonomy_state = autonomy_puppet freedom_level = 0.5 end_wars = no end_civil_wars = no }
+			set_autonomy = { target = KUB autonomy_state = autonomy_puppet freedom_level = 0.5 end_wars = no end_civil_wars = no }
+		}
+
+		RUK = {
+			set_capital = { state = 202 }
+			set_politics = { ruling_party = democratic elections_allowed = yes }
+			set_popularities = { democratic = 100 }
+			set_party_name = { ideology = democratic name = nw14_cw_ruk_party long_name = nw14_cw_ruk_party_long }
+			create_country_leader = { name = "Михаил Грушевский" picture = GFX_NW14_CW_Hrushevsky_Leader ideology = liberalism expire = "2000.1.1" traits = { } }
+			create_field_marshal = { name = "Симон Петлюра" gfx = GFX_NW14_CW_Petliura skill = 3 attack_skill = 3 defense_skill = 2 planning_skill = 3 logistics_skill = 2 traits = { } }
+			set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 }
+			add_manpower = 35000
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 3300 }
+			set_country_flag = nw14_fragment
+			set_rule = { can_join_factions = yes can_create_factions = no }
+			load_focus_tree = { tree = NW_generic_development keep_completed = no }
+		}
+		BLR = {
+			if = { limit = { is_subject = yes } OVERLORD = { end_puppet = BLR } }
+			if = { limit = { is_in_faction = yes } leave_faction = yes }
+			set_capital = { state = 206 }
+			set_politics = { ruling_party = democratic last_election = "1936.1.1" election_frequency = 48 elections_allowed = yes }
+			set_popularities = { democratic = 100 }
+			set_party_name = { ideology = democratic name = nw14_cw_blr_party long_name = nw14_cw_blr_party_long }
+			set_country_flag = nw14_fragment
+			set_rule = { can_join_factions = yes can_create_factions = no }
+			load_focus_tree = { tree = NW_generic_development keep_completed = no }
+		}
+
+		FER = {
+			set_capital = { state = 408 }
+			set_politics = { ruling_party = democratic elections_allowed = yes }
+			set_popularities = { democratic = 100 }
+			set_country_flag = nw14_fragment
+			set_rule = { can_join_factions = yes can_create_factions = no }
+			load_focus_tree = { tree = NW_generic_development keep_completed = no }
+		}
+		ABK = {
+			set_capital = { state = 826 }
+			set_politics = { ruling_party = democratic elections_allowed = yes }
+			set_popularities = { democratic = 100 }
+			set_party_name = { ideology = democratic name = nw14_cw_abk_party long_name = nw14_cw_abk_party_long }
+			set_country_flag = nw14_fragment
+			set_rule = { can_join_factions = yes can_create_factions = no }
+			load_focus_tree = { tree = NW_generic_development keep_completed = no }
+		}
+		NCR = {
+			set_capital = { state = 232 }
+			set_politics = { ruling_party = democratic elections_allowed = yes }
+			set_popularities = { democratic = 100 }
+			set_party_name = { ideology = democratic name = nw14_cw_ncr_party long_name = nw14_cw_ncr_party_long }
+			create_country_leader = { name = "Временное правительство Горской республики" ideology = liberalism expire = "2000.1.1" traits = { } }
+			set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 }
+			add_manpower = 25000
+			set_country_flag = nw14_fragment
+			set_rule = { can_join_factions = yes can_create_factions = no }
+			load_focus_tree = { tree = NW_generic_development keep_completed = no }
+		}
+		TCF = {
+			set_capital = { state = 231 }
+			set_politics = { ruling_party = democratic elections_allowed = yes }
+			set_popularities = { democratic = 100 }
+			set_party_name = { ideology = democratic name = nw14_cw_tcf_party long_name = nw14_cw_tcf_party_long }
+			create_country_leader = { name = "Совет Закавказской федерации" ideology = liberalism expire = "2000.1.1" traits = { } }
+			set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 }
+			add_manpower = 25000
+			set_country_flag = nw14_fragment
+			set_rule = { can_join_factions = yes can_create_factions = no }
+			load_focus_tree = { tree = NW_generic_development keep_completed = no }
+		}
+		ARM = { set_capital = { state = 230 } set_country_flag = nw14_fragment set_rule = { can_join_factions = no can_create_factions = no } load_focus_tree = { tree = NW_generic_development keep_completed = no } }
+		TRP = {
+			set_capital = { state = 353 }
+			set_politics = { ruling_party = neutrality elections_allowed = no }
+			set_popularities = { neutrality = 100 }
+			set_party_name = { ideology = neutrality name = nw14_cw_trp_party long_name = nw14_cw_trp_party_long }
+			create_country_leader = { name = "Временный национальный совет Турецкой республики" ideology = despotism expire = "2000.1.1" traits = { } }
+			set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 }
+			add_manpower = 30000
+			set_country_flag = nw14_fragment
+			set_rule = { can_join_factions = no can_create_factions = no }
+			load_focus_tree = { tree = NW_generic_development keep_completed = no }
+		}
+		BLF = {
+			set_capital = { state = 808 }
+			set_politics = { ruling_party = neutrality elections_allowed = no }
+			set_popularities = { neutrality = 100 }
+			set_party_name = { ideology = neutrality name = nw14_cw_blf_party long_name = nw14_cw_blf_party_long }
+			create_country_leader = { name = "Временный совет Балтийской федерации" ideology = despotism expire = "2000.1.1" traits = { } }
+			set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 }
+			add_manpower = 35000
+			set_country_flag = nw14_fragment
+			set_rule = { can_join_factions = no can_create_factions = no }
+			load_focus_tree = { tree = NW_generic_development keep_completed = no }
+		}
+		BLW = {
+			set_capital = { state = 813 }
+			set_politics = { ruling_party = democratic elections_allowed = yes }
+			set_popularities = { democratic = 100 }
+			set_party_name = { ideology = democratic name = nw14_cw_blw_party long_name = nw14_cw_blw_party_long }
+			create_country_leader = { name = "Совет Прибалтийского союза рабочих" ideology = liberalism expire = "2000.1.1" traits = { } }
+			set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 }
+			add_manpower = 15000
+			set_country_flag = nw14_fragment
+			set_rule = { can_join_factions = yes can_create_factions = no }
+			load_focus_tree = { tree = NW_generic_development keep_completed = no }
+		}
+
+		if = {
+			limit = { DNR = { exists = yes } }
+			DNR = {
+				if = { limit = { owns_state = 217 } set_capital = { state = 217 } }
+				if = { limit = { NOT = { owns_state = 217 } owns_state = 265 } set_capital = { state = 265 } }
+				set_politics = { ruling_party = democratic elections_allowed = yes }
+				set_popularities = { democratic = 100 }
+				set_party_name = { ideology = democratic name = nw14_cw_dnr_party long_name = nw14_cw_dnr_party_long }
+				create_country_leader = { name = "Донской народный совет" ideology = liberalism expire = "2000.1.1" traits = { } }
+				set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 }
+				add_manpower = 25000
+				set_country_flag = nw14_fragment
+				set_rule = { can_join_factions = yes can_create_factions = no }
+				load_focus_tree = { tree = NW_generic_development keep_completed = no }
+			}
+		}
+		if = {
+			limit = { AKV = { exists = yes } }
+			AKV = {
+				if = { limit = { owns_state = 236 } set_capital = { state = 236 } }
+				if = { limit = { NOT = { owns_state = 236 } owns_state = 237 } set_capital = { state = 237 } }
+				if = { limit = { NOT = { owns_state = 236 } NOT = { owns_state = 237 } owns_state = 217 } set_capital = { state = 217 } }
+				set_politics = { ruling_party = neutrality elections_allowed = no }
+				set_popularities = { neutrality = 100 }
+				set_party_name = { ideology = neutrality name = nw14_cw_akv_party long_name = nw14_cw_akv_party_long }
+				create_country_leader = { name = "Временная совместная администрация" ideology = despotism expire = "2000.1.1" traits = { } }
+				set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 }
+				add_manpower = 25000
+				set_country_flag = nw14_fragment
+				set_rule = { can_join_factions = yes can_create_factions = no }
+				load_focus_tree = { tree = NW_generic_development keep_completed = no }
+			}
+		}
+		if = {
+			limit = { KAL = { exists = yes } }
+			KAL = {
+				if = { limit = { owns_state = 236 } set_capital = { state = 236 } }
+				if = { limit = { NOT = { owns_state = 236 } owns_state = 237 } set_capital = { state = 237 } }
+				set_politics = { ruling_party = democratic elections_allowed = yes }
+				set_popularities = { democratic = 100 }
+				set_party_name = { ideology = democratic name = nw14_cw_kal_party long_name = nw14_cw_kal_party_long }
+				set_country_flag = nw14_fragment
+				set_rule = { can_join_factions = yes can_create_factions = no }
+				load_focus_tree = { tree = NW_generic_development keep_completed = no }
+			}
+		}
+
+		# Set temporary governments and overview capitals for the three Central Asian tags.
+		KIR = {
+			set_capital = { state = 590 }
+			set_politics = { ruling_party = democratic elections_allowed = yes }
+			set_popularities = { democratic = 100 }
+			set_party_name = { ideology = democratic name = nw14_cw_kir_party long_name = nw14_cw_kir_party_long }
+			create_country_leader = { name = "Национальный курултай Киргизской республики" ideology = liberalism expire = "2000.1.1" traits = { } }
+			set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 }
+			set_country_flag = nw14_fragment
+			set_rule = { can_join_factions = yes can_create_factions = no }
+			load_focus_tree = { tree = NW_generic_development keep_completed = no }
+		}
+		ALA = {
+			set_capital = { state = 881 }
+			set_politics = { ruling_party = neutrality elections_allowed = no }
+			set_popularities = { neutrality = 100 }
+			set_party_name = { ideology = neutrality name = nw14_cw_ala_party long_name = nw14_cw_ala_party_long }
+			create_country_leader = { name = "Алихан Букейханов" picture = GFX_NW14_CW_Bukeikhanov_Leader ideology = despotism expire = "2000.1.1" traits = { } }
+			set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 }
+			set_country_flag = nw14_fragment
+			set_rule = { can_join_factions = no can_create_factions = no }
+			load_focus_tree = { tree = NW_generic_development keep_completed = no }
+		}
+		TRK = {
+			set_capital = { state = 405 }
+			set_politics = { ruling_party = neutrality elections_allowed = no }
+			set_popularities = { neutrality = 100 }
+			set_party_name = { ideology = neutrality name = nw14_cw_trk_party long_name = nw14_cw_trk_party_long }
+			create_country_leader = { name = "Сеид Алим-хан" picture = GFX_NW14_CW_Alim_Khan_Leader ideology = despotism expire = "2000.1.1" traits = { } }
+			set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 }
+			set_country_flag = nw14_fragment
+			set_rule = { can_join_factions = no can_create_factions = no }
+			load_focus_tree = { tree = NW_generic_development keep_completed = no }
+		}
+
+		# Make AKV a Don subject whenever its independent random outcomes leave it territory.
+		if = {
+			limit = { DON = { exists = yes } AKV = { exists = yes } }
+			DON = {
+				puppet = AKV
+				set_autonomy = { target = AKV autonomy_state = autonomy_puppet freedom_level = 0.5 end_wars = no end_civil_wars = no }
+			}
+		}
+
+		# Create the two Russian blocs under their intended leaders.
+		SOV = {
+			set_rule = { can_create_factions = yes can_join_factions = yes }
+			create_faction = nw14_new_russia_faction
+			set_rule = { can_create_factions = no can_join_factions = yes }
+			RUK = { if = { limit = { is_in_faction = yes } leave_faction = yes } set_rule = { can_join_factions = yes can_create_factions = no } }
+			FER = { if = { limit = { is_in_faction = yes } leave_faction = yes } set_rule = { can_join_factions = yes can_create_factions = no } }
+			ABK = { if = { limit = { is_in_faction = yes } leave_faction = yes } set_rule = { can_join_factions = yes can_create_factions = no } }
+			NCR = { if = { limit = { is_in_faction = yes } leave_faction = yes } set_rule = { can_join_factions = yes can_create_factions = no } }
+			TCF = { if = { limit = { is_in_faction = yes } leave_faction = yes } set_rule = { can_join_factions = yes can_create_factions = no } }
+			BLW = { if = { limit = { is_in_faction = yes } leave_faction = yes } set_rule = { can_join_factions = yes can_create_factions = no } }
+			BLR = { if = { limit = { is_in_faction = yes } leave_faction = yes } set_rule = { can_join_factions = yes can_create_factions = no } }
+			KIR = { if = { limit = { is_in_faction = yes } leave_faction = yes } set_rule = { can_join_factions = yes can_create_factions = no } }
+			add_to_faction = RUK
+			add_to_faction = FER
+			add_to_faction = ABK
+			add_to_faction = NCR
+			add_to_faction = TCF
+			add_to_faction = BLW
+			add_to_faction = KIR
+			add_to_faction = BLR
+			if = {
+				limit = { DNR = { exists = yes } }
+				DNR = { if = { limit = { is_in_faction = yes } leave_faction = yes } set_rule = { can_join_factions = yes can_create_factions = no } }
+				add_to_faction = DNR
+			}
+			if = {
+				limit = { KAL = { exists = yes } }
+				KAL = { if = { limit = { is_in_faction = yes } leave_faction = yes } set_rule = { can_join_factions = yes can_create_factions = no } }
+				add_to_faction = KAL
+			}
+		}
+		event_target:nw14_rus_royal = {
+			set_rule = { can_create_factions = yes can_join_factions = yes }
+			create_faction = nw14_white_movement_faction
+			set_rule = { can_create_factions = no can_join_factions = yes }
+			AFS = {
+				if = { limit = { is_in_faction = yes } leave_faction = yes }
+				set_rule = { can_join_factions = yes can_create_factions = no }
+			}
+			add_to_faction = AFS
+		}
+
+		# DON and KUB are AFS puppets; AKV is a DON puppet. Keep the subject chain
+		# intact so they inherit the White faction through their overlords.
+
+		# Clear existing units and load exactly one civil-war OOB after state ownership is final.
+		SOV = { delete_unit = { disband = no } set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 } add_manpower = 264000 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 18480 } load_oob = NW14_SOV_CW }
+		event_target:nw14_rus_royal = { delete_unit = { disband = no } set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 } add_manpower = 229000 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 18480 } load_oob = NW14_ROYAL_CW }
+		AFS = { delete_unit = { disband = no } add_manpower = 164000 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 14800 } load_oob = NW14_AFS }
+		RSB = { delete_unit = { disband = no } add_manpower = 229000 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 18480 } load_oob = NW14_RSB }
+		DON = { delete_unit = { disband = no } add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 110 } load_oob = NW14_DON_CW }
+		KUB = { delete_unit = { disband = no } add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 610 } load_oob = NW14_KUB_CW }
+		RUK = { delete_unit = { disband = no } add_manpower = 130000 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 8250 } load_oob = NW14_RUK_CW }
+		FER = { delete_unit = { disband = no } set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 } add_manpower = 132000 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 9240 } load_oob = NW14_FER_CW }
+		ABK = { delete_unit = { disband = no } set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 } add_manpower = 33000 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 2310 } load_oob = NW14_ABK_CW }
+		NCR = { delete_unit = { disband = no } set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 } add_manpower = 8000 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 2310 } load_oob = NW14_NCR_CW }
+		TCF = { delete_unit = { disband = no } set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 } add_manpower = 8000 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 2310 } load_oob = NW14_TCF_CW }
+		ARM = { delete_unit = { disband = no } set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 } add_manpower = 33000 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 2310 } load_oob = NW14_ARM_CW }
+		TRP = { delete_unit = { disband = no } set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 } add_manpower = 3000 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 2310 } load_oob = NW14_TRP_CW }
+		BLF = { delete_unit = { disband = no } set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 } add_manpower = 97000 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 9240 } load_oob = NW14_BLF_CW }
+		BLW = { delete_unit = { disband = no } set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 } add_manpower = 18000 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 1310 } load_oob = NW14_BLW_CW }
+		BLR = { delete_unit = { disband = no } set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 } add_manpower = 132000 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 9240 } load_oob = NW14_BLR_CW }
+		KIR = { delete_unit = { disband = no } set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 } add_manpower = 33000 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 2310 } load_oob = NW14_KIR_CW }
+		ALA = { delete_unit = { disband = no } set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 } add_manpower = 132000 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 9240 } load_oob = NW14_ALA_CW }
+		TRK = { delete_unit = { disband = no } set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 } add_manpower = 132000 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 9240 } load_oob = NW14_TRK_CW }
+		if = { limit = { DNR = { exists = yes } } DNR = { delete_unit = { disband = no } set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 } add_manpower = 8000 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 2310 } if = { limit = { owns_state = 217 } load_oob = NW14_DNR_217 } else = { load_oob = NW14_DNR_265 } } }
+		if = { limit = { AKV = { exists = yes } } AKV = { delete_unit = { disband = no } set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 } add_manpower = 8000 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 2310 } if = { limit = { owns_state = 236 } load_oob = NW14_AKV_236 } else_if = { limit = { owns_state = 237 } load_oob = NW14_AKV_237 } else = { load_oob = NW14_AKV_217 } } }
+		if = { limit = { KAL = { exists = yes } } KAL = { delete_unit = { disband = no } set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 } add_manpower = 33000 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 2310 } if = { limit = { owns_state = 236 } load_oob = NW14_KAL_236 } else = { load_oob = NW14_KAL_237 } } }
+
+		# Hidden dispatcher opens the player GUI and plays its WAV together.
+		if = {
+			limit = { NOT = { has_country_flag = nw14_cw_super_event_fired } }
+			set_country_flag = nw14_cw_super_event_fired
+			country_event = { id = nw14cw.1 hours = 1 }
+		}
+
+		# Start the external fronts after the new tags and faction setup have settled.
+		# The second hidden dispatch retries once; war effects skip existing wars.
+		country_event = { id = nw14cw.2 days = 30 }
+		country_event = { id = nw14cw.3 days = 37 }
+	}
+}
+
+
+nw14_rus_civil_war_declare_separatist_wars = {
+	if = { limit = { FIN = { exists = yes } NOT = { has_war_with = FIN } } declare_war_on = { target = FIN type = annex_everything } }
+	if = { limit = { POL = { exists = yes } NOT = { has_war_with = POL } } declare_war_on = { target = POL type = annex_everything } }
+	if = { limit = { ARM = { exists = yes } NOT = { has_war_with = ARM } } declare_war_on = { target = ARM type = annex_everything } }
+	if = { limit = { BLF = { exists = yes } NOT = { has_war_with = BLF } } declare_war_on = { target = BLF type = annex_everything } }
+	if = { limit = { TRP = { exists = yes } NOT = { has_war_with = TRP } } declare_war_on = { target = TRP type = annex_everything } }
+	if = { limit = { ALA = { exists = yes } NOT = { has_war_with = ALA } } declare_war_on = { target = ALA type = annex_everything } }
+	if = { limit = { TRK = { exists = yes } NOT = { has_war_with = TRK } } declare_war_on = { target = TRK type = annex_everything } }
+}
+
+nw14_rus_civil_war_declare_new_russia_wars = {
+	nw14_rus_civil_war_declare_separatist_wars = yes
+	if = { limit = { event_target:nw14_rus_royal = { exists = yes } NOT = { has_war_with = event_target:nw14_rus_royal } } declare_war_on = { target = event_target:nw14_rus_royal type = annex_everything } }
+	if = { limit = { AFS = { exists = yes } NOT = { has_war_with = AFS } } declare_war_on = { target = AFS type = annex_everything } }
+	if = { limit = { RSB = { exists = yes } NOT = { has_war_with = RSB } } declare_war_on = { target = RSB type = annex_everything } }
+}
+
+nw14_rus_civil_war_declare_external_wars = {
+	if = {
+		limit = { has_country_flag = nw_rus_war_started }
+		SOV = {
+			nw14_rus_civil_war_declare_new_russia_wars = yes
+			every_country = {
+				limit = { is_in_faction_with = SOV NOT = { tag = SOV } }
+				nw14_rus_civil_war_declare_new_russia_wars = yes
+			}
+		}
+			# Российское Государство remains outside both factions. It fights the
+			# separatists and the New Russia bloc, but not the White Movement.
+			RSB = {
+				nw14_rus_civil_war_declare_separatist_wars = yes
+				if = { limit = { SOV = { exists = yes } NOT = { has_war_with = SOV } } declare_war_on = { target = SOV type = annex_everything } }
+			}
+		TRP = {
+			if = { limit = { event_target:nw14_rus_royal = { exists = yes } NOT = { has_war_with = event_target:nw14_rus_royal } } declare_war_on = { target = event_target:nw14_rus_royal type = annex_everything } }
+			if = { limit = { TUR = { exists = yes } NOT = { has_war_with = TUR } } declare_war_on = { target = TUR type = annex_everything } }
+			if = { limit = { SOV = { exists = yes } NOT = { has_war_with = SOV } } declare_war_on = { target = SOV type = annex_everything } }
+			if = { limit = { ARM = { exists = yes } NOT = { has_war_with = ARM } } declare_war_on = { target = ARM type = annex_everything } }
+		}
+	}
+}

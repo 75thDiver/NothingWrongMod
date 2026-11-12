@@ -608,16 +608,6 @@ SPR = {
 
  add_ideas = { nw_spr_southern_example }
 }
-SRI = {
-set_politics = { ruling_party = communism elections_allowed = no }
-set_popularities = { democratic = 15 fascism = 5 communism = 70 neutrality = 10 }
-
- set_party_name = { ideology = democratic name = NW_SRI_democratic_party long_name = NW_SRI_democratic_party_long }
- set_party_name = { ideology = fascism name = NW_SRI_fascism_party long_name = NW_SRI_fascism_party_long }
- set_party_name = { ideology = communism name = NW_SRI_communism_party long_name = NW_SRI_communism_party_long }
- set_party_name = { ideology = neutrality name = NW_SRI_neutrality_party long_name = NW_SRI_neutrality_party_long }
- add_ideas = { nw_sri_neapolitan_councils nw_sri_agrarian_south nw_sri_revolutionary_beacon }
-}
 STR = {
 set_politics = { ruling_party = neutrality elections_allowed = yes }
 set_popularities = { democratic = 45 fascism = 5 communism = 10 neutrality = 40 }
@@ -689,5 +679,15 @@ every_country = { limit = { NOT = { tag = MAN } } load_focus_tree = { tree = NW_
 
 # Nothing Wrong 0.25: authorial trees take precedence over the common tree.
 FRA = { set_country_flag = nw25_fra_initialized set_variable = { nw25_fra_credit_influence = 55 } set_variable = { nw25_fra_russian_exposure = 60 } load_focus_tree = { tree = NW25_FRA_tree keep_completed = no } nw25_fra_refresh = yes }
-SRI = { set_country_flag = nw25_sri_initialized set_variable = { nw25_sri_council_cohesion = 55 } set_variable = { nw25_sri_rural_support = 50 } load_focus_tree = { tree = NW25_SRI_tree keep_completed = no } nw25_sri_refresh = yes }
+ITA = {
+ set_country_flag = nw25_sri_initialized
+ # The BBA Ethiopian war and Greater Italy formable belong to vanilla ITA.
+ # Disable their start-only gates while keeping their scripted IDs intact.
+ clr_global_flag = second_italo_ethiopian_war_flag
+ set_global_flag = greater_italy_flag
+ set_variable = { nw25_sri_council_cohesion = 55 }
+ set_variable = { nw25_sri_rural_support = 50 }
+ load_focus_tree = { tree = NW25_SRI_tree keep_completed = no }
+ nw25_sri_refresh = yes
+}
 ENG = { set_country_flag = nw25_eng_initialized set_variable = { nw25_eng_fiscal_pressure = 60 } set_variable = { nw25_eng_sailor_grievances = 45 } load_focus_tree = { tree = NW25_ENG_tree keep_completed = no } nw25_eng_refresh = yes }

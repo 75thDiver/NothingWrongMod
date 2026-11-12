@@ -1,0 +1,88 @@
+# Nothing Wrong — Russia on Fire
+# Standard HOI4 white display fonts; dark ink remains on the newspaper body.
+
+guiTypes = {
+	containerWindowType = {
+		name = "nw14_super_event_window"
+		size = { width = 899 height = 592 }
+		position = { x = 0 y = 0 }
+		orientation = center
+		origo = center
+		clipping = no
+		moveable = no
+
+		background = {
+			name = "background"
+			spriteType = "GFX_nw14_russia_on_fire"
+		}
+
+		instantTextBoxType = {
+			name = "title"
+			position = { x = 55 y = 19 }
+			font = "hoi_36header"
+			text = "nw14cw.headline"
+			borderSize = { x = 0 y = 0 }
+			maxWidth = 790
+			maxHeight = 54
+			fixedsize = yes
+			format = center
+		}
+
+		instantTextBoxType = {
+			name = "description"
+			position = { x = 48 y = 105 }
+			font = "nw14_super_body_ink"
+			text = "nw14cw.1.d"
+			borderSize = { x = 0 y = 0 }
+			maxWidth = 320
+			maxHeight = 370
+			fixedsize = yes
+			format = center
+		}
+
+		instantTextBoxType = {
+			name = "quote_heading"
+			position = { x = 435 y = 407 }
+			font = "hoi_36header"
+			text = "nw14cw.quote_heading"
+			borderSize = { x = 0 y = 0 }
+			maxWidth = 420
+			maxHeight = 42
+			fixedsize = yes
+			format = center
+		}
+
+		instantTextBoxType = {
+			name = "remark"
+			position = { x = 445 y = 449 }
+			font = "hoi_18mbs"
+			text = "nw14cw.quote_text"
+			borderSize = { x = 0 y = 0 }
+			maxWidth = 400
+			maxHeight = 60
+			fixedsize = yes
+			format = center
+		}
+
+		instantTextBoxType = {
+			name = "quote_author"
+			position = { x = 445 y = 516 }
+			font = "nw14_super_quote_author_gold"
+			text = "nw14cw.quote_author"
+			borderSize = { x = 0 y = 0 }
+			maxWidth = 400
+			maxHeight = 26
+			fixedsize = yes
+			format = center
+		}
+
+		buttonType = {
+			name = "nw14_super_event_close"
+			position = { x = 38 y = 514 }
+			quadTextureSprite = "GFX_event_option_entry"
+			buttonText = "nw14cw.close"
+			buttonFont = "hoi_24header"
+			clicksound = click_close
+		}
+	}
+}

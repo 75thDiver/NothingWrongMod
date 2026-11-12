@@ -61,7 +61,7 @@ country_event = {
 				idea = nw25_sri_partner
 				days = 365
 			}
-			SRI = {
+			ITA = {
 				add_to_variable = {
 					var = nw25_sri_council_cohesion
 					value = 5
@@ -107,7 +107,7 @@ country_event = {
 				idea = nw25_sri_partner
 				days = 180
 			}
-			SRI = {
+			ITA = {
 				add_to_variable = {
 					var = nw25_sri_council_cohesion
 					value = 2
@@ -145,7 +145,7 @@ country_event = {
 				nw25_sri_spm_valid = yes
 			}
 			clr_country_flag = nw25_sri_spm_pending
-			SRI = {
+			ITA = {
 				country_event = {
 					id = nw25sri.91
 					days = 1
@@ -201,7 +201,7 @@ country_event = {
 				idea = nw25_sri_partner
 				days = 365
 			}
-			SRI = {
+			ITA = {
 				add_to_variable = {
 					var = nw25_sri_council_cohesion
 					value = 5
@@ -247,7 +247,7 @@ country_event = {
 				idea = nw25_sri_partner
 				days = 180
 			}
-			SRI = {
+			ITA = {
 				add_to_variable = {
 					var = nw25_sri_council_cohesion
 					value = 2
@@ -285,7 +285,7 @@ country_event = {
 				nw25_sri_pap_valid = yes
 			}
 			clr_country_flag = nw25_sri_pap_pending
-			SRI = {
+			ITA = {
 				country_event = {
 					id = nw25sri.91
 					days = 1
@@ -314,7 +314,7 @@ country_event = {
 	desc = nw25sri.10.d
 	is_triggered_only = yes
 	trigger = {
-		tag = SRI
+		tag = ITA
 		NOT = {
 			has_country_flag = nw25_sri_event_10_done
 		}
@@ -323,7 +323,7 @@ country_event = {
 	option = {
 		name = nw25sri.10.a
 		trigger = {
-			tag = SRI
+			tag = ITA
 			NOT = {
 				has_country_flag = nw25_sri_event_10_done
 			}
@@ -333,7 +333,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				tag = SRI
+				tag = ITA
 				NOT = {
 					has_country_flag = nw25_sri_event_10_done
 				}
@@ -354,7 +354,7 @@ country_event = {
 	option = {
 		name = nw25sri.10.b
 		trigger = {
-			tag = SRI
+			tag = ITA
 			NOT = {
 				has_country_flag = nw25_sri_event_10_done
 			}
@@ -364,7 +364,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				tag = SRI
+				tag = ITA
 				NOT = {
 					has_country_flag = nw25_sri_event_10_done
 				}
@@ -386,7 +386,7 @@ country_event = {
 		name = nw25sri.10.stale
 		trigger = {
 			NOT = {
-				tag = SRI
+				tag = ITA
 				NOT = {
 					has_country_flag = nw25_sri_event_10_done
 				}
@@ -404,7 +404,7 @@ country_event = {
 	desc = nw25sri.11.d
 	is_triggered_only = yes
 	trigger = {
-		tag = SRI
+		tag = ITA
 		NOT = {
 			has_country_flag = nw25_sri_federal_choice
 		}
@@ -416,7 +416,7 @@ country_event = {
 	option = {
 		name = nw25sri.11.a
 		trigger = {
-			tag = SRI
+			tag = ITA
 			NOT = {
 				has_country_flag = nw25_sri_federal_choice
 			}
@@ -429,7 +429,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				tag = SRI
+				tag = ITA
 				NOT = {
 					has_country_flag = nw25_sri_federal_choice
 				}
@@ -444,7 +444,7 @@ country_event = {
 	option = {
 		name = nw25sri.11.b
 		trigger = {
-			tag = SRI
+			tag = ITA
 			NOT = {
 				has_country_flag = nw25_sri_federal_choice
 			}
@@ -457,7 +457,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				tag = SRI
+				tag = ITA
 				NOT = {
 					has_country_flag = nw25_sri_federal_choice
 				}
@@ -472,7 +472,7 @@ country_event = {
 	option = {
 		name = nw25sri.11.c
 		trigger = {
-			tag = SRI
+			tag = ITA
 			NOT = {
 				has_country_flag = nw25_sri_federal_choice
 			}
@@ -485,7 +485,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				tag = SRI
+				tag = ITA
 				NOT = {
 					has_country_flag = nw25_sri_federal_choice
 				}
@@ -501,7 +501,7 @@ country_event = {
 		name = nw25sri.11.stale
 		trigger = {
 			NOT = {
-				tag = SRI
+				tag = ITA
 				NOT = {
 					has_country_flag = nw25_sri_federal_choice
 				}
@@ -522,20 +522,20 @@ country_event = {
 	desc = nw25sri.20.d
 	is_triggered_only = yes
 	trigger = {
-		tag = SRI
+		tag = ITA
 	}
 
 	option = {
 		name = nw25sri.20.a
 		trigger = {
-			tag = SRI
+			tag = ITA
 		}
 		ai_chance = {
 			factor = 60
 		}
 		if = {
 			limit = {
-				tag = SRI
+				tag = ITA
 			}
 			add_political_power = -35
 			add_to_variable = {
@@ -553,14 +553,14 @@ country_event = {
 	option = {
 		name = nw25sri.20.b
 		trigger = {
-			tag = SRI
+			tag = ITA
 		}
 		ai_chance = {
 			factor = 30
 		}
 		if = {
 			limit = {
-				tag = SRI
+				tag = ITA
 			}
 			add_political_power = -25
 			add_to_variable = {
@@ -587,14 +587,14 @@ country_event = {
 	option = {
 		name = nw25sri.20.c
 		trigger = {
-			tag = SRI
+			tag = ITA
 		}
 		ai_chance = {
 			factor = 10
 		}
 		if = {
 			limit = {
-				tag = SRI
+				tag = ITA
 			}
 			add_to_variable = {
 				var = nw25_sri_rural_support
@@ -616,7 +616,7 @@ country_event = {
 		name = nw25sri.20.stale
 		trigger = {
 			NOT = {
-				tag = SRI
+				tag = ITA
 			}
 		}
 		ai_chance = {
@@ -631,7 +631,7 @@ country_event = {
 	desc = nw25sri.21.d
 	is_triggered_only = yes
 	trigger = {
-		tag = SRI
+		tag = ITA
 		NOT = {
 			has_country_flag = nw25_sri_event_21_done
 		}
@@ -640,7 +640,7 @@ country_event = {
 	option = {
 		name = nw25sri.21.a
 		trigger = {
-			tag = SRI
+			tag = ITA
 			NOT = {
 				has_country_flag = nw25_sri_event_21_done
 			}
@@ -650,7 +650,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				tag = SRI
+				tag = ITA
 				NOT = {
 					has_country_flag = nw25_sri_event_21_done
 				}
@@ -672,7 +672,7 @@ country_event = {
 	option = {
 		name = nw25sri.21.b
 		trigger = {
-			tag = SRI
+			tag = ITA
 			NOT = {
 				has_country_flag = nw25_sri_event_21_done
 			}
@@ -682,7 +682,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				tag = SRI
+				tag = ITA
 				NOT = {
 					has_country_flag = nw25_sri_event_21_done
 				}
@@ -707,7 +707,7 @@ country_event = {
 	option = {
 		name = nw25sri.21.c
 		trigger = {
-			tag = SRI
+			tag = ITA
 			NOT = {
 				has_country_flag = nw25_sri_event_21_done
 			}
@@ -717,7 +717,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				tag = SRI
+				tag = ITA
 				NOT = {
 					has_country_flag = nw25_sri_event_21_done
 				}
@@ -749,7 +749,7 @@ country_event = {
 		name = nw25sri.21.stale
 		trigger = {
 			NOT = {
-				tag = SRI
+				tag = ITA
 				NOT = {
 					has_country_flag = nw25_sri_event_21_done
 				}
@@ -769,7 +769,7 @@ country_event = {
 	trigger = {
 		tag = GER
 		has_country_flag = nw_parliament_active
-		SRI = {
+		ITA = {
 			exists = yes
 		}
 		NOT = {
@@ -782,7 +782,7 @@ country_event = {
 		trigger = {
 			tag = GER
 			has_country_flag = nw_parliament_active
-			SRI = {
+			ITA = {
 				exists = yes
 			}
 			NOT = {
@@ -796,7 +796,7 @@ country_event = {
 			limit = {
 				tag = GER
 				has_country_flag = nw_parliament_active
-				SRI = {
+				ITA = {
 					exists = yes
 				}
 				NOT = {
@@ -814,7 +814,7 @@ country_event = {
 				max = 100
 			}
 			set_country_flag = nw25_ger_italian_contacts
-			SRI = {
+			ITA = {
 				add_to_variable = {
 					var = nw25_sri_council_cohesion
 					value = 5
@@ -833,7 +833,7 @@ country_event = {
 		trigger = {
 			tag = GER
 			has_country_flag = nw_parliament_active
-			SRI = {
+			ITA = {
 				exists = yes
 			}
 			NOT = {
@@ -847,7 +847,7 @@ country_event = {
 			limit = {
 				tag = GER
 				has_country_flag = nw_parliament_active
-				SRI = {
+				ITA = {
 					exists = yes
 				}
 				NOT = {
@@ -872,7 +872,7 @@ country_event = {
 		trigger = {
 			tag = GER
 			has_country_flag = nw_parliament_active
-			SRI = {
+			ITA = {
 				exists = yes
 			}
 			NOT = {
@@ -886,7 +886,7 @@ country_event = {
 			limit = {
 				tag = GER
 				has_country_flag = nw_parliament_active
-				SRI = {
+				ITA = {
 					exists = yes
 				}
 				NOT = {
@@ -912,7 +912,7 @@ country_event = {
 			NOT = {
 				tag = GER
 				has_country_flag = nw_parliament_active
-				SRI = {
+				ITA = {
 					exists = yes
 				}
 				NOT = {
@@ -932,7 +932,7 @@ country_event = {
 	desc = nw25sri.31.d
 	is_triggered_only = yes
 	trigger = {
-		tag = SRI
+		tag = ITA
 		NOT = {
 			has_country_flag = nw25_sri_event_31_done
 		}
@@ -941,7 +941,7 @@ country_event = {
 	option = {
 		name = nw25sri.31.a
 		trigger = {
-			tag = SRI
+			tag = ITA
 			NOT = {
 				has_country_flag = nw25_sri_event_31_done
 			}
@@ -951,7 +951,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				tag = SRI
+				tag = ITA
 				NOT = {
 					has_country_flag = nw25_sri_event_31_done
 				}
@@ -968,7 +968,7 @@ country_event = {
 	option = {
 		name = nw25sri.31.b
 		trigger = {
-			tag = SRI
+			tag = ITA
 			NOT = {
 				has_country_flag = nw25_sri_event_31_done
 			}
@@ -978,7 +978,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				tag = SRI
+				tag = ITA
 				NOT = {
 					has_country_flag = nw25_sri_event_31_done
 				}
@@ -994,7 +994,7 @@ country_event = {
 		name = nw25sri.31.stale
 		trigger = {
 			NOT = {
-				tag = SRI
+				tag = ITA
 				NOT = {
 					has_country_flag = nw25_sri_event_31_done
 				}
@@ -1012,7 +1012,7 @@ country_event = {
 	desc = nw25sri.52.d
 	is_triggered_only = yes
 	trigger = {
-		tag = SRI
+		tag = ITA
 		NOT = {
 			has_country_flag = nw25_sri_event_52_done
 		}
@@ -1021,7 +1021,7 @@ country_event = {
 	option = {
 		name = nw25sri.52.a
 		trigger = {
-			tag = SRI
+			tag = ITA
 			NOT = {
 				has_country_flag = nw25_sri_event_52_done
 			}
@@ -1031,7 +1031,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				tag = SRI
+				tag = ITA
 				NOT = {
 					has_country_flag = nw25_sri_event_52_done
 				}
@@ -1044,7 +1044,7 @@ country_event = {
 	option = {
 		name = nw25sri.52.b
 		trigger = {
-			tag = SRI
+			tag = ITA
 			NOT = {
 				has_country_flag = nw25_sri_event_52_done
 			}
@@ -1054,7 +1054,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				tag = SRI
+				tag = ITA
 				NOT = {
 					has_country_flag = nw25_sri_event_52_done
 				}
@@ -1087,7 +1087,7 @@ country_event = {
 	option = {
 		name = nw25sri.52.c
 		trigger = {
-			tag = SRI
+			tag = ITA
 			NOT = {
 				has_country_flag = nw25_sri_event_52_done
 			}
@@ -1097,7 +1097,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				tag = SRI
+				tag = ITA
 				NOT = {
 					has_country_flag = nw25_sri_event_52_done
 				}
@@ -1111,7 +1111,7 @@ country_event = {
 		name = nw25sri.52.stale
 		trigger = {
 			NOT = {
-				tag = SRI
+				tag = ITA
 				NOT = {
 					has_country_flag = nw25_sri_event_52_done
 				}
@@ -1200,7 +1200,7 @@ country_event = {
 				}
 			}
 			clr_country_flag = nw25_sri_lbv_pending
-			SRI = {
+			ITA = {
 				country_event = {
 					id = nw25sri.91
 					days = 1
@@ -1305,7 +1305,7 @@ country_event = {
 				clr_country_flag = nw25_sri_lbv_pending
 				clr_country_flag = nw25_sri_lbv_provisional
 			}
-			SRI = {
+			ITA = {
 				country_event = {
 					id = nw25sri.91
 					days = 1
@@ -1442,7 +1442,7 @@ country_event = {
 	desc = nw25sri.60.d
 	is_triggered_only = yes
 	trigger = {
-		tag = SRI
+		tag = ITA
 		has_country_flag = nw25_sri_operation_lbv_pending
 		nw25_sri_operation_lbv_valid = yes
 	}
@@ -1450,7 +1450,7 @@ country_event = {
 	option = {
 		name = nw25sri.60.a
 		trigger = {
-			tag = SRI
+			tag = ITA
 			has_country_flag = nw25_sri_operation_lbv_pending
 			nw25_sri_operation_lbv_valid = yes
 		}
@@ -1459,7 +1459,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				tag = SRI
+				tag = ITA
 				has_country_flag = nw25_sri_operation_lbv_pending
 				nw25_sri_operation_lbv_valid = yes
 			}
@@ -1493,7 +1493,7 @@ country_event = {
 	option = {
 		name = nw25sri.60.b
 		trigger = {
-			tag = SRI
+			tag = ITA
 			has_country_flag = nw25_sri_operation_lbv_pending
 			nw25_sri_operation_lbv_valid = yes
 		}
@@ -1502,7 +1502,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				tag = SRI
+				tag = ITA
 				has_country_flag = nw25_sri_operation_lbv_pending
 				nw25_sri_operation_lbv_valid = yes
 			}
@@ -1514,7 +1514,7 @@ country_event = {
 		name = nw25sri.60.stale
 		trigger = {
 			NOT = {
-				tag = SRI
+				tag = ITA
 				has_country_flag = nw25_sri_operation_lbv_pending
 				nw25_sri_operation_lbv_valid = yes
 			}
@@ -1531,7 +1531,7 @@ country_event = {
 	desc = nw25sri.61.d
 	is_triggered_only = yes
 	trigger = {
-		tag = SRI
+		tag = ITA
 		has_country_flag = nw25_sri_operation_spm_pending
 		nw25_sri_operation_spm_valid = yes
 	}
@@ -1539,7 +1539,7 @@ country_event = {
 	option = {
 		name = nw25sri.61.a
 		trigger = {
-			tag = SRI
+			tag = ITA
 			has_country_flag = nw25_sri_operation_spm_pending
 			nw25_sri_operation_spm_valid = yes
 		}
@@ -1548,7 +1548,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				tag = SRI
+				tag = ITA
 				has_country_flag = nw25_sri_operation_spm_pending
 				nw25_sri_operation_spm_valid = yes
 			}
@@ -1582,7 +1582,7 @@ country_event = {
 	option = {
 		name = nw25sri.61.b
 		trigger = {
-			tag = SRI
+			tag = ITA
 			has_country_flag = nw25_sri_operation_spm_pending
 			nw25_sri_operation_spm_valid = yes
 		}
@@ -1591,7 +1591,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				tag = SRI
+				tag = ITA
 				has_country_flag = nw25_sri_operation_spm_pending
 				nw25_sri_operation_spm_valid = yes
 			}
@@ -1603,7 +1603,7 @@ country_event = {
 		name = nw25sri.61.stale
 		trigger = {
 			NOT = {
-				tag = SRI
+				tag = ITA
 				has_country_flag = nw25_sri_operation_spm_pending
 				nw25_sri_operation_spm_valid = yes
 			}
@@ -1620,7 +1620,7 @@ country_event = {
 	desc = nw25sri.62.d
 	is_triggered_only = yes
 	trigger = {
-		tag = SRI
+		tag = ITA
 		has_country_flag = nw25_sri_operation_pap_pending
 		nw25_sri_operation_pap_valid = yes
 	}
@@ -1628,7 +1628,7 @@ country_event = {
 	option = {
 		name = nw25sri.62.a
 		trigger = {
-			tag = SRI
+			tag = ITA
 			has_country_flag = nw25_sri_operation_pap_pending
 			nw25_sri_operation_pap_valid = yes
 		}
@@ -1637,7 +1637,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				tag = SRI
+				tag = ITA
 				has_country_flag = nw25_sri_operation_pap_pending
 				nw25_sri_operation_pap_valid = yes
 			}
@@ -1671,7 +1671,7 @@ country_event = {
 	option = {
 		name = nw25sri.62.b
 		trigger = {
-			tag = SRI
+			tag = ITA
 			has_country_flag = nw25_sri_operation_pap_pending
 			nw25_sri_operation_pap_valid = yes
 		}
@@ -1680,7 +1680,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				tag = SRI
+				tag = ITA
 				has_country_flag = nw25_sri_operation_pap_pending
 				nw25_sri_operation_pap_valid = yes
 			}
@@ -1692,7 +1692,7 @@ country_event = {
 		name = nw25sri.62.stale
 		trigger = {
 			NOT = {
-				tag = SRI
+				tag = ITA
 				has_country_flag = nw25_sri_operation_pap_pending
 				nw25_sri_operation_pap_valid = yes
 			}

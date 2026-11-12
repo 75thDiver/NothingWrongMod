@@ -1,0 +1,40 @@
+diff --git a/history/states/115-Sicily.txt b/history/states/115-Sicily.txt
+--- a/history/states/115-Sicily.txt
++++ b/history/states/115-Sicily.txt
+@@ -7,4 +7,3 @@
+- owner = SRI
+- controller = SRI
+- add_core_of = SRI
++ owner = ITA
++ controller = ITA
+  add_core_of = ITA
+diff --git a/history/states/117-Napoli.txt b/history/states/117-Napoli.txt
+--- a/history/states/117-Napoli.txt
++++ b/history/states/117-Napoli.txt
+@@ -14,4 +14,3 @@
+- owner = SRI
+- controller = SRI
+- add_core_of = SRI
++ owner = ITA
++ controller = ITA
+  add_core_of = ITA
+diff --git a/history/states/156-Calabria.txt b/history/states/156-Calabria.txt
+--- a/history/states/156-Calabria.txt
++++ b/history/states/156-Calabria.txt
+@@ -9,4 +9,3 @@
+- owner = SRI
+- controller = SRI
+- add_core_of = SRI
++ owner = ITA
++ controller = ITA
+  add_core_of = ITA
+diff --git a/history/states/849-Puglia.txt b/history/states/849-Puglia.txt
+--- a/history/states/849-Puglia.txt
++++ b/history/states/849-Puglia.txt
+@@ -8,4 +8,3 @@
+- owner = SRI
+- controller = SRI
+- add_core_of = SRI
++ owner = ITA
++ controller = ITA
+  add_core_of = ITA

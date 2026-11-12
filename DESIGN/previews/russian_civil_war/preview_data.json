@@ -1,0 +1,2876 @@
+{
+  "source": {
+    "game_map": "E:\\SteamLibrary\\steamapps\\common\\Hearts of Iron IV\\map\\provinces.bmp",
+    "mod_states": "history/states",
+    "dimensions": [
+      5632,
+      2048
+    ],
+    "unmapped_or_sea_pixels": 7449412,
+    "state_count": 1081,
+    "duplicate_province_claims": []
+  },
+  "collisions": [],
+  "probabilistic_outcomes": {
+    "217": [
+      {
+        "actor": "DNR",
+        "name": "Донская Народная Республика",
+        "chance_percent": 50
+      },
+      {
+        "actor": "AKV",
+        "name": "Совместная администрация Донской и Астраханских казачьих войск",
+        "chance_percent": 50
+      }
+    ],
+    "236": [
+      {
+        "actor": "KAL",
+        "name": "Калмыкия",
+        "chance_percent": 50
+      },
+      {
+        "actor": "AKV",
+        "name": "Совместная администрация Донской и Астраханских казачьих войск",
+        "chance_percent": 50
+      }
+    ],
+    "237": [
+      {
+        "actor": "KAL",
+        "name": "Калмыкия",
+        "chance_percent": 50
+      },
+      {
+        "actor": "AKV",
+        "name": "Совместная администрация Донской и Астраханских казачьих войск",
+        "chance_percent": 50
+      }
+    ],
+    "265": [
+      {
+        "actor": "DNR",
+        "name": "Донская Народная Республика",
+        "chance_percent": 50
+      },
+      {
+        "actor": "DON",
+        "name": "Область Войска Донского",
+        "chance_percent": 50
+      }
+    ]
+  },
+  "actors": {
+    "SOV": {
+      "name": "Российская республика",
+      "bloc": "Новая Россия",
+      "color": "648EA9",
+      "anchor": 195
+    },
+    "CROWN": {
+      "name": "Российская Империя",
+      "bloc": "Белое движение",
+      "color": "D9C28C",
+      "anchor": 239,
+      "ids": [
+        219,
+        222,
+        223,
+        224,
+        239,
+        250,
+        251,
+        252,
+        253,
+        220,
+        221,
+        240,
+        254,
+        255,
+        257,
+        258,
+        260,
+        401,
+        829
+      ],
+      "status": "approved",
+      "land_components": [
+        [
+          219,
+          220,
+          221,
+          222,
+          223,
+          224,
+          239,
+          240,
+          250,
+          251,
+          252,
+          253,
+          254,
+          255,
+          257,
+          258,
+          260,
+          401,
+          829
+        ]
+      ]
+    },
+    "DON": {
+      "name": "Область Войска Донского",
+      "bloc": "Белое движение · марионетка ВСЮР",
+      "color": "A78C59",
+      "anchor": 218,
+      "ids": [
+        218,
+        227,
+        228,
+        238,
+        245
+      ],
+      "cores": [
+        217,
+        218,
+        227,
+        228,
+        238,
+        245,
+        265
+      ],
+      "status": "approved",
+      "land_components": [
+        [
+          218,
+          227,
+          228,
+          238,
+          245
+        ]
+      ]
+    },
+    "KUB": {
+      "name": "Кубанская область",
+      "bloc": "Белое движение · марионетка ВСЮР",
+      "color": "B39F6B",
+      "anchor": 234,
+      "ids": [
+        233,
+        234,
+        235
+      ],
+      "status": "approved",
+      "land_components": [
+        [
+          233,
+          234,
+          235
+        ]
+      ]
+    },
+    "AFSR": {
+      "name": "ВСЮР",
+      "bloc": "Белое движение",
+      "color": "8B754E",
+      "anchor": 137,
+      "ids": [
+        137
+      ],
+      "status": "approved",
+      "land_components": [
+        [
+          137
+        ]
+      ]
+    },
+    "RSB": {
+      "name": "Российское Государство",
+      "bloc": "Нейтральное, вне фракций",
+      "color": "C8B07A",
+      "anchor": 570,
+      "ids": [
+        561,
+        562,
+        563,
+        564,
+        565,
+        566,
+        567,
+        568,
+        569,
+        570,
+        571,
+        574,
+        575,
+        576,
+        577,
+        578,
+        579,
+        580,
+        40,
+        329,
+        516,
+        637,
+        644,
+        654,
+        822,
+        824,
+        874,
+        876,
+        877,
+        878
+      ],
+      "status": "approved",
+      "land_components": [
+        [
+          40,
+          329,
+          516,
+          561,
+          562,
+          563,
+          564,
+          565,
+          566,
+          567,
+          568,
+          569,
+          570,
+          571,
+          574,
+          575,
+          576,
+          577,
+          578,
+          579,
+          580,
+          637,
+          644,
+          654,
+          822,
+          824,
+          874,
+          876,
+          877,
+          878
+        ]
+      ]
+    },
+    "BLR": {
+      "name": "Белорусская Народная Республика",
+      "bloc": "Новая Россия",
+      "color": "78A8C8",
+      "anchor": 206,
+      "ids": [
+        94,
+        95,
+        96,
+        194,
+        204,
+        206,
+        207,
+        241
+      ],
+      "status": "approved",
+      "land_components": [
+        [
+          94,
+          95,
+          96,
+          194,
+          204,
+          206,
+          207,
+          241
+        ]
+      ]
+    },
+    "RUK": {
+      "name": "Украинская рада",
+      "bloc": "Новая Россия",
+      "color": "4CA9AD",
+      "anchor": 202,
+      "ids": [
+        93,
+        192,
+        193,
+        196,
+        197,
+        198,
+        199,
+        200,
+        201,
+        202,
+        203,
+        225,
+        226,
+        259,
+        834
+      ],
+      "status": "approved",
+      "land_components": [
+        [
+          93,
+          192,
+          193,
+          196,
+          197,
+          198,
+          199,
+          200,
+          201,
+          202,
+          203,
+          225,
+          226,
+          259,
+          834
+        ]
+      ]
+    },
+    "FER": {
+      "name": "Дальневосточная республика",
+      "bloc": "Новая Россия",
+      "color": "4B9D98",
+      "anchor": 408,
+      "ids": [
+        408,
+        409,
+        560,
+        657
+      ],
+      "status": "approved",
+      "land_components": [
+        [
+          408,
+          409,
+          560,
+          657
+        ]
+      ]
+    },
+    "ABK": {
+      "name": "Абхазия",
+      "bloc": "Новая Россия",
+      "color": "52AFC0",
+      "anchor": 826,
+      "ids": [
+        826
+      ],
+      "status": "approved",
+      "land_components": [
+        [
+          826
+        ]
+      ]
+    },
+    "MNT": {
+      "name": "Горская республика",
+      "bloc": "Новая Россия",
+      "color": "68AEB0",
+      "anchor": 232,
+      "ids": [
+        232,
+        821,
+        827,
+        828
+      ],
+      "status": "approved",
+      "land_components": [
+        [
+          232,
+          821,
+          827,
+          828
+        ]
+      ]
+    },
+    "TCF": {
+      "name": "Закавказская федерация",
+      "bloc": "Новая Россия",
+      "color": "539A91",
+      "anchor": 231,
+      "ids": [
+        229,
+        231
+      ],
+      "status": "approved",
+      "land_components": [
+        [
+          229,
+          231
+        ]
+      ]
+    },
+    "ARM": {
+      "name": "Армения",
+      "bloc": "Независимые",
+      "color": "B36D86",
+      "anchor": 230,
+      "ids": [
+        230,
+        800
+      ],
+      "status": "approved",
+      "land_components": [
+        [
+          230,
+          800
+        ]
+      ]
+    },
+    "KAL": {
+      "name": "Калмыкия",
+      "bloc": "Возможный исход для каждого региона отдельно",
+      "color": "6EA993",
+      "anchor": 237,
+      "status": "probabilistic outcome"
+    },
+    "DNR": {
+      "name": "Донская Народная Республика",
+      "legend_name": "Донская Народная Республика",
+      "map_name": "ДНР",
+      "bloc": "Новая Россия",
+      "color": "457EA3",
+      "anchor": 217,
+      "status": "probabilistic outcome"
+    },
+    "AKV": {
+      "name": "Совместная администрация Донской и Астраханских казачьих войск",
+      "legend_name": "САДТКВ (AKV)",
+      "map_name": "САДТКВ · AKV",
+      "bloc": "марионетка Дона · Российская империя",
+      "color": "8A8B55",
+      "anchor": 236,
+      "status": "probabilistic outcome"
+    },
+    "TRP": {
+      "name": "Турецкая республика",
+      "bloc": "Внешний участник",
+      "color": "C86D5B",
+      "anchor": 354,
+      "ids": [
+        353,
+        354
+      ],
+      "status": "approved",
+      "land_components": [
+        [
+          353,
+          354
+        ]
+      ]
+    },
+    "BLF": {
+      "name": "Балтийская федерация",
+      "bloc": "Независимые",
+      "color": "A07CAF",
+      "anchor": 808,
+      "ids": [
+        11,
+        12,
+        13,
+        189,
+        190,
+        191,
+        784,
+        808,
+        809,
+        810,
+        811,
+        812,
+        814,
+        815
+      ],
+      "status": "approved",
+      "land_components": [
+        [
+          11,
+          12,
+          13,
+          189,
+          190,
+          191,
+          784,
+          808,
+          809,
+          810,
+          812,
+          814,
+          815
+        ],
+        [
+          811
+        ]
+      ]
+    },
+    "BLW": {
+      "name": "Прибалтийский союз рабочих",
+      "bloc": "Новая Россия",
+      "color": "578CBA",
+      "anchor": 813,
+      "ids": [
+        813
+      ],
+      "status": "approved",
+      "land_components": [
+        [
+          813
+        ]
+      ]
+    },
+    "KIR": {
+      "name": "Киргизская народная республика",
+      "bloc": "Новая Россия",
+      "color": "70B7A7",
+      "anchor": 590,
+      "ids": [
+        583,
+        588,
+        590,
+        882
+      ],
+      "status": "approved",
+      "land_components": [
+        [
+          583,
+          588,
+          590,
+          882
+        ]
+      ]
+    },
+    "ALA": {
+      "name": "Алаш-Орда",
+      "bloc": "Независимые",
+      "color": "BA7D9B",
+      "anchor": 881,
+      "ids": [
+        402,
+        404,
+        406,
+        407,
+        586,
+        587,
+        589,
+        881
+      ],
+      "status": "approved",
+      "land_components": [
+        [
+          402,
+          404,
+          406,
+          407,
+          586,
+          587,
+          589,
+          881
+        ]
+      ]
+    },
+    "TRK": {
+      "name": "Туркестанское ханство",
+      "bloc": "Независимые",
+      "color": "D19279",
+      "anchor": 405,
+      "ids": [
+        405,
+        584,
+        585,
+        732,
+        742,
+        823,
+        830,
+        831,
+        832
+      ],
+      "status": "approved",
+      "land_components": [
+        [
+          405,
+          584,
+          585,
+          732,
+          742,
+          823,
+          830,
+          831,
+          832
+        ]
+      ]
+    },
+    "POL": {
+      "name": "Польша",
+      "bloc": "Независимые после освобождения",
+      "color": "A475B4",
+      "anchor": 10
+    },
+    "FIN": {
+      "name": "Финляндия",
+      "bloc": "Независимые после освобождения",
+      "color": "AA83BA",
+      "anchor": 146
+    },
+    "MON": {
+      "name": "Монголия",
+      "bloc": "Независимое нейтральное государство",
+      "color": "BCA177",
+      "anchor": 330
+    },
+    "SIK": {
+      "name": "Синьцзян",
+      "bloc": "Независимое нейтральное государство",
+      "color": "C3A573",
+      "anchor": 617
+    },
+    "TUR": {
+      "name": "Османская империя",
+      "bloc": "Внешний участник",
+      "color": "D5AD7C",
+      "anchor": 341
+    },
+    "JAP": {
+      "name": "Япония / Северный Сахалин",
+      "bloc": "Внешний участник",
+      "color": "D38F91",
+      "anchor": 655,
+      "ids": [
+        655
+      ],
+      "status": "approved",
+      "land_components": [
+        [
+          655
+        ]
+      ]
+    },
+    "ROM": {
+      "name": "Румыния",
+      "bloc": "Внешняя держава",
+      "color": "B87566",
+      "anchor": 79,
+      "ids": [
+        78,
+        766
+      ],
+      "status": "approved",
+      "land_components": [
+        [
+          78,
+          766
+        ]
+      ]
+    }
+  },
+  "states": {
+    "11": {
+      "name": "Каунас",
+      "before": "SOV",
+      "after_preview": "BLF",
+      "status": "approved",
+      "note": null,
+      "file": "11-Kaunas.txt",
+      "center": [
+        3183.966252220249,
+        423.9538188277087
+      ]
+    },
+    "12": {
+      "name": "Видземе",
+      "before": "SOV",
+      "after_preview": "BLF",
+      "status": "approved",
+      "note": null,
+      "file": "12-Latvia.txt",
+      "center": [
+        3204.92,
+        368.92695652173916
+      ]
+    },
+    "13": {
+      "name": "Пярну",
+      "before": "SOV",
+      "after_preview": "BLF",
+      "status": "approved",
+      "note": null,
+      "file": "13-Estonia.txt",
+      "center": [
+        3190.8754098360655,
+        346.4327868852459
+      ]
+    },
+    "40": {
+      "name": "Алтайский край",
+      "before": "SOV",
+      "after_preview": "RSB",
+      "status": "approved",
+      "note": "Фиксированная передача RSB по последней карте владельца",
+      "file": "40-USSR.txt",
+      "center": [
+        4096.516279708751,
+        474.09273251820304
+      ]
+    },
+    "78": {
+      "name": "Бессарабия",
+      "before": "SOV",
+      "after_preview": "ROM",
+      "status": "approved",
+      "note": null,
+      "file": "78-Bessarabia.txt",
+      "center": [
+        3245.9672544080604,
+        583.7984886649874
+      ]
+    },
+    "79": {
+      "name": "Молдавия",
+      "before": "ROM",
+      "after_preview": "ROM",
+      "status": "Уже принадлежит ROM в действующем сценарии; дополнительная передача не требуется",
+      "note": null,
+      "file": "79-moldovia.txt",
+      "center": [
+        3225.4306569343066,
+        595.1636253041363
+      ]
+    },
+    "93": {
+      "name": "Волынь",
+      "before": "SOV",
+      "after_preview": "RUK",
+      "status": "approved",
+      "note": null,
+      "file": "93-Volhynian.txt",
+      "center": [
+        3206.0901571546733,
+        512.9288668320927
+      ]
+    },
+    "94": {
+      "name": "Полесье",
+      "before": "SOV",
+      "after_preview": "BLR",
+      "status": "approved",
+      "note": "Передан Белорусской Народной Республике по прямому указанию владельца",
+      "file": "94-Polesie.txt",
+      "center": [
+        3204.5786196159834,
+        486.0685002594707
+      ]
+    },
+    "95": {
+      "name": "Новогрудок",
+      "before": "SOV",
+      "after_preview": "BLR",
+      "status": "approved",
+      "note": "Передан Белорусской Народной Республике по прямому указанию владельца",
+      "file": "95-Nowogrodek.txt",
+      "center": [
+        3201.8128514056225,
+        457.1116465863454
+      ]
+    },
+    "96": {
+      "name": "Вилейка",
+      "before": "SOV",
+      "after_preview": "BLR",
+      "status": "approved",
+      "note": "Передан Белорусской Народной Республике по прямому указанию владельца",
+      "file": "96-Wilejka.txt",
+      "center": [
+        3227.141649048626,
+        427.0856236786469
+      ]
+    },
+    "137": {
+      "name": "Крым",
+      "before": "SOV",
+      "after_preview": "AFSR",
+      "status": "approved",
+      "note": null,
+      "file": "137-Crimea.txt",
+      "center": [
+        3342.3120340788073,
+        623.3003194888179
+      ]
+    },
+    "189": {
+      "name": "Жемайтия",
+      "before": "SOV",
+      "after_preview": "BLF",
+      "status": "approved",
+      "note": null,
+      "file": "189-Kaunas.txt",
+      "center": [
+        3153.1147540983607,
+        406.37704918032784
+      ]
+    },
+    "190": {
+      "name": "Курляндия",
+      "before": "SOV",
+      "after_preview": "BLF",
+      "status": "approved",
+      "note": null,
+      "file": "190-Kurzeme.txt",
+      "center": [
+        3149.115438108484,
+        382.35326842837276
+      ]
+    },
+    "191": {
+      "name": "Тарту",
+      "before": "SOV",
+      "after_preview": "BLF",
+      "status": "approved",
+      "note": null,
+      "file": "191-Tartu.txt",
+      "center": [
+        3222.1551433389545,
+        356.3423271500843
+      ]
+    },
+    "192": {
+      "name": "Одесса",
+      "before": "SOV",
+      "after_preview": "RUK",
+      "status": "approved",
+      "note": null,
+      "file": "192-Odessa.txt",
+      "center": [
+        3286.9121522693995,
+        586.6822840409956
+      ]
+    },
+    "193": {
+      "name": "Чернигов",
+      "before": "SOV",
+      "after_preview": "RUK",
+      "status": "approved",
+      "note": null,
+      "file": "193-Kiev.txt",
+      "center": [
+        3305.9019011406845,
+        506.35057034220534
+      ]
+    },
+    "194": {
+      "name": "Мозырь",
+      "before": "SOV",
+      "after_preview": "BLR",
+      "status": "approved",
+      "note": "Передан Белорусской Народной Республике по прямому указанию владельца",
+      "file": "194-Pinsk Marches.txt",
+      "center": [
+        3261.368640533778,
+        490.2610508757298
+      ]
+    },
+    "196": {
+      "name": "Херсон",
+      "before": "SOV",
+      "after_preview": "RUK",
+      "status": "approved",
+      "note": null,
+      "file": "196-Kherson.txt",
+      "center": [
+        3330.8002560819464,
+        596.8348271446863
+      ]
+    },
+    "197": {
+      "name": "Николаев",
+      "before": "SOV",
+      "after_preview": "RUK",
+      "status": "approved",
+      "note": null,
+      "file": "197-Mykolaiv.txt",
+      "center": [
+        3307.187214611872,
+        577.1461187214612
+      ]
+    },
+    "198": {
+      "name": "Винница",
+      "before": "SOV",
+      "after_preview": "RUK",
+      "status": "approved",
+      "note": null,
+      "file": "198-Vinnytsia.txt",
+      "center": [
+        3252.986440677966,
+        553.5649717514125
+      ]
+    },
+    "199": {
+      "name": "Проскуров",
+      "before": "SOV",
+      "after_preview": "RUK",
+      "status": "approved",
+      "note": null,
+      "file": "199-Khmelnytskyi.txt",
+      "center": [
+        3226.7372764786796,
+        540.9050894085282
+      ]
+    },
+    "200": {
+      "name": "Запорожье",
+      "before": "SOV",
+      "after_preview": "RUK",
+      "status": "approved",
+      "note": null,
+      "file": "200-Rivne.txt",
+      "center": [
+        3362.736051502146,
+        585.4238197424893
+      ]
+    },
+    "201": {
+      "name": "Житомир",
+      "before": "SOV",
+      "after_preview": "RUK",
+      "status": "approved",
+      "note": null,
+      "file": "201-Zhytomyr.txt",
+      "center": [
+        3250.9453125,
+        520.39453125
+      ]
+    },
+    "202": {
+      "name": "Киев",
+      "before": "SOV",
+      "after_preview": "RUK",
+      "status": "approved",
+      "note": null,
+      "file": "202-Western Kiev.txt",
+      "center": [
+        3281.725776965265,
+        526.1517367458866
+      ]
+    },
+    "203": {
+      "name": "Черкассы",
+      "before": "SOV",
+      "after_preview": "RUK",
+      "status": "approved",
+      "note": null,
+      "file": "203-Cherkasy.txt",
+      "center": [
+        3299.9913916786227,
+        552.1463414634146
+      ]
+    },
+    "204": {
+      "name": "Бобруйск",
+      "before": "SOV",
+      "after_preview": "BLR",
+      "status": "approved",
+      "note": "Передан Белорусской Народной Республике по прямому указанию владельца",
+      "file": "204-Brest.txt",
+      "center": [
+        3249.4329140461214,
+        467.6656184486373
+      ]
+    },
+    "206": {
+      "name": "Минск",
+      "before": "SOV",
+      "after_preview": "BLR",
+      "status": "approved",
+      "note": "Передан Белорусской Народной Республике по прямому указанию владельца",
+      "file": "206-Minsk.txt",
+      "center": [
+        3253.956834532374,
+        448.04226618705036
+      ]
+    },
+    "207": {
+      "name": "Витебск",
+      "before": "SOV",
+      "after_preview": "BLR",
+      "status": "approved",
+      "note": "Передан Белорусской Народной Республике по прямому указанию владельца",
+      "file": "207-Viciebsk.txt",
+      "center": [
+        3265.1656184486374,
+        422.4472396925227
+      ]
+    },
+    "217": {
+      "name": "Царицын",
+      "before": "SOV",
+      "after_preview": "50/50 outcomes",
+      "status": "approved probabilistic outcomes (50/50)",
+      "note": "Случайный исход при начале войны: 50% DNR / 50% AKV. Бросок независим от других регионов",
+      "file": "217-Stalingrad Area.txt",
+      "center": [
+        3503.3925019127773,
+        557.5524100994644
+      ],
+      "outcomes": [
+        {
+          "actor": "DNR",
+          "name": "Донская Народная Республика",
+          "chance_percent": 50
+        },
+        {
+          "actor": "AKV",
+          "name": "Совместная администрация Донской и Астраханских казачьих войск",
+          "chance_percent": 50
+        }
+      ]
+    },
+    "218": {
+      "name": "Ростов",
+      "before": "SOV",
+      "after_preview": "DON",
+      "status": "approved",
+      "note": null,
+      "file": "218-Rostov Area.txt",
+      "center": [
+        3424.7371714643305,
+        581.0500625782228
+      ]
+    },
+    "219": {
+      "name": "Москва",
+      "before": "SOV",
+      "after_preview": "CROWN",
+      "status": "approved",
+      "note": null,
+      "file": "219-Moscow Area.txt",
+      "center": [
+        3392.496220542463,
+        412.37172076478436
+      ]
+    },
+    "220": {
+      "name": "Курск",
+      "before": "SOV",
+      "after_preview": "CROWN",
+      "status": "approved by author",
+      "note": "Передан Имперской России по просьбе владельца: устранён изолированный южный карман SOV в превью",
+      "file": "220-Kursk Area.txt",
+      "center": [
+        3368.065573770492,
+        498.89180327868854
+      ]
+    },
+    "221": {
+      "name": "Харьков",
+      "before": "SOV",
+      "after_preview": "CROWN",
+      "status": "approved by author",
+      "note": "Передан Имперской России по просьбе владельца: устранён изолированный южный карман SOV в превью",
+      "file": "221-Kharkov.txt",
+      "center": [
+        3375.5641476274163,
+        540.3260105448155
+      ]
+    },
+    "222": {
+      "name": "Орёл",
+      "before": "SOV",
+      "after_preview": "CROWN",
+      "status": "approved",
+      "note": null,
+      "file": "222-Orel.txt",
+      "center": [
+        3374.1251125112512,
+        475.93879387938796
+      ]
+    },
+    "223": {
+      "name": "Тула",
+      "before": "SOV",
+      "after_preview": "CROWN",
+      "status": "approved",
+      "note": null,
+      "file": "223-tula.txt",
+      "center": [
+        3389.5623387790197,
+        451.4926913155632
+      ]
+    },
+    "224": {
+      "name": "Брянск",
+      "before": "SOV",
+      "after_preview": "CROWN",
+      "status": "approved",
+      "note": null,
+      "file": "224-Bryansk.txt",
+      "center": [
+        3326.7644386761845,
+        472.514600908501
+      ]
+    },
+    "225": {
+      "name": "Сумы",
+      "before": "SOV",
+      "after_preview": "RUK",
+      "status": "approved",
+      "note": null,
+      "file": "225-Glukhov.txt",
+      "center": [
+        3337.3044397463004,
+        509.6427061310782
+      ]
+    },
+    "226": {
+      "name": "Екатеринослав",
+      "before": "SOV",
+      "after_preview": "RUK",
+      "status": "approved",
+      "note": null,
+      "file": "226-Nikopol.txt",
+      "center": [
+        3348.6849662162163,
+        565.8369932432432
+      ]
+    },
+    "227": {
+      "name": "Юзовка",
+      "before": "SOV",
+      "after_preview": "DON",
+      "status": "approved",
+      "note": null,
+      "file": "227-Stalino.txt",
+      "center": [
+        3393.101344364012,
+        570.0051706308169
+      ]
+    },
+    "228": {
+      "name": "Луганск",
+      "before": "SOV",
+      "after_preview": "DON",
+      "status": "approved",
+      "note": null,
+      "file": "228-Taganrog.txt",
+      "center": [
+        3413.607948442535,
+        551.7679914070892
+      ]
+    },
+    "229": {
+      "name": "Азербайджан",
+      "before": "SOV",
+      "after_preview": "TCF",
+      "status": "approved",
+      "note": null,
+      "file": "229-baku.txt",
+      "center": [
+        3551.840493407061,
+        717.3921735431732
+      ]
+    },
+    "230": {
+      "name": "Армения",
+      "before": "SOV",
+      "after_preview": "ARM",
+      "status": "approved",
+      "note": null,
+      "file": "230-Armenia.txt",
+      "center": [
+        3507.8643790849674,
+        720.2973856209151
+      ]
+    },
+    "231": {
+      "name": "Грузия",
+      "before": "SOV",
+      "after_preview": "TCF",
+      "status": "approved",
+      "note": null,
+      "file": "231-Georgia.txt",
+      "center": [
+        3492.52541296061,
+        689.3475222363405
+      ]
+    },
+    "232": {
+      "name": "Дагестан",
+      "before": "SOV",
+      "after_preview": "MNT",
+      "status": "approved",
+      "note": null,
+      "file": "232-Grozny.txt",
+      "center": [
+        3538.5416004239532,
+        663.2580816110228
+      ]
+    },
+    "233": {
+      "name": "Сочи",
+      "before": "SOV",
+      "after_preview": "KUB",
+      "status": "approved",
+      "note": null,
+      "file": "233-Caucasus Mountains.txt",
+      "center": [
+        3444.9468791500663,
+        653.0929614873838
+      ]
+    },
+    "234": {
+      "name": "Екатеринодар",
+      "before": "SOV",
+      "after_preview": "KUB",
+      "status": "approved",
+      "note": null,
+      "file": "234-Krasodar.txt",
+      "center": [
+        3421.6644135188867,
+        622.9741550695825
+      ]
+    },
+    "235": {
+      "name": "Ставрополь",
+      "before": "SOV",
+      "after_preview": "KUB",
+      "status": "approved",
+      "note": null,
+      "file": "235-Stravropol.txt",
+      "center": [
+        3480.792780748663,
+        633.0842245989305
+      ]
+    },
+    "236": {
+      "name": "Астрахань",
+      "before": "SOV",
+      "after_preview": "50/50 outcomes",
+      "status": "approved probabilistic outcomes (50/50)",
+      "note": "Отдельный бросок для каждого штата: 50% KAL / 50% AKV; возможны разные исходы для 236 и 237",
+      "file": "236-Astrakhan.txt",
+      "center": [
+        3541.7946175637394,
+        584.4702549575071
+      ],
+      "outcomes": [
+        {
+          "actor": "KAL",
+          "name": "Калмыкия",
+          "chance_percent": 50
+        },
+        {
+          "actor": "AKV",
+          "name": "Совместная администрация Донской и Астраханских казачьих войск",
+          "chance_percent": 50
+        }
+      ]
+    },
+    "237": {
+      "name": "Элиста",
+      "before": "SOV",
+      "after_preview": "50/50 outcomes",
+      "status": "approved probabilistic outcomes (50/50)",
+      "note": "Отдельный бросок для каждого штата: 50% KAL / 50% AKV; возможны разные исходы для 236 и 237",
+      "file": "237-Elista.txt",
+      "center": [
+        3516.2821391840935,
+        603.173123071649
+      ],
+      "outcomes": [
+        {
+          "actor": "KAL",
+          "name": "Калмыкия",
+          "chance_percent": 50
+        },
+        {
+          "actor": "AKV",
+          "name": "Совместная администрация Донской и Астраханских казачьих войск",
+          "chance_percent": 50
+        }
+      ]
+    },
+    "238": {
+      "name": "Волгодонск",
+      "before": "SOV",
+      "after_preview": "DON",
+      "status": "approved",
+      "note": null,
+      "file": "238-volgodonsk.txt",
+      "center": [
+        3463.588090853284,
+        595.1749539594844
+      ]
+    },
+    "239": {
+      "name": "Саратов",
+      "before": "SOV",
+      "after_preview": "CROWN",
+      "status": "approved",
+      "note": "Фиксированное владение Имперской России (CROWN) по карте владельца",
+      "file": "239-Saratov.txt",
+      "center": [
+        3508.2751677852348,
+        494.4408879710893
+      ]
+    },
+    "240": {
+      "name": "Белгород",
+      "before": "SOV",
+      "after_preview": "CROWN",
+      "status": "approved by author",
+      "note": "Передан Имперской России по просьбе владельца: устранён изолированный южный карман SOV в превью",
+      "file": "240-Voronezh.txt",
+      "center": [
+        3389.404740200547,
+        519.3691886964449
+      ]
+    },
+    "241": {
+      "name": "Гомель",
+      "before": "SOV",
+      "after_preview": "BLR",
+      "status": "approved",
+      "note": "Передан Белорусской Народной Республике по прямому указанию владельца",
+      "file": "241-Pochep.txt",
+      "center": [
+        3291.976806422837,
+        463.91168599464766
+      ]
+    },
+    "245": {
+      "name": "Миллерово",
+      "before": "SOV",
+      "after_preview": "DON",
+      "status": "approved",
+      "note": null,
+      "file": "245-Donetsk.txt",
+      "center": [
+        3455.240957150807,
+        558.0133555926544
+      ]
+    },
+    "250": {
+      "name": "Симбирск",
+      "before": "SOV",
+      "after_preview": "CROWN",
+      "status": "approved",
+      "note": null,
+      "file": "250-ulyanovsky.txt",
+      "center": [
+        3544.417066155321,
+        450.51869606903165
+      ]
+    },
+    "251": {
+      "name": "Самара",
+      "before": "SOV",
+      "after_preview": "CROWN",
+      "status": "approved",
+      "note": null,
+      "file": "251-Samara.txt",
+      "center": [
+        3591.881445570736,
+        464.34640810929926
+      ]
+    },
+    "252": {
+      "name": "Нижний Новгород",
+      "before": "SOV",
+      "after_preview": "CROWN",
+      "status": "approved",
+      "note": null,
+      "file": "252-Nizhny Novogrod.txt",
+      "center": [
+        3494.63052905464,
+        403.82480485689507
+      ]
+    },
+    "253": {
+      "name": "Иваново",
+      "before": "SOV",
+      "after_preview": "CROWN",
+      "status": "approved",
+      "note": null,
+      "file": "253-Ivanovo.txt",
+      "center": [
+        3446.0757518081464,
+        393.16977540921204
+      ]
+    },
+    "254": {
+      "name": "Рязань",
+      "before": "SOV",
+      "after_preview": "CROWN",
+      "status": "approved by author",
+      "note": "Передан Имперской России по просьбе владельца: устранён изолированный южный карман SOV в превью",
+      "file": "254-Ryazan.txt",
+      "center": [
+        3437.332988089073,
+        442.70481615743137
+      ]
+    },
+    "255": {
+      "name": "Пенза",
+      "before": "SOV",
+      "after_preview": "CROWN",
+      "status": "approved by author",
+      "note": "Передан Имперской России по просьбе владельца: устранён изолированный южный карман SOV в превью",
+      "file": "255-Penza.txt",
+      "center": [
+        3496.539079620161,
+        460.3612125639153
+      ]
+    },
+    "257": {
+      "name": "Тамбов",
+      "before": "SOV",
+      "after_preview": "CROWN",
+      "status": "approved by author",
+      "note": "Передан Имперской России по просьбе владельца: устранён изолированный южный карман SOV в превью",
+      "file": "257-Livny.txt",
+      "center": [
+        3453.1733684904416,
+        478.3704680290046
+      ]
+    },
+    "258": {
+      "name": "Липецк",
+      "before": "SOV",
+      "after_preview": "CROWN",
+      "status": "approved by author",
+      "note": "Передан Имперской России по просьбе владельца: устранён изолированный южный карман SOV в превью",
+      "file": "258-lipetsk.txt",
+      "center": [
+        3415.611213235294,
+        478.9163602941176
+      ]
+    },
+    "259": {
+      "name": "Полтава",
+      "before": "SOV",
+      "after_preview": "RUK",
+      "status": "approved",
+      "note": null,
+      "file": "259-Liski.txt",
+      "center": [
+        3334.8747663551403,
+        538.2934579439252
+      ]
+    },
+    "260": {
+      "name": "Воронеж",
+      "before": "SOV",
+      "after_preview": "CROWN",
+      "status": "approved by author",
+      "note": "Передан Имперской России по просьбе владельца: устранён изолированный южный карман SOV в превью",
+      "file": "260-Borisoglbsk.txt",
+      "center": [
+        3431.843049327354,
+        513.5221723966118
+      ]
+    },
+    "265": {
+      "name": "Михайловка",
+      "before": "SOV",
+      "after_preview": "50/50 outcomes",
+      "status": "approved probabilistic outcomes (50/50)",
+      "note": "Случайный исход при начале войны: 50% DNR / 50% DON. Бросок независим от других регионов",
+      "file": "265-Mikhaylovka.txt",
+      "center": [
+        3478.25,
+        528.0144230769231
+      ],
+      "outcomes": [
+        {
+          "actor": "DNR",
+          "name": "Донская Народная Республика",
+          "chance_percent": 50
+        },
+        {
+          "actor": "DON",
+          "name": "Область Войска Донского",
+          "chance_percent": 50
+        }
+      ]
+    },
+    "329": {
+      "name": "Танну-Тува",
+      "before": "SOV",
+      "after_preview": "RSB",
+      "status": "approved",
+      "note": "Фиксированная передача RSB по последней карте владельца",
+      "file": "329-Tannu Tuva.txt",
+      "center": [
+        4285.297542221612,
+        495.8563778662639
+      ]
+    },
+    "353": {
+      "name": "Тунджели",
+      "before": "SOV",
+      "after_preview": "TRP",
+      "status": "approved",
+      "note": null,
+      "file": "353-Erzurum.txt",
+      "center": [
+        3430.6666666666665,
+        739.0490196078431
+      ]
+    },
+    "354": {
+      "name": "Трабзон",
+      "before": "SOV",
+      "after_preview": "TRP",
+      "status": "approved",
+      "note": null,
+      "file": "354-Trabzon.txt",
+      "center": [
+        3450.9551136363634,
+        712.6142045454545
+      ]
+    },
+    "401": {
+      "name": "Балаково",
+      "before": "SOV",
+      "after_preview": "CROWN",
+      "status": "approved by author",
+      "note": "Добавлен к южному контуру Имперской России по отмеченному владельцем участку; только превью",
+      "file": "401-Engels.txt",
+      "center": [
+        3562.0679287305124,
+        504.8830734966592
+      ]
+    },
+    "402": {
+      "name": "Ахтубинск",
+      "before": "SOV",
+      "after_preview": "ALA",
+      "status": "approved",
+      "note": null,
+      "file": "402-Akhtubinsk.txt",
+      "center": [
+        3739.5375260308206,
+        573.3486880466472
+      ]
+    },
+    "404": {
+      "name": "Кзыл-Орда",
+      "before": "SOV",
+      "after_preview": "ALA",
+      "status": "approved",
+      "note": null,
+      "file": "404-Saykhin.txt",
+      "center": [
+        3858.319060594265,
+        644.9303230829116
+      ]
+    },
+    "405": {
+      "name": "Ташкент",
+      "before": "SOV",
+      "after_preview": "TRK",
+      "status": "approved",
+      "note": null,
+      "file": "405-Atyrau.txt",
+      "center": [
+        3879.9003250270857,
+        714.5010834236186
+      ]
+    },
+    "406": {
+      "name": "Гурьев",
+      "before": "SOV",
+      "after_preview": "ALA",
+      "status": "approved",
+      "note": null,
+      "file": "406-Krasnyy Yar.txt",
+      "center": [
+        3613.8465275793083,
+        576.0157187767934
+      ]
+    },
+    "407": {
+      "name": "Уральск",
+      "before": "SOV",
+      "after_preview": "ALA",
+      "status": "approved",
+      "note": null,
+      "file": "407-Uralsk.txt",
+      "center": [
+        3604.0951020991006,
+        536.0451235184921
+      ]
+    },
+    "408": {
+      "name": "Владивосток",
+      "before": "SOV",
+      "after_preview": "FER",
+      "status": "approved",
+      "note": null,
+      "file": "408-Vladivostok.txt",
+      "center": [
+        4905.118462980318,
+        628.5919400187441
+      ]
+    },
+    "409": {
+      "name": "Хабаровск",
+      "before": "SOV",
+      "after_preview": "FER",
+      "status": "approved",
+      "note": null,
+      "file": "409-Khabarovsk.txt",
+      "center": [
+        4963.622769753611,
+        544.2487680543755
+      ]
+    },
+    "516": {
+      "name": "Дудинка",
+      "before": "SOV",
+      "after_preview": "RSB",
+      "status": "approved",
+      "note": null,
+      "file": "516-Northern Siberia.txt",
+      "center": [
+        4228.685349856526,
+        96.37243401759531
+      ]
+    },
+    "560": {
+      "name": "Николаевск",
+      "before": "SOV",
+      "after_preview": "FER",
+      "status": "approved",
+      "note": null,
+      "file": "560-TS 2.txt",
+      "center": [
+        4924.584262106072,
+        463.5471752498078
+      ]
+    },
+    "561": {
+      "name": "Амур",
+      "before": "SOV",
+      "after_preview": "RSB",
+      "status": "approved",
+      "note": null,
+      "file": "561-TS 3.txt",
+      "center": [
+        4778.839529492573,
+        440.13952090667124
+      ]
+    },
+    "562": {
+      "name": "Охотск",
+      "before": "SOV",
+      "after_preview": "RSB",
+      "status": "approved",
+      "note": null,
+      "file": "562-TS 4.txt",
+      "center": [
+        4999.714825418376,
+        298.38874295327764
+      ]
+    },
+    "563": {
+      "name": "Чита",
+      "before": "SOV",
+      "after_preview": "RSB",
+      "status": "approved",
+      "note": null,
+      "file": "563-TS 5.txt",
+      "center": [
+        4618.368231685738,
+        477.1645629350006
+      ]
+    },
+    "564": {
+      "name": "Бурятия",
+      "before": "SOV",
+      "after_preview": "RSB",
+      "status": "approved",
+      "note": null,
+      "file": "564-TS 6.txt",
+      "center": [
+        4497.865096774193,
+        458.6805806451613
+      ]
+    },
+    "565": {
+      "name": "Бодайбо",
+      "before": "SOV",
+      "after_preview": "RSB",
+      "status": "approved",
+      "note": null,
+      "file": "565-TS 7.txt",
+      "center": [
+        4606.973754448399,
+        364.7806049822064
+      ]
+    },
+    "566": {
+      "name": "Иркутск",
+      "before": "SOV",
+      "after_preview": "RSB",
+      "status": "approved",
+      "note": null,
+      "file": "566-TS 8.txt",
+      "center": [
+        4439.579169249845,
+        445.59640421574704
+      ]
+    },
+    "567": {
+      "name": "Братск",
+      "before": "SOV",
+      "after_preview": "RSB",
+      "status": "approved",
+      "note": null,
+      "file": "567-TS 9.txt",
+      "center": [
+        4379.494652798125,
+        392.15184588338707
+      ]
+    },
+    "568": {
+      "name": "Красноярск",
+      "before": "SOV",
+      "after_preview": "RSB",
+      "status": "approved",
+      "note": null,
+      "file": "568-TS 10.txt",
+      "center": [
+        4262.275955414013,
+        409.908678343949
+      ]
+    },
+    "569": {
+      "name": "Хакасия",
+      "before": "SOV",
+      "after_preview": "RSB",
+      "status": "approved",
+      "note": null,
+      "file": "569-TS 11.txt",
+      "center": [
+        4181.171052631579,
+        437.7273802483737
+      ]
+    },
+    "570": {
+      "name": "Ново-Николаевск",
+      "before": "SOV",
+      "after_preview": "RSB",
+      "status": "approved",
+      "note": null,
+      "file": "570-TS 12.txt",
+      "center": [
+        4052.361963923068,
+        417.88615458129254
+      ]
+    },
+    "571": {
+      "name": "Омск",
+      "before": "SOV",
+      "after_preview": "RSB",
+      "status": "approved",
+      "note": null,
+      "file": "571-TS 13.txt",
+      "center": [
+        3955.6872979961217,
+        402.5811247575953
+      ]
+    },
+    "572": {
+      "name": "Челябинск",
+      "before": "SOV",
+      "after_preview": "SOV",
+      "status": "Оставлен у SOV в превью: исключён из RSB, чтобы не создавать отдельный двухштатный карман",
+      "note": null,
+      "file": "572-TS 14.txt",
+      "center": [
+        3797.716203441104,
+        416.6320665532237
+      ]
+    },
+    "573": {
+      "name": "Златоуст",
+      "before": "SOV",
+      "after_preview": "SOV",
+      "status": "Оставлен у SOV в превью: исключён из RSB, чтобы не создавать отдельный двухштатный карман",
+      "note": null,
+      "file": "573-Ts 15.txt",
+      "center": [
+        3722.5819486404835,
+        381.47771903323263
+      ]
+    },
+    "574": {
+      "name": "Якутск",
+      "before": "SOV",
+      "after_preview": "RSB",
+      "status": "approved",
+      "note": null,
+      "file": "574-Siberia 1.txt",
+      "center": [
+        4769.428736390631,
+        305.37842296271856
+      ]
+    },
+    "575": {
+      "name": "Киренск",
+      "before": "SOV",
+      "after_preview": "RSB",
+      "status": "approved",
+      "note": null,
+      "file": "575-Siberia 2.txt",
+      "center": [
+        4530.755839036001,
+        281.91557572151146
+      ]
+    },
+    "576": {
+      "name": "Енисейск",
+      "before": "SOV",
+      "after_preview": "RSB",
+      "status": "approved",
+      "note": null,
+      "file": "576-Siberia 3.txt",
+      "center": [
+        4295.140826251937,
+        281.0065736732403
+      ]
+    },
+    "577": {
+      "name": "Сургут",
+      "before": "SOV",
+      "after_preview": "RSB",
+      "status": "approved",
+      "note": null,
+      "file": "577-Siberia 4.txt",
+      "center": [
+        4032.9708512931034,
+        281.54137931034484
+      ]
+    },
+    "578": {
+      "name": "Томск",
+      "before": "SOV",
+      "after_preview": "RSB",
+      "status": "approved",
+      "note": null,
+      "file": "578-Siberia 5.txt",
+      "center": [
+        4094.753389097202,
+        354.9600519180848
+      ]
+    },
+    "579": {
+      "name": "Салехард",
+      "before": "SOV",
+      "after_preview": "RSB",
+      "status": "approved",
+      "note": null,
+      "file": "579-Siberia 6.txt",
+      "center": [
+        3889.6974776750744,
+        130.5529531568228
+      ]
+    },
+    "580": {
+      "name": "Тобольск",
+      "before": "SOV",
+      "after_preview": "RSB",
+      "status": "approved",
+      "note": null,
+      "file": "580-Siberia 7.txt",
+      "center": [
+        3839.4866745791974,
+        263.8212127751403
+      ]
+    },
+    "583": {
+      "name": "Костанай",
+      "before": "SOV",
+      "after_preview": "KIR",
+      "status": "approved",
+      "note": null,
+      "file": "583-Kazakhstan.txt",
+      "center": [
+        3803.154640228945,
+        496.9709730171709
+      ]
+    },
+    "584": {
+      "name": "Ашхабад",
+      "before": "SOV",
+      "after_preview": "TRK",
+      "status": "approved",
+      "note": null,
+      "file": "584-Turkmenistan.txt",
+      "center": [
+        3731.1083378064054,
+        748.5551082483449
+      ]
+    },
+    "585": {
+      "name": "Навои",
+      "before": "SOV",
+      "after_preview": "TRK",
+      "status": "approved",
+      "note": null,
+      "file": "585-Uzbekistan.txt",
+      "center": [
+        3816.4051849694147,
+        687.6731721526362
+      ]
+    },
+    "586": {
+      "name": "Верный",
+      "before": "SOV",
+      "after_preview": "ALA",
+      "status": "approved",
+      "note": null,
+      "file": "586-Kyrgyzstan.txt",
+      "center": [
+        3982.4080651901377,
+        656.9638529043042
+      ]
+    },
+    "587": {
+      "name": "Усть-Урт",
+      "before": "SOV",
+      "after_preview": "ALA",
+      "status": "approved",
+      "note": null,
+      "file": "587-Western Kazakstan.txt",
+      "center": [
+        3653.693287037037,
+        634.7101521164021
+      ]
+    },
+    "588": {
+      "name": "Семипалатинск",
+      "before": "SOV",
+      "after_preview": "KIR",
+      "status": "approved",
+      "note": null,
+      "file": "588-Some Mountains.txt",
+      "center": [
+        4069.065837671101,
+        542.27009832273
+      ]
+    },
+    "589": {
+      "name": "Аягуз",
+      "before": "SOV",
+      "after_preview": "ALA",
+      "status": "approved",
+      "note": null,
+      "file": "589-Eastern Kazakhstan.txt",
+      "center": [
+        4023.863524337646,
+        600.0828712261244
+      ]
+    },
+    "590": {
+      "name": "Акмолинск",
+      "before": "SOV",
+      "after_preview": "KIR",
+      "status": "approved",
+      "note": null,
+      "file": "590-Northern Kazakhstan.txt",
+      "center": [
+        3904.4356969744354,
+        482.3826909545774
+      ]
+    },
+    "637": {
+      "name": "Камчатка",
+      "before": "SOV",
+      "after_preview": "RSB",
+      "status": "approved",
+      "note": null,
+      "file": "637-State 1.txt",
+      "center": [
+        5319.577511853691,
+        341.11402122375256
+      ]
+    },
+    "644": {
+      "name": "Колыма",
+      "before": "SOV",
+      "after_preview": "RSB",
+      "status": "approved",
+      "note": null,
+      "file": "644-state 3.txt",
+      "center": [
+        5106.385456912778,
+        96.83308566495421
+      ]
+    },
+    "654": {
+      "name": "Ойратский регион",
+      "before": "SOV",
+      "after_preview": "RSB",
+      "status": "approved",
+      "note": "Фиксированная передача RSB по последней карте владельца",
+      "file": "654-sov state 8.txt",
+      "center": [
+        4165.274818704676,
+        514.642160540135
+      ]
+    },
+    "655": {
+      "name": "Северный Сахалин",
+      "before": "SOV",
+      "after_preview": "JAP",
+      "status": "approved",
+      "note": null,
+      "file": "655-North Sakhalin.txt",
+      "center": [
+        5033.11328125,
+        492.49888392857144
+      ]
+    },
+    "657": {
+      "name": "Биробиджан",
+      "before": "SOV",
+      "after_preview": "FER",
+      "status": "approved",
+      "note": null,
+      "file": "657-Border state.txt",
+      "center": [
+        4864.647647744946,
+        525.214132970451
+      ]
+    },
+    "732": {
+      "name": "Памир",
+      "before": "SOV",
+      "after_preview": "TRK",
+      "status": "approved",
+      "note": null,
+      "file": "732-Pamir.txt",
+      "center": [
+        3970.4952421531034,
+        699.7068598210482
+      ]
+    },
+    "742": {
+      "name": "Душанбе",
+      "before": "SOV",
+      "after_preview": "TRK",
+      "status": "approved",
+      "note": "Фиксированная передача TRK по последней карте владельца",
+      "file": "742-Stalinabad.txt",
+      "center": [
+        3914.8568807339448,
+        752.4854521625164
+      ]
+    },
+    "766": {
+      "name": "Южная Бессарабия",
+      "before": "SOV",
+      "after_preview": "ROM",
+      "status": "approved",
+      "note": null,
+      "file": "766-Southern Bessarabia.txt",
+      "center": [
+        3263.7139959432047,
+        611.6673427991886
+      ]
+    },
+    "784": {
+      "name": "Вильнюс",
+      "before": "SOV",
+      "after_preview": "BLF",
+      "status": "approved",
+      "note": null,
+      "file": "784-Ermland-Masuren.txt",
+      "center": [
+        3201.3736730360934,
+        432.3651804670913
+      ]
+    },
+    "800": {
+      "name": "Ван",
+      "before": "SOV",
+      "after_preview": "ARM",
+      "status": "approved",
+      "note": null,
+      "file": "800-Van.txt",
+      "center": [
+        3477.8760683760684,
+        737.1384615384616
+      ]
+    },
+    "808": {
+      "name": "Рига",
+      "before": "SOV",
+      "after_preview": "BLF",
+      "status": "approved",
+      "note": null,
+      "file": "808-Riga.txt",
+      "center": [
+        3194.3030303030305,
+        380.7465564738292
+      ]
+    },
+    "809": {
+      "name": "Земгале",
+      "before": "SOV",
+      "after_preview": "BLF",
+      "status": "approved",
+      "note": null,
+      "file": "809-Latgale.txt",
+      "center": [
+        3187.369688385269,
+        391.6303116147309
+      ]
+    },
+    "810": {
+      "name": "Латгалия",
+      "before": "SOV",
+      "after_preview": "BLF",
+      "status": "approved",
+      "note": null,
+      "file": "810-Zemgale.txt",
+      "center": [
+        3228.7257194244603,
+        388.90287769784175
+      ]
+    },
+    "811": {
+      "name": "Сааремаа",
+      "before": "SOV",
+      "after_preview": "BLF",
+      "status": "approved",
+      "note": null,
+      "file": "811-Saaremaa.txt",
+      "center": [
+        3157.56640625,
+        346.203125
+      ]
+    },
+    "812": {
+      "name": "Харью",
+      "before": "SOV",
+      "after_preview": "BLF",
+      "status": "approved",
+      "note": null,
+      "file": "812-Tallinn.txt",
+      "center": [
+        3193.5981524249423,
+        330.25173210161665
+      ]
+    },
+    "813": {
+      "name": "Вирумаа",
+      "before": "SOV",
+      "after_preview": "BLW",
+      "status": "approved",
+      "note": null,
+      "file": "813-Rakvere.txt",
+      "center": [
+        3224.8880597014927,
+        336.318407960199
+      ]
+    },
+    "814": {
+      "name": "Судува",
+      "before": "SOV",
+      "after_preview": "BLF",
+      "status": "approved",
+      "note": "Фиксированная передача BLF по последней карте владельца",
+      "file": "814-Suduva.txt",
+      "center": [
+        3171.3882978723404,
+        433.7154255319149
+      ]
+    },
+    "815": {
+      "name": "Аукштайтия",
+      "before": "SOV",
+      "after_preview": "BLF",
+      "status": "approved",
+      "note": null,
+      "file": "815-Aukstaitija.txt",
+      "center": [
+        3189.8805646036917,
+        407.21389793702497
+      ]
+    },
+    "821": {
+      "name": "Чечено-Ингушетия",
+      "before": "SOV",
+      "after_preview": "MNT",
+      "status": "approved",
+      "note": null,
+      "file": "821 - Chenchnya-Ingushetia.txt",
+      "center": [
+        3521.139402560455,
+        670.4011379800853
+      ]
+    },
+    "822": {
+      "name": "Чукотка",
+      "before": "SOV",
+      "after_preview": "RSB",
+      "status": "approved",
+      "note": null,
+      "file": "822 - Chukotka.txt",
+      "center": [
+        5441.00275925926,
+        89.50420370370371
+      ]
+    },
+    "823": {
+      "name": "Каракалпакстан",
+      "before": "SOV",
+      "after_preview": "TRK",
+      "status": "approved",
+      "note": null,
+      "file": "823 - Karakalpakstan.txt",
+      "center": [
+        3735.040339122111,
+        650.2185149733351
+      ]
+    },
+    "824": {
+      "name": "Ямал",
+      "before": "SOV",
+      "after_preview": "RSB",
+      "status": "approved",
+      "note": null,
+      "file": "824 - Yamalia.txt",
+      "center": [
+        4027.886845475242,
+        138.25
+      ]
+    },
+    "826": {
+      "name": "Абхазия",
+      "before": "SOV",
+      "after_preview": "ABK",
+      "status": "approved",
+      "note": null,
+      "file": "826 - Abkhazia.txt",
+      "center": [
+        3452.5418848167537,
+        667.7120418848167
+      ]
+    },
+    "827": {
+      "name": "Кабардино-Балкария",
+      "before": "SOV",
+      "after_preview": "MNT",
+      "status": "approved",
+      "note": null,
+      "file": "827 - Kabardino-Balkaria.txt",
+      "center": [
+        3484.3918367346937,
+        665.5938775510205
+      ]
+    },
+    "828": {
+      "name": "Северная Осетия",
+      "before": "SOV",
+      "after_preview": "MNT",
+      "status": "approved",
+      "note": null,
+      "file": "828 - North Ossetia.txt",
+      "center": [
+        3501.809798270893,
+        666.2132564841498
+      ]
+    },
+    "829": {
+      "name": "Карл-Маркс-Штадт",
+      "before": "SOV",
+      "after_preview": "CROWN",
+      "status": "approved by author",
+      "note": "Добавлен к южному контуру Имперской России по отмеченному владельцем участку; только превью",
+      "file": "829 - Volga Germany.txt",
+      "center": [
+        3524.8829190056135,
+        521.0625501202887
+      ]
+    },
+    "830": {
+      "name": "Бухара",
+      "before": "SOV",
+      "after_preview": "TRK",
+      "status": "approved",
+      "note": null,
+      "file": "830 - Bukhara.txt",
+      "center": [
+        3829.5290071770337,
+        738.1653708133971
+      ]
+    },
+    "831": {
+      "name": "Хива",
+      "before": "SOV",
+      "after_preview": "TRK",
+      "status": "approved",
+      "note": null,
+      "file": "831 - Khiva.txt",
+      "center": [
+        3724.1866740088108,
+        678.0974669603524
+      ]
+    },
+    "832": {
+      "name": "Дашогуз",
+      "before": "SOV",
+      "after_preview": "TRK",
+      "status": "approved",
+      "note": null,
+      "file": "832 - Dashhowuz.txt",
+      "center": [
+        3737.458350774383,
+        713.3884470489745
+      ]
+    },
+    "834": {
+      "name": "Балта-Тирасполь",
+      "before": "SOV",
+      "after_preview": "RUK",
+      "status": "approved",
+      "note": null,
+      "file": "834 - Balta.txt",
+      "center": [
+        3268.104081632653,
+        579.8428571428572
+      ]
+    },
+    "874": {
+      "name": "Магадан",
+      "before": "SOV",
+      "after_preview": "RSB",
+      "status": "approved",
+      "note": null,
+      "file": "874-Magadan.txt",
+      "center": [
+        5243.29863692689,
+        238.86274266831887
+      ]
+    },
+    "876": {
+      "name": "Удачный",
+      "before": "SOV",
+      "after_preview": "RSB",
+      "status": "approved",
+      "note": null,
+      "file": "876-Udachny.txt",
+      "center": [
+        4658.139987797437,
+        108.75160463697377
+      ]
+    },
+    "877": {
+      "name": "Верхоянск",
+      "before": "SOV",
+      "after_preview": "RSB",
+      "status": "approved",
+      "note": null,
+      "file": "877-Verkhoyansk.txt",
+      "center": [
+        4857.1048141243555,
+        132.67290273056256
+      ]
+    },
+    "878": {
+      "name": "Хатангский район",
+      "before": "SOV",
+      "after_preview": "RSB",
+      "status": "approved",
+      "note": null,
+      "file": "878-Khatangsky.txt",
+      "center": [
+        4458.156911797489,
+        116.68578010056225
+      ]
+    },
+    "881": {
+      "name": "Караганда",
+      "before": "SOV",
+      "after_preview": "ALA",
+      "status": "approved",
+      "note": null,
+      "file": "881-Karagandy.txt",
+      "center": [
+        3896.4032710655015,
+        580.0660626954221
+      ]
+    },
+    "882": {
+      "name": "Павлодар",
+      "before": "SOV",
+      "after_preview": "KIR",
+      "status": "approved",
+      "note": null,
+      "file": "882-Pavlodar.txt",
+      "center": [
+        3994.308497279196,
+        481.1134365843449
+      ]
+    }
+  },
+  "views": {
+    "overview": {
+      "image": "DESIGN/previews/russian_civil_war/overview_base.png",
+      "crop": [
+        3004,
+        181,
+        5213,
+        900
+      ],
+      "size": [
+        2400,
+        782
+      ],
+      "scale": 1.085972850678733,
+      "anchors": {
+        "SOV": [
+          305,
+          145
+        ],
+        "CROWN": [
+          548,
+          340
+        ],
+        "DON": [
+          457,
+          434
+        ],
+        "KUB": [
+          454,
+          480
+        ],
+        "AFSR": [
+          367,
+          480
+        ],
+        "RSB": [
+          1138,
+          257
+        ],
+        "BLR": [
+          271,
+          290
+        ],
+        "RUK": [
+          302,
+          375
+        ],
+        "FER": [
+          2065,
+          486
+        ],
+        "ABK": [
+          487,
+          529
+        ],
+        "MNT": [
+          580,
+          524
+        ],
+        "TCF": [
+          531,
+          552
+        ],
+        "ARM": [
+          547,
+          586
+        ],
+        "KAL": [
+          556,
+          458
+        ],
+        "DNR": [
+          542,
+          409
+        ],
+        "AKV": [
+          584,
+          438
+        ],
+        "TRP": [
+          485,
+          577
+        ],
+        "BLF": [
+          207,
+          217
+        ],
+        "BLW": [
+          240,
+          169
+        ],
+        "KIR": [
+          978,
+          327
+        ],
+        "ALA": [
+          969,
+          433
+        ],
+        "TRK": [
+          951,
+          579
+        ],
+        "POL": [
+          141,
+          334
+        ],
+        "FIN": [
+          308,
+          111
+        ],
+        "MON": [
+          1530,
+          426
+        ],
+        "SIK": [
+          1221,
+          541
+        ],
+        "TUR": [
+          245,
+          564
+        ],
+        "JAP": [
+          2204,
+          338
+        ],
+        "ROM": [
+          240,
+          450
+        ]
+      }
+    },
+    "europe": {
+      "image": "DESIGN/previews/russian_civil_war/europe_base.png",
+      "crop": [
+        3074,
+        211,
+        3713,
+        756
+      ],
+      "size": [
+        1524,
+        1300
+      ],
+      "scale": 2.380952380952381,
+      "anchors": {
+        "SOV": [
+          501,
+          247
+        ],
+        "CROWN": [
+          1034,
+          675
+        ],
+        "DON": [
+          835,
+          881
+        ],
+        "KUB": [
+          828,
+          981
+        ],
+        "AFSR": [
+          639,
+          982
+        ],
+        "BLR": [
+          428,
+          564
+        ],
+        "RUK": [
+          495,
+          750
+        ],
+        "ABK": [
+          901,
+          1087
+        ],
+        "MNT": [
+          1106,
+          1077
+        ],
+        "TCF": [
+          996,
+          1139
+        ],
+        "ARM": [
+          1033,
+          1213
+        ],
+        "KAL": [
+          1053,
+          934
+        ],
+        "DNR": [
+          1022,
+          825
+        ],
+        "AKV": [
+          1114,
+          889
+        ],
+        "TRP": [
+          898,
+          1194
+        ],
+        "BLF": [
+          286,
+          404
+        ],
+        "BLW": [
+          359,
+          298
+        ],
+        "POL": [
+          142,
+          661
+        ],
+        "FIN": [
+          509,
+          172
+        ],
+        "TUR": [
+          369,
+          1165
+        ],
+        "ROM": [
+          361,
+          915
+        ]
+      }
+    },
+    "caucasus": {
+      "image": "DESIGN/previews/russian_civil_war/caucasus_base.png",
+      "crop": [
+        3239,
+        456,
+        3666,
+        831
+      ],
+      "size": [
+        1480,
+        1300
+      ],
+      "scale": 3.4574468085106385,
+      "anchors": {
+        "CROWN": [
+          931,
+          133
+        ],
+        "DON": [
+          642,
+          432
+        ],
+        "KUB": [
+          632,
+          577
+        ],
+        "AFSR": [
+          357,
+          578
+        ],
+        "RUK": [
+          148,
+          243
+        ],
+        "ABK": [
+          738,
+          732
+        ],
+        "MNT": [
+          1036,
+          717
+        ],
+        "TCF": [
+          877,
+          807
+        ],
+        "ARM": [
+          930,
+          914
+        ],
+        "KAL": [
+          959,
+          509
+        ],
+        "DNR": [
+          914,
+          351
+        ],
+        "AKV": [
+          1047,
+          444
+        ],
+        "TRP": [
+          733,
+          887
+        ]
+      }
+    },
+    "moldova": {
+      "image": "DESIGN/previews/russian_civil_war/moldova_base.png",
+      "crop": [
+        3097,
+        453,
+        3398,
+        690
+      ],
+      "size": [
+        1332,
+        1050
+      ],
+      "scale": 4.411764705882353,
+      "anchors": {
+        "AFSR": [
+          1082,
+          751
+        ],
+        "RUK": [
+          815,
+          323
+        ],
+        "POL": [
+          162,
+          158
+        ],
+        "ROM": [
+          567,
+          627
+        ]
+      }
+    },
+    "central_asia": {
+      "image": "DESIGN/previews/russian_civil_war/central_asia_base.png",
+      "crop": [
+        3442,
+        331,
+        4256,
+        891
+      ],
+      "size": [
+        1816,
+        1250
+      ],
+      "scale": 2.228163992869875,
+      "anchors": {
+        "CROWN": [
+          148,
+          364
+        ],
+        "RSB": [
+          1360,
+          194
+        ],
+        "ABK": [
+          23,
+          750
+        ],
+        "MNT": [
+          215,
+          740
+        ],
+        "TCF": [
+          113,
+          798
+        ],
+        "ARM": [
+          147,
+          867
+        ],
+        "KAL": [
+          166,
+          606
+        ],
+        "DNR": [
+          137,
+          505
+        ],
+        "AKV": [
+          222,
+          565
+        ],
+        "TRP": [
+          20,
+          850
+        ],
+        "KIR": [
+          1030,
+          337
+        ],
+        "ALA": [
+          1012,
+          555
+        ],
+        "TRK": [
+          976,
+          855
+        ],
+        "SIK": [
+          1530,
+          776
+        ]
+      }
+    },
+    "east": {
+      "image": "DESIGN/previews/russian_civil_war/east_base.png",
+      "crop": [
+        3635,
+        0,
+        5597,
+        781
+      ],
+      "size": [
+        2200,
+        876
+      ],
+      "scale": 1.1207335710646968,
+      "anchors": {
+        "RSB": [
+          468,
+          468
+        ],
+        "FER": [
+          1423,
+          704
+        ],
+        "KIR": [
+          302,
+          541
+        ],
+        "ALA": [
+          293,
+          650
+        ],
+        "TRK": [
+          274,
+          801
+        ],
+        "MON": [
+          872,
+          643
+        ],
+        "SIK": [
+          553,
+          761
+        ],
+        "JAP": [
+          1567,
+          552
+        ]
+      }
+    }
+  }
+}

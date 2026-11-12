@@ -1,0 +1,17 @@
+# Kaiserredux: sound/supers.asset -> superevents.asset -> supercategories.asset.
+# Author's recording, converted to PCM WAV, 44100 Hz, stereo, 16 bit.
+sound = {
+	name = "nw14_cw_super_event_recording"
+	file = "super_events/nw14_russia_on_fire.wav"
+	volume = 1
+	always_load = yes
+}
+soundeffect = {
+	name = "nw14_cw_super_event_sound"
+	sounds = { sound = "nw14_cw_super_event_recording" }
+	volume = 0.65
+}
+category = {
+	name = "NW Super Events"
+	soundeffects = { nw14_cw_super_event_sound }
+}

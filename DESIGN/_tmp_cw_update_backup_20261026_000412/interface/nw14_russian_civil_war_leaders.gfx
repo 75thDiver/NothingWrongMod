@@ -1,0 +1,17 @@
+spriteTypes = {
+	spriteType = { name = GFX_NW14_CW_Kyril_Leader texturefile = "gfx/leaders/NW14/Portrait_RUS_Kyril_Romanov.png" }
+	spriteType = { name = GFX_NW14_CW_Denikin_Leader texturefile = "gfx/leaders/NW14/Portrait_RUS_Anton_Denikin.png" }
+	spriteType = { name = GFX_NW14_CW_Kolchak_Leader texturefile = "gfx/leaders/NW14/Portrait_TRM_Aleksandr_Kolchak.png" }
+	spriteType = { name = GFX_NW14_CW_Bych_Leader texturefile = "gfx/leaders/NW14/Portrait_KUB_Luka_Bych.png" }
+	spriteType = { name = GFX_NW14_CW_Hrushevsky_Leader texturefile = "gfx/leaders/NW14/Portrait_UKR_Mykhailo_Hrushevsky.png" }
+	spriteType = { name = GFX_NW14_CW_Bukeikhanov_Leader texturefile = "gfx/leaders/NW14/Portrait_ALO_Alikhan_Bukeikhanov.png" }
+	spriteType = { name = GFX_NW14_CW_Shokay_Leader texturefile = "gfx/leaders/NW14/Portrait_TRK_Mustafa_Shokay.png" }
+	spriteType = { name = GFX_NW14_CW_Kornilov texturefile = "gfx/leaders/NW14/Portrait_RUS_Lavr_Kornilov.png" }
+	spriteType = { name = GFX_NW14_CW_Wrangel texturefile = "gfx/leaders/NW14/Portrait_RUS_Pyotr_Wrangel.png" }
+	spriteType = { name = GFX_NW14_CW_Markov texturefile = "gfx/leaders/NW14/Portrait_RUS_Sergei_Markov.png" }
+	spriteType = { name = GFX_NW14_CW_Kolchak texturefile = "gfx/leaders/NW14/Portrait_TRM_Aleksandr_Kolchak.png" }
+	spriteType = { name = GFX_NW14_CW_Kappel texturefile = "gfx/leaders/NW14/Portrait_RUS_Vladimir_Kappel.png" }
+	spriteType = { name = GFX_NW14_CW_Semyonov texturefile = "gfx/leaders/NW14/Portrait_TRM_Grigory_Semyonov.png" }
+	spriteType = { name = GFX_NW14_CW_Pokrovsky texturefile = "gfx/leaders/NW14/Portrait_KUB_Victor_Pokrovsky.png" }
+	spriteType = { name = GFX_NW14_CW_Petliura texturefile = "gfx/leaders/NW14/Portrait_UKR_Symon_Petliura.png" }
+}

@@ -1,0 +1,15 @@
+interface:
+  display_name: 'HOI4: аудит и разработка модов'
+  short_description: Проверка кода, фокусов и интерфейсов HOI4
+  default_prompt: Используй $hoi4-design-living-politics как основной workflow для
+    аудита, исправления или разработки HOI4-мода. Сохраняй лор и проверяй дерево фокусов
+    по фактическому рендеру.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

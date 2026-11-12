@@ -1,0 +1,22 @@
+on_capitulation = {
+	effect = {
+		if = {
+			limit = {
+				has_country_flag = nw14_fragment
+				NOT = { has_country_flag = nw14_cw_capitulation_annexed }
+				FROM = {
+					has_country_flag = nw14_fragment
+					is_faction_leader = yes
+					has_war_with = ROOT
+				}
+			}
+			set_country_flag = nw14_cw_capitulation_annexed
+			FROM = {
+				annex_country = {
+					target = ROOT
+					transfer_troops = yes
+				}
+			}
+		}
+	}
+}

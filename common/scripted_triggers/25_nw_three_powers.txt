@@ -234,12 +234,12 @@ nw25_fra_ger_active = {
 }
 
 nw25_sri_spm_valid = {
-	SRI = {
+	ITA = {
 		exists = yes
 	}
 	exists = yes
 	NOT = {
-		has_war_with = SRI
+		has_war_with = ITA
 	}
 	is_subject = no
 }
@@ -250,12 +250,12 @@ nw25_sri_spm_active = {
 }
 
 nw25_sri_pap_valid = {
-	SRI = {
+	ITA = {
 		exists = yes
 	}
 	exists = yes
 	NOT = {
-		has_war_with = SRI
+		has_war_with = ITA
 	}
 	is_subject = no
 }
@@ -278,12 +278,12 @@ nw25_fra_sov_valid = {
 }
 
 nw25_sri_lbv_valid = {
-	SRI = {
+	ITA = {
 		exists = yes
 	}
 	exists = yes
 	NOT = {
-		has_war_with = SRI
+		has_war_with = ITA
 	}
 	OR = {
 		is_subject = no
@@ -352,13 +352,13 @@ nw25_sri_operation_lbv_valid = {
 	LBV = {
 		exists = yes
 		any_owned_state = {
-			is_core_of = SRI
+			is_core_of = ITA
 		}
 		NOT = {
-			is_subject_of = SRI
+			is_subject_of = ITA
 		}
 		NOT = {
-			is_in_faction_with = SRI
+			is_in_faction_with = ITA
 		}
 	}
 	NOT = {
@@ -374,13 +374,13 @@ nw25_sri_operation_spm_valid = {
 	SPM = {
 		exists = yes
 		any_owned_state = {
-			is_core_of = SRI
+			is_core_of = ITA
 		}
 		NOT = {
-			is_subject_of = SRI
+			is_subject_of = ITA
 		}
 		NOT = {
-			is_in_faction_with = SRI
+			is_in_faction_with = ITA
 		}
 	}
 	NOT = {
@@ -396,13 +396,13 @@ nw25_sri_operation_pap_valid = {
 	PAP = {
 		exists = yes
 		any_owned_state = {
-			is_core_of = SRI
+			is_core_of = ITA
 		}
 		NOT = {
-			is_subject_of = SRI
+			is_subject_of = ITA
 		}
 		NOT = {
-			is_in_faction_with = SRI
+			is_in_faction_with = ITA
 		}
 	}
 	NOT = {

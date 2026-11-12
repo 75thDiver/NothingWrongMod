@@ -1,0 +1,18 @@
+# Local dark ink registration for the newspaper body. White display text and button use native HOI4/KX fonts.
+spriteTypes = {
+	bitmapfont = {
+		name = "nw14_super_body_ink"
+		fontfiles = { "gfx/fonts/hoi4_typewriter22" "gfx/fonts/hoi_22typewriter" }
+		color = 0xff201a13
+	}
+	bitmapfont_override = {
+		name = "nw14_super_body_ink"
+		fontfiles = { "gfx/fonts/hoi_22typewriter" "gfx/fonts/hoi_22typewriter_cryllic" }
+		languages = { "l_russian" "l_polish" }
+	}
+	bitmapfont = {
+		name = "nw14_super_quote_author_gold"
+		fontfiles = { "gfx/fonts/hoi_18mbs" "gfx/fonts/hoi_18mbs_cryllic" }
+		color = 0xffffd34a
+	}
+}

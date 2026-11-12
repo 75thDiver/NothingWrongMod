@@ -1308,14 +1308,14 @@ focus_tree = {
 			add_political_power = 35
 			if = {
 				limit = {
-					SRI = { exists = yes }
-					SRI = {
+					ITA = { exists = yes }
+					ITA = {
 						has_government = communism
 						is_subject = no
 						is_in_faction = no
 					}
 				}
-				SRI = {
+				ITA = {
 					country_event = {
 						id = nw14.31
 					}

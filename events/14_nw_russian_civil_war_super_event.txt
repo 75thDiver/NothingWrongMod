@@ -1,0 +1,52 @@
+add_namespace = nw14cw
+
+# Presentation follows Kaiserredux's hidden event -> scripted GUI -> sound effect.
+country_event = {
+	id = nw14cw.1
+	hidden = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		if = {
+			limit = { NOT = { has_global_flag = nw14_cw_super_event_announced } }
+			set_global_flag = nw14_cw_super_event_announced
+			every_country = {
+				limit = { is_ai = no }
+				set_country_flag = nw14_cw_super_event_visible
+				scoped_sound_effect = nw14_cw_super_event_sound
+			}
+		}
+	}
+}
+
+# External fronts open after the new civil-war countries and factions settle.
+country_event = {
+	id = nw14cw.2
+	hidden = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		if = {
+			limit = { has_country_flag = nw_rus_war_started }
+			nw14_rus_civil_war_declare_external_wars = yes
+		}
+	}
+}
+
+# One bounded retry catches declarations the engine may have rejected during setup.
+country_event = {
+	id = nw14cw.3
+	hidden = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		if = {
+			limit = { has_country_flag = nw_rus_war_started }
+			nw14_rus_civil_war_declare_external_wars = yes
+		}
+	}
+}
+

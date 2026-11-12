@@ -17,6 +17,7 @@ focus_tree = {
 				tag = FRA
 				tag = ENG
 				tag = SRI
+				tag = ITA
 			}
 		}
 	}

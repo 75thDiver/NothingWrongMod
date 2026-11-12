@@ -428,7 +428,7 @@ nw25_sri_lbv_sign = {
 		idea = nw25_sri_partner
 		days = 365
 	}
-	SRI = {
+	ITA = {
 		add_to_variable = {
 			var = nw25_sri_council_cohesion
 			value = 5
@@ -1111,7 +1111,7 @@ nw25_monthly = {
 	}
 	if = {
 		limit = {
-			tag = SRI
+			tag = ITA
 			has_country_flag = nw25_sri_initialized
 		}
 		nw25_sri_refresh = yes

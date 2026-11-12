@@ -1,0 +1,15 @@
+# Adapted from Kaiserredux PB_super_events.txt, player_context/window_name pattern.
+# Closing is local to the player's country; it must not dismiss other players' UI.
+scripted_gui = {
+	nw14_super_event = {
+		context_type = player_context
+		window_name = "nw14_super_event_window"
+		visible = { has_country_flag = nw14_cw_super_event_visible }
+		ai_enabled = { always = no }
+		effects = {
+			nw14_super_event_close_click = {
+				clr_country_flag = nw14_cw_super_event_visible
+			}
+		}
+	}
+}

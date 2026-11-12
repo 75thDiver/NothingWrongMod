@@ -1,0 +1,1082 @@
+﻿State ID;Название;Текущий владелец;Файл history/states;Лист;X карты;Y карты
+1;Корсика;FRA;1-France.txt;C1aba;2948;683
+2;Лацио;PAP;2-Italy.txt;C1aba;3006;686
+3;Швейцарское плато;SWI;3-Swiss Plateau.txt;C1aba;2932;590
+4;Нижняя Австрия;AUS;4-Austria.txt;C1aba;3050;564
+5;Эрмлянд-Мазурия;GER;5-Germany.txt;C1aab;3130;448
+6;Фландрия;BEL;6-Belgium.txt;C1aab;2861;511
+7;Голландия;HOL;7-Holland.txt;C1aab;2880;484
+8;Люксембург;LUX;8-Luxemburg.txt;C1aab;2900;534
+9;Богемия;CZE;9-Czechoslovakia.txt;C1aab;3037;531
+10;Варшава;POL;10-Poland.txt;C1aab;3134;489
+11;Каунас;SOV;11-Kaunas.txt;C1aaa;3184;424
+12;Видземе;SOV;12-Latvia.txt;C1aaa;3205;369
+13;Пярну;SOV;13-Estonia.txt;C1aaa;3191;346
+14;Бретань;FRA;14-Brittany.txt;B1b;2759;566
+15;Нормандия;FRA;15-Normandy.txt;B1b;2808;547
+16;Иль-де-Франс;FRA;16-Ile de France.txt;C1aab;2840;558
+17;Франш-Конте;FRA;17-Alcase Lorraine.txt;C1aba;2903;575
+18;Шампань;FRA;18-Champagne.txt;C1aab;2879;554
+19;Аквитания;FRA;19-Aquitaine.txt;B1b;2794;636
+20;Рона;FRA;20-Franche-comte.txt;C1aba;2879;616
+21;Буш-дю-Рон;FRA;21-Bouches-du-Rhone.txt;C1aba;2890;650
+22;Лангедок;FRA;22-Roussillion.txt;C1aba;2857;648
+23;Пуату;FRA;23-Poitou.txt;B1b;2799;603
+24;Центр;FRA;24-Centre.txt;C1aba;2834;578
+25;Лимузен;FRA;25-Limousin.txt;C1aba;2822;627
+26;Овернь;FRA;26-Bourgogne.txt;C1aba;2853;616
+27;Бургундия;FRA;27-Champagne2.txt;C1aba;2870;584
+28;Эльзас-Лотарингия;GER;28-Alcase.txt;C1aba;2916;558
+29;Нор-Па-де-Кале;FRA;29-Pas de Calais.txt;C1aab;2847;521
+30;Луара;FRA;30-Loire.txt;B1b;2795;575
+31;Юг-Пиренеи;FRA;31-Midi Pyrenees.txt;C1aba;2824;660
+32;Альпы;FRA;32-Rhone Alpes.txt;C1aba;2889;628
+33;Центр-Юг;FRA;33-Centre sud.txt;C1aba;2832;598
+34;Валлония;BEL;34-Wallonie.txt;C1aab;2877;520
+35;Брабант;HOL;35-Gelderland.txt;C1aab;2886;499
+36;Фрисландия;HOL;36-Friesland.txt;C1aab;2902;474
+37;Зеландия;DEN;37-Denmark.txt;C1aaa;2991;416
+38;Евлеборг;SWE;38-Sweden.txt;C1aaa;3066;251
+39;Южный Тироль;LBV;39-South Tyrol.txt;C1aba;2986;599
+40;Алтайский край;SOV;40-USSR.txt;C1bba;4097;474
+41;Мадрид;SPR;41-Madrid.txt;B1b;2738;720
+42;Мозель;GER;42-Rhineland.txt;C1aab;2919;536
+43;Северная Венгрия;HUN;43-Hungary.txt;C1abb;3121;575
+44;Центральная Албания;ALB;44-Albania.txt;C1abb;3118;707
+45;Воеводина;CRO;45-Yugoslavia.txt;C1abb;3110;617
+46;Мунтения;ROM;46-Romania.txt;C1abb;3212;635
+47;Аттика;GRE;47-Greece.txt;C1abb;3163;745
+48;София;BUL;48-Bulgaria.txt;C1abb;3170;667
+49;Анкара;TUR;49-Turkey.txt;C1bab;3306;728
+50;Вюртемберг;GER;50-Baden.txt;C1aba;2954;559
+51;Рейнская область;GER;51-Moselland.txt;C1aab;2912;508
+52;Верхняя Бавария;GER;52-Wuttemberg.txt;C1aba;2983;568
+53;Нижняя Бавария;GER;53-Oberbayern.txt;C1aab;3000;548
+54;Франкония;GER;54-Bayreuth.txt;C1aab;2972;531
+55;Гессен;GER;55-Nassau.txt;C1aab;2944;518
+56;Везер-Эмс;GER;56-Weser-Ems.txt;C1aab;2930;470
+57;Вестфалия;GER;57-Westfalen.txt;C1aab;2933;494
+58;Гольштейн;GER;58-Schleswig - Holstein.txt;C1aab;2965;447
+59;Ганновер;GER;59-Ost - Hannover.txt;C1aab;2963;475
+60;Тюрингия;GER;60-Sud-Hannover.txt;C1aab;2981;506
+61;Мекленбург;GER;61-Mecklenburg.txt;C1aab;2991;453
+62;Передняя Померания;GER;62-Pommern.txt;C1aab;3016;453
+63;Дальняя Померания;GER;63-WestPrussen.txt;C1aab;3059;450
+64;Бранденбург;GER;64-Brandenburg.txt;C1aab;3007;479
+65;Саксония;GER;65-Sachsen.txt;C1aab;3013;503
+66;Нижняя Силезия;GER;66-Niederschlesien.txt;C1aab;3061;502
+67;Верхняя Силезия;GER;67-Oberschlesien.txt;C1aab;3088;515
+68;Восточная марка;GER;68-Wartheland.txt;C1aab;3043;477
+69;Северные Судеты;AUS;69-Sudatenland.txt;C1aab;3022;519
+70;Западная Словакия;HUN;70-Slovakia.txt;C1aab;3091;556
+71;Восточная Словакия;HUN;71-East Slovakia.txt;C1aab;3129;549
+72;Заользье;CZE;72-Zaolzie.txt;C1aab;3096;537
+73;Карпатская Русь;HUN;73-Carpathian Ruthenia.txt;C1abb;3170;562
+74;Судетская Силезия;AUS;74-East Sudatenland.txt;C1aab;3077;528
+75;Моравия;CZE;75-Moravia.txt;C1aab;3070;542
+76;Северная Трансильвания;HUN;76-Northern Transylvania.txt;C1abb;3183;589
+77;Добруджа;ROM;77-Dobrogea.txt;C1abb;3237;653
+78;Бессарабия;SOV;78-Bessarabia.txt;C1abb;3246;584
+79;Молдавия;ROM;79-moldovia.txt;C1abb;3225;595
+80;Буковина;CZE;80-Bocovina.txt;C1abb;3206;567
+81;Олтения;ROM;81-Oltenia.txt;C1abb;3174;638
+82;Банат;HUN;82-Banat.txt;C1abb;3145;620
+83;Кришана;HUN;83-crisana.txt;C1abb;3149;601
+84;Трансильвания;HUN;84-Transylvania.txt;C1abb;3181;611
+85;Данциг;GER;85-Danzig.txt;C1aab;3101;440
+86;Познань;GER;86-Poznan.txt;C1aab;3072;480
+87;Лодзь;POL;87-Lodz.txt;C1aab;3100;494
+88;Краков (Krakow);CZE;88-Kielce.txt;C1aab;3137;531
+89;Станиславов (Stanislavov);CZE;89-Krakow.txt;C1aab;3185;553
+90;Кельце (Kielce);POL;90-Lwow.txt;C1aab;3128;512
+91;Львов (Lwow);CZE;91-Tarnopol.txt;C1aab;3195;537
+92;Люблин;POL;92-Lublin.txt;C1aab;3163;502
+93;Волынь;SOV;93-Volhynian.txt;C1aab;3206;513
+94;Полесье;SOV;94-Polesie.txt;C1aab;3205;486
+95;Новогрудок;SOV;95-Nowogrodek.txt;C1aab;3202;457
+96;Вилейка;SOV;96-Wilejka.txt;C1aaa;3227;427
+97;Белосток;POL;97-Bialystok.txt;C1aab;3164;462
+98;Плоцк;POL;98-Mazurskie.txt;C1aab;3122;471
+99;Ютландия;DEN;99-Jutland.txt;C1aaa;2953;394
+100;Исландия;ICE;100-Iceland.txt;B1a;2516;148
+101;Гренландия;DEN;101-Greenland.txt;B1a;2109;71
+102;Северная Словения;CRO;102-North-Eastern Slovenia.txt;C1aba;3045;604
+103;Далмация;CRO;103-Croatia.txt;C1aba;3057;646
+104;Босния;CRO;104-Bosnia.txt;C1abb;3083;641
+105;Черногория;MNT;105-Montenegro.txt;C1abb;3107;672
+106;Македония;MAC;106-Macedonia.txt;C1abb;3149;693
+107;Сербия;SER;107-Kosavo.txt;C1abb;3123;642
+108;Морава;SER;108-Eastern Serbia.txt;C1abb;3140;656
+109;Хорватия;CRO;109-Eastern Croatia.txt;C1abb;3077;619
+110;Осло-фьорд;NOR;110-Norway.txt;C1aaa;2976;317
+111;Уусимаа;FIN;111-Uusima.txt;C1aaa;3197;300
+112;Лиссабон;POR;112-Lisbon.txt;B1b;2670;724
+113;Ленстер;IRE;113-Ireland.txt;B1b;2687;449
+114;Сардиния;SPM;114-Sardinia.txt;C1aba;2947;722
+115;Сицилия;ITA;115-Sicily.txt;C1aba;3027;768
+116;Мальта;MLT;116-Malta.txt;C1aba;3030;798
+117;Кампанья;ITA;117-Napoli.txt;C1aba;3046;710
+118;Гибралтар;ENG;118-Gibralter.txt;B1b;2719;792
+119;Северная Ирландия;IRE;119-Northern Ireland.txt;B1b;2691;421
+120;Северо-Шотландское нагорье;ENG;120-Scottish Highlands.txt;B1b;2716;359
+121;Лотиан;ENG;121-Scottish Lowlands.txt;B1b;2746;393
+122;Уэльс;ENG;122-Wales.txt;B1b;2737;470
+123;Юго-Западная Англия;ENG;123-Cornwall.txt;B1b;2737;503
+124;Готланд;SWE;124-Gotland.txt;C1aaa;3095;370
+125;Восточная Англия;ENG;125-East Anglia.txt;B1b;2806;469
+126;Большой Лондон;ENG;126-Greater London Area.txt;B1b;2792;484
+127;Сассекс;ENG;127-South-east England.txt;B1b;2790;496
+128;Западный Мидленд;ENG;128-West Midlands.txt;B1b;2760;466
+129;Восточный Мидленд;ENG;129-East Midlands.txt;B1b;2785;458
+130;Йоркшир;ENG;130-Yorkshire.txt;B1b;2775;435
+131;Нортумберленд;ENG;131-Northern England.txt;B1b;2768;411
+132;Ланкашир;ENG;132-North-west England.txt;B1b;2756;444
+133;Ланарк;ENG;133-Strathclyde.txt;B1b;2730;402
+134;Коннахт;IRE;134-Connaught.txt;B1b;2661;434
+135;Манстер;IRE;135-Munster.txt;B1b;2660;470
+136;Абердиншир;ENG;136-Aberdeenshire.txt;B1b;2747;366
+137;Крым;SOV;137-Crimea.txt;C1bab;3342;623
+138;Сконе;SWE;138-Skane.txt;C1aaa;3019;397
+139;Смоланд;SWE;139-Smaland.txt;C1aaa;3039;379
+140;Вестергётланд;SWE;140-Vaster Gotland.txt;C1aaa;3010;351
+141;Сёдерманланд;SWE;141-Sodermanland.txt;C1aaa;3065;322
+142;Западная Норвегия;NOR;142-Vestlandet.txt;C1aaa;2914;284
+143;Центральная Норвегия;NOR;143-Midt-Noreg.txt;C1aaa;2986;219
+144;Нурланн;NOR;144-Nord-Noreg.txt;C1aaa;3056;111
+145;Аландские острова;FIN;145-Aland.txt;C1aaa;3122;305
+146;Карелия;FIN;146-Karelia.txt;C1baa;3288;283
+147;Салла;FIN;147-Salla.txt;C1baa;3273;146
+148;Лаппи;FIN;148-Lappi.txt;C1aaa;3216;118
+149;Вааса;FIN;149-Vaasa.txt;C1aaa;3175;243
+150;Куопио;FIN;150-Kuopio.txt;C1aaa;3251;240
+151;Восточные Швейцарские Альпы;SWI;151-Eastern Swiss Alps.txt;C1aba;2952;596
+152;Верхняя Австрия;AUS;152-Upper Austria.txt;C1aba;3021;572
+153;Тироль;AUS;153-Tyrol.txt;C1aba;2996;588
+154;Транстиса;HUN;154-Southern plain.txt;C1abb;3138;585
+155;Северная Трансданубия;HUN;155-Western Hungary.txt;C1abb;3080;586
+156;Калабрия;ITA;156-Calabria.txt;C1aba;3061;741
+157;Абруцци;PAP;157-Abruzzo.txt;C1aba;3017;673
+158;Пьемонт;SPM;158-Piedmont.txt;C1aba;2932;629
+159;Ломбардия;SPM;159-Lombardy.txt;C1aba;2962;617
+160;Венето;LBV;160-Veneto.txt;C1aba;2996;614
+161;Эмилия-Романья;SPM;161-Emilia Romagna.txt;C1aba;2977;638
+162;Тоскана;PAP;162-Tuscany.txt;C1aba;2981;659
+163;Задар;CRO;163-Dalmatia.txt;C1aba;3050;653
+164;Додеканес;GRE;164-Dodecanese.txt;C1abb;3234;792
+165;Каталония;SPR;165-Catalonia.txt;C1aba;2830;689
+166;Западный Арагон;SPR;166-Western Aragon.txt;B1b;2788;696
+167;Валенсия;SPR;167-Valencia.txt;B1b;2797;736
+168;Мурсия;SPR;168-Murcia.txt;B1b;2778;752
+169;Севилья;SPR;169-Sevilla.txt;B1b;2711;773
+170;Эстремадура;SPR;170-Extremadura.txt;B1b;2710;739
+171;Галисия;SPR;171-Galicia.txt;B1b;2683;672
+172;Наварра;SPR;172-Navarre.txt;B1b;2781;673
+173;Гранада;SPR;173-Granada.txt;B1b;2753;777
+174;Леон;SPR;174-Leon.txt;B1b;2714;682
+175;Сьюдад-Реаль;SPR;175-Ciudad Real.txt;B1b;2745;743
+176;Бургос;SPR;176-Burgos.txt;B1b;2760;685
+177;Балеарские острова;SPR;177-Balearic Islands.txt;C1aba;2851;732
+178;Канарские острова;SPR;178-Canary islands.txt;B1a;2561;934
+179;Бежа;POR;179-Beja.txt;B1b;2679;763
+180;Порту;POR;180-Porto.txt;B1b;2687;695
+181;Гуарда;POR;181-Guarda.txt;B1b;2688;716
+182;Крит;GRE;182-Crete.txt;C1abb;3193;812
+183;Кипр;GRE;183-Cyprus.txt;C1bab;3324;815
+184;Фракия;GRE;184-Thrace.txt;C1abb;3200;701
+185;Эпир;GRE;185-Epirus.txt;C1abb;3135;733
+186;Пелопоннес;GRE;186-Peloponnese.txt;C1abb;3153;771
+187;Эгейские острова;GRE;187-Aegean Islands.txt;C1abb;3206;756
+188;Мемель;GER;188-Memel.txt;C1aaa;3142;416
+189;Жемайтия;SOV;189-Kaunas.txt;C1aaa;3153;406
+190;Курляндия;SOV;190-Kurzeme.txt;C1aaa;3149;382
+191;Тарту;SOV;191-Tartu.txt;C1aaa;3222;356
+192;Одесса;SOV;192-Odessa.txt;C1bab;3287;587
+193;Чернигов;SOV;193-Kiev.txt;C1baa;3306;506
+194;Мозырь;SOV;194-Pinsk Marches.txt;C1baa;3261;490
+195;Петроград;SOV;195-Leningrad Area.txt;C1baa;3284;315
+196;Херсон;SOV;196-Kherson.txt;C1bab;3331;597
+197;Николаев;SOV;197-Mykolaiv.txt;C1baa;3307;577
+198;Винница;SOV;198-Vinnytsia.txt;C1baa;3253;554
+199;Проскуров;SOV;199-Khmelnytskyi.txt;C1aab;3227;541
+200;Запорожье;SOV;200-Rivne.txt;C1bab;3363;585
+201;Житомир;SOV;201-Zhytomyr.txt;C1aab;3251;520
+202;Киев;SOV;202-Western Kiev.txt;C1baa;3282;526
+203;Черкассы;SOV;203-Cherkasy.txt;C1baa;3300;552
+204;Бобруйск;SOV;204-Brest.txt;C1aab;3249;468
+205;Калуга;SOV;205-Hrodna.txt;C1baa;3358;441
+206;Минск;SOV;206-Minsk.txt;C1baa;3254;448
+207;Витебск;SOV;207-Viciebsk.txt;C1baa;3265;422
+208;Луга;SOV;208-Pskov.txt;C1baa;3266;330
+209;Псков;SOV;209-Smolensk.txt;C1baa;3256;361
+210;Невель;SOV;210-Bryansk.txt;C1baa;3274;393
+211;Бургас;BUL;211-Burgas.txt;C1abb;3227;670
+212;Пловдив;BUL;212-Plovdiv.txt;C1abb;3192;687
+213;Мурманск;SOV;213-Murmansk.txt;C1baa;3354;119
+214;Архангельск;SOV;214-Arkhangelsk.txt;C1baa;3453;204
+215;Онега;SOV;215-Eastern Karelia.txt;C1baa;3318;200
+216;Олонец;SOV;216-Below Zero.txt;C1baa;3338;269
+217;Царицын;SOV;217-Stalingrad Area.txt;C1baa;3503;558
+218;Ростов;SOV;218-Rostov Area.txt;C1baa;3425;581
+219;Москва;SOV;219-Moscow Area.txt;C1baa;3392;412
+220;Курск;SOV;220-Kursk Area.txt;C1baa;3368;499
+221;Харьков;SOV;221-Kharkov.txt;C1baa;3376;540
+222;Орёл;SOV;222-Orel.txt;C1baa;3374;476
+223;Тула;SOV;223-tula.txt;C1baa;3390;451
+224;Брянск;SOV;224-Bryansk.txt;C1baa;3327;473
+225;Сумы;SOV;225-Glukhov.txt;C1baa;3337;510
+226;Екатеринослав;SOV;226-Nikopol.txt;C1baa;3349;566
+227;Юзовка;SOV;227-Stalino.txt;C1baa;3393;570
+228;Луганск;SOV;228-Taganrog.txt;C1baa;3414;552
+229;Азербайджан;SOV;229-baku.txt;C1bba;3552;717
+230;Армения;SOV;230-Armenia.txt;C1bab;3508;720
+231;Грузия;SOV;231-Georgia.txt;C1bab;3493;689
+232;Дагестан;SOV;232-Grozny.txt;C1bba;3539;663
+233;Сочи;SOV;233-Caucasus Mountains.txt;C1bab;3445;653
+234;Екатеринодар;SOV;234-Krasodar.txt;C1bab;3422;623
+235;Ставрополь;SOV;235-Stravropol.txt;C1bab;3481;633
+236;Астрахань;SOV;236-Astrakhan.txt;C1bba;3542;584
+237;Элиста;SOV;237-Elista.txt;C1bab;3516;603
+238;Волгодонск;SOV;238-volgodonsk.txt;C1bab;3464;595
+239;Саратов;SOV;239-Saratov.txt;C1baa;3508;494
+240;Белгород;SOV;240-Voronezh.txt;C1baa;3389;519
+241;Гомель;SOV;241-Pochep.txt;C1baa;3292;464
+242;Смоленск;SOV;242-Smolensk.txt;C1baa;3323;422
+243;Рославль;SOV;243-Roslavl.txt;C1baa;3315;443
+244;Волхов;SOV;244-Gatchina.txt;C1baa;3311;325
+245;Миллерово;SOV;245-Donetsk.txt;C1baa;3455;558
+246;Ржев;SOV;246-Rzhev.txt;C1baa;3329;387
+247;Тверь;SOV;247-Tver.txt;C1baa;3374;371
+248;Ярославль;SOV;248-Yaroslavl.txt;C1baa;3421;362
+249;Казань;SOV;249-Kazan.txt;C1bba;3598;420
+250;Симбирск;SOV;250-ulyanovsky.txt;C1bba;3544;451
+251;Самара;SOV;251-Samara.txt;C1bba;3592;464
+252;Нижний Новгород;SOV;252-Nizhny Novogrod.txt;C1baa;3495;404
+253;Иваново;SOV;253-Ivanovo.txt;C1baa;3446;393
+254;Рязань;SOV;254-Ryazan.txt;C1baa;3437;443
+255;Пенза;SOV;255-Penza.txt;C1baa;3497;460
+256;Чебоксары;SOV;256-Cheboksary.txt;C1bba;3538;419
+257;Тамбов;SOV;257-Livny.txt;C1baa;3453;478
+258;Липецк;SOV;258-lipetsk.txt;C1baa;3416;479
+259;Полтава;SOV;259-Liski.txt;C1baa;3335;538
+260;Воронеж;SOV;260-Borisoglbsk.txt;C1baa;3432;514
+261;Огайо;USA;261-USA.txt;B1a;1518;492
+262;Печора;SOV;262-Torzhok.txt;C1bba;3630;181
+263;Новгород;SOV;263-Veliky Novogrod.txt;C1baa;3300;356
+264;Тихвин;SOV;264-Tikhvin.txt;C1baa;3350;325
+265;Михайловка;SOV;265-Mikhaylovka.txt;C1baa;3478;528
+266;Тегеран;PER;266-Persia.txt;C1bbb;3636;788
+267;Кабул;AFG;267-Afghanistan.txt;C1bbb;3865;817
+268;Французский Берег Сомали;FRA;268-French Somaliland.txt;C2b;3471;1208
+269;Британское Сомали;SOM;269-British Somaliland.txt;C2b;3528;1242
+270;Острова Питкэрн;ENG;270-Pitcarin Island.txt;A2;1054;1732
+271;Шоа;ETH;271-ethiopia.txt;C2b;3414;1258
+272;Сенегал;FRA;272-French Africa.txt;B2b;2580;1166
+273;Ливийская пустыня;EGY;273-Italian Africa.txt;C1abb;3088;980
+274;Гана;GWA;274-British Africa.txt;B2b;2789;1270
+275;Трансвааль;SAF;275-South Africa.txt;C2a;3235;1823
+276;Южное Онтарио;CAN;276-Canada.txt;B1a;1575;417
+277;Мехико;MEX;277-Mexico.txt;A1;1244;848
+278;Буэнос-Айрес;ARG;278-Argentina.txt;B2a;1849;1787
+279;Сантьяго;CHL;279-Chile.txt;B2a;1703;1734
+280;Мату-Гросу;BRA;280-Brazil.txt;B2b;1939;1412
+281;Мальдивы;RAJ;281-India.txt;C2b;3943;1338
+282;Канто;JAP;282-Japan.txt;D1bb;4986;795
+283;Ганьсу;XSM;283-China.txt;D1ab;4440;819
+284;Веллингтон;NZL;284-New Zealand.txt;D2b;5562;1910
+285;Новый Южный Уэльс;AST;285-Austraila.txt;D2b;5077;1882
+286;Южный Аннам;FRA;286-Indochina.txt;D2a;4495;1185
+287;Такла-Макан;SIK;287-Sinkiang.txt;C1bba;4095;739
+288;Магуэ;BRM;288-Magwe.txt;D2a;4280;1045
+289;Западный Сиам;SIA;289-Western Siam.txt;D2a;4357;1162
+290;Испанская Африка;SPR;290-Spanish Africa.txt;B1b;2737;814
+291;Багдад;IRQ;291-Iraq.txt;C1bab;3496;852
+292;Неджд;SAU;292-Saudi Arabia.txt;C1bab;3523;1014
+293;Северный Йемен;YEM;293-Yemen.txt;C2b;3503;1149
+294;Маскат;OMA;294-Oman.txt;C2b;3700;1051
+295;Леопольдвиль;COG;295-Congo.txt;C2a;3081;1472
+296;Португальская Гвинея;POR;296-Portugal Africa.txt;B2b;2570;1204
+297;Экваториальная Гвинея;SPR;297-Belgian Africa.txt;C2a;2968;1369
+298;Либерия;LIB;298-Liberia.txt;B2b;2662;1295
+299;Фолклендские острова;ENG;299-Falkand Islands.txt;B2b;1895;1970
+300;Монтевидео;URG;300-Uruguay.txt;B2b;1920;1743
+301;Парагвай;PAR;301-paraguay.txt;B2b;1927;1587
+302;Ла-Пас;BOL;302-bolivia.txt;B2a;1771;1487
+303;Лима;PRU;303-Peru.txt;B2a;1595;1318
+304;Панама;PAN;304-Panama.txt;B2a;1555;1043
+305;Эквадор;ECU;305-Ecuador.txt;B2a;1582;1202
+306;Кундинамарка;COL;306-Colombia.txt;B2a;1631;1118
+307;Миранда;VEN;307-Venezuela.txt;B2a;1768;1041
+308;Подветренные острова;ENG;308-Britain SA.txt;B1a;1841;915
+309;Суринам;HOL;309-Dutch SA.txt;B2b;1933;1111
+310;Французская Гвиана;FRA;310-French SA.txt;B2b;1974;1116
+311;Британский Гондурас;ENG;311-BritMex.txt;B1a;1422;901
+312;Гондурас;HON;312-Honduras.txt;B1a;1454;940
+313;Гватемала;GUA;313-Guatemala.txt;A1;1395;925
+314;Сальвадор;ELS;314-El Salvador.txt;B1a;1419;957
+315;Куба;CUB;315-Cuba.txt;B1a;1572;828
+316;Коста-Рика;COS;316-Costa Rica.txt;B1a;1492;1018
+317;Никарагуа;NIC;317-Nicaragua.txt;B1a;1479;972
+318;Гаити;HAI;318-Haiti.txt;B1a;1671;873
+319;Доминиканская республика;DOM;319-Dominican Republic.txt;B1a;1706;873
+320;Французская Индия;FRA;320-French India.txt;C2b;4050;1206
+321;Гоа;POR;321-Goa.txt;C2b;3961;1152
+322;Нагчу;TIB;322-Tibet.txt;C1bbb;4181;853
+323;Непал;NEP;323-Nepal.txt;C1bbb;4118;935
+324;Бутан;BHU;324-Bhutan.txt;C1bbb;4217;950
+325;Юньнань;YUN;325-Yunnan.txt;D1ab;4412;999
+326;Гонконг;ENG;326-HongKong.txt;D2a;4587;1034
+327;Манила;PHI;327-Philippines.txt;D2b;4698;1168
+328;Гирин;MAN;328-Manchukuo.txt;D1ba;4782;660
+329;Танну-Тува;SOV;329-Tannu Tuva.txt;D1aa;4285;496
+330;Урга;MON;330-Mongolia.txt;D1aa;4413;574
+331;Ньюфаундленд;CAN;331-Newfoundland.txt;B1a;1931;333
+332;Лабрадор;CAN;332-Labrador.txt;B1a;1837;214
+333;Саравак;ENG;333-British Borneo.txt;D2a;4569;1363
+334;Западный Калимантан;INS;334-Kalimantan Barat.txt;D2a;4532;1415
+335;Западная Ява;INS;335-West Java.txt;D2a;4486;1509
+336;Куала-Лумпур;ENG;336-Singapore.txt;D2a;4394;1353
+337;Фарерские острова;DEN;337-Faroe Islands.txt;B1b;2689;252
+338;Глостершир;ENG;338-Gloucestershire.txt;B1b;2763;486
+339;Измир;ION;339-Izmir.txt;C1abb;3240;753
+340;Бурса;STR;340-Bursa.txt;C1abb;3245;724
+341;Эдирне;STR;341-Edirne.txt;C1abb;3229;700
+342;Анталья;TUR;342-Antalya.txt;C1bab;3266;779
+343;Афьон;TUR;343-Afyon.txt;C1bab;3272;748
+344;Малатья;KUR;344-Adana.txt;C1bab;3387;771
+345;Мерсин;TUR;345-Mersin.txt;C1bab;3323;782
+346;Конья;TUR;346-Konya.txt;C1bab;3315;759
+347;Измит;TUR;347-Izmit.txt;C1bab;3296;707
+348;Кайсери;TUR;348-Kayseri.txt;C1bab;3364;756
+349;Сивас;TUR;349-Silvas.txt;C1bab;3393;734
+350;Диярбакыр;KUR;350-Diyarbekir.txt;C1bab;3428;771
+351;Вологда;SOV;351-Vologda.txt;C1baa;3442;321
+352;Хаккари;KUR;352-Hakkari.txt;C1bab;3469;762
+353;Тунджели;SOV;353-Erzurum.txt;C1bab;3431;739
+354;Трабзон;SOV;354-Trabzon.txt;C1bab;3451;713
+355;Самсун;TUR;355-Samsun.txt;C1bab;3381;710
+356;Кастамону;TUR;356-Sinop.txt;C1bab;3339;704
+357;Новая Англия;USA;357-New England.txt;B1a;1703;423
+358;Нью-Йорк;USA;358-New York.txt;B1a;1623;447
+359;Нью-Джерси;USA;359-New Jersey.txt;B1a;1641;501
+360;Пенсильвания;USA;360-Pennsylvania.txt;B1a;1591;488
+361;Мэриленд;USA;361-Maryland.txt;B1a;1609;521
+362;Виргиния;USA;362-Virginia.txt;B1a;1575;551
+363;Северная Каролина;USA;363-North Carolina.txt;B1a;1567;587
+364;Южная Каролина;USA;364-South Carolina.txt;B1a;1543;616
+365;Джорджия;USA;365-Georgia.txt;B1a;1503;638
+366;Флорида;USA;366-Florida.txt;B1a;1518;708
+367;Алабама;USA;367-Alabama.txt;B1a;1451;636
+368;Теннесси;USA;368-Tennesse.txt;B1a;1458;582
+369;Кентукки;USA;369-Kentucky.txt;B1a;1474;551
+370;Миссисипи;USA;370-Mississippi.txt;A1;1407;636
+371;Луизиана;USA;371-Louisiana.txt;A1;1370;666
+372;Арканзас;USA;372-Arkansas.txt;A1;1363;598
+373;Миссури;USA;373-Missouri.txt;A1;1362;535
+374;Оклахома;USA;374-Oklahoma.txt;A1;1283;586
+375;Техас;USA;375-Texas.txt;A1;1256;658
+376;Нью-Мексико;USA;376-New Mexico.txt;A1;1150;607
+377;Аризона;USA;377-Arizona.txt;A1;1063;609
+378;Калифорния;USA;378-California.txt;A1;939;555
+379;Невада;USA;379-Nevada.txt;A1;985;516
+380;Юта;USA;380-Utah.txt;A1;1062;517
+381;Вайоминг;USA;381-Wyoming.txt;A1;1127;447
+382;Колорадо;USA;382-Colorado.txt;A1;1159;523
+383;Канзас;USA;383-Kansas.txt;A1;1271;533
+384;Небраска;USA;384-Nebraska.txt;A1;1248;475
+385;Орегон;USA;385-Oregon.txt;A1;924;430
+386;Вашингтон;USA;386-Washington.txt;A1;926;362
+387;Айдахо;USA;387-Idaho.txt;A1;1016;419
+388;Монтана;USA;388-Montana.txt;A1;1095;368
+389;Северная Дакота;USA;389-North Dakota.txt;A1;1238;360
+390;Южная Дакота;USA;390-South Dakota.txt;A1;1242;420
+391;Миннесота;USA;391-Minnesota.txt;A1;1335;381
+392;Айова;USA;392-Iowa.txt;A1;1346;465
+393;Мичиган;USA;393-Michigan.txt;B1a;1479;421
+394;Висконсин;USA;394-Wisconsin.txt;A1;1401;416
+395;Иллинойс;USA;395-Illinois.txt;B1a;1414;503
+396;Индиана;USA;396-Indiana.txt;B1a;1460;506
+397;Усть-Сысольск;SOV;397-Syktyvkar.txt;C1bba;3624;251
+398;Пермь;SOV;398-Perm.txt;C1bba;3689;322
+399;Удмуртия;SOV;399-Izhevsk.txt;C1bba;3628;380
+400;Вятка;SOV;400-Kirov.txt;C1bba;3572;336
+401;Балаково;SOV;401-Engels.txt;C1bba;3562;505
+402;Ахтубинск;SOV;402-Akhtubinsk.txt;C1bba;3740;573
+403;Тюмень;SOV;403-Kharabali.txt;C1bba;3891;362
+404;Кзыл-Орда;SOV;404-Saykhin.txt;C1bba;3858;645
+405;Ташкент;SOV;405-Atyrau.txt;C1bba;3880;715
+406;Гурьев;SOV;406-Krasnyy Yar.txt;C1bba;3614;576
+407;Уральск;SOV;407-Uralsk.txt;C1bba;3604;536
+408;Владивосток;SOV;408-Vladivostok.txt;D1ba;4905;629
+409;Хабаровск;SOV;409-Khabarovsk.txt;D1ba;4964;544
+410;Систан;PER;410-Sistan.txt;C1bbb;3746;945
+411;Исфахан;PER;411-Hormozgan.txt;C1bbb;3619;855
+412;Фарс;PER;412-Fars.txt;C1bbb;3651;925
+413;Хузестан;PER;413-Khuzestan.txt;C1bbb;3578;884
+414;Керман;PER;414-Kerman.txt;C1bbb;3707;904
+415;Герат;AFG;415-South Khorasan.txt;C1bbb;3793;833
+416;Хорасан;PER;416-Razavi Khorasan.txt;C1bbb;3731;805
+417;Хамадан;PER;417-Golestan.txt;C1bbb;3581;825
+418;Семнан;PER;418-Semnan.txt;C1bbb;3669;817
+419;Западный Азербайджан;PER;419-Azerbaijan.txt;C1bab;3513;766
+420;Гилян;PER;420-Gilan.txt;C1bbb;3568;777
+421;Илам;PER;421-Kurdistan.txt;C1bbb;3547;849
+422;Цейлон;RAJ;422-Ceylon.txt;C2b;4065;1279
+423;Южный Мадрас;RAJ;423-Madras.txt;C2b;4021;1220
+424;Северный Мадрас;RAJ;424-Andra Pradesh.txt;C2b;4043;1155
+425;Майсур;RAJ;425-Mysore.txt;C2b;4000;1183
+426;Орисса;RAJ;426-Orissa.txt;C2b;4120;1074
+427;Хайдарабад;RAJ;427-Hyderabad.txt;C2b;4021;1104
+428;Гуджарат;RAJ;428-Western Indian States.txt;C2b;3918;1024
+429;Бомбей;RAJ;429-Bombay.txt;C2b;3963;1084
+430;Восточная Бенгалия;RAJ;430-Bangladesh.txt;C1bbb;4212;1010
+431;Западная Бенгалия;RAJ;431-Calcutta.txt;C1bbb;4175;1003
+432;Ассам;RAJ;432-Assam.txt;D1ab;4246;990
+433;Раджастхан;RAJ;433-Rajputana.txt;C1bbb;3966;971
+434;Аруначал-Прадеш;RAJ;434-Arunachal Pradesh.txt;D1ab;4283;938
+435;Бихар;RAJ;435-Bihar.txt;C1bbb;4132;993
+436;Центральные провинции;RAJ;436-Central Provinces.txt;C2b;4052;1044
+437;Центральная Индия;RAJ;437-Central Indian Provinces.txt;C1bbb;3997;1017
+438;Соединённые провинции;RAJ;438-United Provinces.txt;C1bbb;4063;960
+439;Дели;RAJ;439-Delhi.txt;C1bbb;4014;923
+440;Западный Пенджаб;RAJ;440-West Punjab.txt;C1bbb;3951;877
+441;Кашмир;RAJ;441-Kashmir.txt;C1bbb;4016;829
+442;Пешавар;RAJ;442-Peshawar.txt;C1bbb;3932;816
+443;Синд;RAJ;443-Sind.txt;C1bbb;3883;973
+444;Южный Белуджистан;RAJ;444-Baluchistan States.txt;C1bbb;3810;963
+445;Сиби;RAJ;445-Quetta.txt;C1bbb;3888;912
+446;Суэц;EGY;446-Cairo.txt;C1bab;3314;896
+447;Александрия;EGY;447-Alexandria.txt;C1bab;3277;890
+448;Триполи;EGY;448-Tripoli.txt;C1aba;3019;866
+449;Эль-Агейла;EGY;449-Libyan Coast.txt;C1abb;3084;898
+450;Бенгази;EGY;450-Benghasi.txt;C1abb;3122;881
+451;Дерна;EGY;451-Derna.txt;C1abb;3163;865
+452;Матрух;EGY;452-Marsa Matruh.txt;C1abb;3223;893
+453;Синай;EGY;453-Sinai.txt;C1bab;3335;912
+454;Палестина;JOR;454-Israel.txt;C1bab;3353;879
+455;Иордания;JOR;455-Jordan.txt;C1bab;3378;887
+456;Асуан;EGY;456-Luxor.txt;C1bab;3306;992
+457;Восточная пустыня;EGY;457-Aswan.txt;C1bab;3331;982
+458;Тунис;FRA;458-Tunisia.txt;C1aba;2957;799
+459;Алжир;FRA;459-Western Algeria.txt;C1aba;2831;799
+460;Константина;FRA;460-Eastern Algeria.txt;C1aba;2904;794
+461;Касабланка;FRA;461-Northern Morocco.txt;B1b;2720;842
+462;Марракеш;FRA;462-Southern Morocco.txt;B1b;2709;886
+463;Аляска;USA;463-Alaska.txt;A1;417;69
+464;Новая Шотландия;CAN;464-Nova Scotia.txt;B1a;1819;402
+465;Нью-Брансуик;CAN;465-New Brunswick.txt;B1a;1770;376
+466;Север Квебека;CAN;466-Quebec.txt;B1a;1669;145
+467;Манитоба;CAN;467-Manitoba.txt;A1;1264;280
+468;Сент-Лоренс;CAN;468-Nunavut.txt;B1a;1709;368
+469;Саскачеван;CAN;469-Saskatchewan.txt;A1;1151;271
+470;Альберта;CAN;470-Alberta.txt;A1;1027;216
+471;Принс-Руперт;CAN;471-Northwestern Canada.txt;A1;824;160
+472;Северо-Западные территории;CAN;472-Northwest Territories.txt;A1;996;62
+473;Британская Колумбия;CAN;473-British Columbia.txt;A1;911;280
+474;Юкатан;MEX;474-Yucatan.txt;B1a;1415;859
+475;Чьяпас;MEX;475-Chiapas.txt;A1;1364;907
+476;Оахака;MEX;476-Oaxaca.txt;A1;1309;901
+477;Веракрус;MEX;477-Veracruz.txt;A1;1283;862
+478;Халиско;MEX;478-Nayarit.txt;A1;1188;836
+479;Тамаулипас;MEX;479-Tamaulipas.txt;A1;1253;795
+480;Коауила;MEX;480-Coahuila.txt;A1;1220;741
+481;Дуранго;MEX;481-Sinaloa.txt;A1;1159;776
+482;Чиуауа;MEX;482-Chihuahua.txt;A1;1145;706
+483;Сонора;MEX;483-Sonora.txt;A1;1077;690
+484;Нижняя Калифорния;MEX;484-Baja California.txt;A1;1032;714
+485;Герреро;MEX;485-Guerrero.txt;A1;1232;883
+486;Мета;COL;486-Meta.txt;B2a;1692;1145
+487;Санта-Крус;BOL;487-Amazinas.txt;B2a;1812;1424
+488;Боливар;VEN;488-Bolivar.txt;B2a;1800;1096
+489;Сулия;VEN;489-Monagas.txt;B1a;1701;1021
+490;Пастаса;ECU;490-Pastaza.txt;B2a;1620;1235
+491;Лорето;PRU;491-Loreto.txt;B2a;1646;1252
+492;Арекипа;PRU;492-Piura.txt;B2a;1670;1416
+493;Ла-Либертад;COL;493-La Libertad.txt;B2a;1635;1051
+494;Укаяли;PRU;494-Ucayali.txt;B2a;1676;1356
+495;Амасонас;BRA;495-Amazonas.txt;B2a;1824;1234
+496;Минас-Жерайс;BRA;496-Para.txt;B2b;2107;1478
+497;Мараньян;BRA;497-Maranhao.txt;B2b;2100;1254
+498;Риу-Гранди-ду-Норти;BRA;498-Rio Grande.txt;B2b;2230;1266
+499;Баия;BRA;499-Bahia.txt;B2b;2157;1377
+500;Рио-де-Жанейро;BRA;500-Rio de Janerio.txt;B2b;2139;1538
+501;Сан-Паулу;BRA;501-Saol Paulo.txt;B2b;2043;1540
+502;Риу-Гранди-ду-Сул;BRA;502-Rio Grande Sul.txt;B2b;1972;1664
+503;Санта-Катарина;BRA;503-Santa Catarina.txt;B2b;2007;1623
+504;Понта-Поран;BRA;504-Iguacu.txt;B2b;1941;1528
+505;Гояс;BRA;505-Goias.txt;B2b;2011;1436
+506;Антофагаста;CHL;506-Northern Chile.txt;B2a;1728;1561
+507;Магальянес;CHL;507-Southern Chile.txt;B2a;1720;1988
+508;Тукуман;ARG;508-Argentine Northwest.txt;B2a;1771;1602
+509;Чако Аустраль;ARG;509-Gran Chaco.txt;B2a;1836;1622
+510;Аргентинская Месопотамия;ARG;510-Mesopotamia.txt;B2b;1899;1671
+511;Мендоса;ARG;511-Cuyo.txt;B2a;1733;1726
+512;Рио-Негро;ARG;512-Patagonia.txt;B2a;1760;1822
+513;Тлемсен;FRA;513-Southern Algeria.txt;C1aba;2856;829
+514;Алжирская пустыня;FRA;514-North Africa.txt;C1aba;2845;959
+515;Южная Сахара;FRA;515-Central Africa.txt;C2a;2964;1112
+516;Дудинка;SOV;516-Northern Siberia.txt;D1aa;4229;96
+517;Виктория;AST;517-Victoria.txt;D2b;5041;1951
+518;Тасмания;AST;518-Tasmania.txt;D2b;5072;2019
+519;Южная Австралия;AST;519-South Australia.txt;D2b;4929;1879
+520;Северная территория;AST;520-Northern Territory.txt;D2b;4893;1630
+521;Квинсленд;AST;521-Queensland.txt;D2b;5104;1763
+522;Западная Австралия;AST;522-Western Australia.txt;D2b;4669;1810
+523;Папуа;AST;523-New Guinea.txt;D2b;5078;1535
+524;Тайвань;JAP;524-Taiwan.txt;D1bb;4694;1012
+525;Кёнгидо;JAP;525-South Korea.txt;D1bb;4793;772
+526;Окинава;JAP;526-Okinawa.txt;D1bb;4797;970
+527;Пхёнандо-Хванхэдо;JAP;527-North Korea.txt;D1ba;4772;735
+528;Китакюсю;JAP;528-Nagasaki.txt;D1bb;4845;850
+529;Санъё;JAP;529-Hiroshima.txt;D1bb;4877;825
+530;Сикоку;JAP;530-Tokushima.txt;D1bb;4889;841
+531;Кансай;JAP;531-Osaka.txt;D1bb;4922;821
+532;Токай;JAP;532-Nagoya.txt;D1bb;4956;810
+533;Кита-Тохоку;JAP;533-Akita.txt;D1ba;5005;726
+534;Косинъэцу;JAP;534-Niigata.txt;D1bb;4968;779
+535;Хокурику;JAP;535-Nagano.txt;D1bb;4941;791
+536;Хоккайдо;JAP;536-Hokkaido.txt;D1ba;5031;660
+537;Южный Сахалин;JAP;537-South Sakhalin.txt;D1ba;5034;563
+538;Кокийявиль;COG;538-Cameroun.txt;C2a;3137;1387
+539;Габон;FRA;539-Gabon.txt;C2a;2990;1407
+540;Луанда;POR;540-Angola.txt;C2a;3074;1539
+541;Кхомас;GSW;541-South West Africa.txt;C2a;3087;1761
+542;Бечуаналенд;PUA;542-Bechuana Land.txt;C2a;3177;1755
+543;Мадагаскар;FRA;543-Madagascar.txt;C2b;3534;1710
+544;Лоренсу-Маркиш;POR;544-East Africa.txt;C2a;3328;1775
+545;Родезия;PUA;545-Rhodessa.txt;C2a;3271;1701
+546;Танганьика;GEA;546-Tanganyika.txt;C2a;3347;1495
+547;Найроби;ENG;547-East Africa.txt;C2b;3389;1371
+548;Уганда;ENG;548-Uganda.txt;C2a;3310;1372
+549;Кордофан;EGY;549-Sudan.txt;C2a;3255;1208
+550;Эритрея;ETH;550-Eritrea.txt;C2b;3410;1148
+551;Хартум;EGY;551-Khartoum.txt;C2a;3306;1103
+552;Западная пустыня;EGY;552-Western Egypt.txt;C1abb;3240;977
+553;Ливан;LEB;553-Lebanon.txt;C1bab;3365;835
+554;Дамаск;SYR;554-Syria.txt;C1bab;3381;845
+555;Курильские острова;JAP;555-Lagos.txt;D1ba;5144;600
+556;Бамако;FRA;556-Mali.txt;B2b;2712;1201
+557;Мавритания;FRA;557-Mauritania.txt;B2b;2590;1102
+558;Лагос;LAG;558-Nigeria.txt;C2a;2880;1273
+559;Сомалиленд;SOM;559-Somaliland.txt;C2b;3533;1308
+560;Николаевск;SOV;560-TS 2.txt;D1ba;4925;464
+561;Амур;SOV;561-TS 3.txt;D1ba;4779;440
+562;Охотск;SOV;562-TS 4.txt;D1ba;5000;298
+563;Чита;SOV;563-TS 5.txt;D1ba;4618;477
+564;Бурятия;SOV;564-TS 6.txt;D1aa;4498;459
+565;Бодайбо;SOV;565-TS 7.txt;D1aa;4607;365
+566;Иркутск;SOV;566-TS 8.txt;D1aa;4440;446
+567;Братск;SOV;567-TS 9.txt;D1aa;4379;392
+568;Красноярск;SOV;568-TS 10.txt;D1aa;4262;410
+569;Хакасия;SOV;569-TS 11.txt;C1bba;4181;438
+570;Ново-Николаевск;SOV;570-TS 12.txt;C1bba;4052;418
+571;Омск;SOV;571-TS 13.txt;C1bba;3956;403
+572;Челябинск;SOV;572-TS 14.txt;C1bba;3798;417
+573;Златоуст;SOV;573-Ts 15.txt;C1bba;3723;381
+574;Якутск;SOV;574-Siberia 1.txt;D1ba;4769;305
+575;Киренск;SOV;575-Siberia 2.txt;D1aa;4531;282
+576;Енисейск;SOV;576-Siberia 3.txt;D1aa;4295;281
+577;Сургут;SOV;577-Siberia 4.txt;C1bba;4033;282
+578;Томск;SOV;578-Siberia 5.txt;C1bba;4095;355
+579;Салехард;SOV;579-Siberia 6.txt;C1bba;3890;131
+580;Тобольск;SOV;580-Siberia 7.txt;C1bba;3839;264
+581;Северный Урал;SOV;581-Northern Urals.txt;C1bba;3754;191
+582;Магнитогорск;SOV;582-Sourthern Urals.txt;C1bba;3725;475
+583;Костанай;SOV;583-Kazakhstan.txt;C1bba;3803;497
+584;Ашхабад;SOV;584-Turkmenistan.txt;C1bba;3731;749
+585;Навои;SOV;585-Uzbekistan.txt;C1bba;3816;688
+586;Верный;SOV;586-Kyrgyzstan.txt;C1bba;3982;657
+587;Усть-Урт;SOV;587-Western Kazakstan.txt;C1bba;3654;635
+588;Семипалатинск;SOV;588-Some Mountains.txt;C1bba;4069;542
+589;Аягуз;SOV;589-Eastern Kazakhstan.txt;C1bba;4024;600
+590;Акмолинск;SOV;590-Northern Kazakhstan.txt;C1bba;3904;482
+591;Хайнань;GXC;591-Hainan.txt;D2a;4519;1089
+592;Гуанчжоу;GXC;592-Guangzhou.txt;D2a;4555;1031
+593;Гуандун;GXC;593-Guangdong.txt;D1ab;4593;1008
+594;Наньнин;GXC;594-Nanning.txt;D1ab;4489;1019
+595;Фуцзянь;CHI;595-Fujian.txt;D1bb;4648;974
+596;Чжэцзян;CHI;596-Zhejiang.txt;D1bb;4680;919
+597;Шаньдун;CHI;597-Shandong.txt;D1bb;4679;783
+598;Цзянсу;CHI;598-Jiansu.txt;D1bb;4660;838
+599;Гуанси;GXC;599-Guanxi.txt;D1ab;4520;998
+600;Цзянси;CHI;600-Jiangxi.txt;D1ab;4610;949
+601;Чамдо;TIB;601-China 1.txt;D1ab;4299;896
+602;Хунань;CHI;602-China 2.txt;D1ab;4554;952
+603;Гуйчжоу;CHI;603-China 3.txt;D1ab;4473;969
+604;Цинхай;TIB;604-China 4.txt;D1ab;4268;826
+605;Сычуань;CHI;605-China 5.txt;D1ab;4487;889
+606;Аньхой;CHI;606-China 6.txt;D1bb;4624;872
+607;Хэнань;CHI;607-China 7.txt;D1ab;4577;834
+608;Бэйпин;CHI;608-Beijing.txt;D1ba;4619;735
+609;Восточный Хэбэй;CHI;609-China 8.txt;D1ba;4651;724
+610;Жэхэ;MAN;610-China 9.txt;D1ba;4662;685
+611;Чахар;MON;611-China 10.txt;D1aa;4595;682
+612;Шилин-Гол;MON;612-China 11.txt;D1aa;4612;636
+613;Шанхай;CHI;613-China 12.txt;D1bb;4696;883
+614;Хэбэй;CHI;614-China 13.txt;D1aa;4601;765
+615;Шаньси;SHX;615-Shanxi.txt;D1aa;4557;768
+616;Нинся;XSM;616-China 14.txt;D1aa;4440;744
+617;Урумчи;SIK;617-Xinjiang.txt;C1bba;4128;679
+618;Джунгария;SIK;618-China 15.txt;C1bba;4156;614
+619;Уезд Яркенд;SIK;619-China 16.txt;C1bba;4006;734
+620;Хубэй;CHI;620-China 17.txt;D1ab;4553;878
+621;Суйюань;MON;621-China 18.txt;D1aa;4515;702
+622;Шаньбэй;CHI;622-China 19.txt;D1ab;4502;783
+623;Лусон;PHI;623-Luzon.txt;D2b;4701;1117
+624;Центральные Острова;PHI;624-Central islands.txt;D2b;4727;1185
+625;Восточные Висайи;PHI;625-Samar.txt;D2b;4756;1215
+626;Палаван;PHI;626-Palawan.txt;D2b;4659;1241
+627;Давао;PHI;627-Mindanao.txt;D2b;4761;1290
+628;Западные Висайи;PHI;628-Cebu.txt;D2b;4726;1231
+629;Гавайи;USA;629-Hawaii.txt;A2;410;1040
+630;Атолл Джонстон;USA;630-Johnston Atoll.txt;A2;159;1133
+631;Остров Мидуэй;USA;631-Midway Island.txt;A1;33;930
+632;Остров Уэйк;USA;632-Wake Island.txt;D2b;5407;1083
+633;Маршалловы острова;GPC;633-Marshall Islands.txt;D2b;5431;1250
+634;Соломоновы острова;ENG;634-Solomon Islands.txt;D2b;5293;1548
+635;Новая Каледония;FRA;635-New Caledonia.txt;D2b;5393;1742
+636;Фиджи;ENG;636-Fiji.txt;D2b;5591;1677
+637;Камчатка;SOV;637-State 1.txt;D1ba;5320;341
+638;Гуам;USA;638-Guam.txt;D2b;5062;1188
+639;Острова Гилберта;ENG;639-Maiana.txt;D2b;5514;1382
+640;Мандалай;BRM;640-Mandalay.txt;D2a;4311;1045
+641;Таити;FRA;641-Tahiti.txt;A2;449;1675
+642;Острова Феникс;ENG;642-Phoenix Island.txt;A2;104;1439
+643;Острова Эллис;ENG;643-Fongafale.txt;D2b;5589;1524
+644;Колыма;SOV;644-state 3.txt;D1ba;5106;97
+645;Иводзима;JAP;645-Iwo Jima.txt;D1bb;5025;988
+646;Сайпан;GPC;646-Saipan.txt;D2b;5079;1150
+647;Палау;GPC;647-Palau.txt;D2b;4892;1280
+648;Остров Маркуса;JAP;648-Marcus Island.txt;D1bb;5213;1006
+649;Галапагосские острова;ECU;649-Galapagos Islands.txt;A2;1386;1210
+650;Остров Атту;USA;650-Attu Island.txt;D1ba;5500;389
+651;Уфа;SOV;651-Sov state 5.txt;C1bba;3675;432
+652;Оренбург;SOV;652-Sov state 6.txt;C1bba;3646;484
+653;Екатеринбург;SOV;653-Sov state 7.txt;C1bba;3776;343
+654;Ойратский регион;SOV;654-sov state 8.txt;C1bba;4165;515
+655;Северный Сахалин;SOV;655-North Sakhalin.txt;D1ba;5033;492
+656;Кувейт;IRQ;656-Kuwait.txt;C1bbb;3547;913
+657;Биробиджан;SOV;657-Border state.txt;D1ba;4865;525
+658;Абу-Даби;OMA;658-Arab UK 1.txt;C1bbb;3655;1009
+659;Южный Йемен;YEM;659-Arabian UK 2.txt;C2b;3578;1135
+660;Экваториальная Африка;FRA;660-Equatorial Africa.txt;C2a;3125;1292
+661;Триполитания;EGY;661-Tripolitania.txt;C1aba;3009;888
+662;Сидра;EGY;662-Sirte.txt;C1abb;3100;915
+663;Киренаика;EGY;663-Cyrenaica.txt;C1abb;3153;883
+664;Южная Словакия;HUN;664-Southern Slovakia.txt;C1abb;3109;564
+665;Габес;FRA;665-Gabes.txt;C1aba;2954;851
+666;Норрботтен;SWE;666-Norrnorrland.txt;C1aaa;3125;134
+667;Западная Нуса-Тенгара;INS;667-West Nusa Tenggara.txt;D2b;4654;1541
+668;Молукка;INS;668-The Moluccas.txt;D2b;4802;1417
+669;Голландская Новая Гвинея;INS;669-Dutch New Guinea.txt;D2b;4930;1441
+670;Лаос;FRA;670-Laos.txt;D2a;4419;1086
+671;Тонкин;FRA;671-Annam.txt;D2a;4447;1048
+672;Южная Суматра;INS;672-South Sumatra.txt;D2a;4432;1457
+673;Сулавеси;INS;673-Sulawesi.txt;D2b;4692;1457
+674;Центральная Австралия;AST;674-Central Australia.txt;D2b;4896;1751
+675;Эль-Хаджера;IRQ;675-Al Hajara.txt;C1bab;3500;895
+676;Мосул;IRQ;676-Mosul.txt;C1bab;3485;805
+677;Алеппо;SYR;677-Aleppo.txt;C1bab;3385;806
+678;Руб-эль-Хали;SAU;678-Rub al Khali.txt;C2b;3612;1048
+679;Медина;SAU;679-Hejaz.txt;C1bab;3430;996
+680;Дейр эз-Зур;SYR;680-Deir-az-Zur.txt;C1bab;3423;810
+681;Капская провинция;SAF;681-Soviet Lakes.txt;C2a;3138;1902
+682;Северное Онтарио;CAN;682-Northern Ontario.txt;B1a;1459;325
+683;Нунавут;CAN;683-Northeastern Canada.txt;A1;1278;39
+684;Каролинские острова;GPC;684-Caroline Islands.txt;D2b;5123;1281
+685;Панамский канал;USA;685-Panama Canal.txt;B2a;1558;1034
+686;Пуэрто-Рико;USA;686-Puerto Rico.txt;B1a;1774;885
+687;Британская Гвиана;ENG;687-British Guyana.txt;B2a;1885;1101
+688;Чако Бореаль;PAR;688-Chaco Boreal.txt;B2a;1873;1535
+689;Ямайка;ENG;689-Jamaica.txt;B1a;1594;883
+690;Северные Багамы;ENG;690-Bahama Islands.txt;B1a;1595;766
+691;Тринидад;ENG;691-Trinidad.txt;B1a;1852;1008
+692;Наветренные острова;ENG;692-Windward Islands.txt;B1a;1857;967
+693;Южные Багамы;ENG;693-Southern Bahamas.txt;B1a;1658;820
+694;Французская Вест-Индия;FRA;694-French Caribbean.txt;B1a;1845;922
+695;Кюрасао;HOL;695-Curacao.txt;B1a;1720;978
+696;Бермудские острова;ENG;696-Bermuda.txt;B1a;1827;635
+697;Мадейра;POR;697-Madeira.txt;B1a;2541;856
+698;Азорские острова;POR;698-Azores.txt;B1a;2385;758
+699;Рио-де-Оро;SPR;699-Rio de Oro.txt;B1a;2605;990
+700;Сьерра-Леоне;SIE;700-Sierra Leone.txt;B2b;2622;1260
+701;Гамбия;GAM;701-Gambia.txt;B2b;2567;1184
+702;Острова Зелёного мыса;POR;702-Cape Verde.txt;B2b;2425;1140
+703;Остров Вознесения;ENG;703-Ascension.txt;B2b;2568;1475
+704;Остров Святой Елены;ENG;704-Saint Helena.txt;B2b;2721;1652
+705;Сан-Томе;POR;705-Sao Tome.txt;C2a;2911;1390
+706;Реюньон;FRA;706-Reunion.txt;C2b;3670;1735
+707;Маврикий;ENG;707-Mauritius.txt;C2b;3710;1717
+708;Коморские острова;FRA;708-Comoro Islands.txt;C2b;3494;1592
+709;Сейшельские острова;ENG;709-Seychelles.txt;C2b;3684;1472
+710;Диего-Гарсия;ENG;710-Diego Garcia.txt;C2b;3970;1530
+711;Остров Рождества;ENG;711-Christmas Island.txt;D2a;4458;1566
+712;Кокосовые острова;ENG;712-Cocos Islands.txt;D2a;4308;1633
+713;Кергелен;FRA;713-Kerguelen.txt;C2b;3982;2012
+714;Хэйлунцзян;MAN;714-Heilungkiang.txt;D1ba;4768;558
+715;Ляобэй;MAN;715-Liaoning.txt;D1ba;4706;639
+716;Ляонин;MAN;716-Liaotung.txt;D1ba;4729;703
+717;Сунцзян;MAN;717-Chuho.txt;D1ba;4853;620
+718;Стэнливиль;COG;718-Stanleyville.txt;C2a;3221;1356
+719;Натал;SAF;719-Natal.txt;C2a;3253;1894
+720;Южная Георгия;ENG;720-South Georgia.txt;B2b;2235;2012
+721;Восточный Тимор;POR;721-Portuguese Timor.txt;D2b;4766;1539
+722;Петсамо;SOV;722-Petsamo.txt;C1baa;3274;86
+723;Кентербери;NZL;723-Southern Island.txt;D2b;5485;1985
+724;Южный Сиам;SIA;724-Southern Siam.txt;D2a;4363;1272
+725;Науру;GPC;725-Nauru.txt;D2b;5411;1405
+726;Самоа;GPC;726-Samoa.txt;A2;109;1617
+727;Острова Лайн;ENG;727-Line Islands.txt;A2;308;1338
+728;Гуанчжоувань;FRA;728-Guangzhouwan.txt;D2a;4530;1054
+729;Макао;POR;729-Macau.txt;D2a;4574;1035
+730;Сен-Пьер и Микелон;FRA;730-St Pierre and Miquelon .txt;B1a;1925;368
+731;Центральная Македония;GRE;731-Central Macedonia.txt;C1abb;3162;710
+732;Памир;SOV;732-Pamir.txt;C1bba;3970;700
+733;Андаманские острова;RAJ;733-Andaman.txt;D2a;4257;1218
+734;Острова Санта-Крус;ENG;734-Nendo.txt;D2b;5400;1572
+735;Савойя;FRA;735-Savoy.txt;C1aba;2908;629
+736;Литораль;AUS;736-Litorale.txt;C1aba;3021;612
+737;Бисмарк;GPC;737-New Britain.txt;D2b;5159;1474
+738;Острова Ару;INS;738-Aru Islands.txt;D2b;4884;1503
+739;Хайда-Гуаи;CAN;739-Haida Gwaii.txt;A1;743;236
+740;Остров Ванкувер;CAN;740-Vancouver Island.txt;A1;844;315
+741;Камбоджа;FRA;741-Cambodia.txt;D2a;4447;1202
+742;Душанбе;SOV;742-Stalinabad.txt;C1bbb;3915;752
+743;Циндао;GKT;743-Qingdao.txt;D1bb;4682;792
+744;Сянь;CHI;744-Xian.txt;D1ab;4496;845
+745;Далянь;JAP;745-Dalian.txt;D1bb;4707;739
+746;Ордос;MON;746-Ordos.txt;D1aa;4500;735
+747;Дали;YUN;747-Dali Bai.txt;D1ab;4362;981
+748;Цзуньи;CHI;748-Zunyi.txt;D1ab;4475;940
+749;Хуаншань;CHI;749-Huangshan.txt;D1bb;4648;903
+750;Чандэ;CHI;750-Changde.txt;D1ab;4528;912
+751;Ляншань;CHI;751-Liangshan.txt;D1ab;4404;937
+752;Ганзи;TIB;752-Chamdo.txt;D1ab;4368;891
+753;Ганьнань;XSM;753-Gannan.txt;D1ab;4407;859
+754;Голог;XSM;754-Golog.txt;D1ab;4373;809
+755;Хайси;XSM;755-Haixi.txt;D1aa;4299;770
+756;Цзюцюань;XSM;756-Jiuquan.txt;D1aa;4314;718
+757;Шигадзе;TIB;757-Shigatse.txt;C1bbb;4178;917
+758;Нгари;TIB;758-Ngari.txt;C1bbb;4086;853
+759;Куньлунь-Шань;SIK;759-Kunlun.txt;C1bba;4220;727
+760;Дабаньчэн;SIK;760-Dabancheng.txt;D1aa;4253;669
+761;Хулун-Буир;MAN;761-Hulunbuir.txt;D1ba;4686;530
+762;Катовице;GER;762-Katowice.txt;C1aab;3100;521
+763;Кёнигсберг;GER;763-Konigsberg.txt;C1aaa;3140;431
+764;Западный Банат;HUN;764-West Banat.txt;C1abb;3128;623
+765;Катар;OMA;765-Qatar.txt;C1bbb;3605;987
+766;Южная Бессарабия;SOV;766-Southern Bessarabia.txt;C1bab;3264;612
+767;Северный Дарфур;EGY;767-North Darfur.txt;C2a;3223;1100
+768;Руанда;GEA;768-Rwanda.txt;C2a;3275;1427
+769;Бурунди;GEA;769-Burundi.txt;C2a;3273;1449
+770;Малави;POR;770-Malawi.txt;C2a;3342;1608
+771;Замбия;POR;771-Zambia.txt;C2a;3279;1592
+772;Среднее Конго;FRA;772-Middle Congo.txt;C2a;3045;1408
+773;Камерун;GWA;773-Cameroon.txt;C2a;3006;1306
+774;Чад;FRA;774-Chad.txt;C2a;3087;1207
+775;Б.-Э.-Т.;FRA;775-B.E.T..txt;C2a;3105;1110
+776;Дагомея;FRA;776-Dahomey.txt;C2a;2843;1243
+777;Того;GWA;777-Togo.txt;C2a;2823;1262
+778;Верхняя Вольта;FRA;778-Upper Volta.txt;B2b;2779;1202
+779;Берег Слоновой Кости;FRA;779-Ivory Coast.txt;B2b;2721;1276
+780;Гвинея;FRA;780-Guinea.txt;B2b;2636;1230
+781;Нигер;FRA;781-Niger.txt;C2a;2846;1177
+782;Тимбукту;FRA;782-Tombouctou.txt;B2b;2772;1067
+783;Сиди-Ифни;SPR;783-Sidi Ifni.txt;B1b;2649;916
+784;Вильнюс;SOV;784-Ermland-Masuren.txt;C1aaa;3201;432
+785;Пикардия;FRA;785-Picardy.txt;C1aab;2851;538
+786;Мавританская пустыня;FRA;786-Mauritanian Desert.txt;B2b;2662;1056
+787;Северный Кашмир;RAJ;787-North Kashmir.txt;C1bbb;3979;805
+788;Саламанка;SPR;788-Salamanca.txt;B1b;2710;710
+789;Кордова;SPR;789-Cordoba.txt;B1b;2744;761
+790;Астурия;SPR;790-Asturias.txt;B1b;2722;663
+791;Вальядолид;SPR;791-Valladolid.txt;B1b;2736;690
+792;Страна Басков;SPR;792-Basque Country.txt;B1b;2765;667
+793;Гвадалахара;SPR;793-Guadalajara.txt;B1b;2768;719
+794;Восточный Арагон;SPR;794-Eastern Aragon.txt;B1b;2803;697
+795;Сантарем;POR;795-Santarem.txt;B1b;2681;742
+796;Кабинда;POR;796-North Angola.txt;C2a;3002;1477
+797;Стамбул;STR;797-Istanbul.txt;C1bab;3259;703
+798;Амасья;TUR;798-Amasya.txt;C1bab;3351;734
+799;Хатай;SYR;799-Hatay.txt;C1bab;3371;792
+800;Ван;SOV;800-Van.txt;C1bab;3478;737
+801;Мёзия;BUL;801-Moesia.txt;C1abb;3200;663
+802;Косово;ALB;802-Kosovo.txt;C1abb;3133;675
+803;Южная Сербия;SER;803-Southern Serbia.txt;C1abb;3153;672
+804;Герцеговина;CRO;804-Herzegovina.txt;C1abb;3087;661
+805;Северный Эпир;ALB;805-Northern Epirus.txt;C1abb;3124;719
+806;Атлантические Пиренеи;FRA;806-French Basque Country.txt;B1b;2791;658
+807;Гдыня;GER;807-Gdynia.txt;C1aab;3094;456
+808;Рига;SOV;808-Riga.txt;C1aaa;3194;381
+809;Земгале;SOV;809-Latgale.txt;C1aaa;3187;392
+810;Латгалия;SOV;810-Zemgale.txt;C1aaa;3229;389
+811;Сааремаа;SOV;811-Saaremaa.txt;C1aaa;3158;346
+812;Харью;SOV;812-Tallinn.txt;C1aaa;3194;330
+813;Вирумаа;SOV;813-Rakvere.txt;C1aaa;3225;336
+814;Судува;SOV;814-Suduva.txt;C1aaa;3171;434
+815;Аукштайтия;SOV;815-Aukstaitija.txt;C1aaa;3190;407
+816;Западная Виргиния;USA;816-West Virginia.txt;B1a;1547;530
+817;Гоби;MON;817-Gobi.txt;D1aa;4417;637
+818;Ховд;MON;818-Khovd.txt;D1aa;4244;567
+819;Дорнод;MON;819-Dornod.txt;D1aa;4583;578
+820;Хувсгел;MON;820-Khovsgol.txt;D1aa;4367;528
+821;Чечено-Ингушетия;SOV;821 - Chenchnya-Ingushetia.txt;C1bab;3521;670
+822;Чукотка;SOV;822 - Chukotka.txt;D1ba;5441;90
+823;Каракалпакстан;SOV;823 - Karakalpakstan.txt;C1bba;3735;650
+824;Ямал;SOV;824 - Yamalia.txt;C1bba;4028;138
+825;Ненеция;SOV;825 - Nenetsia.txt;C1bba;3665;109
+826;Абхазия;SOV;826 - Abkhazia.txt;C1bab;3453;668
+827;Кабардино-Балкария;SOV;827 - Kabardino-Balkaria.txt;C1bab;3484;666
+828;Северная Осетия;SOV;828 - North Ossetia.txt;C1bab;3502;666
+829;Карл-Маркс-Штадт;SOV;829 - Volga Germany.txt;C1baa;3525;521
+830;Бухара;SOV;830 - Bukhara.txt;C1bba;3830;738
+831;Хива;SOV;831 - Khiva.txt;C1bba;3724;678
+832;Дашогуз;SOV;832 - Dashhowuz.txt;C1bba;3737;713
+833;Марий Эл;SOV;833 - Mari El.txt;C1bba;3549;388
+834;Балта-Тирасполь;SOV;834 - Balta.txt;C1baa;3268;580
+835;Харарге;ETH;835-Haraghe.txt;C2b;3482;1268
+836;Бале;ETH;836-Bale.txt;C2b;3454;1301
+837;Сидамо;ETH;837-Sidamo.txt;C2b;3407;1315
+838;Иллубабор-Каффа;ETH;838-Illubabor.txt;C2b;3359;1280
+839;Велега;ETH;839-Welega.txt;C2b;3363;1247
+840;Годжам;ETH;840-Gojjam.txt;C2b;3377;1222
+841;Бэгемдыр;ETH;841-Begemder.txt;C2b;3387;1193
+842;Тыграй;ETH;842-Tigray.txt;C2b;3418;1174
+843;Волло;ETH;843-Wello.txt;C2b;3419;1210
+844;Джубаленд;SOM;844-jubaland.txt;C2b;3457;1377
+845;Горы Юра;SWI;845-Jura Mountains.txt;C1aba;2914;592
+846;Тичино;SWI;846-Ticino.txt;C1aba;2943;604
+847;Западные Швейцарские Альпы;SWI;847-Western Swiss Alps.txt;C1aba;2925;604
+848;Форальберг;AUS;848-Voralberg.txt;C1aba;2961;587
+849;Апулия;ITA;849-Puglia.txt;C1abb;3066;705
+850;Трентино;LBV;850-Trentino.txt;C1aba;2977;610
+851;Вар;FRA;851-Var.txt;C1aba;2904;656
+852;Истрия;AUS;852-Istria.txt;C1aba;3026;626
+853;Любляна;CRO;853-Ljubljana.txt;C1aba;3038;614
+854;Эль-Джауф;SAU;854-Jawf.txt;C1bab;3436;902
+855;Табук;SAU;855-Tabuk.txt;C1bab;3402;949
+856;Асир-Мекка;SAU;856-Asir-Makkah.txt;C2b;3462;1069
+857;Эль-Касим;SAU;857-Ha'il.txt;C1bab;3491;953
+858;Найран;SAU;858-Najiran.txt;C2b;3537;1092
+859;Даммам;SAU;859-Dammam.txt;C1bbb;3563;962
+860;Кот-Нор;CAN;860-Cote-Nord.txt;B1a;1787;277
+861;Сагеней;CAN;861-Saguenay.txt;B1a;1706;241
+862;Запад Квебека;CAN;862-ouest du quebec.txt;B1a;1610;342
+863;Морис;CAN;863-Maurice.txt;B1a;1684;331
+864;Территория Юкон;CAN;864-Yukon.txt;A1;710;49
+865;Северный Саскачеван;CAN;865-Northern Saskatchewan.txt;A1;1158;156
+866;Регионы Онтарио;CAN;866-Districts of Ontario.txt;B1a;1430;234
+867;Северная Манитоба;CAN;867-Northern Manitoba.txt;A1;1294;166
+868;Исан;SIA;868-Isan.txt;D2a;4417;1141
+869;Ланнатай;SIA;869-Lanna.txt;D2a;4358;1095
+870;Пилбара-Кимберли;AST;870-Pilbara-Kimberley.txt;D2b;4766;1675
+871;Эсперанс-Голдфилдс;AST;871-Esperence-Goldfields.txt;D2b;4754;1859
+872;Северный Квинсленд;AST;872-North Queensland.txt;D2b;5019;1654
+873;Ченнел-Кантри;AST;873-Channel Country.txt;D2b;5048;1794
+874;Магадан;SOV;874-Magadan.txt;D1ba;5243;239
+875;Чукотский полуостров;SOV;875-Chukchi Peninsulay.txt;A1;51;16
+876;Удачный;SOV;876-Udachny.txt;D1ba;4658;109
+877;Верхоянск;SOV;877-Verkhoyansk.txt;D1ba;4857;133
+878;Хатангский район;SOV;878-Khatangsky.txt;D1aa;4458;117
+879;Каргополь;SOV;879-Kargopol.txt;C1baa;3401;263
+880;Котлас;SOV;880-Kotlas.txt;C1baa;3492;261
+881;Караганда;SOV;881-Karagandy.txt;C1bba;3896;580
+882;Павлодар;SOV;882-Pavlodar.txt;C1bba;3994;481
+883;Кассала;EGY;883-Kassala.txt;C2b;3367;1083
+884;Верхний Нил;EGY;884-Upper Nile.txt;C2a;3316;1284
+885;Бахр-эль-Газаль;EGY;885-Bahr al Ghazal.txt;C2a;3256;1293
+886;Голубой Нил;EGY;886-Blue Nile.txt;C2a;3340;1184
+887;Южный Дарфур;EGY;887-South Darfur.txt;C2a;3184;1199
+888;Лусамбо;COG;888-Lusambo.txt;C2a;3171;1480
+889;Элизабетвиль;COG;889-Elisabethville.txt;C2a;3216;1545
+890;Костермансвилль;COG;890-Costermansville.txt;C2a;3243;1434
+891;Замбези;POR;891-Zambesi.txt;C2a;3122;1622
+892;Юго-Западная Ангола;POR;892-South West Angola.txt;C2a;3043;1629
+893;Карас;GSW;893-Karas.txt;C2a;3081;1823
+894;Кунене;GSW;894-Kuneme.txt;C2a;3041;1720
+895;Очосондьюпа;GSW;895-Kavango.txt;C2a;3091;1695
+896;Маника и Софала;POR;896-Manica e Sofala.txt;C2a;3329;1678
+897;Замбезия-Мозамбик;POR;897-Zambezia-Mocambique.txt;C2b;3396;1628
+898;Гао;FRA;898-Gao.txt;B2b;2784;1136
+899;Кей-Куликоро;FRA;899-Kayes-Koulikoro.txt;B2b;2673;1169
+900;Бенуэ;GWA;900-Benue.txt;C2a;2949;1287
+901;Борно;GWA;901-Borno.txt;C2a;2991;1220
+902;Сокото;GWA;902-Sokoto.txt;C2a;2919;1222
+903;Гарисса;ENG;903-Garissa.txt;C2b;3432;1380
+904;Ньянза-Рифтовая долина;ENG;904-Nyanza-Rift Valley.txt;C2a;3357;1375
+905;Момбаса;ENG;905-Mombasa.txt;C2b;3408;1434
+906;Сокотра;ENG;906-Socotra.txt;C2b;3644;1198
+907;Каир;EGY;907-Cairo.txt;C1bab;3285;913
+908;Афар;ETH;908-Afar.txt;C2b;3446;1200
+909;Шлезвиг;GER;909-South Schleswig.txt;C1aaa;2950;435
+910;Борнхольм;DEN;910-Bornholm.txt;C1aaa;3038;422
+911;Фюн;DEN;911-Fyn.txt;C1aaa;2969;420
+912;Южная Ютландия;GER;912-Sonderjylland.txt;C1aaa;2950;421
+913;Эстергётланд;SWE;913-Ostergotland.txt;C1aaa;3048;354
+914;Ян-Майен;NOR;914-JanMayen.txt;B1b;2665;14
+915;Бохуслен;SWE;915-Bohuslan.txt;C1aaa;2987;349
+916;Даларна;SWE;916-Dalarna.txt;C1aaa;3023;282
+917;Емтланд;SWE;917-Jamtland.txt;C1aaa;3027;229
+918;Вестерботтен;SWE;918-Vasterbotten.txt;C1aaa;3086;185
+919;Вермланд;SWE;919-Varmland.txt;C1aaa;3009;318
+920;Оппландене;NOR;920-Opplandene.txt;C1aaa;2970;278
+921;Телемарк;NOR;921-Telemark.txt;C1aaa;2942;315
+922;Агдер;NOR;922-Agder.txt;C1aaa;2927;340
+923;Хельгеланн;NOR;923-Helgeland.txt;C1aaa;3020;166
+924;Тромс;NOR;924-Troms.txt;C1aaa;3118;75
+925;Финнмарк;NOR;925-Finnmark.txt;C1aaa;3211;58
+926;Турку;FIN;926-Turku.txt;C1aaa;3155;286
+927;Хяме;FIN;927-Hame.txt;C1aaa;3186;278
+928;Кюми;FIN;928-Kyme.txt;C1aaa;3245;285
+929;Оулу;FIN;929-Oulu.txt;C1aaa;3235;194
+930;Миккели;FIN;930-Mikkeli.txt;C1aaa;3231;270
+931;Камбрия;ENG;931-Cumbria.txt;B1b;2752;420
+932;Остров Мэн;ENG;932-Isle of Man.txt;B1b;2725;429
+933;Шетландские острова;ENG;933-Shetland.txt;B1b;2777;290
+934;Шкодра;ALB;934-Shkoder.txt;C1abb;3118;687
+935;Сеара;BRA;935 - Ceara.txt;B2b;2184;1250
+936;Пернамбуку;BRA;936 - Pernambuco.txt;B2b;2218;1303
+937;Пиауи;BRA;937 - Piaui.txt;B2b;2131;1298
+938;Пара;BRA;938 - Para.txt;B2b;2019;1249
+939;Амапа;BRA;939 - Amapa.txt;B2b;2002;1161
+940;Акри;BRA;940 - Acre.txt;B2a;1706;1326
+941;Токантинс;BRA;941 - Tocantins.txt;B2b;2053;1351
+942;Гуапоре;BRA;942 - Rondonia.txt;B2a;1824;1352
+943;Эспириту-Санту;BRA;943 - Espirito Santo.txt;B2b;2171;1491
+944;Парана;BRA;944 - Parana.txt;B2b;2004;1581
+945;Серро-Ларго;URG;945 - Cerro Largo.txt;B2b;1951;1726
+946;Пайсанду;URG;946 - Paysandu.txt;B2b;1921;1703
+947;Такна-Мокегуа;PRU;947 - Tacna.txt;B2a;1703;1456
+948;Остров Пасхи;CHL;948 - Easter Island.txt;A2;1392;1702
+949;Айсен;ARG;949 - Aysen.txt;B2a;1696;1912
+950;Араукания;CHL;950 - Araucania.txt;B2a;1695;1828
+951;Арика-и-Тарапака;CHL;951 - Arica.txt;B2a;1722;1498
+952;Атакама;CHL;952 - Atacama.txt;B2a;1715;1630
+953;Огненная Земля;ARG;953 - Tierra del Fuego.txt;B2a;1763;2011
+954;Санта-Крус;ARG;954 - Santa Cruz.txt;B2a;1736;1942
+955;Чубут;ARG;955 - Chubut.txt;B2a;1751;1882
+956;Санта-Фе;ARG;956 - Santa Fe.txt;B2a;1837;1700
+957;Формоса;ARG;957 - Formosa.txt;B2a;1854;1573
+958;Сан-Луис-и-Ла-Пампа;ARG;958 - San Luis.txt;B2a;1780;1721
+959;Лос-Андес;ARG;959 - Los Andes.txt;B2a;1780;1567
+960;Сан-Хуан-и-Ла-Риоха;ARG;960 - San Juan.txt;B2a;1751;1646
+961;Амазония;BRA;961-Deep Amazonas.txt;B2a;1788;1204
+962;Амазония;BRA;962-Deep Amazonas.txt;B2a;1852;1254
+963;Амазония;BRA;963-Deep Amazonas.txt;B2a;1794;1308
+964;Амазония;BRA;964-Deep Amazonas.txt;B2a;1731;1273
+965;Амазония;BRA;965-Deep Amazonas.txt;B2a;1874;1314
+966;Амазония;BRA;966-Deep Amazonas.txt;B2b;1952;1291
+967;Амазония;BRA;967-Deep Amazonas.txt;B2a;1820;1150
+968;Амазония;BRA;968-Deep Amazonas.txt;B2b;1922;1175
+969;Риу-Бранку;BRA;969-Rio Branco.txt;B2a;1854;1125
+970;Дебар;ALB;970 - Western Macedonia.txt;C1abb;3132;695
+971;Северная Добруджа;ROM;971 - Northern Dobruja.txt;C1abb;3252;635
+972;Южные Судеты;AUS;972 - South Sudetenland.txt;C1aab;3039;549
+973;Бач-Кишкун;HUN;973 - Bacs.txt;C1abb;3109;601
+974;Южная Трансданубия;HUN;974 - South Transdanubia.txt;C1abb;3088;604
+975;Бургенланд;AUS;975 - Burgenland.txt;C1abb;3064;578
+976;Штайермарк-Кернтен;AUS;976 - Steiermark Karnten.txt;C1aba;3037;589
+977;Антверпен;BEL;977 - Antwerp.txt;C1aab;2882;506
+978;Баден;GER;978 - Actual Baden.txt;C1aba;2936;564
+979;Новая Гвинея;GPC;979 - Kaiser Wilhelms Land.txt;D2b;5059;1473
+980;Арденны;BEL;980 - Ardennes.txt;C1aab;2892;526
+981;Баротселенд;POR;981 - Barotseland.txt;C2a;3197;1633
+982;Мадрасские государства;RAJ;982 - Madras States.txt;C2b;4016;1249
+983;Кохлапур и Декан;RAJ;983 - Deccan States.txt;C2b;3983;1140
+984;Бастар;RAJ;984 - Bastar.txt;C2b;4076;1074
+985;Сикким;RAJ;985 - Sikkim.txt;C1bbb;4187;949
+986;Восточный Пенджаб;RAJ;986 - East Punjab.txt;C1bbb;4009;888
+987;Вазиристан;RAJ;987 - Waziristan.txt;C1bbb;3907;871
+988;Северный Белуджистан;RAJ;988-Baluchistan.txt;C1bbb;3829;911
+989;Бахавалпур;RAJ;989-Bahawalpur.txt;C1bbb;3937;933
+990;Манипур;RAJ;990-Manipur.txt;D1ab;4280;966
+991;Гвалиор;RAJ;991-Gwalior.txt;C1bbb;4027;980
+992;Провинция Аден;YEM;992-Province of Aden.txt;C2b;3513;1183
+993;Чёнгтун и Яунгве;BRM;993-Kentung and Yawnghwe.txt;D2a;4359;1054
+994;Тенассерим;BRM;994-Tenasserim.txt;D2a;4336;1152
+995;Пегу;BRM;995-Pegu.txt;D2a;4304;1103
+996;Иравади;BRM;996-Irrawaddy.txt;D2a;4292;1126
+997;Аракан;BRM;997-Arakan.txt;D2a;4272;1076
+998;Сикайн;BRM;998-Sagaing.txt;D1ab;4312;985
+999;Федеративные Шанские Государства;BRM;999-Federated Shan States.txt;D2a;4333;1046
+1000;Восточный Азербайджан;PER;1000-East Azerbaijan.txt;C1bbb;3535;761
+1001;Курдистан;PER;1001-Kurdistan.txt;C1bbb;3536;813
+1002;Йезд;PER;1002-Yazd.txt;C1bbb;3658;871
+1003;Южный Хорасан;PER;1003-South Khorasan.txt;C1bbb;3725;859
+1004;Северный Хорасан;PER;1004-North Khorasan.txt;C1bbb;3704;774
+1005;Катаган;AFG;1005-Qataghan.txt;C1bbb;3914;787
+1006;Хайберский проход;AFG;1006-Khyber Pass.txt;C1bbb;3893;840
+1007;Меймене;AFG;1007-Maymanah.txt;C1bbb;3831;798
+1008;Кандагар;AFG;1008-Qandahar.txt;C1bbb;3840;877
+1009;Фарах;AFG;1009-Farah.txt;C1bbb;3786;877
+1010;Анбар;IRQ;1010-Al Anbar.txt;C1bab;3444;854
+1011;Басра;IRQ;1011-Al Basrah.txt;C1bbb;3532;881
+1012;Калат;RAJ;1012-Kalat.txt;C1bbb;3849;944
+1013;Мусандам;OMA;1013 -Musamdam.txt;C1bbb;3684;974
+1014;Бахрейн;OMA;1014 - Bahrain.txt;C1bbb;3595;973
+1015;Оман;OMA;1015 - Interior Oman.txt;C2b;3682;1056
+1016;Дофар;OMA;1016 - Dhofar.txt;C2b;3644;1105
+1017;Дананг;FRA;1017 - Trung Bo.txt;D2a;4457;1101
+1018;Минами-Кюсю;JAP;1018 - South Kyushu.txt;D1bb;4849;875
+1019;Минами-Тохоку;JAP;1019 - South Tohoku.txt;D1bb;4996;764
+1020;Санъин;JAP;1020 - Sanin.txt;D1bb;4882;814
+1021;Сингапур;ENG;1021 - Actual Singapore.txt;D2a;4425;1380
+1022;Внутреннее Борнео;INS;1022 - Interior Borneo.txt;D2a;4579;1395
+1023;Бруней;ENG;1023 - Brunei.txt;D2a;4596;1330
+1024;Сабах;ENG;1024 - Sabah.txt;D2a;4634;1316
+1025;Замбоанга;PHI;1025 - Zamboanga.txt;D2b;4721;1279
+1026;Северный Минданао;PHI;1026 - North Mindanao.txt;D2b;4760;1267
+1027;Батаан;PHI;1027 - Bataan.txt;D2b;4687;1145
+1028;Хамгёндо;JAP;1028 - Hamgyong.txt;D1ba;4806;708
+1029;Канвондо;JAP;1029 - Gangwon.txt;D1bb;4810;767
+1030;Кёнсандо;JAP;1030 - Gyeongsang.txt;D1bb;4813;803
+1031;Чхунчхондо-Чолладо;JAP;1031 - Chungcheong Jeolla.txt;D1bb;4790;803
+1032;Яньань;CHI;1032 - Yanan.txt;D1ab;4502;812
+1033;Наньлу;GXC;1033 - Fangchenggang.txt;D2a;4512;1046
+1034;Сучжоу;CHI;1034 - Suzhou.txt;D1bb;4683;871
+1035;Нанкин;CHI;1035 - Nanjing.txt;D1bb;4658;869
+1036;Ухань;CHI;1036 - Wuhan.txt;D1ab;4587;898
+1037;Чунцин;CHI;1037 - Chongqing.txt;D1ab;4453;921
+1038;Цзинань;CHI;1038 - Jinan.txt;D1bb;4631;792
+1039;Хэбэй-Чахар;CHI;1039 - Hebei-Chahar.txt;D1aa;4602;716
+1040;Алша;MON;1040 - Alxa.txt;D1aa;4385;702
+1041;Чэнду;CHI;1041 - Chengdu.txt;D1ab;4437;894
+1042;Хотан;SIK;1042 - Khotan.txt;C1bbb;4121;779
+1043;Байлинмяо;MON;1043 - Pailingmiao.txt;D1aa;4546;683
+1044;Увэй;XSM;1044 - Wuwei.txt;D1aa;4402;760
+1045;Гуюань;XSM;1045 - Guyuan.txt;D1ab;4463;787
+1046;Юйлинь;CHI;1046 - Yulin.txt;D1aa;4523;757
+1047;Банка-Белитунг;INS;1047-Bangka-Belitung.txt;D2a;4469;1436
+1048;Паданг;INS;1048-Padang.txt;D2a;4372;1402
+1049;Медан и Риау;INS;1049-Medan and Riouw.txt;D2a;4393;1390
+1050;Ачех;INS;1050-Ajteh.txt;D2a;4318;1333
+1051;Восточная Ява;INS;1051-East Java.txt;D2a;4552;1518
+1052;Бали;INS;1052-Bali.txt;D2a;4603;1530
+1053;Восточная Нуса-Тенгара;INS;1053-East Nusa Tenggara.txt;D2b;4716;1531
+1054;Голландский Тимор;INS;1054-Dutch Timor.txt;D2b;4744;1555
+1055;Восточный Калимантан;INS;1055-Eastern Kalimantan.txt;D2a;4619;1403
+1056;Манадо;INS;1056-Manado.txt;D2b;4705;1405
+1057;Голландское Папуа;INS;1057-Dutch Southern New Guinea.txt;D2b;4981;1495
+1058;Батавия;INS;1058-Batavia.txt;D2a;4478;1499
+1059;Лимбанг;ENG;1059 - Limbang.txt;D2a;4603;1337
+1060;Джохор;ENG;1060 - Johor.txt;D2a;4417;1369
+1061;Перлис-Кедах;ENG;1061 - Perlis Kedah.txt;D2a;4377;1307
+1062;Келантан-Тренгану;ENG;1062 - Kelantan.txt;D2a;4406;1321
+1063;Паханг;ENG;1063 - Pahang.txt;D2a;4411;1348
+1064;Перак;ENG;1064 - Perak.txt;D2a;4387;1328
+1065;Пинанг;ENG;1065 - Penang.txt;D2a;4375;1317
+1066;Кохинхина;FRA;1066 - Mekong Delta.txt;D2a;4462;1234
+1067;Баттамбанг;FRA;1067 - Battambang.txt;D2a;4428;1180
+1068;Бассак;FRA;1068 - Bassac.txt;D2a;4468;1155
+1069;Ланчанг;FRA;1069 - Lan Chang.txt;D2a;4387;1093
+1070;Бугенвиль;GPC;1070 - Bougainville.txt;D2b;5226;1496
+1071;Вануату;FRA;1071 - Vanuatu.txt;D2b;5423;1658
+1072;Американское Самоа;USA;1072 - American Samoa.txt;A2;140;1625
+1073;Внутреннее Папуа;AST;1073 - Interior Papua.txt;D2b;5044;1494
+1074;Пустыня Гибсона;AST;1074 - Gibson Desert.txt;D2b;4776;1763
+1075;Западный Квинсленд;AST;1075 - West Queensland.txt;D2b;4989;1768
+1076;Государство Бангкок;SIA;1076 - Bangkok.txt;D2a;4377;1176
+1077;Центральный Сиам;SIA;1077 - Central Siam.txt;D2a;4374;1136
+1078;Восточный Сиам;SIA;1078 - Eastern Siam.txt;D2a;4396;1186
+1079;Окленд;NZL;1079-Auckland.txt;D2b;5567;1867
+1080;Марлборо;NZL;1080 - Marlborough.txt;D2b;5518;1947
+1081;Отаго;NZL;1081 - Otago.txt;D2b;5454;2014

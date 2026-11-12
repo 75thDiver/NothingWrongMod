@@ -9,7 +9,7 @@ nw25_fra_politics = {
 nw25_sri_politics = {
 	icon = generic_political_actions
 	visible = {
-		tag = SRI
+		tag = ITA
 		has_country_flag = nw25_sri_initialized
 	}
 }

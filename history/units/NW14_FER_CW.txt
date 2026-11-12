@@ -1,0 +1,34 @@
+division_template = {
+	name = "NW14 Territorial Guard"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	priority = 1
+}
+units = {
+	division = { name = "Дальневосточная дивизия 1" location = 664 division_template = "NW14 Territorial Guard" start_experience_factor = 0.1 start_equipment_factor = 0.7 }
+	division = { name = "Дальневосточная дивизия 2" location = 664 division_template = "NW14 Territorial Guard" start_experience_factor = 0.1 start_equipment_factor = 0.7 }
+	division = { name = "Дальневосточная дивизия 3" location = 664 division_template = "NW14 Territorial Guard" start_experience_factor = 0.1 start_equipment_factor = 0.7 }
+	division = { name = "Дальневосточная дивизия 4" location = 664 division_template = "NW14 Territorial Guard" start_experience_factor = 0.1 start_equipment_factor = 0.7 }
+	division = { name = "Дальневосточная дивизия 5" location = 664 division_template = "NW14 Territorial Guard" start_experience_factor = 0.1 start_equipment_factor = 0.7 }
+	division = { name = "Дальневосточная дивизия 6" location = 664 division_template = "NW14 Territorial Guard" start_experience_factor = 0.1 start_equipment_factor = 0.7 }
+	division = { name = "Дальневосточная дивизия 7" location = 664 division_template = "NW14 Territorial Guard" start_experience_factor = 0.1 start_equipment_factor = 0.7 }
+	division = { name = "Дальневосточная дивизия 8" location = 664 division_template = "NW14 Territorial Guard" start_experience_factor = 0.1 start_equipment_factor = 0.7 }
+	division = { name = "Дальневосточная дивизия 9" location = 664 division_template = "NW14 Territorial Guard" start_experience_factor = 0.1 start_equipment_factor = 0.7 }
+	division = { name = "Дальневосточная дивизия 10" location = 664 division_template = "NW14 Territorial Guard" start_experience_factor = 0.1 start_equipment_factor = 0.7 }
+	division = { name = "Дальневосточная дивизия 11" location = 664 division_template = "NW14 Territorial Guard" start_experience_factor = 0.1 start_equipment_factor = 0.7 }
+	division = { name = "Дальневосточная дивизия 12" location = 664 division_template = "NW14 Territorial Guard" start_experience_factor = 0.1 start_equipment_factor = 0.7 }
+	division = { name = "Дальневосточная дивизия 13" location = 664 division_template = "NW14 Territorial Guard" start_experience_factor = 0.1 start_equipment_factor = 0.7 }
+	division = { name = "Дальневосточная дивизия 14" location = 664 division_template = "NW14 Territorial Guard" start_experience_factor = 0.1 start_equipment_factor = 0.7 }
+	division = { name = "Дальневосточная дивизия 15" location = 664 division_template = "NW14 Territorial Guard" start_experience_factor = 0.1 start_equipment_factor = 0.7 }
+	division = { name = "Дальневосточная дивизия 16" location = 664 division_template = "NW14 Territorial Guard" start_experience_factor = 0.1 start_equipment_factor = 0.7 }
+	division = { name = "Дальневосточная дивизия 17" location = 664 division_template = "NW14 Territorial Guard" start_experience_factor = 0.1 start_equipment_factor = 0.7 }
+	division = { name = "Дальневосточная дивизия 18" location = 664 division_template = "NW14 Territorial Guard" start_experience_factor = 0.1 start_equipment_factor = 0.7 }
+	division = { name = "Дальневосточная дивизия 19" location = 664 division_template = "NW14 Territorial Guard" start_experience_factor = 0.1 start_equipment_factor = 0.7 }
+	division = { name = "Дальневосточная дивизия 20" location = 664 division_template = "NW14 Territorial Guard" start_experience_factor = 0.1 start_equipment_factor = 0.7 }
+}

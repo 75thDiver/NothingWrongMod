@@ -53,8 +53,8 @@ SPR = {
 	color_ui = rgb { 255 255 122 }
 }
 ITA = {
-	color = rgb { 67 127 63 }
-	color_ui = rgb { 87 165 82 }
+	color = rgb { 180 30 30 }
+	color_ui = rgb { 251 42 42 }
 }
 ROM = {
 	color = rgb { 215 196 72 }
@@ -755,8 +755,8 @@ BYA = {
 	color_ui = rgb { 0 45 179 }
 }
 FER = {
-	color = rgb { 179 45 0 }
-	color_ui = rgb { 128 32 0 }
+	color = rgb { 75 157 152 }
+	color_ui = rgb { 75 157 152 }
 }
 CKK = {
 	color = rgb { 179 179 0 }
@@ -1081,12 +1081,12 @@ RAA = {
 	color_ui = rgb { 122 145 93 }
 }
 DON = {
-	color = rgb { 255 170 0 }
-	color_ui = rgb { 179 119 0 }
+	color = rgb { 167 140 89 }
+	color_ui = rgb { 167 140 89 }
 }
 KUB = {
-	color = rgb { 102 102 153 }
-	color_ui = rgb { 61 61 92 }
+	color = rgb { 179 159 107 }
+	color_ui = rgb { 179 159 107 }
 }
 DIP = {
 	color = rgb { 125 41 49 }
@@ -1269,8 +1269,13 @@ GEA = { color = rgb { 133 147 111 } }
 GPC = { color = rgb { 114 147 153 } }
 
 GKT = { color = rgb { 137 143 164 } }
-# NW14 CIVIL WAR COLOURS
+# NW14 CIVIL WAR COLOURS — aligned with the approved overview.
 GPL = { color = rgb { 175 78 87 } color_ui = rgb { 175 78 87 } }
-RSB = { color = rgb { 96 142 133 } color_ui = rgb { 96 142 133 } }
+RSB = { color = rgb { 200 176 122 } color_ui = rgb { 200 176 122 } }
 RDN = { color = rgb { 96 113 157 } color_ui = rgb { 96 113 157 } }
-RUK = { color = rgb { 201 173 80 } color_ui = rgb { 201 173 80 } }
+RUK = { color = rgb { 76 169 173 } color_ui = rgb { 76 169 173 } }
+DNR = { color = rgb { 69 126 163 } color_ui = rgb { 69 126 163 } }
+AKV = { color = rgb { 138 139 85 } color_ui = rgb { 138 139 85 } }
+KIR = { color = rgb { 112 183 167 } color_ui = rgb { 112 183 167 } }
+ALA = { color = rgb { 186 125 155 } color_ui = rgb { 186 125 155 } }
+TRK = { color = rgb { 209 146 121 } color_ui = rgb { 209 146 121 } }

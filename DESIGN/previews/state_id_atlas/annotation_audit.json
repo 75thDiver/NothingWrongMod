@@ -1,0 +1,206 @@
+﻿{
+    "source_active_state_count":  1081,
+    "mapped_state_count":  1081,
+    "page_count":  22,
+    "pages":  [
+                  {
+                      "page":  "A1",
+                      "expected_labels":  52,
+                      "placed_labels":  52,
+                      "displaced_labels":  7,
+                      "unplaced_labels":  0,
+                      "max_displacement_px":  19,
+                      "output":  "C:\\Users\\Diver\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\NothingWrongMod\\DESIGN\\previews\\state_id_atlas\\maps\\A1.png"
+                  },
+                  {
+                      "page":  "A2",
+                      "expected_labels":  10,
+                      "placed_labels":  10,
+                      "displaced_labels":  1,
+                      "unplaced_labels":  0,
+                      "max_displacement_px":  38,
+                      "output":  "C:\\Users\\Diver\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\NothingWrongMod\\DESIGN\\previews\\state_id_atlas\\maps\\A2.png"
+                  },
+                  {
+                      "page":  "B1a",
+                      "expected_labels":  58,
+                      "placed_labels":  58,
+                      "displaced_labels":  22,
+                      "unplaced_labels":  0,
+                      "max_displacement_px":  42.5,
+                      "output":  "C:\\Users\\Diver\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\NothingWrongMod\\DESIGN\\previews\\state_id_atlas\\maps\\B1a.png"
+                  },
+                  {
+                      "page":  "B1b",
+                      "expected_labels":  59,
+                      "placed_labels":  59,
+                      "displaced_labels":  54,
+                      "unplaced_labels":  0,
+                      "max_displacement_px":  289.4,
+                      "output":  "C:\\Users\\Diver\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\NothingWrongMod\\DESIGN\\previews\\state_id_atlas\\maps\\B1b.png"
+                  },
+                  {
+                      "page":  "B2a",
+                      "expected_labels":  48,
+                      "placed_labels":  48,
+                      "displaced_labels":  13,
+                      "unplaced_labels":  0,
+                      "max_displacement_px":  57,
+                      "output":  "C:\\Users\\Diver\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\NothingWrongMod\\DESIGN\\previews\\state_id_atlas\\maps\\B2a.png"
+                  },
+                  {
+                      "page":  "B2b",
+                      "expected_labels":  48,
+                      "placed_labels":  48,
+                      "displaced_labels":  11,
+                      "unplaced_labels":  0,
+                      "max_displacement_px":  38,
+                      "output":  "C:\\Users\\Diver\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\NothingWrongMod\\DESIGN\\previews\\state_id_atlas\\maps\\B2b.png"
+                  },
+                  {
+                      "page":  "C1aaa",
+                      "expected_labels":  57,
+                      "placed_labels":  57,
+                      "displaced_labels":  14,
+                      "unplaced_labels":  0,
+                      "max_displacement_px":  19,
+                      "output":  "C:\\Users\\Diver\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\NothingWrongMod\\DESIGN\\previews\\state_id_atlas\\maps\\C1aaa.png"
+                  },
+                  {
+                      "page":  "C1aab",
+                      "expected_labels":  58,
+                      "placed_labels":  58,
+                      "displaced_labels":  3,
+                      "unplaced_labels":  0,
+                      "max_displacement_px":  19,
+                      "output":  "C:\\Users\\Diver\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\NothingWrongMod\\DESIGN\\previews\\state_id_atlas\\maps\\C1aab.png"
+                  },
+                  {
+                      "page":  "C1aba",
+                      "expected_labels":  58,
+                      "placed_labels":  58,
+                      "displaced_labels":  26,
+                      "unplaced_labels":  0,
+                      "max_displacement_px":  60.1,
+                      "output":  "C:\\Users\\Diver\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\NothingWrongMod\\DESIGN\\previews\\state_id_atlas\\maps\\C1aba.png"
+                  },
+                  {
+                      "page":  "C1abb",
+                      "expected_labels":  58,
+                      "placed_labels":  58,
+                      "displaced_labels":  21,
+                      "unplaced_labels":  0,
+                      "max_displacement_px":  107.5,
+                      "output":  "C:\\Users\\Diver\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\NothingWrongMod\\DESIGN\\previews\\state_id_atlas\\maps\\C1abb.png"
+                  },
+                  {
+                      "page":  "C1baa",
+                      "expected_labels":  58,
+                      "placed_labels":  58,
+                      "displaced_labels":  4,
+                      "unplaced_labels":  0,
+                      "max_displacement_px":  19,
+                      "output":  "C:\\Users\\Diver\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\NothingWrongMod\\DESIGN\\previews\\state_id_atlas\\maps\\C1baa.png"
+                  },
+                  {
+                      "page":  "C1bab",
+                      "expected_labels":  58,
+                      "placed_labels":  58,
+                      "displaced_labels":  6,
+                      "unplaced_labels":  0,
+                      "max_displacement_px":  38,
+                      "output":  "C:\\Users\\Diver\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\NothingWrongMod\\DESIGN\\previews\\state_id_atlas\\maps\\C1bab.png"
+                  },
+                  {
+                      "page":  "C1bba",
+                      "expected_labels":  58,
+                      "placed_labels":  58,
+                      "displaced_labels":  0,
+                      "unplaced_labels":  0,
+                      "max_displacement_px":  0,
+                      "output":  "C:\\Users\\Diver\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\NothingWrongMod\\DESIGN\\previews\\state_id_atlas\\maps\\C1bba.png"
+                  },
+                  {
+                      "page":  "C1bbb",
+                      "expected_labels":  58,
+                      "placed_labels":  58,
+                      "displaced_labels":  0,
+                      "unplaced_labels":  0,
+                      "max_displacement_px":  0,
+                      "output":  "C:\\Users\\Diver\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\NothingWrongMod\\DESIGN\\previews\\state_id_atlas\\maps\\C1bbb.png"
+                  },
+                  {
+                      "page":  "C2a",
+                      "expected_labels":  52,
+                      "placed_labels":  52,
+                      "displaced_labels":  7,
+                      "unplaced_labels":  0,
+                      "max_displacement_px":  42.5,
+                      "output":  "C:\\Users\\Diver\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\NothingWrongMod\\DESIGN\\previews\\state_id_atlas\\maps\\C2a.png"
+                  },
+                  {
+                      "page":  "C2b",
+                      "expected_labels":  53,
+                      "placed_labels":  53,
+                      "displaced_labels":  30,
+                      "unplaced_labels":  0,
+                      "max_displacement_px":  107.5,
+                      "output":  "C:\\Users\\Diver\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\NothingWrongMod\\DESIGN\\previews\\state_id_atlas\\maps\\C2b.png"
+                  },
+                  {
+                      "page":  "D1aa",
+                      "expected_labels":  30,
+                      "placed_labels":  30,
+                      "displaced_labels":  5,
+                      "unplaced_labels":  0,
+                      "max_displacement_px":  68.5,
+                      "output":  "C:\\Users\\Diver\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\NothingWrongMod\\DESIGN\\previews\\state_id_atlas\\maps\\D1aa.png"
+                  },
+                  {
+                      "page":  "D1ab",
+                      "expected_labels":  31,
+                      "placed_labels":  31,
+                      "displaced_labels":  0,
+                      "unplaced_labels":  0,
+                      "max_displacement_px":  0,
+                      "output":  "C:\\Users\\Diver\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\NothingWrongMod\\DESIGN\\previews\\state_id_atlas\\maps\\D1ab.png"
+                  },
+                  {
+                      "page":  "D1ba",
+                      "expected_labels":  31,
+                      "placed_labels":  31,
+                      "displaced_labels":  1,
+                      "unplaced_labels":  0,
+                      "max_displacement_px":  19,
+                      "output":  "C:\\Users\\Diver\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\NothingWrongMod\\DESIGN\\previews\\state_id_atlas\\maps\\D1ba.png"
+                  },
+                  {
+                      "page":  "D1bb",
+                      "expected_labels":  31,
+                      "placed_labels":  31,
+                      "displaced_labels":  10,
+                      "unplaced_labels":  0,
+                      "max_displacement_px":  38,
+                      "output":  "C:\\Users\\Diver\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\NothingWrongMod\\DESIGN\\previews\\state_id_atlas\\maps\\D1bb.png"
+                  },
+                  {
+                      "page":  "D2a",
+                      "expected_labels":  57,
+                      "placed_labels":  57,
+                      "displaced_labels":  47,
+                      "unplaced_labels":  0,
+                      "max_displacement_px":  163.4,
+                      "output":  "C:\\Users\\Diver\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\NothingWrongMod\\DESIGN\\previews\\state_id_atlas\\maps\\D2a.png"
+                  },
+                  {
+                      "page":  "D2b",
+                      "expected_labels":  58,
+                      "placed_labels":  58,
+                      "displaced_labels":  14,
+                      "unplaced_labels":  0,
+                      "max_displacement_px":  42.5,
+                      "output":  "C:\\Users\\Diver\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\NothingWrongMod\\DESIGN\\previews\\state_id_atlas\\maps\\D2b.png"
+                  }
+              ],
+    "all_labels_placed":  true
+}
