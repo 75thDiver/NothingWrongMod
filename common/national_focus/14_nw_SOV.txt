@@ -1,4 +1,5 @@
 focus_tree = {
+	shared_focus = NW14_joint_cooperation
 	# Pixel coordinates; keep palette below the full regular tree.
 	continuous_focus_position = { x = 50 y = 3430 }
 	id = NW14_SOV_tree

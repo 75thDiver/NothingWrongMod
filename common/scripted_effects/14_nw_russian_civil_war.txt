@@ -114,7 +114,10 @@ nw14_rus_civil_war_start = {
 			save_global_event_target_as = nw14_rus_royal
 		}
 
+		add_ideas = nw14_republic_self_organisation
+
 		event_target:nw14_rus_royal = {
+			add_ideas = nw14_crown_loyalty
 			set_capital = { state = 239 }
 			set_cosmetic_tag = NW_RUS_CROWN
 			set_politics = { ruling_party = neutrality elections_allowed = no }
@@ -293,6 +296,7 @@ nw14_rus_civil_war_start = {
 		# Temporary country governments are used only where no approved leader was supplied.
 		AFS = {
 			set_capital = { state = 137 }
+			add_ideas = nw14_volunteer_officers
 			set_politics = { ruling_party = neutrality elections_allowed = no }
 			set_popularities = { neutrality = 100 }
 			set_party_name = { ideology = neutrality name = nw14_cw_afs_party long_name = nw14_cw_afs_party_long }
@@ -311,6 +315,7 @@ nw14_rus_civil_war_start = {
 		}
 		RSB = {
 			set_capital = { state = 570 }
+			add_ideas = nw14_state_military_administration
 			set_politics = { ruling_party = neutrality elections_allowed = no }
 			set_popularities = { neutrality = 100 }
 			set_party_name = { ideology = neutrality name = nw14_cw_rsb_party long_name = nw14_cw_rsb_party_long }
@@ -330,6 +335,7 @@ nw14_rus_civil_war_start = {
 		}
 		DON = {
 			set_capital = { state = 218 }
+			add_ideas = { nw14_cossack_spirit nw14_cossack_disunity }
 			set_politics = { ruling_party = neutrality elections_allowed = no }
 			set_popularities = { neutrality = 100 }
 			set_party_name = { ideology = neutrality name = nw14_cw_don_party long_name = nw14_cw_don_party_long }
@@ -345,6 +351,7 @@ nw14_rus_civil_war_start = {
 		}
 		KUB = {
 			set_capital = { state = 234 }
+			add_ideas = { nw14_cossack_spirit nw14_cossack_disunity }
 			set_politics = { ruling_party = neutrality elections_allowed = no }
 			set_popularities = { neutrality = 100 }
 			set_party_name = { ideology = neutrality name = nw14_cw_kub_party long_name = nw14_cw_kub_party_long }
@@ -521,6 +528,7 @@ nw14_rus_civil_war_start = {
 			limit = { AKV = { exists = yes } }
 			AKV = {
 				if = { limit = { owns_state = 236 } set_capital = { state = 236 } }
+				add_ideas = { nw14_cossack_spirit nw14_cossack_disunity }
 				if = { limit = { NOT = { owns_state = 236 } owns_state = 237 } set_capital = { state = 237 } }
 				if = { limit = { NOT = { owns_state = 236 } NOT = { owns_state = 237 } owns_state = 217 } set_capital = { state = 217 } }
 				set_politics = { ruling_party = neutrality elections_allowed = no }
@@ -644,6 +652,13 @@ nw14_rus_civil_war_start = {
 			}
 			add_to_faction = AFS
 		}
+
+		# Grant the shared idea to countries that actually entered the White faction.
+		event_target:nw14_rus_royal = { nw14_sync_white_faction_spirit = yes }
+		AFS = { nw14_sync_white_faction_spirit = yes }
+		DON = { nw14_sync_white_faction_spirit = yes }
+		KUB = { nw14_sync_white_faction_spirit = yes }
+		if = { limit = { AKV = { exists = yes } } AKV = { nw14_sync_white_faction_spirit = yes } }
 
 		# DON and KUB are AFS puppets; AKV is a DON puppet. Keep the subject chain
 		# intact so they inherit the White faction through their overlords.

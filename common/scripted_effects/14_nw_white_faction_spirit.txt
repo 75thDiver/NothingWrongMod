@@ -1,0 +1,11 @@
+# Country scope. The stored royal leader identifies the White faction.
+nw14_sync_white_faction_spirit = {
+ if = {
+  limit = {
+   event_target:nw14_rus_royal = { exists = yes is_in_faction = yes }
+   OR = { tag = event_target:nw14_rus_royal is_in_faction_with = event_target:nw14_rus_royal }
+  }
+  if = { limit = { NOT = { has_idea = nw14_white_one_indivisible } } add_ideas = nw14_white_one_indivisible }
+ }
+ else = { if = { limit = { has_idea = nw14_white_one_indivisible } } remove_ideas = nw14_white_one_indivisible } }
+}

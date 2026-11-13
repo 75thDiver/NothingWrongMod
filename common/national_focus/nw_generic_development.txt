@@ -1,5 +1,6 @@
 # Nothing Wrong 0.26: eight programme roots; descendant coordinates are relative.
 focus_tree = {
+	shared_focus = NW14_joint_cooperation
 	id = NW_generic_development
 	default = yes
 	reset_on_civilwar = no

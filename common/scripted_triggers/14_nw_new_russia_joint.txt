@@ -1,0 +1,6 @@
+nw14_new_russia_joint_member = {
+ SOV = { exists = yes has_country_flag = nw_rus_war_started is_in_faction = yes }
+ exists = yes
+ has_capitulated = no
+ OR = { tag = SOV is_in_faction_with = SOV }
+}
