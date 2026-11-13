@@ -1,0 +1,81 @@
+{
+  "url": "https://upload.wikimedia.org/wikipedia/commons/3/33/Flag_of_the_Emirate_of_Bukhara.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "descriptionurl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_Emirate_of_Bukhara.svg",
+  "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=3960807",
+  "extmetadata": {
+    "DateTime": {
+      "value": "2008-04-29 14:25:40",
+      "source": "mediawiki-metadata",
+      "hidden": ""
+    },
+    "ObjectName": {
+      "value": "Flag of the Emirate of Bukhara",
+      "source": "mediawiki-metadata"
+    },
+    "CommonsMetadataExtension": {
+      "value": 1.2,
+      "source": "extension",
+      "hidden": ""
+    },
+    "Categories": {
+      "value": "Emirate of Bukhara|With insignia|Self-published work|PD-self|SVG historical flags of Uzbekistan|Template Unknown (author)|Turned characters (90° rotation)",
+      "source": "commons-categories",
+      "hidden": ""
+    },
+    "Assessments": {
+      "value": "",
+      "source": "commons-categories",
+      "hidden": ""
+    },
+    "ImageDescription": {
+      "value": "Flag of the Uzbek Emirate of Bukhara.",
+      "source": "commons-desc-page"
+    },
+    "DateTimeOriginal": {
+      "value": "2008-04-07",
+      "source": "commons-desc-page"
+    },
+    "Credit": {
+      "value": "From <a href=\"https://en.wikipedia.org/wiki/en:Image:Flag_of_the_Emirate_of_Bukhara.svg\" class=\"extiw\" title=\"w:en:Image:Flag of the Emirate of Bukhara.svg\">the same page on the English Wikipedia</a> or <a rel=\"nofollow\" class=\"external free\" href=\"https://www.hubert-herald.nl/UzbekBukhara.htm\">https://www.hubert-herald.nl/UzbekBukhara.htm</a> or Amir Sayyed ‘Ālem Khan: La voix de la Boukharie opprimée. Paris, 1929, Frontispiece",
+      "source": "commons-desc-page"
+    },
+    "Artist": {
+      "value": "Unknown author<span style=\"display: none;\">Unknown author</span>",
+      "source": "commons-desc-page"
+    },
+    "Permission": {
+      "value": "<p>Public domain \n</p>\n<table style=\"width:100%; clear:both; margin:0.5em auto; border-spacing:8px; background-color:var(--background-color-neutral-subtle,#f7f8ff); border:2px solid #8888aa;color: inherit;\" lang=\"en\" dir=\"ltr\" class=\"layouttemplate restrictiontemplate restriction-insignia\">\n<tbody><tr>\n<td style=\"border:none; width:64px;\"><figure class=\"mw-halign-center\" typeof=\"mw:File\"><a href=\"//commons.wikimedia.org/wiki/Commons:Non-copyright_restrictions\" title=\"Insignia\"><img alt=\"Insignia\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Coat-elements-2.png/120px-Coat-elements-2.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"64\" height=\"77\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Coat-elements-2.png/250px-Coat-elements-2.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"609\" data-file-height=\"731\"></a><figcaption>Insignia</figcaption></figure>\n</td>\n<td style=\"border:none;\">This image shows a <a href=\"https://en.wikipedia.org/wiki/flag\" class=\"extiw\" title=\"w:flag\">flag</a>, a <a href=\"https://en.wikipedia.org/wiki/coat_of_arms\" class=\"extiw\" title=\"w:coat of arms\">coat of arms</a>, a <a href=\"https://en.wikipedia.org/wiki/seal_(emblem)\" class=\"extiw\" title=\"w:seal (emblem)\">seal</a> or some other official <b><a href=\"https://en.wikipedia.org/wiki/insignia\" class=\"extiw\" title=\"w:insignia\">insignia</a></b>. The use of such symbols is restricted in many countries. These restrictions are independent of the <a href=\"https://en.wikipedia.org/wiki/copyright\" class=\"extiw\" title=\"w:copyright\">copyright</a> status.\n</td></tr></tbody></table>",
+      "source": "commons-desc-page",
+      "hidden": ""
+    },
+    "LicenseShortName": {
+      "value": "Public domain",
+      "source": "commons-desc-page",
+      "hidden": ""
+    },
+    "UsageTerms": {
+      "value": "Public domain",
+      "source": "commons-desc-page"
+    },
+    "AttributionRequired": {
+      "value": "false",
+      "source": "commons-desc-page",
+      "hidden": ""
+    },
+    "Copyrighted": {
+      "value": "False",
+      "source": "commons-desc-page",
+      "hidden": ""
+    },
+    "Restrictions": {
+      "value": "insignia",
+      "source": "commons-desc-page",
+      "hidden": ""
+    },
+    "License": {
+      "value": "pd",
+      "source": "commons-templates",
+      "hidden": ""
+    }
+  }
+}

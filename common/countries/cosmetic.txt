@@ -16,6 +16,16 @@ NW_FINNISH_DUCHY = {
 	color = rgb { 205 212 228 }
 	color_ui = rgb { 255 255 255 }
 }
+
+NW_POLISH_PEOPLES_REPUBLIC = {
+	color = rgb { 152 42 48 }
+	color_ui = rgb { 184 61 67 }
+}
+
+NW_FINNISH_FEDERATION = {
+	color = rgb { 34 79 131 }
+	color_ui = rgb { 52 104 165 }
+}
 # NW14 COSMETICS
 NW_KIRILL = { color = rgb { 30 72 46 } color_ui = rgb { 62 114 77 } }
 NW_GER_CROWN = { color = rgb { 110 110 110 } color_ui = rgb { 110 110 110 } }

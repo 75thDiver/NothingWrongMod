@@ -1,0 +1,80 @@
+{
+  "url": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Petropavlovsk-Krondstadt_flag.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "descriptionurl": "https://commons.wikimedia.org/wiki/File:Petropavlovsk-Krondstadt_flag.svg",
+  "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=48496609",
+  "extmetadata": {
+    "DateTime": {
+      "value": "2018-10-26 16:55:27",
+      "source": "mediawiki-metadata",
+      "hidden": ""
+    },
+    "ObjectName": {
+      "value": "Petropavlovsk-Krondstadt flag",
+      "source": "mediawiki-metadata"
+    },
+    "CommonsMetadataExtension": {
+      "value": 1.2,
+      "source": "extension",
+      "hidden": ""
+    },
+    "Categories": {
+      "value": "CC-Zero|Kronstadt rebellion|Self-published work|Flags with spears|Flags with scythes|SVG black flags|SVG historical political flags of Russia|Black and white anarchist flags|Flags with skull and crossbones|SVG flags with skulls|SVG anarchist flags|Flags with crossed objects|Flags with Russian inscriptions|Flags with skulls and weapons|SVG flags of far-left organizations",
+      "source": "commons-categories",
+      "hidden": ""
+    },
+    "Assessments": {
+      "value": "",
+      "source": "commons-categories",
+      "hidden": ""
+    },
+    "ImageDescription": {
+      "value": "Flag seen in a photograph of Revolutionary Russian sailors of Russian Imperial Navy battleship Petropavlovsk in Helsinki during summer 1917. The flag shows a spear and a scythe crossed over eachother, as well as a skull and crossbones above and below the spear and scythe. The top of the flag has the text \"смерть буржуямъ\" (\"smert' burzhuyam\") (en: \"Death to the Bourgeois\")",
+      "source": "commons-desc-page"
+    },
+    "DateTimeOriginal": {
+      "value": "2016-05-02",
+      "source": "commons-desc-page"
+    },
+    "Credit": {
+      "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+      "source": "commons-desc-page"
+    },
+    "Artist": {
+      "value": "<a href=\"//commons.wikimedia.org/wiki/User:FugeeCamp\" title=\"User:FugeeCamp\">FugeeCamp</a>",
+      "source": "commons-desc-page"
+    },
+    "LicenseShortName": {
+      "value": "CC0",
+      "source": "commons-desc-page",
+      "hidden": ""
+    },
+    "UsageTerms": {
+      "value": "Creative Commons Zero, Public Domain Dedication",
+      "source": "commons-desc-page"
+    },
+    "AttributionRequired": {
+      "value": "false",
+      "source": "commons-desc-page",
+      "hidden": ""
+    },
+    "LicenseUrl": {
+      "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source": "commons-desc-page"
+    },
+    "Copyrighted": {
+      "value": "True",
+      "source": "commons-desc-page",
+      "hidden": ""
+    },
+    "Restrictions": {
+      "value": "",
+      "source": "commons-desc-page",
+      "hidden": ""
+    },
+    "License": {
+      "value": "cc0",
+      "source": "commons-templates",
+      "hidden": ""
+    }
+  }
+}

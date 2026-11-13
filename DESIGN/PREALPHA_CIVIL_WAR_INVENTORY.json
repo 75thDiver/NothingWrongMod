@@ -1,0 +1,1795 @@
+{
+  "game_executed": false,
+  "source_sha256": "76ece042fda44f18b49e642a0afe5294ae31828d72b2c8f6537c0681142f58b2",
+  "limitations": [
+    "Declared statements only; conditions/random branches are not simulated.",
+    "History ideas exclude later focus/event effects and engine inheritance.",
+    "No claim of runtime army counts, war membership or spirit assignment."
+  ],
+  "actors": [
+    {
+      "scope": "FIN",
+      "statements": [
+        {
+          "key": "remove_ideas",
+          "value": "nw_fin_imperial_autonomy",
+          "line": 44
+        }
+      ],
+      "history": [
+        "history/countries/FIN - Finland.txt"
+      ],
+      "history_ideas": [
+        "nw_fin_imperial_autonomy"
+      ],
+      "history_oob": [
+        "NW_FIN_1936"
+      ],
+      "history_capital": "111",
+      "oobs": [
+        {
+          "name": "NW_FIN_1936",
+          "exists": true,
+          "division_count": 1,
+          "templates": [
+            "Territorial Infantry"
+          ],
+          "missing_templates": [],
+          "location_states": {
+            "11105": [
+              111
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "scope": "POL",
+      "statements": [
+        {
+          "key": "remove_ideas",
+          "value": "nw_pol_imperial_autonomy",
+          "line": 55
+        }
+      ],
+      "history": [
+        "history/countries/POL - Poland.txt"
+      ],
+      "history_ideas": [
+        "nw_pol_imperial_autonomy"
+      ],
+      "history_oob": [
+        "NW_POL_1936"
+      ],
+      "history_capital": "10",
+      "oobs": [
+        {
+          "name": "NW_POL_1936",
+          "exists": true,
+          "division_count": 1,
+          "templates": [
+            "Territorial Infantry"
+          ],
+          "missing_templates": [],
+          "location_states": {
+            "3544": [
+              10
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "scope": "MON",
+      "statements": [
+        {
+          "key": "remove_ideas",
+          "value": "nw_mon_russian_resident",
+          "line": 74
+        }
+      ],
+      "history": [
+        "history/countries/MON - Mongolia.txt"
+      ],
+      "history_ideas": [
+        "nw_mon_russian_resident",
+        "nw_mon_steppe_unification"
+      ],
+      "history_oob": [
+        "MON_1936"
+      ],
+      "history_capital": "330",
+      "oobs": []
+    },
+    {
+      "scope": "SIK",
+      "statements": [
+        {
+          "key": "remove_ideas",
+          "value": "nw_sik_sponsored_independence",
+          "line": 82
+        }
+      ],
+      "history": [
+        "history/countries/SIK - Sinkiang.txt"
+      ],
+      "history_ideas": [
+        "nw_sik_sponsored_independence",
+        "nw_sik_oasis_politics"
+      ],
+      "history_oob": [
+        "SIK_1936"
+      ],
+      "history_capital": "617",
+      "oobs": []
+    },
+    {
+      "scope": "SOV",
+      "statements": [
+        {
+          "key": "remove_ideas",
+          "value": "nw_sov_fragile_sovereign",
+          "line": 92
+        },
+        {
+          "key": "remove_ideas",
+          "value": "nw_sov_court_government",
+          "line": 93
+        },
+        {
+          "key": "create_faction",
+          "value": "nw14_new_russia_faction",
+          "line": 608
+        },
+        {
+          "key": "add_to_faction",
+          "value": "RUK",
+          "line": 618
+        },
+        {
+          "key": "add_to_faction",
+          "value": "FER",
+          "line": 619
+        },
+        {
+          "key": "add_to_faction",
+          "value": "ABK",
+          "line": 620
+        },
+        {
+          "key": "add_to_faction",
+          "value": "NCR",
+          "line": 621
+        },
+        {
+          "key": "add_to_faction",
+          "value": "TCF",
+          "line": 622
+        },
+        {
+          "key": "add_to_faction",
+          "value": "BLW",
+          "line": 623
+        },
+        {
+          "key": "add_to_faction",
+          "value": "KIR",
+          "line": 624
+        },
+        {
+          "key": "add_to_faction",
+          "value": "BLR",
+          "line": 625
+        },
+        {
+          "key": "add_to_faction",
+          "value": "DNR",
+          "line": 629
+        },
+        {
+          "key": "add_to_faction",
+          "value": "KAL",
+          "line": 634
+        },
+        {
+          "key": "load_oob",
+          "value": "NW14_SOV_CW",
+          "line": 658
+        }
+      ],
+      "history": [
+        "history/countries/SOV - Soviet union.txt"
+      ],
+      "history_ideas": [
+        "nw_sov_unbroken_growth",
+        "nw_sov_court_government",
+        "nw_sov_fragile_sovereign",
+        "nw_sov_restless_borderlands"
+      ],
+      "history_oob": [],
+      "history_capital": "195",
+      "oobs": [
+        {
+          "name": "NW14_SOV_CW",
+          "exists": true,
+          "division_count": 40,
+          "templates": [
+            "NW14 Territorial Guard"
+          ],
+          "missing_templates": [],
+          "location_states": {
+            "79": [
+              195
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "scope": "event_target:nw14_rus_royal",
+      "statements": [
+        {
+          "key": "set_capital",
+          "value": "239",
+          "line": 118
+        },
+        {
+          "key": "create_faction",
+          "value": "nw14_white_movement_faction",
+          "line": 639
+        },
+        {
+          "key": "add_to_faction",
+          "value": "AFS",
+          "line": 645
+        },
+        {
+          "key": "load_oob",
+          "value": "NW14_ROYAL_CW",
+          "line": 659
+        }
+      ],
+      "split_states": [
+        219,
+        220,
+        221,
+        222,
+        223,
+        224,
+        239,
+        240,
+        250,
+        251,
+        252,
+        253,
+        254,
+        255,
+        257,
+        258,
+        260,
+        401,
+        829
+      ],
+      "history": [],
+      "history_ideas": [],
+      "history_oob": [],
+      "history_capital": null,
+      "oobs": [
+        {
+          "name": "NW14_ROYAL_CW",
+          "exists": true,
+          "division_count": 40,
+          "templates": [
+            "NW14 Territorial Guard"
+          ],
+          "missing_templates": [],
+          "location_states": {
+            "326": [
+              239
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "scope": "DON",
+      "statements": [
+        {
+          "key": "transfer_state",
+          "value": "218",
+          "line": 134
+        },
+        {
+          "key": "transfer_state",
+          "value": "227",
+          "line": 135
+        },
+        {
+          "key": "transfer_state",
+          "value": "228",
+          "line": 136
+        },
+        {
+          "key": "transfer_state",
+          "value": "238",
+          "line": 137
+        },
+        {
+          "key": "transfer_state",
+          "value": "245",
+          "line": 138
+        },
+        {
+          "key": "transfer_state",
+          "value": "265",
+          "line": 288
+        },
+        {
+          "key": "set_capital",
+          "value": "218",
+          "line": 332
+        },
+        {
+          "key": "puppet",
+          "value": "AKV",
+          "line": 600
+        },
+        {
+          "key": "load_oob",
+          "value": "NW14_DON_CW",
+          "line": 662
+        }
+      ],
+      "history": [],
+      "history_ideas": [],
+      "history_oob": [],
+      "history_capital": null,
+      "oobs": [
+        {
+          "name": "NW14_DON_CW",
+          "exists": true,
+          "division_count": 5,
+          "templates": [
+            "NW14 Territorial Guard"
+          ],
+          "missing_templates": [],
+          "location_states": {
+            "9417": [
+              218
+            ],
+            "585": [
+              218
+            ],
+            "6445": [
+              218
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "scope": "KUB",
+      "statements": [
+        {
+          "key": "transfer_state",
+          "value": "233",
+          "line": 139
+        },
+        {
+          "key": "transfer_state",
+          "value": "234",
+          "line": 140
+        },
+        {
+          "key": "transfer_state",
+          "value": "235",
+          "line": 141
+        },
+        {
+          "key": "set_capital",
+          "value": "234",
+          "line": 347
+        },
+        {
+          "key": "load_oob",
+          "value": "NW14_KUB_CW",
+          "line": 663
+        }
+      ],
+      "history": [],
+      "history_ideas": [],
+      "history_oob": [],
+      "history_capital": null,
+      "oobs": [
+        {
+          "name": "NW14_KUB_CW",
+          "exists": true,
+          "division_count": 5,
+          "templates": [
+            "NW14 Territorial Guard"
+          ],
+          "missing_templates": [],
+          "location_states": {
+            "719": [
+              234
+            ],
+            "3734": [
+              234
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "scope": "AFS",
+      "statements": [
+        {
+          "key": "transfer_state",
+          "value": "137",
+          "line": 142
+        },
+        {
+          "key": "set_capital",
+          "value": "137",
+          "line": 295
+        },
+        {
+          "key": "puppet",
+          "value": "DON",
+          "line": 371
+        },
+        {
+          "key": "puppet",
+          "value": "KUB",
+          "line": 372
+        },
+        {
+          "key": "load_oob",
+          "value": "NW14_AFS",
+          "line": 660
+        }
+      ],
+      "history": [
+        "history/countries/AFS - NW14.txt"
+      ],
+      "history_ideas": [],
+      "history_oob": [],
+      "history_capital": null,
+      "oobs": [
+        {
+          "name": "NW14_AFS",
+          "exists": true,
+          "division_count": 40,
+          "templates": [
+            "NW14 Territorial Guard"
+          ],
+          "missing_templates": [],
+          "location_states": {
+            "3686": [
+              137
+            ],
+            "705": [
+              137
+            ],
+            "9680": [
+              137
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "scope": "ROM",
+      "statements": [
+        {
+          "key": "transfer_state",
+          "value": "78",
+          "line": 143
+        },
+        {
+          "key": "transfer_state",
+          "value": "766",
+          "line": 144
+        }
+      ],
+      "history": [
+        "history/countries/ROM - Romania.txt"
+      ],
+      "history_ideas": [
+        "nw_rom_legionary_regime",
+        "nw_rom_oil_diplomacy"
+      ],
+      "history_oob": [],
+      "history_capital": "46",
+      "oobs": []
+    },
+    {
+      "scope": "FER",
+      "statements": [
+        {
+          "key": "transfer_state",
+          "value": "408",
+          "line": 145
+        },
+        {
+          "key": "transfer_state",
+          "value": "409",
+          "line": 146
+        },
+        {
+          "key": "transfer_state",
+          "value": "560",
+          "line": 147
+        },
+        {
+          "key": "transfer_state",
+          "value": "657",
+          "line": 148
+        },
+        {
+          "key": "set_capital",
+          "value": "408",
+          "line": 408
+        },
+        {
+          "key": "load_oob",
+          "value": "NW14_FER_CW",
+          "line": 665
+        }
+      ],
+      "history": [],
+      "history_ideas": [],
+      "history_oob": [],
+      "history_capital": null,
+      "oobs": [
+        {
+          "name": "NW14_FER_CW",
+          "exists": true,
+          "division_count": 20,
+          "templates": [
+            "NW14 Territorial Guard"
+          ],
+          "missing_templates": [],
+          "location_states": {
+            "664": [
+              408
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "scope": "JAP",
+      "statements": [
+        {
+          "key": "transfer_state",
+          "value": "655",
+          "line": 149
+        }
+      ],
+      "history": [],
+      "history_ideas": [],
+      "history_oob": [],
+      "history_capital": null,
+      "oobs": []
+    },
+    {
+      "scope": "ABK",
+      "statements": [
+        {
+          "key": "transfer_state",
+          "value": "826",
+          "line": 150
+        },
+        {
+          "key": "set_capital",
+          "value": "826",
+          "line": 418
+        },
+        {
+          "key": "load_oob",
+          "value": "NW14_ABK_CW",
+          "line": 666
+        }
+      ],
+      "history": [],
+      "history_ideas": [],
+      "history_oob": [],
+      "history_capital": null,
+      "oobs": [
+        {
+          "name": "NW14_ABK_CW",
+          "exists": true,
+          "division_count": 5,
+          "templates": [
+            "NW14 Territorial Guard"
+          ],
+          "missing_templates": [],
+          "location_states": {
+            "672": [
+              826
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "scope": "NCR",
+      "statements": [
+        {
+          "key": "transfer_state",
+          "value": "232",
+          "line": 151
+        },
+        {
+          "key": "transfer_state",
+          "value": "821",
+          "line": 152
+        },
+        {
+          "key": "transfer_state",
+          "value": "827",
+          "line": 153
+        },
+        {
+          "key": "transfer_state",
+          "value": "828",
+          "line": 154
+        },
+        {
+          "key": "set_capital",
+          "value": "232",
+          "line": 429
+        },
+        {
+          "key": "load_oob",
+          "value": "NW14_NCR_CW",
+          "line": 667
+        }
+      ],
+      "history": [
+        "history/countries/NCR - NW14.txt"
+      ],
+      "history_ideas": [],
+      "history_oob": [],
+      "history_capital": null,
+      "oobs": [
+        {
+          "name": "NW14_NCR_CW",
+          "exists": true,
+          "division_count": 5,
+          "templates": [
+            "NW14 Territorial Guard"
+          ],
+          "missing_templates": [],
+          "location_states": {
+            "683": [
+              232
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "scope": "TCF",
+      "statements": [
+        {
+          "key": "transfer_state",
+          "value": "229",
+          "line": 155
+        },
+        {
+          "key": "transfer_state",
+          "value": "231",
+          "line": 156
+        },
+        {
+          "key": "set_capital",
+          "value": "231",
+          "line": 443
+        },
+        {
+          "key": "load_oob",
+          "value": "NW14_TCF_CW",
+          "line": 668
+        }
+      ],
+      "history": [
+        "history/countries/TCF - NW14.txt"
+      ],
+      "history_ideas": [],
+      "history_oob": [],
+      "history_capital": null,
+      "oobs": [
+        {
+          "name": "NW14_TCF_CW",
+          "exists": true,
+          "division_count": 5,
+          "templates": [
+            "NW14 Territorial Guard"
+          ],
+          "missing_templates": [],
+          "location_states": {
+            "654": [
+              231
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "scope": "ARM",
+      "statements": [
+        {
+          "key": "transfer_state",
+          "value": "230",
+          "line": 157
+        },
+        {
+          "key": "transfer_state",
+          "value": "800",
+          "line": 158
+        },
+        {
+          "key": "set_capital",
+          "value": "230",
+          "line": 456
+        },
+        {
+          "key": "load_oob",
+          "value": "NW14_ARM_CW",
+          "line": 669
+        }
+      ],
+      "history": [],
+      "history_ideas": [],
+      "history_oob": [],
+      "history_capital": null,
+      "oobs": [
+        {
+          "name": "NW14_ARM_CW",
+          "exists": true,
+          "division_count": 5,
+          "templates": [
+            "NW14 Territorial Guard"
+          ],
+          "missing_templates": [],
+          "location_states": {
+            "3564": [
+              230
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "scope": "TRP",
+      "statements": [
+        {
+          "key": "transfer_state",
+          "value": "353",
+          "line": 159
+        },
+        {
+          "key": "transfer_state",
+          "value": "354",
+          "line": 160
+        },
+        {
+          "key": "set_capital",
+          "value": "353",
+          "line": 460
+        },
+        {
+          "key": "load_oob",
+          "value": "NW14_TRP_CW",
+          "line": 670
+        }
+      ],
+      "history": [
+        "history/countries/TRP - NW14.txt"
+      ],
+      "history_ideas": [],
+      "history_oob": [],
+      "history_capital": null,
+      "oobs": [
+        {
+          "name": "NW14_TRP_CW",
+          "exists": true,
+          "division_count": 5,
+          "templates": [
+            "NW14 Territorial Guard"
+          ],
+          "missing_templates": [],
+          "location_states": {
+            "876": [
+              353
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "scope": "BLF",
+      "statements": [
+        {
+          "key": "transfer_state",
+          "value": "11",
+          "line": 161
+        },
+        {
+          "key": "transfer_state",
+          "value": "12",
+          "line": 162
+        },
+        {
+          "key": "transfer_state",
+          "value": "13",
+          "line": 163
+        },
+        {
+          "key": "transfer_state",
+          "value": "189",
+          "line": 164
+        },
+        {
+          "key": "transfer_state",
+          "value": "190",
+          "line": 165
+        },
+        {
+          "key": "transfer_state",
+          "value": "191",
+          "line": 166
+        },
+        {
+          "key": "transfer_state",
+          "value": "784",
+          "line": 167
+        },
+        {
+          "key": "transfer_state",
+          "value": "808",
+          "line": 168
+        },
+        {
+          "key": "transfer_state",
+          "value": "809",
+          "line": 169
+        },
+        {
+          "key": "transfer_state",
+          "value": "810",
+          "line": 170
+        },
+        {
+          "key": "transfer_state",
+          "value": "811",
+          "line": 171
+        },
+        {
+          "key": "transfer_state",
+          "value": "812",
+          "line": 172
+        },
+        {
+          "key": "transfer_state",
+          "value": "815",
+          "line": 173
+        },
+        {
+          "key": "transfer_state",
+          "value": "814",
+          "line": 174
+        },
+        {
+          "key": "set_capital",
+          "value": "808",
+          "line": 474
+        },
+        {
+          "key": "load_oob",
+          "value": "NW14_BLF_CW",
+          "line": 671
+        }
+      ],
+      "history": [
+        "history/countries/BLF - NW14.txt"
+      ],
+      "history_ideas": [],
+      "history_oob": [],
+      "history_capital": null,
+      "oobs": [
+        {
+          "name": "NW14_BLF_CW",
+          "exists": true,
+          "division_count": 20,
+          "templates": [
+            "NW14 Territorial Guard"
+          ],
+          "missing_templates": [],
+          "location_states": {
+            "9240": [
+              808
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "scope": "BLW",
+      "statements": [
+        {
+          "key": "transfer_state",
+          "value": "813",
+          "line": 175
+        },
+        {
+          "key": "set_capital",
+          "value": "813",
+          "line": 488
+        },
+        {
+          "key": "load_oob",
+          "value": "NW14_BLW_CW",
+          "line": 672
+        }
+      ],
+      "history": [
+        "history/countries/BLW - NW14.txt"
+      ],
+      "history_ideas": [],
+      "history_oob": [],
+      "history_capital": null,
+      "oobs": [
+        {
+          "name": "NW14_BLW_CW",
+          "exists": true,
+          "division_count": 5,
+          "templates": [
+            "NW14 Territorial Guard"
+          ],
+          "missing_templates": [],
+          "location_states": {
+            "4640": [
+              813
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "scope": "RSB",
+      "statements": [
+        {
+          "key": "transfer_state",
+          "value": "40",
+          "line": 178
+        },
+        {
+          "key": "transfer_state",
+          "value": "329",
+          "line": 179
+        },
+        {
+          "key": "transfer_state",
+          "value": "516",
+          "line": 180
+        },
+        {
+          "key": "transfer_state",
+          "value": "561",
+          "line": 181
+        },
+        {
+          "key": "transfer_state",
+          "value": "562",
+          "line": 182
+        },
+        {
+          "key": "transfer_state",
+          "value": "563",
+          "line": 183
+        },
+        {
+          "key": "transfer_state",
+          "value": "564",
+          "line": 184
+        },
+        {
+          "key": "transfer_state",
+          "value": "565",
+          "line": 185
+        },
+        {
+          "key": "transfer_state",
+          "value": "566",
+          "line": 186
+        },
+        {
+          "key": "transfer_state",
+          "value": "567",
+          "line": 187
+        },
+        {
+          "key": "transfer_state",
+          "value": "568",
+          "line": 188
+        },
+        {
+          "key": "transfer_state",
+          "value": "569",
+          "line": 189
+        },
+        {
+          "key": "transfer_state",
+          "value": "570",
+          "line": 190
+        },
+        {
+          "key": "transfer_state",
+          "value": "571",
+          "line": 191
+        },
+        {
+          "key": "transfer_state",
+          "value": "574",
+          "line": 192
+        },
+        {
+          "key": "transfer_state",
+          "value": "575",
+          "line": 193
+        },
+        {
+          "key": "transfer_state",
+          "value": "576",
+          "line": 194
+        },
+        {
+          "key": "transfer_state",
+          "value": "577",
+          "line": 195
+        },
+        {
+          "key": "transfer_state",
+          "value": "578",
+          "line": 196
+        },
+        {
+          "key": "transfer_state",
+          "value": "579",
+          "line": 197
+        },
+        {
+          "key": "transfer_state",
+          "value": "580",
+          "line": 198
+        },
+        {
+          "key": "transfer_state",
+          "value": "637",
+          "line": 199
+        },
+        {
+          "key": "transfer_state",
+          "value": "644",
+          "line": 200
+        },
+        {
+          "key": "transfer_state",
+          "value": "654",
+          "line": 201
+        },
+        {
+          "key": "transfer_state",
+          "value": "822",
+          "line": 202
+        },
+        {
+          "key": "transfer_state",
+          "value": "824",
+          "line": 203
+        },
+        {
+          "key": "transfer_state",
+          "value": "874",
+          "line": 204
+        },
+        {
+          "key": "transfer_state",
+          "value": "876",
+          "line": 205
+        },
+        {
+          "key": "transfer_state",
+          "value": "877",
+          "line": 206
+        },
+        {
+          "key": "transfer_state",
+          "value": "878",
+          "line": 207
+        },
+        {
+          "key": "set_capital",
+          "value": "570",
+          "line": 313
+        },
+        {
+          "key": "load_oob",
+          "value": "NW14_RSB",
+          "line": 661
+        }
+      ],
+      "history": [
+        "history/countries/RSB - NW14.txt"
+      ],
+      "history_ideas": [],
+      "history_oob": [],
+      "history_capital": null,
+      "oobs": [
+        {
+          "name": "NW14_RSB",
+          "exists": true,
+          "division_count": 40,
+          "templates": [
+            "NW14 Territorial Guard"
+          ],
+          "missing_templates": [],
+          "location_states": {
+            "7274": [
+              570
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "scope": "RUK",
+      "statements": [
+        {
+          "key": "transfer_state",
+          "value": "192",
+          "line": 209
+        },
+        {
+          "key": "transfer_state",
+          "value": "193",
+          "line": 210
+        },
+        {
+          "key": "transfer_state",
+          "value": "196",
+          "line": 211
+        },
+        {
+          "key": "transfer_state",
+          "value": "197",
+          "line": 212
+        },
+        {
+          "key": "transfer_state",
+          "value": "198",
+          "line": 213
+        },
+        {
+          "key": "transfer_state",
+          "value": "199",
+          "line": 214
+        },
+        {
+          "key": "transfer_state",
+          "value": "200",
+          "line": 215
+        },
+        {
+          "key": "transfer_state",
+          "value": "201",
+          "line": 216
+        },
+        {
+          "key": "transfer_state",
+          "value": "202",
+          "line": 217
+        },
+        {
+          "key": "transfer_state",
+          "value": "203",
+          "line": 218
+        },
+        {
+          "key": "transfer_state",
+          "value": "225",
+          "line": 219
+        },
+        {
+          "key": "transfer_state",
+          "value": "226",
+          "line": 220
+        },
+        {
+          "key": "transfer_state",
+          "value": "259",
+          "line": 221
+        },
+        {
+          "key": "transfer_state",
+          "value": "834",
+          "line": 222
+        },
+        {
+          "key": "transfer_state",
+          "value": "93",
+          "line": 223
+        },
+        {
+          "key": "set_capital",
+          "value": "202",
+          "line": 378
+        },
+        {
+          "key": "load_oob",
+          "value": "NW14_RUK_CW",
+          "line": 664
+        }
+      ],
+      "history": [
+        "history/countries/RUK - NW14.txt"
+      ],
+      "history_ideas": [],
+      "history_oob": [],
+      "history_capital": null,
+      "oobs": [
+        {
+          "name": "NW14_RUK_CW",
+          "exists": true,
+          "division_count": 25,
+          "templates": [
+            "NW14 Territorial Guard"
+          ],
+          "missing_templates": [],
+          "location_states": {
+            "3757": [
+              834
+            ],
+            "741": [
+              834
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "scope": "BLR",
+      "statements": [
+        {
+          "key": "transfer_state",
+          "value": "206",
+          "line": 224
+        },
+        {
+          "key": "transfer_state",
+          "value": "96",
+          "line": 225
+        },
+        {
+          "key": "transfer_state",
+          "value": "204",
+          "line": 226
+        },
+        {
+          "key": "transfer_state",
+          "value": "194",
+          "line": 227
+        },
+        {
+          "key": "transfer_state",
+          "value": "94",
+          "line": 228
+        },
+        {
+          "key": "transfer_state",
+          "value": "95",
+          "line": 229
+        },
+        {
+          "key": "transfer_state",
+          "value": "241",
+          "line": 230
+        },
+        {
+          "key": "transfer_state",
+          "value": "207",
+          "line": 231
+        },
+        {
+          "key": "set_capital",
+          "value": "206",
+          "line": 396
+        },
+        {
+          "key": "load_oob",
+          "value": "NW14_BLR_CW",
+          "line": 673
+        }
+      ],
+      "history": [],
+      "history_ideas": [],
+      "history_oob": [],
+      "history_capital": null,
+      "oobs": [
+        {
+          "name": "NW14_BLR_CW",
+          "exists": true,
+          "division_count": 20,
+          "templates": [
+            "NW14 Territorial Guard"
+          ],
+          "missing_templates": [],
+          "location_states": {
+            "216": [
+              206
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "scope": "KIR",
+      "statements": [
+        {
+          "key": "transfer_state",
+          "value": "583",
+          "line": 233
+        },
+        {
+          "key": "transfer_state",
+          "value": "588",
+          "line": 234
+        },
+        {
+          "key": "transfer_state",
+          "value": "590",
+          "line": 235
+        },
+        {
+          "key": "transfer_state",
+          "value": "882",
+          "line": 236
+        },
+        {
+          "key": "set_capital",
+          "value": "590",
+          "line": 557
+        },
+        {
+          "key": "load_oob",
+          "value": "NW14_KIR_CW",
+          "line": 674
+        }
+      ],
+      "history": [
+        "history/countries/KIR - NW14.txt"
+      ],
+      "history_ideas": [],
+      "history_oob": [],
+      "history_capital": null,
+      "oobs": [
+        {
+          "name": "NW14_KIR_CW",
+          "exists": true,
+          "division_count": 5,
+          "templates": [
+            "NW14 Territorial Guard"
+          ],
+          "missing_templates": [],
+          "location_states": {
+            "1223": [
+              590
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "scope": "ALA",
+      "statements": [
+        {
+          "key": "transfer_state",
+          "value": "402",
+          "line": 237
+        },
+        {
+          "key": "transfer_state",
+          "value": "404",
+          "line": 238
+        },
+        {
+          "key": "transfer_state",
+          "value": "406",
+          "line": 239
+        },
+        {
+          "key": "transfer_state",
+          "value": "407",
+          "line": 240
+        },
+        {
+          "key": "transfer_state",
+          "value": "586",
+          "line": 241
+        },
+        {
+          "key": "transfer_state",
+          "value": "587",
+          "line": 242
+        },
+        {
+          "key": "transfer_state",
+          "value": "589",
+          "line": 243
+        },
+        {
+          "key": "transfer_state",
+          "value": "881",
+          "line": 244
+        },
+        {
+          "key": "set_capital",
+          "value": "881",
+          "line": 570
+        },
+        {
+          "key": "load_oob",
+          "value": "NW14_ALA_CW",
+          "line": 675
+        }
+      ],
+      "history": [
+        "history/countries/ALA - NW14.txt"
+      ],
+      "history_ideas": [],
+      "history_oob": [],
+      "history_capital": null,
+      "oobs": [
+        {
+          "name": "NW14_ALA_CW",
+          "exists": true,
+          "division_count": 20,
+          "templates": [
+            "NW14 Territorial Guard"
+          ],
+          "missing_templates": [],
+          "location_states": {
+            "1243": [
+              881
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "scope": "TRK",
+      "statements": [
+        {
+          "key": "transfer_state",
+          "value": "405",
+          "line": 245
+        },
+        {
+          "key": "transfer_state",
+          "value": "584",
+          "line": 246
+        },
+        {
+          "key": "transfer_state",
+          "value": "585",
+          "line": 247
+        },
+        {
+          "key": "transfer_state",
+          "value": "732",
+          "line": 248
+        },
+        {
+          "key": "transfer_state",
+          "value": "742",
+          "line": 249
+        },
+        {
+          "key": "transfer_state",
+          "value": "823",
+          "line": 250
+        },
+        {
+          "key": "transfer_state",
+          "value": "830",
+          "line": 251
+        },
+        {
+          "key": "transfer_state",
+          "value": "831",
+          "line": 252
+        },
+        {
+          "key": "transfer_state",
+          "value": "832",
+          "line": 253
+        },
+        {
+          "key": "set_capital",
+          "value": "405",
+          "line": 583
+        },
+        {
+          "key": "load_oob",
+          "value": "NW14_TRK_CW",
+          "line": 676
+        }
+      ],
+      "history": [
+        "history/countries/TRK - NW14.txt"
+      ],
+      "history_ideas": [],
+      "history_oob": [],
+      "history_capital": null,
+      "oobs": [
+        {
+          "name": "NW14_TRK_CW",
+          "exists": true,
+          "division_count": 20,
+          "templates": [
+            "NW14 Territorial Guard"
+          ],
+          "missing_templates": [],
+          "location_states": {
+            "1459": [
+              405
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "scope": "DNR",
+      "statements": [
+        {
+          "key": "transfer_state",
+          "value": "217",
+          "line": 260
+        },
+        {
+          "key": "transfer_state",
+          "value": "265",
+          "line": 287
+        },
+        {
+          "key": "set_capital",
+          "value": "217",
+          "line": 505
+        },
+        {
+          "key": "set_capital",
+          "value": "265",
+          "line": 506
+        },
+        {
+          "key": "load_oob",
+          "value": "NW14_DNR_217",
+          "line": 677
+        },
+        {
+          "key": "load_oob",
+          "value": "NW14_DNR_265",
+          "line": 677
+        }
+      ],
+      "history": [
+        "history/countries/DNR - NW14.txt"
+      ],
+      "history_ideas": [],
+      "history_oob": [],
+      "history_capital": null,
+      "oobs": [
+        {
+          "name": "NW14_DNR_217",
+          "exists": true,
+          "division_count": 5,
+          "templates": [
+            "NW14 Territorial Guard"
+          ],
+          "missing_templates": [],
+          "location_states": {
+            "498": [
+              217
+            ]
+          }
+        },
+        {
+          "name": "NW14_DNR_265",
+          "exists": true,
+          "division_count": 5,
+          "templates": [
+            "NW14 Territorial Guard"
+          ],
+          "missing_templates": [],
+          "location_states": {
+            "487": [
+              265
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "scope": "AKV",
+      "statements": [
+        {
+          "key": "transfer_state",
+          "value": "217",
+          "line": 261
+        },
+        {
+          "key": "transfer_state",
+          "value": "236",
+          "line": 270
+        },
+        {
+          "key": "transfer_state",
+          "value": "237",
+          "line": 279
+        },
+        {
+          "key": "set_capital",
+          "value": "236",
+          "line": 523
+        },
+        {
+          "key": "set_capital",
+          "value": "237",
+          "line": 524
+        },
+        {
+          "key": "set_capital",
+          "value": "217",
+          "line": 525
+        },
+        {
+          "key": "load_oob",
+          "value": "NW14_AKV_236",
+          "line": 678
+        },
+        {
+          "key": "load_oob",
+          "value": "NW14_AKV_237",
+          "line": 678
+        },
+        {
+          "key": "load_oob",
+          "value": "NW14_AKV_217",
+          "line": 678
+        }
+      ],
+      "history": [
+        "history/countries/AKV - NW14.txt"
+      ],
+      "history_ideas": [],
+      "history_oob": [],
+      "history_capital": null,
+      "oobs": [
+        {
+          "name": "NW14_AKV_217",
+          "exists": true,
+          "division_count": 5,
+          "templates": [
+            "NW14 Territorial Guard"
+          ],
+          "missing_templates": [],
+          "location_states": {
+            "498": [
+              217
+            ]
+          }
+        },
+        {
+          "name": "NW14_AKV_236",
+          "exists": true,
+          "division_count": 5,
+          "templates": [
+            "NW14 Territorial Guard"
+          ],
+          "missing_templates": [],
+          "location_states": {
+            "618": [
+              236
+            ]
+          }
+        },
+        {
+          "name": "NW14_AKV_237",
+          "exists": true,
+          "division_count": 5,
+          "templates": [
+            "NW14 Territorial Guard"
+          ],
+          "missing_templates": [],
+          "location_states": {
+            "481": [
+              237
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "scope": "KAL",
+      "statements": [
+        {
+          "key": "transfer_state",
+          "value": "236",
+          "line": 269
+        },
+        {
+          "key": "transfer_state",
+          "value": "237",
+          "line": 278
+        },
+        {
+          "key": "set_capital",
+          "value": "236",
+          "line": 542
+        },
+        {
+          "key": "set_capital",
+          "value": "237",
+          "line": 543
+        },
+        {
+          "key": "load_oob",
+          "value": "NW14_KAL_236",
+          "line": 679
+        },
+        {
+          "key": "load_oob",
+          "value": "NW14_KAL_237",
+          "line": 679
+        }
+      ],
+      "history": [],
+      "history_ideas": [],
+      "history_oob": [],
+      "history_capital": null,
+      "oobs": [
+        {
+          "name": "NW14_KAL_236",
+          "exists": true,
+          "division_count": 5,
+          "templates": [
+            "NW14 Territorial Guard"
+          ],
+          "missing_templates": [],
+          "location_states": {
+            "618": [
+              236
+            ]
+          }
+        },
+        {
+          "name": "NW14_KAL_237",
+          "exists": true,
+          "division_count": 5,
+          "templates": [
+            "NW14 Territorial Guard"
+          ],
+          "missing_templates": [],
+          "location_states": {
+            "481": [
+              237
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

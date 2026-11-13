@@ -1,0 +1,434 @@
+[
+  {
+    "path": "gfx/flags/ALA.tga",
+    "size": [
+      82,
+      52
+    ],
+    "sha256": "567dd16f9755cc498a59d5a44077fd0d5b88c048aef5ad764616aab48422c446"
+  },
+  {
+    "path": "gfx/flags/ALA_neutrality.tga",
+    "size": [
+      82,
+      52
+    ],
+    "sha256": "567dd16f9755cc498a59d5a44077fd0d5b88c048aef5ad764616aab48422c446"
+  },
+  {
+    "path": "gfx/flags/medium/ALA.tga",
+    "size": [
+      41,
+      26
+    ],
+    "sha256": "1b277d7445afd229b77c09f892deb4a4dad39910989d223a266c6b867b2357d0"
+  },
+  {
+    "path": "gfx/flags/medium/ALA_neutrality.tga",
+    "size": [
+      41,
+      26
+    ],
+    "sha256": "1b277d7445afd229b77c09f892deb4a4dad39910989d223a266c6b867b2357d0"
+  },
+  {
+    "path": "gfx/flags/small/ALA.tga",
+    "size": [
+      10,
+      7
+    ],
+    "sha256": "4650c59976e06f15c026c4af0dccae9f9e7e770b039990a4f8727485d7c584b7"
+  },
+  {
+    "path": "gfx/flags/small/ALA_neutrality.tga",
+    "size": [
+      10,
+      7
+    ],
+    "sha256": "4650c59976e06f15c026c4af0dccae9f9e7e770b039990a4f8727485d7c584b7"
+  },
+  {
+    "path": "gfx/flags/TRK.tga",
+    "size": [
+      82,
+      52
+    ],
+    "sha256": "118ddf2d3420960725031fa7acd45a5d294af21002b30443d850c7fe9d7a2a3b"
+  },
+  {
+    "path": "gfx/flags/TRK_neutrality.tga",
+    "size": [
+      82,
+      52
+    ],
+    "sha256": "118ddf2d3420960725031fa7acd45a5d294af21002b30443d850c7fe9d7a2a3b"
+  },
+  {
+    "path": "gfx/flags/medium/TRK.tga",
+    "size": [
+      41,
+      26
+    ],
+    "sha256": "88fb181558deace95cda9ddcdaec0d6c3c0afd42bfa785021b4465552bd1c602"
+  },
+  {
+    "path": "gfx/flags/medium/TRK_neutrality.tga",
+    "size": [
+      41,
+      26
+    ],
+    "sha256": "88fb181558deace95cda9ddcdaec0d6c3c0afd42bfa785021b4465552bd1c602"
+  },
+  {
+    "path": "gfx/flags/small/TRK.tga",
+    "size": [
+      10,
+      7
+    ],
+    "sha256": "bc9318918b68c050c913fc5d03428a6bdeda981c425dd9c7ae515c76f7bace51"
+  },
+  {
+    "path": "gfx/flags/small/TRK_neutrality.tga",
+    "size": [
+      10,
+      7
+    ],
+    "sha256": "bc9318918b68c050c913fc5d03428a6bdeda981c425dd9c7ae515c76f7bace51"
+  },
+  {
+    "path": "gfx/flags/NCR.tga",
+    "size": [
+      82,
+      52
+    ],
+    "sha256": "b7be58afa110be4fe7934582b9d0bf41a68688cbeb37414ba53ecfd406714df2"
+  },
+  {
+    "path": "gfx/flags/NCR_democratic.tga",
+    "size": [
+      82,
+      52
+    ],
+    "sha256": "b7be58afa110be4fe7934582b9d0bf41a68688cbeb37414ba53ecfd406714df2"
+  },
+  {
+    "path": "gfx/flags/medium/NCR.tga",
+    "size": [
+      41,
+      26
+    ],
+    "sha256": "7d2c659139e348f569fa2924e461e72502959f31a13b71d3ae892ec577f1ce8e"
+  },
+  {
+    "path": "gfx/flags/medium/NCR_democratic.tga",
+    "size": [
+      41,
+      26
+    ],
+    "sha256": "7d2c659139e348f569fa2924e461e72502959f31a13b71d3ae892ec577f1ce8e"
+  },
+  {
+    "path": "gfx/flags/small/NCR.tga",
+    "size": [
+      10,
+      7
+    ],
+    "sha256": "15f74d395c63a180ca58f1dbef447ca1b9d74bf2d45fed4036bcc99c08518354"
+  },
+  {
+    "path": "gfx/flags/small/NCR_democratic.tga",
+    "size": [
+      10,
+      7
+    ],
+    "sha256": "15f74d395c63a180ca58f1dbef447ca1b9d74bf2d45fed4036bcc99c08518354"
+  },
+  {
+    "path": "gfx/flags/TCF.tga",
+    "size": [
+      82,
+      52
+    ],
+    "sha256": "12dd6bf8e256b623bf5a4d5e464a9f600c353cd924f354ee8634d2ef78c7a8c3"
+  },
+  {
+    "path": "gfx/flags/TCF_democratic.tga",
+    "size": [
+      82,
+      52
+    ],
+    "sha256": "12dd6bf8e256b623bf5a4d5e464a9f600c353cd924f354ee8634d2ef78c7a8c3"
+  },
+  {
+    "path": "gfx/flags/medium/TCF.tga",
+    "size": [
+      41,
+      26
+    ],
+    "sha256": "af6835b35bdef5203bf83655aa24bf510a302c880dddb1f112645307284353b3"
+  },
+  {
+    "path": "gfx/flags/medium/TCF_democratic.tga",
+    "size": [
+      41,
+      26
+    ],
+    "sha256": "af6835b35bdef5203bf83655aa24bf510a302c880dddb1f112645307284353b3"
+  },
+  {
+    "path": "gfx/flags/small/TCF.tga",
+    "size": [
+      10,
+      7
+    ],
+    "sha256": "514e684fbec2f6b76d4012f1e6c3737af4263298e3a85ff9c4637bcd26220bf2"
+  },
+  {
+    "path": "gfx/flags/small/TCF_democratic.tga",
+    "size": [
+      10,
+      7
+    ],
+    "sha256": "514e684fbec2f6b76d4012f1e6c3737af4263298e3a85ff9c4637bcd26220bf2"
+  },
+  {
+    "path": "gfx/flags/DNR.tga",
+    "size": [
+      82,
+      52
+    ],
+    "sha256": "c513fabbc1ed493d1f243b232892d1e1860d4a2aa4c70f60ee082263e6dcf554"
+  },
+  {
+    "path": "gfx/flags/DNR_democratic.tga",
+    "size": [
+      82,
+      52
+    ],
+    "sha256": "c513fabbc1ed493d1f243b232892d1e1860d4a2aa4c70f60ee082263e6dcf554"
+  },
+  {
+    "path": "gfx/flags/medium/DNR.tga",
+    "size": [
+      41,
+      26
+    ],
+    "sha256": "a4f0c02a00ede5f6e51c720d9e579d62b73ac1ce4a0cf5c0f6d0e34572f4cf64"
+  },
+  {
+    "path": "gfx/flags/medium/DNR_democratic.tga",
+    "size": [
+      41,
+      26
+    ],
+    "sha256": "a4f0c02a00ede5f6e51c720d9e579d62b73ac1ce4a0cf5c0f6d0e34572f4cf64"
+  },
+  {
+    "path": "gfx/flags/small/DNR.tga",
+    "size": [
+      10,
+      7
+    ],
+    "sha256": "23465cfd733d1958f408274b0ca65ecc42242693312e4817354f7c9fad407027"
+  },
+  {
+    "path": "gfx/flags/small/DNR_democratic.tga",
+    "size": [
+      10,
+      7
+    ],
+    "sha256": "23465cfd733d1958f408274b0ca65ecc42242693312e4817354f7c9fad407027"
+  },
+  {
+    "path": "gfx/flags/KIR.tga",
+    "size": [
+      82,
+      52
+    ],
+    "sha256": "c93a43f91743dd5e895e3ccdc13de1a1051507941ccbe12b46286e5f28423672"
+  },
+  {
+    "path": "gfx/flags/KIR_democratic.tga",
+    "size": [
+      82,
+      52
+    ],
+    "sha256": "c93a43f91743dd5e895e3ccdc13de1a1051507941ccbe12b46286e5f28423672"
+  },
+  {
+    "path": "gfx/flags/medium/KIR.tga",
+    "size": [
+      41,
+      26
+    ],
+    "sha256": "3f7a5540eb08d1be7c41e6ef4a2ea1265054992910b60fe73266500cd27941a8"
+  },
+  {
+    "path": "gfx/flags/medium/KIR_democratic.tga",
+    "size": [
+      41,
+      26
+    ],
+    "sha256": "3f7a5540eb08d1be7c41e6ef4a2ea1265054992910b60fe73266500cd27941a8"
+  },
+  {
+    "path": "gfx/flags/small/KIR.tga",
+    "size": [
+      10,
+      7
+    ],
+    "sha256": "0572ce655902559743ad7024a15bfe8b4a6323aca187971b041ba0e118a1d963"
+  },
+  {
+    "path": "gfx/flags/small/KIR_democratic.tga",
+    "size": [
+      10,
+      7
+    ],
+    "sha256": "0572ce655902559743ad7024a15bfe8b4a6323aca187971b041ba0e118a1d963"
+  },
+  {
+    "path": "gfx/flags/BLF.tga",
+    "size": [
+      82,
+      52
+    ],
+    "sha256": "744353df58f323b41bf8c1fb45d1d5d95a081d0ba588e610a0725834d71d2a40"
+  },
+  {
+    "path": "gfx/flags/BLF_neutrality.tga",
+    "size": [
+      82,
+      52
+    ],
+    "sha256": "744353df58f323b41bf8c1fb45d1d5d95a081d0ba588e610a0725834d71d2a40"
+  },
+  {
+    "path": "gfx/flags/medium/BLF.tga",
+    "size": [
+      41,
+      26
+    ],
+    "sha256": "74fa856d4e2c83aaf8ee3faa40d93bd5bc52b2bc84b6f6743649bc8d9dd97136"
+  },
+  {
+    "path": "gfx/flags/medium/BLF_neutrality.tga",
+    "size": [
+      41,
+      26
+    ],
+    "sha256": "74fa856d4e2c83aaf8ee3faa40d93bd5bc52b2bc84b6f6743649bc8d9dd97136"
+  },
+  {
+    "path": "gfx/flags/small/BLF.tga",
+    "size": [
+      10,
+      7
+    ],
+    "sha256": "72823f41068822b8e10b6176a3581b8f12bd607f5087e10b3b9f4943198bfe1a"
+  },
+  {
+    "path": "gfx/flags/small/BLF_neutrality.tga",
+    "size": [
+      10,
+      7
+    ],
+    "sha256": "72823f41068822b8e10b6176a3581b8f12bd607f5087e10b3b9f4943198bfe1a"
+  },
+  {
+    "path": "gfx/flags/BLW.tga",
+    "size": [
+      82,
+      52
+    ],
+    "sha256": "0010fef9e05c96b912ebf3a6506120140aac0272de9cf495ae8b53462e0fa581"
+  },
+  {
+    "path": "gfx/flags/BLW_democratic.tga",
+    "size": [
+      82,
+      52
+    ],
+    "sha256": "0010fef9e05c96b912ebf3a6506120140aac0272de9cf495ae8b53462e0fa581"
+  },
+  {
+    "path": "gfx/flags/medium/BLW.tga",
+    "size": [
+      41,
+      26
+    ],
+    "sha256": "33c988e2d5471bdd4608f9bdf96f3e62d5164a81cf57c5fe198a47e1ac716051"
+  },
+  {
+    "path": "gfx/flags/medium/BLW_democratic.tga",
+    "size": [
+      41,
+      26
+    ],
+    "sha256": "33c988e2d5471bdd4608f9bdf96f3e62d5164a81cf57c5fe198a47e1ac716051"
+  },
+  {
+    "path": "gfx/flags/small/BLW.tga",
+    "size": [
+      10,
+      7
+    ],
+    "sha256": "868fd3a14f58fa0b8f61b3cdaf2918b1b05319f0a0509e192377ee4892326949"
+  },
+  {
+    "path": "gfx/flags/small/BLW_democratic.tga",
+    "size": [
+      10,
+      7
+    ],
+    "sha256": "868fd3a14f58fa0b8f61b3cdaf2918b1b05319f0a0509e192377ee4892326949"
+  },
+  {
+    "path": "gfx/flags/TRP.tga",
+    "size": [
+      82,
+      52
+    ],
+    "sha256": "e6de34ebd958bc8b863650510193ea36e68d0d41723d3069b9edc55577fef670"
+  },
+  {
+    "path": "gfx/flags/TRP_neutrality.tga",
+    "size": [
+      82,
+      52
+    ],
+    "sha256": "e6de34ebd958bc8b863650510193ea36e68d0d41723d3069b9edc55577fef670"
+  },
+  {
+    "path": "gfx/flags/medium/TRP.tga",
+    "size": [
+      41,
+      26
+    ],
+    "sha256": "3572af222de74c19aa7d5743a5eb28b7da91645b67651493321fd5e0988bcae2"
+  },
+  {
+    "path": "gfx/flags/medium/TRP_neutrality.tga",
+    "size": [
+      41,
+      26
+    ],
+    "sha256": "3572af222de74c19aa7d5743a5eb28b7da91645b67651493321fd5e0988bcae2"
+  },
+  {
+    "path": "gfx/flags/small/TRP.tga",
+    "size": [
+      10,
+      7
+    ],
+    "sha256": "7a7100e4785829628556f100cd0c7a5815a3deae666e94298ce5a2e658ca2c68"
+  },
+  {
+    "path": "gfx/flags/small/TRP_neutrality.tga",
+    "size": [
+      10,
+      7
+    ],
+    "sha256": "7a7100e4785829628556f100cd0c7a5815a3deae666e94298ce5a2e658ca2c68"
+  }
+]

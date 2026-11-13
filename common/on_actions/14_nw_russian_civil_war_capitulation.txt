@@ -1,21 +1,205 @@
-on_capitulation = {
-	effect = {
-		if = {
-			limit = {
-				has_country_flag = nw14_fragment
-				NOT = { has_country_flag = nw14_cw_capitulation_annexed }
+# Vanilla 00_on_actions.txt: ROOT = capitulated country; FROM = winner.
+on_actions = {
+	on_capitulation = {
+		effect = {
+			if = {
+				limit = {
+					has_country_flag = nw14_cw_participant
+					has_country_flag = nw14_cw_active
+					NOT = { has_country_flag = nw14_cw_capitulation_annexed }
+					FROM = { exists = yes has_country_flag = nw14_cw_active has_war_with = ROOT }
+				}
+				log = "[NW14 CW] capitulation loser=[ROOT.GetTag] winner=[FROM.GetTag]"
+				# A Polish capitulation opens a one-time choice for Finland while it is
+				# still an independent, active participant in the Russian civil war.
+				if = {
+					limit = { tag = POL FIN = { exists = yes } }
+					FIN = {
+						if = {
+							limit = {
+								has_country_flag = nw14_cw_active
+								is_subject = no
+								has_capitulated = no
+								NOT = { has_country_flag = nw14_fin_white_offer_fired }
+								event_target:nw14_rus_royal = { exists = yes }
+							}
+							set_country_flag = nw14_fin_white_offer_fired
+							country_event = { id = nw14cw.4 days = 1 }
+						}
+					}
+				}
+				# Only a New Russia victor (SOV or one of its faction members) creates
+				# the requested Finnish/Polish SOV puppets. Other victors follow the
+				# existing civil-war resolution below.
+				if = {
+					limit = {
+						tag = POL
+						SOV = { exists = yes has_country_flag = nw_rus_war_started }
+						FROM = { OR = { tag = SOV is_in_faction_with = SOV } }
+					}
+					set_country_flag = nw14_cw_capitulation_annexed
+					set_cosmetic_tag = NW_POLISH_PEOPLES_REPUBLIC
+					SOV = { puppet = ROOT }
+					log = "[NW14 CW] capitulation puppet loser=POL overlord=SOV"
+				}
+				else_if = {
+					limit = {
+						tag = FIN
+						SOV = { exists = yes has_country_flag = nw_rus_war_started }
+						FROM = { OR = { tag = SOV is_in_faction_with = SOV } }
+					}
+					set_country_flag = nw14_cw_capitulation_annexed
+					set_cosmetic_tag = NW_FINNISH_FEDERATION
+					SOV = { puppet = ROOT }
+					log = "[NW14 CW] capitulation puppet loser=FIN overlord=SOV"
+				}
+				else_if = {
+					limit = {
+						tag = BLF
+						BLW = {
+							exists = yes
+							NOT = { has_war_with = FROM }
+							OR = {
+								tag = FROM
+								is_in_faction_with = FROM
+								is_subject_of = FROM
+								FROM = { is_subject_of = BLW }
+								AND = { is_subject = yes OVERLORD = { is_in_faction_with = FROM } }
+							}
+						}
+					}
+					set_country_flag = nw14_cw_capitulation_annexed
+					BLW = {
+						log = "[NW14 CW] claim loser=[ROOT.GetTag] winner=[FROM.GetTag] recipient=[THIS.GetTag]"
+						annex_country = { target = ROOT transfer_troops = yes }
+					}
+				}
+				else_if = {
+					limit = {
+						tag = BLW
+						BLF = {
+							exists = yes
+							NOT = { has_war_with = FROM }
+							OR = {
+								tag = FROM
+								is_in_faction_with = FROM
+								is_subject_of = FROM
+								FROM = { is_subject_of = BLF }
+								AND = { is_subject = yes OVERLORD = { is_in_faction_with = FROM } }
+							}
+						}
+					}
+					set_country_flag = nw14_cw_capitulation_annexed
+					BLF = {
+						log = "[NW14 CW] claim loser=[ROOT.GetTag] winner=[FROM.GetTag] recipient=[THIS.GetTag]"
+						annex_country = { target = ROOT transfer_troops = yes }
+					}
+				}
+				else_if = {
+					limit = {
+						tag = DNR
+						DON = {
+							exists = yes
+							NOT = { has_war_with = FROM }
+							OR = {
+								tag = FROM
+								is_in_faction_with = FROM
+								is_subject_of = FROM
+								FROM = { is_subject_of = DON }
+								AND = { is_subject = yes OVERLORD = { is_in_faction_with = FROM } }
+								AND = { is_subject_of = AFS FROM = { is_subject_of = AFS } }
+							}
+						}
+					}
+					set_country_flag = nw14_cw_capitulation_annexed
+					DON = {
+						log = "[NW14 CW] claim loser=[ROOT.GetTag] winner=[FROM.GetTag] recipient=[THIS.GetTag]"
+						annex_country = { target = ROOT transfer_troops = yes }
+					}
+				}
+				else_if = {
+					limit = {
+						tag = DON
+						DNR = {
+							exists = yes
+							NOT = { has_war_with = FROM }
+							OR = {
+								tag = FROM
+								is_in_faction_with = FROM
+								is_subject_of = FROM
+								FROM = { is_subject_of = DNR }
+								AND = { is_subject = yes OVERLORD = { is_in_faction_with = FROM } }
+							}
+						}
+					}
+					set_country_flag = nw14_cw_capitulation_annexed
+					DNR = {
+						log = "[NW14 CW] claim loser=[ROOT.GetTag] winner=[FROM.GetTag] recipient=[THIS.GetTag]"
+						annex_country = { target = ROOT transfer_troops = yes }
+					}
+				}
+				else_if = {
+					limit = {
+						tag = KIR
+						ALA = {
+							exists = yes
+							NOT = { has_war_with = FROM }
+							OR = {
+								tag = FROM
+								is_in_faction_with = FROM
+								is_subject_of = FROM
+								FROM = { is_subject_of = ALA }
+								AND = { is_subject = yes OVERLORD = { is_in_faction_with = FROM } }
+							}
+						}
+					}
+					set_country_flag = nw14_cw_capitulation_annexed
+					ALA = {
+						log = "[NW14 CW] claim loser=[ROOT.GetTag] winner=[FROM.GetTag] recipient=[THIS.GetTag]"
+						annex_country = { target = ROOT transfer_troops = yes }
+					}
+				}
+				else = {
 				FROM = {
-					has_country_flag = nw14_fragment
-					is_faction_leader = yes
-					has_war_with = ROOT
+					if = {
+						limit = { is_subject = no has_country_flag = nw14_cw_annex_victor }
+						ROOT = { set_country_flag = nw14_cw_capitulation_annexed }
+						log = "[NW14 CW] annex loser=[ROOT.GetTag] recipient=[THIS.GetTag]"
+						annex_country = { target = ROOT transfer_troops = yes }
+					}
+					else_if = {
+						limit = { is_subject = yes OVERLORD = { has_country_flag = nw14_cw_annex_victor has_country_flag = nw14_cw_active has_war_with = ROOT } }
+						OVERLORD = {
+							ROOT = { set_country_flag = nw14_cw_capitulation_annexed }
+							log = "[NW14 CW] annex loser=[ROOT.GetTag] recipient=[THIS.GetTag]"
+						annex_country = { target = ROOT transfer_troops = yes }
+						}
+					}
+					# Only the known AKV -> DON -> AFS chain receives a second-level rule.
+					else_if = {
+						limit = { tag = AKV is_subject_of = DON DON = { is_subject_of = AFS } AFS = { has_country_flag = nw14_cw_annex_victor has_country_flag = nw14_cw_active has_war_with = ROOT } }
+						AFS = {
+							ROOT = { set_country_flag = nw14_cw_capitulation_annexed }
+							log = "[NW14 CW] annex loser=[ROOT.GetTag] recipient=[THIS.GetTag]"
+						annex_country = { target = ROOT transfer_troops = yes }
+						}
+					}
+				}
 				}
 			}
-			set_country_flag = nw14_cw_capitulation_annexed
-			FROM = {
-				annex_country = {
-					target = ROOT
-					transfer_troops = yes
+		}
+	}
+
+	# Country-scoped daily lifecycle, restricted to this scenario's marked actors.
+	# Permanent identity is retained; special handling ends after CW fronts close.
+	on_daily = {
+		effect = {
+			if = {
+				limit = {
+					has_country_flag = nw14_cw_active
+					NOT = { any_enemy_country = { has_country_flag = nw14_cw_participant } }
 				}
+				clr_country_flag = nw14_cw_active
 			}
 		}
 	}

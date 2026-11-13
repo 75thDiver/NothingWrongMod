@@ -1,3 +1,33 @@
+# Country scope. Each iterated country is an actual AFS enemy; inside a
+# subject scope PREV is that enemy. Syntax follows vanilla events/Japan.txt.
+nw14_rus_civil_war_join_white_subjects = {
+	every_country = {
+		limit = {
+			has_war_with = AFS
+			OR = { tag = SOV tag = RUK tag = FER tag = ABK tag = NCR tag = TCF tag = BLW tag = BLR tag = KIR tag = DNR tag = KAL }
+		}
+		DON = {
+			if = {
+				limit = { exists = yes is_subject_of = AFS NOT = { has_war_with = PREV } }
+				add_to_war = { targeted_alliance = AFS enemy = PREV hostility_reason = asked_to_join }
+			}
+		}
+		KUB = {
+			if = {
+				limit = { exists = yes is_subject_of = AFS NOT = { has_war_with = PREV } }
+				add_to_war = { targeted_alliance = AFS enemy = PREV hostility_reason = asked_to_join }
+			}
+		}
+		AKV = {
+			if = {
+				limit = { exists = yes is_subject_of = DON NOT = { has_war_with = PREV } }
+				add_to_war = { targeted_alliance = DON enemy = PREV hostility_reason = asked_to_join }
+			}
+		}
+	}
+}
+
+
 # Called by the existing nw14.20.a option, including the resume decision path.
 nw14_rus_civil_war_start = {
 	if = {
@@ -13,6 +43,8 @@ nw14_rus_civil_war_start = {
 			if = { limit = { is_in_faction = yes } leave_faction = yes }
 			remove_ideas = nw_fin_imperial_autonomy
 			drop_cosmetic_tag = yes
+			set_country_flag = nw14_cw_participant
+			set_country_flag = nw14_cw_active
 			set_politics = { ruling_party = democratic elections_allowed = yes }
 			set_popularities = { democratic = 100 }
 			set_party_name = { ideology = democratic name = NW_FIN_democratic_party long_name = NW_FIN_democratic_party_long }
@@ -22,6 +54,8 @@ nw14_rus_civil_war_start = {
 			if = { limit = { is_in_faction = yes } leave_faction = yes }
 			remove_ideas = nw_pol_imperial_autonomy
 			drop_cosmetic_tag = yes
+			set_country_flag = nw14_cw_participant
+			set_country_flag = nw14_cw_active
 			set_politics = { ruling_party = democratic elections_allowed = yes }
 			set_popularities = { democratic = 100 }
 			set_party_name = { ideology = democratic name = NW_POL_democratic_party long_name = NW_POL_democratic_party_long }
@@ -61,6 +95,8 @@ nw14_rus_civil_war_start = {
 		set_cosmetic_tag = NW_RUS_REPUBLIC
 		set_party_name = { ideology = democratic name = NW14_rus_provisional_party long_name = NW14_rus_provisional_party_long }
 		set_country_flag = nw14_fragment
+			set_country_flag = nw14_cw_participant
+			set_country_flag = nw14_cw_active
 
 		# Clear the old SOV army before splitting so neither side inherits the old OOB.
 		delete_unit = { disband = no }
@@ -88,6 +124,8 @@ nw14_rus_civil_war_start = {
 			set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 }
 			add_manpower = 35000
 			set_country_flag = nw14_fragment
+			set_country_flag = nw14_cw_participant
+			set_country_flag = nw14_cw_active
 			set_rule = { can_join_factions = yes can_create_factions = yes }
 			load_focus_tree = { tree = NW_generic_development keep_completed = no }
 		}
@@ -266,6 +304,8 @@ nw14_rus_civil_war_start = {
 			add_manpower = 100000
 			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 5000 }
 			set_country_flag = nw14_fragment
+			set_country_flag = nw14_cw_participant
+			set_country_flag = nw14_cw_active
 			set_rule = { can_join_factions = yes can_create_factions = no }
 			load_focus_tree = { tree = NW_generic_development keep_completed = no }
 		}
@@ -281,6 +321,8 @@ nw14_rus_civil_war_start = {
 			set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 }
 			add_manpower = 35000
 			set_country_flag = nw14_fragment
+			set_country_flag = nw14_cw_participant
+			set_country_flag = nw14_cw_active
 			if = { limit = { is_subject = yes } OVERLORD = { end_puppet = RSB } }
 			if = { limit = { is_in_faction = yes } leave_faction = yes }
 			set_rule = { can_join_factions = no can_create_factions = no }
@@ -296,6 +338,8 @@ nw14_rus_civil_war_start = {
 			add_manpower = 35000
 			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 2200 }
 			set_country_flag = nw14_fragment
+			set_country_flag = nw14_cw_participant
+			set_country_flag = nw14_cw_active
 			set_rule = { can_join_factions = yes can_create_factions = no }
 			load_focus_tree = { tree = NW_generic_development keep_completed = no }
 		}
@@ -310,6 +354,8 @@ nw14_rus_civil_war_start = {
 			add_manpower = 35000
 			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 1700 }
 			set_country_flag = nw14_fragment
+			set_country_flag = nw14_cw_participant
+			set_country_flag = nw14_cw_active
 			set_rule = { can_join_factions = yes can_create_factions = no }
 			load_focus_tree = { tree = NW_generic_development keep_completed = no }
 		}
@@ -339,6 +385,8 @@ nw14_rus_civil_war_start = {
 			add_manpower = 35000
 			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 3300 }
 			set_country_flag = nw14_fragment
+			set_country_flag = nw14_cw_participant
+			set_country_flag = nw14_cw_active
 			set_rule = { can_join_factions = yes can_create_factions = no }
 			load_focus_tree = { tree = NW_generic_development keep_completed = no }
 		}
@@ -350,6 +398,8 @@ nw14_rus_civil_war_start = {
 			set_popularities = { democratic = 100 }
 			set_party_name = { ideology = democratic name = nw14_cw_blr_party long_name = nw14_cw_blr_party_long }
 			set_country_flag = nw14_fragment
+			set_country_flag = nw14_cw_participant
+			set_country_flag = nw14_cw_active
 			set_rule = { can_join_factions = yes can_create_factions = no }
 			load_focus_tree = { tree = NW_generic_development keep_completed = no }
 		}
@@ -359,6 +409,8 @@ nw14_rus_civil_war_start = {
 			set_politics = { ruling_party = democratic elections_allowed = yes }
 			set_popularities = { democratic = 100 }
 			set_country_flag = nw14_fragment
+			set_country_flag = nw14_cw_participant
+			set_country_flag = nw14_cw_active
 			set_rule = { can_join_factions = yes can_create_factions = no }
 			load_focus_tree = { tree = NW_generic_development keep_completed = no }
 		}
@@ -368,6 +420,8 @@ nw14_rus_civil_war_start = {
 			set_popularities = { democratic = 100 }
 			set_party_name = { ideology = democratic name = nw14_cw_abk_party long_name = nw14_cw_abk_party_long }
 			set_country_flag = nw14_fragment
+			set_country_flag = nw14_cw_participant
+			set_country_flag = nw14_cw_active
 			set_rule = { can_join_factions = yes can_create_factions = no }
 			load_focus_tree = { tree = NW_generic_development keep_completed = no }
 		}
@@ -380,6 +434,8 @@ nw14_rus_civil_war_start = {
 			set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 }
 			add_manpower = 25000
 			set_country_flag = nw14_fragment
+			set_country_flag = nw14_cw_participant
+			set_country_flag = nw14_cw_active
 			set_rule = { can_join_factions = yes can_create_factions = no }
 			load_focus_tree = { tree = NW_generic_development keep_completed = no }
 		}
@@ -392,10 +448,14 @@ nw14_rus_civil_war_start = {
 			set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 }
 			add_manpower = 25000
 			set_country_flag = nw14_fragment
+			set_country_flag = nw14_cw_participant
+			set_country_flag = nw14_cw_active
 			set_rule = { can_join_factions = yes can_create_factions = no }
 			load_focus_tree = { tree = NW_generic_development keep_completed = no }
 		}
-		ARM = { set_capital = { state = 230 } set_country_flag = nw14_fragment set_rule = { can_join_factions = no can_create_factions = no } load_focus_tree = { tree = NW_generic_development keep_completed = no } }
+		ARM = { set_capital = { state = 230 } set_country_flag = nw14_fragment
+			set_country_flag = nw14_cw_participant
+			set_country_flag = nw14_cw_active set_rule = { can_join_factions = no can_create_factions = no } load_focus_tree = { tree = NW_generic_development keep_completed = no } }
 		TRP = {
 			set_capital = { state = 353 }
 			set_politics = { ruling_party = neutrality elections_allowed = no }
@@ -405,6 +465,8 @@ nw14_rus_civil_war_start = {
 			set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 }
 			add_manpower = 30000
 			set_country_flag = nw14_fragment
+			set_country_flag = nw14_cw_participant
+			set_country_flag = nw14_cw_active
 			set_rule = { can_join_factions = no can_create_factions = no }
 			load_focus_tree = { tree = NW_generic_development keep_completed = no }
 		}
@@ -417,6 +479,8 @@ nw14_rus_civil_war_start = {
 			set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 }
 			add_manpower = 35000
 			set_country_flag = nw14_fragment
+			set_country_flag = nw14_cw_participant
+			set_country_flag = nw14_cw_active
 			set_rule = { can_join_factions = no can_create_factions = no }
 			load_focus_tree = { tree = NW_generic_development keep_completed = no }
 		}
@@ -429,6 +493,8 @@ nw14_rus_civil_war_start = {
 			set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 }
 			add_manpower = 15000
 			set_country_flag = nw14_fragment
+			set_country_flag = nw14_cw_participant
+			set_country_flag = nw14_cw_active
 			set_rule = { can_join_factions = yes can_create_factions = no }
 			load_focus_tree = { tree = NW_generic_development keep_completed = no }
 		}
@@ -445,6 +511,8 @@ nw14_rus_civil_war_start = {
 				set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 }
 				add_manpower = 25000
 				set_country_flag = nw14_fragment
+			set_country_flag = nw14_cw_participant
+			set_country_flag = nw14_cw_active
 				set_rule = { can_join_factions = yes can_create_factions = no }
 				load_focus_tree = { tree = NW_generic_development keep_completed = no }
 			}
@@ -462,6 +530,8 @@ nw14_rus_civil_war_start = {
 				set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 }
 				add_manpower = 25000
 				set_country_flag = nw14_fragment
+			set_country_flag = nw14_cw_participant
+			set_country_flag = nw14_cw_active
 				set_rule = { can_join_factions = yes can_create_factions = no }
 				load_focus_tree = { tree = NW_generic_development keep_completed = no }
 			}
@@ -475,6 +545,8 @@ nw14_rus_civil_war_start = {
 				set_popularities = { democratic = 100 }
 				set_party_name = { ideology = democratic name = nw14_cw_kal_party long_name = nw14_cw_kal_party_long }
 				set_country_flag = nw14_fragment
+			set_country_flag = nw14_cw_participant
+			set_country_flag = nw14_cw_active
 				set_rule = { can_join_factions = yes can_create_factions = no }
 				load_focus_tree = { tree = NW_generic_development keep_completed = no }
 			}
@@ -489,6 +561,8 @@ nw14_rus_civil_war_start = {
 			create_country_leader = { name = "Национальный курултай Киргизской республики" ideology = liberalism expire = "2000.1.1" traits = { } }
 			set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 }
 			set_country_flag = nw14_fragment
+			set_country_flag = nw14_cw_participant
+			set_country_flag = nw14_cw_active
 			set_rule = { can_join_factions = yes can_create_factions = no }
 			load_focus_tree = { tree = NW_generic_development keep_completed = no }
 		}
@@ -500,6 +574,8 @@ nw14_rus_civil_war_start = {
 			create_country_leader = { name = "Алихан Букейханов" picture = GFX_NW14_CW_Bukeikhanov_Leader ideology = despotism expire = "2000.1.1" traits = { } }
 			set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 }
 			set_country_flag = nw14_fragment
+			set_country_flag = nw14_cw_participant
+			set_country_flag = nw14_cw_active
 			set_rule = { can_join_factions = no can_create_factions = no }
 			load_focus_tree = { tree = NW_generic_development keep_completed = no }
 		}
@@ -511,6 +587,8 @@ nw14_rus_civil_war_start = {
 			create_country_leader = { name = "Сеид Алим-хан" picture = GFX_NW14_CW_Alim_Khan_Leader ideology = despotism expire = "2000.1.1" traits = { } }
 			set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 }
 			set_country_flag = nw14_fragment
+			set_country_flag = nw14_cw_participant
+			set_country_flag = nw14_cw_active
 			set_rule = { can_join_factions = no can_create_factions = no }
 			load_focus_tree = { tree = NW_generic_development keep_completed = no }
 		}
@@ -570,6 +648,12 @@ nw14_rus_civil_war_start = {
 		# DON and KUB are AFS puppets; AKV is a DON puppet. Keep the subject chain
 		# intact so they inherit the White faction through their overlords.
 
+		# Persistent CW identities: monthly generic fragment cleanup must not erase them.
+		set_country_flag = nw14_cw_annex_victor
+		event_target:nw14_rus_royal = { set_country_flag = nw14_cw_annex_victor }
+		RSB = { set_country_flag = nw14_cw_annex_victor }
+		AFS = { set_country_flag = nw14_cw_annex_victor }
+
 		# Clear existing units and load exactly one civil-war OOB after state ownership is final.
 		SOV = { delete_unit = { disband = no } set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 } add_manpower = 264000 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 18480 } load_oob = NW14_SOV_CW }
 		event_target:nw14_rus_royal = { delete_unit = { disband = no } set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 } add_manpower = 229000 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 18480 } load_oob = NW14_ROYAL_CW }
@@ -601,10 +685,11 @@ nw14_rus_civil_war_start = {
 			country_event = { id = nw14cw.1 hours = 1 }
 		}
 
-		# Start the external fronts after the new tags and faction setup have settled.
-		# The second hidden dispatch retries once; war effects skip existing wars.
-		country_event = { id = nw14cw.2 days = 30 }
-		country_event = { id = nw14cw.3 days = 37 }
+		# Open all intended fronts now, after ownership, factions and OOB are final.
+		nw14_rus_civil_war_declare_external_wars = yes
+		# Bounded retries only; countries must not wait a month to enter the war.
+		country_event = { id = nw14cw.2 hours = 1 }
+		country_event = { id = nw14cw.3 days = 1 }
 	}
 }
 
@@ -631,11 +716,21 @@ nw14_rus_civil_war_declare_external_wars = {
 		limit = { has_country_flag = nw_rus_war_started }
 		SOV = {
 			nw14_rus_civil_war_declare_new_russia_wars = yes
-			every_country = {
-				limit = { is_in_faction_with = SOV NOT = { tag = SOV } }
-				nw14_rus_civil_war_declare_new_russia_wars = yes
-			}
+
 		}
+		if = { limit = { RUK = { exists = yes } } RUK = { nw14_rus_civil_war_declare_new_russia_wars = yes } }
+		if = { limit = { FER = { exists = yes } } FER = { nw14_rus_civil_war_declare_new_russia_wars = yes } }
+		if = { limit = { ABK = { exists = yes } } ABK = { nw14_rus_civil_war_declare_new_russia_wars = yes } }
+		if = { limit = { NCR = { exists = yes } } NCR = { nw14_rus_civil_war_declare_new_russia_wars = yes } }
+		if = { limit = { TCF = { exists = yes } } TCF = { nw14_rus_civil_war_declare_new_russia_wars = yes } }
+		if = { limit = { BLW = { exists = yes } } BLW = { nw14_rus_civil_war_declare_new_russia_wars = yes } }
+		if = { limit = { BLR = { exists = yes } } BLR = { nw14_rus_civil_war_declare_new_russia_wars = yes } }
+		if = { limit = { KIR = { exists = yes } } KIR = { nw14_rus_civil_war_declare_new_russia_wars = yes } }
+		if = { limit = { DNR = { exists = yes } } DNR = { nw14_rus_civil_war_declare_new_russia_wars = yes } }
+		if = { limit = { KAL = { exists = yes } } KAL = { nw14_rus_civil_war_declare_new_russia_wars = yes } }
+		# White leaders also fight the same separatist states as New Russia.
+		if = { limit = { event_target:nw14_rus_royal = { exists = yes } } event_target:nw14_rus_royal = { nw14_rus_civil_war_declare_separatist_wars = yes } }
+		if = { limit = { AFS = { exists = yes } } AFS = { nw14_rus_civil_war_declare_separatist_wars = yes } }
 			# Российское Государство remains outside both factions. It fights the
 			# separatists and the New Russia bloc, but not the White Movement.
 			RSB = {
@@ -648,5 +743,6 @@ nw14_rus_civil_war_declare_external_wars = {
 			if = { limit = { SOV = { exists = yes } NOT = { has_war_with = SOV } } declare_war_on = { target = SOV type = annex_everything } }
 			if = { limit = { ARM = { exists = yes } NOT = { has_war_with = ARM } } declare_war_on = { target = ARM type = annex_everything } }
 		}
+		nw14_rus_civil_war_join_white_subjects = yes
 	}
 }

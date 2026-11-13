@@ -1,0 +1,76 @@
+{
+  "url": "https://upload.wikimedia.org/wikipedia/commons/4/43/Red_flag.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "descriptionurl": "https://commons.wikimedia.org/wiki/File:Red_flag.svg",
+  "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=1700530",
+  "extmetadata": {
+    "DateTime": {
+      "value": "2026-02-12 22:06:08",
+      "source": "mediawiki-metadata",
+      "hidden": ""
+    },
+    "ObjectName": {
+      "value": "Red flag",
+      "source": "mediawiki-metadata"
+    },
+    "CommonsMetadataExtension": {
+      "value": 1.2,
+      "source": "extension",
+      "hidden": ""
+    },
+    "Categories": {
+      "value": "PD shape|Files allowed to be overwritten by everyone|Socialist flags|Plain red SVG flag icons|SVG colors|SVG red flags|Unchecked SVG validity|Communist symbols|SVG historical pirate flags|Solid red flags",
+      "source": "commons-categories",
+      "hidden": ""
+    },
+    "Assessments": {
+      "value": "",
+      "source": "commons-categories",
+      "hidden": ""
+    },
+    "ImageDescription": {
+      "value": "The <b>red flag</b> – international symbol of the working class. (3:5 ratio)",
+      "source": "commons-desc-page"
+    },
+    "DateTimeOriginal": {
+      "value": "2006-02-21",
+      "source": "commons-desc-page"
+    },
+    "Credit": {
+      "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+      "source": "commons-desc-page"
+    },
+    "Artist": {
+      "value": "<a href=\"https://de.wikipedia.org/wiki/User:Burts\" class=\"extiw\" title=\"de:User:Burts\">burts</a>",
+      "source": "commons-desc-page"
+    },
+    "LicenseShortName": {
+      "value": "Public domain",
+      "source": "commons-desc-page",
+      "hidden": ""
+    },
+    "UsageTerms": {
+      "value": "Public domain",
+      "source": "commons-desc-page"
+    },
+    "AttributionRequired": {
+      "value": "false",
+      "source": "commons-desc-page",
+      "hidden": ""
+    },
+    "Copyrighted": {
+      "value": "False",
+      "source": "commons-desc-page",
+      "hidden": ""
+    },
+    "Restrictions": {
+      "value": "communist",
+      "source": "commons-desc-page",
+      "hidden": ""
+    },
+    "License": {
+      "value": "pd",
+      "source": "commons-templates",
+      "hidden": ""
+    }
+  }
+}

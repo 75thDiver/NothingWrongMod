@@ -316,18 +316,66 @@ class RussianCivilWarPrealphaTests(unittest.TestCase):
         self.assertIn('FIN_democratic:0 "Республика Финляндия"', country_loc)
         self.assertIn('POL_democratic:0 "Польская Республика"', country_loc)
 
-    def test_capitulation_auto_annex_only_when_a_fragment_faction_leader_wins(self) -> None:
+    def test_capitulation_hook_is_registered_inside_on_actions(self) -> None:
+        from pdx_source import parse, vals
+        nodes = parse(CAPITULATION.read_text(encoding="utf-8-sig"))
+        registered = [hook for group in vals(nodes, "on_actions")
+                      for hook in vals(group, "on_capitulation")]
+        self.assertEqual(len(registered), 1,
+                         "Engine requires on_capitulation inside on_actions")
+
+    def test_capitulation_uses_persistent_cw_identity_without_faction_leadership(self) -> None:
         self.assertTrue(CAPITULATION.is_file())
         text = CAPITULATION.read_text(encoding="utf-8-sig")
         self.assertEqual(brace_errors(text), [])
-        self.assertIn("has_country_flag = nw14_fragment", text)
-        self.assertIn("is_faction_leader = yes", text)
+        self.assertIn("has_country_flag = nw14_cw_participant", text)
+        self.assertNotIn("is_faction_leader", text)
+        self.assertIn("has_country_flag = nw14_cw_annex_victor", text)
         self.assertIn("has_war_with = ROOT", text)
         self.assertIn("annex_country = {", text)
         self.assertIn("target = ROOT", text)
         self.assertIn("transfer_troops = yes", text)
         self.assertIn("set_country_flag = nw14_cw_capitulation_annexed", text)
-        self.assertNotIn("else =", text)
+
+    def test_persistent_cw_markers_cover_participants_and_four_victors(self) -> None:
+        from pdx_source import parse, val
+        found = {}
+        def visit(nodes, scope="SOV"):
+            for n in nodes:
+                if n.key == "limit":
+                    continue
+                if n.key == "set_country_flag":
+                    found.setdefault(n.value, set()).add(scope)
+                elif isinstance(n.value, list):
+                    child = n.key if (n.key and re.fullmatch(r"[A-Z]{3}|event_target:nw14_rus_royal", n.key)) else scope
+                    visit(n.value, child)
+        visit(val(parse(self.effect), "nw14_rus_civil_war_start"))
+        self.assertEqual(found["nw14_cw_annex_victor"], {"SOV", "AFS", "RSB", "event_target:nw14_rus_royal"})
+        self.assertEqual(found["nw14_cw_active"], found["nw14_cw_participant"])
+        self.assertEqual(found["nw14_cw_participant"], {"SOV", "AFS", "RSB", "event_target:nw14_rus_royal", "DON", "KUB", "AKV", "RUK", "FER", "ABK", "NCR", "TCF", "ARM", "TRP", "BLF", "BLW", "BLR", "KIR", "ALA", "TRK", "DNR", "KAL", "FIN", "POL"})
+
+    def test_cw_flags_exist_at_all_three_sizes(self) -> None:
+        for tag in ("ALA", "TRK", "NCR", "TCF", "DNR", "KIR", "BLF", "BLW", "TRP"):
+            for folder, size in (("", (82, 52)), ("medium", (41, 26)), ("small", (10, 7))):
+                raw = (ROOT / "gfx/flags" / folder / f"{tag}.tga").read_bytes()
+                self.assertEqual(raw[2], 2, tag)
+                self.assertEqual(struct.unpack("<HH", raw[12:16]), size, tag)
+
+    def test_democratic_finland_uses_plain_national_cross(self) -> None:
+        game = Path(os.environ.get("HOI4_GAME_PATH", ""))
+        if not (game / "gfx/flags/FIN_neutrality.tga").is_file():
+            self.skipTest("Set HOI4_GAME_PATH for byte comparison with Finnish national flag")
+        for folder in ("", "medium", "small"):
+            self.assertEqual((ROOT / "gfx/flags" / folder / "FIN_democratic.tga").read_bytes(),
+                             (game / "gfx/flags" / folder / "FIN_neutrality.tga").read_bytes())
+
+    def test_ataman_portraits_have_game_dimensions(self) -> None:
+        gfx = LEADER_GFX.read_text()
+        for name in ("Kaledin", "Ulagay", "Alim_Khan"):
+            path = re.search(rf'name = GFX_NW14_CW_{name}_Leader texturefile = "([^"]+)"', gfx).group(1)
+            raw = (ROOT / path).read_bytes()
+            self.assertEqual(raw[:8], b"\x89PNG\r\n\x1a\n")
+            self.assertEqual(struct.unpack(">II", raw[16:24]), (156, 210), name)
 
     def test_new_leader_portraits_and_military_gfx_paths_exist(self) -> None:
         gfx = LEADER_GFX.read_text(encoding="utf-8-sig")
@@ -390,13 +438,48 @@ class RussianCivilWarPrealphaTests(unittest.TestCase):
         loc = LOCALISATION.read_text(encoding="utf-8-sig")
         self.assertRegex(loc, r'(?m)^\s*nw14_white_movement_faction:0\s+"Белое движение"')
 
-    def test_external_wars_use_hidden_delayed_dispatch_and_retry(self) -> None:
+    def test_white_leadership_also_opens_separatist_fronts(self) -> None:
+        from pdx_source import parse, val, walk
+        wrapper = val(parse(self.effect), "nw14_rus_civil_war_declare_external_wars")
+        for tag in ("event_target:nw14_rus_royal", "AFS"):
+            entries = [n for n in walk(wrapper) if n.key == tag and isinstance(n.value, list)
+                       and val(n.value, "nw14_rus_civil_war_declare_separatist_wars") == "yes"]
+            self.assertEqual(len(entries), 1, tag)
+
+    def test_all_fronts_open_in_initializer_and_subjects_are_called(self) -> None:
+        from pdx_source import parse, val, walk
+        initializer = val(parse(self.effect), "nw14_rus_civil_war_start")
+        calls = [n for n in walk(initializer)
+                 if n.key == "nw14_rus_civil_war_declare_external_wars"]
+        self.assertEqual(len(calls), 1, "All fronts must open during initial setup")
+        self.assertIn("nw14_rus_civil_war_join_white_subjects", self.effect)
+        for tag in ("RUK", "FER", "ABK", "NCR", "TCF", "BLW", "BLR", "KIR", "DNR", "KAL"):
+            wrapper = val(parse(self.effect), "nw14_rus_civil_war_declare_external_wars")
+            scopes = [n for n in walk(wrapper) if n.key == tag and isinstance(n.value, list)
+                      and val(n.value, "nw14_rus_civil_war_declare_new_russia_wars") == "yes"]
+            self.assertEqual(len(scopes), 1, tag)
+
+    def test_white_subjects_join_only_existing_afs_fronts(self) -> None:
+        from pdx_source import parse, val
+        helper = val(parse(self.effect), "nw14_rus_civil_war_join_white_subjects")
+        countries = val(helper, "every_country")
+        self.assertEqual(val(val(countries, "limit"), "has_war_with"), "AFS")
+        for tag, ally in (("DON", "AFS"), ("KUB", "AFS"), ("AKV", "DON")):
+            conditional = val(val(countries, tag), "if")
+            conditions = val(conditional, "limit")
+            self.assertEqual(val(conditions, "is_subject_of"), ally)
+            self.assertEqual(val(val(conditions, "NOT"), "has_war_with"), "PREV")
+            join = val(conditional, "add_to_war")
+            self.assertEqual(val(join, "targeted_alliance"), ally)
+            self.assertEqual(val(join, "enemy"), "PREV")
+
+    def test_external_wars_open_immediately_with_bounded_retry(self) -> None:
         initializer = self.effect.split("nw14_rus_civil_war_start = {", 1)[1].split(
             "\nnw14_rus_civil_war_declare_separatist_wars = {", 1
         )[0]
-        self.assertNotIn("nw14_rus_civil_war_declare_external_wars = yes", initializer)
-        self.assertIn("country_event = { id = nw14cw.2 days = 30 }", initializer)
-        self.assertIn("country_event = { id = nw14cw.3 days = 37 }", initializer)
+        self.assertIn("nw14_rus_civil_war_declare_external_wars = yes", initializer)
+        self.assertIn("country_event = { id = nw14cw.2 hours = 1 }", initializer)
+        self.assertIn("country_event = { id = nw14cw.3 days = 1 }", initializer)
         self.assertNotIn("nw14_cw_external_fronts_started", self.effect)
 
         separatists = self.effect.split("nw14_rus_civil_war_declare_separatist_wars = {", 1)[1].split(
@@ -416,8 +499,8 @@ class RussianCivilWarPrealphaTests(unittest.TestCase):
             with self.subTest(white_puppet=puppet):
                 self.assertNotIn(f"target = {puppet} type = annex_everything", targets)
         wrapper = self.effect.split("nw14_rus_civil_war_declare_external_wars = {", 1)[1]
-        self.assertIn("every_country = {", wrapper)
-        self.assertIn("is_in_faction_with = SOV", wrapper)
+        self.assertIn("nw14_rus_civil_war_join_white_subjects = yes", wrapper)
+        self.assertIn("KAL = { nw14_rus_civil_war_declare_new_russia_wars = yes }", wrapper)
         self.assertRegex(
             wrapper,
             r"(?s)RSB\s*=\s*\{\s*nw14_rus_civil_war_declare_separatist_wars\s*=\s*yes.*?target\s*=\s*SOV\s+type\s*=\s*annex_everything.*?\n\s*\}",
@@ -426,7 +509,7 @@ class RussianCivilWarPrealphaTests(unittest.TestCase):
         for white_target in ("event_target:nw14_rus_royal", "AFS", "DON", "KUB", "AKV"):
             with self.subTest(rsb_white_target=white_target):
                 self.assertNotIn(f"target = {white_target} type = annex_everything", rsb_wars)
-        self.assertNotIn("add_to_war =", self.effect)
+        self.assertIn("add_to_war =", self.effect)
         self.assertRegex(self.effect, r"(?s)delete_unit\s*=\s*\{\s*disband\s*=\s*no\s*\}.*?start_civil_war\s*=")
 
         events = SUPEREVENT.read_text(encoding="utf-8-sig")

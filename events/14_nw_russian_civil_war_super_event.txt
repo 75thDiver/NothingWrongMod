@@ -20,7 +20,7 @@ country_event = {
 	}
 }
 
-# External fronts open after the new civil-war countries and factions settle.
+# First bounded retry after the immediate declaration pass.
 country_event = {
 	id = nw14cw.2
 	hidden = yes
@@ -47,6 +47,55 @@ country_event = {
 			limit = { has_country_flag = nw_rus_war_started }
 			nw14_rus_civil_war_declare_external_wars = yes
 		}
+	}
+}
+
+# Poland's fall prompts an independent Finland to choose its side in the war.
+country_event = {
+	id = nw14cw.4
+	title = nw14cw.4.t
+	desc = nw14cw.4.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = FIN
+		has_country_flag = nw14_fin_white_offer_fired
+		has_country_flag = nw14_cw_active
+		has_capitulated = no
+		is_subject = no
+		event_target:nw14_rus_royal = { exists = yes }
+	}
+	option = {
+		name = nw14cw.4.a
+		ai_chance = { factor = 75 }
+		# Target only the White Movement and its established subject chain.
+		# No white_peace is explicitly issued against New Russia.
+		if = {
+			limit = { event_target:nw14_rus_royal = { exists = yes has_war_with = ROOT } }
+			event_target:nw14_rus_royal = { white_peace = { tag = ROOT } }
+		}
+		if = {
+			limit = { AFS = { exists = yes has_war_with = ROOT } }
+			AFS = { white_peace = { tag = ROOT } }
+		}
+		if = {
+			limit = { DON = { exists = yes has_war_with = ROOT } }
+			DON = { white_peace = { tag = ROOT } }
+		}
+		if = {
+			limit = { KUB = { exists = yes has_war_with = ROOT } }
+			KUB = { white_peace = { tag = ROOT } }
+		}
+		if = {
+			limit = { AKV = { exists = yes has_war_with = ROOT } }
+			AKV = { white_peace = { tag = ROOT } }
+		}
+		if = { limit = { is_in_faction = yes } leave_faction = yes }
+		event_target:nw14_rus_royal = { FIN = { add_to_faction = PREV } }
+	}
+	option = {
+		name = nw14cw.4.b
+		ai_chance = { factor = 25 }
 	}
 }
 

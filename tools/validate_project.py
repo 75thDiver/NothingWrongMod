@@ -22,6 +22,13 @@ def load(path):
     return parse(path.read_text(encoding="utf-8-sig"))
 
 
+# Engine only registers hooks within the on_actions container.
+for path in sorted((MOD / "common/on_actions").glob("*.txt")):
+    nodes = load(path)
+    check(str(path.relative_to(MOD)) + ": on_actions root container",
+          all(node.key == "on_actions" and isinstance(node.value, list)
+              for node in nodes))
+
 focuses = {}
 trees = {}
 for path in sorted((MOD / "common/national_focus").glob("*.txt")):
