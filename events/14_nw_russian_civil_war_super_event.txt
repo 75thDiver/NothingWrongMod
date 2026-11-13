@@ -91,7 +91,7 @@ country_event = {
 			AKV = { white_peace = { tag = ROOT } }
 		}
 		if = { limit = { is_in_faction = yes } leave_faction = yes }
-		event_target:nw14_rus_royal = { FIN = { add_to_faction = PREV } }
+		event_target:nw14_rus_royal = { add_to_faction = FIN }
 	}
 	option = {
 		name = nw14cw.4.b

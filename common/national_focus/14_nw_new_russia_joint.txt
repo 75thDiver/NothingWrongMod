@@ -3,8 +3,10 @@ joint_focus = {
  id = NW14_joint_cooperation
  dynamic = yes
  icon = GFX_goal_generic_national_unity
- x = 90
+ x = 50
  y = 0
+ offset = { x = -10 y = 26 trigger = { has_focus_tree = NW14_SOV_tree } }
+ offset = { x = 0 y = 14 trigger = { has_focus_tree = NW_generic_development } }
  cost = 3
  allow_branch = { nw14_new_russia_joint_member = yes }
  available = { nw14_new_russia_joint_member = yes }
