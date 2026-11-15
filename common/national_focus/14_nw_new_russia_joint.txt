@@ -11,8 +11,9 @@ joint_focus = {
  allow_branch = { nw14_new_russia_joint_member = yes }
  available = { nw14_new_russia_joint_member = yes }
  joint_trigger = { nw14_new_russia_joint_member = yes }
- completion_reward_joint_originator = { add_political_power = 50 }
- completion_reward_joint_member = { add_political_power = 25 }
+ completion_reward = { add_war_support = 0.02 add_ideas = nw14_new_russia_cooperation_1 }
+ completion_reward_joint_originator = { add_political_power = 25 }
+ completion_reward_joint_member = { add_political_power = 10 }
  ai_will_do = { factor = 1 }
 }
 joint_focus = {
@@ -21,13 +22,474 @@ joint_focus = {
  icon = GFX_goal_generic_army_doctrines
  prerequisite = { focus = NW14_joint_cooperation }
  relative_position_id = NW14_joint_cooperation
- x = 0
+ x = -9
  y = 1
+ cost = 3
+ allow_branch = { nw14_new_russia_joint_member = yes }
+ available = { nw14_new_russia_joint_member = yes }
+ joint_trigger = { nw14_new_russia_joint_member = yes }
+ completion_reward = { army_experience = 5 country_event = { id = nw_nr.1 days = 1 } }
+ completion_reward_joint_originator = { army_experience = 10 }
+ ai_will_do = { factor = 1 }
+}
+
+joint_focus = {
+ id = NW_NR_war_stockpiles
+ dynamic = yes
+ icon = GFX_goal_generic_national_unity
+ prerequisite = { focus = NW14_joint_cooperation }
+ relative_position_id = NW14_joint_cooperation
+ x = -3
+ y = 1
+ cost = 3
+ allow_branch = { nw14_new_russia_joint_member = yes }
+ available = { nw14_new_russia_joint_member = yes }
+ joint_trigger = { nw14_new_russia_joint_member = yes }
+ completion_reward = { add_equipment_to_stockpile = { type = infantry_equipment amount = 100 } }
+ ai_will_do = { factor = 1 }
+}
+
+joint_focus = {
+ id = NW_NR_common_cause
+ dynamic = yes
+ prerequisite = { focus = NW14_joint_cooperation }
+ icon = GFX_goal_generic_national_unity
+ relative_position_id = NW14_joint_cooperation
+ x = 3
+ y = 1
+ cost = 3
+ allow_branch = { nw14_new_russia_joint_member = yes }
+ available = { nw14_new_russia_joint_member = yes }
+ joint_trigger = { nw14_new_russia_joint_member = yes }
+ completion_reward = { add_stability = 0.02 }
+ ai_will_do = { factor = 1 }
+}
+
+joint_focus = {
+ id = NW_NR_village_voice
+ dynamic = yes
+ prerequisite = { focus = NW14_joint_cooperation }
+ icon = GFX_goal_generic_national_unity
+ relative_position_id = NW14_joint_cooperation
+ x = 9
+ y = 1
+ cost = 3
+ allow_branch = { nw14_new_russia_joint_member = yes }
+ available = { nw14_new_russia_joint_member = yes }
+ joint_trigger = { nw14_new_russia_joint_member = yes }
+ completion_reward = { add_stability = 0.02 }
+ ai_will_do = { factor = 1 }
+}
+
+joint_focus = {
+ id = NW_NR_operational_plan
+ dynamic = yes
+ icon = GFX_goal_generic_army_doctrines
+ prerequisite = { focus = NW14_joint_front_commanders }
+ relative_position_id = NW14_joint_cooperation
+ x = -10
+ y = 3
  cost = 5
  allow_branch = { nw14_new_russia_joint_member = yes }
  available = { nw14_new_russia_joint_member = yes }
  joint_trigger = { nw14_new_russia_joint_member = yes }
- completion_reward_joint_originator = { army_experience = 15 }
- completion_reward_joint_member = { army_experience = 10 }
+ completion_reward = { add_timed_idea = { idea = nw_nr_operational_plan days = 180 } }
+ ai_will_do = { factor = 1 }
+}
+
+joint_focus = {
+ id = NW_NR_field_communications
+ dynamic = yes
+ icon = GFX_goal_generic_army_doctrines
+ prerequisite = { focus = NW_NR_operational_plan }
+ prerequisite = { focus = NW_NR_militias }
+ relative_position_id = NW14_joint_cooperation
+ x = -9
+ y = 5
+ cost = 4
+ allow_branch = { nw14_new_russia_joint_member = yes }
+ available = { nw14_new_russia_joint_member = yes }
+ joint_trigger = { nw14_new_russia_joint_member = yes }
+ completion_reward = { add_timed_idea = { idea = nw_nr_field_communications days = 180 } }
+ ai_will_do = { factor = 1 }
+}
+
+joint_focus = {
+ id = NW_NR_militias
+ dynamic = yes
+ icon = GFX_goal_generic_national_unity
+ prerequisite = { focus = NW14_joint_front_commanders }
+ relative_position_id = NW14_joint_cooperation
+ x = -8
+ y = 3
+ cost = 4
+ allow_branch = { nw14_new_russia_joint_member = yes }
+ available = { nw14_new_russia_joint_member = yes }
+ joint_trigger = { nw14_new_russia_joint_member = yes }
+ completion_reward_joint_originator = { add_equipment_to_stockpile = { type = infantry_equipment amount = 300 } }
+ completion_reward_joint_member = { add_equipment_to_stockpile = { type = infantry_equipment amount = 100 } }
+ ai_will_do = { factor = 1 }
+}
+
+joint_focus = {
+ id = NW_NR_hospitals
+ dynamic = yes
+ icon = GFX_goal_generic_national_unity
+ prerequisite = { focus = NW_NR_field_communications }
+ relative_position_id = NW14_joint_cooperation
+ x = -9
+ y = 6
+ cost = 5
+ allow_branch = { nw14_new_russia_joint_member = yes }
+ available = { nw14_new_russia_joint_member = yes }
+ joint_trigger = { nw14_new_russia_joint_member = yes }
+ completion_reward = { add_timed_idea = { idea = nw_nr_hospitals days = 180 } }
+ ai_will_do = { factor = 1 }
+}
+
+joint_focus = {
+ id = NW_NR_united_front
+ dynamic = yes
+ icon = GFX_goal_generic_national_unity
+ prerequisite = { focus = NW_NR_hospitals }
+ relative_position_id = NW14_joint_cooperation
+ x = -9
+ y = 7
+ cost = 5
+ allow_branch = { nw14_new_russia_joint_member = yes }
+ available = { nw14_new_russia_joint_member = yes }
+ joint_trigger = { nw14_new_russia_joint_member = yes }
+ completion_reward = { add_timed_idea = { idea = nw_nr_defence days = 180 } }
+ completion_reward_joint_originator = { army_experience = 10 }
+ ai_will_do = { factor = 1 }
+}
+
+joint_focus = {
+ id = NW_NR_orders
+ dynamic = yes
+ icon = GFX_goal_generic_national_unity
+ prerequisite = { focus = NW_NR_war_stockpiles }
+ relative_position_id = NW14_joint_cooperation
+ x = -3
+ y = 3
+ cost = 4
+ allow_branch = { nw14_new_russia_joint_member = yes }
+ available = { nw14_new_russia_joint_member = yes }
+ joint_trigger = { nw14_new_russia_joint_member = yes }
+ completion_reward = { add_timed_idea = { idea = nw_nr_production days = 180 } }
+ ai_will_do = { factor = 1 }
+}
+
+joint_focus = {
+ id = NW_NR_machinery
+ dynamic = yes
+ icon = GFX_goal_generic_national_unity
+ prerequisite = { focus = NW_NR_congress }
+ relative_position_id = NW14_joint_cooperation
+ x = -4
+ y = 5
+ cost = 5
+ allow_branch = { nw14_new_russia_joint_member = yes }
+ available = { nw14_new_russia_joint_member = yes }
+ joint_trigger = { nw14_new_russia_joint_member = yes }
+ completion_reward = { country_event = { id = nw_nr.2 days = 1 } }
+ completion_reward_joint_originator = { add_timed_idea = { idea = nw_nr_production days = 180 } }
+ ai_will_do = { factor = 1 }
+}
+
+joint_focus = {
+ id = NW_NR_railways
+ dynamic = yes
+ icon = GFX_goal_generic_national_unity
+ prerequisite = { focus = NW_NR_congress }
+ relative_position_id = NW14_joint_cooperation
+ x = -2
+ y = 5
+ cost = 5
+ allow_branch = { nw14_new_russia_joint_member = yes }
+ available = { nw14_new_russia_joint_member = yes }
+ joint_trigger = { nw14_new_russia_joint_member = yes }
+ completion_reward = { add_timed_idea = { idea = nw_nr_supply days = 180 } }
+ ai_will_do = { factor = 1 }
+}
+
+joint_focus = {
+ id = NW_NR_bread_coal
+ dynamic = yes
+ icon = GFX_goal_generic_national_unity
+ prerequisite = { focus = NW_NR_machinery }
+ prerequisite = { focus = NW_NR_railways }
+ relative_position_id = NW14_joint_cooperation
+ x = -3
+ y = 6
+ cost = 4
+ allow_branch = { nw14_new_russia_joint_member = yes }
+ available = { nw14_new_russia_joint_member = yes }
+ joint_trigger = { nw14_new_russia_joint_member = yes }
+ completion_reward = { add_timed_idea = { idea = nw_nr_supply days = 180 } }
+ ai_will_do = { factor = 1 }
+}
+
+joint_focus = {
+ id = NW_NR_workshops
+ dynamic = yes
+ icon = GFX_goal_generic_national_unity
+ prerequisite = { focus = NW_NR_bread_coal }
+ relative_position_id = NW14_joint_cooperation
+ x = -3
+ y = 7
+ cost = 5
+ allow_branch = { nw14_new_russia_joint_member = yes }
+ available = { nw14_new_russia_joint_member = yes }
+ joint_trigger = { nw14_new_russia_joint_member = yes }
+ completion_reward = { add_timed_idea = { idea = nw_nr_construction days = 180 } }
+ ai_will_do = { factor = 1 }
+}
+
+joint_focus = {
+ id = NW_NR_zemstvos
+ dynamic = yes
+ icon = GFX_goal_generic_national_unity
+ prerequisite = { focus = NW_NR_common_cause }
+ relative_position_id = NW14_joint_cooperation
+ x = 3
+ y = 2
+ cost = 4
+ allow_branch = { nw14_new_russia_joint_member = yes }
+ available = { nw14_new_russia_joint_member = yes }
+ joint_trigger = { nw14_new_russia_joint_member = yes }
+ completion_reward = { add_stability = 0.02 }
+ completion_reward_joint_originator = { add_political_power = 15 }
+ ai_will_do = { factor = 1 }
+}
+
+joint_focus = {
+ id = NW_NR_council
+ dynamic = yes
+ icon = GFX_goal_generic_national_unity
+ prerequisite = { focus = NW_NR_zemstvos }
+ relative_position_id = NW14_joint_cooperation
+ x = 3
+ y = 3
+ cost = 5
+ allow_branch = { nw14_new_russia_joint_member = yes }
+ available = { nw14_new_russia_joint_member = yes }
+ joint_trigger = { nw14_new_russia_joint_member = yes }
+ completion_reward = { add_timed_idea = { idea = nw_nr_political days = 180 } }
+ ai_will_do = { factor = 1 }
+}
+
+joint_focus = {
+ id = NW_NR_administration
+ dynamic = yes
+ icon = GFX_goal_generic_national_unity
+ prerequisite = { focus = NW_NR_congress }
+ relative_position_id = NW14_joint_cooperation
+ x = 3
+ y = 5
+ cost = 4
+ allow_branch = { nw14_new_russia_joint_member = yes }
+ available = { nw14_new_russia_joint_member = yes }
+ joint_trigger = { nw14_new_russia_joint_member = yes }
+ completion_reward = { country_event = { id = nw_nr.3 days = 1 } }
+ ai_will_do = { factor = 1 }
+}
+
+joint_focus = {
+ id = NW_NR_arbitration
+ dynamic = yes
+ icon = GFX_goal_generic_national_unity
+ prerequisite = { focus = NW_NR_administration }
+ relative_position_id = NW14_joint_cooperation
+ x = 3
+ y = 6
+ cost = 4
+ allow_branch = { nw14_new_russia_joint_member = yes }
+ available = { nw14_new_russia_joint_member = yes }
+ joint_trigger = { nw14_new_russia_joint_member = yes }
+ completion_reward = { add_stability = 0.02 }
+ completion_reward_joint_originator = { add_political_power = 20 }
+ ai_will_do = { factor = 1 }
+}
+
+joint_focus = {
+ id = NW_NR_liberties
+ dynamic = yes
+ icon = GFX_goal_generic_national_unity
+ prerequisite = { focus = NW_NR_arbitration }
+ relative_position_id = NW14_joint_cooperation
+ x = 3
+ y = 7
+ cost = 5
+ allow_branch = { nw14_new_russia_joint_member = yes }
+ available = { nw14_new_russia_joint_member = yes }
+ joint_trigger = { nw14_new_russia_joint_member = yes }
+ completion_reward = { add_stability = 0.03 }
+ ai_will_do = { factor = 1 }
+}
+
+joint_focus = {
+ id = NW_NR_land
+ dynamic = yes
+ icon = GFX_goal_generic_national_unity
+ prerequisite = { focus = NW_NR_village_voice }
+ relative_position_id = NW14_joint_cooperation
+ x = 8
+ y = 3
+ cost = 5
+ allow_branch = { nw14_new_russia_joint_member = yes }
+ available = { nw14_new_russia_joint_member = yes }
+ joint_trigger = { nw14_new_russia_joint_member = yes }
+ completion_reward = { add_war_support = 0.03 }
+ ai_will_do = { factor = 1 }
+}
+
+joint_focus = {
+ id = NW_NR_worker_artels
+ dynamic = yes
+ icon = GFX_goal_generic_national_unity
+ prerequisite = { focus = NW_NR_village_voice }
+ relative_position_id = NW14_joint_cooperation
+ x = 10
+ y = 3
+ cost = 4
+ allow_branch = { nw14_new_russia_joint_member = yes }
+ available = { nw14_new_russia_joint_member = yes }
+ joint_trigger = { nw14_new_russia_joint_member = yes }
+ completion_reward = { add_timed_idea = { idea = nw_nr_construction days = 180 } }
+ ai_will_do = { factor = 1 }
+}
+
+joint_focus = {
+ id = NW_NR_newspapers
+ dynamic = yes
+ icon = GFX_goal_generic_national_unity
+ prerequisite = { focus = NW_NR_land }
+ relative_position_id = NW14_joint_cooperation
+ x = 8
+ y = 5
+ cost = 3
+ allow_branch = { nw14_new_russia_joint_member = yes }
+ available = { nw14_new_russia_joint_member = yes }
+ joint_trigger = { nw14_new_russia_joint_member = yes }
+ completion_reward = { add_war_support = 0.02 }
+ ai_will_do = { factor = 1 }
+}
+
+joint_focus = {
+ id = NW_NR_medics
+ dynamic = yes
+ icon = GFX_goal_generic_national_unity
+ prerequisite = { focus = NW_NR_worker_artels }
+ relative_position_id = NW14_joint_cooperation
+ x = 10
+ y = 5
+ cost = 4
+ allow_branch = { nw14_new_russia_joint_member = yes }
+ available = { nw14_new_russia_joint_member = yes }
+ joint_trigger = { nw14_new_russia_joint_member = yes }
+ completion_reward = { add_timed_idea = { idea = nw_nr_hospitals days = 180 } }
+ ai_will_do = { factor = 1 }
+}
+
+joint_focus = {
+ id = NW_NR_order
+ dynamic = yes
+ icon = GFX_goal_generic_national_unity
+ prerequisite = { focus = NW_NR_newspapers }
+ prerequisite = { focus = NW_NR_medics }
+ relative_position_id = NW14_joint_cooperation
+ x = 9
+ y = 6
+ cost = 5
+ allow_branch = { nw14_new_russia_joint_member = yes }
+ available = { nw14_new_russia_joint_member = yes }
+ joint_trigger = { nw14_new_russia_joint_member = yes }
+ completion_reward = { add_timed_idea = { idea = nw_nr_resistance days = 180 } }
+ ai_will_do = { factor = 1 }
+}
+
+joint_focus = {
+ id = NW_NR_congress
+ dynamic = yes
+ prerequisite = { focus = NW_NR_land }
+ prerequisite = { focus = NW_NR_council }
+ prerequisite = { focus = NW_NR_orders }
+ prerequisite = { focus = NW_NR_operational_plan }
+ icon = GFX_goal_generic_national_unity
+ relative_position_id = NW14_joint_cooperation
+ x = 0
+ y = 4
+ cost = 5
+ allow_branch = { nw14_new_russia_joint_member = yes }
+ available = { nw14_new_russia_joint_member = yes }
+ joint_trigger = { nw14_new_russia_joint_member = yes }
+ completion_reward = { add_stability = 0.03 remove_ideas = nw14_new_russia_cooperation_1 add_ideas = nw14_new_russia_cooperation_2 country_event = { id = nw_nr.4 days = 1 } }
+ completion_reward_joint_originator = { add_political_power = 35 }
+ completion_reward_joint_member = { add_political_power = 15 }
+ ai_will_do = { factor = 1 }
+}
+
+joint_focus = {
+ id = NW_NR_people_army
+ dynamic = yes
+ icon = GFX_goal_generic_national_unity
+ prerequisite = { focus = NW_NR_congress }
+ relative_position_id = NW14_joint_cooperation
+ x = -6
+ y = 9
+ cost = 5
+ allow_branch = { nw14_new_russia_joint_member = yes }
+ available = { nw14_new_russia_joint_member = yes has_completed_focus = NW_NR_united_front }
+ joint_trigger = { nw14_new_russia_joint_member = yes }
+ completion_reward = { army_experience = 10 }
+ ai_will_do = { factor = 1 }
+}
+
+joint_focus = {
+ id = NW_NR_war_economy
+ dynamic = yes
+ icon = GFX_goal_generic_national_unity
+ prerequisite = { focus = NW_NR_congress }
+ relative_position_id = NW14_joint_cooperation
+ x = 0
+ y = 9
+ cost = 5
+ allow_branch = { nw14_new_russia_joint_member = yes }
+ available = { nw14_new_russia_joint_member = yes has_completed_focus = NW_NR_workshops }
+ joint_trigger = { nw14_new_russia_joint_member = yes }
+ completion_reward = { add_timed_idea = { idea = nw_nr_production5 days = 180 } }
+ ai_will_do = { factor = 1 }
+}
+
+joint_focus = {
+ id = NW_NR_free_regions
+ dynamic = yes
+ icon = GFX_goal_generic_national_unity
+ prerequisite = { focus = NW_NR_congress }
+ relative_position_id = NW14_joint_cooperation
+ x = 6
+ y = 9
+ cost = 5
+ allow_branch = { nw14_new_russia_joint_member = yes }
+ available = { nw14_new_russia_joint_member = yes has_completed_focus = NW_NR_liberties }
+ joint_trigger = { nw14_new_russia_joint_member = yes }
+ completion_reward = { add_stability = 0.03 }
+ ai_will_do = { factor = 1 }
+}
+
+joint_focus = {
+ id = NW_NR_victory
+ dynamic = yes
+ icon = GFX_goal_generic_national_unity
+ prerequisite = { focus = NW_NR_people_army focus = NW_NR_war_economy focus = NW_NR_free_regions }
+ relative_position_id = NW14_joint_cooperation
+ x = 0
+ y = 10
+ cost = 5
+ allow_branch = { nw14_new_russia_joint_member = yes }
+ available = { nw14_new_russia_joint_member = yes has_completed_focus = NW_NR_order }
+ joint_trigger = { nw14_new_russia_joint_member = yes }
+ completion_reward = { add_stability = 0.03 remove_ideas = nw14_new_russia_cooperation_1 remove_ideas = nw14_new_russia_cooperation_2 add_ideas = nw14_new_russia_cooperation_3 add_timed_idea = { idea = nw_nr_construction days = 365 } }
  ai_will_do = { factor = 1 }
 }

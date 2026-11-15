@@ -1,0 +1,21 @@
+ideas = {
+ country = {
+  nw14_new_russia_cooperation_1 = {
+   picture = generic_army_war_college
+   removal_cost = -1
+   modifier = { war_support_factor = 0.02 }
+  }
+  nw_nr_operational_plan = { picture = generic_army_war_college removal_cost = -1 modifier = { planning_speed = 0.03 } }
+  nw_nr_field_communications = { picture = generic_army_war_college removal_cost = -1 modifier = { army_org_regain = 0.03 } }
+  nw_nr_hospitals = { picture = generic_army_war_college removal_cost = -1 modifier = { attrition = -0.03 } }
+  nw_nr_defence = { picture = generic_army_war_college removal_cost = -1 modifier = { army_defence_factor = 0.05 } }
+  nw_nr_production = { picture = generic_army_war_college removal_cost = -1 modifier = { industrial_capacity_factory = 0.03 } }
+  nw_nr_production5 = { picture = generic_army_war_college removal_cost = -1 modifier = { industrial_capacity_factory = 0.05 } }
+  nw_nr_supply = { picture = generic_army_war_college removal_cost = -1 modifier = { supply_consumption_factor = -0.03 } }
+  nw_nr_construction = { picture = generic_army_war_college removal_cost = -1 modifier = { production_speed_buildings_factor = 0.05 } }
+  nw_nr_political = { picture = generic_army_war_college removal_cost = -1 modifier = { political_power_factor = 0.05 } }
+  nw_nr_resistance = { picture = generic_army_war_college removal_cost = -1 modifier = { resistance_growth = -0.03 } }
+  nw14_new_russia_cooperation_2 = { picture = generic_army_war_college removal_cost = -1 modifier = { planning_speed = 0.03 war_support_factor = 0.02 } }
+  nw14_new_russia_cooperation_3 = { picture = generic_army_war_college removal_cost = -1 modifier = { planning_speed = 0.03 war_support_factor = 0.03 production_speed_buildings_factor = 0.03 } }
+ }
+}
