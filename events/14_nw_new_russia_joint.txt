@@ -5,7 +5,11 @@ country_event = {
  title = nw_nr.1.t
  desc = nw_nr.1.d
  is_triggered_only = yes
- option = { name = nw_nr.1.a add_timed_idea = { idea = nw_nr_operational_plan days = 180 } }
+ option = {
+  name = nw_nr.1.a
+  add_to_variable = { var = nw_nr_cooperation_planning_speed value = 0.03 }
+  force_update_dynamic_modifier = yes
+ }
  option = { name = nw_nr.1.b add_stability = 0.01 }
 }
 country_event = {
@@ -13,22 +17,48 @@ country_event = {
  title = nw_nr.2.t
  desc = nw_nr.2.d
  is_triggered_only = yes
- option = { name = nw_nr.2.a add_timed_idea = { idea = nw_nr_production days = 180 } }
- option = { name = nw_nr.2.b add_timed_idea = { idea = nw_nr_construction days = 180 } }
+ option = {
+  name = nw_nr.2.a
+  add_to_variable = { var = nw_nr_factory_output value = 0.03 }
+  force_update_dynamic_modifier = yes
+ }
+ option = {
+  name = nw_nr.2.b
+  add_to_variable = { var = nw_nr_cooperation_production value = 0.05 }
+  force_update_dynamic_modifier = yes
+ }
 }
 country_event = {
  id = nw_nr.3
  title = nw_nr.3.t
  desc = nw_nr.3.d
  is_triggered_only = yes
- option = { name = nw_nr.3.a add_stability = -0.02 add_timed_idea = { idea = nw_nr_operational_plan days = 180 } }
- option = { name = nw_nr.3.b add_stability = 0.02 add_timed_idea = { idea = nw_nr_construction days = 180 } }
+ option = {
+  name = nw_nr.3.a
+  add_stability = -0.02
+  add_to_variable = { var = nw_nr_cooperation_planning_speed value = 0.03 }
+  force_update_dynamic_modifier = yes
+ }
+ option = {
+  name = nw_nr.3.b
+  add_stability = 0.02
+  add_to_variable = { var = nw_nr_cooperation_production value = 0.05 }
+  force_update_dynamic_modifier = yes
+ }
 }
 country_event = {
  id = nw_nr.4
  title = nw_nr.4.t
  desc = nw_nr.4.d
  is_triggered_only = yes
- option = { name = nw_nr.4.a add_timed_idea = { idea = nw_nr_defence days = 180 } }
- option = { name = nw_nr.4.b add_timed_idea = { idea = nw_nr_construction days = 180 } }
+ option = {
+  name = nw_nr.4.a
+  add_to_variable = { var = nw_nr_defence value = 0.05 }
+  force_update_dynamic_modifier = yes
+ }
+ option = {
+  name = nw_nr.4.b
+  add_to_variable = { var = nw_nr_cooperation_production value = 0.05 }
+  force_update_dynamic_modifier = yes
+ }
 }

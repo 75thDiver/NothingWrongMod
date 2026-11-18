@@ -360,10 +360,7 @@ ICE = {
 	color_ui = rgb { 100  125  175 }
 }
 
-UKR = {
-	color = rgb { 0  80  230 }
-	color_ui = rgb { 0  80  230 }	
-}
+UKR = { color = rgb { 76 169 173 } color_ui = rgb { 76 169 173 } }
 
 AZR = {
 	color = rgb { 69  151  49 }
@@ -1273,7 +1270,6 @@ GKT = { color = rgb { 137 143 164 } }
 GPL = { color = rgb { 175 78 87 } color_ui = rgb { 175 78 87 } }
 RSB = { color = rgb { 200 176 122 } color_ui = rgb { 200 176 122 } }
 RDN = { color = rgb { 96 113 157 } color_ui = rgb { 96 113 157 } }
-RUK = { color = rgb { 76 169 173 } color_ui = rgb { 76 169 173 } }
 DNR = { color = rgb { 69 126 163 } color_ui = rgb { 69 126 163 } }
 AKV = { color = rgb { 138 139 85 } color_ui = rgb { 138 139 85 } }
 KIR = { color = rgb { 112 183 167 } color_ui = rgb { 112 183 167 } }

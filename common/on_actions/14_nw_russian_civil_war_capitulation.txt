@@ -10,6 +10,16 @@ on_actions = {
 					FROM = { exists = yes has_country_flag = nw14_cw_active has_war_with = ROOT }
 				}
 				log = "[NW14 CW] capitulation loser=[ROOT.GetTag] winner=[FROM.GetTag]"
+				# If Belarus itself capitulates Poland, BNR receives Bialystok (state 97).
+				if = {
+					limit = {
+						tag = POL
+						FROM = { tag = BLR }
+						owns_state = 97
+					}
+					BLR = { transfer_state = 97 }
+					log = "[NW14 CW] Poland capitulated to Belarus; transferred Bialystok (97) to BLR"
+				}
 				# A Polish capitulation opens a one-time choice for Finland while it is
 				# still an independent, active participant in the Russian civil war.
 				if = {
@@ -115,6 +125,8 @@ on_actions = {
 					DON = {
 						log = "[NW14 CW] claim loser=[ROOT.GetTag] winner=[FROM.GetTag] recipient=[THIS.GetTag]"
 						annex_country = { target = ROOT transfer_troops = yes }
+						remove_ideas = nw14_don_divided_don
+						add_ideas = nw14_don_united
 					}
 				}
 				else_if = {
@@ -135,6 +147,26 @@ on_actions = {
 					set_country_flag = nw14_cw_capitulation_annexed
 					DNR = {
 						log = "[NW14 CW] claim loser=[ROOT.GetTag] winner=[FROM.GetTag] recipient=[THIS.GetTag]"
+						annex_country = { target = ROOT transfer_troops = yes }
+						remove_ideas = nw14_don_divided_dnr
+						add_ideas = nw14_don_united
+					}
+				}
+				else_if = {
+					limit = {
+						tag = KUB
+						SOV = { exists = yes has_country_flag = nw_rus_war_started }
+						FROM = { OR = { tag = SOV is_in_faction_with = SOV } }
+						DNR = {
+							exists = yes
+							has_capitulated = no
+							NOT = { has_war_with = FROM }
+							OR = { tag = FROM is_in_faction_with = FROM is_subject_of = FROM FROM = { is_subject_of = DNR } AND = { is_subject = yes OVERLORD = { is_in_faction_with = FROM } } }
+						}
+					}
+					set_country_flag = nw14_cw_capitulation_annexed
+					DNR = {
+						log = "[NW14 CW] Kuban capitulated to New Russia; recipient=DNR"
 						annex_country = { target = ROOT transfer_troops = yes }
 					}
 				}
@@ -194,6 +226,58 @@ on_actions = {
 	# Permanent identity is retained; special handling ends after CW fronts close.
 	on_daily = {
 		effect = {
+			# The penalty ends even if the rival is defeated by a third country.
+			if = {
+				limit = { tag = DNR has_idea = nw14_don_divided_dnr OR = { NOT = { DON = { exists = yes } } DON = { has_capitulated = yes } } }
+				remove_ideas = nw14_don_divided_dnr
+			}
+			if = {
+				limit = { tag = DON has_idea = nw14_don_divided_don OR = { NOT = { DNR = { exists = yes } } DNR = { has_capitulated = yes } } }
+				remove_ideas = nw14_don_divided_don
+			}
+			# The initial territory of both Don and Kuban must be owned by DNR.
+			if = {
+				limit = {
+					tag = DNR has_country_flag = nw14_cw_participant
+					NOT = { has_country_flag = nw14_cossack_federation_formed }
+					owns_state = 218 owns_state = 227 owns_state = 228 owns_state = 238 owns_state = 245
+					OR = { NOT = { has_country_flag = nw14_don_started_with_265 } owns_state = 265 }
+					owns_state = 233 owns_state = 234 owns_state = 235
+				}
+				set_cosmetic_tag = NW_COSSACK_FEDERATIVE_REPUBLIC
+				set_country_flag = nw14_cossack_federation_formed
+			}
+			# Move the temporary CW capital only after the intended state is both
+			# owned and controlled; the persistent participant flag also covers
+			# delayed transfers and captures after the last civil-war front closes.
+			if = {
+				limit = { has_country_flag = nw14_cw_participant NOT = { has_country_flag = nw14_cw_capital_restored } has_capitulated = no }
+				if = {
+					limit = { tag = BLW owns_state = 808 controls_state = 808 }
+					set_capital = { state = 808 }
+					set_country_flag = nw14_cw_capital_restored
+				}
+				else_if = {
+					limit = { tag = DNR owns_state = 218 controls_state = 218 }
+					set_capital = { state = 218 }
+					set_country_flag = nw14_cw_capital_restored
+				}
+				else_if = {
+					limit = { tag = KAL owns_state = 237 controls_state = 237 }
+					set_capital = { state = 237 }
+					set_country_flag = nw14_cw_capital_restored
+				}
+				else_if = {
+					limit = { tag = AKV owns_state = 236 controls_state = 236 }
+					set_capital = { state = 236 }
+					set_country_flag = nw14_cw_capital_restored
+				}
+				else_if = {
+					limit = { tag = event_target:nw14_rus_royal owns_state = 195 controls_state = 195 }
+					set_capital = { state = 195 }
+					set_country_flag = nw14_cw_capital_restored
+				}
+			}
 			if = {
 				limit = {
 					has_country_flag = nw14_cw_active

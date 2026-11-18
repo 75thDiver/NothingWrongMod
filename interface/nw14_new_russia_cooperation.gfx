@@ -1,0 +1,6 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_idea_nw14_russian_republic_emblem"
+		texturefile = "gfx/interface/ideas/nw14_russian_republic_emblem.dds"
+	}
+}

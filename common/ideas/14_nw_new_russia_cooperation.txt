@@ -1,21 +1,55 @@
 ideas = {
  country = {
+  # Legacy IDs remain defined for saved-game compatibility. Current focus and event rewards
+  # add their values to nw14_new_russia_cooperation_dynamic_modifier instead.
   nw14_new_russia_cooperation_1 = {
    picture = generic_army_war_college
    removal_cost = -1
+   visible = { always = no }
    modifier = { war_support_factor = 0.02 }
   }
-  nw_nr_operational_plan = { picture = generic_army_war_college removal_cost = -1 modifier = { planning_speed = 0.03 } }
-  nw_nr_field_communications = { picture = generic_army_war_college removal_cost = -1 modifier = { army_org_regain = 0.03 } }
-  nw_nr_hospitals = { picture = generic_army_war_college removal_cost = -1 modifier = { attrition = -0.03 } }
-  nw_nr_defence = { picture = generic_army_war_college removal_cost = -1 modifier = { army_defence_factor = 0.05 } }
-  nw_nr_production = { picture = generic_army_war_college removal_cost = -1 modifier = { industrial_capacity_factory = 0.03 } }
-  nw_nr_production5 = { picture = generic_army_war_college removal_cost = -1 modifier = { industrial_capacity_factory = 0.05 } }
-  nw_nr_supply = { picture = generic_army_war_college removal_cost = -1 modifier = { supply_consumption_factor = -0.03 } }
-  nw_nr_construction = { picture = generic_army_war_college removal_cost = -1 modifier = { production_speed_buildings_factor = 0.05 } }
-  nw_nr_political = { picture = generic_army_war_college removal_cost = -1 modifier = { political_power_factor = 0.05 } }
-  nw_nr_resistance = { picture = generic_army_war_college removal_cost = -1 modifier = { resistance_growth = -0.03 } }
-  nw14_new_russia_cooperation_2 = { picture = generic_army_war_college removal_cost = -1 modifier = { planning_speed = 0.03 war_support_factor = 0.02 } }
-  nw14_new_russia_cooperation_3 = { picture = generic_army_war_college removal_cost = -1 modifier = { planning_speed = 0.03 war_support_factor = 0.03 production_speed_buildings_factor = 0.03 } }
+  nw14_new_russia_cooperation_2 = {
+   picture = generic_army_war_college
+   removal_cost = -1
+   visible = { always = no }
+   modifier = { planning_speed = 0.03 war_support_factor = 0.02 }
+  }
+  nw14_new_russia_cooperation_3 = {
+   picture = generic_army_war_college
+   removal_cost = -1
+   visible = { always = no }
+   modifier = { planning_speed = 0.03 war_support_factor = 0.03 production_speed_buildings_factor = 0.03 }
+  }
+
+  # The current joint tree no longer awards these legacy IDs; its rewards use variables
+  # on the shared dynamic modifier. Keep definitions so saves made during the earlier prototype load.
+  nw_nr_operational_plan = { picture = generic_army_war_college removal_cost = -1 visible = { always = no } modifier = { planning_speed = 0.03 } }
+  nw_nr_field_communications = { picture = generic_army_war_college removal_cost = -1 visible = { always = no } modifier = { army_org_regain = 0.03 } }
+  nw_nr_hospitals = { picture = generic_army_war_college removal_cost = -1 visible = { always = no } modifier = { attrition = -0.03 } }
+  nw_nr_defence = { picture = generic_army_war_college removal_cost = -1 visible = { always = no } modifier = { army_defence_factor = 0.05 } }
+  nw_nr_production = { picture = generic_army_war_college removal_cost = -1 visible = { always = no } modifier = { industrial_capacity_factory = 0.03 } }
+  nw_nr_production5 = { picture = generic_army_war_college removal_cost = -1 visible = { always = no } modifier = { industrial_capacity_factory = 0.05 } }
+  nw_nr_supply = { picture = generic_army_war_college removal_cost = -1 visible = { always = no } modifier = { supply_consumption_factor = -0.03 } }
+  nw_nr_construction = { picture = generic_army_war_college removal_cost = -1 visible = { always = no } modifier = { production_speed_buildings_factor = 0.05 } }
+  nw_nr_political = { picture = generic_army_war_college removal_cost = -1 visible = { always = no } modifier = { political_power_factor = 0.05 } }
+  nw_nr_resistance = { picture = generic_army_war_college removal_cost = -1 visible = { always = no } modifier = { resistance_growth = -0.03 } }
+
+  # These hidden carrier ideas preserve the existing targeted combat bonuses.
+  nw_nr_revolutionary_front_1 = {
+   picture = generic_army_war_college
+   removal_cost = -1
+   visible = { always = no }
+   targeted_modifier = { tag = AFS attack_bonus_against = 0.05 defense_bonus_against = 0.05 }
+   targeted_modifier = { tag = event_target:nw14_rus_royal attack_bonus_against = 0.05 defense_bonus_against = 0.05 }
+   targeted_modifier = { tag = RSB attack_bonus_against = 0.05 defense_bonus_against = 0.05 }
+  }
+  nw_nr_revolutionary_front_2 = {
+   picture = generic_army_war_college
+   removal_cost = -1
+   visible = { always = no }
+   targeted_modifier = { tag = AFS attack_bonus_against = 0.10 defense_bonus_against = 0.10 }
+   targeted_modifier = { tag = event_target:nw14_rus_royal attack_bonus_against = 0.10 defense_bonus_against = 0.10 }
+   targeted_modifier = { tag = RSB attack_bonus_against = 0.10 defense_bonus_against = 0.10 }
+  }
  }
 }

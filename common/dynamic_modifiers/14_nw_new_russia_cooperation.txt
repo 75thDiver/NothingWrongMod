@@ -1,0 +1,16 @@
+nw14_new_russia_cooperation_dynamic_modifier = {
+	enable = { always = yes }
+	icon = GFX_idea_nw14_russian_republic_emblem
+
+	war_support_factor = nw_nr_cooperation_war_support
+	planning_speed = nw_nr_cooperation_planning_speed
+	production_speed_buildings_factor = nw_nr_cooperation_production
+	army_org_regain = nw_nr_field_communications
+	attrition = nw_nr_hospitals
+	army_defence_factor = nw_nr_defence
+	industrial_capacity_factory = nw_nr_factory_output
+	supply_consumption_factor = nw_nr_supply_consumption
+	political_power_factor = nw_nr_political_power
+	resistance_growth = nw_nr_resistance_growth
+	army_attack_factor = nw_nr_revolutionary_attack
+}

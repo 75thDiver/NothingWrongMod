@@ -17,4 +17,13 @@ spriteTypes = {
 	spriteType = { name = GFX_NW14_CW_Semyonov texturefile = "gfx/leaders/NW14/Portrait_TRM_Grigory_Semyonov.png" }
 	spriteType = { name = GFX_NW14_CW_Pokrovsky texturefile = "gfx/leaders/NW14/Portrait_KUB_Victor_Pokrovsky.png" }
 	spriteType = { name = GFX_NW14_CW_Petliura texturefile = "gfx/leaders/NW14/Portrait_UKR_Symon_Petliura.png" }
+	spriteType = { name = GFX_NW14_CW_Collective_SOV texturefile = "gfx/leaders/NW14/collective/Portrait_CW_Collective_SOV.png" }
+	spriteType = { name = GFX_NW14_CW_Collective_NCR texturefile = "gfx/leaders/NW14/collective/Portrait_CW_Collective_NCR.png" }
+	spriteType = { name = GFX_NW14_CW_Collective_TCF texturefile = "gfx/leaders/NW14/collective/Portrait_CW_Collective_TCF.png" }
+	spriteType = { name = GFX_NW14_CW_Collective_TRP texturefile = "gfx/leaders/NW14/collective/Portrait_CW_Collective_TRP.png" }
+	spriteType = { name = GFX_NW14_CW_Collective_BLF texturefile = "gfx/leaders/NW14/collective/Portrait_CW_Collective_BLF.png" }
+	spriteType = { name = GFX_NW14_CW_Collective_BLW texturefile = "gfx/leaders/NW14/collective/Portrait_CW_Collective_BLW.png" }
+	spriteType = { name = GFX_NW14_CW_Collective_DNR texturefile = "gfx/leaders/NW14/collective/Portrait_CW_Collective_DNR.png" }
+	spriteType = { name = GFX_NW14_CW_Collective_AKV texturefile = "gfx/leaders/NW14/collective/Portrait_CW_Collective_AKV.png" }
+	spriteType = { name = GFX_NW14_CW_Collective_KIR texturefile = "gfx/leaders/NW14/collective/Portrait_CW_Collective_KIR.png" }
 }

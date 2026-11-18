@@ -1181,7 +1181,7 @@ focus = {
 				RDN = { exists = yes }
 			}
 			NOT = {
-				RUK = { exists = yes }
+				UKR = { exists = yes }
 			}
 			NOT = {
 				has_country_flag = nw_rus_war_started

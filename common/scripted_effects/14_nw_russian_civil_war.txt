@@ -4,7 +4,7 @@ nw14_rus_civil_war_join_white_subjects = {
 	every_country = {
 		limit = {
 			has_war_with = AFS
-			OR = { tag = SOV tag = RUK tag = FER tag = ABK tag = NCR tag = TCF tag = BLW tag = BLR tag = KIR tag = DNR tag = KAL }
+			OR = { tag = SOV tag = UKR tag = FER tag = ABK tag = NCR tag = TCF tag = BLW tag = BLR tag = KIR tag = DNR tag = KAL }
 		}
 		DON = {
 			if = {
@@ -42,6 +42,8 @@ nw14_rus_civil_war_start = {
 			if = { limit = { is_subject = yes } OVERLORD = { end_puppet = FIN } }
 			if = { limit = { is_in_faction = yes } leave_faction = yes }
 			remove_ideas = nw_fin_imperial_autonomy
+			# Prevent the vanilla Finland.7 peace offer to the Soviet Union and its decision equivalent.
+			set_country_flag = FIN_reached_out_to_soviets_to_surrender_flag
 			drop_cosmetic_tag = yes
 			set_country_flag = nw14_cw_participant
 			set_country_flag = nw14_cw_active
@@ -91,7 +93,7 @@ nw14_rus_civil_war_start = {
 		drop_cosmetic_tag = yes
 		remove_ideas = nw_sov_fragile_sovereign
 		remove_ideas = nw_sov_court_government
-		create_country_leader = { name = "Временное коалиционное правительство" ideology = socialism expire = "2000.1.1" traits = { } }
+		create_country_leader = { name = "Временное коалиционное правительство" picture = GFX_NW14_CW_Collective_SOV ideology = socialism expire = "2000.1.1" traits = { } }
 		set_cosmetic_tag = NW_RUS_REPUBLIC
 		set_party_name = { ideology = democratic name = NW14_rus_provisional_party long_name = NW14_rus_provisional_party_long }
 		set_country_flag = nw14_fragment
@@ -209,21 +211,21 @@ nw14_rus_civil_war_start = {
 		if = { limit = { owns_state = 877 } RSB = { transfer_state = 877 } }
 		if = { limit = { owns_state = 878 } RSB = { transfer_state = 878 } }
 
-		if = { limit = { owns_state = 192 } RUK = { transfer_state = 192 } }
-		if = { limit = { owns_state = 193 } RUK = { transfer_state = 193 } }
-		if = { limit = { owns_state = 196 } RUK = { transfer_state = 196 } }
-		if = { limit = { owns_state = 197 } RUK = { transfer_state = 197 } }
-		if = { limit = { owns_state = 198 } RUK = { transfer_state = 198 } }
-		if = { limit = { owns_state = 199 } RUK = { transfer_state = 199 } }
-		if = { limit = { owns_state = 200 } RUK = { transfer_state = 200 } }
-		if = { limit = { owns_state = 201 } RUK = { transfer_state = 201 } }
-		if = { limit = { owns_state = 202 } RUK = { transfer_state = 202 } }
-		if = { limit = { owns_state = 203 } RUK = { transfer_state = 203 } }
-		if = { limit = { owns_state = 225 } RUK = { transfer_state = 225 } }
-		if = { limit = { owns_state = 226 } RUK = { transfer_state = 226 } }
-		if = { limit = { owns_state = 259 } RUK = { transfer_state = 259 } }
-		if = { limit = { owns_state = 834 } RUK = { transfer_state = 834 } }
-		if = { limit = { owns_state = 93 } RUK = { transfer_state = 93 } }
+		if = { limit = { owns_state = 192 } UKR = { transfer_state = 192 } }
+		if = { limit = { owns_state = 193 } UKR = { transfer_state = 193 } }
+		if = { limit = { owns_state = 196 } UKR = { transfer_state = 196 } }
+		if = { limit = { owns_state = 197 } UKR = { transfer_state = 197 } }
+		if = { limit = { owns_state = 198 } UKR = { transfer_state = 198 } }
+		if = { limit = { owns_state = 199 } UKR = { transfer_state = 199 } }
+		if = { limit = { owns_state = 200 } UKR = { transfer_state = 200 } }
+		if = { limit = { owns_state = 201 } UKR = { transfer_state = 201 } }
+		if = { limit = { owns_state = 202 } UKR = { transfer_state = 202 } }
+		if = { limit = { owns_state = 203 } UKR = { transfer_state = 203 } }
+		if = { limit = { owns_state = 225 } UKR = { transfer_state = 225 } }
+		if = { limit = { owns_state = 226 } UKR = { transfer_state = 226 } }
+		if = { limit = { owns_state = 259 } UKR = { transfer_state = 259 } }
+		if = { limit = { owns_state = 834 } UKR = { transfer_state = 834 } }
+		if = { limit = { owns_state = 93 } UKR = { transfer_state = 93 } }
 		if = { limit = { owns_state = 206 } BLR = { transfer_state = 206 } }
 		if = { limit = { owns_state = 96 } BLR = { transfer_state = 96 } }
 		if = { limit = { owns_state = 204 } BLR = { transfer_state = 204 } }
@@ -381,11 +383,13 @@ nw14_rus_civil_war_start = {
 			set_autonomy = { target = KUB autonomy_state = autonomy_puppet freedom_level = 0.5 end_wars = no end_civil_wars = no }
 		}
 
-		RUK = {
+		UKR = {
+			add_ideas = nw14_ukr_socialism
 			set_capital = { state = 202 }
 			set_politics = { ruling_party = democratic elections_allowed = yes }
-			set_popularities = { democratic = 100 }
-			set_party_name = { ideology = democratic name = nw14_cw_ruk_party long_name = nw14_cw_ruk_party_long }
+			set_popularities = { democratic = 36 communism = 18 neutrality = 32 fascism = 14 }
+			set_party_name = { ideology = democratic name = nw14_ukr_party_democratic long_name = nw14_ukr_party_democratic_long }
+			set_party_name = { ideology = communism name = nw14_ukr_party_communist long_name = nw14_ukr_party_communist_long }
 			create_country_leader = { name = "Михаил Грушевский" picture = GFX_NW14_CW_Hrushevsky_Leader ideology = liberalism expire = "2000.1.1" traits = { } }
 			create_field_marshal = { name = "Симон Петлюра" gfx = GFX_NW14_CW_Petliura skill = 3 attack_skill = 3 defense_skill = 2 planning_skill = 3 logistics_skill = 2 traits = { } }
 			set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 }
@@ -398,11 +402,12 @@ nw14_rus_civil_war_start = {
 			load_focus_tree = { tree = NW_generic_development keep_completed = no }
 		}
 		BLR = {
+			add_ideas = nw14_blr_battle_bialystok
 			if = { limit = { is_subject = yes } OVERLORD = { end_puppet = BLR } }
 			if = { limit = { is_in_faction = yes } leave_faction = yes }
 			set_capital = { state = 206 }
 			set_politics = { ruling_party = democratic last_election = "1936.1.1" election_frequency = 48 elections_allowed = yes }
-			set_popularities = { democratic = 100 }
+			set_popularities = { democratic = 35 communism = 18 neutrality = 15 fascism = 32 }
 			set_party_name = { ideology = democratic name = nw14_cw_blr_party long_name = nw14_cw_blr_party_long }
 			set_country_flag = nw14_fragment
 			set_country_flag = nw14_cw_participant
@@ -414,7 +419,7 @@ nw14_rus_civil_war_start = {
 		FER = {
 			set_capital = { state = 408 }
 			set_politics = { ruling_party = democratic elections_allowed = yes }
-			set_popularities = { democratic = 100 }
+			set_popularities = { democratic = 43 communism = 18 neutrality = 28 fascism = 11 }
 			set_country_flag = nw14_fragment
 			set_country_flag = nw14_cw_participant
 			set_country_flag = nw14_cw_active
@@ -424,7 +429,7 @@ nw14_rus_civil_war_start = {
 		ABK = {
 			set_capital = { state = 826 }
 			set_politics = { ruling_party = democratic elections_allowed = yes }
-			set_popularities = { democratic = 100 }
+			set_popularities = { democratic = 40 communism = 19 neutrality = 30 fascism = 11 }
 			set_party_name = { ideology = democratic name = nw14_cw_abk_party long_name = nw14_cw_abk_party_long }
 			set_country_flag = nw14_fragment
 			set_country_flag = nw14_cw_participant
@@ -435,9 +440,9 @@ nw14_rus_civil_war_start = {
 		NCR = {
 			set_capital = { state = 232 }
 			set_politics = { ruling_party = democratic elections_allowed = yes }
-			set_popularities = { democratic = 100 }
+			set_popularities = { democratic = 38 communism = 23 neutrality = 27 fascism = 12 }
 			set_party_name = { ideology = democratic name = nw14_cw_ncr_party long_name = nw14_cw_ncr_party_long }
-			create_country_leader = { name = "Временное правительство Горской республики" ideology = liberalism expire = "2000.1.1" traits = { } }
+			create_country_leader = { name = "Временное правительство Горской республики" picture = GFX_NW14_CW_Collective_NCR ideology = liberalism expire = "2000.1.1" traits = { } }
 			set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 }
 			add_manpower = 25000
 			set_country_flag = nw14_fragment
@@ -449,9 +454,9 @@ nw14_rus_civil_war_start = {
 		TCF = {
 			set_capital = { state = 231 }
 			set_politics = { ruling_party = democratic elections_allowed = yes }
-			set_popularities = { democratic = 100 }
+			set_popularities = { democratic = 36 communism = 23 neutrality = 30 fascism = 11 }
 			set_party_name = { ideology = democratic name = nw14_cw_tcf_party long_name = nw14_cw_tcf_party_long }
-			create_country_leader = { name = "Совет Закавказской федерации" ideology = liberalism expire = "2000.1.1" traits = { } }
+			create_country_leader = { name = "Совет Закавказской федерации" picture = GFX_NW14_CW_Collective_TCF ideology = liberalism expire = "2000.1.1" traits = { } }
 			set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 }
 			add_manpower = 25000
 			set_country_flag = nw14_fragment
@@ -468,7 +473,7 @@ nw14_rus_civil_war_start = {
 			set_politics = { ruling_party = neutrality elections_allowed = no }
 			set_popularities = { neutrality = 100 }
 			set_party_name = { ideology = neutrality name = nw14_cw_trp_party long_name = nw14_cw_trp_party_long }
-			create_country_leader = { name = "Временный национальный совет Турецкой республики" ideology = despotism expire = "2000.1.1" traits = { } }
+			create_country_leader = { name = "Временный национальный совет Турецкой республики" picture = GFX_NW14_CW_Collective_TRP ideology = despotism expire = "2000.1.1" traits = { } }
 			set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 }
 			add_manpower = 30000
 			set_country_flag = nw14_fragment
@@ -482,7 +487,7 @@ nw14_rus_civil_war_start = {
 			set_politics = { ruling_party = neutrality elections_allowed = no }
 			set_popularities = { neutrality = 100 }
 			set_party_name = { ideology = neutrality name = nw14_cw_blf_party long_name = nw14_cw_blf_party_long }
-			create_country_leader = { name = "Временный совет Балтийской федерации" ideology = despotism expire = "2000.1.1" traits = { } }
+			create_country_leader = { name = "Временный совет Балтийской федерации" picture = GFX_NW14_CW_Collective_BLF ideology = despotism expire = "2000.1.1" traits = { } }
 			set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 }
 			add_manpower = 35000
 			set_country_flag = nw14_fragment
@@ -494,9 +499,9 @@ nw14_rus_civil_war_start = {
 		BLW = {
 			set_capital = { state = 813 }
 			set_politics = { ruling_party = democratic elections_allowed = yes }
-			set_popularities = { democratic = 100 }
+			set_popularities = { democratic = 35 communism = 38 neutrality = 20 fascism = 7 }
 			set_party_name = { ideology = democratic name = nw14_cw_blw_party long_name = nw14_cw_blw_party_long }
-			create_country_leader = { name = "Совет Прибалтийского союза рабочих" ideology = liberalism expire = "2000.1.1" traits = { } }
+			create_country_leader = { name = "Совет Прибалтийского союза рабочих" picture = GFX_NW14_CW_Collective_BLW ideology = liberalism expire = "2000.1.1" traits = { } }
 			set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 }
 			add_manpower = 15000
 			set_country_flag = nw14_fragment
@@ -509,12 +514,13 @@ nw14_rus_civil_war_start = {
 		if = {
 			limit = { DNR = { exists = yes } }
 			DNR = {
+				add_ideas = nw14_dnr_cossack_will
 				if = { limit = { owns_state = 217 } set_capital = { state = 217 } }
 				if = { limit = { NOT = { owns_state = 217 } owns_state = 265 } set_capital = { state = 265 } }
 				set_politics = { ruling_party = democratic elections_allowed = yes }
-				set_popularities = { democratic = 100 }
+				set_popularities = { democratic = 34 communism = 12 neutrality = 32 fascism = 22 }
 				set_party_name = { ideology = democratic name = nw14_cw_dnr_party long_name = nw14_cw_dnr_party_long }
-				create_country_leader = { name = "Донской народный совет" ideology = liberalism expire = "2000.1.1" traits = { } }
+				create_country_leader = { name = "Донской народный совет" picture = GFX_NW14_CW_Collective_DNR ideology = liberalism expire = "2000.1.1" traits = { } }
 				set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 }
 				add_manpower = 25000
 				set_country_flag = nw14_fragment
@@ -534,7 +540,7 @@ nw14_rus_civil_war_start = {
 				set_politics = { ruling_party = neutrality elections_allowed = no }
 				set_popularities = { neutrality = 100 }
 				set_party_name = { ideology = neutrality name = nw14_cw_akv_party long_name = nw14_cw_akv_party_long }
-				create_country_leader = { name = "Временная совместная администрация" ideology = despotism expire = "2000.1.1" traits = { } }
+				create_country_leader = { name = "Временная совместная администрация" picture = GFX_NW14_CW_Collective_AKV ideology = despotism expire = "2000.1.1" traits = { } }
 				set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 }
 				add_manpower = 25000
 				set_country_flag = nw14_fragment
@@ -550,7 +556,7 @@ nw14_rus_civil_war_start = {
 				if = { limit = { owns_state = 236 } set_capital = { state = 236 } }
 				if = { limit = { NOT = { owns_state = 236 } owns_state = 237 } set_capital = { state = 237 } }
 				set_politics = { ruling_party = democratic elections_allowed = yes }
-				set_popularities = { democratic = 100 }
+				set_popularities = { democratic = 38 communism = 16 neutrality = 36 fascism = 10 }
 				set_party_name = { ideology = democratic name = nw14_cw_kal_party long_name = nw14_cw_kal_party_long }
 				set_country_flag = nw14_fragment
 			set_country_flag = nw14_cw_participant
@@ -564,9 +570,9 @@ nw14_rus_civil_war_start = {
 		KIR = {
 			set_capital = { state = 590 }
 			set_politics = { ruling_party = democratic elections_allowed = yes }
-			set_popularities = { democratic = 100 }
+			set_popularities = { democratic = 36 communism = 20 neutrality = 29 fascism = 15 }
 			set_party_name = { ideology = democratic name = nw14_cw_kir_party long_name = nw14_cw_kir_party_long }
-			create_country_leader = { name = "Национальный курултай Киргизской республики" ideology = liberalism expire = "2000.1.1" traits = { } }
+			create_country_leader = { name = "Национальный курултай Киргизской республики" picture = GFX_NW14_CW_Collective_KIR ideology = liberalism expire = "2000.1.1" traits = { } }
 			set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 }
 			set_country_flag = nw14_fragment
 			set_country_flag = nw14_cw_participant
@@ -601,6 +607,40 @@ nw14_rus_civil_war_start = {
 			load_focus_tree = { tree = NW_generic_development keep_completed = no }
 		}
 
+		# Give every civil-war participant cores on the states it actually received.
+		# This is applied after the randomized territorial split, without changing 1936 state history.
+		every_country = {
+			limit = { has_country_flag = nw14_cw_participant }
+			every_owned_state = { add_core_of = PREV }
+		}
+
+		# Rival governments claim each other's civil-war territory so a captured rival province is core land.
+		if = {
+			limit = { DON = { exists = yes } DNR = { exists = yes } }
+			DON = { add_ideas = nw14_don_divided_don }
+			DNR = { add_ideas = nw14_don_divided_dnr }
+			if = { limit = { DON = { owns_state = 265 } } DNR = { set_country_flag = nw14_don_started_with_265 } }
+			DON = { every_owned_state = { add_core_of = DNR } }
+			DNR = { every_owned_state = { add_core_of = DON } }
+		}
+		BLF = { every_owned_state = { add_core_of = BLW } }
+		BLW = { every_owned_state = { add_core_of = BLF } }
+
+		# The Kyrgyz Republic uses the broad imperial-era Kyrgyz name for Kazakhstan and Kyrgyzstan.
+		# Alash-Orda can integrate the Kyrgyz Republic's actual civil-war territory if it wins.
+		KIR = {
+			every_state = {
+				limit = { OR = { is_core_of = KAZ is_core_of = KYR } }
+				add_core_of = KIR
+			}
+			every_owned_state = { add_core_of = ALA }
+		}
+		ALA = { every_owned_state = { add_core_of = KIR } }
+
+		# The Joint Administration claims both Astrakhan and Kalmykia (state IDs 236 and 237).
+		236 = { add_core_of = AKV }
+		237 = { add_core_of = AKV }
+
 		# Make AKV a Don subject whenever its independent random outcomes leave it territory.
 		if = {
 			limit = { DON = { exists = yes } AKV = { exists = yes } }
@@ -615,7 +655,7 @@ nw14_rus_civil_war_start = {
 			set_rule = { can_create_factions = yes can_join_factions = yes }
 			create_faction = nw14_new_russia_faction
 			set_rule = { can_create_factions = no can_join_factions = yes }
-			RUK = { if = { limit = { is_in_faction = yes } leave_faction = yes } set_rule = { can_join_factions = yes can_create_factions = no } }
+			UKR = { if = { limit = { is_in_faction = yes } leave_faction = yes } set_rule = { can_join_factions = yes can_create_factions = no } }
 			FER = { if = { limit = { is_in_faction = yes } leave_faction = yes } set_rule = { can_join_factions = yes can_create_factions = no } }
 			ABK = { if = { limit = { is_in_faction = yes } leave_faction = yes } set_rule = { can_join_factions = yes can_create_factions = no } }
 			NCR = { if = { limit = { is_in_faction = yes } leave_faction = yes } set_rule = { can_join_factions = yes can_create_factions = no } }
@@ -623,7 +663,7 @@ nw14_rus_civil_war_start = {
 			BLW = { if = { limit = { is_in_faction = yes } leave_faction = yes } set_rule = { can_join_factions = yes can_create_factions = no } }
 			BLR = { if = { limit = { is_in_faction = yes } leave_faction = yes } set_rule = { can_join_factions = yes can_create_factions = no } }
 			KIR = { if = { limit = { is_in_faction = yes } leave_faction = yes } set_rule = { can_join_factions = yes can_create_factions = no } }
-			add_to_faction = RUK
+			add_to_faction = UKR
 			add_to_faction = FER
 			add_to_faction = ABK
 			add_to_faction = NCR
@@ -676,7 +716,7 @@ nw14_rus_civil_war_start = {
 		RSB = { delete_unit = { disband = no } add_manpower = 229000 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 18480 } load_oob = NW14_RSB }
 		DON = { delete_unit = { disband = no } add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 110 } load_oob = NW14_DON_CW }
 		KUB = { delete_unit = { disband = no } add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 610 } load_oob = NW14_KUB_CW }
-		RUK = { delete_unit = { disband = no } add_manpower = 130000 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 8250 } load_oob = NW14_RUK_CW }
+		UKR = { delete_unit = { disband = no } add_manpower = 130000 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 8250 } load_oob = NW14_UKR_CW }
 		FER = { delete_unit = { disband = no } set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 } add_manpower = 132000 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 9240 } load_oob = NW14_FER_CW }
 		ABK = { delete_unit = { disband = no } set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 } add_manpower = 33000 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 2310 } load_oob = NW14_ABK_CW }
 		NCR = { delete_unit = { disband = no } set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 } add_manpower = 8000 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 2310 } load_oob = NW14_NCR_CW }
@@ -686,6 +726,8 @@ nw14_rus_civil_war_start = {
 		BLF = { delete_unit = { disband = no } set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 } add_manpower = 97000 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 9240 } load_oob = NW14_BLF_CW }
 		BLW = { delete_unit = { disband = no } set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 } add_manpower = 18000 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 1310 } load_oob = NW14_BLW_CW }
 		BLR = { delete_unit = { disband = no } set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 } add_manpower = 132000 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 9240 } load_oob = NW14_BLR_CW }
+		POL = { delete_unit = { disband = no } set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 } add_manpower = 120000 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 9240 } load_oob = NW14_POL_CW }
+		FIN = { delete_unit = { disband = no } set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 } add_manpower = 90000 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 6930 } load_oob = NW14_FIN_CW }
 		KIR = { delete_unit = { disband = no } set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 } add_manpower = 33000 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 2310 } load_oob = NW14_KIR_CW }
 		ALA = { delete_unit = { disband = no } set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 } add_manpower = 132000 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 9240 } load_oob = NW14_ALA_CW }
 		TRK = { delete_unit = { disband = no } set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 } add_manpower = 132000 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 9240 } load_oob = NW14_TRK_CW }
@@ -733,7 +775,7 @@ nw14_rus_civil_war_declare_external_wars = {
 			nw14_rus_civil_war_declare_new_russia_wars = yes
 
 		}
-		if = { limit = { RUK = { exists = yes } } RUK = { nw14_rus_civil_war_declare_new_russia_wars = yes } }
+		if = { limit = { UKR = { exists = yes } } UKR = { nw14_rus_civil_war_declare_new_russia_wars = yes } }
 		if = { limit = { FER = { exists = yes } } FER = { nw14_rus_civil_war_declare_new_russia_wars = yes } }
 		if = { limit = { ABK = { exists = yes } } ABK = { nw14_rus_civil_war_declare_new_russia_wars = yes } }
 		if = { limit = { NCR = { exists = yes } } NCR = { nw14_rus_civil_war_declare_new_russia_wars = yes } }

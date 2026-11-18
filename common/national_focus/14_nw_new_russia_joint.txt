@@ -11,10 +11,27 @@ joint_focus = {
  allow_branch = { nw14_new_russia_joint_member = yes }
  available = { nw14_new_russia_joint_member = yes }
  joint_trigger = { nw14_new_russia_joint_member = yes }
- completion_reward = { add_war_support = 0.02 add_ideas = nw14_new_russia_cooperation_1 }
- completion_reward_joint_originator = { add_political_power = 25 }
- completion_reward_joint_member = { add_political_power = 10 }
- ai_will_do = { factor = 1 }
+ completion_reward = {
+  add_war_support = 0.02
+  remove_ideas = nw14_new_russia_cooperation_1
+  remove_ideas = nw14_new_russia_cooperation_2
+  remove_ideas = nw14_new_russia_cooperation_3
+  add_to_variable = { var = nw_nr_cooperation_war_support value = 0.02 }
+  if = {
+   limit = { NOT = { has_dynamic_modifier = { modifier = nw14_new_russia_cooperation_dynamic_modifier } } }
+   add_dynamic_modifier = { modifier = nw14_new_russia_cooperation_dynamic_modifier }
+  }
+  force_update_dynamic_modifier = yes
+ }
+ completion_reward_joint_originator = {
+  add_political_power = 25
+  nw_nr_spawn_revolutionary_militia = yes
+ }
+ completion_reward_joint_member = {
+  add_political_power = 10
+  nw_nr_spawn_revolutionary_militia = yes
+ }
+ ai_will_do = { factor = 1000 }
 }
 joint_focus = {
  id = NW14_joint_front_commanders
@@ -30,7 +47,7 @@ joint_focus = {
  joint_trigger = { nw14_new_russia_joint_member = yes }
  completion_reward = { army_experience = 5 country_event = { id = nw_nr.1 days = 1 } }
  completion_reward_joint_originator = { army_experience = 10 }
- ai_will_do = { factor = 1 }
+ ai_will_do = { factor = 1500 }
 }
 
 joint_focus = {
@@ -46,7 +63,7 @@ joint_focus = {
  available = { nw14_new_russia_joint_member = yes }
  joint_trigger = { nw14_new_russia_joint_member = yes }
  completion_reward = { add_equipment_to_stockpile = { type = infantry_equipment amount = 100 } }
- ai_will_do = { factor = 1 }
+ ai_will_do = { factor = 1000 }
 }
 
 joint_focus = {
@@ -62,7 +79,7 @@ joint_focus = {
  available = { nw14_new_russia_joint_member = yes }
  joint_trigger = { nw14_new_russia_joint_member = yes }
  completion_reward = { add_stability = 0.02 }
- ai_will_do = { factor = 1 }
+ ai_will_do = { factor = 1000 }
 }
 
 joint_focus = {
@@ -78,7 +95,7 @@ joint_focus = {
  available = { nw14_new_russia_joint_member = yes }
  joint_trigger = { nw14_new_russia_joint_member = yes }
  completion_reward = { add_stability = 0.02 }
- ai_will_do = { factor = 1 }
+ ai_will_do = { factor = 1000 }
 }
 
 joint_focus = {
@@ -93,8 +110,11 @@ joint_focus = {
  allow_branch = { nw14_new_russia_joint_member = yes }
  available = { nw14_new_russia_joint_member = yes }
  joint_trigger = { nw14_new_russia_joint_member = yes }
- completion_reward = { add_timed_idea = { idea = nw_nr_operational_plan days = 180 } }
- ai_will_do = { factor = 1 }
+ completion_reward = {
+  add_to_variable = { var = nw_nr_cooperation_planning_speed value = 0.03 }
+  force_update_dynamic_modifier = yes
+ }
+ ai_will_do = { factor = 1500 }
 }
 
 joint_focus = {
@@ -110,8 +130,11 @@ joint_focus = {
  allow_branch = { nw14_new_russia_joint_member = yes }
  available = { nw14_new_russia_joint_member = yes }
  joint_trigger = { nw14_new_russia_joint_member = yes }
- completion_reward = { add_timed_idea = { idea = nw_nr_field_communications days = 180 } }
- ai_will_do = { factor = 1 }
+ completion_reward = {
+  add_to_variable = { var = nw_nr_field_communications value = 0.03 }
+  force_update_dynamic_modifier = yes
+ }
+ ai_will_do = { factor = 1500 }
 }
 
 joint_focus = {
@@ -128,7 +151,7 @@ joint_focus = {
  joint_trigger = { nw14_new_russia_joint_member = yes }
  completion_reward_joint_originator = { add_equipment_to_stockpile = { type = infantry_equipment amount = 300 } }
  completion_reward_joint_member = { add_equipment_to_stockpile = { type = infantry_equipment amount = 100 } }
- ai_will_do = { factor = 1 }
+ ai_will_do = { factor = 1500 }
 }
 
 joint_focus = {
@@ -143,8 +166,11 @@ joint_focus = {
  allow_branch = { nw14_new_russia_joint_member = yes }
  available = { nw14_new_russia_joint_member = yes }
  joint_trigger = { nw14_new_russia_joint_member = yes }
- completion_reward = { add_timed_idea = { idea = nw_nr_hospitals days = 180 } }
- ai_will_do = { factor = 1 }
+ completion_reward = {
+  add_to_variable = { var = nw_nr_hospitals value = -0.03 }
+  force_update_dynamic_modifier = yes
+ }
+ ai_will_do = { factor = 1500 }
 }
 
 joint_focus = {
@@ -159,9 +185,30 @@ joint_focus = {
  allow_branch = { nw14_new_russia_joint_member = yes }
  available = { nw14_new_russia_joint_member = yes }
  joint_trigger = { nw14_new_russia_joint_member = yes }
- completion_reward = { add_timed_idea = { idea = nw_nr_defence days = 180 } }
+ completion_reward = {
+  add_to_variable = { var = nw_nr_defence value = 0.05 }
+  force_update_dynamic_modifier = yes
+ }
  completion_reward_joint_originator = { army_experience = 10 }
- ai_will_do = { factor = 1 }
+ ai_will_do = { factor = 1500 }
+}
+
+joint_focus = {
+ id = NW_NR_revolutionary_brigades
+ dynamic = yes
+ icon = GFX_goal_generic_army_doctrines
+ prerequisite = { focus = NW_NR_united_front }
+ relative_position_id = NW14_joint_cooperation
+ x = -9
+ y = 8
+ cost = 4
+ allow_branch = { nw14_new_russia_joint_member = yes }
+ available = { nw14_new_russia_joint_member = yes }
+ joint_trigger = { nw14_new_russia_joint_member = yes }
+ completion_reward = { }
+ completion_reward_joint_originator = { nw_nr_revolutionary_brigades_5 = yes }
+ completion_reward_joint_member = { nw_nr_revolutionary_brigades_5 = yes }
+ ai_will_do = { factor = 1500 }
 }
 
 joint_focus = {
@@ -176,8 +223,11 @@ joint_focus = {
  allow_branch = { nw14_new_russia_joint_member = yes }
  available = { nw14_new_russia_joint_member = yes }
  joint_trigger = { nw14_new_russia_joint_member = yes }
- completion_reward = { add_timed_idea = { idea = nw_nr_production days = 180 } }
- ai_will_do = { factor = 1 }
+ completion_reward = {
+  add_to_variable = { var = nw_nr_factory_output value = 0.03 }
+  force_update_dynamic_modifier = yes
+ }
+ ai_will_do = { factor = 1000 }
 }
 
 joint_focus = {
@@ -193,8 +243,11 @@ joint_focus = {
  available = { nw14_new_russia_joint_member = yes }
  joint_trigger = { nw14_new_russia_joint_member = yes }
  completion_reward = { country_event = { id = nw_nr.2 days = 1 } }
- completion_reward_joint_originator = { add_timed_idea = { idea = nw_nr_production days = 180 } }
- ai_will_do = { factor = 1 }
+ completion_reward_joint_originator = {
+  add_to_variable = { var = nw_nr_factory_output value = 0.03 }
+  force_update_dynamic_modifier = yes
+ }
+ ai_will_do = { factor = 1000 }
 }
 
 joint_focus = {
@@ -209,8 +262,11 @@ joint_focus = {
  allow_branch = { nw14_new_russia_joint_member = yes }
  available = { nw14_new_russia_joint_member = yes }
  joint_trigger = { nw14_new_russia_joint_member = yes }
- completion_reward = { add_timed_idea = { idea = nw_nr_supply days = 180 } }
- ai_will_do = { factor = 1 }
+ completion_reward = {
+  add_to_variable = { var = nw_nr_supply_consumption value = -0.03 }
+  force_update_dynamic_modifier = yes
+ }
+ ai_will_do = { factor = 1000 }
 }
 
 joint_focus = {
@@ -226,8 +282,11 @@ joint_focus = {
  allow_branch = { nw14_new_russia_joint_member = yes }
  available = { nw14_new_russia_joint_member = yes }
  joint_trigger = { nw14_new_russia_joint_member = yes }
- completion_reward = { add_timed_idea = { idea = nw_nr_supply days = 180 } }
- ai_will_do = { factor = 1 }
+ completion_reward = {
+  add_to_variable = { var = nw_nr_supply_consumption value = -0.03 }
+  force_update_dynamic_modifier = yes
+ }
+ ai_will_do = { factor = 1000 }
 }
 
 joint_focus = {
@@ -242,8 +301,11 @@ joint_focus = {
  allow_branch = { nw14_new_russia_joint_member = yes }
  available = { nw14_new_russia_joint_member = yes }
  joint_trigger = { nw14_new_russia_joint_member = yes }
- completion_reward = { add_timed_idea = { idea = nw_nr_construction days = 180 } }
- ai_will_do = { factor = 1 }
+ completion_reward = {
+  add_to_variable = { var = nw_nr_cooperation_production value = 0.05 }
+  force_update_dynamic_modifier = yes
+ }
+ ai_will_do = { factor = 1000 }
 }
 
 joint_focus = {
@@ -260,7 +322,7 @@ joint_focus = {
  joint_trigger = { nw14_new_russia_joint_member = yes }
  completion_reward = { add_stability = 0.02 }
  completion_reward_joint_originator = { add_political_power = 15 }
- ai_will_do = { factor = 1 }
+ ai_will_do = { factor = 1000 }
 }
 
 joint_focus = {
@@ -275,8 +337,11 @@ joint_focus = {
  allow_branch = { nw14_new_russia_joint_member = yes }
  available = { nw14_new_russia_joint_member = yes }
  joint_trigger = { nw14_new_russia_joint_member = yes }
- completion_reward = { add_timed_idea = { idea = nw_nr_political days = 180 } }
- ai_will_do = { factor = 1 }
+ completion_reward = {
+  add_to_variable = { var = nw_nr_political_power value = 0.05 }
+  force_update_dynamic_modifier = yes
+ }
+ ai_will_do = { factor = 1000 }
 }
 
 joint_focus = {
@@ -292,7 +357,7 @@ joint_focus = {
  available = { nw14_new_russia_joint_member = yes }
  joint_trigger = { nw14_new_russia_joint_member = yes }
  completion_reward = { country_event = { id = nw_nr.3 days = 1 } }
- ai_will_do = { factor = 1 }
+ ai_will_do = { factor = 1000 }
 }
 
 joint_focus = {
@@ -309,7 +374,7 @@ joint_focus = {
  joint_trigger = { nw14_new_russia_joint_member = yes }
  completion_reward = { add_stability = 0.02 }
  completion_reward_joint_originator = { add_political_power = 20 }
- ai_will_do = { factor = 1 }
+ ai_will_do = { factor = 1000 }
 }
 
 joint_focus = {
@@ -325,7 +390,7 @@ joint_focus = {
  available = { nw14_new_russia_joint_member = yes }
  joint_trigger = { nw14_new_russia_joint_member = yes }
  completion_reward = { add_stability = 0.03 }
- ai_will_do = { factor = 1 }
+ ai_will_do = { factor = 1000 }
 }
 
 joint_focus = {
@@ -341,7 +406,7 @@ joint_focus = {
  available = { nw14_new_russia_joint_member = yes }
  joint_trigger = { nw14_new_russia_joint_member = yes }
  completion_reward = { add_war_support = 0.03 }
- ai_will_do = { factor = 1 }
+ ai_will_do = { factor = 1000 }
 }
 
 joint_focus = {
@@ -356,8 +421,11 @@ joint_focus = {
  allow_branch = { nw14_new_russia_joint_member = yes }
  available = { nw14_new_russia_joint_member = yes }
  joint_trigger = { nw14_new_russia_joint_member = yes }
- completion_reward = { add_timed_idea = { idea = nw_nr_construction days = 180 } }
- ai_will_do = { factor = 1 }
+ completion_reward = {
+  add_to_variable = { var = nw_nr_cooperation_production value = 0.05 }
+  force_update_dynamic_modifier = yes
+ }
+ ai_will_do = { factor = 1000 }
 }
 
 joint_focus = {
@@ -373,7 +441,7 @@ joint_focus = {
  available = { nw14_new_russia_joint_member = yes }
  joint_trigger = { nw14_new_russia_joint_member = yes }
  completion_reward = { add_war_support = 0.02 }
- ai_will_do = { factor = 1 }
+ ai_will_do = { factor = 1000 }
 }
 
 joint_focus = {
@@ -388,8 +456,11 @@ joint_focus = {
  allow_branch = { nw14_new_russia_joint_member = yes }
  available = { nw14_new_russia_joint_member = yes }
  joint_trigger = { nw14_new_russia_joint_member = yes }
- completion_reward = { add_timed_idea = { idea = nw_nr_hospitals days = 180 } }
- ai_will_do = { factor = 1 }
+ completion_reward = {
+  add_to_variable = { var = nw_nr_hospitals value = -0.03 }
+  force_update_dynamic_modifier = yes
+ }
+ ai_will_do = { factor = 1000 }
 }
 
 joint_focus = {
@@ -405,8 +476,11 @@ joint_focus = {
  allow_branch = { nw14_new_russia_joint_member = yes }
  available = { nw14_new_russia_joint_member = yes }
  joint_trigger = { nw14_new_russia_joint_member = yes }
- completion_reward = { add_timed_idea = { idea = nw_nr_resistance days = 180 } }
- ai_will_do = { factor = 1 }
+ completion_reward = {
+  add_to_variable = { var = nw_nr_resistance_growth value = -0.03 }
+  force_update_dynamic_modifier = yes
+ }
+ ai_will_do = { factor = 1000 }
 }
 
 joint_focus = {
@@ -424,10 +498,21 @@ joint_focus = {
  allow_branch = { nw14_new_russia_joint_member = yes }
  available = { nw14_new_russia_joint_member = yes }
  joint_trigger = { nw14_new_russia_joint_member = yes }
- completion_reward = { add_stability = 0.03 remove_ideas = nw14_new_russia_cooperation_1 add_ideas = nw14_new_russia_cooperation_2 country_event = { id = nw_nr.4 days = 1 } }
+ completion_reward = {
+  add_stability = 0.03
+  remove_ideas = nw14_new_russia_cooperation_1
+  remove_ideas = nw14_new_russia_cooperation_2
+  add_to_variable = { var = nw_nr_cooperation_planning_speed value = 0.03 }
+  if = {
+   limit = { NOT = { has_dynamic_modifier = { modifier = nw14_new_russia_cooperation_dynamic_modifier } } }
+   add_dynamic_modifier = { modifier = nw14_new_russia_cooperation_dynamic_modifier }
+  }
+  force_update_dynamic_modifier = yes
+  country_event = { id = nw_nr.4 days = 1 }
+ }
  completion_reward_joint_originator = { add_political_power = 35 }
  completion_reward_joint_member = { add_political_power = 15 }
- ai_will_do = { factor = 1 }
+ ai_will_do = { factor = 1000 }
 }
 
 joint_focus = {
@@ -443,7 +528,7 @@ joint_focus = {
  available = { nw14_new_russia_joint_member = yes has_completed_focus = NW_NR_united_front }
  joint_trigger = { nw14_new_russia_joint_member = yes }
  completion_reward = { army_experience = 10 }
- ai_will_do = { factor = 1 }
+ ai_will_do = { factor = 1500 }
 }
 
 joint_focus = {
@@ -458,8 +543,11 @@ joint_focus = {
  allow_branch = { nw14_new_russia_joint_member = yes }
  available = { nw14_new_russia_joint_member = yes has_completed_focus = NW_NR_workshops }
  joint_trigger = { nw14_new_russia_joint_member = yes }
- completion_reward = { add_timed_idea = { idea = nw_nr_production5 days = 180 } }
- ai_will_do = { factor = 1 }
+ completion_reward = {
+  add_to_variable = { var = nw_nr_factory_output value = 0.05 }
+  force_update_dynamic_modifier = yes
+ }
+ ai_will_do = { factor = 1000 }
 }
 
 joint_focus = {
@@ -475,7 +563,7 @@ joint_focus = {
  available = { nw14_new_russia_joint_member = yes has_completed_focus = NW_NR_liberties }
  joint_trigger = { nw14_new_russia_joint_member = yes }
  completion_reward = { add_stability = 0.03 }
- ai_will_do = { factor = 1 }
+ ai_will_do = { factor = 1000 }
 }
 
 joint_focus = {
@@ -490,6 +578,38 @@ joint_focus = {
  allow_branch = { nw14_new_russia_joint_member = yes }
  available = { nw14_new_russia_joint_member = yes has_completed_focus = NW_NR_order }
  joint_trigger = { nw14_new_russia_joint_member = yes }
- completion_reward = { add_stability = 0.03 remove_ideas = nw14_new_russia_cooperation_1 remove_ideas = nw14_new_russia_cooperation_2 add_ideas = nw14_new_russia_cooperation_3 add_timed_idea = { idea = nw_nr_construction days = 365 } }
- ai_will_do = { factor = 1 }
+ completion_reward = {
+  add_stability = 0.03
+  remove_ideas = nw14_new_russia_cooperation_1
+  remove_ideas = nw14_new_russia_cooperation_2
+  remove_ideas = nw14_new_russia_cooperation_3
+  add_to_variable = { var = nw_nr_cooperation_war_support value = 0.01 }
+  add_to_variable = { var = nw_nr_cooperation_production value = 0.03 }
+  if = {
+   limit = { NOT = { has_dynamic_modifier = { modifier = nw14_new_russia_cooperation_dynamic_modifier } } }
+   add_dynamic_modifier = { modifier = nw14_new_russia_cooperation_dynamic_modifier }
+  }
+  force_update_dynamic_modifier = yes
+  add_to_variable = { var = nw_nr_cooperation_production value = 0.05 }
+  force_update_dynamic_modifier = yes
+ }
+ ai_will_do = { factor = 1500 }
+}
+
+joint_focus = {
+ id = NW_NR_revolutionary_army
+ dynamic = yes
+ icon = GFX_goal_generic_army_doctrines
+ prerequisite = { focus = NW_NR_revolutionary_brigades }
+ relative_position_id = NW14_joint_cooperation
+ x = -9
+ y = 11
+ cost = 5
+ allow_branch = { nw14_new_russia_joint_member = yes }
+ available = { nw14_new_russia_joint_member = yes has_completed_focus = NW_NR_victory }
+ joint_trigger = { nw14_new_russia_joint_member = yes }
+ completion_reward = { }
+ completion_reward_joint_originator = { nw_nr_revolutionary_brigades_15 = yes }
+ completion_reward_joint_member = { nw_nr_revolutionary_brigades_15 = yes }
+ ai_will_do = { factor = 1500 }
 }

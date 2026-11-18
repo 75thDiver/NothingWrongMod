@@ -26,6 +26,10 @@ NW_FINNISH_FEDERATION = {
 	color = rgb { 34 79 131 }
 	color_ui = rgb { 52 104 165 }
 }
+NW_COSSACK_FEDERATIVE_REPUBLIC = {
+	color = rgb { 69 126 163 }
+	color_ui = rgb { 69 126 163 }
+}
 # NW14 COSMETICS
 NW_KIRILL = { color = rgb { 30 72 46 } color_ui = rgb { 62 114 77 } }
 NW_GER_CROWN = { color = rgb { 110 110 110 } color_ui = rgb { 110 110 110 } }

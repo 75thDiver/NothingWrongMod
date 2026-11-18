@@ -1,0 +1,51 @@
+ideas = {
+ country = {
+  nw14_blr_battle_bialystok = {
+   picture = nw14_blr_battle_bialystok
+   removal_cost = -1
+   targeted_modifier = {
+    tag = POL
+    army_core_attack_factor = 0.05
+    army_core_defence_factor = 0.05
+   }
+  }
+  nw14_ukr_socialism = {
+   picture = nw14_usdrp
+   removal_cost = -1
+   modifier = {
+    communism_drift = 0.01
+    democratic_drift = 0.01
+   }
+  }
+  nw14_dnr_cossack_will = {
+   picture = HABSBURG_cavalry
+   removal_cost = -1
+   modifier = { army_defence_factor = 0.10 }
+  }
+  nw14_don_divided_dnr = {
+   picture = HABSBURG_cavalry
+   removal_cost = -1
+   modifier = { army_attack_factor = -0.15 }
+   targeted_modifier = { tag = DON attack_bonus_against = 0.15 }
+  }
+  nw14_don_divided_don = {
+   picture = HABSBURG_cavalry
+   removal_cost = -1
+   modifier = { army_attack_factor = -0.15 }
+   targeted_modifier = { tag = DNR attack_bonus_against = 0.15 }
+  }
+  nw14_don_united = {
+   picture = HABSBURG_cavalry
+   removal_cost = -1
+   modifier = {
+    modifier_army_sub_unit_infantry_speed_factor = 0.05
+    modifier_army_sub_unit_irregular_infantry_speed_factor = 0.05
+    modifier_army_sub_unit_militia_speed_factor = 0.05
+    modifier_army_sub_unit_marine_speed_factor = 0.05
+    modifier_army_sub_unit_mountaineers_speed_factor = 0.05
+    modifier_army_sub_unit_paratrooper_speed_factor = 0.05
+    modifier_army_sub_unit_cavalry_speed_factor = 0.15
+   }
+  }
+ }
+}

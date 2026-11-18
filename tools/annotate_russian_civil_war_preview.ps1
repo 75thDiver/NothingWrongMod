@@ -15,22 +15,22 @@ $titles = @{
     moldova = 'Одесса, Бессарабия и Приднестровье — State ID по автору'
 }
 $labels = @{
-    overview = @('SOV','CROWN','RSB','RUK','BLR','FER','POL','FIN','KIR','ALA','TRK','TUR','JAP','BLF','BLW','ROM')
-    europe = @('SOV','CROWN','DON','DNR','AKV','KUB','AFSR','RUK','BLR','KAL','BLF','BLW','POL','FIN','ROM')
+    overview = @('SOV','CROWN','RSB','UKR','BLR','FER','POL','FIN','KIR','ALA','TRK','TUR','JAP','BLF','BLW','ROM')
+    europe = @('SOV','CROWN','DON','DNR','AKV','KUB','AFSR','UKR','BLR','KAL','BLF','BLW','POL','FIN','ROM')
     caucasus = @('DON','KUB','AFSR','ABK','MNT','TCF','ARM','KAL','TRP','TUR','ROM')
     central_asia = @('SOV','KIR','ALA','TRK','RSB','SIK')
     east = @('SOV','RSB','FER','JAP','MON','SIK')
-    moldova = @('ROM','RUK','SOV')
+    moldova = @('ROM','UKR','SOV')
 }
 $legend = @{
-    overview = @('SOV','CROWN','DON','DNR','AKV','KUB','AFSR','RSB','RUK','BLR','FER','ABK','MNT','TCF','ARM','KAL','TRP','BLF','BLW','KIR','ALA','TRK','POL','FIN','TUR','JAP','ROM')
-    europe = @('SOV','CROWN','DON','DNR','AKV','KUB','AFSR','RUK','BLR','KAL','BLF','BLW','POL','FIN','ABK','MNT','TCF','ARM','TRP','ROM')
-    caucasus = @('SOV','CROWN','DON','DNR','AKV','KUB','AFSR','RUK','ABK','MNT','TCF','ARM','KAL','TRP','TUR','ROM')
+    overview = @('SOV','CROWN','DON','DNR','AKV','KUB','AFSR','RSB','UKR','BLR','FER','ABK','MNT','TCF','ARM','KAL','TRP','BLF','BLW','KIR','ALA','TRK','POL','FIN','TUR','JAP','ROM')
+    europe = @('SOV','CROWN','DON','DNR','AKV','KUB','AFSR','UKR','BLR','KAL','BLF','BLW','POL','FIN','ABK','MNT','TCF','ARM','TRP','ROM')
+    caucasus = @('SOV','CROWN','DON','DNR','AKV','KUB','AFSR','UKR','ABK','MNT','TCF','ARM','KAL','TRP','TUR','ROM')
     central_asia = @('SOV','RSB','KIR','ALA','TRK','SIK','KAL','TUR')
     east = @('SOV','RSB','FER','JAP','MON','SIK','KIR','ALA')
-    moldova = @('SOV','RUK','ROM')
+    moldova = @('SOV','UKR','ROM')
 }
-$confirmedCapitals = @('SOV','CROWN','RSB','RUK','BLR')
+$confirmedCapitals = @('SOV','CROWN','RSB','UKR','BLR')
 
 function Get-Color([string]$hex) {
     return [System.Drawing.ColorTranslator]::FromHtml('#' + $hex)

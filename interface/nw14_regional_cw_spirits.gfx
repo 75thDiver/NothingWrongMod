@@ -1,0 +1,10 @@
+spriteTypes = {
+ spriteType = {
+  name = "GFX_idea_nw14_blr_battle_bialystok"
+  texturefile = "gfx/interface/ideas/nw14_blr_battle_bialystok.dds"
+ }
+ spriteType = {
+  name = "GFX_idea_nw14_usdrp"
+  texturefile = "gfx/interface/ideas/nw14_usdrp.dds"
+ }
+}

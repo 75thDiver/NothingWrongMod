@@ -143,7 +143,7 @@
         },
         {
           "key": "add_to_faction",
-          "value": "RUK",
+          "value": "UKR",
           "line": 618
         },
         {
@@ -1146,7 +1146,7 @@
       ]
     },
     {
-      "scope": "RUK",
+      "scope": "UKR",
       "statements": [
         {
           "key": "transfer_state",
@@ -1230,19 +1230,17 @@
         },
         {
           "key": "load_oob",
-          "value": "NW14_RUK_CW",
+          "value": "NW14_UKR_CW",
           "line": 664
         }
       ],
-      "history": [
-        "history/countries/RUK - NW14.txt"
-      ],
+      "history": [],
       "history_ideas": [],
       "history_oob": [],
       "history_capital": null,
       "oobs": [
         {
-          "name": "NW14_RUK_CW",
+          "name": "NW14_UKR_CW",
           "exists": true,
           "division_count": 25,
           "templates": [

@@ -173,7 +173,7 @@ class RussianCivilWarPrealphaTests(unittest.TestCase):
         self.assertTrue(transferred, "no territories were assigned by the civil-war initializer")
         self.assertEqual(transferred, approved_state_ids(), "the initializer must apply the complete approved state set and nothing else")
         self.assertEqual(self.effect.count("transfer_state = 814"), 1)
-        self.assertRegex(self.effect, r"(?s)owns_state\s*=\s*93\s*\}\s*RUK\s*=\s*\{\s*transfer_state\s*=\s*93")
+        self.assertRegex(self.effect, r"(?s)owns_state\s*=\s*93\s*\}\s*UKR\s*=\s*\{\s*transfer_state\s*=\s*93")
         for state in (206, 96, 204, 194, 94, 95, 241, 207):
             with self.subTest(belarus_state=state):
                 self.assertRegex(self.effect, rf"(?s)owns_state\s*=\s*{state}\s*\}}\s*BLR\s*=\s*\{{\s*transfer_state\s*=\s*{state}")
@@ -287,16 +287,27 @@ class RussianCivilWarPrealphaTests(unittest.TestCase):
                 self.assertIn(f'name = "{leader}" picture = {portrait_gfx}', self.effect)
                 self.assertIn(f"name = {portrait_gfx} ", LEADER_GFX.read_text(encoding="utf-8-sig"))
 
-    def test_all_new_russia_members_are_democratic_at_fragmentation(self) -> None:
+    def test_new_russia_members_have_mixed_party_support_at_fragmentation(self) -> None:
         self.assertRegex(self.effect, r"(?s)set_politics\s*=\s*\{\s*ruling_party\s*=\s*democratic.*?set_country_flag\s*=\s*nw14_fragment")
-        tags = ("RUK", "FER", "ABK", "NCR", "TCF", "BLW", "BLR", "KIR", "DNR", "KAL")
-        for tag in tags:
+        expected_popularity = {
+            "UKR": "set_popularities = { democratic = 36 communism = 18 neutrality = 32 fascism = 14 }",
+            "FER": "set_popularities = { democratic = 43 communism = 18 neutrality = 28 fascism = 11 }",
+            "ABK": "set_popularities = { democratic = 40 communism = 19 neutrality = 30 fascism = 11 }",
+            "NCR": "set_popularities = { democratic = 38 communism = 23 neutrality = 27 fascism = 12 }",
+            "TCF": "set_popularities = { democratic = 36 communism = 23 neutrality = 30 fascism = 11 }",
+            "BLW": "set_popularities = { democratic = 35 communism = 38 neutrality = 20 fascism = 7 }",
+            "BLR": "set_popularities = { democratic = 35 communism = 18 neutrality = 15 fascism = 32 }",
+            "KIR": "set_popularities = { democratic = 36 communism = 20 neutrality = 29 fascism = 15 }",
+            "DNR": "set_popularities = { democratic = 34 communism = 12 neutrality = 32 fascism = 22 }",
+            "KAL": "set_popularities = { democratic = 38 communism = 16 neutrality = 36 fascism = 10 }",
+        }
+        for tag, expected in expected_popularity.items():
             with self.subTest(tag=tag):
                 blocks = blocks_for_scope(self.effect, tag)
                 political_blocks = [block for block in blocks if "set_country_flag = nw14_fragment" in block and "set_politics" in block]
                 self.assertTrue(political_blocks, f"{tag} has no explicit civil-war political setup")
                 self.assertTrue(any("ruling_party = democratic" in block for block in political_blocks), tag)
-                self.assertTrue(any("set_popularities = { democratic = 100 }" in block for block in political_blocks), tag)
+                self.assertTrue(any(expected in block for block in political_blocks), tag)
 
     def test_finland_and_poland_become_separate_democratic_republics(self) -> None:
         for tag in ("FIN", "POL"):
@@ -352,7 +363,7 @@ class RussianCivilWarPrealphaTests(unittest.TestCase):
         visit(val(parse(self.effect), "nw14_rus_civil_war_start"))
         self.assertEqual(found["nw14_cw_annex_victor"], {"SOV", "AFS", "RSB", "event_target:nw14_rus_royal"})
         self.assertEqual(found["nw14_cw_active"], found["nw14_cw_participant"])
-        self.assertEqual(found["nw14_cw_participant"], {"SOV", "AFS", "RSB", "event_target:nw14_rus_royal", "DON", "KUB", "AKV", "RUK", "FER", "ABK", "NCR", "TCF", "ARM", "TRP", "BLF", "BLW", "BLR", "KIR", "ALA", "TRK", "DNR", "KAL", "FIN", "POL"})
+        self.assertEqual(found["nw14_cw_participant"], {"SOV", "AFS", "RSB", "event_target:nw14_rus_royal", "DON", "KUB", "AKV", "UKR", "FER", "ABK", "NCR", "TCF", "ARM", "TRP", "BLF", "BLW", "BLR", "KIR", "ALA", "TRK", "DNR", "KAL", "FIN", "POL"})
 
     def test_cw_flags_exist_at_all_three_sizes(self) -> None:
         for tag in ("ALA", "TRK", "NCR", "TCF", "DNR", "KIR", "BLF", "BLW", "TRP"):
@@ -410,7 +421,7 @@ class RussianCivilWarPrealphaTests(unittest.TestCase):
             self.fail(f"Unclosed scripted scope: {marker}")
 
         new_russia = extract_scope("SOV = {\n\t\t\tset_rule = { can_create_factions = yes can_join_factions = yes }")
-        for tag in ("RUK", "FER", "ABK", "NCR", "TCF", "BLW", "KIR"):
+        for tag in ("UKR", "FER", "ABK", "NCR", "TCF", "BLW", "KIR"):
             with self.subTest(tag=tag):
                 self.assertRegex(new_russia, rf"(?m)^\s*add_to_faction\s*=\s*{tag}\s*$")
         for tag in ("DNR", "KAL"):
@@ -426,7 +437,7 @@ class RussianCivilWarPrealphaTests(unittest.TestCase):
         # add_to_faction is executed by the faction leader and takes the member as
         # its target. Running it inside the would-be member silently adds the leader
         # to a nonexistent faction instead.
-        self.assertNotRegex(new_russia, r"(?m)^\s*(?:RUK|FER|ABK|NCR|TCF|BLW|KIR|DNR|KAL)\s*=\s*\{[^\n]*add_to_faction\s*=\s*SOV")
+        self.assertNotRegex(new_russia, r"(?m)^\s*(?:UKR|FER|ABK|NCR|TCF|BLW|KIR|DNR|KAL)\s*=\s*\{[^\n]*add_to_faction\s*=\s*SOV")
         self.assertNotRegex(white_movement, r"(?m)^\s*add_to_faction\s*=\s*PREV\s*$")
         self.assertNotIn("add_to_faction = RSB", white_movement)
         self.assertIn("add_to_faction = BLR", new_russia)
@@ -453,7 +464,7 @@ class RussianCivilWarPrealphaTests(unittest.TestCase):
                  if n.key == "nw14_rus_civil_war_declare_external_wars"]
         self.assertEqual(len(calls), 1, "All fronts must open during initial setup")
         self.assertIn("nw14_rus_civil_war_join_white_subjects", self.effect)
-        for tag in ("RUK", "FER", "ABK", "NCR", "TCF", "BLW", "BLR", "KIR", "DNR", "KAL"):
+        for tag in ("UKR", "FER", "ABK", "NCR", "TCF", "BLW", "BLR", "KIR", "DNR", "KAL"):
             wrapper = val(parse(self.effect), "nw14_rus_civil_war_declare_external_wars")
             scopes = [n for n in walk(wrapper) if n.key == tag and isinstance(n.value, list)
                       and val(n.value, "nw14_rus_civil_war_declare_new_russia_wars") == "yes"]
@@ -552,7 +563,7 @@ class RussianCivilWarPrealphaTests(unittest.TestCase):
             "NW14_AFS.txt": {137},
             "NW14_DON_CW.txt": {218, 227, 228, 238, 245, 265},
             "NW14_KUB_CW.txt": {233, 234, 235},
-            "NW14_RUK_CW.txt": {93, 202, 834},
+            "NW14_UKR_CW.txt": {93, 202, 834},
             "NW14_RSB.txt": {570},
             "NW14_FER_CW.txt": {408},
             "NW14_ABK_CW.txt": {826},
@@ -601,7 +612,7 @@ class RussianCivilWarPrealphaTests(unittest.TestCase):
     def test_civil_war_oob_counts_and_explicit_stockpiles_match_tiers(self) -> None:
         oob_counts = {
             "NW14_SOV_CW": 40, "NW14_ROYAL_CW": 40, "NW14_AFS": 40, "NW14_RSB": 40,
-            "NW14_RUK_CW": 25,
+            "NW14_UKR_CW": 25,
             "NW14_BLR_CW": 20, "NW14_BLF_CW": 20, "NW14_FER_CW": 20,
             "NW14_ALA_CW": 20, "NW14_TRK_CW": 20,
             "NW14_DON_CW": 5, "NW14_KUB_CW": 5, "NW14_BLW_CW": 5,
@@ -620,7 +631,7 @@ class RussianCivilWarPrealphaTests(unittest.TestCase):
             ("SOV", 264000, 18480, "NW14_SOV_CW"),
             ("event_target:nw14_rus_royal", 229000, 18480, "NW14_ROYAL_CW"),
             ("AFS", 164000, 14800, "NW14_AFS"), ("RSB", 229000, 18480, "NW14_RSB"),
-            ("RUK", 130000, 8250, "NW14_RUK_CW"), ("BLR", 132000, 9240, "NW14_BLR_CW"),
+            ("UKR", 130000, 8250, "NW14_UKR_CW"), ("BLR", 132000, 9240, "NW14_BLR_CW"),
             ("BLF", 97000, 9240, "NW14_BLF_CW"), ("FER", 132000, 9240, "NW14_FER_CW"),
             ("ALA", 132000, 9240, "NW14_ALA_CW"), ("TRK", 132000, 9240, "NW14_TRK_CW"),
         ):

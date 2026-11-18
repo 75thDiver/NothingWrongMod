@@ -1,0 +1,116 @@
+nw_nr_spawn_revolutionary_militia = {
+	if = {
+		limit = { tag = SOV }
+		set_variable = { nw_nr_initial_militia_count = 60 }
+	}
+	else_if = {
+		limit = { OR = { tag = BLR tag = FER tag = UKR tag = KIR } }
+		set_variable = { nw_nr_initial_militia_count = 20 }
+	}
+	else_if = {
+		limit = { tag = DNR }
+		set_variable = { nw_nr_initial_militia_count = 5 }
+	}
+	else = { set_variable = { nw_nr_initial_militia_count = 10 } }
+	set_technology = {
+		militia_tech = 1
+		popup = no
+	}
+	division_template = {
+		name = "Революционное ополчение"
+		priority = 1
+		regiments = {
+			militia = { x = 0 y = 0 }
+			militia = { x = 0 y = 1 }
+			militia = { x = 1 y = 0 }
+			militia = { x = 1 y = 1 }
+			militia = { x = 2 y = 0 }
+			militia = { x = 2 y = 1 }
+		}
+	}
+	capital_scope = {
+		create_unit = {
+			division = "name = \"Революционное ополчение\" division_template = \"Революционное ополчение\" start_experience_factor = 0.0 start_equipment_factor = 1 start_manpower_factor = 1"
+			owner = PREV
+			allow_spawning_on_enemy_provs = no
+			count = var:PREV.nw_nr_initial_militia_count
+		}
+	}
+	clear_variable = nw_nr_initial_militia_count
+	if = {
+		limit = { tag = DNR }
+		division_template = {
+			name = "Донская революционная кавалерия"
+			priority = 1
+			regiments = {
+				cavalry = { x = 0 y = 0 }
+				cavalry = { x = 0 y = 1 }
+				cavalry = { x = 0 y = 2 }
+				cavalry = { x = 1 y = 0 }
+				cavalry = { x = 1 y = 1 }
+				cavalry = { x = 1 y = 2 }
+				cavalry = { x = 2 y = 0 }
+				cavalry = { x = 2 y = 1 }
+				cavalry = { x = 2 y = 2 }
+			}
+			support = { artillery = { x = 0 y = 0 } }
+		}
+		capital_scope = {
+			create_unit = {
+				division = "name = \"Донская революционная кавалерия\" division_template = \"Донская революционная кавалерия\" start_experience_factor = 0.0 start_equipment_factor = 1 start_manpower_factor = 1"
+				owner = PREV
+				allow_spawning_on_enemy_provs = no
+				count = 7
+			}
+		}
+	}
+}
+
+nw_nr_revolutionary_brigades_5 = {
+	division_template = {
+		name = "Революционная бригада"
+		priority = 1
+		regiments = {
+			infantry = { x = 0 y = 0 }
+			infantry = { x = 0 y = 1 }
+			infantry = { x = 0 y = 2 }
+			infantry = { x = 0 y = 3 }
+			infantry = { x = 1 y = 0 }
+			infantry = { x = 1 y = 1 }
+			infantry = { x = 1 y = 2 }
+			infantry = { x = 1 y = 3 }
+			infantry = { x = 2 y = 0 }
+			infantry = { x = 2 y = 1 }
+			infantry = { x = 2 y = 2 }
+			infantry = { x = 2 y = 3 }
+		}
+		support = {
+			field_guns = { x = 0 y = 0 }
+		}
+	}
+	capital_scope = {
+		create_unit = {
+			division = "name = \"Революционная бригада\" division_template = \"Революционная бригада\" start_experience_factor = 0.0 start_equipment_factor = 1 start_manpower_factor = 1"
+			owner = PREV
+			allow_spawning_on_enemy_provs = no
+			count = 5
+		}
+	}
+	add_to_variable = { var = nw_nr_revolutionary_attack value = 0.05 }
+	add_to_variable = { var = nw_nr_defence value = 0.05 }
+	force_update_dynamic_modifier = yes
+}
+
+nw_nr_revolutionary_brigades_15 = {
+	capital_scope = {
+		create_unit = {
+			division = "name = \"Революционная бригада\" division_template = \"Революционная бригада\" start_experience_factor = 0.0 start_equipment_factor = 1 start_manpower_factor = 1"
+			owner = PREV
+			allow_spawning_on_enemy_provs = no
+			count = 15
+		}
+	}
+	add_to_variable = { var = nw_nr_revolutionary_attack value = 0.05 }
+	add_to_variable = { var = nw_nr_defence value = 0.05 }
+	force_update_dynamic_modifier = yes
+}

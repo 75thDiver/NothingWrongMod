@@ -2885,24 +2885,24 @@ if = { limit = { SOV = { owns_state = 218 } } 218 = { add_core_of = RDN } RDN = 
 if = { limit = { SOV = { owns_state = 228 } } 228 = { add_core_of = RDN } RDN = { transfer_state = 228 } }
 if = { limit = { SOV = { owns_state = 234 } } 234 = { add_core_of = RDN } RDN = { transfer_state = 234 } }
 RDN = { if = { limit = { owns_state = 218 } set_capital = { state = 218 } } set_politics = { ruling_party = neutrality elections_allowed = no } set_popularities = { neutrality = 100 } create_country_leader = { name = "Донское войсковое правительство" ideology = despotism expire = "2000.1.1" traits = { } } set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 } add_manpower = 35000 load_oob = NW14_RDN set_country_flag = nw14_fragment set_rule = { can_join_factions = no can_create_factions = no } load_focus_tree = { tree = NW_generic_development keep_completed = no } }
-if = { limit = { SOV = { owns_state = 200 } } 200 = { add_core_of = RUK } RUK = { transfer_state = 200 } }
-if = { limit = { SOV = { owns_state = 201 } } 201 = { add_core_of = RUK } RUK = { transfer_state = 201 } }
-if = { limit = { SOV = { owns_state = 202 } } 202 = { add_core_of = RUK } RUK = { transfer_state = 202 } }
-if = { limit = { SOV = { owns_state = 203 } } 203 = { add_core_of = RUK } RUK = { transfer_state = 203 } }
-if = { limit = { SOV = { owns_state = 221 } } 221 = { add_core_of = RUK } RUK = { transfer_state = 221 } }
-if = { limit = { SOV = { owns_state = 226 } } 226 = { add_core_of = RUK } RUK = { transfer_state = 226 } }
-if = { limit = { SOV = { owns_state = 227 } } 227 = { add_core_of = RUK } RUK = { transfer_state = 227 } }
-RUK = { if = { limit = { owns_state = 202 } set_capital = { state = 202 } } set_politics = { ruling_party = democratic elections_allowed = yes } set_popularities = { democratic = 100 } create_country_leader = { name = "Украинская рада" ideology = liberalism expire = "2000.1.1" traits = { } } set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 } add_manpower = 35000 load_oob = NW14_RUK set_country_flag = nw14_fragment set_rule = { can_join_factions = no can_create_factions = no } load_focus_tree = { tree = NW_generic_development keep_completed = no } }
+if = { limit = { SOV = { owns_state = 200 } } 200 = { add_core_of = UKR } UKR = { transfer_state = 200 } }
+if = { limit = { SOV = { owns_state = 201 } } 201 = { add_core_of = UKR } UKR = { transfer_state = 201 } }
+if = { limit = { SOV = { owns_state = 202 } } 202 = { add_core_of = UKR } UKR = { transfer_state = 202 } }
+if = { limit = { SOV = { owns_state = 203 } } 203 = { add_core_of = UKR } UKR = { transfer_state = 203 } }
+if = { limit = { SOV = { owns_state = 221 } } 221 = { add_core_of = UKR } UKR = { transfer_state = 221 } }
+if = { limit = { SOV = { owns_state = 226 } } 226 = { add_core_of = UKR } UKR = { transfer_state = 226 } }
+if = { limit = { SOV = { owns_state = 227 } } 227 = { add_core_of = UKR } UKR = { transfer_state = 227 } }
+UKR = { if = { limit = { owns_state = 202 } set_capital = { state = 202 } } add_ideas = nw14_ukr_socialism set_politics = { ruling_party = democratic elections_allowed = yes } set_popularities = { democratic = 36 communism = 18 neutrality = 32 fascism = 14 } set_party_name = { ideology = democratic name = nw14_ukr_party_democratic long_name = nw14_ukr_party_democratic_long } set_party_name = { ideology = communism name = nw14_ukr_party_communist long_name = nw14_ukr_party_communist_long } create_country_leader = { name = "Украинская рада" ideology = liberalism expire = "2000.1.1" traits = { } } set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 } add_manpower = 35000 load_oob = NW14_UKR set_country_flag = nw14_fragment set_rule = { can_join_factions = no can_create_factions = no } load_focus_tree = { tree = NW_generic_development keep_completed = no } }
 SOV = { if = { limit = { event_target:nw14_rus_royal = { exists = yes } NOT = { has_war_with = event_target:nw14_rus_royal } } declare_war_on = { target = event_target:nw14_rus_royal type = annex_everything } } }
 SOV = { if = { limit = { RSB = { exists = yes } NOT = { has_war_with = RSB } } declare_war_on = { target = RSB type = annex_everything } } }
 SOV = { if = { limit = { RDN = { exists = yes } NOT = { has_war_with = RDN } } declare_war_on = { target = RDN type = annex_everything } } }
-SOV = { if = { limit = { RUK = { exists = yes } NOT = { has_war_with = RUK } } declare_war_on = { target = RUK type = annex_everything } } }
+SOV = { if = { limit = { UKR = { exists = yes } NOT = { has_war_with = UKR } } declare_war_on = { target = UKR type = annex_everything } } }
 event_target:nw14_rus_royal = { if = { limit = { RSB = { exists = yes } NOT = { has_war_with = RSB } } declare_war_on = { target = RSB type = annex_everything } } }
 event_target:nw14_rus_royal = { if = { limit = { RDN = { exists = yes } NOT = { has_war_with = RDN } } declare_war_on = { target = RDN type = annex_everything } } }
-event_target:nw14_rus_royal = { if = { limit = { RUK = { exists = yes } NOT = { has_war_with = RUK } } declare_war_on = { target = RUK type = annex_everything } } }
+event_target:nw14_rus_royal = { if = { limit = { UKR = { exists = yes } NOT = { has_war_with = UKR } } declare_war_on = { target = UKR type = annex_everything } } }
 RSB = { if = { limit = { RDN = { exists = yes } NOT = { has_war_with = RDN } } declare_war_on = { target = RDN type = annex_everything } } }
-RSB = { if = { limit = { RUK = { exists = yes } NOT = { has_war_with = RUK } } declare_war_on = { target = RUK type = annex_everything } } }
-RDN = { if = { limit = { RUK = { exists = yes } NOT = { has_war_with = RUK } } declare_war_on = { target = RUK type = annex_everything } } }
+RSB = { if = { limit = { UKR = { exists = yes } NOT = { has_war_with = UKR } } declare_war_on = { target = UKR type = annex_everything } } }
+RDN = { if = { limit = { UKR = { exists = yes } NOT = { has_war_with = UKR } } declare_war_on = { target = UKR type = annex_everything } } }
 set_country_flag = nw_rus_war_started set_country_flag = nw_alexei_dead
 }
 nw14_rus_fragmentation = {

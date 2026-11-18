@@ -287,7 +287,7 @@
         ]
       ]
     },
-    "RUK": {
+    "UKR": {
       "name": "Украинская рада",
       "bloc": "Новая Россия",
       "color": "4CA9AD",
@@ -741,7 +741,7 @@
     "93": {
       "name": "Волынь",
       "before": "SOV",
-      "after_preview": "RUK",
+      "after_preview": "UKR",
       "status": "approved",
       "note": null,
       "file": "93-Volhynian.txt",
@@ -837,7 +837,7 @@
     "192": {
       "name": "Одесса",
       "before": "SOV",
-      "after_preview": "RUK",
+      "after_preview": "UKR",
       "status": "approved",
       "note": null,
       "file": "192-Odessa.txt",
@@ -849,7 +849,7 @@
     "193": {
       "name": "Чернигов",
       "before": "SOV",
-      "after_preview": "RUK",
+      "after_preview": "UKR",
       "status": "approved",
       "note": null,
       "file": "193-Kiev.txt",
@@ -873,7 +873,7 @@
     "196": {
       "name": "Херсон",
       "before": "SOV",
-      "after_preview": "RUK",
+      "after_preview": "UKR",
       "status": "approved",
       "note": null,
       "file": "196-Kherson.txt",
@@ -885,7 +885,7 @@
     "197": {
       "name": "Николаев",
       "before": "SOV",
-      "after_preview": "RUK",
+      "after_preview": "UKR",
       "status": "approved",
       "note": null,
       "file": "197-Mykolaiv.txt",
@@ -897,7 +897,7 @@
     "198": {
       "name": "Винница",
       "before": "SOV",
-      "after_preview": "RUK",
+      "after_preview": "UKR",
       "status": "approved",
       "note": null,
       "file": "198-Vinnytsia.txt",
@@ -909,7 +909,7 @@
     "199": {
       "name": "Проскуров",
       "before": "SOV",
-      "after_preview": "RUK",
+      "after_preview": "UKR",
       "status": "approved",
       "note": null,
       "file": "199-Khmelnytskyi.txt",
@@ -921,7 +921,7 @@
     "200": {
       "name": "Запорожье",
       "before": "SOV",
-      "after_preview": "RUK",
+      "after_preview": "UKR",
       "status": "approved",
       "note": null,
       "file": "200-Rivne.txt",
@@ -933,7 +933,7 @@
     "201": {
       "name": "Житомир",
       "before": "SOV",
-      "after_preview": "RUK",
+      "after_preview": "UKR",
       "status": "approved",
       "note": null,
       "file": "201-Zhytomyr.txt",
@@ -945,7 +945,7 @@
     "202": {
       "name": "Киев",
       "before": "SOV",
-      "after_preview": "RUK",
+      "after_preview": "UKR",
       "status": "approved",
       "note": null,
       "file": "202-Western Kiev.txt",
@@ -957,7 +957,7 @@
     "203": {
       "name": "Черкассы",
       "before": "SOV",
-      "after_preview": "RUK",
+      "after_preview": "UKR",
       "status": "approved",
       "note": null,
       "file": "203-Cherkasy.txt",
@@ -1113,7 +1113,7 @@
     "225": {
       "name": "Сумы",
       "before": "SOV",
-      "after_preview": "RUK",
+      "after_preview": "UKR",
       "status": "approved",
       "note": null,
       "file": "225-Glukhov.txt",
@@ -1125,7 +1125,7 @@
     "226": {
       "name": "Екатеринослав",
       "before": "SOV",
-      "after_preview": "RUK",
+      "after_preview": "UKR",
       "status": "approved",
       "note": null,
       "file": "226-Nikopol.txt",
@@ -1449,7 +1449,7 @@
     "259": {
       "name": "Полтава",
       "before": "SOV",
-      "after_preview": "RUK",
+      "after_preview": "UKR",
       "status": "approved",
       "note": null,
       "file": "259-Liski.txt",
@@ -2337,7 +2337,7 @@
     "834": {
       "name": "Балта-Тирасполь",
       "before": "SOV",
-      "after_preview": "RUK",
+      "after_preview": "UKR",
       "status": "approved",
       "note": null,
       "file": "834 - Balta.txt",
@@ -2462,7 +2462,7 @@
           271,
           290
         ],
-        "RUK": [
+        "UKR": [
           302,
           375
         ],
@@ -2590,7 +2590,7 @@
           428,
           564
         ],
-        "RUK": [
+        "UKR": [
           495,
           750
         ],
@@ -2682,7 +2682,7 @@
           357,
           578
         ],
-        "RUK": [
+        "UKR": [
           148,
           243
         ],
@@ -2738,7 +2738,7 @@
           1082,
           751
         ],
-        "RUK": [
+        "UKR": [
           815,
           323
         ],
