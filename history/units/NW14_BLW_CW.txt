@@ -12,8 +12,8 @@ division_template = {
 }
 units = {
 	division = { name = "Рабочая прибалтийская дивизия 1" location = 4640 division_template = "NW14 Territorial Guard" start_experience_factor = 0.1 start_equipment_factor = 0.7 }
-	division = { name = "Рабочая прибалтийская дивизия 2" location = 4640 division_template = "NW14 Territorial Guard" start_experience_factor = 0.1 start_equipment_factor = 0.7 }
+	division = { name = "Рабочая прибалтийская дивизия 2" location = 11127 division_template = "NW14 Territorial Guard" start_experience_factor = 0.1 start_equipment_factor = 0.7 }
 	division = { name = "Рабочая прибалтийская дивизия 3" location = 4640 division_template = "NW14 Territorial Guard" start_experience_factor = 0.1 start_equipment_factor = 0.7 }
-	division = { name = "Рабочая прибалтийская дивизия 4" location = 4640 division_template = "NW14 Territorial Guard" start_experience_factor = 0.1 start_equipment_factor = 0.7 }
+	division = { name = "Рабочая прибалтийская дивизия 4" location = 11127 division_template = "NW14 Territorial Guard" start_experience_factor = 0.1 start_equipment_factor = 0.7 }
 	division = { name = "Рабочая прибалтийская дивизия 5" location = 4640 division_template = "NW14 Territorial Guard" start_experience_factor = 0.1 start_equipment_factor = 0.7 }
 }

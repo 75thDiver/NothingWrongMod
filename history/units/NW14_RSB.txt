@@ -1,43 +1,43 @@
 division_template = { name = "NW14 Territorial Guard" regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } } }
 units = {
  division = { name = "1. Territorial Guard" location = 7274 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
- division = { name = "2. Territorial Guard" location = 7274 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
- division = { name = "3. Territorial Guard" location = 7274 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
- division = { name = "4. Territorial Guard" location = 7274 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
- division = { name = "5. Territorial Guard" location = 7274 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
+ division = { name = "2. Territorial Guard" location = 10696 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
+ division = { name = "3. Territorial Guard" location = 10627 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
+ division = { name = "4. Territorial Guard" location = 4797 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
+ division = { name = "5. Territorial Guard" location = 10580 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
  division = { name = "6. Territorial Guard" location = 7274 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
- division = { name = "7. Territorial Guard" location = 7274 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
- division = { name = "8. Territorial Guard" location = 7274 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
- division = { name = "9. Territorial Guard" location = 7274 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
- division = { name = "10. Territorial Guard" location = 7274 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
+ division = { name = "7. Territorial Guard" location = 10696 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
+ division = { name = "8. Territorial Guard" location = 10627 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
+ division = { name = "9. Territorial Guard" location = 4797 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
+ division = { name = "10. Territorial Guard" location = 10580 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
  division = { name = "11. Territorial Guard" location = 7274 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
- division = { name = "12. Territorial Guard" location = 7274 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
- division = { name = "13. Territorial Guard" location = 7274 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
- division = { name = "14. Territorial Guard" location = 7274 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
- division = { name = "15. Territorial Guard" location = 7274 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
+ division = { name = "12. Territorial Guard" location = 10696 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
+ division = { name = "13. Territorial Guard" location = 10627 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
+ division = { name = "14. Territorial Guard" location = 4797 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
+ division = { name = "15. Territorial Guard" location = 10580 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
  division = { name = "16. Territorial Guard" location = 7274 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
- division = { name = "17. Territorial Guard" location = 7274 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
- division = { name = "18. Territorial Guard" location = 7274 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
- division = { name = "19. Territorial Guard" location = 7274 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
- division = { name = "20. Territorial Guard" location = 7274 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
+ division = { name = "17. Territorial Guard" location = 10696 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
+ division = { name = "18. Territorial Guard" location = 10627 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
+ division = { name = "19. Territorial Guard" location = 4797 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
+ division = { name = "20. Territorial Guard" location = 10580 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
  division = { name = "21. Territorial Guard" location = 7274 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
- division = { name = "22. Territorial Guard" location = 7274 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
- division = { name = "23. Territorial Guard" location = 7274 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
- division = { name = "24. Territorial Guard" location = 7274 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
- division = { name = "25. Territorial Guard" location = 7274 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
+ division = { name = "22. Territorial Guard" location = 10696 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
+ division = { name = "23. Territorial Guard" location = 10627 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
+ division = { name = "24. Territorial Guard" location = 4797 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
+ division = { name = "25. Territorial Guard" location = 10580 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
  division = { name = "26. Territorial Guard" location = 7274 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
- division = { name = "27. Territorial Guard" location = 7274 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
- division = { name = "28. Territorial Guard" location = 7274 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
- division = { name = "29. Territorial Guard" location = 7274 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
- division = { name = "30. Territorial Guard" location = 7274 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
+ division = { name = "27. Territorial Guard" location = 10696 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
+ division = { name = "28. Territorial Guard" location = 10627 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
+ division = { name = "29. Territorial Guard" location = 4797 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
+ division = { name = "30. Territorial Guard" location = 10580 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
  division = { name = "31. Territorial Guard" location = 7274 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
- division = { name = "32. Territorial Guard" location = 7274 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
- division = { name = "33. Territorial Guard" location = 7274 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
- division = { name = "34. Territorial Guard" location = 7274 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
- division = { name = "35. Territorial Guard" location = 7274 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
+ division = { name = "32. Territorial Guard" location = 10696 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
+ division = { name = "33. Territorial Guard" location = 10627 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
+ division = { name = "34. Territorial Guard" location = 4797 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
+ division = { name = "35. Territorial Guard" location = 10580 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
  division = { name = "36. Territorial Guard" location = 7274 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
- division = { name = "37. Territorial Guard" location = 7274 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
- division = { name = "38. Territorial Guard" location = 7274 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
- division = { name = "39. Territorial Guard" location = 7274 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
- division = { name = "40. Territorial Guard" location = 7274 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
+ division = { name = "37. Territorial Guard" location = 10696 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
+ division = { name = "38. Territorial Guard" location = 10627 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
+ division = { name = "39. Territorial Guard" location = 4797 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
+ division = { name = "40. Territorial Guard" location = 10580 division_template = "NW14 Territorial Guard" start_experience_factor = 0.15 start_equipment_factor = 0.7 }
 }

@@ -558,22 +558,22 @@ class RussianCivilWarPrealphaTests(unittest.TestCase):
     def test_oob_locations_belong_to_the_approved_starting_states(self) -> None:
         _, province_to_state = state_data()
         allowed = {
-            "NW14_SOV_CW.txt": {195},
-            "NW14_ROYAL_CW.txt": {239},
+            "NW14_SOV_CW.txt": {195, 209, 242, 210, 247, 248, 249},
+            "NW14_ROYAL_CW.txt": {224, 239, 219, 252, 222},
             "NW14_AFS.txt": {137},
             "NW14_DON_CW.txt": {218, 227, 228, 238, 245, 265},
             "NW14_KUB_CW.txt": {233, 234, 235},
-            "NW14_UKR_CW.txt": {93, 202, 834},
-            "NW14_RSB.txt": {570},
-            "NW14_FER_CW.txt": {408},
+            "NW14_UKR_CW.txt": {192, 226, 834, 202, 203},
+            "NW14_RSB.txt": {329, 566, 569, 570, 571},
+            "NW14_FER_CW.txt": {408, 409},
             "NW14_ABK_CW.txt": {826},
-            "NW14_NCR_CW.txt": {232},
-            "NW14_TCF_CW.txt": {231},
-            "NW14_ARM_CW.txt": {230},
-            "NW14_TRP_CW.txt": {353},
-            "NW14_BLF_CW.txt": {808},
+            "NW14_NCR_CW.txt": {232, 821},
+            "NW14_TCF_CW.txt": {229, 231},
+            "NW14_ARM_CW.txt": {800, 230},
+            "NW14_TRP_CW.txt": {353, 354},
+            "NW14_BLF_CW.txt": {808, 11, 812, 189, 190},
             "NW14_BLW_CW.txt": {813},
-            "NW14_BLR_CW.txt": {206},
+            "NW14_BLR_CW.txt": {204, 206, 207, 241, 95},
             "NW14_DNR_217.txt": {217},
             "NW14_DNR_265.txt": {265},
             "NW14_AKV_217.txt": {217},
@@ -581,14 +581,17 @@ class RussianCivilWarPrealphaTests(unittest.TestCase):
             "NW14_AKV_237.txt": {237},
             "NW14_KAL_236.txt": {236},
             "NW14_KAL_237.txt": {237},
-            "NW14_KIR_CW.txt": {590},
-            "NW14_ALA_CW.txt": {881},
-            "NW14_TRK_CW.txt": {405},
+            "NW14_KIR_CW.txt": {588, 590},
+            "NW14_ALA_CW.txt": {586, 881, 402, 404, 407},
+            "NW14_TRK_CW.txt": {584, 405, 732, 830, 831},
+            "NW14_FIN_CW.txt": {929, 148, 111},
+            "NW14_POL_CW.txt": {97, 98, 10, 87, 90},
         }
         for filename, allowed_states in allowed.items():
             text = (ROOT / "history" / "units" / filename).read_text(encoding="utf-8-sig")
             locations = list(map(int, re.findall(r"\blocation\s*=\s*(\d+)\b", text)))
             self.assertTrue(locations, filename)
+            self.assertGreater(len(set(locations)), 1, filename)
             for province in locations:
                 with self.subTest(oob=filename, province=province):
                     self.assertTrue(province_to_state.get(province, set()) & allowed_states)

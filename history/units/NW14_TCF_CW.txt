@@ -12,8 +12,8 @@ division_template = {
 }
 units = {
 	division = { name = "Закавказская дивизия 1" location = 654 division_template = "NW14 Territorial Guard" start_experience_factor = 0.1 start_equipment_factor = 0.7 }
-	division = { name = "Закавказская дивизия 2" location = 654 division_template = "NW14 Territorial Guard" start_experience_factor = 0.1 start_equipment_factor = 0.7 }
+	division = { name = "Закавказская дивизия 2" location = 7661 division_template = "NW14 Territorial Guard" start_experience_factor = 0.1 start_equipment_factor = 0.7 }
 	division = { name = "Закавказская дивизия 3" location = 654 division_template = "NW14 Territorial Guard" start_experience_factor = 0.1 start_equipment_factor = 0.7 }
-	division = { name = "Закавказская дивизия 4" location = 654 division_template = "NW14 Territorial Guard" start_experience_factor = 0.1 start_equipment_factor = 0.7 }
+	division = { name = "Закавказская дивизия 4" location = 7661 division_template = "NW14 Territorial Guard" start_experience_factor = 0.1 start_equipment_factor = 0.7 }
 	division = { name = "Закавказская дивизия 5" location = 654 division_template = "NW14 Territorial Guard" start_experience_factor = 0.1 start_equipment_factor = 0.7 }
 }

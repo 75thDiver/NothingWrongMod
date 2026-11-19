@@ -34,6 +34,15 @@ ideas = {
   nw_nr_political = { picture = generic_army_war_college removal_cost = -1 visible = { always = no } modifier = { political_power_factor = 0.05 } }
   nw_nr_resistance = { picture = generic_army_war_college removal_cost = -1 visible = { always = no } modifier = { resistance_growth = -0.03 } }
 
+  # Target-specific combat modifiers are carried separately from the visible spirit.
+  nw_nr_final_offensive = {
+   picture = generic_army_war_college
+   removal_cost = -1
+   visible = { always = no }
+   targeted_modifier = { tag = event_target:nw14_rus_royal attack_bonus_against = 0.20 defense_bonus_against = 0.20 }
+   targeted_modifier = { tag = RSB attack_bonus_against = 0.20 defense_bonus_against = 0.20 }
+  }
+
   # These hidden carrier ideas preserve the existing targeted combat bonuses.
   nw_nr_revolutionary_front_1 = {
    picture = generic_army_war_college
@@ -50,6 +59,56 @@ ideas = {
    targeted_modifier = { tag = AFS attack_bonus_against = 0.10 defense_bonus_against = 0.10 }
    targeted_modifier = { tag = event_target:nw14_rus_royal attack_bonus_against = 0.10 defense_bonus_against = 0.10 }
    targeted_modifier = { tag = RSB attack_bonus_against = 0.10 defense_bonus_against = 0.10 }
+  }
+  nw_nr_anti_separatists = {
+   picture = generic_army_war_college
+   removal_cost = -1
+   visible = { always = no }
+   targeted_modifier = { tag = POL attack_bonus_against = 0.10 defense_bonus_against = 0.10 }
+   targeted_modifier = { tag = FIN attack_bonus_against = 0.10 defense_bonus_against = 0.10 }
+   targeted_modifier = { tag = ARM attack_bonus_against = 0.10 defense_bonus_against = 0.10 }
+   targeted_modifier = { tag = TRP attack_bonus_against = 0.10 defense_bonus_against = 0.10 }
+   targeted_modifier = { tag = BLF attack_bonus_against = 0.10 defense_bonus_against = 0.10 }
+   targeted_modifier = { tag = ALA attack_bonus_against = 0.10 defense_bonus_against = 0.10 }
+   targeted_modifier = { tag = TRK attack_bonus_against = 0.10 defense_bonus_against = 0.10 }
+   targeted_modifier = { tag = UKR attack_bonus_against = 0.10 defense_bonus_against = 0.10 }
+   targeted_modifier = { tag = BLR attack_bonus_against = 0.10 defense_bonus_against = 0.10 }
+   targeted_modifier = { tag = FER attack_bonus_against = 0.10 defense_bonus_against = 0.10 }
+   targeted_modifier = { tag = ABK attack_bonus_against = 0.10 defense_bonus_against = 0.10 }
+   targeted_modifier = { tag = NCR attack_bonus_against = 0.10 defense_bonus_against = 0.10 }
+   targeted_modifier = { tag = TCF attack_bonus_against = 0.10 defense_bonus_against = 0.10 }
+   targeted_modifier = { tag = BLW attack_bonus_against = 0.10 defense_bonus_against = 0.10 }
+   targeted_modifier = { tag = KIR attack_bonus_against = 0.10 defense_bonus_against = 0.10 }
+   targeted_modifier = { tag = DNR attack_bonus_against = 0.10 defense_bonus_against = 0.10 }
+   targeted_modifier = { tag = KAL attack_bonus_against = 0.10 defense_bonus_against = 0.10 }
+  }
+  nw_nr_united_enemies = {
+   picture = generic_army_war_college
+   removal_cost = -1
+   visible = { always = no }
+   targeted_modifier = { tag = POL attack_bonus_against = 0.10 defense_bonus_against = 0.10 }
+   targeted_modifier = { tag = FIN attack_bonus_against = 0.10 defense_bonus_against = 0.10 }
+   targeted_modifier = { tag = ARM attack_bonus_against = 0.10 defense_bonus_against = 0.10 }
+   targeted_modifier = { tag = TRP attack_bonus_against = 0.10 defense_bonus_against = 0.10 }
+   targeted_modifier = { tag = BLF attack_bonus_against = 0.10 defense_bonus_against = 0.10 }
+   targeted_modifier = { tag = ALA attack_bonus_against = 0.10 defense_bonus_against = 0.10 }
+   targeted_modifier = { tag = TRK attack_bonus_against = 0.10 defense_bonus_against = 0.10 }
+   targeted_modifier = { tag = UKR attack_bonus_against = 0.10 defense_bonus_against = 0.10 }
+   targeted_modifier = { tag = BLR attack_bonus_against = 0.10 defense_bonus_against = 0.10 }
+   targeted_modifier = { tag = FER attack_bonus_against = 0.10 defense_bonus_against = 0.10 }
+   targeted_modifier = { tag = ABK attack_bonus_against = 0.10 defense_bonus_against = 0.10 }
+   targeted_modifier = { tag = NCR attack_bonus_against = 0.10 defense_bonus_against = 0.10 }
+   targeted_modifier = { tag = TCF attack_bonus_against = 0.10 defense_bonus_against = 0.10 }
+   targeted_modifier = { tag = BLW attack_bonus_against = 0.10 defense_bonus_against = 0.10 }
+   targeted_modifier = { tag = KIR attack_bonus_against = 0.10 defense_bonus_against = 0.10 }
+   targeted_modifier = { tag = DNR attack_bonus_against = 0.10 defense_bonus_against = 0.10 }
+   targeted_modifier = { tag = KAL attack_bonus_against = 0.10 defense_bonus_against = 0.10 }
+   targeted_modifier = { tag = AFS attack_bonus_against = 0.10 defense_bonus_against = 0.10 }
+   targeted_modifier = { tag = RSB attack_bonus_against = 0.10 defense_bonus_against = 0.10 }
+   targeted_modifier = { tag = DON attack_bonus_against = 0.10 defense_bonus_against = 0.10 }
+   targeted_modifier = { tag = KUB attack_bonus_against = 0.10 defense_bonus_against = 0.10 }
+   targeted_modifier = { tag = AKV attack_bonus_against = 0.10 defense_bonus_against = 0.10 }
+   targeted_modifier = { tag = event_target:nw14_rus_royal attack_bonus_against = 0.10 defense_bonus_against = 0.10 }
   }
  }
 }

@@ -1,21 +1,60 @@
-nw_nr_spawn_revolutionary_militia = {
+# All effects enter in the receiving country scope.
+nw_nr_first_mobilization = {
 	if = {
-		limit = { tag = SOV }
-		set_variable = { nw_nr_initial_militia_count = 60 }
+		limit = {
+			OR = { tag = SOV tag = UKR tag = DNR }
+			NOT = { has_global_flag = nw14_russian_cw_ended }
+			NOT = { has_country_flag = nw_nr_first_mobilization_granted }
+		}
+		set_country_flag = nw_nr_first_mobilization_granted
+		if = {
+			limit = { tag = SOV }
+			set_variable = { nw_nr_reinforcement_count = 36 }
+		}
+		else_if = {
+			limit = { tag = UKR }
+			set_variable = { nw_nr_reinforcement_count = 6 }
+		}
+		else = { set_variable = { nw_nr_reinforcement_count = 3 } }
+		nw_nr_spawn_militia = yes
+		clear_variable = nw_nr_reinforcement_count
 	}
-	else_if = {
-		limit = { OR = { tag = BLR tag = FER tag = UKR tag = KIR } }
-		set_variable = { nw_nr_initial_militia_count = 20 }
+}
+
+nw_nr_second_mobilization = {
+	if = {
+		limit = {
+			OR = { tag = SOV tag = UKR tag = DNR tag = BLR }
+			NOT = { has_global_flag = nw14_russian_cw_ended }
+			NOT = { has_country_flag = nw_nr_second_mobilization_granted }
+		}
+		set_country_flag = nw_nr_second_mobilization_granted
+		if = {
+			limit = { tag = SOV }
+			set_variable = { nw_nr_reinforcement_count = 12 }
+			nw_nr_spawn_militia = yes
+			set_variable = { nw_nr_reinforcement_count = 10 }
+			nw_nr_spawn_regular_brigades = yes
+		}
+		else_if = {
+			limit = { tag = DNR }
+			set_variable = { nw_nr_reinforcement_count = 2 }
+			nw_nr_spawn_militia = yes
+		}
+		else = {
+			set_variable = { nw_nr_reinforcement_count = 4 }
+			if = {
+				limit = { tag = UKR }
+				nw_nr_spawn_militia = yes
+			}
+			nw_nr_spawn_light_brigades = yes
+		}
+		clear_variable = nw_nr_reinforcement_count
 	}
-	else_if = {
-		limit = { tag = DNR }
-		set_variable = { nw_nr_initial_militia_count = 5 }
-	}
-	else = { set_variable = { nw_nr_initial_militia_count = 10 } }
-	set_technology = {
-		militia_tech = 1
-		popup = no
-	}
+}
+
+nw_nr_spawn_militia = {
+	set_technology = { militia_tech = 1 popup = no }
 	division_template = {
 		name = "Революционное ополчение"
 		priority = 1
@@ -33,84 +72,312 @@ nw_nr_spawn_revolutionary_militia = {
 			division = "name = \"Революционное ополчение\" division_template = \"Революционное ополчение\" start_experience_factor = 0.0 start_equipment_factor = 1 start_manpower_factor = 1"
 			owner = PREV
 			allow_spawning_on_enemy_provs = no
-			count = var:PREV.nw_nr_initial_militia_count
-		}
-	}
-	clear_variable = nw_nr_initial_militia_count
-	if = {
-		limit = { tag = DNR }
-		division_template = {
-			name = "Донская революционная кавалерия"
-			priority = 1
-			regiments = {
-				cavalry = { x = 0 y = 0 }
-				cavalry = { x = 0 y = 1 }
-				cavalry = { x = 0 y = 2 }
-				cavalry = { x = 1 y = 0 }
-				cavalry = { x = 1 y = 1 }
-				cavalry = { x = 1 y = 2 }
-				cavalry = { x = 2 y = 0 }
-				cavalry = { x = 2 y = 1 }
-				cavalry = { x = 2 y = 2 }
-			}
-			support = { artillery = { x = 0 y = 0 } }
-		}
-		capital_scope = {
-			create_unit = {
-				division = "name = \"Донская революционная кавалерия\" division_template = \"Донская революционная кавалерия\" start_experience_factor = 0.0 start_equipment_factor = 1 start_manpower_factor = 1"
-				owner = PREV
-				allow_spawning_on_enemy_provs = no
-				count = 7
-			}
+			count = var:PREV.nw_nr_reinforcement_count
 		}
 	}
 }
 
-nw_nr_revolutionary_brigades_5 = {
+nw_nr_spawn_regular_brigades = {
 	division_template = {
-		name = "Революционная бригада"
+		name = "Регулярная революционная дивизия"
 		priority = 1
 		regiments = {
 			infantry = { x = 0 y = 0 }
 			infantry = { x = 0 y = 1 }
 			infantry = { x = 0 y = 2 }
-			infantry = { x = 0 y = 3 }
 			infantry = { x = 1 y = 0 }
 			infantry = { x = 1 y = 1 }
 			infantry = { x = 1 y = 2 }
-			infantry = { x = 1 y = 3 }
 			infantry = { x = 2 y = 0 }
 			infantry = { x = 2 y = 1 }
 			infantry = { x = 2 y = 2 }
-			infantry = { x = 2 y = 3 }
+			infantry = { x = 3 y = 0 }
+			infantry = { x = 3 y = 1 }
+			infantry = { x = 3 y = 2 }
 		}
-		support = {
-			field_guns = { x = 0 y = 0 }
-		}
+		support = { artillery = { x = 0 y = 0 } }
 	}
 	capital_scope = {
 		create_unit = {
-			division = "name = \"Революционная бригада\" division_template = \"Революционная бригада\" start_experience_factor = 0.0 start_equipment_factor = 1 start_manpower_factor = 1"
+			division = "name = \"Регулярная революционная дивизия\" division_template = \"Регулярная революционная дивизия\" start_experience_factor = 0.3 start_equipment_factor = 1 start_manpower_factor = 1"
 			owner = PREV
 			allow_spawning_on_enemy_provs = no
-			count = 5
+			count = var:PREV.nw_nr_reinforcement_count
 		}
 	}
-	add_to_variable = { var = nw_nr_revolutionary_attack value = 0.05 }
-	add_to_variable = { var = nw_nr_defence value = 0.05 }
+}
+
+nw_nr_spawn_light_brigades = {
+	division_template = {
+		name = "Фронтовая стрелковая бригада"
+		priority = 1
+		regiments = {
+			infantry = { x = 0 y = 0 }
+			infantry = { x = 0 y = 1 }
+			infantry = { x = 1 y = 0 }
+			infantry = { x = 1 y = 1 }
+			infantry = { x = 2 y = 0 }
+			infantry = { x = 2 y = 1 }
+		}
+		support = { field_guns = { x = 0 y = 0 } }
+	}
+	capital_scope = {
+		create_unit = {
+			division = "name = \"Фронтовая стрелковая бригада\" division_template = \"Фронтовая стрелковая бригада\" start_experience_factor = 0.15 start_equipment_factor = 1 start_manpower_factor = 1"
+			owner = PREV
+			allow_spawning_on_enemy_provs = no
+			count = var:PREV.nw_nr_reinforcement_count
+		}
+	}
+}
+
+nw_nr_spawn_don_cavalry = {
+	division_template = {
+		name = "Донская революционная кавалерия"
+		priority = 1
+		regiments = {
+			cavalry = { x = 0 y = 0 }
+			cavalry = { x = 0 y = 1 }
+			cavalry = { x = 0 y = 2 }
+			cavalry = { x = 1 y = 0 }
+			cavalry = { x = 1 y = 1 }
+			cavalry = { x = 1 y = 2 }
+			cavalry = { x = 2 y = 0 }
+			cavalry = { x = 2 y = 1 }
+			cavalry = { x = 2 y = 2 }
+		}
+		support = { artillery = { x = 0 y = 0 } }
+	}
+	capital_scope = {
+		create_unit = {
+			division = "name = \"Донская революционная кавалерия\" division_template = \"Донская революционная кавалерия\" start_experience_factor = 0.2 start_equipment_factor = 1 start_manpower_factor = 1"
+			owner = PREV
+			allow_spawning_on_enemy_provs = no
+			count = var:PREV.nw_nr_reinforcement_count
+		}
+	}
+}
+
+nw_nr_reinforce_middle = {
+	if = {
+		limit = {
+			NOT = { has_global_flag = nw14_russian_cw_ended }
+			NOT = { has_country_flag = nw_nr_reinforcements_middle_granted }
+		}
+		set_country_flag = nw_nr_reinforcements_middle_granted
+		set_variable = { nw_nr_reinforcement_count = 1 }
+		if = {
+			limit = { tag = SOV }
+			set_variable = { nw_nr_reinforcement_count = 5 }
+			nw_nr_spawn_militia = yes
+			nw_nr_spawn_regular_brigades = yes
+		}
+		else_if = {
+			limit = { tag = DNR }
+			nw_nr_spawn_don_cavalry = yes
+		}
+		else = {
+			if = {
+				limit = { OR = { tag = BLR tag = FER tag = UKR } }
+				set_variable = { nw_nr_reinforcement_count = 3 }
+			}
+			nw_nr_spawn_light_brigades = yes
+		}
+		clear_variable = nw_nr_reinforcement_count
+		custom_effect_tooltip = nw_nr_front_bonus_5_tt
+		hidden_effect = { nw_nr_apply_front_bonus = yes }
+	}
+}
+
+nw_nr_reinforce_late = {
+	if = {
+		limit = {
+			NOT = { has_global_flag = nw14_russian_cw_ended }
+			NOT = { has_country_flag = nw_nr_reinforcements_late_granted }
+		}
+		set_country_flag = nw_nr_reinforcements_late_granted
+		set_variable = { nw_nr_reinforcement_count = 3 }
+		if = {
+			limit = { tag = SOV }
+			nw_nr_reorganize_sov_militia = yes
+			set_variable = { nw_nr_reinforcement_count = 40 }
+			nw_nr_spawn_regular_brigades = yes
+			hidden_effect = { add_ideas = nw_nr_final_offensive }
+			custom_effect_tooltip = nw_nr_final_offensive_tt
+		}
+		else_if = {
+			limit = { tag = DNR }
+			nw_nr_spawn_don_cavalry = yes
+		}
+		else = {
+			if = {
+				limit = { OR = { tag = BLR tag = FER tag = UKR } }
+				set_variable = { nw_nr_reinforcement_count = 9 }
+			}
+			nw_nr_spawn_light_brigades = yes
+		}
+		clear_variable = nw_nr_reinforcement_count
+		custom_effect_tooltip = nw_nr_front_bonus_10_tt
+		hidden_effect = { nw_nr_apply_front_bonus = yes }
+	}
+}
+
+
+# Reconcile combat rewards without running the division grants again.
+nw_nr_apply_front_bonus = {
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = nw_nr_reinforcements_late_granted
+				check_variable = { nw_nr_revolutionary_attack > 0.075 }
+			}
+		}
+		remove_ideas = nw_nr_revolutionary_front_1
+		add_ideas = nw_nr_revolutionary_front_2
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_country_flag = nw_nr_reinforcements_middle_granted
+				check_variable = { nw_nr_revolutionary_attack > 0 }
+			}
+		}
+		add_ideas = nw_nr_revolutionary_front_1
+	}
+	if = {
+		limit = { check_variable = { nw_nr_revolutionary_attack > 0 } }
+		# The old branch added the same amount of generic attack and defense.
+		# Leave the defense from United Front and the congress event in place.
+		subtract_from_variable = { var = nw_nr_defence value = nw_nr_revolutionary_attack }
+		clear_variable = nw_nr_revolutionary_attack
+	}
 	force_update_dynamic_modifier = yes
 }
 
-nw_nr_revolutionary_brigades_15 = {
-	capital_scope = {
-		create_unit = {
-			division = "name = \"Революционная бригада\" division_template = \"Революционная бригада\" start_experience_factor = 0.0 start_equipment_factor = 1 start_manpower_factor = 1"
-			owner = PREV
-			allow_spawning_on_enemy_provs = no
-			count = 15
+# The engine can move a fraction of the whole army but cannot transfer selected
+# divisions. Re-form the allied quota in friendly capitals and refund only
+# the demobilized cohort. Other SOV templates are untouched.
+nw_nr_reorganize_sov_militia = {
+	hidden_effect = {
+		set_temp_variable = { nw_nr_militia_total = 0 }
+		every_country_division = {
+			limit = { division_has_majority_template = militia }
+			add_to_temp_variable = { nw_nr_militia_total = 1 }
+		}
+		if = {
+			limit = { check_variable = { nw_nr_militia_total > 0 } }
+			set_temp_variable = { nw_nr_militia_recipients = 0 }
+			every_country = {
+				limit = { nw_nr_can_receive_sov_militia = yes }
+				add_to_temp_variable = { nw_nr_militia_recipients = 1 }
+			}
+			set_temp_variable = { nw_nr_militia_to_transfer = 0 }
+			if = {
+				limit = { check_variable = { nw_nr_militia_recipients > 0 } }
+				set_temp_variable = { nw_nr_militia_to_transfer = nw_nr_militia_total }
+				divide_temp_variable = { nw_nr_militia_to_transfer = 2 }
+				subtract_from_temp_variable = { nw_nr_militia_to_transfer = 0.25 }
+				round_temp_variable = nw_nr_militia_to_transfer
+			}
+			set_temp_variable = { nw_nr_militia_to_mark = nw_nr_militia_to_transfer }
+			division_template = {
+				name = "NW14 Militia Handover"
+				priority = 1
+				regiments = {
+					militia = { x = 0 y = 0 }
+					militia = { x = 0 y = 1 }
+					militia = { x = 1 y = 0 }
+					militia = { x = 1 y = 1 }
+					militia = { x = 2 y = 0 }
+					militia = { x = 2 y = 1 }
+				}
+			}
+			division_template = {
+				name = "NW14 Militia Demobilization"
+				priority = 1
+				regiments = {
+					militia = { x = 0 y = 0 }
+					militia = { x = 0 y = 1 }
+					militia = { x = 1 y = 0 }
+					militia = { x = 1 y = 1 }
+					militia = { x = 2 y = 0 }
+					militia = { x = 2 y = 1 }
+				}
+			}
+			every_country_division = {
+				limit = { division_has_majority_template = militia }
+				if = {
+					limit = { check_variable = { nw_nr_militia_to_mark > 0 } }
+					change_division_template = { division_template = "NW14 Militia Handover" }
+					subtract_from_temp_variable = { nw_nr_militia_to_mark = 1 }
+				}
+				else = {
+					change_division_template = { division_template = "NW14 Militia Demobilization" }
+				}
+			}
+			delete_unit_template_and_units = {
+				division_template = "NW14 Militia Demobilization"
+				disband = yes
+			}
+			delete_unit_template_and_units = {
+				division_template = "NW14 Militia Handover"
+				disband = no
+			}
+			if = {
+				limit = { check_variable = { nw_nr_militia_to_transfer > 0 } }
+				every_country = {
+					limit = { nw_nr_can_receive_sov_militia = yes }
+					# Allocate the nearest integer share of the remaining quota.
+					set_temp_variable = { nw_nr_allied_share = nw_nr_militia_to_transfer }
+					divide_temp_variable = { nw_nr_allied_share = nw_nr_militia_recipients }
+					round_temp_variable = nw_nr_allied_share
+					if = {
+						limit = { check_variable = { nw_nr_allied_share > 0 } }
+						set_variable = { nw_nr_reinforcement_count = nw_nr_allied_share }
+						nw_nr_spawn_militia = yes
+						clear_variable = nw_nr_reinforcement_count
+					}
+					subtract_from_temp_variable = { nw_nr_militia_to_transfer = nw_nr_allied_share }
+					subtract_from_temp_variable = { nw_nr_militia_recipients = 1 }
+				}
+			}
 		}
 	}
-	add_to_variable = { var = nw_nr_revolutionary_attack value = 0.05 }
-	add_to_variable = { var = nw_nr_defence value = 0.05 }
-	force_update_dynamic_modifier = yes
+}
+
+# Route construction is performed once for the alliance, in the SOV scope.
+nw_nr_build_republic_railways = {
+ if = {
+  limit = { NOT = { has_global_flag = nw_nr_rail_network_built } }
+  set_global_flag = nw_nr_rail_network_built
+  build_railway = { level = 2 build_only_on_allied = yes path = { 11370 294 11322 3331 9241 11241 323 6293 11234 9331 320 9234 11109 117 6197 79 6174 3151 } }
+  if = {
+   limit = { any_country = { OR = { tag = SOV is_in_faction_with = SOV } controls_province = 320 } }
+   263 = { add_building_construction = { type = supply_node province = 320 level = 1 instant_build = yes } }
+  }
+  if = {
+   limit = { UKR = { exists = yes is_in_faction_with = SOV } any_country = { OR = { tag = SOV is_in_faction_with = SOV } controls_province = 525 } }
+   build_railway = { level = 2 build_only_on_allied = yes path = { 525 11557 6458 11489 3480 9506 546 9288 6344 6373 3350 386 216 11370 } }
+  }
+ }
+}
+nw_nr_build_belarus_line = {
+ if = {
+  limit = { NOT = { has_global_flag = nw_nr_belarus_line_built } }
+  set_global_flag = nw_nr_belarus_line_built
+  every_country = { limit = { OR = { tag = SOV is_in_faction_with = SOV } controls_province = 11370 } 206 = { add_building_construction = { type = bunker province = 11370 level = 5 instant_build = yes } } }
+  every_country = { limit = { OR = { tag = SOV is_in_faction_with = SOV } controls_province = 3267 } 206 = { add_building_construction = { type = bunker province = 3267 level = 5 instant_build = yes } } }
+  every_country = { limit = { OR = { tag = SOV is_in_faction_with = SOV } controls_province = 6220 } 207 = { add_building_construction = { type = bunker province = 6220 level = 5 instant_build = yes } } }
+  every_country = { limit = { OR = { tag = SOV is_in_faction_with = SOV } controls_province = 9241 } 207 = { add_building_construction = { type = bunker province = 9241 level = 5 instant_build = yes } } }
+  every_country = { limit = { OR = { tag = SOV is_in_faction_with = SOV } controls_province = 11241 } 207 = { add_building_construction = { type = bunker province = 11241 level = 5 instant_build = yes } } }
+  every_country = { limit = { OR = { tag = SOV is_in_faction_with = SOV } controls_province = 6293 } 210 = { add_building_construction = { type = bunker province = 6293 level = 5 instant_build = yes } } }
+  every_country = { limit = { OR = { tag = SOV is_in_faction_with = SOV } controls_province = 354 } 210 = { add_building_construction = { type = bunker province = 354 level = 5 instant_build = yes } } }
+  every_country = { limit = { OR = { tag = SOV is_in_faction_with = SOV } controls_province = 9287 } 246 = { add_building_construction = { type = bunker province = 9287 level = 5 instant_build = yes } } }
+  every_country = { limit = { OR = { tag = SOV is_in_faction_with = SOV } controls_province = 3235 } 246 = { add_building_construction = { type = bunker province = 3235 level = 5 instant_build = yes } } }
+  every_country = { limit = { OR = { tag = SOV is_in_faction_with = SOV } controls_province = 6264 } 246 = { add_building_construction = { type = bunker province = 6264 level = 5 instant_build = yes } } }
+  every_country = { limit = { OR = { tag = SOV is_in_faction_with = SOV } controls_province = 9265 } 246 = { add_building_construction = { type = bunker province = 9265 level = 5 instant_build = yes } } }
+  every_country = { limit = { OR = { tag = SOV is_in_faction_with = SOV } controls_province = 9343 } 246 = { add_building_construction = { type = bunker province = 9343 level = 5 instant_build = yes } } }
+  every_country = { limit = { OR = { tag = SOV is_in_faction_with = SOV } controls_province = 3215 } 246 = { add_building_construction = { type = bunker province = 3215 level = 5 instant_build = yes } } }
+  every_country = { limit = { OR = { tag = SOV is_in_faction_with = SOV } controls_province = 6245 } 247 = { add_building_construction = { type = bunker province = 6245 level = 5 instant_build = yes } } }
+ }
 }

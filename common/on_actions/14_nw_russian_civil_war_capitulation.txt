@@ -226,6 +226,41 @@ on_actions = {
 	# Permanent identity is retained; special handling ends after CW fronts close.
 	on_daily = {
 		effect = {
+			# Wait out the initializer's one-day front-opening retry.
+			if = {
+				limit = {
+					has_country_flag = { flag = nw14_cw_participant days > 1 }
+					NOT = { has_global_flag = nw14_russian_cw_ended }
+					NOT = { nw14_russian_cw_has_open_front = yes }
+				}
+				set_global_flag = nw14_russian_cw_ended
+			}
+			if = {
+				limit = {
+					has_global_flag = nw14_russian_cw_ended
+					OR = {
+						has_idea = nw_nr_revolutionary_front_1
+						has_idea = nw_nr_revolutionary_front_2
+						has_idea = nw_nr_final_offensive
+                        has_idea = nw_nr_anti_separatists
+                        has_idea = nw_nr_united_enemies
+					}
+				}
+				remove_ideas = nw_nr_revolutionary_front_1
+				remove_ideas = nw_nr_revolutionary_front_2
+				remove_ideas = nw_nr_final_offensive
+                remove_ideas = nw_nr_anti_separatists
+                remove_ideas = nw_nr_united_enemies
+			}
+			else_if = {
+				limit = {
+					has_country_flag = nw14_cw_participant
+					NOT = { has_global_flag = nw14_russian_cw_ended }
+					check_variable = { nw_nr_revolutionary_attack > 0 }
+				}
+				nw_nr_apply_front_bonus = yes
+			}
+
 			# The penalty ends even if the rival is defeated by a third country.
 			if = {
 				limit = { tag = DNR has_idea = nw14_don_divided_dnr OR = { NOT = { DON = { exists = yes } } DON = { has_capitulated = yes } } }

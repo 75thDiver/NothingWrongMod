@@ -1,6 +1,24 @@
 nw14_new_russia_joint_member = {
  SOV = { exists = yes has_country_flag = nw_rus_war_started is_in_faction = yes }
+ NOT = { has_global_flag = nw14_russian_cw_ended }
  exists = yes
  has_capitulated = no
  OR = { tag = SOV is_in_faction_with = SOV }
+}
+
+# Country-scoped caller is irrelevant: consider every surviving scenario front.
+nw14_russian_cw_has_open_front = {
+ any_country = {
+  has_country_flag = nw14_cw_participant
+  any_enemy_country = { has_country_flag = nw14_cw_participant }
+ }
+}
+
+nw_nr_can_receive_sov_militia = {
+ NOT = { tag = SOV }
+ exists = yes
+ has_capitulated = no
+ has_country_flag = nw14_cw_participant
+ is_in_faction_with = SOV
+ capital_scope = { is_controlled_by = PREV }
 }

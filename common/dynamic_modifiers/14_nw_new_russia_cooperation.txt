@@ -1,10 +1,14 @@
 nw14_new_russia_cooperation_dynamic_modifier = {
 	enable = { always = yes }
+	remove_trigger = { has_global_flag = nw14_russian_cw_ended }
 	icon = GFX_idea_nw14_russian_republic_emblem
+	custom_modifier_tooltip = nw_nr_front_bonus_spirit_tt
 
 	war_support_factor = nw_nr_cooperation_war_support
 	planning_speed = nw_nr_cooperation_planning_speed
 	production_speed_buildings_factor = nw_nr_cooperation_production
+	production_speed_infrastructure_factor = nw_nr_infrastructure_construction
+	production_speed_rail_way_factor = nw_nr_railway_construction
 	army_org_regain = nw_nr_field_communications
 	attrition = nw_nr_hospitals
 	army_defence_factor = nw_nr_defence
@@ -12,5 +16,4 @@ nw14_new_russia_cooperation_dynamic_modifier = {
 	supply_consumption_factor = nw_nr_supply_consumption
 	political_power_factor = nw_nr_political_power
 	resistance_growth = nw_nr_resistance_growth
-	army_attack_factor = nw_nr_revolutionary_attack
 }

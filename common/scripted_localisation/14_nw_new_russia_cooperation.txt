@@ -1,0 +1,27 @@
+defined_text = {
+	name = GetNW14RevolutionaryFrontBonus
+	text = {
+		trigger = {
+			has_idea = nw_nr_revolutionary_front_2
+			has_idea = nw_nr_final_offensive
+		}
+		localization_key = nw_nr_front_bonus_final_tt
+	}
+	text = {
+		trigger = { has_idea = nw_nr_revolutionary_front_2 }
+		localization_key = nw_nr_front_bonus_10_tt
+	}
+	text = {
+		trigger = { has_idea = nw_nr_revolutionary_front_1 }
+		localization_key = nw_nr_front_bonus_5_tt
+	}
+	text = { localization_key = nw_nr_front_bonus_empty_tt }
+}
+
+defined_text = {
+ name = GetNW14AdditionalEnemyBonus
+ text = { trigger = { has_idea = nw_nr_anti_separatists has_idea = nw_nr_united_enemies } localization_key = nw_nr_combined_enemies_tt }
+ text = { trigger = { has_idea = nw_nr_anti_separatists } localization_key = nw_nr_anti_separatists_tt }
+ text = { trigger = { has_idea = nw_nr_united_enemies } localization_key = nw_nr_united_enemies_tt }
+ text = { localization_key = nw_nr_front_bonus_empty_tt }
+}
